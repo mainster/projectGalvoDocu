@@ -212,48 +212,59 @@ Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge
 Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.
 <a name="refTableMechanic"> </a>
 
-| Mechanical Specifications        |                            |             |
-| ---                              | ---                        | ---         |
-| Rated Angular Excursion          | 40°                        |             |
-| Rotor Inertia                    | 0.6 gm.cm^2, ±10%          | 6e-8 kg.m^2 |
-| Torque Constant                  | 9.3 10^4 dyne.cm/amp, ±10% | 9.3e-3 Nm/A |
-| Maximum Coil Temperature         | 110°C                      |             |
-| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max            |             |
+| Mechanical Specifications        |                    |             |      |
+| ---                              | ---                | ---         | ...  |
+| Rated Angular Excursion          | 40°                |             |      |
+| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
+| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
+| Maximum Coil Temperature         | 110°C              |             |      |
+| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
 
-| Electrical Specifications      |                                           |
-| ---                            | ---                                       |
-| Coil Resistance                | 1.5Ω, ±10%                                |
-| Coil Inductance                | 160µH, ±10%                               |
-| Back EMF Voltage               | 0.17mV/degree/sec, ±10%                   |
-| RMS Current                    | 4.6A @ T_case=50°C, Max                   |
-| Peak Current                   | 25A, Max                                  |
-| Small Angle Step Response Time | 0.5ms, with balanced inertia matched load |
+| Electrical Specifications      |                              |                |      |
+| ---                            | ---                          | ---            | ...  |
+| Coil Resistance                | 1.5Ω                         |                | ±10% |
+| Coil Inductance                | 160µH                        |                | ±10% |
+| Back EMF Voltage               | 0.17mV/degree/sec            | 9.74mV/rad/sec | ±10% |
+| RMS Current                    | 4.6A @ T_case=50°C, Max      |                |      |
+| Peak Current                   | 25A, Max                     |                |      |
+| Small Angle Step Response Time | 0.5ms (inertia matched load) |                |      |
 
-| Position Detector                |                                                  |
-| ---                              | ---                                              |
-| Linearity                        | 99.9%, Minimum, over 40 degrees                  |
-| Scale Drift                      | 50PPM/°C, Maximum                                |
-| Zero Drift                       | 15 microradians/°C, Maximum                      |
-| Repeatability, Short Term        | 8 microradians                                   |
-| Output Signal, Common Mode       | 585 microamperes with AGC voltage of 10VDC, ±20% |
-| Output Signal, Differential Mode | 14.5 µA/°, at common mode current of 585µA, ±20% |
+
+| Position Detector                |                                         |      |
+| ---                              | ---                                     |      |
+| Linearity                        | 99.9%, Minimum, over 40 degrees         |      |
+| Scale Drift                      | 50PPM/°C, Maximum                       |      |
+| Zero Drift                       | 15 microradians/°C, Maximum             |      |
+| Repeatability, Short Term        | 8 microradians                          |      |
+| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
+| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
 
 Drehmoment: 1.0 __dyne-cm__ =^ __1e-7 Nm__
 Massenträgheit: 1.0 __gm.cm^2__ =^ __1e-7 kg.m^2__
 
 ### Generisches Modell ###
-In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf die hier genutzte Modell-Art, so muss als Prozessergebnis ein Modell entstehen dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ oder _"Galvanometer"_ die für das zu erzeugende Modell spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll ein entsprechendes Modell erzeugt werden. Mit diesem Modell soll dann das _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und simuliert werden können. 
+In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf die hier genutzte Modell-Art, so muss ein Modell entstehen dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ oder _"Galvanometer"_ die für das zu erzeugende Modell spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll ein entsprechendes Modell erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
 
 Die Analogie zu _generic types_ in objektorientierten Programmiersprachen ist nur teilweise zulässig. Vergleicht man diese Methode jedoch mit der in [Vorarbeit](#vorarbeit) aufgezeigten, nämlich einem Computermodell, abhängig von Geometrie und Materialparametern, so finden sich doch einige Eigenschaften, die analog verwendet werden können.
 
-
-
-
-
 ### Mathematische Zusammenhänge ###
-Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit _v(t)_ eines Körpers lässt sich z. B. durch Differentiation seiner Streckenfunktion _s(t)_ oder durch Integration seiner Beschleunigung _a(t)_ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt, dass z. B. die Integralbildung der Winkelgeschwindigkeit _ω(t)_ eines rotierenden Körpers unmittelbar auf seine Winkelposition _φ(t)_ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
+Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit _v(t)_ eines Körpers lässt sich z. B. durch Differentiation seiner Streckenfunktion _s(t)_ oder durch Integration seiner Beschleunigung _a(t)_ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt, dass z. B. die Integralbildung der Winkelgeschwindigkeit _ω(t)_ eines rotierenden Körpers unmittelbar auf seine Winkelposition _φ(t)_ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
 
-### 
+### Modell ###
+Als Stellgröße der Regelstrecke bzw. der Aktoren wurde beim ersten Modellierungsversuch die Motor-Klemmenspannung verwendet. Die DGL (Differentialgleichung) 1. Ordnung für eine ideale Spule ist gegeben durch 
+$$u_l(t)=L_c \cdot \frac{\partial~i_l}{\partial~t}+u_{l0}$$ 
+Bezeichnet $u_M(t)$ die Motorspannung und $R_l$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
+$$
+u_M(t)=L_c \cdot \frac{\partial~i_l}{\partial~t}+u_{l0} + R_l \cdot i_l(t)
+\;\Leftrightarrow\;
+\frac{u_m(t)}{L_c} = \frac{\partial~i_l}{\partial~t} + \frac{u_{l0}}{L_c} + \frac{R_l}{L_c} \cdot i_l(t)
+$$
+Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung 
+$$ U_M(s) = L_c \cdot (s \cdot I_l(s) - i_{l0}) + u_{l0} + \frac{R_l}{L_c} \cdot I_l(s)$$
+$$ \frac{U_M(s)}{L_c} = s \cdot I_l(s) - i_{l0} + \frac{u_{l0}}{L_c} + \frac{R_l}{L_c} \cdot I_l(s)$$
+Die Motorinduktivität $L_c$ sowie der Wicklungswiderstand $R_c$  
+Das elektrische Drehmoment $T_e$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_c(t=t0)$ und Drehmomentkonstante $K_{Te}$, somit gilt $T_e(t) = i_c(t)\cdot K_{Te}$
+
 # Angaben zur Systemdynamik #
 # geschlosseneModell #
 # Simulation #
@@ -300,14 +311,13 @@ $$F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \ome
 
 [^fnReuseCode]: __*Reusability*__ [*Wikipedia: Reusability*][wikiReuse]
 
-[^fnRoSe]: *__Rollke, K. H., Sennholz, K.__ Grund und Leistungskurs Informatik; Cornelsen Verlag, Berlin, 1994*
+[^fnRoSe]: __*K. H. Rollke, K. Sennholz*__ *Grund und Leistungskurs Informatik; Cornelsen Verlag, Berlin, 1994*
 
 [^fnHarms09]: __*Eike Harms*__ [*Konfigurationsmanagement unter Berücksichtigung von Verwendungsinstanzen*][harms] 
 
-[^fnStachowiak]: __*Herbert Stachowiak*__ [*Allgemeine Modelltheorie*][StachowiakBooks] 1973, Kap. 2.1.1.1, S. 131..133
+[^fnStachowiak]: __*Herbert Stachowiak*__ [*Allgemeine Modelltheorie*][StachowiakBooks] 1973, Kap. 2.1.1.1, S. 131 ... 133
 
-[^fnPapula2]: __*Lothar Papula*__ [*Mathematik für Ingenieure und Naturwissenschaftler Band 2*][Papula2] 2009, Kap. 1.4 S. 
-348
+[^fnPapula2]: __*Lothar Papula*__ [*Mathematik für Ingenieure und Naturwissenschaftler Band 2*][Papula2] 2009, Kap. 1.4 S. 348
 
 [^fnElektrBauelem]: __*R. Großmann, A. Frey*__ [*Elektronische Bauelemente*][GroFrey]
 
