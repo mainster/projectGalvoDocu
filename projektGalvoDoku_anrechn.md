@@ -261,9 +261,26 @@ Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reelle
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 <span style="font-size: 24px">$$ {\scr L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ </span>
 Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom:
-<span style="font-size: 24px">$$ G_{a}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann diese nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{a}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span> <center>![realInductor](./mdlPngs/realInductor.png "Motorinduktivität"){:height=200px}</center> Das elektrische Drehmoment $M_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{Me}$, somit gilt $M_E(t) = i_L(t) \cdot K_{Me}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird. 
+<span style="font-size: 24px">$$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann diese nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{a}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span> <center>![realInductor](./mdlPngs/realInductor.png "Motorinduktivität"){:height=200px}</center> Das elektrische Drehmoment $m_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{ME}$, somit gilt $m_E(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
 
-Das mechanische Subsystem 
+---
+
+<img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 0em 0em 0em 1em;"/> Zur Modellierung des mechanischen Subsystems kommt ebenfalls ein PT1-Glied zum Einsatz. Da es prinzipbedingt wenig Sinn ergibt, ein hochdynamisches System (siehe [Galvanometer*](#galvanometer)) einem externen Lastmoment auszusetzen, wurde an dieser Stelle auch keine größe $T_{Load}$ o.ä. modelliert. Für den Zusammenhang zwischen Trägheitsmoment (Inertialmasse: Rotorwelle, Permanentmagnet, Sensorscheibe, Spiegel) $J_R$, der mechanischen Reibung (Kugellager, Sensor) $B_F$ und dem elektrischen Drehmoment $m_E$ kann nach Newton's 2. Gesetz der Bewegungslehre $ \color{blue}{\vec{F} = m \cdot \vec{a}}\;$ folgende Bestimmungsgleichung aufgestellt werden:
+<span style="font-size: 24px">$$ m_E(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
+\;\;\;\Leftrightarrow\;\;\;
+\frac{m_E(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) \\\\ \phantom{.} \\\\
+{\scr L}\Bigg(\frac{m_E(t)}{J_R}\Bigg) = \frac{M_E(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{B_F}{J_R} \cdot Ω(s) \\\\ \phantom{.} \\\\ G_{ME}(s) = \frac{Ω(s)}{M_E(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{B_F}{J_R}}
+\;\;\;\;\;\; für\;\;ω(0)=0
+$$</span> Zusammen mit der oben erwähnten Drehmomentkonstante $m_E(t) = i_L(t) \cdot K_{ME}$ wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: <center>![mechSubA](./mdlPngs/mechSubA.png "Mechanisches Subsystem"){:height=250px}</center>
+
+#### Positionssensor ####
+Die momentane Winkelposition der Rotorwelle wird anhand variabler Kapazitäten gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer 1.6MHz Trägerschwingung aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
+
+Um den integrierten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $ω(t)$ durch einen Integrationsblock in die Winkelposition $φ(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
+<center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.png "Mechanisches Subsystem inkl. Positionsdemodulator"){:height=250px}</center>
+
+#### Back-EMF und Torsionsbar ####
+
 # Angaben zur Systemdynamik #
 # geschlosseneModell #
 # Simulation #
