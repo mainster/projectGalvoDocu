@@ -261,7 +261,7 @@ Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reelle
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 <span style="font-size: 24px">$$ {\scr L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ </span>
 Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom:
-<span style="font-size: 24px">$$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann diese nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{a}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span> <center>![realInductor](./mdlPngs/realInductor.png "Motorinduktivität"){:height=200px}</center> Das elektrische Drehmoment $m_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{ME}$, somit gilt $m_E(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
+<span style="font-size: 24px">$$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann diese nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span> <center>![realInductor](./mdlPngs/realInductor.png "Motorinduktivität"){:height=200px}</center> Das elektrische Drehmoment $m_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{ME}$, somit gilt $m_E(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
 
 ---
 
@@ -279,8 +279,13 @@ Die momentane Winkelposition der Rotorwelle wird anhand variabler Kapazitäten g
 Um den integrierten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $ω(t)$ durch einen Integrationsblock in die Winkelposition $φ(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
 <center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.png "Mechanisches Subsystem inkl. Positionsdemodulator"){:height=250px}</center>
 
-#### Back-EMF und Torsionsbar ####
+#### Torsionsfeder ####
 
+#### Back-EMF ####
+Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday bzw. Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{ME}$ und $K_{EMF}$ identisch. 
+In den Herstellerangaben ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $170µV/degree/sec$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus $170µV/degree/sec = 9.74e-3 V/rad/s = 9.74e-3 Nm/A$ was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit
+<span style="font-size: 24px">$$ V_{EMF} = K_{EMF} \cdot ω(t) $$</span>
+Durch die Rückkopplung der $V_{EMF}$ mit negativem Vorzeichen auf den Signalpfad vor $G_{EL}$, wird der Einfluss der Back-EMF auf die Dynamik des Aktors korregt modelliert. 
 # Angaben zur Systemdynamik #
 # geschlosseneModell #
 # Simulation #
