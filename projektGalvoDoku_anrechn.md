@@ -210,15 +210,7 @@ Der vollständigkeit halber sollen an dieser Stelle einige paralleln zur Unterkl
 Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge Technology_][cambridgeTech] handelt es sich um optische Scannereinheiten (Serie 6860) vom Typ _"Moving Magnet"_ mit integriertem Positionssensor, welcher auf Basis variabler Kapazitäten arbeitet. Die vom Hersteller liebevoll unter [__Veteran Galvo Motors__][veteranGalvo] kategorisierten Aktoren gehören zwar nicht mehr zu den aktuellen Produkten von _Cambridge Technology_, sind jedoch hervorragend geeignet für das hier dokumentierte Projektvorhaben. 
 
 Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.
-<a name="refTableMechanic"> </a>
-
-| Mechanical Specifications        |                    |             |      |
-| ---                              | ---                | ---         | ...  |
-| Rated Angular Excursion          | 40°                |             |      |
-| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
-| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
-| Maximum Coil Temperature         | 110°C              |             |      |
-| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
+<a name="refTableElectric"> </a>
 
 | Electrical Specifications      |                              |                |      |
 | ---                            | ---                          | ---            | ...  |
@@ -229,6 +221,15 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Peak Current                   | 25A, Max                     |                |      |
 | Small Angle Step Response Time | 0.5ms (inertia matched load) |                |      |
 
+<a name="refTableMechanic"> </a>
+
+| Mechanical Specifications        |                    |             |      |
+| ---                              | ---                | ---         | ...  |
+| Rated Angular Excursion          | 40°                |             |      |
+| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
+| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
+| Maximum Coil Temperature         | 110°C              |             |      |
+| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
 
 | Position Detector                |                                         |      |
 | ---                              | ---                                     |      |
@@ -251,20 +252,18 @@ Die Analogie zu _generic types_ in objektorientierten Programmiersprachen ist nu
 Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit _v(t)_ eines Körpers lässt sich z. B. durch Differentiation seiner Streckenfunktion _s(t)_ oder durch Integration seiner Beschleunigung _a(t)_ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt, dass z. B. die Integralbildung der Winkelgeschwindigkeit _ω(t)_ eines rotierenden Körpers unmittelbar auf seine Winkelposition _φ(t)_ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
 
 ### Modell ###
-Als Stellgröße der Regelstrecke bzw. der Aktoren wurde beim ersten Modellierungsversuch die Motor-Klemmenspannung verwendet. Die DGL (Differentialgleichung) 1. Ordnung für eine ideale Spule ist gegeben durch 
-$$u_l(t)=L_c \cdot \frac{\partial~i_l}{\partial~t}+u_{l0}$$ 
-Bezeichnet $u_M(t)$ die Motorspannung und $R_l$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
-$$
-u_M(t)=L_c \cdot \frac{\partial~i_l}{\partial~t}+u_{l0} + R_l \cdot i_l(t)
-\;\Leftrightarrow\;
-\frac{u_m(t)}{L_c} = \frac{\partial~i_l}{\partial~t} + \frac{u_{l0}}{L_c} + \frac{R_l}{L_c} \cdot i_l(t)
-$$
-Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung 
-$$ U_M(s) = L_c \cdot (s \cdot I_l(s) - i_{l0}) + u_{l0} + \frac{R_l}{L_c} \cdot I_l(s)$$
-$$ \frac{U_M(s)}{L_c} = s \cdot I_l(s) - i_{l0} + \frac{u_{l0}}{L_c} + \frac{R_l}{L_c} \cdot I_l(s)$$
-Die Motorinduktivität $L_c$ sowie der Wicklungswiderstand $R_c$  
-Das elektrische Drehmoment $T_e$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_c(t=t0)$ und Drehmomentkonstante $K_{Te}$, somit gilt $T_e(t) = i_c(t)\cdot K_{Te}$
+Das fertige Modell des Galvomotors setzt sich aus elektrischen und mechanischen Teilsystemen zusammen. Als Stellgröße der Regelstrecke bzw. der Aktoren wurde beim ersten Modellierungsversuch die Eingangsspannung der Statorinduktivität verwendet. Die Zweipolbeziehung (differentielle Form) einer idealen Induktivität ist gegeben durch:
+<span style="font-size: 24px">$$u(t)=L \cdot \frac{\partial~i_L}{\partial~t}$$</span>
+Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
+<span style="font-size: 24px">$$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t) 
+\;\;\;\Leftrightarrow\;\;\;
+\frac{u_M(t)}{L} = \frac{\partial~i_L}{\partial~t} + \frac{R_L}{L} \cdot i_L(t) $$ </span>
+Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
+<span style="font-size: 24px">$$ {\scr L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ </span>
+Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom:
+<span style="font-size: 24px">$$ G_{a}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann diese nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{a}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span> <center>![realInductor](./mdlPngs/realInductor.png "Motorinduktivität"){:height=200px}</center> Das elektrische Drehmoment $M_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{Me}$, somit gilt $M_E(t) = i_L(t) \cdot K_{Me}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird. 
 
+Das mechanische Subsystem 
 # Angaben zur Systemdynamik #
 # geschlosseneModell #
 # Simulation #
@@ -325,10 +324,15 @@ $$F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \ome
 
 [^fnGalvoScanlab]: __*Galvanometer-Scanner*__ http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner
 
-[@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers. MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
+[@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
+
+[@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
 
 <a name="citeMDA"/> </a>
-__[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers._ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
+__[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
+
+<a name="citeProbst"/> </a>
+__[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;*__
 
 ---
 
