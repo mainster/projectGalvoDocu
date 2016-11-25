@@ -272,8 +272,11 @@ Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G
 <span style="font-size: 24px"> $$ G_{EL2}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} $$ </span><center>![mechSubA](./mdlPngs/mechSubA.svg "Mechanisches Subsystem")</center>
 
 #### Mechanik ####
-<img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="253px" style="float:right; margin: 0em 0em 0em 1em;"/>Die Masse der Rotorwelle speichert kinetische Enegie. Somit kann das mechanische Subsystem ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden. Für den Zusammenhang zwischen dem Massenträgheitsmoment des Rotors (Rotor Inertia $J_R$: Rotorwelle, Permanentmagnet, Sensorscheibe, Spiegel), der mechanischen Reibung (Mechanic Friction $B_F$: Kugellager, Positionssensor) und dem elektrisch generierten Antriebsmoment $M_E$, können nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichungen aufgestellt werden:
-<span style="font-size: 24px">$$ \\\\ \phantom{.} \\\\M_E(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
+<img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="253px" style="float:right; margin: 0em 0em 0em 1em;"/>Die Masse der Rotorwelle speichert kinetische Enegie. Somit kann das mechanische Subsystem ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden. Für den Zusammenhang zwischen dem Massenträgheitsmoment des Rotors (Rotor Inertia $J_R$: Rotorwelle, Permanentmagnet, Sensorscheibe, Spiegel), der mechanischen Reibung (Mechanic Friction $B_F$: Kugellager, Positionssensor) und dem elektrisch generierten Antriebsmoment $M_E$, können nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ die nachfolgenden Bestimmungsgleichungen aufgestellt werden. 
+
+<center>*Kräftegleichgewicht:* 
+__*Summe der linkdrehenden Momente = Summe der rechtsdrehenden Momente*__</center>
+<span style="font-size: 24px">$$M_E(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
 \;\;\;\Leftrightarrow\;\;\;
 \frac{M_E(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) 
 \\\\ \phantom{.} \\\\
