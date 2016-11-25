@@ -261,32 +261,50 @@ Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reelle
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 <span style="font-size: 24px">$$ {\scr L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ </span>
 Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom:
-<span style="font-size: 24px">$$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span><center>![realInductor](./mdlPngs/realInductor.svg "Motorinduktivität"){:height=200px}</center> Das elektrische Drehmoment $m_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{ME}$, somit gilt $m_E(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
+<span style="font-size: 24px">$$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$ </span> Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.<span style="font-size: 24px">$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ </span><center>![realInductor](./mdlPngs/realInductor.svg "Motorinduktivität")</center> Das elektrische Drehmoment $M_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Motorstrom $i_L(t0)$ und Drehmoment-konstante $K_{ME}$, somit gilt $M_E(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
 
 #### Back-EMF ####
 Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday bzw. Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{ME}$ und $K_{EMF}$ identisch.
 
-In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus $0.17mV/degree/sec = 9.74\times 10^{-3} V/rad/s = 9.74\times 10^{-3} Nm/A$ was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit <span style="font-size: 24px">$$ V_{EMF} = K_{EMF} \cdot ω(t) $$</span> Die $V_{EMF}$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
+In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus $0.17mV/degree/sec = 9.74\times 10^{-3} V/rad/s = 9.74\times 10^{-3} Nm/A$ was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit 
+<span style="font-size: 24px"> $$ u_{EMF}(t) = K_{EMF} \cdot ω(t) $$ </span>
+Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
+<span style="font-size: 24px"> $$ G_{EL2}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} $$ </span><center>![mechSubA](./mdlPngs/mechSubA.svg "Mechanisches Subsystem")</center>
 
-<img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="auto" style="float:right; margin: .75em 0em 0em 1em;"/> Zur Modellierung des mechanischen Subsystems kommt ebenfalls ein PT1-Glied zum Einsatz. Obwohl es prinzipbedingt wenig Sinn ergibt, ein hochdynamisches System (siehe [Galvanometer*](#galvanometer)) einem externen Lastmoment auszusetzen, wurde an dieser Stelle keine Größe wie $m_{Load}$ o.ä. modelliert. Für den Zusammenhang zwischen Trägheitsmoment (Rotor Inertia $J_R$: Rotorwelle, Permanent-Magnet, Sensorscheibe, Spiegel), der mechanischen Reibung (Mechanic Friction $B_F$: Kugellager, Positionssensor) und dem elektrisch generierten Antriebsmoment $m_E$, kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden:
-<span style="font-size: 24px">$$ m_E(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
+#### Mechanik ####
+<img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="253px" style="float:right; margin: 0em 0em 0em 1em;"/>Die Masse der Rotorwelle speichert kinetische Enegie. Somit kann das mechanische Subsystem ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden. Für den Zusammenhang zwischen dem Massenträgheitsmoment des Rotors (Rotor Inertia $J_R$: Rotorwelle, Permanentmagnet, Sensorscheibe, Spiegel), der mechanischen Reibung (Mechanic Friction $B_F$: Kugellager, Positionssensor) und dem elektrisch generierten Antriebsmoment $M_E$, können nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichungen aufgestellt werden:
+<span style="font-size: 24px">$$ \\\\ \phantom{.} \\\\M_E(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
 \;\;\;\Leftrightarrow\;\;\;
-\frac{m_E(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) \\\\ \phantom{.} \\\\
-{\scr L}\Bigg(\frac{m_E(t)}{J_R}\Bigg) = \frac{M_E(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{B_F}{J_R} \cdot Ω(s) \\\\ \phantom{.} \\\\ G_{ME}(s) = \frac{Ω(s)}{M_E(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{B_F}{J_R}}
+\frac{M_E(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) 
+\\\\ \phantom{.} \\\\
+{\scr L}\Bigg(\frac{M_E(t)}{J_R}\Bigg) = \frac{M_E(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{B_F}{J_R} \cdot Ω(s) 
+\\\\ \phantom{.} \\\\ 
+G_{ME}(s) = \frac{Ω(s)}{M_E(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{B_F}{J_R}}
 \;\;\;\;\;\; für\;\;ω(0)=0
-$$</span> Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $m_E(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: <center>![mechSubA](./mdlPngs/mechSubA.svg "Mechanisches Subsystem"){:height=250px}</center>
-<center>![mechSubA1.svg](./mdlPngs/mechSubA1.svg "Mechanisches Subsystem 1")</center>
+$$</span> Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_E(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
 <center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
+
+
+##### Torsionsfeder #####
+Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine zuverlässigen Quellen gefunden werden. Die Vermutung, dass die Rotorwelle mechanisch mit einer Torsionsfeder verbunden ist, soll im folgenden kurz begründet werden:
+
+1. Rückstellung der Rotorwelle bis auf ±4° um die Mittelstellung wenn Spannungsfrei geschaltet
+    - Die Rotorwelle wird automatisch in Mittelstellung zurück gedreht wenn das elektrische Moment zu 0 wird.
+    - Dieser Effekt könnte, abhängig von Aufbau und Geometrie des magnetischen Statorkreises, auch darauf zurück zu führen sein, dass sich bei Mittelstellung der geringste magnetische Widerstand einstellt. Anders formuliert, könnte die Rückstellbewegung auch auf die [Reluktanzkraft](https://de.wikipedia.org/wiki/Reluktanzkraft "https://de.wikipedia.org/wiki/Reluktanzkraft") zurückzuführen sein.  
+3. Kräftegleichgewicht bei sehr geringen Statorströmen (wenige mA)
+    - 
+2. Quelle: Mechanisches Funktionsprinzip von Effektlasern auf [www.laserfx.com][laserfx]
+4. Elektrische "Erdung" des Rotorkörpers um elektrostatischen Effekten vorzubeugen
 
 #### Positionssensor ####
 Die Winkelposition der Rotorwelle wird mittels einer variablen Kapazität gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer 1.6MHz Trägerschwingung aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
-
 Um den integrierten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $ω(t)$ durch einen Integrationsblock in die Winkelposition $φ(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
-<center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator"){:height=250px}</center>
-
-#### Torsionsfeder ####
+<center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
 
 
+
+
+## Leistungsteil ##
 
 # Angaben zur Systemdynamik #
 # geschlosseneModell #
@@ -381,3 +399,4 @@ __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik 
 [cambridgeTech]: www.cambridgetechnology.com "www.cambridgetechnology.com"
 [typ6860spec]: <https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=10&cad=rja&uact=8&ved=0ahUKEwjZ5bLLuLXQAhWBuRQKHfd3Bc4QIAhgMAk&url=http%3A%2F%2Fwebcache.googleusercontent.com%2Fsearch%3Fq%3Dcache%3A1O6mSJqn6noJ%3Acambridgetechnology.net%2Findex.php%253Foption%253Dcom_docman%2526task%253Ddoc_download%2526gid%253D322%2B%26cd%3D10%26hl%3Dde%26ct%3Dclnk%26gl%3Dde&usg=AFQjCNFCsAo8tjp7P4odi0Yv0yQupg3JAw&sig2=KDaq0vZeNkkPfkigxltuPg> "google cache, letzter Aufruf: 19.11.2016"
 [motorModeling]: http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling "http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling"
+[laserfx]: http://www.laserfx.com/Works/Works3S.html "How Laser Shows Work - Scanning System"

@@ -1,2193 +1,1262 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="103.717mm"
-   height="42.3333mm"
-   viewBox="0 0 294 120"
-   version="1.2"
-   id="svg2"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="mechSubInklSensor.svg">
-  <metadata
-     id="metadata609">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1406"
-     inkscape:window-height="851"
-     id="namedview607"
-     showgrid="false"
-     inkscape:zoom="2.193467"
-     inkscape:cx="184.12347"
-     inkscape:cy="50.010265"
-     inkscape:window-x="0"
-     inkscape:window-y="0"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="g6" />
-  <defs
-     id="defs4" />
-  <g
-     fill="none"
-     stroke="black"
-     stroke-width="1"
-     fill-rule="evenodd"
-     stroke-linecap="square"
-     stroke-linejoin="bevel"
-     id="g6">
-    <defs
-       id="defs8">
-      <clipPath
-         id="targetScene">
-        <rect
-           x="0"
-           y="0"
-           width="294"
-           height="120"
-           id="rect11" />
-      </clipPath>
-    </defs>
-    <g
-       clip-path="url(#targetScene)"
-       id="g13"
-       transform="translate(-0.06257604,-0.06257194)">
-      <g
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g19"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g21"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g23"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g25"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:0;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="non-scaling-stroke"
-           d="M 23,4 317,4 317,124 23,124 23,4"
-           id="path27"
-           inkscape:connector-curvature="0"
-           style="fill-rule:evenodd" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g29"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(29,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g31"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(29,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g33"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m -4,-9 7.75,0 0,16.5 L -4,7.5 -4,-9"
-           id="path35"
-           inkscape:connector-curvature="0"
-           style="fill-rule:evenodd" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,29,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g37"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0.25,0,0,0.25,29,66)"
-         font-size="40"
-         font-weight="700"
-         font-style="italic"
-         id="g39"
-         style="font-size:40px;font-style:italic;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-16"
-           y="10"
-           font-size="40"
-           font-weight="700"
-           font-style="italic"
-           id="text41"
-           style="font-size:40px;font-style:italic;font-weight:700;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">i</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,29,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g43"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0.25,0,0,0.25,29,66.5)"
-         font-size="32"
-         font-weight="700"
-         font-style="italic"
-         id="g45"
-         style="font-size:32px;font-style:italic;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-5"
-           y="30"
-           font-size="32"
-           font-weight="700"
-           font-style="italic"
-           id="text47"
-           style="font-size:32px;font-style:italic;font-weight:700;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">L</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,29,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g49"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(29,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g51"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(259,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g53"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(259.25,67.75)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g55"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m -4.25,-6.75 8.5,0 0,11.5 -8.5,0 0,-11.5"
-           id="path57"
-           inkscape:connector-curvature="0"
-           style="fill-rule:evenodd" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,259.25,67.75)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g59"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0.25,0,0,0.25,259.25,65.75)"
-         font-size="40"
-         font-weight="700"
-         font-style="italic"
-         id="g61"
-         style="font-size:40px;font-style:italic;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-17"
-           y="19"
-           font-size="40"
-           font-weight="700"
-           font-style="italic"
-           id="text63"
-           style="font-size:40px;font-style:italic;font-weight:700;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">ω</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,259.25,67.75)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g65"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(259,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g67"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(99,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g69"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(99.25,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g71"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M -7.25,-9 7,-9 7,7.5 l -14.25,0 0,-16.5"
-           id="path73"
-           inkscape:connector-curvature="0"
-           style="fill-rule:evenodd" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,99.25,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g75"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0.25,0,0,0.25,99.25,66)"
-         font-size="40"
-         font-weight="700"
-         font-style="italic"
-         id="g77"
-         style="font-size:40px;font-style:italic;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-29"
-           y="10"
-           font-size="40"
-           font-weight="700"
-           font-style="italic"
-           id="text79"
-           style="font-size:40px;font-style:italic;font-weight:700;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">m</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,99.25,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g81"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0.25,0,0,0.25,99.25,66.5)"
-         font-size="32"
-         font-weight="700"
-         font-style="italic"
-         id="g83"
-         style="font-size:32px;font-style:italic;font-weight:700;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="7"
-           y="30"
-           font-size="32"
-           font-weight="700"
-           font-style="italic"
-           id="text85"
-           style="font-size:32px;font-style:italic;font-weight:700;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">E</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,99.25,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g87"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(99,68)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g89"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g91"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g93"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 20,10 C 20,15.5228 15.5228,20 10,20 4.47715,20 0,15.5228 0,10 0,4.47715 4.47715,0 10,0 15.5228,0 20,4.47715 20,10"
-           id="path95"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g97"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g99"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g101"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-22.5,-3.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g103"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
-        <polyline
-           vector-effect="none"
-           points="148,75 152,75 "
-           id="polyline105"
-           style="fill:none" />
-      </g>
-      <g
-         transform="translate(-22.5,-3.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g107"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
-        <polyline
-           vector-effect="none"
-           points="143,80 147,80 "
-           id="polyline109"
-           style="fill:none" />
-      </g>
-      <g
-         transform="translate(-22.5,-3.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g111"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica">
-        <polyline
-           vector-effect="none"
-           points="145,78 145,82 "
-           id="polyline113"
-           style="fill:none" />
-      </g>
-      <g
-         transform="matrix(0.75,0,0,0.75,-22.5,-3.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g115"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g117"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g119"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g121"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(117.5,66.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g123"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 20,10 C 20,15.5228 15.5228,20 10,20 4.47715,20 0,15.5228 0,10 0,4.47715 4.47715,0 10,0 15.5228,0 20,4.47715 20,10"
-           id="path125"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(117,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g127"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g129"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g131"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 20,0 20,36 0,36 0,0"
-           id="path133"
-           inkscape:connector-curvature="0"
-           style="fill-rule:evenodd" />
-      </g>
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g135"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g137"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g139"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,74)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g141"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,167,74)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g143"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-1.5"
-           y="0"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text145"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">1</text>
-      </g>
-      <g
-         transform="translate(167,74)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g147"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(-22.5,-3.5)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g149"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <polyline
-           vector-effect="none"
-           points="187,80 193,80 "
-           id="polyline151"
-           style="fill:none" />
-      </g>
-      <g
-         transform="translate(167,85)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g153"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,167,85)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g155"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-1.875"
-           y="0"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text157"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">s</text>
-      </g>
-      <g
-         transform="translate(167,85)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g159"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.75,0,0,0.75,167,85)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g161"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g163"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g165"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g167"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(157.5,58.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g169"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 20,0 20,36 0,36 0,0"
-           id="path171"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(157,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g173"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g175"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g177"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m -20.3809,0 40.7618,0 0,12 -40.7618,0 0,-12"
-           id="path179"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,146.619,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g181"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,146.619,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g183"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,146.619,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g185"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="4.5"
-           y="37"
-           font-size="36"
-           font-weight="400"
-           font-style="normal"
-           id="text187"
-           style="font-size:36px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">Integrator</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,146.619,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g189"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g191"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,146.619,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g193"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,146.619,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g195"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(167,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g197"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g199"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g201"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 35,18 0,36 0,0"
-           id="path203"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g205"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g207"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g209"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(208,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g211"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,208,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g213"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-7.125"
-           y="2.25"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text215"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">1/JR</text>
-      </g>
-      <g
-         transform="translate(208,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g217"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.75,0,0,0.75,208,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g219"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g221"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g223"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g225"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(197.5,58.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g227"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 35,18 0,36 0,0"
-           id="path229"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(197,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g231"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(214.5,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g233"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(214.5,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g235"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m -24.002,0 48.004,0 0,22 -48.004,0 0,-22"
-           id="path237"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,190.498,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g239"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,190.498,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g241"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,190.498,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g243"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="47"
-           y="37"
-           font-size="36"
-           font-weight="400"
-           font-style="normal"
-           id="text245"
-           style="font-size:36px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">Rotor </text>
-        <text
-           xml:space="preserve"
-           x="4"
-           y="77"
-           font-size="36"
-           font-weight="400"
-           font-style="normal"
-           id="text247"
-           style="font-size:36px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">inertial load</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,190.498,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g249"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g251"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,190.498,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g253"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,190.498,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g255"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(214.5,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g257"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g259"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g261"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 30,30 0,15 30,0 30,30"
-           id="path263"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g265"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g267"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g269"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(188,31)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g271"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,188,31)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g273"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-4.125"
-           y="2.25"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text275"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">BF</text>
-      </g>
-      <g
-         transform="translate(188,31)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g277"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.75,0,0,0.75,188,31)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g279"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g281"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g283"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g285"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(167.5,16.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g287"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 30,30 0,15 30,0 30,30"
-           id="path289"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(167,16)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g291"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(182,14)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g293"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(182,14)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g295"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m -30.625,-12 61.25,0 0,12 -61.25,0 0,-12"
-           id="path297"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,151.375,2)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g299"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,151.375,2)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g301"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,151.375,2)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g303"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="4"
-           y="37"
-           font-size="36"
-           font-weight="400"
-           font-style="normal"
-           id="text305"
-           style="font-size:36px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">Friction Torque</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,151.375,2)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g307"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g309"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,151.375,2)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g311"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,151.375,2)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g313"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(182,14)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g315"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g317"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g319"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 40,18 0,36 0,0"
-           id="path321"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g323"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g325"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g327"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(60,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g329"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,60,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g331"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-7.125"
-           y="2.25"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text333"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">KME</text>
-      </g>
-      <g
-         transform="translate(60,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g335"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.75,0,0,0.75,60,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g337"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g339"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g341"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g343"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(47.5,58.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g345"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 40,18 0,36 0,0"
-           id="path347"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(47,58)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g349"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(67,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g351"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(67,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g353"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m -27.3789,0 54.7578,0 0,12 -54.7578,0 0,-12"
-           id="path355"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,39.6211,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g357"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,39.6211,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g359"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,39.6211,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g361"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="4"
-           y="37"
-           font-size="36"
-           font-weight="400"
-           font-style="normal"
-           id="text363"
-           style="font-size:36px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">Motor Torque</text>
-      </g>
-      <g
-         transform="matrix(0.25,0,0,0.25,39.6211,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g365"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g367"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,39.6211,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g369"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.25,0,0,0.25,39.6211,96)"
-         font-size="36"
-         font-weight="400"
-         font-style="normal"
-         id="g371"
-         style="font-size:36px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(67,96)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g373"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g375"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g377"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 0,5 c 0,2.76142 2.23858,5 5,5 2.76142,0 5,-2.23858 5,-5 C 10,2.23858 7.76142,0 5,0 2.23858,0 0,2.23858 0,5"
-           id="path379"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g381"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g383"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g385"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(7,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g387"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,7,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g389"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-1.5"
-           y="2.25"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text391"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">1</text>
-      </g>
-      <g
-         transform="translate(7,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g393"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.75,0,0,0.75,7,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g395"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g397"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g399"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g401"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(2.5,71.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g403"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 0,5 c 0,2.76142 2.23858,5 5,5 2.76142,0 5,-2.23858 5,-5 C 10,2.23858 7.76142,0 5,0 2.23858,0 0,2.23858 0,5"
-           id="path405"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(2,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g407"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g409"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g411"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 0,5 c 0,2.76142 2.23858,5 5,5 2.76142,0 5,-2.23858 5,-5 C 10,2.23858 7.76142,0 5,0 2.23858,0 0,2.23858 0,5"
-           id="path413"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g415"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g417"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g419"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(287,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g421"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(1.33333,0,0,1.33333,287,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g423"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial">
-        <text
-           xml:space="preserve"
-           x="-1.5"
-           y="2.25"
-           font-size="6.75"
-           font-weight="400"
-           font-style="normal"
-           id="text425"
-           style="font-size:6.75px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Arial">1</text>
-      </g>
-      <g
-         transform="translate(287,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g427"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="matrix(0.75,0,0,0.75,287,76)"
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g429"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         font-size="6.75"
-         font-weight="400"
-         font-style="normal"
-         id="g431"
-         style="font-size:6.75px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Arial" />
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g433"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g435"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(282.5,71.5)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g437"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 0,5 c 0,2.76142 2.23858,5 5,5 2.76142,0 5,-2.23858 5,-5 C 10,2.23858 7.76142,0 5,0 2.23858,0 0,2.23858 0,5"
-           id="path439"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(282,71)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g441"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g443"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(157,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g445"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path447"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(157,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g449"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g451"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g453"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 160,80 5,0 7,0"
-           id="path455"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g457"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g459"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(197,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g461"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path463"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(197,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g465"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g467"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g469"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 200,80 5,0 7,0"
-           id="path471"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g473"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g475"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(117,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g477"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path479"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(117,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g481"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g483"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g485"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 110,80 22,0"
-           id="path487"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g489"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0,1,-1,0,127,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g491"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(0,1,-1,0,127,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g493"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path495"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="matrix(0,1,-1,0,127,66)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g497"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g499"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g501"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 190,35 -40,0 0,27"
-           id="path503"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g505"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g507"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(282,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g509"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path511"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(282,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g513"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g515"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g517"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 266,80 31,0"
-           id="path519"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g521"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(-1,0,0,-1,197,31)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g523"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="matrix(-1,0,0,-1,197,31)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g525"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path527"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="matrix(-1,0,0,-1,197,31)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g529"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g531"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g533"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 266,80 0,-45 -38,0"
-           id="path535"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g537"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g539"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g541"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 255,80 11,0"
-           id="path543"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g545"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(243,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g547"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(243,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g549"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(243,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g551"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(243,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g553"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 2,0 C 2,1.10457 1.10457,2 0,2 -1.10457,2 -2,1.10457 -2,0 c 0,-1.10457 0.89543,-2 2,-2 1.10457,0 2,0.89543 2,2"
-           id="path555"
-           inkscape:connector-curvature="0"
-           style="fill-rule:evenodd" />
-      </g>
-      <g
-         transform="translate(243,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g557"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g559"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(47,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g561"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:#000000;fill-opacity:1;stroke:none;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="M 0,0 -8,-4 -8,4 0,0"
-           id="path563"
-           inkscape:connector-curvature="0"
-           style="fill-rule:nonzero" />
-      </g>
-      <g
-         transform="translate(47,76)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g565"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g567"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         stroke-miterlimit="2"
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g569"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:2;stroke-opacity:1;font-family:Helvetica">
-        <path
-           vector-effect="none"
-           d="m 35,80 27,0"
-           id="path571"
-           inkscape:connector-curvature="0" />
-      </g>
-      <g
-         transform="translate(-23,-4)"
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g573"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g575"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-      <g
-         font-size="12"
-         font-weight="400"
-         font-style="normal"
-         id="g577"
-         style="font-size:12px;font-style:normal;font-weight:400;fill:none;stroke:#000000;stroke-width:1;stroke-linecap:square;stroke-linejoin:bevel;stroke-opacity:1;font-family:Helvetica" />
-    </g>
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g579" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g581" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g587" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g589" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g591" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g593" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g595" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g601" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g603" />
-    <g
-       fill="none"
-       stroke="#000000"
-       stroke-opacity="1"
-       stroke-width="1"
-       stroke-linecap="square"
-       stroke-linejoin="bevel"
-       transform="matrix(1,0,0,1,0,0)"
-       font-family="Helvetica"
-       font-size="12"
-       font-weight="400"
-       font-style="normal"
-       id="g605" />
-  </g>
+<svg width="135.775mm" height="55.4182mm"
+ viewBox="0 0 294 120"
+ xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  version="1.2" baseProfile="tiny">
+<defs>
+</defs>
+<g fill="none" stroke="black" stroke-width="1" fill-rule="evenodd" stroke-linecap="square" stroke-linejoin="bevel" >
+
+<defs>
+<clipPath id='targetScene'>
+<rect x='0' y='0' width='294' height='120' />
+</clipPath>
+</defs>
+<g clip-path='url(#targetScene)'><g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M0,0 L294,0 L294,120 L0,120 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="0" stroke="none" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M23,4 L317,4 L317,124 L23,124 L23,4"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,29,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,29,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-4,-9 L3.75,-9 L3.75,7.5 L-4,7.5 L-4,-9"/>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,29,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,29,66)"
+font-family="Arial" font-size="40" font-weight="700" font-style="italic" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-16" y="10" font-family="Arial" font-size="40" font-weight="700" font-style="italic" 
+ >i</text>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,29,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,29,66.5)"
+font-family="Arial" font-size="32" font-weight="700" font-style="italic" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-5" y="30" font-family="Arial" font-size="32" font-weight="700" font-style="italic" 
+ >L</text>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,29,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,29,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,259,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,259.25,67.75)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-4.25,-6.75 L4.25,-6.75 L4.25,4.75 L-4.25,4.75 L-4.25,-6.75"/>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,259.25,67.75)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,259.25,65.75)"
+font-family="Arial" font-size="40" font-weight="700" font-style="italic" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-17" y="19" font-family="Arial" font-size="40" font-weight="700" font-style="italic" 
+ >ω</text>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,259.25,67.75)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,259,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,99,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,99.25,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-7.25,-9 L7,-9 L7,7.5 L-7.25,7.5 L-7.25,-9"/>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,99.25,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,99.25,66)"
+font-family="Arial" font-size="40" font-weight="700" font-style="italic" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-29" y="10" font-family="Arial" font-size="40" font-weight="700" font-style="italic" 
+ >m</text>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,99.25,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,99.25,66.5)"
+font-family="Arial" font-size="32" font-weight="700" font-style="italic" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="7" y="30" font-family="Arial" font-size="32" font-weight="700" font-style="italic" 
+ >E</text>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,99.25,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,99,68)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M20,10 C20,15.5228 15.5228,20 10,20 C4.47715,20 0,15.5228 0,10 C0,4.47715 4.47715,0 10,0 C15.5228,0 20,4.47715 20,10 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-22.5,-3.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="148,75 152,75 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-22.5,-3.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="143,80 147,80 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-22.5,-3.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="145,78 145,82 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,-22.5,-3.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,117.5,66.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M20,10 C20,15.5228 15.5228,20 10,20 C4.47715,20 0,15.5228 0,10 C0,4.47715 4.47715,0 10,0 C15.5228,0 20,4.47715 20,10 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M0,0 L20,0 L20,36 L0,36 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,74)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,167,74)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-1.14062" y="0" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >1</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,74)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-22.5,-3.5)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<polyline fill="none" vector-effect="none" points="187,80 193,80 " />
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,85)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,167,85)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-1.42188" y="0" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >s</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,85)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,167,85)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,157.5,58.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M0,0 L20,0 L20,36 L0,36 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="none" transform="matrix(1,0,0,1,167,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-20.3809,0 L20.3809,0 L20.3809,12 L-20.3809,12 L-20.3809,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,146.619,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,146.619,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,146.619,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="4.5" y="37" font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+ >Integrator</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,146.619,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,146.619,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,146.619,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L35,18 L0,36 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,208,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,208,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-5.4375" y="1.71875" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >1/JR</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,208,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,208,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,197.5,58.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L35,18 L0,36 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,214.5,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="none" transform="matrix(1,0,0,1,214.5,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-24.002,0 L24.002,0 L24.002,22 L-24.002,22 L-24.002,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,190.498,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,190.498,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,190.498,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="47" y="37" font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+ >Rotor </text>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="4" y="77" font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+ >inertial load</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,190.498,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,190.498,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,190.498,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,214.5,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M30,30 L0,15 L30,0 L30,30"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,188,31)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,188,31)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-3.14062" y="1.71875" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >BF</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,188,31)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,188,31)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,167.5,16.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M30,30 L0,15 L30,0 L30,30"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,167,16)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,182,14)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="none" transform="matrix(1,0,0,1,182,14)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-30.625,-12 L30.625,-12 L30.625,0 L-30.625,0 L-30.625,-12"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,151.375,2)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,151.375,2)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,151.375,2)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="4" y="37" font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+ >Friction Torque</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,151.375,2)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,151.375,2)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,151.375,2)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,182,14)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L40,18 L0,36 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,60,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,60,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-5.4375" y="1.71875" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >KME</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,60,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,60,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,47.5,58.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L40,18 L0,36 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,58)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,67,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="none" transform="matrix(1,0,0,1,67,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M-27.3789,0 L27.3789,0 L27.3789,12 L-27.3789,12 L-27.3789,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,39.6211,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,39.6211,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,39.6211,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="4" y="37" font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+ >Motor Torque</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,39.6211,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,39.6211,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.25,0,0,0.25,39.6211,96)"
+font-family="Arial" font-size="36" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,67,96)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,5 C0,7.76142 2.23858,10 5,10 C7.76142,10 10,7.76142 10,5 C10,2.23858 7.76142,0 5,0 C2.23858,0 0,2.23858 0,5 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,7,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,7,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-1.14062" y="1.71875" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >1</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,7,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,7,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,2.5,71.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,5 C0,7.76142 2.23858,10 5,10 C7.76142,10 10,7.76142 10,5 C10,2.23858 7.76142,0 5,0 C2.23858,0 0,2.23858 0,5 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,2,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,5 C0,7.76142 2.23858,10 5,10 C7.76142,10 10,7.76142 10,5 C10,2.23858 7.76142,0 5,0 C2.23858,0 0,2.23858 0,5 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,287,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1.74545,0,0,1.74545,287,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+<text fill="#000000" fill-opacity="1" stroke="none" xml:space="preserve" x="-1.14062" y="1.71875" font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+ >1</text>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,287,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(0.572917,0,0,0.572917,287,76)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Arial" font-size="5.15625" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,282.5,71.5)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,5 C0,7.76142 2.23858,10 5,10 C7.76142,10 10,7.76142 10,5 C10,2.23858 7.76142,0 5,0 C2.23858,0 0,2.23858 0,5 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,71)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,157,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,157,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M160,80 L165,80 L172,80"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,282,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,282,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M266,80 L297,80"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M255,80 L266,80"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,243,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,243,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(-1,1.22465e-16,-1.22465e-16,-1,197,31)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(-1,1.22465e-16,-1.22465e-16,-1,197,31)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(-1,1.22465e-16,-1.22465e-16,-1,197,31)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M266,80 L266,35 L228,35"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,243,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,243,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M2,0 C2,1.10457 1.10457,2 0,2 C-1.10457,2 -2,1.10457 -2,0 C-2,-1.10457 -1.10457,-2 0,-2 C1.10457,-2 2,-1.10457 2,0 "/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,243,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,117,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,117,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M110,80 L132,80"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(6.12323e-17,1,-1,6.12323e-17,127,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(6.12323e-17,1,-1,6.12323e-17,127,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(6.12323e-17,1,-1,6.12323e-17,127,66)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M190,35 L150,35 L150,62"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,47,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,47,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M35,80 L62,80"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="1" stroke="none" transform="matrix(1,0,0,1,197,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="nonzero" d="M0,0 L-8,-4 L-8,4 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,197,76)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="2" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="none" fill-rule="evenodd" d="M200,80 L205,80 L212,80"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,-23,-4)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+</g><g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="0" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M0,0 L294,0 L294,120 L0,120 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="#000000" fill-opacity="0" stroke="none" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+<path vector-effect="non-scaling-stroke" fill-rule="evenodd" d="M0,0 L1,0 L1,1 L0,1 L0,0"/>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+
+<g fill="none" stroke="#000000" stroke-opacity="1" stroke-width="1" stroke-linecap="square" stroke-linejoin="bevel" transform="matrix(1,0,0,1,0,0)"
+font-family="Helvetica" font-size="9.16667" font-weight="400" font-style="normal" 
+>
+</g>
+</g>
 </svg>
