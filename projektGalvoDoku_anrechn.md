@@ -196,6 +196,39 @@ Dieser Aussage entsprechend soll hier aus dem formellen Anforderungskatalog (ver
 
 ![abstractSystemC](./abstractSystemC.svg "Erste Unterteilung") 
 
+
+## Formelzeichen und Einheiten ##
+
+### Zeitabhängige Größen ###
+
+| Bezeichnung  | Formelzeichen                                                                        | Einheit | <span style="color: #bbb">engl. Bezeichnung</span>           |
+| ---                   | ---                                                                                  | ---     | ---                                                          |
+| Spulenstrom           | _i_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [A]     | <span style="color: #bbb"> Coil current              </span> |
+| Elek. Drehmoment      | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">EL</sub>  | [Nm]    | <span style="color: #bbb"> Electrical torque         </span> |
+| Reibungsmoment        | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm]    | <span style="color: #bbb"> dynamic friction torque   </span> |
+| Torsionsfedermoment   | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm]    | <span style="color: #bbb"> Torsion bar torque        </span> |
+| Drehimpuls            | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;">ω</sub>   | [Nm.s]  | <span style="color: #bbb"> Angular momentum          </span> |
+| Winkelposition        | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">rad</sub> | [rad]   | <span style="color: #bbb"> Angular position          </span> |
+|                       | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">deg</sub> | [°]     | <span style="color: #bbb">                           </span> |
+| Winkelgeschwindigkeit | _ω_                                                                                  | [rad/s] | <span style="color: #bbb"> Angular velocity          </span> |
+| Stromregler Eingang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccI</sub> | [V]     | <span style="color: #bbb"> Current controller input  </span> |
+| Stromregler Ausgang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccO</sub> | [V]     | <span style="color: #bbb"> Current controller output </span> |
+| Spannung Messshunt    | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">sh</sub>  | [V]     | <span style="color: #bbb"> Shunt voltage             </span> |
+
+
+### Konstanten ###
+
+| Bezeichnung                   | Formelzeichen                                                                        | Einheit    | <span style="color: #bbb">engl. Bezeichnung</span>          |
+| ---                           | ---                                                                                  | ---        | ---                                                         |
+| Wicklungsinduktivität         | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;"></sub>    | [H]        | <span style="color: #bbb">coil inductance</span>            |
+| Wicklungswiderstand           | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [Ω]        | <span style="color: #bbb">coil resistance</span>            |
+| Messwiderstand                | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">SH</sub>  | [Ω]        | <span style="color: #bbb">current shunt resistance</span>   |
+| Massenträgheit Rotor          | _J_<sub style="background: #fff; font-style: italic; font-weight: normal;">R</sub>   | [kg.m²]    | <span style="color: #bbb">rotor inertia</span>              |
+| EMF-Konstante                 | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">EMF</sub> | [V.s/rad]  | <span style="color: #bbb">back EMF const.</span>            |
+| Torsionsfederdrehmomentkonst. | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm/rad]   | <span style="color: #bbb">torsion bar torque const.</span>  |
+| Reibungsdrehmomentkonst.      | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm.s/rad] | <span style="color: #bbb">friction torque const.</span>     |
+| el. mag. Drehmomentkonst.     | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">MT</sub>  | [Nm/A]     | <span style="color: #bbb">el. magnetic torque const.</span> |
+
 ## Aktoren ##
 Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, wurden Galvanometer als Aktor-Baugruppen eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt [Vorarbeit](#vorarbeit) angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt [Generisches Modell](#generisches-modell) beschrieben. 
 
@@ -231,6 +264,9 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Maximum Coil Temperature         | 110°C              |             |      |
 | Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
 
+<span style="font-size: 80%">$ \;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm $
+$ \;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2 $</span>
+
 | Position Detector                |                                         |      |
 | ---                              | ---                                     |      |
 | Linearity                        | 99.9%, Minimum, over 40 degrees         |      |
@@ -239,9 +275,6 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Repeatability, Short Term        | 8 microradians                          |      |
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
-
-Drehmoment: 1.0 __dyne-cm__ =^ __1e-7 Nm__
-Massenträgheit: 1.0 __gm.cm^2__ =^ __1e-7 kg.m^2__
 
 ### Generisches Modell ###
 In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf die hier genutzte Modell-Art, so muss ein Modell entstehen dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ oder _"Galvanometer"_ die für das zu erzeugende Modell spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll ein entsprechendes Modell erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
@@ -261,7 +294,7 @@ $$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t)
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 $$ {\scr L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ 
 Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom:
-$$ G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$  Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./mdlPngs/realInductor.svg "Motorinduktivität")</center> Das elektrische Drehmoment $M_E$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{ME}$, somit gilt $M_E(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
+$$ G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$  Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./mdlPngs/realInductor.svg "Motorinduktivität")</center> Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{ME}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
 
 #### Back-EMF ####
 Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{ME}$ und $K_{EMF}$ identisch.
@@ -278,19 +311,31 @@ $$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot 
 $$ E_{kin} = \frac{1}{2} \cdot m \cdot v^2 
 \;\;\;\Rightarrow\color{red}{???}\Leftrightarrow\;\;\; 
 E_{rot} = \frac{1}{2} \cdot J_x \cdot ω^2 $$
-Das mechanische Subsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Für den Zusammenhang zwischen dem Trägheitsmoments des Rotors (Rotor Inertia $J_R$: Rotorwelle, rotierender Permanentmagnet, Sensorscheibe, Spiegel), der mechanischen Reibung (Mechanic Friction $B_F$: Kugellager, Positionssensor) und dem elektrisch generierten Drehmoment $M_E$, kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
+Das mechanische Subsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde nachfolgende Deklaration erstellt.
+
+- mechanischeS Trägheitsmoment $J_R$ (engl.: Moment of inertia)
+    + Rotorwelle
+    + Spiegel
+    + rotierender Permanentmagnet
+    + Sensorscheibe(n)
+- mechanischeS Reibungsmoment $B_F$ (engl.: Mechanic Friction)
+    + Kugellager
+    + Positionssensor
+- elektrisches Drehmoment $M_{EL}$, kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
+
+$$ ω(t)=L \cdot \frac{\partial~φ}{\partial~t} $$
 
 <center>*Kräftegleichgewicht* 
 __*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__</center>
-$$ M_E(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
+$$ M_{EL}(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
 \;\;\;\Leftrightarrow\;\;\;
-\frac{M_E(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) 
+\frac{M_{EL}(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) 
 \\\\ \phantom{.} \\\\
-{\scr L}\Bigg(\frac{M_E(t)}{J_R}\Bigg) = \frac{M_E(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{B_F}{J_R} \cdot Ω(s) 
+{\scr L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{B_F}{J_R} \cdot Ω(s) 
 \\\\ \phantom{.} \\\\ 
-G_{ME}(s) = \frac{Ω(s)}{M_E(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{B_F}{J_R}}
+G_{ME}(s) = \frac{Ω(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{B_F}{J_R}}
 \;\;\;\;\;\; für\;\;ω(0)=0
-$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_E(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
+$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
 <center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
 
 ##### Torsionsfeder #####
@@ -325,34 +370,6 @@ Um den integrierten Positionssensor der _6860_ Galvoscanner zu modellieren, wird
 # VerifizierundeModellmöglich? #
 # Modellparametebestimmeuntesten #
 # Schwerpunkt #
-# Formelzeichen und Einheiten #
-
-| Größe                            | Formelzeichen | Einheit |
-| ---                              | ---           | ---     |
-| electrical torque, gen. by coils | Te            | [Nm]    |
-| coil current                     | Ic            | [A]     |
-| rotor dynamic friction torque    | Tfr           | [Nm]    |
-| torsion bar torque               | Trb           | [Nm]    |
-| angular momentum                 | Tw            | [Nm.s]  |
-| angular velocity                 | w             | [rad/s] |
-| angular position                 | yrad          | [rad]   |
-| angular position                 | ydeg          | [°]     |
-| current controller input         | Ucci          | [V]     |
-| current controller output        | Ucco          | [V]     |
-| shunt voltage                    | Ush           | [V]     |
-
-| Größe                      | Formelzeichen                                                                     | Einheit    |
-| ---                        | ---                                                                               | ---        |
-| coil inductance            | L<sub style="background: #fff; font-style: normal; font-weight: normal;">c</sub>  | [H]        |
-| coil resistance            | R<sub style="background: #fff; font-style: normal; font-weight: normal;">c</sub>  | [Ω]   |
-| current shunt resistance   | R<sub style="background: #fff; font-style: normal; font-weight: normal;">SH</sub> | [Ω]   |
-| rotor inertia              | J<sub style="background: #fff; font-style: normal; font-weight: normal;">R</sub>  | [kg.m²]    |
-| torsion bar torque const.  | K<sub style="background: #fff; font-style: normal; font-weight: normal;">TB</sub> | [Nm/rad]   |
-| back EMF const.            | K<sub style="background: #fff; font-style: normal; font-weight: normal;">BM</sub> | [V.s/rad]  |
-| friction torque const.     | K<sub style="background: #fff; font-style: normal; font-weight: normal;">FR</sub> | [Nm.s/rad] |
-| el. magnetic torque const. | K<sub style="background: #fff; font-style: normal; font-weight: normal;">MT</sub> | [Nm/A]     |
-
-
 # Maths #
 $$ F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \omega t}dt$$
 \\[F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \omega t}dt\\]
