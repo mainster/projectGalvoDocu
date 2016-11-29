@@ -315,23 +315,28 @@ $$ u_{EMF}(t) = K_{EMF} \cdot ω(t) $$
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
 $$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} $$ <center>![mechSubA](./mdlPngs/mechSubA.svg "Mechanisches Subsystem")</center>
 
-#### Mechanik ####
-<!-- <img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="253px" style="float:right; margin: 0em 0em 0em 1em;"/> -->Eine bewegte Masse speichert _kinetische Energie_. Dabei steigt die kinetische Energie quadratisch mit der Geschwindigkeit der bewegten Masse. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] des Körpers und dem Qadrat seiner Winkelgeschwindigkeit $ω(t)$. 
+#### Mechanik/Kinematik ####
+Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende  Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. 
+vergl. [[Iserm:2008, p.61]][@Iserm:2008]
+
+Die Massenbilanz gilt für Prozesse
+mit bewegter Materie, die Energiebilanz für Prozesse mit allen Energiearten und die
+Impulsbilanz für Prozesse mit bewegten Massen.
+> Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum] 
+
+Auch in der technischen Mechanik stützen sich viele mathematische Ansätze für dynamische Vorgänge auf Bilanzgleichungen diverser physikalischer Größen (vergl. idealer ). 
+Eine bewegte Masse speichert _kinetische Energie_. Diese steigt dabei quadratisch mit der Geschwindigkeit der bewegten Masse. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitstensors][@Jx][^fnInertialmoment] des Körpers und dem Qadrat seiner Winkelgeschwindigkeit $ ω(t) $. 
 $$ E_{kin} = \frac{1}{2} \cdot m \cdot v^2 
 \;\;\;\Rightarrow\color{red}{???}\Leftrightarrow\;\;\; 
 E_{rot} = \frac{1}{2} \cdot J_x \cdot ω^2 $$
-<span style="color: red; background-color: yellow">... Oder besser über Drehimpuls? Schön wäre ein: ... (Ein einzelner, linear unabhängiger Energiespeicher). </span>
 
-> Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum] 
+Für den Fall 
 
 Der Drehimpulsvektor $ \vec{L} $ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. 
 
-$$ \begin{align}
-\vec{L} &= \vec{r} \times \vec{p} \nonumber \\\
-&= \vec{r} \times \left(m\cdot\vec{v}\right) \label{eqRmv}
-\end{align} $$
+$$ \vec{L} = \vec{r} \times \vec{p} = \vec{r} \times \left( m\cdot\vec{v}\right) \label{eqRmv} $$
 
-Durch die zeitliche Ableitung $ \frac{\partial}{\partial\,t} \vec{L} $ erhält man den Drehmomentvektor $ \vec{M} $. Da sowohl Ortsvektor $ \vec{r}(t) $ wie auch der Geschwindigkeitsvektor $ \vec{v}(t) $ des Impulses Funktionen in _t_  darstellen, muss Gleichung \eqref{eqRmv} über die Produktregel differenziert werden:  
+Durch die zeitliche Ableitung $ \dot{\vec{L}} $ erhält man den Drehmomentvektor $ \vec{M} $. Da sowohl Ortsvektor $ \vec{r}(t) $ wie auch der Geschwindigkeitsvektor $ \vec{v}(t) $ des Impulses $ \vec{p}(t) $ Funktionen in _t_  darstellen, muss Gleichung \eqref{eqRmv} über die Produktregel differenziert werden:  
 
 $$ \begin{align}
 \frac{\partial}{\partial\,t} \vec{L} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) \nonumber \\\ 
@@ -470,6 +475,8 @@ $$ F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \om
 
 [@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
 
+[@Iserm:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
+
 [@Jx]: #citeTrägheitsmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
 
 <a name="citeMDA"/> </a>
@@ -477,6 +484,9 @@ __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software
 
 <a name="citeProbst"/> </a>
 __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;*__
+
+<a name="citeIserm"/> </a>
+__[Iserm:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
 
 ---
 
