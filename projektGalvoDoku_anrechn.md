@@ -32,7 +32,7 @@ Der Besuch einer mehrtägigen Schulungsveranstaltung der Firma _ANSYS_[^fnWikiAn
 <a name="refExplainFEMSol"/> </a>
 >Unter Zuhilfenahme der FEM-Simulationsumgebung "Maxwell" und "Simplorer", sollen Reglerparameter anhand eines nichtlinearen Modells des Galvanometer-Motors optimiert werden. Die Sollwert-Vorgaben für die XY-Winkelpositionen werden vorerst als einfache Lookup-Tabellen direkt auf dem Mikrocontroller erzeugt, welcher auch die diskreten Reglerfunktionen übernehmen soll. 
 
->Sollte das geplante System soweit funktionieren, dass mit dem Scanner einfache geometrische Figuren erzeugt werden können (Kreise, Quadrate, Achter, ...), könnte eine PC-Software zur Erzeugung von Pixelkoordinaten inkl. Dunkeltastung des Lasers als Erweiterung angedacht             werden.
+>Sollte das geplante System soweit funktionieren, dass mit dem Scanner einfache geometrische Figuren erzeugt werden können (Kreise, Quadrate, Achter, ...), könnte eine PC-Software zur Erzeugung von Pixelkoordinaten inkl. Dunkeltastung des Lasers als Erweiterung angedacht werden.
     
 ![GalvosXY](./galvanometerMaxwell.png "Anordnung der Aktoren in XY-Scanner Konfiguration")
 
@@ -171,6 +171,37 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 
 Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten einer Softwarearchitektur beschränkt. Auch im Hardwarebereich kann ein Unternehmen durch frühzeitig eingeleitete Abstraktionsprozesse, u. U. eine _Gleichförmigkeit_ zu geplanten Folgeprojekten erkennen und das Teilsystem _"von Heute"_ bereits zugunsten eines Teilsystems _"von Morgen"_ optimieren.
 
+# Formelzeichen und Einheiten #
+
+## Zeitabhängige Größen ##
+
+| Bezeichnung           | Formelzeichen                                                                        | Einheit | <span style="color: #bbb">engl. Bezeichnung</span>               |
+| ---                   | ---                                                                                  | ---     | ---                                                              |
+| Spulenstrom           | _i_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [A]     | <span style="color: #bbb"> Coil current              </span>     |
+| Elek. Drehmoment      | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">EL</sub>  | [Nm]    | <span style="color: #bbb"> Electrical torque         </span>     |
+| Reibungsmoment        | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm]    | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
+| Torsions<span style="color: red; background-color: yellow">feder</span>moment   | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm]    | <span style="color: #bbb"> Torsion bar torque        </span>     |
+| Drehimpuls            | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;">ω</sub>   | [Nm.s]  | <span style="color: #bbb"> Angular momentum          </span>     |
+| Winkelposition        | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">rad</sub> | [rad]   | <span style="color: #bbb"> Angular position          </span>     |
+|                       | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">deg</sub> | [°]     | <span style="color: #bbb">                           </span>     |
+| Winkelgeschwindigkeit | _ω_                                                                                  | [rad/s] | <span style="color: #bbb"> Angular velocity          </span>     |
+| Stromregler Eingang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccI</sub> | [V]     | <span style="color: #bbb"> Current controller input  </span>     |
+| Stromregler Ausgang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccO</sub> | [V]     | <span style="color: #bbb"> Current controller output </span>     |
+| Spannung Messshunt    | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">sh</sub>  | [V]     | <span style="color: #bbb"> Shunt voltage             </span>     |
+
+## Konstanten ##
+
+| Bezeichnung                   | Formelzeichen                                                                        | Einheit    | <span style="color: #bbb">engl. Bezeichnung</span>          |
+| ---                           | ---                                                                                  | ---        | ---                                                         |
+| Wicklungsinduktivität         | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;"></sub>    | [H]        | <span style="color: #bbb">Coil inductance</span>            |
+| Wicklungswiderstand           | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [Ω]        | <span style="color: #bbb">Coil resistance</span>            |
+| Messwiderstand                | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">SH</sub>  | [Ω]        | <span style="color: #bbb">Current shunt resistance</span>   |
+| Massenträgheit d. Rotors          | _J_<sub style="background: #fff; font-style: italic; font-weight: normal;">R</sub>   | [kg.m²]    | <span style="color: #bbb">Rotor inertia</span>              |
+| EMF-Konstante                 | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">EMF</sub> | [V.s/rad]  | <span style="color: #bbb">Back EMF const.</span>            |
+| Torsionsfederkonstante | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm/rad]   | <span style="color: #bbb">Torsion bar torque const.</span>  |
+| Reibungskonstante      | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm.s/rad] | <span style="color: #bbb">Friction torque const.</span>     |
+| El. Drehmomentkonstante     | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">EL</sub>  | [Nm/A]     | <span style="color: #bbb">El. magnetic torque const.</span> |
+
 # Projektziel #
 Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die Aktoren (Spiegelgalvanometer der Firma Cambridge) sind als gegeben zu betrachten (Zukaufteil). <img src="./galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" sein so dass zumindest einfache geometrische Figuren auf einen hellen Hintergrund projiziert werden können. Die Regelung der Aktoren soll diskret realisiert und auf einem Mikrocontroller STM32F429i implementiert werden. Die Pixel-Koordinaten (Sollwerte) werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
 
@@ -196,44 +227,11 @@ Dieser Aussage entsprechend soll hier aus dem formellen Anforderungskatalog (ver
 
 ![abstractSystemC](./abstractSystemC.svg "Erste Unterteilung") 
 
-
-## Formelzeichen und Einheiten ##
-
-### Zeitabhängige Größen ###
-
-| Bezeichnung  | Formelzeichen                                                                        | Einheit | <span style="color: #bbb">engl. Bezeichnung</span>           |
-| ---                   | ---                                                                                  | ---     | ---                                                          |
-| Spulenstrom           | _i_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [A]     | <span style="color: #bbb"> Coil current              </span> |
-| Elek. Drehmoment      | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">EL</sub>  | [Nm]    | <span style="color: #bbb"> Electrical torque         </span> |
-| Reibungsmoment        | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm]    | <span style="color: #bbb"> dynamic friction torque   </span> |
-| Torsionsfedermoment   | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm]    | <span style="color: #bbb"> Torsion bar torque        </span> |
-| Drehimpuls            | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;">ω</sub>   | [Nm.s]  | <span style="color: #bbb"> Angular momentum          </span> |
-| Winkelposition        | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">rad</sub> | [rad]   | <span style="color: #bbb"> Angular position          </span> |
-|                       | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">deg</sub> | [°]     | <span style="color: #bbb">                           </span> |
-| Winkelgeschwindigkeit | _ω_                                                                                  | [rad/s] | <span style="color: #bbb"> Angular velocity          </span> |
-| Stromregler Eingang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccI</sub> | [V]     | <span style="color: #bbb"> Current controller input  </span> |
-| Stromregler Ausgang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccO</sub> | [V]     | <span style="color: #bbb"> Current controller output </span> |
-| Spannung Messshunt    | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">sh</sub>  | [V]     | <span style="color: #bbb"> Shunt voltage             </span> |
-
-
-### Konstanten ###
-
-| Bezeichnung                   | Formelzeichen                                                                        | Einheit    | <span style="color: #bbb">engl. Bezeichnung</span>          |
-| ---                           | ---                                                                                  | ---        | ---                                                         |
-| Wicklungsinduktivität         | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;"></sub>    | [H]        | <span style="color: #bbb">coil inductance</span>            |
-| Wicklungswiderstand           | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [Ω]        | <span style="color: #bbb">coil resistance</span>            |
-| Messwiderstand                | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">SH</sub>  | [Ω]        | <span style="color: #bbb">current shunt resistance</span>   |
-| Massenträgheit Rotor          | _J_<sub style="background: #fff; font-style: italic; font-weight: normal;">R</sub>   | [kg.m²]    | <span style="color: #bbb">rotor inertia</span>              |
-| EMF-Konstante                 | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">EMF</sub> | [V.s/rad]  | <span style="color: #bbb">back EMF const.</span>            |
-| Torsionsfederdrehmomentkonst. | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm/rad]   | <span style="color: #bbb">torsion bar torque const.</span>  |
-| Reibungsdrehmomentkonst.      | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm.s/rad] | <span style="color: #bbb">friction torque const.</span>     |
-| el. mag. Drehmomentkonst.     | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">MT</sub>  | [Nm/A]     | <span style="color: #bbb">el. magnetic torque const.</span> |
-
 ## Aktoren ##
-Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, wurden Galvanometer als Aktor-Baugruppen eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt [Vorarbeit](#vorarbeit) angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt [Generisches Modell](#generisches-modell) beschrieben. 
+Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, wurden Galvanometer als Aktor-Baugruppen eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt [Vorarbeit](#vorarbeit) angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt [generisches Modell](#generisches-modell) beschrieben. 
 
 ### Klassifizierung ###
-Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in Nm/s. Im statischen Betrieb gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
+Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $ Nm/s $. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
 
 Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flußdichte des Erregermagnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten _"Moving Magnet Galvanometer"_ auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfelds ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von +-20° entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $ cos(20°\pi/180°)\approx 0.94 $ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren), erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
 
@@ -242,32 +240,31 @@ Der vollständigkeit halber sollen an dieser Stelle einige paralleln zur Unterkl
 ### Herstellerspezifikation ###
 Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge Technology_][cambridgeTech] handelt es sich um optische Scannereinheiten (Serie 6860) vom Typ _"Moving Magnet"_ mit integriertem Positionssensor, welcher auf Basis variabler Kapazitäten arbeitet. Die vom Hersteller liebevoll unter [__Veteran Galvo Motors__][veteranGalvo] kategorisierten Aktoren gehören zwar nicht mehr zu den aktuellen Produkten von _Cambridge Technology_, sind jedoch hervorragend geeignet für das hier dokumentierte Projektvorhaben. 
 
-Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.
+Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.<br>
 <a name="refTableElectric"> </a>
 
-| Electrical Specifications      |                              |                |      |
-| ---                            | ---                          | ---            | ...  |
-| Coil Resistance                | 1.5Ω                         |                | ±10% |
-| Coil Inductance                | 160µH                        |                | ±10% |
-| Back EMF Voltage               | 0.17mV/degree/sec            | 9.74mV/rad/sec | ±10% |
-| RMS Current                    | 4.6A @ T_case=50°C, Max      |                |      |
-| Peak Current                   | 25A, Max                     |                |      |
-| Small Angle Step Response Time | 0.5ms (inertia matched load) |                |      |
+| Electrical Specifications         | Symbol                                                                               | Value                           |              |      |
+| ---                               | ---                                                                                  | ---                             | ...          | ...  |
+| Coil Inductance                   | <center>_L_<sub style="background: #fff; font-weight: normal;"></sub></center>       | 160µH                           |              | ±10% |
+| Coil Resistance                   | <center>_R_<sub style="background: #fff; font-weight: normal;">L</sub></center>      | 1.5Ω                            |              | ±10% |
+| Back-EMF const.                   | <center>_K_<sub style="background: #fff; font-weight: normal;">EMF</sub></center>    | 0.17mV/degree/sec               | 9.74mV/rad/s | ±10% |
+| RMS Current                       | <center>_I_<sub style="background: #fff; font-weight: normal;">L-RMS</sub></center>  | 4.6A @ T_case=50°C              |              | Max. |
+| Peak Current                      | <center>_I_<sub style="background: #fff; font-weight: normal;">L-PEAK</sub></center> | 25A                             |              | Max. |
+| Small Angle Step<br>Response Time |                                                                                      | 0.5ms (inertia<br>matched load) |              |      |
 
 <a name="refTableMechanic"> </a>
 
-| Mechanical Specifications        |                    |             |      |
-| ---                              | ---                | ---         | ...  |
-| Rated Angular Excursion          | 40°                |             |      |
-| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
-| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
-| Maximum Coil Temperature         | 110°C              |             |      |
-| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
+| Mechanical Specifications           | Symbol                                                            | Value              |                 |      |
+| ---                                 | ---                                                               | ---                | ---             | ...  |
+| Angular Excursion                   | _Δφ_<sub style="background: #fff; font-weight: normal;">Max</sub> | 40°                | 0.698 1/s |      |
+| Rotor Inertia                       | _J_<sub style="background: #fff; font-weight: normal;">R</sub>    | 0.6 gm.cm^2        | 6e-8 kg.m^2     | ±10% |
+| Torque Constant                     | _K_<sub style="background: #fff; font-weight: normal;">EL</sub>   | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A     | ±10% |
+| Maximum Coil Temperature            |                                                                   | 110°C              |                 |      |
+| Thermal Resistance<br>(Coil - Case) |                                                                   | 1.5°C/Watt, Max    |                 |      |
 
-<span style="font-size: 80%">$ \;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm $
-$ \;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2 $</span>
+<a name="refTablePositionDetect"> </a>
 
-| Position Detector                |                                         |      |
+| Position Detector                | Value                                   |      |
 | ---                              | ---                                     |      |
 | Linearity                        | 99.9%, Minimum, over 40 degrees         |      |
 | Scale Drift                      | 50PPM/°C, Maximum                       |      |
@@ -275,6 +272,10 @@ $ \;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2 $</span>
 | Repeatability, Short Term        | 8 microradians                          |      |
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
+
+<span style="font-size: 80%">$ \;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm $
+$ \;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2 $</span>
+<br>
 
 ### Generisches Modell ###
 In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf die hier genutzte Modell-Art, so muss ein Modell entstehen dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ oder _"Galvanometer"_ die für das zu erzeugende Modell spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll ein entsprechendes Modell erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
@@ -286,21 +287,29 @@ Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Ph
 
 ### Modell ###
 Das fertige Modell des Galvomotors setzt sich aus elektrischen und mechanischen Teilsystemen zusammen. Als Stellgröße der Regelstrecke bzw. der Aktoren wurde beim ersten Modellierungsversuch die __Eingangsspannung__ der Statorinduktivität verwendet. In differentieller Form ist die Zweipolbeziehung einer idealen Induktivität gegeben durch:
-$$ u(t)=L \cdot \frac{\partial~i_L}{\partial~t}$$
+$$ u(t)=L \cdot \frac{\partial~i_L}{\partial~t} $$
 Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
 $$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t) 
 \;\;\;\Leftrightarrow\;\;\;
 \frac{u_M(t)}{L} = \frac{\partial~i_L}{\partial~t} + \frac{R_L}{L} \cdot i_L(t) $$ 
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 $$ {\scr L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ 
-Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom:
-$$ G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$  Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./mdlPngs/realInductor.svg "Motorinduktivität")</center> Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{ME}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{ME}$ was durch einen weiteren _Gain-Block_ im Blockschaltbild ausgedrückt wird.
+Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom: 
+
+$$ G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$  Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./mdlPngs/realInductor.svg "Motorinduktivität")</center> 
+#### Elektrisch erzeugtes Drehmoment ####
+Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{ME}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{ME}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
 #### Back-EMF ####
 Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{ME}$ und $K_{EMF}$ identisch.
 
 In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
-$$ 0.17mV/degree/sec = 9.74\times 10^{-3} V/rad/s = 9.74\times 10^{-3} Nm/A $$
+
+$$ \begin{align} 
+0.17mV/degree/sec &= 9.74\times 10^{-3} V/rad/s \nonumber \\\
+&= 9.74\times 10^{-3} Nm/A \nonumber
+\end{align} $$
+
 was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit 
 $$ u_{EMF}(t) = K_{EMF} \cdot ω(t) $$ 
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
@@ -311,29 +320,66 @@ $$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot 
 $$ E_{kin} = \frac{1}{2} \cdot m \cdot v^2 
 \;\;\;\Rightarrow\color{red}{???}\Leftrightarrow\;\;\; 
 E_{rot} = \frac{1}{2} \cdot J_x \cdot ω^2 $$
-Das mechanische Subsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde nachfolgende Deklaration erstellt.
+<span style="color: red; background-color: yellow">... Oder besser über Drehimpuls? Schön wäre ein: ... (Ein einzelner, linear unabhängiger Energiespeicher). </span>
 
-- mechanischeS Trägheitsmoment $J_R$ (engl.: Moment of inertia)
-    + Rotorwelle
-    + Spiegel
-    + rotierender Permanentmagnet
-    + Sensorscheibe(n)
-- mechanischeS Reibungsmoment $B_F$ (engl.: Mechanic Friction)
+> Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum] 
+
+Der Drehimpulsvektor $ \vec{L} $ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. 
+
+$$ \begin{align}
+\vec{L} &= \vec{r} \times \vec{p} \nonumber \\\
+&= \vec{r} \times \left(m\cdot\vec{v}\right) \label{eqRmv}
+\end{align} $$
+
+Durch die zeitliche Ableitung $ \frac{\partial}{\partial\,t} \vec{L} $ erhält man den Drehmomentvektor $ \vec{M} $. Da sowohl Ortsvektor $ \vec{r}(t) $ wie auch der Geschwindigkeitsvektor $ \vec{v}(t) $ des Impulses Funktionen in _t_  darstellen, muss Gleichung \eqref{eqRmv} über die Produktregel differenziert werden:  
+
+$$ \begin{align}
+\frac{\partial}{\partial\,t} \vec{L} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) \nonumber \\\ 
+\dot{\vec{L}} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) + \vec{r} \times \left( m \cdot \dot{\vec{v}} \right) \nonumber
+\end{align} $$
+
+---
+__Parameterableitung eines Vektors mit konstanter Länge__ 
+Ist der Betrag eines Vektors $ \vec{r}(x) $ als konstant zu betrachten, so steht dieser stehts senkrecht zu seiner Ableitung:    
+
+$$ \begin{align}
+\vec{r} = const \;\;\;&\Rightarrow\;\;\; \left| \vec{r} \right| = const \;\;\;\Rightarrow\;\;\; \sqrt{\vec{r} \cdot \vec{r}} = const \nonumber \\\ &\Rightarrow\;\;\; \vec{r} \cdot \vec{r} = const \label{eqrr}
+\end{align} $$
+
+Unter Anwendung der Produktregel wird die erste Ableitung von \eqref{eqrr} nach $ x $ gebildet:
+
+$$ \frac{\partial\,\vec{r}}{\partial\,x} \cdot \vec{r} \;+\; \vec{r} \cdot \frac{\partial\,\vec{r}}{\partial\,x} = 2 \cdot \left( \vec{r} \cdot \frac{\partial}{\partial\,x}\vec{r} \right) = 0 $$
+
+Hieraus folgt, dass der Vektor senkrecht zu seiner Ableitung stehen muss.
+$$ \vec{L} = J \cdot \vec{\omega} $$
+
+Das mechanische Subsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. <span style="color: red; background-color: yellow">Sie beinhalted zusätzlich alle Näherungen und Annahmen die bisher getroffen wurden!</span>
+
+- elektrisches Drehmoment $ \bf{M_{EL}(t)} $
+    + Erreger-Magnetfeld gilt als konstant bezüglich Intensität ($ \vec{B}, \vec{H} $) und Rotorposition (siehe [Klassifizierung](#klassifizierung)) 
+    + ist im Bereich $ \pm \frac{1}{2}\cdot Δφ_{Max} = \pm 20° $ proportional zum Spulenstrom $ i_L(t) $
+    + Proportionalitätskonstante $ K_{EL} $ wurde vom Hersteller spezifiziert 
+- Trägheitsmoment setzt sich zusammen aus den Trägheitsmomenten von  
+    + Rotorwelle, Rotormagnet, Sensorscheibe und Spiegel
+    + sein Trägheitstensor $ \bf{J_R} $ ist eine Konstante und nicht von der Rotorgeometrie abhängig $ \Rightarrow J_R \neq f(x,r) $
+    + wurde vom Hersteller spezifiziert
+- mechanische Reibung $ \bf{M_{FR}} $, verursacht von
     + Kugellager
     + Positionssensor
-- elektrisches Drehmoment $M_{EL}$, kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
+
+kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
 
 $$ ω(t)=L \cdot \frac{\partial~φ}{\partial~t} $$
 
 <center>*Kräftegleichgewicht* 
 __*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__</center>
-$$ M_{EL}(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + B_F \cdot ω(t) 
+$$ M_{EL}(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + K_{FR} \cdot ω(t) 
 \;\;\;\Leftrightarrow\;\;\;
-\frac{M_{EL}(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{B_F}{J_R} \cdot ω(t) 
+\frac{M_{EL}(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{K_{FR}}{J_R} \cdot ω(t) 
 \\\\ \phantom{.} \\\\
-{\scr L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{B_F}{J_R} \cdot Ω(s) 
+{\scr L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{K_{FR}}{J_R} \cdot Ω(s) 
 \\\\ \phantom{.} \\\\ 
-G_{ME}(s) = \frac{Ω(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{B_F}{J_R}}
+G_{ME}(s) = \frac{Ω(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{K_{FR}}{J_R}}
 \;\;\;\;\;\; für\;\;ω(0)=0
 $$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
 <center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
@@ -418,6 +464,8 @@ $$ F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \om
 
 [^fnInertialmoment]: __*Trägheitsmoment*__ https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment
 
+[^fnAngularMomentum]: __*Drehimpuls und Drehmoment*__ https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls
+
 [@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
 
 [@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
@@ -456,3 +504,48 @@ __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik 
 [motorModeling]: http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling "http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling"
 [laserfx]: http://www.laserfx.com/Works/Works3S.html "How Laser Shows Work - Scanning System"
 [leifiDrehbewegung]: http://www.leifiphysik.de/mechanik/drehbewegungen "Drehbewegungen"
+
+# Important Notes #
+- MathJax:
+    + Math Settings:
+        * Zoom Trigger: No Zoom
+        * Zoom Factor: 200%
+        * Math Renderer: 
+            - Common HTML
+            - Fast Preview
+        * Scale all Math: 90%
+    + Accessibillity
+
+# Trash #
+<a name="refTableElectric"> </a>
+
+| Elektrische Spezifikationen    |                              |                |      |
+| ---                            | ---                          | ---            | ...  |
+| Coil Resistance                | 1.5Ω                         |                | ±10% |
+| Coil Inductance                | 160µH                        |                | ±10% |
+| Back EMF Voltage               | 0.17mV/degree/sec            | 9.74mV/rad/sec | ±10% |
+| RMS Current                    | 4.6A @ T_case=50°C, Max      |                |      |
+| Peak Current                   | 25A, Max                     |                |      |
+| Small Angle Step Response Time | 0.5ms (inertia matched load) |                |      |
+
+<a name="refTableMechanic"> </a>
+
+| Mechanical Specifications        |                    |             |      |
+| ---                              | ---                | ---         | ...  |
+| Rated Angular Excursion          | 40°                |             |      |
+| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
+| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
+| Maximum Coil Temperature         | 110°C              |             |      |
+| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
+
+<span style="font-size: 80%">$ \;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm $
+$ \;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2 $</span>
+
+| Position Detector                |                                         |      |
+| ---                              | ---                                     |      |
+| Linearity                        | 99.9%, Minimum, over 40 degrees         |      |
+| Scale Drift                      | 50PPM/°C, Maximum                       |      |
+| Zero Drift                       | 15 microradians/°C, Maximum             |      |
+| Repeatability, Short Term        | 8 microradians                          |      |
+| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
+| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
