@@ -175,32 +175,33 @@ Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten 
 
 ## Zeitabhängige Größen ##
 
-| Bezeichnung           | Formelzeichen                                                                        | Einheit | <span style="color: #bbb">engl. Bezeichnung</span>               |
-| ---                   | ---                                                                                  | ---     | ---                                                              |
-| Spulenstrom           | _i_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [A]     | <span style="color: #bbb"> Coil current              </span>     |
-| Elek. Drehmoment      | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">EL</sub>  | [Nm]    | <span style="color: #bbb"> Electrical torque         </span>     |
-| Reibungsmoment        | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm]    | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
-| Torsions<span style="color: red; background-color: yellow">feder</span>moment   | _M_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm]    | <span style="color: #bbb"> Torsion bar torque        </span>     |
-| Drehimpuls            | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;">ω</sub>   | [Nm.s]  | <span style="color: #bbb"> Angular momentum          </span>     |
-| Winkelposition        | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">rad</sub> | [rad]   | <span style="color: #bbb"> Angular position          </span>     |
-|                       | _φ_<sub style="background: #fff; font-style: italic; font-weight: normal;">deg</sub> | [°]     | <span style="color: #bbb">                           </span>     |
-| Winkelgeschwindigkeit | _ω_                                                                                  | [rad/s] | <span style="color: #bbb"> Angular velocity          </span>     |
-| Stromregler Eingang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccI</sub> | [V]     | <span style="color: #bbb"> Current controller input  </span>     |
-| Stromregler Ausgang   | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">ccO</sub> | [V]     | <span style="color: #bbb"> Current controller output </span>     |
-| Spannung Messshunt    | _U_<sub style="background: #fff; font-style: italic; font-weight: normal;">sh</sub>  | [V]     | <span style="color: #bbb"> Shunt voltage             </span>     |
+| Bezeichnung           | Symbol      | Einheit | <span style="color: #bbb">engl. Bezeichnung</span>               |
+| --------------------- |:------------------:|:-------:| ---------------------------------------------------------------- |
+| Spulenstrom           | _i_<sub>L</sub>    | [A]     | <span style="color: #bbb"> Coil current              </span>     |
+| Elek. Drehmoment      | _M_<sub>EL</sub>   | [Nm]    | <span style="color: #bbb"> Electrical torque         </span>     |
+| Reibungsmoment        | _M_<sub>FR</sub>   | [Nm]    | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
+| Torsionsfedermoment   | _M_<sub>TB</sub>   | [Nm]    | <span style="color: #bbb"> Torsion bar torque        </span>     |
+| Drehimpuls            | _L_<sub>ω</sub>    | [Nm.s]  | <span style="color: #bbb"> Angular momentum          </span>     |
+| Winkelposition        | _φ_<sub>rad</sub>  | [rad]   | <span style="color: #bbb"> Angular position          </span>     |
+|                       | _φ_<sub>deg</sub>  | [°]     | <span style="color: #bbb">                           </span>     |
+| Winkelgeschwindigkeit | _ω_                | [rad/s] | <span style="color: #bbb"> Angular velocity          </span>     |
+| Stromregler Eingang   | _U_<sub>ccI</sub>  | [V]     | <span style="color: #bbb"> Current controller input  </span>     |
+| Stromregler Ausgang   | _U_<sub>ccO</sub>  | [V]     | <span style="color: #bbb"> Current controller output </span>     |
+| Spannung Messshunt    | _U_<sub>sh</sub>   | [V]     | <span style="color: #bbb"> Shunt voltage             </span>     |
 
 ## Konstanten ##
 
-| Bezeichnung                   | Formelzeichen                                                                        | Einheit    | <span style="color: #bbb">engl. Bezeichnung</span>          |
-| ---                           | ---                                                                                  | ---        | ---                                                         |
-| Wicklungsinduktivität         | _L_<sub style="background: #fff; font-style: italic; font-weight: normal;"></sub>    | [H]        | <span style="color: #bbb">Coil inductance</span>            |
-| Wicklungswiderstand           | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">L</sub>   | [Ω]        | <span style="color: #bbb">Coil resistance</span>            |
-| Messwiderstand                | _R_<sub style="background: #fff; font-style: italic; font-weight: normal;">SH</sub>  | [Ω]        | <span style="color: #bbb">Current shunt resistance</span>   |
-| Massenträgheit d. Rotors          | _J_<sub style="background: #fff; font-style: italic; font-weight: normal;">R</sub>   | [kg.m²]    | <span style="color: #bbb">Rotor inertia</span>              |
-| EMF-Konstante                 | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">EMF</sub> | [V.s/rad]  | <span style="color: #bbb">Back EMF const.</span>            |
-| Torsionsfederkonstante | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">TB</sub>  | [Nm/rad]   | <span style="color: #bbb">Torsion bar torque const.</span>  |
-| Reibungskonstante      | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">FR</sub>  | [Nm.s/rad] | <span style="color: #bbb">Friction torque const.</span>     |
-| El. Drehmomentkonstante     | _K_<sub style="background: #fff; font-style: italic; font-weight: normal;">EL</sub>  | [Nm/A]     | <span style="color: #bbb">El. magnetic torque const.</span> |
+| Bezeichnung              | Symbol              | Einheit       | <span style="color: #bbb">engl. Bezeichnung</span>          |
+| ------------------------ |:-------------------:|:-------------:| ----------------------------------------------------------- |
+| Wicklungsinduktivität    | _L_<sub></sub>      | [H]           | <span style="color: #bbb">Coil inductance</span>            |
+| Wicklungswiderstand      | _R_<sub>L</sub>     | [Ω]           | <span style="color: #bbb">Coil resistance</span>            |
+| Messwiderstand           | _R_<sub>SH</sub>    | [Ω]           | <span style="color: #bbb">Current shunt resistance</span>   |
+| Massenträgheit d. Rotors | _J_<sub>R</sub>     | [kg.m²]       | <span style="color: #bbb">Rotor inertia</span>              |
+| EMF-Konstante            | _K_<sub>EMF</sub>   | [V.s/rad]     | <span style="color: #bbb">Back EMF const.</span>            |
+| Torsionsfederkonstante   | _K_<sub>TB</sub>    | [Nm/rad]      | <span style="color: #bbb">Torsion bar torque const.</span>  |
+| Reibungskonstante        | _K_<sub>FR</sub>    | [Nm.s/rad]    | <span style="color: #bbb">Friction torque const.</span>     |
+| El. Drehmomentkonstante  | _K_<sub>EL</sub>    | [Nm/A]        | <span style="color: #bbb">El. magnetic torque const.</span> |
+
 
 # Projektziel #
 Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die Aktoren (Spiegelgalvanometer der Firma Cambridge) sind als gegeben zu betrachten (Zukaufteil). <img src="./galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" sein so dass zumindest einfache geometrische Figuren auf einen hellen Hintergrund projiziert werden können. Die Regelung der Aktoren soll diskret realisiert und auf einem Mikrocontroller STM32F429i implementiert werden. Die Pixel-Koordinaten (Sollwerte) werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
@@ -243,24 +244,24 @@ Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge
 Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.<br>
 <a name="refTableElectric"> </a>
 
-| Electrical Specifications         | Symbol                                                                               | Value                           |              |      |
-| ---                               | ---                                                                                  | ---                             | ...          | ...  |
-| Coil Inductance                   | <center>_L_<sub style="background: #fff; font-weight: normal;"></sub></center>       | 160µH                           |              | ±10% |
-| Coil Resistance                   | <center>_R_<sub style="background: #fff; font-weight: normal;">L</sub></center>      | 1.5Ω                            |              | ±10% |
-| Back-EMF const.                   | <center>_K_<sub style="background: #fff; font-weight: normal;">EMF</sub></center>    | 0.17mV/degree/sec               | 9.74mV/rad/s | ±10% |
-| RMS Current                       | <center>_I_<sub style="background: #fff; font-weight: normal;">L-RMS</sub></center>  | 4.6A @ T_case=50°C              |              | Max. |
-| Peak Current                      | <center>_I_<sub style="background: #fff; font-weight: normal;">L-PEAK</sub></center> | 25A                             |              | Max. |
-| Small Angle Step<br>Response Time |                                                                                      | 0.5ms (inertia<br>matched load) |              |      |
+| Electrical Specifications         | Symbol               | Value                           |              |      |
+|-----------------------------------|----------------------|---------------------------------|--------------|------|
+| Coil Inductance                   | _L_<sub></sub>       | 160µH                           |              | ±10% |
+| Coil Resistance                   | _R_<sub>L</sub>      | 1.5Ω                            |              | ±10% |
+| Back-EMF const.                   | _K_<sub>EMF</sub>    | 0.17mV/degree/sec               | 9.74mV/rad/s | ±10% |
+| RMS Current                       | _I_<sub>L-RMS</sub>  | 4.6A @ T_case=50°C              |              | Max. |
+| Peak Current                      | _I_<sub>L-PEAK</sub> | 25A                             |              | Max. |
+| Small Angle Step<br>Response Time |                      | 0.5ms (inertia<br>matched load) |              |      |
 
 <a name="refTableMechanic"> </a>
 
-| Mechanical Specifications           | Symbol                                                            | Value              |                 |      |
-| ---                                 | ---                                                               | ---                | ---             | ...  |
-| Angular Excursion                   | _Δφ_<sub style="background: #fff; font-weight: normal;">Max</sub> | 40°                | 0.698 1/s |      |
-| Rotor Inertia                       | _J_<sub style="background: #fff; font-weight: normal;">R</sub>    | 0.6 gm.cm^2        | 6e-8 kg.m^2     | ±10% |
-| Torque Constant                     | _K_<sub style="background: #fff; font-weight: normal;">EL</sub>   | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A     | ±10% |
-| Maximum Coil Temperature            |                                                                   | 110°C              |                 |      |
-| Thermal Resistance<br>(Coil - Case) |                                                                   | 1.5°C/Watt, Max    |                 |      |
+| Mechanical Specifications           | Symbol             | Value              |             |      |
+| ---                                 | ---                | ---                | ---         | ...  |
+| Angular Excursion                   | _Δφ_<sub>Max</sub> | 40°                | 0.698 rad/s |      |
+| Rotor Inertia                       | _J_<sub>R</sub>    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
+| Torque Constant                     | _K_<sub>EL</sub>   | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
+| Maximum Coil Temperature            |                    | 110°C              |             |      |
+| Thermal Resistance<br>(Coil - Case) |                    | 1.5°C/Watt, Max    |             |      |
 
 <a name="refTablePositionDetect"> </a>
 
@@ -315,79 +316,24 @@ $$ u_{EMF}(t) = K_{EMF} \cdot ω(t) $$
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
 $$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} $$ <center>![mechSubA](./mdlPngs/mechSubA.svg "Mechanisches Subsystem")</center>
 
-#### Mechanik/Kinematik ####
-Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende  Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. 
-vergl. [[Iserm:2008, p.61]][@Iserm:2008]
+#### Mechanik ####
+Eine bewegte Masse speichert _kinetische Energie_ $ E_{kin} $. Diese steigt dabei quadratisch zur Geschwindigkeit der bewegten Masse an. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $ E_{rot} $. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $ J_R $ des Körpers und dem Qadrat seiner Winkelgeschwindigkeit $ ω(t) $.
+ 
+Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhalted zusätzlich Näherungen und Annahmen die bisher getroffen wurden
 
-Die Massenbilanz gilt für Prozesse
-mit bewegter Materie, die Energiebilanz für Prozesse mit allen Energiearten und die
-Impulsbilanz für Prozesse mit bewegten Massen.
-> Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum] 
-
-Auch in der technischen Mechanik stützen sich viele mathematische Ansätze für dynamische Vorgänge auf Bilanzgleichungen diverser physikalischer Größen (vergl. idealer ). 
-Eine bewegte Masse speichert _kinetische Energie_. Diese steigt dabei quadratisch mit der Geschwindigkeit der bewegten Masse. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitstensors][@Jx][^fnInertialmoment] des Körpers und dem Qadrat seiner Winkelgeschwindigkeit $ ω(t) $. 
-$$ E_{kin} = \frac{1}{2} \cdot m \cdot v^2 
-\;\;\;\Rightarrow\color{red}{???}\Leftrightarrow\;\;\; 
-E_{rot} = \frac{1}{2} \cdot J_x \cdot ω^2 $$
-
-Für den Fall 
-
-Der Drehimpulsvektor $ \vec{L} $ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. 
-
-$$ \vec{L} = \vec{r} \times \vec{p} = \vec{r} \times \left( m\cdot\vec{v}\right) \label{eqRmv} $$
-
-Durch die zeitliche Ableitung $ \dot{\vec{L}} $ erhält man den Drehmomentvektor $ \vec{M} $. Da sowohl Ortsvektor $ \vec{r}(t) $ wie auch der Geschwindigkeitsvektor $ \vec{v}(t) $ des Impulses $ \vec{p}(t) $ Funktionen in _t_  darstellen, muss Gleichung \eqref{eqRmv} über die Produktregel differenziert werden:  
-
-$$ \begin{align}
-\frac{\partial}{\partial\,t} \vec{L} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) \nonumber \\\ 
-\dot{\vec{L}} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) + \vec{r} \times \left( m \cdot \dot{\vec{v}} \right) \nonumber
-\end{align} $$
-
----
-__Parameterableitung eines Vektors mit konstanter Länge__ 
-Ist der Betrag eines Vektors $ \vec{r}(x) $ als konstant zu betrachten, so steht dieser stehts senkrecht zu seiner Ableitung:    
-
-$$ \begin{align}
-\vec{r} = const \;\;\;&\Rightarrow\;\;\; \left| \vec{r} \right| = const \;\;\;\Rightarrow\;\;\; \sqrt{\vec{r} \cdot \vec{r}} = const \nonumber \\\ &\Rightarrow\;\;\; \vec{r} \cdot \vec{r} = const \label{eqrr}
-\end{align} $$
-
-Unter Anwendung der Produktregel wird die erste Ableitung von \eqref{eqrr} nach $ x $ gebildet:
-
-$$ \frac{\partial\,\vec{r}}{\partial\,x} \cdot \vec{r} \;+\; \vec{r} \cdot \frac{\partial\,\vec{r}}{\partial\,x} = 2 \cdot \left( \vec{r} \cdot \frac{\partial}{\partial\,x}\vec{r} \right) = 0 $$
-
-Hieraus folgt, dass der Vektor senkrecht zu seiner Ableitung stehen muss.
-$$ \vec{L} = J \cdot \vec{\omega} $$
-
-Das mechanische Subsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. <span style="color: red; background-color: yellow">Sie beinhalted zusätzlich alle Näherungen und Annahmen die bisher getroffen wurden!</span>
-
-- elektrisches Drehmoment $ \bf{M_{EL}(t)} $
-    + Erreger-Magnetfeld gilt als konstant bezüglich Intensität ($ \vec{B}, \vec{H} $) und Rotorposition (siehe [Klassifizierung](#klassifizierung)) 
-    + ist im Bereich $ \pm \frac{1}{2}\cdot Δφ_{Max} = \pm 20° $ proportional zum Spulenstrom $ i_L(t) $
-    + Proportionalitätskonstante $ K_{EL} $ wurde vom Hersteller spezifiziert 
-- Trägheitsmoment setzt sich zusammen aus den Trägheitsmomenten von  
+- elektrisches Drehmoment $ \bf{M_{EL}} $
+    + Erregerfeld gilt als konstant bezüglich Intensität ($ \vec{B}, \vec{H} $) und Winkelpos. (siehe [Klassifizierung](#klassifizierung)) 
+    + $ M_{EL} $ist im Bereich $ \pm \frac{1}{2}\cdot \Delta\varphi_{Max} = \pm 20° $ proportional zum Spulenstrom $ i_L(t) $
+    + Herstellerangaben zur Proportionalitätskonstante $ K_{EL} $ vorhanden 
+- Trägheitsmoment $ \bf{J_R} $ (alt. Inertialmoment) des rotiernden Körpers setzt sich zusammen aus 
     + Rotorwelle, Rotormagnet, Sensorscheibe und Spiegel
-    + sein Trägheitstensor $ \bf{J_R} $ ist eine Konstante und nicht von der Rotorgeometrie abhängig $ \Rightarrow J_R \neq f(x,r) $
-    + wurde vom Hersteller spezifiziert
-- mechanische Reibung $ \bf{M_{FR}} $, verursacht von
-    + Kugellager
-    + Positionssensor
-
-kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
-
-$$ ω(t)=L \cdot \frac{\partial~φ}{\partial~t} $$
-
-<center>*Kräftegleichgewicht* 
-__*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__</center>
-$$ M_{EL}(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + K_{FR} \cdot ω(t) 
-\;\;\;\Leftrightarrow\;\;\;
-\frac{M_{EL}(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{K_{FR}}{J_R} \cdot ω(t) 
-\\\\ \phantom{.} \\\\
-{\scr L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{K_{FR}}{J_R} \cdot Ω(s) 
-\\\\ \phantom{.} \\\\ 
-G_{ME}(s) = \frac{Ω(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{K_{FR}}{J_R}}
-\;\;\;\;\;\; für\;\;ω(0)=0
-$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
-<center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
+    + Die Drehachse wird als fest und die Rotormasse als homogen verteilt, angenommen 
+        * Trägheitstensor darf in die skalare Größe des Trägheitsmoments überführt werden
+    + Herstellerangabe zum skalaren Trägheitsmoment $ J_R $ vorhanden 
+- mechanische Reibung $ \bf{M_{FR}} $, verursacht durch Reibungsverluste in
+    + Kugellager, Positionssensor, keine Herstellerangaben
+- Torsionsfederdrehmoment / Rückstellmoment $ \bf{M_{TB}} $  
+    + siehe [Torsionsfeder](#torsionsfeder)
 
 ##### Torsionsfeder #####
 Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine zuverlässigen Quellen gefunden werden. Die Vermutung, dass die Rotorwelle mechanisch mit einer Torsionsfeder verbunden ist, soll im folgenden kurz begründet werden:
@@ -399,6 +345,56 @@ Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine z
     - 
 2. Quelle: Mechanisches Funktionsprinzip von Effektlasern auf [www.laserfx.com][laserfx]
 4. Elektrische "Erdung" des Rotorkörpers um elektrostatischen Effekten vorzubeugen
+
+##### Translation und Rotation #####
+Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iserm:2008, p.123]][@Iserm:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
+<center>
+
+| Translation                         | in eine Richtung       | Rotation                                 | um eine Achse           |
+|:----------------------------------- |:----------------------:|:---------------------------------------- |:-----------------------:|
+| $ s $                               | Weg                    | $ \varphi $                              | Winkel                  |
+| $ v=\dot s $                        | Geschwindigkeit        | $ \omega = \dot\varphi $                 | Winkelgeschwindigkeit   |
+| $ a=\dot v = \ddot s$               | Beschleunigung         | $ \dot\omega = \ddot\varphi $            | Winkelbeschleunigung    |
+| $ m $                               | Masse                  | $ J, \theta $                            | Trägheitsmoment         |
+| $ \vec F $                          | Kraft in Wegrichtung   | $ \vec M $                               | Moment um Drehachse     |
+| $ \vec I = m \cdot \vec v$          | Impuls                 | $ \vec L = J \cdot \vec\omega $          | Drehimpuls              |
+| $ \vec F = m \cdot \vec a $         | Kraeftesatz            | $ \vec M = J \cdot \dot\omega $          | Momentensatz            |
+| $ E_k = \frac 1 2\; m \cdot v^2 $   | kinetische Energie     | $ E_k = \frac 1 2\; J \cdot \omega^2 $   | kinetische Energie      |
+| $ W = \int F ds $                   | Arbeit                 | $ W = \int M d\varphi $                  | Arbeit                  |
+| $ P = F \cdot v $                   | Leistung               | $ P = M \cdot \omega $                   | Leistung                |
+
+</center>
+
+Das aufgestellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $ t \ge 0 $ identisch mit der Energie zum Zeitpunkt $ t=0 $ übereinstimmt. 
+
+#### Energiebilanz in allgemeiner Form ####
+<img src="./energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, ...) kein Energiestrom, so unterliegt das Gebilde dem *Energieerhaltungssatz* wobei innerhalb der Grenenzen $ N $ _verschiedene Energiearten_ $ E_i $ vorhanden sein _können_ (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische _Umformung der mechanischen Größen_ $ m, \vec{v}, \vec{J} $ und $ \vec{ω} $ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.
+
+$$ \frac{1}{2} \cdot m \cdot v^2 = E_{kin}
+\;\;\;\widehat{=}\;\;\;
+E_{rot} = \frac{1}{2} \cdot J_x \cdot ω^2 $$
+
+Aus dem Energieerhaltungssatz kann das *Kräftegleichgewicht* abgeleitet werden. Wegen den analogen Gesetzmäßigkeiten zwischen translatorischer und rotatorischer Bewegung, kann vom Kräftegleichgewicht eines bewegten Körpers auf ein Drehmomentgleichgewicht geschlossen werden.
+
+#### Impulsbilanz ####
+Wirkt auf einen Körper der Masse $ m $ und dem Impuls $ \vec I = m \cdot \vec v $ eine äußere Kraft $ \vec F $, so gilt bei translatorischer Bewegung und $ m=const $ entsprechend dem [Impulserhaltungssatz][@Impulserhaltung][^fnImpulserhaltung] folgende Bilanzgleichung: 
+$$ \eqlbl{\frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t)}{eqImpulsbil} $$
+
+Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. Analog wird die Impulsbilanz für rotiernde Körper mit der als skalar betrachteten Massenträgheit $ J $ und bestehendem Drehimpuls $ \vec L_s = J \cdot \vec \omega $ aufgestellt. Gleichung \eqref{eqDrehimpulsbil} wird folgerichtig als __Drehimpulsbilanzgleichung__ bezeichnet.
+
+$$ \eqlbl{\frac{\partial}{\partial\,t}\,\vec L_s = J \cdot \frac{\partial}{\partial\,t}\,\vec \omega(t) = \vec M(t)}{eqDrehimpulsbil} $$
+
+__*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__
+$$ M_{EL}(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + K_{FR} \cdot ω(t) 
+\;\;\;\Leftrightarrow\;\;\;
+\frac{M_{EL}(t)}{J_R} = \frac{\partial~ω}{\partial~t} + \frac{K_{FR}}{J_R} \cdot ω(t) 
+\\\\ \phantom{.} \\\\
+{\scr L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot Ω(s)-ω(0) + \frac{K_{FR}}{J_R} \cdot Ω(s) 
+\\\\ \phantom{.} \\\\ 
+G_{ME}(s) = \frac{Ω(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{K_{FR}}{J_R}}
+\;\;\;\;\;\; für\;\;ω(0)=0
+$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
+<center>![mechSubInklSensor](./mdlPngs/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
 
 #### Positionssensor ####
 Die Winkelposition der Rotorwelle wird mittels einer variablen Kapazität gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer 1.6MHz Trägerschwingung aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
@@ -467,9 +463,12 @@ $$ F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \om
 
 [^fnGalvoScanlab]: __*Galvanometer-Scanner*__ http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner
 
-[^fnInertialmoment]: __*Trägheitsmoment*__ https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment
+[^fnInertialmoment]: __*Trägheitsmoment*__ https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment   <a name="citeInertialmoment"/> </a>
 
 [^fnAngularMomentum]: __*Drehimpuls und Drehmoment*__ https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls
+
+[^fnImpulserhaltung]: __*Impulserhaltungssatz*__ https://de.wikipedia.org/wiki/Impulserhaltungssatz   <a name="citeImpulserhaltung"/> </a>
+
 
 [@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
 
@@ -477,7 +476,9 @@ $$ F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \om
 
 [@Iserm:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
 
-[@Jx]: #citeTrägheitsmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
+[@Jx]: #citeInertialmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
+
+[@Impulserhaltung]: #citeImpulserhaltung "Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat."
 
 <a name="citeMDA"/> </a>
 __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
@@ -488,13 +489,14 @@ __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik 
 <a name="citeIserm"/> </a>
 __[Iserm:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
 
+
+
 ---
 
 [wikiAnsys]: https://de.wikipedia.org/wiki/ANSYS_(Software) "ANSYS (Software)"
 [wikiSysth]: https://de.wikipedia.org/wiki/Systemtheorie_(Ingenieurwissenschaften) "Systemtheorie (Ingenieurwissenschaften)"
 [wikiVarCap]: https://de.wikipedia.org/wiki/Datei:Differential-Varko.svg "Variabler Drehkondensator (differentiell)"
 [wikiReuse]: https://en.wikipedia.org/wiki/Reusability "Reusability (Computer science and software engineering)"
-[wikiJx]: https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;"
 [AnsMaxwell]: http://www.ansys.com/Products/Electronics/ANSYS-Maxwell "Products/Electronics: "Maxwell""
 [AnsSymplor]: http://www.ansys.com/it-IT/Products/Systems/ANSYS-Simplorer "Products/Systems: "Simplorer""
 [RoyGooglebook]: https://books.google.de/books/about/Verification_and_Validation_in_Scientifi.html?id=7d26zLEJ1FUC&redir_esc=y "Online book resource"
@@ -559,3 +561,47 @@ $ \;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2 $</span>
 | Repeatability, Short Term        | 8 microradians                          |      |
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
+
+<p style="margin: 0em 18em 0em 9em; background: -webkit-linear-gradient(top left, #ccc 20%, #ccc 40%, rgba(250, 250, 250, 0) 100%);"> 
+</p>
+
+kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
+
+$$ ω(t)=L \cdot \frac{\partial~φ}{\partial~t} $$
+
+
+$$ \vec{L} = \vec{r} \times \vec{p} = \vec{r} \times \left( m\cdot\vec{v}\right) \label{eqRmv} $$
+
+Durch die zeitliche Ableitung $ \dot{\vec{L}} $ erhält man den Drehmomentvektor $ \vec{M} $. Da sowohl Ortsvektor $ \vec{r}(t) $ wie auch der Geschwindigkeitsvektor $ \vec{v}(t) $ des Impulses $ \vec{p}(t) $ Funktionen in _t_  darstellen, muss Gleichung \eqref{eqRmv} über die Produktregel differenziert werden:  
+
+$$ \begin{align}
+\frac{\partial}{\partial\,t} \vec{L} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) \nonumber \\\ 
+\dot{\vec{L}} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) + \vec{r} \times \left( m \cdot \dot{\vec{v}} \right) \nonumber
+\end{align} $$
+
+<!-- > Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum]  -->
+
+---
+__Parameterableitung eines Vektors mit konstanter Länge__ 
+Ist der Betrag eines Vektors $ \vec{r}(x) $ als konstant zu betrachten, so steht dieser stehts senkrecht zu seiner Ableitung:    
+
+$$ \begin{align}
+\vec{r} = const \;\;\;&\Rightarrow\;\;\; \left| \vec{r} \right| = const \;\;\;\Rightarrow\;\;\; \sqrt{\vec{r} \cdot \vec{r}} = const \nonumber \\\ &\Rightarrow\;\;\; \vec{r} \cdot \vec{r} = const \label{eqrr}
+\end{align} $$
+
+Unter Anwendung der Produktregel wird die erste Ableitung von \eqref{eqrr} nach $ x $ gebildet:
+
+$$ \frac{\partial\,\vec{r}}{\partial\,x} \cdot \vec{r} \;+\; \vec{r} \cdot \frac{\partial\,\vec{r}}{\partial\,x} = 2 \cdot \left( \vec{r} \cdot \frac{\partial}{\partial\,x}\vec{r} \right) = 0 $$
+
+Hieraus folgt, dass der Vektor senkrecht zu seiner Ableitung stehen muss.
+$$ \vec{L} = J \cdot \vec{\omega} $$
+
+
+
+<img src="./energiebilanzDeriv.svg" title="Energiebilanz eines beliebigen Energiespeichers" align="rigth" height="138x" style="float:right; margin: 0em 0em 0em .5em;"/>
+Die im Rahmen dieser Arbeit relevanten,  Erhaltungssätze 
+Für den Fall 
+Der Drehimpulsvektor $ \vec{L} $ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. 
+
+Auch in der technischen Mechanik stützen sich viele mathematische Ansätze der Dynamik auf Bilanzgleichungen diverser physikalischer Größen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $ t \ge 0 $ identisch mit der Energie zum Zeitpunkt $ t=0 $ übereinstimmt. In diesem Fall bestimmt die _Anfangsbedingung_ das Energieniveau des Systems. 
+<p style="margin-top: 2em; background-color: yellow; padding: 1em"> Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende, aber auch vollkommen unspezifische Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. </p><p style="text-align: right; margin-top: -1em; margin-bottom: 2.5em"> vergl. [[Iserm:2008, p.61]][@Iserm:2008]</p>
