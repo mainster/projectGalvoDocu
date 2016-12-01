@@ -131,9 +131,9 @@ verbales Modell
 
 Unter Modellbildung (Modellierung) versteht man den Prozess, von einem System
 ein Modell zu erstellen. Hierzu gehören folgende Schritte:
-1. Identifizierung der Systemgrenzen ❀ Black-Box-Modell
-2. Identifizierung der Untersysteme und ihrer Beziehungen ❀ Strukturmodell
-3. Definition von Relationen zwischen Variablen ❀ Verhaltensmodell
+1. Identifizierung der Systemgrenzen     Black-Box-Modell
+2. Identifizierung der Untersysteme und ihrer Beziehungen     Strukturmodell
+3. Definition von Relationen zwischen Variablen     Verhaltensmodell
 MK:III-21 Modeling Concepts © STEIN 2000-2015
 Modellbildung
 Ablauf der Top-Down-Modellbildung: Abstrakte Modelle werden auf weniger
@@ -347,7 +347,7 @@ Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine z
 4. Elektrische "Erdung" des Rotorkörpers um elektrostatischen Effekten vorzubeugen
 
 ##### Translation und Rotation #####
-Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iserm:2008, p.123]][@Iserm:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
+Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
 <center>
 
 | Translation                         | in eine Richtung       | Rotation                                 | um eine Achse           |
@@ -376,7 +376,7 @@ E_{rot} = \frac{1}{2} \cdot J_x \cdot ω^2 $$
 
 Aus dem Energieerhaltungssatz kann das *Kräftegleichgewicht* abgeleitet werden. Wegen den analogen Gesetzmäßigkeiten zwischen translatorischer und rotatorischer Bewegung, kann vom Kräftegleichgewicht eines bewegten Körpers auf ein Drehmomentgleichgewicht geschlossen werden.
 
-#### Impulsbilanz ####
+#### Impulsbilanzgleichung ####
 Wirkt auf einen Körper der Masse $ m $ und dem Impuls $ \vec I = m \cdot \vec v $ eine äußere Kraft $ \vec F $, so gilt bei translatorischer Bewegung und $ m=const $ entsprechend dem [Impulserhaltungssatz][@Impulserhaltung][^fnImpulserhaltung] folgende Bilanzgleichung: 
 $$ \eqlbl{\frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t)}{eqImpulsbil} $$
 
@@ -384,6 +384,7 @@ Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. 
 
 $$ \eqlbl{\frac{\partial}{\partial\,t}\,\vec L_s = J \cdot \frac{\partial}{\partial\,t}\,\vec \omega(t) = \vec M(t)}{eqDrehimpulsbil} $$
 
+#### Mechanisches Teilsystem
 __*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__
 $$ M_{EL}(t) = J_R \cdot \frac{\partial~ω}{\partial~t} + K_{FR} \cdot ω(t) 
 \;\;\;\Leftrightarrow\;\;\;
@@ -474,7 +475,7 @@ $$ F(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} f(t) \, e^{ - i \om
 
 [@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
 
-[@Iserm:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
+[@Iser:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
 
 [@Jx]: #citeInertialmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
 
@@ -487,7 +488,7 @@ __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software
 __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;*__
 
 <a name="citeIserm"/> </a>
-__[Iserm:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
+__[Iser:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
 
 
 
@@ -604,4 +605,4 @@ Für den Fall
 Der Drehimpulsvektor $ \vec{L} $ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. 
 
 Auch in der technischen Mechanik stützen sich viele mathematische Ansätze der Dynamik auf Bilanzgleichungen diverser physikalischer Größen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $ t \ge 0 $ identisch mit der Energie zum Zeitpunkt $ t=0 $ übereinstimmt. In diesem Fall bestimmt die _Anfangsbedingung_ das Energieniveau des Systems. 
-<p style="margin-top: 2em; background-color: yellow; padding: 1em"> Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende, aber auch vollkommen unspezifische Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. </p><p style="text-align: right; margin-top: -1em; margin-bottom: 2.5em"> vergl. [[Iserm:2008, p.61]][@Iserm:2008]</p>
+<p style="margin-top: 2em; background-color: yellow; padding: 1em"> Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende, aber auch vollkommen unspezifische Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. </p><p style="text-align: right; margin-top: -1em; margin-bottom: 2.5em"> vergl. [[Iser:2008, 61]][@Iser:2008]</p>
