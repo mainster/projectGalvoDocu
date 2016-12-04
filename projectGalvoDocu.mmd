@@ -1,17 +1,87 @@
----
-header-includes:
-  - \usepackage{mathrsfs}
-
----
-
 Title:  Projekt Galvo-Scanner  
 Author: Del Basso, Manuel  
 Date:   WHZ, November, 2016  
 
 Projekt __Galvo-Scanner__
 =========================== 
-
 [TOC]
+
+<!-- - Einleitung
+- Vorarbeit
+    - Ursprüngliche Motivation
+    - Fertigungsproblematik
+    - Industriell gefertigte Aktoren
+- Projektziel
+
+- Terminologie
+    - Galvanometer*
+    - System
+    - Modell
+        - Beispiel
+    - Modellbildung
+
+- Formelzeichen und Einheiten
+    - Zeitabhängige Größen
+    - Konstanten
+
+- Modellbildungsprozess
+    - Generisches Modell
+        - Mathematische Zusammenhänge
+            - Translation und Rotation
+            - Energiebilanz in allgemeiner Form
+            - Impulsbilanzgleichung
+
+    - Aktoren
+        - Klassifizierung
+        - Herstellerspezifikation
+        - Elektrisches Teilsystemen
+            - Back-EMF
+            - Elektrisch generiertes Drehmoment
+        - Mechanik
+            - Lastmoment
+            - Mechanisches Teilsystem
+            - Positionssensor
+        - Problematik der Sättigung
+            - Testsignale, keine Sprungantwort etc.
+
+    - Stellglied / Leistungsteil
+
+    - Signalkonditionierung
+
+- Angaben zur Systemdynamik
+    - Spezifikationen des Gesamtsystems
+
+- Gesamtsystem
+    + Warum ARM?
+- Software
+    + DOXYGEN!!!
+    + CMSIS
+
+- Regelungstechnik
+    + Diskretisierungsverfahren
+
+- Geschlossene Simulationsumgebung
+    + "frequency response model estimation"
+    + copy ltspice conform laplace function of the estimated system 
+    + Aktoren -> Simulink Modelle 
+    + Endstufe -> LTspice -> MATLAB
+    + Levelshifter -> LTspice -> MATLAB
+    + Antialias / Rekonstruktionsfilter -> MATLAB
+    +  
+- Simulationen und Verifizierung
+    + Step-by-Step
+    + Spice: Geht die Simulation nicht ...
+        + ... geht auch der Testaufbau nicht!
+    + Regelalgorithmen testen:
+        * RC-Glied direkt an gepufferten DAC
+        * Testsignale im uC erzeugen
+        * Oszibilder mit MATLAB-Simulation vergl.
+- Modellparameter testen
+- Hardware
+
+- Resumee
+- Quellenangaben
+ -->
 
 # Einleitung #
 Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt ___bewusst___ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-)Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
@@ -258,7 +328,6 @@ Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einh
 | $W = \int F ds$                      | Arbeit                   | $W = \int M d\varphi$                     | Arbeit                    |
 | $P = F \cdot v$                      | Leistung                 | $P = M \cdot \omega$                      | Leistung                  |
 
-
 Das aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
 
 #### Energiebilanz in allgemeiner Form ####
@@ -394,10 +463,13 @@ Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine z
 In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich eines statischen Lastmoments zu finden. Da dieses jedoch experimentell nachgewiesen werden kann und sich der Einfluss nur schwer abschätzen lässt, wurde bei der Modellbildung ein entsprechendes Lastmoment in Form einer Torsionsfederkonstante (lineares Verhalten, Lastmoment steigt proportional zum Rotorwinkel) mit einbezogen.
 
 #### Mechanisches Teilsystem ####
-Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL}, M_{FR}, M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
-\begin{equation} 
-J_R \cdot \frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilKon} 
-\end{equation} 
+Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
+$$ \alenv{
+J_R \cdot \frac{\partial}{\partial\,t} \, \omega(t) &= M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilKon} \\\
+J_R \cdot \dot\omega(t) &= M_{EL} - M_{Mech} 
+} $$
+
+
 Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. Werden die i.A. gerichteten Größen auf skalare reduziert und ihre Definitionsgleichungen linearisiert, ergeben sich folgende einfache Beziehungen:
 
 \begin{alignat}{4} 
