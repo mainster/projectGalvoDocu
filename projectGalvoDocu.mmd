@@ -408,16 +408,18 @@ $$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t)
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 $$\mathscr{L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ 
 Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom: 
+$$ \begin{equation} G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$
+Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des Nennerpolynoms von \eqref{eqGsAusg} bestimmt werden und beträgt $\; {\large\tau} = \frac{L}{R_L} = \frac{160\,\mu H}{1.5\,\Omega}\approx 107\,\mu s$. 
 
-$$ G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} $$  Mit dem Ziel, die Übertragungsfunktion als Blockschaltbild darzustellen, kann die TF nach der Regel für PT1-Glieder umgeformt werden.$$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
+Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entsehen da Systeme mit Nullstellenüberschuss keine bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus kausalitätsgründen technisch nicht realisierbar. $$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
 
 #### Back-EMF ####
 Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{ME}$ und $K_{EMF}$ identisch.
 
-In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
+In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17\,mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
 
 $$\begin{aligned} 
-0.17mV/degree/sec &= 9.74\times 10^{-3} V/rad/s \nonumber \\\
+0.17,mV/degree/sec &= 9.74\times 10^{-3} V/rad/s \nonumber \\\
 &= 9.74\times 10^{-3} Nm/A \nonumber
 \end{aligned}$$
 
@@ -478,12 +480,17 @@ $$ \begin{align}
 M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\large\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
 M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
 \end{align} $$
-Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits angesprochen. Nach dem einsetzten von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man schließlich eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
-$$ J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = M_{EL}(t) \label{eqDrehimpulsbilKonErw} \\\\ \phantom{.} \\\\
+Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits erwähnt. Nach einsetzen von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man dann eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
+
+\begin{equation} J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDrehimpulsbilKonErw} \\\\ \phantom{.} \nonumber \\\\
 \small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + 
 \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] +
 \left[\frac{Nm}{rad}\right]\left[rad\right] = 
-\left[\frac{Nm}{A}\right]\left[A\right]} $$
+\left[\frac{Nm}{A}\right]\left[A\right]} \nonumber \end{equation}
+
+Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Durch Anwendung des Differentiationstzes der Laplace-Theorie lässt sich die Bildfunktion schnell aufstellen.
+
+$$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\,-\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \Bigg|\_{t=0_{-}} $$ 
 
 $$ M_{EL}(t) = J_R \cdot \frac{\partial~\omega}{\partial~t} + K_{FR} \cdot \omega(t) 
 \;\;\;\Leftrightarrow\;\;\;
