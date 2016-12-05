@@ -460,23 +460,22 @@ Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine z
 2. Quelle: Mechanisches Funktionsprinzip von Effektlasern auf [www.laserfx.com][laserfx]
 4. Elektrische "Erdung" des Rotorkörpers um elektrostatischen Effekten vorzubeugen
 
-In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich eines statischen Lastmoments zu finden. Da dieses jedoch experimentell nachgewiesen werden kann und sich der Einfluss nur schwer abschätzen lässt, wurde bei der Modellbildung ein entsprechendes Lastmoment in Form einer Torsionsfederkonstante (lineares Verhalten, Lastmoment steigt proportional zum Rotorwinkel) mit einbezogen.
+In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich eines statischen Lastmoments zu finden. Da dieses jedoch experimentell nachgewiesen werden kann und sich der Einfluss nur schwer abschätzen lässt, wurde bei der Modellbildung ein entsprechendes Lastmoment in Form einer Torsionsfederkonstante (lineares Verhalten) mit einbezogen.
 
 #### Mechanisches Teilsystem ####
 Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
 $$ \alenv{
-J_R \cdot \frac{\partial}{\partial\,t} \, \omega(t) &= M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilKon} \\\
-J_R \cdot \dot\omega(t) &= M_{EL} - M_{Mech} 
+J_R \frac{\partial}{\partial\,t} \, \omega(t) &= M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilKon} \\\
+J_R \dot\omega &= M_{EL} - M_{Mech} 
 } $$
 
 
-Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. Werden die i.A. gerichteten Größen auf skalare reduziert und ihre Definitionsgleichungen linearisiert, ergeben sich folgende einfache Beziehungen:
+Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende einfache Beziehungen
+$$ M_{TB} \;\propto\; \varphi        \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\varphi $$
+da das Torsions- oder Lastmoment natürlich zunimmt, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend "schwer" anlaufenden Antrieben sollte die Haftreibung nicht außer Acht gelassen werden, hier bieten sich z.B. zeitlich verzögerte Signum-Funktion zur mathematischen Beschreibung an.  
+$$ M_{FR} \;\propto\; \omega     \;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\dot\varphi$$
+$$ M_{EL} \;\propto\; i_L        \;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L $$
 
-\begin{alignat}{4} 
-&M_{TB} &&\;\propto\; \varphi        &&\;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\varphi \nonumber \\\
-&M_{FR} &&\;\propto\; \dot\varphi    &&\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR}\cdot\omega \nonumber \\\
-&M_{EL} &&\;\propto\; i_L            &&\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \nonumber 
-\end{alignat} 
 
 Und nach einsetzen in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} ergibt sich 
 $$ J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = M_{EL}(t) \label{eqDrehimpulsbilKonErw} \\\\ \phantom{.} \\\\
