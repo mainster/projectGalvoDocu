@@ -464,20 +464,21 @@ In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich ei
 
 #### Mechanisches Teilsystem ####
 Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
-$$ \alenv{
-J_R \frac{\partial}{\partial\,t} \, \omega(t) &= M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilKon} \\\
-J_R \dot\omega &= M_{EL} - M_{Mech} 
-} $$
-
-
-Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende einfache Beziehungen
-$$ M_{TB} \;\propto\; \varphi        \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\varphi $$
-da das Torsions- oder Lastmoment natürlich zunimmt, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend "schwer" anlaufenden Antrieben sollte die Haftreibung nicht außer Acht gelassen werden, hier bieten sich z.B. zeitlich verzögerte Signum-Funktion zur mathematischen Beschreibung an.  
-$$ M_{FR} \;\propto\; \omega     \;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\dot\varphi$$
-$$ M_{EL} \;\propto\; i_L        \;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L $$
-
-
-Und nach einsetzen in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} ergibt sich 
+$$ J_R \frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] $$
+Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. 
+\begin{equation}    
+J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon}    
+\end{equation}
+Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
+\begin{equation}    
+M_{TB} \;\propto\; \varphi \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\large\boldsymbol\varphi \label{eqLinearTorsin}    
+\end{equation}
+Das Torsionsmoment (statisches Lastmoment) steigt an, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend "schwer" anlaufenden Antrieben sollte die Haftreibung (oft durch verzögerte Signum-Funktion modelliert) nicht außer Acht gelassen werden. Glücklicherweise kann hier auf die Klasse der hochgradig nicht-lineare Übertragungsfunktionen verzichtet werden. Für die Gleitreibung gillt jedoch: 
+$$ \begin{align}
+M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\large\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
+M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
+\end{align} $$
+Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits angesprochen. Nach dem einsetzten von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man schließlich eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
 $$ J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = M_{EL}(t) \label{eqDrehimpulsbilKonErw} \\\\ \phantom{.} \\\\
 \small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + 
 \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] +
@@ -505,6 +506,8 @@ Um den integrierten Positionssensor der _6860_ Galvoscanner zu modellieren, wird
 <center>![mechSubInklSensor](./pics/simulExport/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
 
 __*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__
+
+### Gesamtmodell des Aktors ###
 
 ### Testsignale ###
 #### Problematik der Sättigung ####
