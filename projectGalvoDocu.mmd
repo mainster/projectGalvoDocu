@@ -466,7 +466,7 @@ In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich ei
 
 #### Mechanisches Teilsystem ####
 Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
-$$ J_R \frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] $$
+\begin{equation} J_R \frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}
 Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. 
 \begin{equation}    
 J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon} \end{equation} Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
@@ -481,8 +481,8 @@ M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \la
 \begin{equation} J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
 \small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\\\ \phantom{.} \end{equation}
 
-Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Durch Anwendung des Differentiationstzes der Laplace-Theorie lässt sich die Bildfunktion schnell aufstellen.
-$$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} $$ 
+Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen.
+$$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) $$ 
 
 <!-- $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\bigg\lbrace\ i_L(t) {\bigg\rbrace} = s^2 \,\mathit{\large\mathit\Phi}\mathit{(s)}- s\,\varphi\mathit{(0)}-\dot\varphi\mathit{(0)} + \frac{K_{FR}}{J_R}\cdot s \,\mathit{\large\mathit\Phi}\mathit{(s)} - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{ME}}{J_R} \cdot \mathit{\large\mathit\Phi}\mathit{(s)} $$
  -->
@@ -491,17 +491,30 @@ $$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = 
 
 $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{ME}}{J_R} \cdot {\large\Phi}(s) $$
 
-mit $\mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s)$. Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
+Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
+Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$ können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
 
 \begin{equation} \frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{ME}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
 {\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}\+ \frac{K_{TB}}{J_R}\} \label{equDglWI}\end{equation}
-Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$ können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
+
+---
+
+Mit dem Übergang in den Bildbereich, wurden die physikalischen Zusammenhänge beim ersten Ansatz untransparent. Mit dem Ziel, dieses mal mit einer Transformationsgleich der Ordnung 1 in den Bildbereich überzugehen, muss einer der kinetischen Energiespeicher "wegfallen". Wieder ausgehend von der Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbilBase}, wird dieses mal nach dem "nächsten Verwandten" von $J_R\cdot\omega$ innerhalb der Inhomogenität der DGL gesucht.
+
+\begin{align} 
+M_{FR}\~&=\~K_{FR} \cdot\boldsymbol{\dot\varphi}\~=\~K_{FR} \cdot\boldsymbol{\omega} \nonumber \\\
+M_{TB} \~&=\~K_{TB} \cdot\boldsymbol{\varphi} \nonumber
+\end{align}
+
+<!-- M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
+M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque} -->
 
 ##### Regelungsnormalform #####
-
 > Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
 
-Eine für lineare Systeme universelle Methode, um aus einer mathematischen Vorschrift ein grafisches Blockdiagramm ableiten zu können, führt über die __Zustandsraumbeschreibung__. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für DGL-Systeme 3. Ordnung. <center>![regelNormalform](./pics/regelNormalform.svg "Regelungsnormalform für Systeme 3. Ordnung"){:width=700px}</center> $$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$
+Eine, für lineare Systeme universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. <!-- $$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$ --> 
+
+<center>![regelNormalform](./pics/regelNormalform.svg "Regelungsnormalform für Systeme 3. Ordnung")</center> 
 
 
 
