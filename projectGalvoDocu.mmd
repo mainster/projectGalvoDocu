@@ -469,28 +469,42 @@ Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusamm
 $$ J_R \frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] $$
 Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. 
 \begin{equation}    
-J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon}    
-\end{equation}
-Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
+J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon} \end{equation} Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
 \begin{equation}    
-M_{TB} \;\propto\; \varphi \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\large\boldsymbol\varphi \label{eqLinearTorsin}    
-\end{equation}
-Das Torsionsmoment (statisches Lastmoment) steigt an, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend "schwer" anlaufenden Antrieben sollte die Haftreibung (oft durch verzögerte Signum-Funktion modelliert) nicht außer Acht gelassen werden. Glücklicherweise kann hier auf die Klasse der hochgradig nicht-lineare Übertragungsfunktionen verzichtet werden. Für die Gleitreibung gillt jedoch: 
+M_{TB} \;\propto\; \varphi \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\boldsymbol{\varphi} \label{eqLinearTorsin}    
+\end{equation} Das Torsionsmoment (statisches Lastmoment) steigt an, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend "schwer" anlaufenden Antrieben sollte die Haftreibung (oft durch verzögerte Signum-Funktion modelliert) nicht außer Acht gelassen werden. Glücklicherweise kann hier auf die Klasse der hochgradig nicht-lineare Übertragungsfunktionen verzichtet werden. Für die Gleitreibung gillt jedoch: 
 $$ \begin{align}
-M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\large\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
+M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
 M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
-\end{align} $$
-Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits erwähnt. Nach einsetzen von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man dann eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
+\end{align} $$ Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits erwähnt. Nach einsetzen von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man dann eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
 
-\begin{equation} J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDrehimpulsbilKonErw} \\\\ \phantom{.} \nonumber \\\\
-\small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + 
-\left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] +
-\left[\frac{Nm}{rad}\right]\left[rad\right] = 
-\left[\frac{Nm}{A}\right]\left[A\right]} \nonumber \end{equation}
+\begin{equation} J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
+\small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\\\ \phantom{.} \end{equation}
 
 Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Durch Anwendung des Differentiationstzes der Laplace-Theorie lässt sich die Bildfunktion schnell aufstellen.
+$$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} $$ 
 
-$$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\,-\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \Bigg|\_{t=0_{-}} $$ 
+<!-- $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\bigg\lbrace\ i_L(t) {\bigg\rbrace} = s^2 \,\mathit{\large\mathit\Phi}\mathit{(s)}- s\,\varphi\mathit{(0)}-\dot\varphi\mathit{(0)} + \frac{K_{FR}}{J_R}\cdot s \,\mathit{\large\mathit\Phi}\mathit{(s)} - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{ME}}{J_R} \cdot \mathit{\large\mathit\Phi}\mathit{(s)} $$
+ -->
+<!-- I_L(s) &= s^2 \,{\large\Phi}(s) \cdot\frac{J_R}{K_{EL}}+ \frac{K_{FR}}{K_EL}\cdot s \,{\large\Phi}(s) + \frac{K_{ME}}{K_EL} \cdot {\large\Phi}(s) \nonumber
+ -->
+
+$$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{ME}}{J_R} \cdot {\large\Phi}(s) $$
+
+mit $\mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s)$. Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
+
+\begin{equation} \frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{ME}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
+{\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}\+ \frac{K_{TB}}{J_R}\} \label{equDglWI}\end{equation}
+Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$ können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
+
+##### Regelungsnormalform #####
+
+> Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
+
+Eine für lineare Systeme universelle Methode, um aus einer mathematischen Vorschrift ein grafisches Blockdiagramm ableiten zu können, führt über die __Zustandsraumbeschreibung__. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für DGL-Systeme 3. Ordnung. <center>![regelNormalform](./pics/regelNormalform.svg "Regelungsnormalform für Systeme 3. Ordnung"){:width=700px}</center> $$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$
+
+
+
 
 $$ M_{EL}(t) = J_R \cdot \frac{\partial~\omega}{\partial~t} + K_{FR} \cdot \omega(t) 
 \;\;\;\Leftrightarrow\;\;\;
@@ -611,6 +625,7 @@ __*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__
 
 [^fnImpulserhaltung]: __*Impulserhaltungssatz*__ https://de.wikipedia.org/wiki/Impulserhaltungssatz   <a name="citeImpulserhaltung"/> </a>
 
+[^fnMesystoDglSys]: __*Interpretation der Übertragungsfunktion*__ http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html
 
 [@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
 
