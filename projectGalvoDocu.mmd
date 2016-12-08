@@ -426,7 +426,7 @@ $$\begin{aligned}
 was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit 
 $$ u_{EMF}(t) = K_{EMF} \cdot \omega(t) $$ 
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
-$$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} $$ <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
+\begin{equation} G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
 
 #### Elektrisch generiertes Drehmoment ####
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
@@ -466,7 +466,7 @@ In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich ei
 
 #### Mechanisches Teilsystem ####
 Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
-\begin{equation} J_R \frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}
+\begin{equation} J_R\,\frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}
 Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. 
 \begin{equation}    
 J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon} \end{equation} Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
@@ -494,21 +494,26 @@ $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^
 Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
 Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$ können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
 
-\begin{equation} \frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
-{\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}\+ \frac{K_{TB}}{J_R}\} \label{equDglWI}\end{equation}
+\begin{equation}
+\frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
+{\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}\+ \frac{K_{TB}}{J_R}\} \label{equDglWI}
+\end{equation}
 
+<span style="background-color: yellow"> Mit dem Übergang in den Bildbereich wurden die physikalischen Zusammenhänge beim ersten Ansatz untransparent. Aufgrund der Forderung nach einer , die Laplace Transformation auf eine DGL 1. Ordnung anwenden zu können, muss einer der kinetischen Energiespeicher aus \eqref{eqLinearFriction} "wegfallen". Wieder ausgehend von der Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbilBase}, wird dieses mal nach dem "nächsten Verwandten" von $J_R\cdot\omega$ innerhalb der Inhomogenität der DGL gesucht:</span>
 
-???
-Mit dem Übergang in den Bildbereich wurden die physikalischen Zusammenhänge beim ersten Ansatz untransparent. Aufgrund der Forderung nach einer , die Laplace Transformation auf eine DGL 1. Ordnung anwenden zu können, muss einer der kinetischen Energiespeicher aus \eqref{eqLinearFriction} "wegfallen". Wieder ausgehend von der Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbilBase}, wird dieses mal nach dem "nächsten Verwandten" von $J_R\cdot\omega$ innerhalb der Inhomogenität der DGL gesucht:???
-
-Werden in der Ausgangsgleichung nur Terme eingesetzt, die höchstens eine Ordnung über \boldsymbol{\dot\varphi} liegen, bleibt natürlich auch die Ordnung der resultierenden DGL erhalten. In \eqref{eqDrehimpulsbilBase} wird also M_{FR}\~&=\~K_{FR} \cdot{\dot\varphi}\~=\~K_{FR} \cdot{\omega} nur das Reibmoment substituiert. Alle anderen Zeitfunktion bleiben wie sind-
-
+Werden in der Ausgangsgleichung nur Terme eingesetzt, die höchstens eine Integration über $\dot\omega$ liegen, bleibt auch die Ordnung der resultierenden DGL erhalten. In \eqref{eqDrehimpulsbilBase} wird also nur das Reibmoment $M_{FR}$ durch $K_{FR} \cdot{\dot\varphi}=K_{FR} \cdot{\omega}\,$ und das elektrische Moment $M_{EL}$ entsprechend substituiert. Anschließend folgt wieder die Laplace-Transformation wobei $\Omega(s)$ als $\mathscr{ L } \big\lbrace\,\omega(t)\big\rbrace$ zu verstehen ist.
 \begin{align} 
-M_{FR}\~&=\~K_{FR} \cdot\boldsymbol{\dot\varphi}\~=\~K_{FR} \cdot\boldsymbol{\omega} \nonumber \\\
-\color{M_{TB} \~&=\~K_{TB} \cdot\boldsymbol{\varphi} }\nonumber \\\
-J_R \frac{\partial}{\partial\,t} \, \omega(t) &= M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \nonumber
+J_R\,\frac{\partial}{\partial\,t} \, \omega(t) &= \boldsymbol{K_{EL}\cdot i_L(t)} - \boldsymbol{K_{FR} \cdot \omega (t)} - M_{TB}(t) \;\;&&\Leftrightarrow \nonumber \\\
+J_R\,\dot\omega + K_{FR} \cdot \omega  &= K_{EL}\cdot i_L - M_{TB}  &&\Big|\;\mathscr{ L } \lbrace\,\dots\rbrace \nonumber \\\
+\Omega(s)\cdot \big(s\cdot J_R+K_{FR}\big) &= K_{EL}\cdot I_L(s) - M_{TB}(s) &&wenn\ \omega(0)=0 \label{eqBeforeLapMech} 
 \end{align} 
+Um an die Übertragungsfunktion des elektrischen Teilsystems $G_{EL}(s)$ aus \eqref{eqGel} anknüpfen zu können, muss Gleichung \eqref{eqBeforeLapMech} in eine Form gebracht werden, in der $I_L(s)$ im Nenner auftaucht:
+\begin{align} 
+\frac{ \Omega(s) }{K_{EL}\cdot I_L(s) - M_{TB}(s)}  &= \frac 1 {s\cdot J_R+K_{FR}} \nonumber \\\
+&= \color{red}{\frac{1}{s} \frac{1}{J_R}} \cdot \frac{1}{1 + \color{red}{\frac{1}{s} \frac{\color{blue}{K_{FR}}}{J_R}}} \nonumber
+\end{align}
 
+<center>![mechSubInklTb](./pics/simulExport/mechSubInklTb.svg "Mechanisches Subsystem inkl. Torsionsmoment")</center>
 
 ##### Regelungsnormalform #####
 > Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
@@ -523,9 +528,10 @@ $$ M_{EL}(t) = J_R \cdot \frac{\partial~\omega}{\partial~t} + K_{FR} \cdot \omeg
 \mathscr{L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot \Omega(s)-\omega(0) + \frac{K_{FR}}{J_R} \cdot \Omega(s) 
 \\\\ \phantom{.} \\\\ 
 G_{ME}(s) = \frac{\Omega(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{K_{FR}}{J_R}}
-\;\;\;\;\;\; für\;\;\omega(0)=0
+\;\;\;\;\;\; mit\ \omega(0)=0
 $$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{EL}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
-<center>![mechSubInklSensor](./pics/simulExport/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
+
+
 
 $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
 
