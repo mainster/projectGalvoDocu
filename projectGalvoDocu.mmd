@@ -411,7 +411,7 @@ Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfun
 $$ \begin{equation} G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$
 Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des Nennerpolynoms von \eqref{eqGsAusg} bestimmt werden und beträgt $\; {\large\tau} = \frac{L}{R_L} = \frac{160\,\mu H}{1.5\,\Omega}\approx 107\,\mu s$. 
 
-Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entsehen da Systeme mit Nullstellenüberschuss keine bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus kausalitätsgründen technisch nicht realisierbar. $$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
+Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entsehen da Systeme mit Nullstellenüberschuss keine bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
 
 #### Back-EMF ####
 Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch.
@@ -512,7 +512,7 @@ Um an die Übertragungsfunktion des elektrischen Teilsystems $G_{EL}(s)$ aus \eq
 \frac{ \Omega(s) }{K_{EL}\cdot I_L(s) - M_{TB}(s)}  &= \frac 1 {s\cdot J_R+K_{FR}} \nonumber \\\
 &= \color{red}{\frac{1}{s} \frac{1}{J_R}} \cdot \frac{1}{1 + \color{red}{\frac{1}{s} \frac{\color{blue}{K_{FR}}}{J_R}}} \nonumber
 \end{align}
-
+Diese Übertragungsfunktion lässt sich nach einer Umformung entsprechend Regel \eqref{eqForwardPath} wieder direkt in einem Blockdiagramm darstellen:
 <center>![mechSubInklTb](./pics/simulExport/mechSubInklTb.svg "Mechanisches Subsystem inkl. Torsionsmoment")</center>
 
 ##### Regelungsnormalform #####
