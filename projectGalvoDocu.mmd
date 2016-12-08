@@ -274,7 +274,7 @@ Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten 
 
 | Bezeichnung              | Symbol                | Einheit         | <span style="color: #bbb">engl. Bezeichnung</span>          |
 | ------------------------ | :-------------------: | :-------------: | ----------------------------------------------------------- |
-| Wicklungsinduktivität    | _L_<sub></sub>        | $H$             | <span style="color: #bbb">Coil inductance</span>            |
+| Wicklungsinduktivität    | $L$                   |  $H$            | <span style="color: #bbb">Coil inductance</span>            |
 | Wicklungswiderstand      | $R_L$                 | $\Omega$        | <span style="color: #bbb">Coil resistance</span>            |
 | Messwiderstand           | $R_\{SH\}$            | $\Omega$        | <span style="color: #bbb">Current shunt resistance</span>   |
 | Massenträgheit d. Rotors | $J_R$                 | $kg.m²$         | <span style="color: #bbb">Rotor inertia</span>              |
@@ -366,7 +366,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 
 | Electrical Specifications           | Symbol                 | Value                             |                |        |
 | ----------------------------------- | ---------------------- | --------------------------------- | -------------- | ------ |
-| Coil Inductance                     | _L_<sub></sub>         | 160µH                             |                | ±10%   |
+| Coil Inductance                     | $L$          | 160µH                             |                | ±10%   |
 | Coil Resistance                     | $R_L$                  | 1.5 Ohm                         |                | ±10%   |
 | Back-EMF const.                     | $K_\{EMF\}$            | 0.17mV/degree/sec                 | 9.74mV/rad/s   | ±10%   |
 | RMS Current                         | $I_\{L-RMS\}$          | 4.6A @ T_case=50°C                |                | Max.   |
@@ -414,7 +414,7 @@ Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des
 Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entsehen da Systeme mit Nullstellenüberschuss keine bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus kausalitätsgründen technisch nicht realisierbar. $$ Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}}$$ <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
 
 #### Back-EMF ####
-Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{ME}$ und $K_{EMF}$ identisch.
+Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch.
 
 In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17\,mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
 
@@ -429,7 +429,7 @@ Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G
 $$ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} $$ <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
 
 #### Elektrisch generiertes Drehmoment ####
-Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{ME}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{ME}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
+Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
 ### Mechanik ###
 Eine bewegte Masse speichert _kinetische Energie_ $E_{kin}$. Diese steigt dabei quadratisch zur Geschwindigkeit der bewegten Masse an. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Qadrat seiner Winkelgeschwindigkeit $\omega(t)$.
@@ -484,17 +484,17 @@ M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \la
 Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen.
 $$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) $$ 
 
-<!-- $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\bigg\lbrace\ i_L(t) {\bigg\rbrace} = s^2 \,\mathit{\large\mathit\Phi}\mathit{(s)}- s\,\varphi\mathit{(0)}-\dot\varphi\mathit{(0)} + \frac{K_{FR}}{J_R}\cdot s \,\mathit{\large\mathit\Phi}\mathit{(s)} - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{ME}}{J_R} \cdot \mathit{\large\mathit\Phi}\mathit{(s)} $$
+<!-- $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\bigg\lbrace\ i_L(t) {\bigg\rbrace} = s^2 \,\mathit{\large\mathit\Phi}\mathit{(s)}- s\,\varphi\mathit{(0)}-\dot\varphi\mathit{(0)} + \frac{K_{FR}}{J_R}\cdot s \,\mathit{\large\mathit\Phi}\mathit{(s)} - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot \mathit{\large\mathit\Phi}\mathit{(s)} $$
  -->
-<!-- I_L(s) &= s^2 \,{\large\Phi}(s) \cdot\frac{J_R}{K_{EL}}+ \frac{K_{FR}}{K_EL}\cdot s \,{\large\Phi}(s) + \frac{K_{ME}}{K_EL} \cdot {\large\Phi}(s) \nonumber
+<!-- I_L(s) &= s^2 \,{\large\Phi}(s) \cdot\frac{J_R}{K_{EL}}+ \frac{K_{FR}}{K_EL}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{K_EL} \cdot {\large\Phi}(s) \nonumber
  -->
 
-$$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{ME}}{J_R} \cdot {\large\Phi}(s) $$
+$$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) $$
 
 Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
 Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$ können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
 
-\begin{equation} \frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{ME}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
+\begin{equation} \frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
 {\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}\+ \frac{K_{TB}}{J_R}\} \label{equDglWI}\end{equation}
 
 
@@ -524,12 +524,12 @@ $$ M_{EL}(t) = J_R \cdot \frac{\partial~\omega}{\partial~t} + K_{FR} \cdot \omeg
 \\\\ \phantom{.} \\\\ 
 G_{ME}(s) = \frac{\Omega(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{K_{FR}}{J_R}}
 \;\;\;\;\;\; für\;\;\omega(0)=0
-$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{ME}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
+$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{EL}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
 <center>![mechSubInklSensor](./pics/simulExport/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
 
 $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
 
-{\color{blue}(KFR*Lc + JR*Rc + JR*Rsh)}*\bfp^2\rm + {\color{red}(KBM*KMT + KFR*Rc + KFR*Rsh)}*\bfp\rm} $$
+$$ {\color{blue}(KFR*Lc + JR*Rc + JR*Rsh)}\*\bfp^2\rm + {\color{red}(KBM*KMT + KFR*Rc + KFR*Rsh)}*\bfp\rm} $$
 
 #### Positionssensor ####
 Die Winkelposition der Rotorwelle wird anhand einer variablen Kapazität gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
