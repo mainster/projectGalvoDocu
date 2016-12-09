@@ -83,6 +83,11 @@ Projekt __Galvo-Scanner__
 - Quellenangaben
  -->
 
+# Navigation #
+| Tastenkombination |                              Funktion                             |
+|-------------------|-------------------------------------------------------------------|
+| __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks |
+
 # Einleitung #
 Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt ___bewusst___ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-)Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
 
@@ -424,7 +429,7 @@ $$\begin{aligned}
 \end{aligned}$$
 
 was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit 
-$$ u_{EMF}(t) = K_{EMF} \cdot \omega(t) $$ 
+\begin{equation} u_{EMF}(t) = K_{EMF} \cdot \omega(t) \label{eqVemf} \end{equation} 
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
 \begin{equation} G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
 
@@ -515,11 +520,28 @@ Um an die Übertragungsfunktion des elektrischen Teilsystems $G_{EL}(s)$ aus \eq
 Diese Übertragungsfunktion lässt sich nach einer Umformung entsprechend Regel \eqref{eqForwardPath} wieder direkt in einem Blockdiagramm darstellen:
 <center>![mechSubInklTb](./pics/simulExport/mechSubInklTb.svg "Mechanisches Subsystem inkl. Torsionsmoment")</center>
 
+#### Positionssensor ####
+Die Winkelposition der Rotorwelle wird anhand variabler Kapazitäten gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
+Um den eingebauten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $\omega(t)$ durch einen einfachen Integrationsblock in die Winkelposition $\varphi(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
+
+#### Verbindung der Teilsysteme ####
+Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Die in den Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$ müssen noch durch die entsprechend linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} ersetzt werden. 
+<center>![systemSubCmpl](./pics/simulExport/systemSubCmpl.svg "Zusammengesetztes Teilsysteme")</center>
+Das lineare Modell entspricht somit:
+<center>![systemLinCmpl](./pics/simulExport/systemLinCmpl.svg "Lineares Aktor Modell")</center>
+
+Der in [Positionssensor](#positionssensor) erwähnte Proportionalitätsfaktor $K_{PD}$ muss 
+#### Gesamtmodell des Aktors ####
+
+
+<center>![mechSubInklSensor](./pics/simulExport/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
+
 ##### Regelungsnormalform #####
 > Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
 
-Eine, für lineare Systeme universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
+Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
 
+<center>![Regeleungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regeleungsnormalform für Systeme 3. Ordnung")</center>
 
 $$ M_{EL}(t) = J_R \cdot \frac{\partial~\omega}{\partial~t} + K_{FR} \cdot \omega(t) 
 \;\;\;\Leftrightarrow\;\;\;
@@ -535,16 +557,7 @@ $$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL
 
 $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
 
-$$ {\color{blue}(KFR*Lc + JR*Rc + JR*Rsh)}\*\bfp^2\rm + {\color{red}(KBM*KMT + KFR*Rc + KFR*Rsh)}*\bfp\rm} $$
 
-#### Positionssensor ####
-Die Winkelposition der Rotorwelle wird anhand einer variablen Kapazität gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
-Um den integrierten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $\omega(t)$ durch einen Integrationsblock in die Winkelposition $\varphi(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
-<center>![mechSubInklSensor](./pics/simulExport/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
-
-__*Summe der linksdrehenden Momente = Summe der rechtsdrehenden Momente*__
-
-### Gesamtmodell des Aktors ###
 
 ### Testsignale ###
 #### Problematik der Sättigung ####
