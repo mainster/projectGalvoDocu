@@ -85,8 +85,8 @@ Projekt __Galvo-Scanner__
 
 # Navigation #
 | Tastenkombination |                              Funktion                             |
-|-------------------|-------------------------------------------------------------------|
-| __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks |
+|-------------------|:-----------------------------------------------------------------:|
+| __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks <br><span style="background-color: yellow"> Testen ob auch in Windows 7/10: IExplorer, firefox, Chrome </span> |
 
 # Einleitung #
 Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt ___bewusst___ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-)Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
@@ -359,7 +359,7 @@ Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigt
 ### Klassifizierung ###
 Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $Nm/s$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
 
-Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flußdichte des Erregermagnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten _"Moving Magnet Galvanometer"_ auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfelds ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von +-20° entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren), erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
+Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flußdichte des Erregermagnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten _"Moving Magnet Galvanometer"_ auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfelds ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von +-20° entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
 
 Der vollständigkeit halber sollen an dieser Stelle einige paralleln zur Unterklasse der _elektronisch kommutierten_ Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff _"Brushless <a style="color: #aaa ">DC-</a>Motor"_ bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.
 
@@ -497,7 +497,7 @@ $$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = 
 $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) $$
 
 Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
-Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$ können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
+Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$, können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
 
 \begin{equation}
 \frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
@@ -506,7 +506,7 @@ Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder d
 
 <span style="background-color: yellow"> Mit dem Übergang in den Bildbereich wurden die physikalischen Zusammenhänge beim ersten Ansatz untransparent. Aufgrund der Forderung nach einer , die Laplace Transformation auf eine DGL 1. Ordnung anwenden zu können, muss einer der kinetischen Energiespeicher aus \eqref{eqLinearFriction} "wegfallen". Wieder ausgehend von der Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbilBase}, wird dieses mal nach dem "nächsten Verwandten" von $J_R\cdot\omega$ innerhalb der Inhomogenität der DGL gesucht:</span>
 
-Werden in der Ausgangsgleichung nur Terme eingesetzt, die höchstens eine Integration über $\dot\omega$ liegen, bleibt auch die Ordnung der resultierenden DGL erhalten. In \eqref{eqDrehimpulsbilBase} wird also nur das Reibmoment $M_{FR}$ durch $K_{FR} \cdot{\dot\varphi}=K_{FR} \cdot{\omega}\,$ und das elektrische Moment $M_{EL}$ entsprechend substituiert. Anschließend folgt wieder die Laplace-Transformation wobei $\Omega(s)$ als $\mathscr{ L } \big\lbrace\,\omega(t)\big\rbrace$ zu verstehen ist.
+Werden in der Ausgangsgleichung nur Terme eingesetzt, die höchstens eine Integration über $\boldsymbol{\dot\omega}$ liegen, bleibt auch die Ordnung der resultierenden DGL erhalten. In \eqref{eqDrehimpulsbilBase} wird also nur das Reibmoment $M_{FR}$ durch $K_{FR} \cdot{\dot\varphi}=K_{FR} \cdot{\omega}\,$ und das elektrische Moment $M_{EL}$ entsprechend substituiert. Anschließend folgt wieder die Laplace-Transformation wobei $\Omega(s)$ als $\mathscr{ L } \big\lbrace\,\omega(t)\big\rbrace$ zu verstehen ist.
 \begin{align} 
 J_R\,\frac{\partial}{\partial\,t} \, \omega(t) &= \boldsymbol{K_{EL}\cdot i_L(t)} - \boldsymbol{K_{FR} \cdot \omega (t)} - M_{TB}(t) \;\;&&\Leftrightarrow \nonumber \\\
 J_R\,\dot\omega + K_{FR} \cdot \omega  &= K_{EL}\cdot i_L - M_{TB}  &&\Big|\;\mathscr{ L } \lbrace\,\dots\rbrace \nonumber \\\
@@ -521,20 +521,19 @@ Diese Übertragungsfunktion lässt sich nach einer Umformung entsprechend Regel 
 <center>![mechSubInklTb](./pics/simulExport/mechSubInklTb.svg "Mechanisches Subsystem inkl. Torsionsmoment")</center>
 
 #### Positionssensor ####
-Die Winkelposition der Rotorwelle wird anhand variabler Kapazitäten gemessen. Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Das vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet.
+Die verwendeten Galvoscanner sind mit einem integrierten Positionsdetektor ausgestattet. Die Winkelposition der Rotorwelle wird anhand variabler Kapazitäten gemessen ([siehe Abb. in _Modellbildungsprozess_](#modellbildungsprozess)). Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Die vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung von $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet und besitzt die Einheit $V/°$ bzw. $V/rad$.
 Um den eingebauten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $\omega(t)$ durch einen einfachen Integrationsblock in die Winkelposition $\varphi(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
 
 #### Verbindung der Teilsysteme ####
-Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Die in den Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$ müssen noch durch die entsprechend linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} ersetzt werden. 
+Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Der in [Positionssensor](#positionssensor) erwähnte Proportionalitätsfaktor $K_{PD}$ muss erst in der Rückführung von $\varphi(t)$ auf den ADC des diskreten Reglers beachtet werden.
 <center>![systemSubCmpl](./pics/simulExport/systemSubCmpl.svg "Zusammengesetztes Teilsysteme")</center>
-Das lineare Modell entspricht somit:
+Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$, müssen entsprechend den linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} erzeugt werden. Das lineare Modell entspricht somit:
 <center>![systemLinCmpl](./pics/simulExport/systemLinCmpl.svg "Lineares Aktor Modell")</center>
 
-Der in [Positionssensor](#positionssensor) erwähnte Proportionalitätsfaktor $K_{PD}$ muss 
-#### Gesamtmodell des Aktors ####
+$$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
 
-
-<center>![mechSubInklSensor](./pics/simulExport/mechSubInklSensor.svg "Mechanisches Subsystem inkl. Positionsdemodulator")</center>
+#### Aktor Gesamtmodell ####
+Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [Verbindung der Teilsysteme](#verbindung-der-teilsysteme). Die Winkelposition wird im Bereich $|\,\varphi\,| > 1/2\cdot\Delta\varphi_\{Max\}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| > 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert.   
 
 ##### Regelungsnormalform #####
 > Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
@@ -555,7 +554,6 @@ $$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL
 
 
 
-$$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
 
 
 
