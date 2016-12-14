@@ -1,0 +1,4604 @@
+UNIVERSITY OF SCIENCE AND TECHNOLOGY IN CRACOW
+_____________________________________________________________________
+FACULTY OF ELECTRICS, AUTOMATION, COMPUTER SCIENCE AND ELECTRONICS,
+INSTITUTE OF DRIVE AUTOMATION AND INDUSTRIAL DEVICES.
+
+PhD THESIS
+
+M.Sc. MICHAŁ WIDLOK
+
+Advanced methods of galvoscanner position control
+with integrated power supply module
+
+Supervisor:
+dr hab. inż. Andrzej Senderski,
+
+Cracow, May 2007
+
+PHD main, Michael Widlok
+
+page 1 of 106
+
+Summary:
+Galvoscanners are very fast and accurate electro-mechanical devices that are
+used to angular position control of a given element. Today available torque and rotation
+angle is limited, however new devices are developed rapidly and the situation is
+constantly changing.
+This paper presents new idea of galvoscanner position control that can be used
+to various applications: target tracers, material processing machines or medical
+imagers. Designed position control system has been build and verified with real
+galvoscanners (LSK 040EF) proving that the ideas and used algorithms are correct.
+Finally a special controlled power supply module have been added to drastically
+improve electrical efficiency of the system. The power supply module also have been
+build and verified in reality.
+Presented control system has been designed with extensive use of computer
+simulation and data visualization software. Author formulated functional mathematical
+model of galvoscanner that was needed to perform accurate simulation. The model was
+verified with real galvoscanner in steady state and in transients achieving very good
+accuracy.
+Additionally a special programming device (ICSP- In Circuit Serial
+Programming) that have been designed during research is presented in appendix. This
+device is used to reprogram ICSP capable ICs using ordinary PC computer. Designed
+programmer is very universal and can be used to most of programmable ICs if only a
+appropriate software driver is provided
+Formulated model along with real control system is universal and can be used
+with many different galvoscanners on the marked. Gathered experience and knowledge
+will be very important for future authors work, in designing military marine electronics
+systems.
+
+PHD main, Michael Widlok
+
+page 2 of 106
+
+AKADEMIA GÓRNICZO-HUTNICZA
+IM. STANISŁAWA STASZICA W KRAKOWIE
+_____________________________________________________________________
+WYDZIAŁ ELEKTROTECHNIKI, AUTOMATYKI, INFORMATYKI I ELEKTRONIKI
+
+ROZPRAWA DOKTORSKA
+
+MGR INŻ. MICHAŁ WIDLOK
+
+ZAAWANSOWANE METODY STEROWANIA
+POZYCYJNEGO GALWOSKANERAMI
+ZINTEGROWANYMI Z MODUŁEM ZASILANIA
+
+Promotor:
+
+dr hab. inż. Andrzej Senderski,
+
+Kraków, Maj 2007
+
+PHD main, Michael Widlok
+
+page 3 of 106
+
+Streszczenie:
+Galwoskanery
+
+są
+
+bardzo
+
+szybkimi
+
+i
+
+dokładnymi
+
+urządzeniami
+
+elektromechanicznymi służącymi do kontrolowania pozycji kątowej danego elementu.
+Obecnie osiągane kąty obrotu i momenty obrotowe są stosunkowo niewielkie, ale nowe
+urządzenia są cały czas opracowywane i sytuacja stopniowo ulega poprawie.
+Rozprawa prezentuje nowe metody sterowania pozycyjnego galwoskanerami,
+które mogą być wykorzystane w wielu docelowych aplikacjach jak: układy śledzenia
+celów, laserowe obrabiarki czy urządzenia medyczne. System sterowania pozycyjnego
+został zaprojektowany, wykonany i sprawdzony z rzeczywistymi galwoskanerami
+(LSK 040EF) dowodząc, że zastosowane idee i algorytmy są poprawne. Dodatkowo
+zaprojektowany został specjalny, sterowany moduł zasilania, który znacznie poprawił
+sprawność energetyczną całego systemu. Moduł ten został również wykonany i
+sprawdzony w rzeczywistości.
+Prezentowany system zaprojektowany został z wykorzystaniem symulacji
+komputerowej i pakietów wizualizacyjnych. Autor sformułował matematyczny model
+funkcjonalny galwoskanera, który był konieczny do przeprowadzenia symulacji. Model
+ten został sprawdzony z rzeczywistym galwoskanerem zarówno w stanach ustalonych
+jak i dynamicznych osiągając założoną dokładność.
+Dodatkowo w załączniku przedstawiony został zaprojektowany specjalnie dla
+celów badań programator ICSP (Programowanie Szeregowe Wewnątrz Układu).
+Programator może w łatwy sposób zmieniać ustawienia programowalnych elementów
+scalonych, używając jako źródła danych zwykłego komputera PC. Programator został
+tak pomyślany aby był w stanie programować dowolne układy, jeżeli tylko jest
+dostępny odpowiedni sterownik programowy (driver).
+Sformułowany model wraz z realnym system sterowania pozycyjnego są
+uniwersalne i mogą być użyte do sterowania i symulacji dowolnych galwoskanerów
+dostępnych na rynku. Zdobyte podczas pracy doświadczenie będzie bardzo cenne w
+dalszej zawodowej pracy autora przy projektowaniu elektronicznych systemów dla
+Marynarki Wojennej.
+
+PHD main, Michael Widlok
+
+page 4 of 106
+
+Table of contest
+Introduction....................................................................................................
+....................5
+1. Addressed problems, recent state of research...............................................................7
+1.1. History of galvoscanners and technical background............................................7
+1.2. Galvoscanners applications..............................................................
+.....................9
+1.3. Recent state and available publications..............................................................12
+1.4. Area of interests...............................................................................
+....................13
+1.5. Galvoscanner construction and theory of operation...........................................16
+1.5.1. Moving iron galvoscanner.................................................................
+..........16
+1.5.2. Moving coil galvoscanner...........................................................................18
+1.5.3. Modes of operation....................................................................
+..................20
+2. Formulation and verification of mathematical models of galvoscanner...................22
+2.1. Choosing of the simulation model and environment.........................................22
+2.1.1. Simulation environment..............................................................................22
+2.2. Formulation of galvoscanner simulation models...............................................24
+2.2.1. Mathematical model of the galvoscanner – differential move  equations.....
+24
+2.2.2. Galvoscanner model block diagram and transmittance ............................26
+2.2.3. NgSpice implementation of the galvoscanner model................................28
+2.3. Galvoscanner parameters................................................................................
+.....29
+2.4. Parameters measurements for LSK 040EF galvoscanner..................................32
+2.4.1. Electrical parameters...................................................................................
+.32
+2.4.2. Mechanical parameters..............................................................
+..................35
+2.4.3. LSK 040EF parameters summary...............................................................37
+2.5. Model verification with real device....................................................................38
+2.5.1. Initial, “low power” tests.................................................................
+............38
+2.5.2. Verification of the model with control system...........................................40
+2.6. Additional models needed for research..............................................................42
+3. Designed galvoscanner controller used for research..................................................44
+3.1. Hardware configurations of the control system.................................................44
+3.1.1. “Mostly” digital controller system..............................................................45
+3.1.2. “Mostly” analog control system..................................................................46
+3.1.3. Other control systems..............................................................
+....................47
+3.2. Research galvoscanner control system...............................................................47
+
+PHD main, Michael Widlok
+
+page 2 of 106
+
+3.2.1. Current control loop...............................................................................
+......49
+3.2.2. Position control loop..............................................................................
+......49
+3.2.3. Digital position reference forming block....................................................52
+3.2.4. Summary of galvoscanner control system..................................................55
+3.3. Complete controller and efficiency problems....................................................55
+3.3.1. Complete controller used during research..................................................55
+4. Soft­Switched power supply for galvoscanner control system.................................57
+4.1. Efficiency problems...................................................................................
+..........57
+4.1.1. Power supply requirements.........................................................................59
+4.1.2. Power supply control problems..............................................................
+.....60
+4.1.3. Voltage reference prediction algorithm......................................................61
+4.1.4. Hardware configuration of the power supply controller............................62
+4.2. Special, low noise ZVS­CV power supply.........................................................63
+4.2.1. Drawbacks of the typical ZVS­CV power supply......................................63
+4.2.2. Modification and design of the low EMI ZVS­CV converter with resonant 
+inductors......................................................................................
+...........................65
+4.2.3. Analysis of the modified ZVS­CV power supply......................................66
+4.2.4. Control system of the power supply...........................................................69
+4.2.5. Tests performed on the real device.............................................................69
+5. Experimental results and regulator tuning methods...................................................70
+5.1. Control system tuning requirements...................................................................70
+5.2. Position controller performance..............................................................
+............72
+5.2.1. Methods for measuring position controller performance...........................72
+5.2.2. Position controller without digital position reference forming.................74
+5.3. Performance of the new advanced control system.............................................76
+5.3.1. Position controller with digital position reference forming block............76
+5.3.2. Small jump (step) processing and achieved performance..........................77
+5.3.3. Large jump processing and achieved performance....................................79
+5.3.4. Performance improvements summary........................................................81
+5.3.5. Applications requirements summary..........................................................82
+6. Summary..............................................................................................
+........................83
+6.1. Summary of achieved  results.............................................................................83
+6.2. Future research subjects.....................................................................................
+..83
+6.2.1. Galvoscanner's operation with non­constant load......................................83
+6.2.2. Finding the optimum regulator parameters................................................84
+6.2.3. Class “T” power amplifiers.........................................................................85
+
+PHD main, Michael Widlok
+
+page 3 of 106
+
+7. Appendix: ICSP programming device for ispPAC­10 analog ICs............................86
+7.1. Genesis of the designed programmer..................................................................86
+7.2. Typical ICSP requirements.................................................................................86
+7.3. Hardware of the programmer..............................................................................87
+7.4. Safety and isolation...........................................................................................
+...88
+7.5. Software drivers...................................................................................
+................89
+8. Used symbols..............................................................................................
+.................92
+8.1. Galvoscanner parameters................................................................................
+.....92
+8.2. Galvoscanner models state variables..................................................................92
+8.3. Power supply and voltage prediction algorithm.................................................93
+Authors Publications.................................................................................................
+.......94
+    List of Figures..............................................................................................
+................98
+Bibliography..............................................................................................................
+.....101
+
+PHD main, Michael Widlok
+
+page 4 of 106
+
+Introduction
+Galvoscanners are concurrently the fastest and the most accurate electromechanical devices used to control rotation angle of a given element. Available power
+and torque is limited now, but fast development of galvoscanners as well as control
+systems for them might change this situation in near future. In the begging
+galvoscanners use was limited to laser light shows and simple medical imagers,
+however today they are used frequently in many different areas. Galvoscanner, also
+called torque motor has two special properties over the entire working range [1], [2]:
+1) Torque is proportional to the applied current
+2) Torque is independent of the rotor displacement
+Today main applications of galvoscanners are: Military (target tracking or
+marking), Medical (laser-based BioMedical applications), Material processing (laser
+marking, machining or drilling), Laser imaging (laser show or light show systems),
+Semiconductor processing (micro-machining applications such as memory repair).
+Galvoscanner are known for about 30 years, but unfortunately availability of
+scientific publication or even detailed technical data-sheets is very limited.
+Manufacturers treat galvoscanner and control systems parameters as top secret data,
+further reducing general knowledge about this subject. During research author found
+only a few schematics of very old position controllers and some main parameters of
+galvoscanners. In fact the most helpful informations was found on non-commercial
+web pages in forms of FAQs or system descriptions.
+Unfortunately galvoscanners are still very expensive and very sensitive to
+control system malfunctions. They and can be damaged in very short time just because
+of badly tuned control system or even random electrical noise influencing control
+loops.
+Increasing importance of galvoscanners as well as almost total lack of scientific
+publication about them forces author to start research work that is presented in this
+paper. Because galvoscanners are extensively used in military applications, where
+dedicated, application specific control system is required, this research would be very
+useful for future author's work (author is a designer of marine military electronic
+systems).
+After collecting some available informations author decided split research work
+to following sections:
+1) Collect all available publications, technical data and other informations about
+galvoscanners and controllers for them (Chapter 1)
+
+PHD main, Michael Widlok
+
+page 5 of 106
+
+2) Formulation mathematical models of galvoscanners that could be used to
+simulate complete control system (Chapter 2.1, 2.2)
+3) Measure parameters of galvoscanners used in research and create a
+measurement procedure (Chapter 2.3, 2.4)
+4) Verification of models (Chapter 2.5, 2.6)
+5) Design and build laboratory control system for galvoscanners (Chapter 3)
+6) Investigate power efficiency of the system, trying to increase it as much as
+possible (Chapter 4)
+7) Experimentally verify design ideas and real control system (Chapter 5)
+8) Summarize results (Chapter 6)
+To complete the research (especially points 2, 4 and 5) a special laboratory stand have
+been created that consist of:
+•
+
+PC with real-time operation system and simulation/visualization software
+
+•
+
+ICSP devices programmer (designed by author) presented in Appendix 1
+
+•
+
+Measuring and data logging equipment
+
+•
+
+Low noise high-efficiency ZVS-CV power supply (designed by author)
+
+Original achievements
+1) Formulation of the new control structure characterized by application of
+position reference block cooperating with modified PID position controller and
+dependence of supply amplifier voltage of position reference
+2) Formulation and verification mathematical model of galvoscanner that can be
+used for computer simulation of new control systems and position regulators.
+On the basis of this mathematical model, a ngSpice version have also been
+created and experimentally verified. Author haven't found any information
+about galvoscanner's modeling in available literature.
+3) Design and building of real, laboratory research galvoscanner control system
+that enables to test variety control system configurations, and that could be
+tuned for different galvoscanners and applications.
+4) Modification, design and building of controlled ZVS-CV power supply for the
+control system, that meets particular requrements. This supply reduce output
+power amplifiers loses several times due to output voltage dependence of
+position reference. Also EMI reduction has been achieved by special resonant
+inductors that allows zero voltage switching in all modes of operation.
+
+PHD main, Michael Widlok
+
+page 6 of 106
+
+1. Addressed problems, recent state of research
+1.1. History of galvoscanners and technical background
+In present technology quite common task is to control position, or rotation angle
+of the given element. In the case of linear position movement, linear motors or standard
+electrical motors with mechanical equipment are used. Usually control of rotation angle
+is accomplished by electrical motors with encoders and regulators, but now in some
+special applications by galvoscanners. Galvoscanners have some advantages over any
+other devices, because of their short response time and very high accuracy. However
+they are not suitable to drive heavy loads (large moment of inertia), but this drawback
+might be reduced in short future.
+The magnetic circuit for “moving iron” galvoscanner have been disclosed in a
+United States Patent [2]:
+Patented Nov. 22, 1949
+2,488,734
+Dynamo Transformer
+Robert K. Mueller, Newton, Mass.
+Application March 7, 1946
+
+Figure 1.1.1. Dynamo transformer 
+It shows the dynamo transformer (presented on
+
+from Patent 2,488,734
+
+Figure 1.1.1) also called torque motor with two special properties over the working
+range (10-20 degrees) [1], [2]:
+3) Torque is proportional to applied current
+4) Torque is independent of the rotor displacement
+Presented galvoscanner consist of rotor made of magnetic iron (14) and stator (10) with
+two electrically separated windings (16, 18) wound over the poles. Today “moving
+iron” galvoscanners have similar construction to the “original one” - differences are
+mainly in construction of poles, and using pernament magnets instead of double
+windings. All this modifications allows better linearity and much greater torque
+available from the device.
+For very long time galvoscanner was only a “technical innovation” without any
+practical use. The situation have changed when good and accurate position sensors and
+PHD main, Michael Widlok
+
+page 7 of 106
+
+solid-state position controllers become available. Galvoscanner companies started to
+integrate position sensors and some other control circuits directly into the device, and
+produce dedicated controllers [3]. This made the technology more available to normal
+users, but even now commercial systems are expensive and not enough universal. One
+of the first really good commercial system - “Interscan” (for laser shows) was build in
+1976 by General_Scanning_Inc. and Inermedia_Systems_Corp [4]. Total system costs,
+the laser source with digital laser path controller were about 45000$.
+After a few successful applications of such systems galvoscanners was finally
+found as a good solution to number of problems. Soon military and medical projects
+(with very high budgets) effectively stimulate fast galvoscanners development,
+especially miniaturization and improvements in control electronics. This reduce the
+costs of commercial systems making them more available to normal users and
+designers. However the prices are still high and companies don't give much technical
+data with theirs systems. Today galvoscanners are known by many names: optical
+scanner, galvanometer, galvo (slang), or simply scanner. In this publication we will
+stick to “galvoscanner” as the most popular and widely known.
+There are two types of galvoscanner control systems: open loop and closed
+loop, each with many variants or modifications.
+An overview of typical galvoscanner closed loop control system is shown on
+Figure 1.1.2.
+
+Figure 1.1.2. Typical closed­loop galvoscanner control system block diagram
+
+PHD main, Michael Widlok
+
+page 8 of 106
+
+“Position regulator” is a low-level, closed loop subcircuit that detects and minimize
+position error of the rotor. “Power amplifier” is a power circuit that powers the coils,
+according to the signal from position regulator (sometimes performing a current control
+as well). “Controller” is a full system consisting of position regulator, power amplifier
+and possibly other circuits to suit the given application.
+Open loop galvoscanner will always have some limitations, that are often
+unacceptable for most of the applications. There are three main types of the open loop
+galvoscanners:
+9) ordinary open loop galvoscanners
+10) resonant galvoscanners
+11) torque motors
+Open loop galvoscanners are very similar to normal devices, except that they
+lack the position sensor.
+Resonant galvoscanners are tuned to resonate at a given frequency, when fed
+with adequate signal. Frequency of the input signal have to be fixed (equal to resonant
+frequency), and by varying the amplitude we can change the peak to peak rotation
+amplitude. Such devices have been used in “Interscan” projector to create special
+effects.
+Torque motors are simply electro-mechanical devices with fixed rotor (or with
+very small rotor movement) that can create constant, well controlled torque.
+
+1.2. Galvoscanners applications
+Main applications of galvoscanners are:
+1) Military – mostly in target tracking or marking. The system usually consist of a head
+with the approximate position controlled in traditional way (with electrical motors
+for example), and high speed and very high accuracy galvoscanner systems that
+finally track the target. This dual system is needed because galvoscanners have
+limited rotation angle.
+2) Medical – laser-based BioMedical applications, galvoscanners offer the positioning
+accuracy, speed, and size that are ideal for compact, system designs used in
+dermatology, ophthalmology, confocal microscopy and analytical applications.
+3) Material processing – laser marking, machining, drilling and welding systems have
+achieved very high marking speeds and precise laser processing performance in
+small and large beam diameter configurations using galvoscanners.
+4) Laser imaging – laser show or light show systems for discotheques and public clubs.
+
+PHD main, Michael Widlok
+
+page 9 of 106
+
+These sometimes does not have closed loop drivers and are usually made very
+cheaply. However in this area very high accuracy or speed is usually not needed.
+5) Semiconductor processing - micro-machining applications such as memory repair
+and laser trimming, as well as mask and wafer inspection applications depend on
+galvoscanners to consistently deliver very precise and stable positioning.
+Most of these applications use galvoscanners to perform some kind of laser or light
+path control by using mirrors. Others use them for precise tool manipulation or
+positioning. This publication will concentrate on closed loop systems that are used in
+most of the applications from target-tracking to material processing. In fact, almost all
+closed-loop systems needs the fastest and the most accurate position control that is
+possible.
+Laser shows might not be the most important application of galvoscanners, but
+the idea of controlling laser light path with two mirrors is very important because many
+other devices works in very similar way.
+Laser shows systems usually consist of high power visible laser (form 200 mW
+in rooms to 4-10 W in open areas), and a path controller [5]. Such controller usually
+drives three galvoscanners: first is used as a dimmer (beam interrupter), second and
+third are used to control the beam path and have small mirror mounted on it's shaft.
+Laser beam reflects from the second mirror to the third and then is directed to the
+output window.
+If galvoscanner's shafts (and thus the mirrors) are mounted perpendicularly. The
+beam direction can be controlled in two dimensions, by turning the mirrors. If the
+galvoscanners and their position controllers are fast enough it is possible to create
+steady images on the screen, or with high power lasers even on clouds. Figure 1.2.1
+shows recent path controller used in modern laser show equipment. Path of the laser
+beam is marked with red line. We can see how the laser beam going out of the beam
+interrupter, reflects from two constant mirrors, and finally reaches two control
+galvoscanners mirrors which control output beam position.
+The beam can be controlled in many different ways to produce the image, but
+only two basic modes are used today. They are:
+–
+
+raster scanning (Figure 1.2.2)
+
+–
+
+vector scanning (Figure 1.2.3)
+
+Each of them can be realized in two ways assigned respectively to case (a) and case
+(b). In raster scanning laser beam travels over all possible points in the image area
+(pixels) according to lines showed on Figure 1.2.2.
+
+PHD main, Michael Widlok
+
+page 10 of 106
+
+Figure 1.2.1. Recent laser path controller with beam interrupter
+At dark points of the image the beam is interrupted. The image is crated like in the TV
+set. The only difference between case (a) and case (b) is the way that the beam goes. In
+case (a) active lines are horizontal, while the others are blanked completely. In case (b)
+all lines are used to display points of the image.
+
+Figure 1.2.2. Raster scanning method 
+
+Figure 1.2.3 Vector scanning method 
+
+for image projection
+
+for image projection
+
+Raster scanning shown on Figure 1.2.2 case (a) does not require closed loop position
+control, but require very fast beam interrupting system. Second way, case (b) is a bit
+better because it can use laser power more effectively. This way also allows to use
+resonant galvoscanners.
+However taking into account that typical image created by the system has much
+more dark areas, we can see the laser will be off most of the time. It means that even
+very high power lasers will create dim images, and generally it is a waste of power. We
+PHD main, Michael Widlok
+
+page 11 of 106
+
+should remember that high power lasers that not use laser diode bars can not be turned
+on and off quickly. That's why usually beam interrupters are used instead of switching
+the lasers.
+In vector scanning laser beam goes through all bright points of the image area
+according to specified algorithm. Generally the beam is stopped at bright points (case
+a) or track bright lines at constant speed (case b). In both cases laser is interrupted
+between two points or two lines and should move from one bright area to the other at
+maximum speed.
+Vector scanning can create images even without beam interrupter but needs
+very fast and accurate closed loop position controllers for galvoscanners. As shown on
+Figure 1.2.3 case (a), laser beam is controlled to stop on given points, or to track a
+given line with approximate constant velocity all the time - case (b). Both of these
+methods need different regulator settings to get best performance from the system.
+Vector scanning are considered as standard for laser shows (ILDA), and there are even
+special file formats for images, and test images for controller tuning.
+
+1.3. Recent state and available publications
+Galvoscanner are known in the industry for about 30 years, but unfortunately
+casual user situation didn't change much in that time. Even if galvoscanners and their
+electronics are improving, they are still not very popular and widely known. Essential
+scientific and technical knowledge is carefully hidden by leading manufacturers. It is
+caused by hard competition between them from one side and by growing importance of
+the military applications from the other. Lack of accurate technical data and almost
+total lack of scientific publications on this subject is meaningful trouble in research.
+Companies usually sell their devices without much technical data, and with dedicated
+controllers that can't be used with different brand galvoscanners.
+Today only a few companies in the world actually produce galvoscanners. One
+of the most innovative (and most expensive) galvoscanners are made by
+Cambridge_Technology [6]. General_Scanning or LSK are known too. Figure 1.3.1
+shows 6220hb “moving coil” device (measuring 5cm in hight). Compare the size of
+the mirror, to the size of galvoscanner itself. Such proportions (big mirror with small
+galvoscanner) is possible only with moving-coil technology.
+It is characteristic, that controllers needed by almost every system have similar
+construction, and typically are dedicated for one, specified application only. Tunings
+available for designer are limited, and sometimes even the procedure is not given in the
+
+PHD main, Michael Widlok
+
+page 12 of 106
+
+manual. It is important that inappropriate controller, or badly tuned controller can
+easily damage connected devices making all system useless. Even worse, such crashes
+are very hard to track, and debug accurately.
+
+Figure 1.3.1 Cambridge Technology 6220hb 
+moving coil galvoscanner
+Companies almost never give the schematic or even accurate description of theirs
+better position controllers, and sometimes all this devices seems to be “secret” because
+of marketing considerations or military restrictions. System produced for commercial
+applications are not suitable for research work.
+Available technical info is limited to a few schematics of very old position
+controllers, and some main parameters of galvoscanners. Manufacturers usually don't
+want to even give full description of the product, stating that it is factory only data
+useless for the customer. Some descriptions, schematics, and sometimes even FAQs
+can be found on the Internet [5]. These articles are usually written by designers or
+galvoscanner's specialists, and posted to discussion groups. However this publications
+are hard to find and the noise on the discussion groups is very high. Some literature can
+also be found on www pages like LaserFX [7], however it is usually devoted to laser
+shows only, or ILDA specifications.
+
+1.4. Area of interests
+Main problem considered in this work is how to achieve good position control
+quality and high efficiency of the whole galvoscanner system. Requirements of good
+position control and high efficiency are important for further galvoscanner technology
+development, especially for military applications, where equipment has to be reliable,
+accurate and miniaturized. Unfortunately to get better position control properties
+
+PHD main, Michael Widlok
+
+page 13 of 106
+
+higher dynamics of the controlled system is needed which worsen energy efficiency of
+the whole galvoscanner system. The solution will be searched in control structure as
+well in parameter optimization of its elements.
+Figure 1.4.1 shows block diagram of the laboratory system designed by the
+author, that will be used during research. Presented system is different from typical
+ones used in the industry, but it is very well suited for research work. It can be used as
+image projector (Chapter 1.2, point 4), for target tracking (point 1) and many more
+other applications where precision control of position is required (points 2,3,5).
+Different applications only change demands placed on different blocks, while the main
+idea stays the same.
+Conventional, two mirrors laser beam path controller was used as a
+galvoscanners load, because it could be quickly realized in hardware. In fact it is laser
+imaging device, that can produce very effective results when used with higher power
+visible laser. Projected image quality is also an approximation of the system
+performance (speed and accuracy).
+
+Figure 1.4.1 Block diagram of galvoscanner control  system used during research
+All of the blocks shown on Figure 1.4.1 were needed to create usable research
+system, however for some applications they could be integrated in miniature, or
+application specific integrated circuits. Of course image projection requires a specific,
+dedicated to it tuning of control loops, usually different other applications. Generally in
+
+PHD main, Michael Widlok
+
+page 14 of 106
+
+the research much attention have been paid to adjust and verify system parameters
+caused by different demands which depends on given application.
+All blocks presented on Figure 1.4.1 are described in more detail in following
+chapters, now it will be given only the main idea of theirs function:
+•
+
+PC computer is used for changing parameters of programmable analog regulators,
+preparing digital data for digital signal processor and overall control tasks (Chapter
+3.2, 3.3).
+
+•
+
+Programming device is connected to PC parallel port and outputs data using JTAG
+interface that is used to program ICs in position regulators (Appendix 1).
+
+•
+
+Position regulators are fully programmable analog devices, that can be programmed
+to any basic regulator (P, PI, PD, PID) and even to non standard or combined type.
+For most research work, advanced analog regulator, with non standard
+characteristic were used (Chapter 3.2)
+
+•
+
+Power amplifiers amplify the low level signal from position regulators, and also
+serves as current regulators. Maximum output voltage is +/-24 V, with 4 A peak
+current (Chapter 3.3 and 4.1).
+
+•
+
+Power supply converts 230 V AC line power to 24V DC, needed by power
+amplifiers. This block is also controlled from DSP or PC to reduce the losses in
+power amplifiers (Chapter 4.2).
+
+•
+
+Digital signal processor or PC is used to process digital data before it is actually
+send to D/A converters, and then to position regulators. By this processing it is
+possible to reduce response time of galvoscanners and increase accuracy of the
+system (Chapter 3.2).
+
+Thesis of research work:
+Using digitally formed position reference signal and reference supply voltage
+signal depended on predicted time voltage curve based on position reference signal,
+enables to achieve required position control quality and high power efficiency of
+galvoscanner control system.
+
+PHD main, Michael Widlok
+
+page 15 of 106
+
+1.5. Galvoscanner construction and theory of operation
+Today galvoscanners come in a few different types, but only two of them are
+relevant. These are “moving iron”, and “moving coil” constructions. Other were
+“moving magnet”, or combination of the basic types, however they don't gain approval
+because of inferior performance and other problems. “Moving iron” and “moving coil”
+galvoscanners have simple mechanical construction, and can be made with very high
+tolerances, what greatly improve response time and accuracy. Position controllers for
+these two types also have similar structure, but have to be tuned differently.
+Author also found out that in old recorders (with ink pens) often use
+galvoscanners. Those devices were similar in construction to the “moving coil” type,
+however the details are different. The devices tested by author was able to achieve
+about 2ms step response time, and needed about +/- 50 V power supply to achieve it.
+Maximum coil currents have been estimated to about 4 A. They were about 4 to 5 times
+greater then LSK devices used in this research work.
+
+1.5.1. Moving iron galvoscanner
+Because of lower costs and better availability “moving iron” galvoscanner is
+concurrently the most popular. For example General_Scanning G-120DT galvoscanner
+is shown on Figure 1.5.1.1 below [3]. This scanner is well know from quite long time,
+and it is often used as a reference to compare other devices. It's parameters however,
+are not very good in today standards. Device presented on the figure has average sized
+mirror mounted on the shaft and rather complicated connector. There is no common
+standard defining such connectors and almost every company uses it's own one so
+quick substitution of different brand galvoscanners is not possible. Normally there are 5
+to 7 pins needed to control galvoscanner in close loop mode:
+1, 2) Main coil
+3, 4) Position sensor power supply
+4, 5) Differential position sensor output
+6, 7) Optional temperature sensor
+It should be noted that this is probably the first really popular device with
+parameters, that are good enough for most of the tasks. It is also rather robust (in the
+galvoscanner's standards) and usually long lived. Many of these devices can be found
+
+PHD main, Michael Widlok
+
+page 16 of 106
+
+on surplus marked today, however they are still harder to find then one could expect.
+Also almost every company that makes galvoscanners have some of this kind in the
+offer.
+Internal parts of moving iron galvoscanner are shown on Figure 1.5.1.2.
+
+Figure 1.5.1.1 General_Scanning GD­100PD 
+galvoscanner outlook
+
+Figure 1.5.1.2. GD­
+100PD internal parts
+
+Galvoscanner from Figure 1.5.1.2 consist of:
+1. - Alnico magnet
+2. - Stator laminations
+3. - Plastic spacer
+4. - Position detector board
+5. - Hub ½'' diameter
+6. - Oscillator board
+7. - Ferrite transformer
+8. - Rotor
+9. - Lower bearing
+10.- Solder joint
+11.- Torsion bar
+12.- Sleeve
+
+PHD main, Michael Widlok
+
+page 17 of 106
+
+Both rotor and stator laminations are made form soft magnetic iron. Stator is
+sometimes made of isolated plates like transformer core to reduce losses. Coils are
+wound over the two stator poles, as shown on Figure 1.5.1.3. The torsion bar is needed
+to electrically ground the rotor and also to bring it back to the neutral positions when
+the device is off. If the coils are unenergized, rotor is kept in neutral position by the
+magnets and torsion bar.
+
+Figure 1.5.1.3 Moving iron 
+
+Figure 1.5.1.4 Moving iron 
+
+galvoscanner  ­ rotor in neutral 
+
+galvoscanner ­ rotor displaced 
+
+position (coils off)
+
+(coils energized)
+
+When current flows throw the coils, rotor align itself with stator poles as shown
+on Figure 1.5.1.4 below. The operation is quite similar to the “variable reluctance”
+stepper motor. The main difference is that galvoscanner is optimized to work with very
+small rotation angles, and has only one phase.
+It should be noted the rotor torque is constant and proportional to the coils
+current and its direction over all available working angle. Such galvoscanners are very
+robust because they don't need any moving connections, or rubbing elements. Only part
+susceptible to breakage is torsion bar. Because the coils are wound over the stator, it is
+easy to remove heat from them, so the scanner can operate with very high speeds and
+loads without the danger of overheating. The iron rotor is has large mass and it limits
+the maximal attainable galvoscanner speed. Also the torque is lower then in the
+“moving coil” galvoscanner at similar current.
+
+1.5.2. Moving coil galvoscanner
+Moving coil galvoscanner (shown on Figure 1.5.2.1) is completely different
+from “moving iron” type. It consist of pernament magnets, that form a magnetic field
+PHD main, Michael Widlok
+
+page 18 of 106
+
+similar to that created in DC motors [6]. The rotor is formed form single, very stiff coil
+that is mounted inside this field.
+
+Figure 1.5.2.1 “Moving coil” 
+galvoscanner block diagram
+In general this galvoscanner operates similarly to the DC motor without a commutator.
+The coil is connected by flexible wires not by brushes, and it has only a few turns.
+There is no working iron in the rotor so it is much lighter then the rotor in “moving
+iron” type. Very strong magnetic field created by magnets enables this galvoscanner to
+produce high torques.
+Some problems with this galvoscanner arises from connections between coil
+and input terminals – because they have to survive very fast and frequent moves. Also
+the coil construction is endangered to high temperature and forces during operation.
+This type of galvoscanners are not as robust as “moving iron”. They must be used with
+very precise and reliable controllers, because they can be destroyed very easy. If the
+maximum rotation angle is exceeded the torsion bar and coil connections can be broken
+making the device useless. The rotor coil have small thermal constant and is sensitive
+to overheating, even if maximum peak current is never exceeded. Good controllers for
+“moving coil” scanners usually have a few different protection circuits, and sometimes
+even a thermal model of the scanner's coil to prevent overheating.
+Both types usually have a torsion bar mounted between rotor and stator. This
+bar is generally thin, elastic metal wire (similar to high tone piano string), that serve
+two functions. It centers the rotor during turn off, and it provide grounding for it.
+Presence of torsion bar also cause, that constant current is needed to keep position that
+is out of neutral because it works as a spring. It also prevents the rotor from exceeding
+maximum rotation angles, what is very important especially in “moving coil”
+galvoscanners.
+PHD main, Michael Widlok
+
+page 19 of 106
+
+Closed loop scanners always have an integrated position sensor mounted
+directly on the rotor. Such sensor is typically capacitive type, that outputs two
+differential current signals, that are proportional to the rotor angle. The accuracy of the
+position detector is very important because in many application there is only position
+feedback. Today there are scanners that have position detectors working with microradian accuracy (0.01% of full scale), and with response time in micro seconds range.
+
+1.5.3. Modes of operation
+Both “moving iron” and “moving coil” galvoscanners can be used in three
+different modes of operation. Each mode requires slight modifications of the
+galvoscanner construction, but the main electromagnetic system stays the same [8]. The
+modes are:
+•
+
+Closed loop operation (Figure 1.5.3.1) – very fast and accurate, but need position
+sensor and special controller. Galvoscanners don't need a torsion bar, but it is always
+mounted to serve as a electrical rotor grounding, and to center the rotor in the case
+of input signal lack. This mode is the most complicated and used in high-end (the
+highest performance) systems.
+
+•
+
+Open loop operation (Figure 1.5.3.2) – torsion bar has to have well defined
+parameters, but position detector and closed loop driver is not required. This mode is
+used in less demanding applications. Approximate position is controlled by the value
+of input current.
+
+•
+
+Resonant operation (Figure 1.5.3.3) – the rotor mas and torsion bar stiffness is
+controlled during the production, to achieve given mechanical resonance frequency.
+Such galvoscanner can by driven by very simple driver that only outputs desired
+frequency, as a sine or square wave signal. Because of the mechanical resonance
+rotor angle is always changing sinusoidally. This mode is limited to raster scanning
+applications and not widely used today.
+
+Figure 1.5.3.1 Closed 
+
+Figure 1.5.3.2 Open loop 
+
+Figure 1.5.3.3 Resonant 
+
+loop operation mode
+
+operation mode
+
+operation mode
+
+PHD main, Michael Widlok
+
+page 20 of 106
+
+In fact closed loop mode can be used to all applications, while other modes are
+typically dedicated to only one. Closed loop controller can also be tuned to suit
+different scanners with different loads, what is completely impossible with other
+controllers. Following research will concentrate on closed loop mode, that surly will be
+the most important in currently developed applications.
+The choice of galvoscanner itself is more complicated because there many
+different types on the market designed with different applications in mind. For example
+a device for material processing needs very accurate position sensor and must be able
+to move large mirror, while speed is secondary concern. On the other hand target
+tracking application don't need very high accuracy of position sensors (because
+feedback must be taken form camera that sees the target) but high speed is a must. The
+prize might also be a problem for developers with limited budgets.
+For this research author chooses LSK moving iron, closed loop galvoscanners
+because they are originates form Europe, have good parameters (as for moving iron
+galvoscanners) and have affordable prize.
+
+PHD main, Michael Widlok
+
+page 21 of 106
+
+2. Formulation and verification of mathematical models
+of galvoscanner
+2.1. Choosing of the simulation model and environment
+Galvoscanner is a complicated object with nonlinearities and some very special
+and uncommon properties strongly depended on construction details being
+technological know how of the manufacturers. These “features” make modeling and
+simulation a difficult task, especially if the models have to be accurate. It is difficult to
+find anything about scanner simulation in the available literature and in Internet too.
+Manufacturers rarely use simulation to design their drivers - they can bear one or more
+destroyed devices during testing. A casual user is not able to do so at all. Then accurate
+models and good simulation environment is very important. Main reason is that a
+mistake that could be easily found during simulation can destroy the galvoscanner.
+Also it is obvious that to change the configuration of the driver is much simpler to do
+on the PC screen then in the real world.
+Because of complicated construction and lack of detailed mechanical
+parameters it is very hard (or even impossible) to create accurate mathematical model
+of galvoscanner. Fringing flux, magnetic permeability of stator core and rotor or
+internal parts dimensions are not know – to measure these parameters it would be
+necessary destructively disassemble the device. In this situation author had following
+possibilities:
+6) try to formulate and verify exact model based on general physical laws
+7) try to formulate and verify simplified functional model
+8) to resign of model formulation, to resign of simulation research and limit to
+experimental research verifying theoretical considerations.
+The first possibility is the best one, but exceeds assumed limits of the work. The third
+possibility could be expensive, as it was mentioned above and not necessary the
+shorties way to get satisfying final result, So author decided to follow the way
+implicating from the second possibility.
+
+2.1.1. Simulation environment
+Modeling electro-mechanical objects like galvoscanners can be done with
+Spice, Scilab [9], Matlab [10] or others. Every such simulation tool has its own
+limitations. In galvoscanner's case is important to take into considerations detailed
+
+PHD main, Michael Widlok
+
+page 22 of 106
+
+dynamic and static properties of electronic devices applied in the control system. It is
+caused by relatively high galvoscanner dynamics and specific operation its control and
+supply devices.
+For example real output power amplifier behaves differently when load is
+heavy, then it would without load. Maximum output voltage swing is other thing that
+should not be forgotten. Even worse – output voltage is normally depended on the
+current in real world. Such interactions are usually nonlinear and very hard to
+accurately simulate with high-level equation orientated programs like Matlab or Scilab.
+On the other hand such problems virtually does not exist when using ngSpice with real
+(not behavioral) semiconductor models.
+Electric circuit simulation program (like ngSpice or similar) seems to be the
+best choice for low-level amplifier and position regulator testing. NgSpice is not able to
+model mechanical systems directly, what is needed for galvoscanner model. Shaft, load
+or torsion bar are mechanical parts that can not be ignored. The best solution is using of
+well known electro – mechanical analogies. Table 1 will summarize them.
+Table 1. Electro­mechanical analogies.
+Electrical variable
+
+Mechanical equivalent Electrical unit
+
+Mechanical unit
+
+[SI]
+
+[SI]
+rad
+]
+s
+
+Voltage
+
+Rotation speed
+
+[V ]
+
+Current
+
+Torque
+
+[ A]
+
+[ N⋅m]
+
+Capacitor C
+
+Inertia
+
+[F ]
+
+[ kg⋅m 2 ]
+
+Inductor L
+
+Spring
+
+[H ]
+
+Resistor R
+
+Dynamic friction
+
+[]
+
+Voltage source
+
+Rotation
+
+[V ]
+
+at
+
+constant
+
+fixed speed
+Current source
+
+Constant torque load
+
+[ A]
+
+[
+
+[
+
+N⋅m
+]
+rad
+
+[
+
+N⋅m⋅s
+]
+rad
+
+[
+
+rad
+]
+s
+
+[ N⋅m]
+
+It can be seen, that it is possible to simulate almost all mechanical parts using
+ordinary electrical elements. It is only a matter of interpretation of the results. Of
+course all parameters in SI units have to be provided, what can be sometimes
+problematic and prone to errors.
+
+PHD main, Michael Widlok
+
+page 23 of 106
+
+2.2. Formulation of galvoscanner simulation models
+2.2.1. Mathematical model of the galvoscanner – differential move
+equations
+Galvoscanner is a quite complicated device, that is hard to accurately describe
+in mathematical terms. Magnetic circuit is complex (refer to Chapter 1), and
+manufacturers rarely give any detailed data to the user. Accurate dimensions, magnetic
+properties of rotor and stator materials, number of turn in the coils and so on are simply
+not known by the user. Some of this information could be gathered by (destructive)
+disassembly of the galvoscanner, but some would still be problematic.
+In available literature and even in Internet there are not any descriptions of
+mathematical models (basing on electro-mechanical devices theory) that would take
+into account complicated distribution of magnetic fields in the galvoscanner. There are
+even no examples of and any other models of galvoscanners, that could be helpful
+during research. Because of these reasons author decided to create functional
+galvoscanner model basing on physical characteristics of the device. Galvoscanners are
+build on the basics of the “dynamo transformer” [2], and theirs main properties are
+summarized below [1]:
+–
+
+Torque is linearly proportional to the applied currents
+
+–
+
+Torque is substantially constant over the range of the motion (+/-10 to +/-20
+degrees maximum typically) for which fringing effects are negligible
+
+–
+
+Torque produced by the current will rotate the rotor until it is balanced by the
+opposing torque of the torsion bar and/or load
+
+For more detailed discussion on construction and theory of operation please refer to
+Chapter 1.
+Basing on these properties differential equations can be formulated for the
+galvoscanner's state variables:
+T E =TRC⋅I C t 
+d  t 
+T E −  T TB T FR  = RIN⋅
+dt
+dI t 
+U C  t =CR⋅I C  tCL⋅ C  BEM⋅ t 
+dt
+
+PHD main, Michael Widlok
+
+page 24 of 106
+
+ t=
+
+dPos t
+dt
+
+T TB= KTR⋅Pos
+T FR= FR⋅ t 
+where:
+TE -
+
+Electrical torque (created by coils)
+
+T TB -
+
+Torsion bar torque
+
+T FR -
+
+Mechanical friction torque
+
+IC -
+
+Coils current
+
+CR ,CL -
+
+Coils DC resistance and inductance
+
+BEM -
+
+Back Electromotive force
+
+TRC -
+
+Torque constant
+
+KTR -
+
+Torsion bar constant
+
+FR -
+
+Mechanical friction constant
+
+ -
+
+Rotor angular velocity
+
+Pos -
+
+Rotor position
+
+It can be seen that galvoscanner equations are similar to the pernament magnet DC
+motor, except the torsion bar torque. If the rotor excursion is below it's maximum the
+system is highly linear and it is possible to apply Laplace transform to it.
+Transformation of the previous equations let us write:
+
+T E  s=TRC⋅I C  s
+RIN⋅ s=T E  s− [ T TB  sT FR  s  ]
+substituting for T B and T FR :
+
+RIN⋅ s=T E  s− [ KTR⋅Pos s FR⋅  s ]
+
+I CL  s=
+
+U C  s−  s ⋅BEM
+
+[
+
+CL
+CR⋅ 1 s⋅
+RL
+
+]
+
+ s= s⋅Pos
+
+PHD main, Michael Widlok
+
+page 25 of 106
+
+2.2.2. Galvoscanner model block diagram and transmittance
+Using equations from previous chapter block diagram of the galvoscanner
+model (Figure 2.2.2.1) can be created. It is assumed that the input signal is voltage
+applied to the coil, and output is rotor position (excursion angle). It is also possible to
+watch rotor angular velocity and coils current.
+
+Figure 2.2.2.1. Block diagram of the galvoscanner mathematical model
+Using this diagram the model's transmittance can be created. Reduction of blocks G3(s)
+and H2(s) to G5(s) gives:
+
+G5  s=
+
+ s
+G3 s
+=
+T E  s 1H2  s ⋅G3  s 
+
+After substitution for G3 and H2:
+
+G5  s=
+
+ s
+=
+T E  s
+
+1
+RIN
+FR⋅ 1
+⋅s
+FR
+
+[
+
+]
+
+Further reducing blocks G5(s), G4(s) and H3(s):
+
+G6  s=
+
+ s 
+G5 s 
+=
+T E  s  1 H3  s⋅G4 s⋅G5  s 
+
+Note that transmittance G6(s) is still for ω. It is required because this signal is still used
+in the model (as feedback from BEM). Again substituting real parameters:
+
+PHD main, Michael Widlok
+
+page 26 of 106
+
+G6  s=
+
+ s 
+=
+T Es
+
+1
+RIN
+1
+FR⋅ 1
+⋅s  KTR⋅
+FR
+s
+
+[
+
+]
+
+Finally complete model input transmittance can be computed:
+
+Gw  s=
+
+  s
+G1 s ⋅G2 s⋅G6 s 
+=
+U C  s  1 H1  s⋅G1  s⋅G2 s ⋅G6  s
+
+Substitution for real model parameters will yield to 3'th order transmittance:
+
+Gw  s =
+
+2
+
+3
+
+2
+
+3
+
+BEM ⋅CR⋅KTR CR⋅FR KTR⋅TE⋅sCR⋅TM TE⋅CR ⋅s TM ⋅TE⋅CR⋅s TRC
+CR⋅KTRCR⋅FR KTR⋅TE ⋅s CR⋅TM TE⋅CR⋅s TM⋅TE⋅CR⋅s 
+
+The model have been simulated with Matlab/Simulink. Figure 2.2.2.2 shows
+Simulink block diagram of the presented model. Simulink model have been used to
+verify model behavior (comparing it to real device) and to verify ngSpice model
+presented below.
+
+Figure 2.2.2.2. Galvoscanner model implemented as Simulink block diagram
+Designing of the real regulator require using of circuit orientated simulator like
+ngSpice. It was needed for power amplifier, power supply and other circuits design.
+NgSpice have huge library of transistor, operational amplifiers and other components,
+so it is possible to create a very accurate model of the full electrical circuit. Fortunately
+it is possible to implement mathematical model from Figure 2.2.2.2 as ngSpise net list.
+
+PHD main, Michael Widlok
+
+page 27 of 106
+
+2.2.3. NgSpice implementation of the galvoscanner model
+NgSpice is a Linux version of very popular Spice circuit simulator [11]. The
+main idea was to create model that will precisely follow mathematical model created
+before and let's quickly test many different control methods and check given regulator
+for (galvoscanner) safety. The model is supposed to determine if wrong tuning or some
+other errors in real circuit do not cause destruction of the real object. It would be very
+useful if the accuracy of the simulation will allow pre-setting the position regulator.
+Fortunately in ngSpice it is possible to model all “parts” of the galvoscanner
+separately. This method allow to check what is happening “inside” the device and also
+ensure that the model will be realistic load for the power amplifier that powers it.
+Galvoscanner can be broken into four main parts:
+•
+
+Stator coil
+
+•
+
+Rotor with its inertia, torsion bar and friction
+
+•
+
+Shaft load – mirror for example
+
+•
+
+Position detector
+
+In fact position detector (4) is not really part of the galvoscanner, but it is integrated in
+its case and every closed loop position regulator needs it anyway. Figure 2.2.3.1 shows
+how all these parts were modeled.
+
+Figure 2.2.3.1 Galvoscanner model implemented as ngSpice schematic
+In fact this is exactly the same model as was presented on Figure 2.2.2.1, it is
+only created by using electrical components (inductors, resistors) based on well known
+electro-mechanical analogies. Values of all model elements are set according to real
+device parameters. Input coil subcircuit consists of the coil resistance and inductance
+
+PHD main, Michael Widlok
+
+page 28 of 106
+
+(CL and CR), current sensor (Cf) and controlled voltage source BEM. This source
+multiples speed signal by galvoscanner BEM parameter creating back EMF voltage.
+Current measured by Cf (coil current in real object) is an input for rotor subcircuit.
+Multiplication of this signal by TRC parameter yields rotor torque.
+RIN, KTR and FR are mechanical rotor parameters – rotor inertia, torsion rod
+constant and rotor dynamic friction. Speed output also acts as a load connection point.
+By connecting capacitors (inertia), inductors (springs) or resistors (friction) we can
+simulate almost any mechanical load that will be used with real object. Integration of
+the speed signal (done with V to I converter and unit capacitor) creates rotor position
+signal.
+Additional comment is needed for “Max angle blocking” switch (in rotor
+subcircuit) and MAN block. These elements allows blocking the rotor when maximum
+angular excursion is exceeded. Connecting speed signal to ground throw very little
+switch resistance creates very high breaking torque on the rotor reducing it's speed to
+zero. MAN block constantly checks if current position does not exceed maximum
+angular excursion for the given galvoscanner and controls the switch accordingly.
+Position signal is converted to differential current signal that match position
+detector outputs of the real device. Icom and Idif are the most important parameters
+here. With this model galvoscanner controller can be connected to the differential
+position detector signals and to the input coil.
+The model will act just like the real object (loading the controller's power
+amplifier and so on) except the situation when maximum rotor angle is exceeded. Real
+object would became unpredictable (and possible damaged) while the model will just
+block the rotor signaling troubles with the controller. The model allows to watch almost
+all internal galvoscanner signals even those that are unavailable for observation in real
+device. For example real rotor torque during movement can be checked or back EMF
+voltage can be measured.
+
+2.3. Galvoscanner parameters
+To simulate galvoscanner it is necessary to know many parameters of the used
+devices. Unfortunately manufacturers not always provide even the basic ones except
+for those that are marketing – safe (or those that are for this or other reason better then
+competition). One of the best technical data sheets have Cambridge_Technology [6].
+Table 3 shows most important parameters and theirs example value taken from
+Cambridge_Technology data sheet. Other companies usually don't provide all these
+
+PHD main, Michael Widlok
+
+page 29 of 106
+
+parameters, and most of them have to be measured by the user.
+Problems arises when it is needed to simulate galvoscanner behavior at the end
+or above its maximum rotation angle. Current – torque characteristic becomes
+extremely nonlinear and torsion bar behaves unpredictable. Sometimes even integrated
+position sensors don't work accurate. Of course one can say that it is possible to test
+real device and then provide some look-up tables for the model. This might actually
+work, but it means that we have to do destructive test on expensive galvoscanner and
+even then we get the data only for that model. Tests can be destructive if:
+13.Torsion bar would be broken or lost its characteristic
+14.Position detector might get destroyed
+15.Coil connections would be broken in moving coil galvoscanners
+Fortunately exceeding maximum rotation angle happens usually because of some kind
+of failure only, not during normal work. In this case it is better to assume that
+galvoscanner get destroyed and there is no need to simulate what will happen next.
+With such assumption it is enough to test for passing the limits what is rather straightforward. To protect galvoscanners most of commercial controllers turn off theirs output
+amplifiers when they detect that rotor is above it's limits. In fact this is not always the
+best way to react in such situation.
+For example imagine that the galvoscanner with heavy load (large moment of
+inertia) is turned to the one of it's limits at maximum speed. With badly tuned position
+regulator it is possible that the maximum angle will be exceeded momentary. Without
+protection the regulator will stop the rotor slight above limit, but when the protection
+circuits cut the power, large inertia will throw the rotor far above allowed position and
+possibly break the torsion bar. However, if the allowed position is exceeded because of
+power amplifier failure, cutting power off is the best possible solution.
+Other useful features that could be implemented in galvoscanner model
+(assuming that required parameters could be obtained or measured) are:
+•
+
+Thermal model of the coils (important in moving coil devices)
+
+•
+
+Real outputs of the integrated position detector (if exist) – suitable for designing low
+level input circuits
+
+•
+
+Saturation of stator core at very high coil currents (only in moving iron devices)
+
+•
+
+Special features presented in some galvoscanners, like integrated thermistor, heater,
+tuning of position detector and so on
+
+During research some effort have been made to create a thermal model and stator
+saturation model, but finally turned out that it was very hard to check the accuracy of
+the models. In fact is was not possible to saturate the stator with reasonably safe coil
+PHD main, Michael Widlok
+
+page 30 of 106
+
+currents in real device. Table 2 shows example value of galvoscanner taken from it's
+technical documentation.
+Table 2. Galvoscanner parameters.
+Parameter name
+Maximum excursion
+
+SI Unit
+
+Example value
+
+rad
+
+40 o
+
+kg⋅m 2
+
+0.125 gm⋅cm2
+
+N⋅m
+A
+
+6.17⋅10 4
+
+MAN
+Rotor inertia
+RIN
+Torque constant
+TRC
+Max coil temperature
+
+o
+
+dyne⋅cm
+A
+
+110o C
+
+C
+
+Tc
+Thermal resistance
+Tr
+Back EMF voltage
+BEM
+
+o
+
+o
+
+C
+W
+
+C
+W
+
+1
+
+V⋅s
+rad
+
+108
+
+µV⋅s
+o
+
+N⋅m
+rad
+
+No data
+No data
+
+FR
+
+N⋅m⋅s
+rad
+
+Coil resistance
+
+
+
+2.79 
+
+H
+
+180 µH
+
+A
+
+3.9A
+
+A
+
+20A
+
+Torsion bar constant
+KTR
+Rotor dynamic friction
+
+CR
+Coil inductance
+CL
+RMS coil current
+Irms
+PEAK coil current
+Ipk
+Above parameters are taken from Cambridge Technology data sheet [6]. All of
+these parameters have to be used in the simulation model if one wants to get accurate
+results. If position detector is also needed, it have to be modeled separate and there is
+needed additional set of parameters. Fortunately only two are essential for the model:
+•
+
+Output signal, common mode Icom (example I com=155µA )
+
+•
+
+Output signal, differential mode Idif (ex.
+
+PHD main, Michael Widlok
+
+I dif =11.7
+
+µA
+o
+
+, SI unit [
+
+µA
+] )
+rad
+
+page 31 of 106
+
+Following chapters will present how the parameters were measured for the
+galvoscanner used in the research. It was LSK moving iron galvoscanner, as was said
+in Chapter 1.5.3.
+LSK 040EF Closed loop galvoscanner was chosen because of it's moderate
+cost, quite good parameters and because it was produced in Europe. Unfortunately LSK
+doesn't provide detailed documentation with the device [12]:
+•
+
+Optical angle
+
+40 o
+
+•
+
+Coil resistance
+
+2.3 
+
+•
+
+Linearity
+
+±0.2%
+
+•
+
+Zero drift
+
+0.06
+
+•
+
+Wobble
+
+0.03 mrad
+
+•
+
+Maximum torque
+
+0.028 Nm
+
+mrad
+o
+cel.
+
+Response time was given as a set of curves according to mounted mirror size. It ranges
+from 0.5 ms for small angle to 1.5 ms for maximum angle and heavy mirror mounted.
+However response time is very depended on used controller maximum voltage and so
+on. All other parameters have to be measured on the real device.
+
+2.4. Parameters measurements for LSK 040EF galvoscanner
+2.4.1. Electrical parameters
+LSK provided only DC coil resistance in the data sheet. Paradoxically this is
+also the easiest parameter to measure, by using technical method ( R=
+
+U
+) or a
+I
+
+simple ohmmeter. Coil inductance is much more important for the position regulator,
+and also harder to measure. Coil inductance for the LSK 040EF was measured using
+parallel resonant circuit as shown in Figure 2.4.1.1.
+Using low-level signal generator (to not move the rotor) and an oscilloscope it
+is easy to find the resonance frequency of the circuit formed from external capacitor Cr
+and galvoscanner coil impedance Lc, Rc. Coil inductance can be computed by :
+Fr =
+
+1
+2⋅⋅ L⋅C
+
+L=
+
+1
+Fr ⋅4⋅ 2⋅C
+2
+
+To be doubly sure that the measurement are accurate they can be repeated for a
+few different resonant capacitors Cr. This will each time give different resonant
+frequency.
+
+PHD main, Michael Widlok
+
+page 32 of 106
+
+Figure 2.4.1.1. Circuit used for coil inductance 
+measurement
+
+The result can be then averaged. Measured coil inductance for the 040EF
+galvoscanner is:
+CL=1.8 mH .
+Measurement of some other parameters require precise knowledge of the
+current rotor position and it's speed. Of course 040EF has integrated position sensor
+that can be used, but it have to be calibrated first and there is needed some kind of
+interface circuit. It should keep in mind that almost all position detectors integrated
+with galvoscanners have low level differential current outputs with large common
+mode current.
+The interface is needed to convert the differential current output of the position
+sensor to single ended voltage signal that can be connected to the oscilloscope or
+voltage meter. Also the precise scaling factors have to be known to get the real position
+of the rotor. Current to voltage converters can be realized using typical operation
+amplifiers.
+Common mode current was measured with rotor in neutral position. Differential
+current was measured with the rotor moved to maximum angle in two other directions.
+With this data, position sensor parameters was calculated:
+I com =114 µA
+
+I dif =15
+
+µA
+o
+
+=859.5
+
+µA
+rad
+
+Measurement of Back EMF Voltage was a bigger challenge. This is the voltage
+that galvoscanner will produce when it's rotor is moving. It is quite similar to the Back
+EMF Voltage in electric DC motors. Several methods could surely be used, however
+the most accurate will be to turn the rotor with a known speed and measure voltage that
+PHD main, Michael Widlok
+
+page 33 of 106
+
+the galvoscanner will produce. Of course the rotor can not be simply turned around – it
+have to be moved back and forth along its allowed rotation angle. After some tries,
+two galvoscanners was used with it's shafts connected together. Figure 2.4.1.2 Shows
+the used setup. One of them was powered with a sine wave while the voltage generated
+by the other was measured. Integrated position sensor was used to measure rotor angle
+and speed. Input signal (sine wave powering one galvoscanner) was set to achieve near
+maximum rotor angle and a few different frequencies were used.
+Digital oscilloscope was used to record all possible signals (input signal,
+position signal and output voltage). Then we can compute the derivate of the position
+signal (that is rotor speed) and measure the output voltage. Scilab was used to make all
+the necessary calculations.
+
+Figure 2.4.1.2. Circuit used for BEM measurement (2 galvoscanners used)
+Calculated back EMF voltage is:
+BEM =7
+
+mV⋅s
+rad
+
+It is very small, much less then typical value for moving coil galvoscanners.
+Such value is caused by galvoscanner construction – moving iron device has magnets
+and coils on the same core, while the rotor is moving inside the core. It is obvious that
+magnetic field surrounding the coils changes very little when iron rotor is moving.
+In moving iron galvoscanners rms and peak coil current is limited only by
+maximum coil temperature. In fact peak coil current can be many times grater then rms
+current, but it is often unpractical to reach maximum value because torque will not
+
+PHD main, Michael Widlok
+
+page 34 of 106
+
+increase as much as current. Moving coil galvoscanners are capable of producing larger
+torque because they don't have saturating iron cores. To estimate the values for the
+040EF galvoscanner a few tests have been made:
+1) Powering the galvoscanner with sine wave at different amplitudes (with
+blocked rotor) and measuring it's temperature.
+2) Calculating power losses on the coil resistance and temperature rise to get the
+thermal resistance.
+3) Attempt also have been made to check the current which will saturate the core,
+but in fact it was not possible to reach this values with reasonably safe current
+values.
+Experiments with different current values and different cooling methods gives us some
+reasonable values, typical for galvoscanners of this size:
+I rms=2 A and
+
+I pk =7 A .
+
+In reality the coil could withstand peak currents of 10 A or 12 A but this would require
+of using very high supply voltages. It would be also very inefficient operation because
+of required power amplifier and power supply.
+
+2.4.2. Mechanical parameters
+Rotor inertia is one of the most important mechanical parameter. It determines
+response time, position regulator tuning and power requirements for the given
+galvoscanner and load. However rotor mass is usually small compared to connected
+load (mirror for example). Because of these dependencies rotor inertia have to be
+measured when the needed load for the galvoscanner is known.
+In this particular example galvoscanners will be loaded with small (3x3mm)
+laser mirrors. Inertia was determined by matching used galvoscanner with very similar
+model from General_Scanning that has inertia given in data sheet. Construction, mirror
+mounts and mirrors was the same for the LSK so we can safety assume that the rotor
+inertia will be very similar. Finally the value have been checked and adjusted during
+simulation. The value for rotor inertia is:
+RIN =0.073 gm⋅cm2 =7.3 nkg⋅m2
+Torque constant depends only of galvoscanner construction and is constant in
+all normal working conditions. It is also quite easy to measure. For 040EF torque
+constant was determined by energizing the coil with it's maximum rms current and
+measuring torque on the rotor. Torque measurement in this case is easy because it is
+static torque. We can block the rotor and connect it by known length lever to linear
+force measuring device. This is shown on Figure 2.4.2.1 below.
+PHD main, Michael Widlok
+
+page 35 of 106
+
+Figure 2.4.2.1 TRC measurement method
+
+Then TRC can be computed as: TRC =
+TRC =15
+
+F
+. For the 040EF galvoscanner this is:
+r⋅I
+
+mN⋅m
+A
+
+Torsion bar (torsion rod) constant is rarely printed in data sheets. Even
+Cambridge_Technology does not gives this parameter. Fortunately with small
+excursions we can assume that the bar is linear and does not change it's characteristic
+over the time or temperature. Other problem is, if it can be assumed that, the torsion bar
+behaves linearly over the given rotation range or, if it is needed to use rather more
+complicated characteristic.
+Performed tests did not gave any sure result. Finally it was assumed that torsion
+bar is linear over all working angle. With such assumptions the torsion bar constant
+KTR can be measured by determining torque needed to hold given rotor position (out
+of neutral of course). For 040EF the rotor was rotated by maximum allowed angle and
+the coil current needed to hold that position was measured. Knowing TRC calculation
+is straight forward:
+KTR=
+
+TRC⋅I coil
+MAN
+
+KTR= 47
+
+mN⋅m
+.
+rad
+
+Rotor friction and other mechanical loses are so small that it is almost
+impossible to measure them accurately. These values have to be adjusted during
+simulation and model verification. With recent technology manufacturers typical use
+ball bearings for the rotor that create very little friction. Position detector use non
+contact method, so it doesn't create any losses. Of course additional load can have static
+friction, dynamic friction and other “features”, but this is completely different task to
+identify the load. For simple small mirrors, friction is insignificant in comparison to
+inertia.
+
+PHD main, Michael Widlok
+
+page 36 of 106
+
+2.4.3. LSK 040EF parameters summary
+Despite the very limited technical data that comes with 040EF closed loop
+galvoscanner all parameters required for simulation have been successfully measured.
+Parameters summary is in Table 3 and Table 4 below.
+Table 3. LSK 040EF measured mechanical parameters.
+Parameter name
+Maximum excursion
+
+SI Unit
+
+measured value
+
+rad
+
+0.384 rad
+
+kg⋅m 2
+
+7.3nkg⋅m 2
+
+N⋅m
+A
+
+15
+
+V⋅s
+rad
+
+7
+
+N⋅m
+rad
+
+47
+
+N⋅m⋅s
+rad
+
+4
+
+MAN
+Rotor inertia
+RIN
+Torque constant
+TRC
+Back EMF voltage
+BEM
+Torsion bar constant
+KTR
+Rotor dynamic friction
+FR
+
+mN⋅m
+A
+
+mV⋅s
+rad
+mN⋅m
+rad
+
+ N⋅m⋅s
+rad
+
+Table 4. LSK 040EF measured electrical parameters.
+Parameter name
+Coil resistance
+
+SI Unit
+
+measured value
+
+
+
+2.3
+
+H
+
+1.8 mH
+
+A
+
+2A
+
+A
+
+7A
+
+A
+
+114 µA
+
+A
+rad
+
+859.5
+
+CR
+Coil inductance
+CL
+RMS coil current
+Irms
+PEAK coil current
+Ipk
+Position detector commonmode current Icom
+Position detector
+differential current Idif
+
+PHD main, Michael Widlok
+
+µA
+rad
+
+page 37 of 106
+
+Future tests and comparison of simulation and real-live data proves that the
+computed or measured parameters where correct. The accuracy was well enough to
+provide useful simulation results. However author still don't know why manufacturers
+keep most of the technical data “secret” or “factory only” (therms used in one
+company's reply for author questions about the full technical data).
+
+2.5. Model verification with real device
+General idea of model verification is:
+•
+
+Record the response of the real device
+
+•
+
+Prepare the simulation with identical input signals
+
+•
+
+Compare the results.
+
+Unfortunately in reality there are some problems. The main one is to create input
+signals for the galvoscanner without a control system or even position regulator that
+will be designed after the simulation. It should be noted that it is very easy damage the
+galvoscanner by simple connecting it to low voltage DC source. Static torque needed to
+hold even maximum rotor angle is much less then dynamic torque that the galvoscanner
+can produce. If the DC voltage will be held for a little to long the torsion bar will break
+or lose its characteristic making device unusable.
+On the other side if we limit the voltage to a safe value we will tests only
+behavior with very small rotor speeds. Of course full tests can be done with position
+controller but in that case the regulator have to be tuned before the test – what is very
+difficult and danger for the galvoscanner. The problem becomes a closed circle of
+dependency: an accurate simulation need to be performed before building real object,
+but can not be checked if the simulation is accurate enough without having this object
+working.
+
+2.5.1. Initial, “low power” tests
+To perform safe tests that will check if the model does not have any general
+errors a special procedure was used. First all steady state responses for DC excitations
+from the model and from the real object have been compared. Then the galvoscanner
+was connected to the square wave signal generator. The amplitude of the coil voltage
+was slowly increased to achieve about 90% of maximum rotor angle swing. Then the
+results (position, and coil current) was recorded on the digital oscilloscope. Then the
+simulation model was “connected” to identical input signal as the real device and the
+
+PHD main, Michael Widlok
+
+page 38 of 106
+
+response was recorded. Finally model and real object response was plotted on the
+single axis and the difference was computed.
+
+Figure 2.5.1.1. Galvoscanner model tests with small signals. Top – excitation voltage 
+and rotor position, Bottom – galvoscanner current. Blue – excitation voltage, magenta 
+– model response, green – galvoscanner response, yellow – model error
+Figure 2.5.1.1 shows the results. Blue waveform on top axes is the input voltage
+measured on the galvoscanner's coil (divided by 5). Yellow waveforms on both axises
+are difference between model and the real device response (model errors). Position
+signal is presented on top axes, while galvoscanner current on the bottom one. Green
+color is dedicated to real device response, and magenta to model response. During
+research many tests have been made, however results were always similar. There is one
+representative sample presented.
+Both position and current signals are modeled very accurately, errors are
+almost pure noise (from the measurement). The only differences can be seen at the
+middle of the rotor movement, or at begging of current rise. Now we can compute
+model quality factor, and standard deviation of the errors signals in percents.
+
+PHD main, Michael Widlok
+
+page 39 of 106
+
+For position:
+MQF =∫  Pos gal − Pos mod  dt=12.5µrad⋅s
+
+std =1.99 %
+For current:
+MQF =∫  I gal − I mod  dt =22.4µA⋅s
+
+std =2.02 %
+These values acknowledge correctness and good accuracy of galvoscanner
+model presented above.
+
+2.5.2. Verification of the model with control system
+After galvoscanner model initial verification limited to some tests in rather mild
+conditions, it was possible to make verification in hard conditions that could be realized
+in closed loop system only.
+Galvoscanner current, voltage and position have been recorded on digital
+oscilloscope. Then model (with some passive components presented in the circuit) have
+been supplied with exactly the same voltage waveform and the same parameters have
+been recorded. Sinusoidal, triangle and square position reference have been tried during
+tests.
+At first author wanted to compute Model Quality Factor and error standard
+deviation for this tests (as in low power tests) but because of limited memory on the
+used oscilloscope it was impossible to do it accurately. Computed quality factors was
+depended mostly on size of recorded signal and selected time window, not on used
+reference signal. Finally it was clear that simulation model have not reached steady
+state because much longer recorded signal was needed to achieve this.
+Sinusoidal reference is the easiest for the regulator and model - simulation
+results are indistinguishable from recorded. Waveforms for square and triangle
+reference are presented on Figure 2.5.2.2 and Figure 2.5.2.2 below. On both figures
+blue waveform is the galvoscanner voltage, green is the recorded current (top) or
+position (bottom) and magenta is the simulation result.
+Small differences in the current waveform (Figure 2.5.2.1 top) are not caused
+by inaccurate model but, by short simulation time - the model was not in steady-state
+yet as was stated earlier.
+
+PHD main, Michael Widlok
+
+page 40 of 106
+
+Figure 2.5.2.1: Model tests with large signals (triangle reference). Top – voltage and 
+current, Bottom – voltage and position. Blue – excitation voltage, magenta – model 
+response, green – galvoscanner response
+The only way to fix this was to record much longer signals, however then the
+resolution of the plots was to low. The same problem can be seen below on position
+signal with square reference (Figure 2.5.2.2 bottom). Next slope on the same figure (at
+8-9th ms) is simulated correctly.
+Please note that the voltage on the galvoscanner reaches +/-20 V in peaks,
+while to hold the rotor at maximum angle in steady state about 1.7 V is needed. Such
+big difference causes problems in power supply and output amplifier cooperation and
+became an inspiration to formulate modified control system structure, that solves these
+problems in satisfying way.
+From Figure 2.5.1.1, Figure 2.5.2.1 and Figure 2.5.2.2 we can see that the
+model is accurate in low voltage, open loop operation as well as in dynamic operation
+with full position controller. Results proves that model concept is correct and that
+parameters identification have been done right. Presented model can be used to
+simulate many different galvoscanners (moving iron and moving coil), but parameters
+identification needs to be repeated for every new device. Fortunately presented
+identification procedure can be applied to different galvoscanner as well.
+
+PHD main, Michael Widlok
+
+page 41 of 106
+
+Figure 2.5.2.2: Model tests with large signals (square reference). Top – voltage and 
+current, Bottom – voltage and position. Blue – excitation voltage, magenta – model 
+response, green – galvoscanner response
+
+2.6. Additional models needed for research
+The galvoscanner controller used for research uses isp-PAC10 Lattice
+integrated circuits [13]. These elements (In-System Programmable Analog Circuit)
+allow very easy reconfiguration of the controller without any hardware changes. In fact
+reconfiguration can be done by connecting the controller to the PC and uploading new
+data to the isp-PACs with JTAG interface.
+
+The
+
+device
+
+has
+
+four
+
+independent
+
+programmable “macro-cells” that can be configured as an integrator or filter with
+defined gain and time constant.
+Figure 2.6.1 shows simplified schematic of the isp-PAC10 single macro-cell.
+Amplifiers IA1 and IA2 have selectable gain (form -10 to 10), switch Sw can be set
+open or close and Cf are selectable. In reality the device has differential inputs and
+outputs with additional re-referencing circuit. This circuit assure that common mode
+output voltage will be always 2.5V (½ of the supply voltage).
+
+PHD main, Michael Widlok
+
+page 42 of 106
+
+Figure 2.6.1 isp­PAC10 macro­cell block diagram
+Lattice gives dedicated tools for programming and even simulation of the
+standard configuration of the device. However these tools have rather limited use if we
+need to integrate the device with other circuity or use complicated configurations.
+The macro-cell model was created by transforming circuit from Figure 2.6.1 to
+ngSpice notation, taking into account that inputs and output is differential. Input and
+output voltage is limited from 0.5 V to 4.5 V maximum to assure that the model will
+catch over or under voltage conditions. Testing was done by comparing the model and
+real device response to given input signal in a few different configurations with very
+good results. This model will be needed for position regulator simulation, especially to
+check how it will work in “strange” setups.
+
+PHD main, Michael Widlok
+
+page 43 of 106
+
+3. Designed galvoscanner controller used for research
+3.1. Hardware configurations of the control system
+Typical galvoscanner control system has three layer structure - Figure 3.1.1.
+The first one is optional. It forms input data signal into position reference being time
+reference position trajectory- suitable to kind of input data, galvoscanner mode of
+operation and other requirements. The second layer is position control subsystem
+(position controller with position sensor) in which position controller generates current
+reference for subordinate current control subsystem. It consists of current controller,
+current sensor and power amplifier. Current controller generates reference of
+galvoscanner voltage, which is amplified in power amplifier and becomes galvoscanner
+voltage. In some less advanced (simpler) systems, current control subsystem is not
+used. Then galvoscanner voltage reference is generated directly by position controller.
+In this case system dynamics is worsened.
+
+Figure 3.1.1 Galvoscanner's controller block diagram
+Data input can be pure digital, pure analog or both – the final application will
+define the input [7]. Forming of the position reference signal is needed for example
+when we want to use digital input signal with analog position regulator or have data
+output device with complicated (hard to interface) outputs. Position regulator is
+obligatory for all closed loop controllers – it forms voltage or current reference signal
+for power amplifier that finally drives galvoscanner's coil. Position detector is typically
+integrated with the galvoscanner in the same case.
+Galvoscanner's coil has large inductance and small resistance, so it is necessary
+PHD main, Michael Widlok
+
+page 44 of 106
+
+supply galvoscanner with high voltage (+/-24 V or more), to achieve desired current
+dynamics. From another side the steady state voltage value, determined by small
+galvoscanner resistance, is much lower (usually more than ten times). During work
+cycle, instant required power varies in wide range. Then average power consumed by
+the galvoscanner is low (typically not more then 10 W), but this strongly depends on
+the application and input position data.
+Today, with modern ICs and galvoscanners it is possible to implement
+controller in many ways: pure analog, pure digital or mixed (hybrid). For example we
+can use digital signal forming block with analog position controller. Quite a lot of
+different configurations have been used in the industry, but it is not clear which one
+works best.
+
+3.1.1. “Mostly” digital controller system
+By using high speed DSPs and A/D, D/A converters it is possible to create the
+controller that will have most of its “intelligence” in DSP or other processor. Figure
+3.1.1.1 shows example controller of this kind. The controller have A/D converters that
+convert signals from position detector and optionally analog data source to digital
+(preferably 16 bit) word. Another D/A converter is used to convert DSP output to
+analog domain. DSP has to compute current reference signal (for current control
+subsystem) based on data input and current rotor position.
+
+Figure 3.1.1.1 Digital galvoscanner controller
+With this structure it is possible to implement many control algorithm like standard PID
+or others. The system is very flexible and it can characterized by:
+
+PHD main, Michael Widlok
+
+page 45 of 106
+
++
+
+all control algorithms are implemented in digital domain (in DSP firmware)
+
++
+
+data input forming is not required when used with digital inputs, but have to be
+converted when used with analog inputs
+
++
+
+it is possible to implement almost every algorithm for control or regulation
+
++
+
+it is easy to tune the controller for different galvoscanners or loads
+
++
+
+controlled can have some “predefined” parameter sets for different applications
+changeable by the switch or even automatically
+
+–
+
+it needs very fast and accurate D/A and A/D converters
+
+–
+
+DSP firmware have to work in hard real time mode
+
+–
+
+very fast DSP (preferably floating point) is required
+
+–
+
+small conversion errors or delays can have dramatic impact on the accuracy
+
+–
+
+firmware bugs can cause damage of the galvoscanner
+
+–
+
+very careful PCB (Printed Circuit Board) layout is needed to avoid difference
+between analog and high frequency digital parts.
+
+3.1.2. “Mostly” analog control system
+As the opposite to the previous, analog controller is show on Figure 3.1.2.1. In
+this controller all regulation and controlling algorithms are realized in analog domain
+for example by using operation amplifiers. Implementation of such controller is usually
+complicated, especially if additional functions like current limiter, thermal control or
+galvoscanner blocking are needed.
+Typically simple PD or PID controllers are used. This kind of control system is
+the most often used in the industry.
+
+Figure 3.1.2.1 Analog galvoscanner controller
+PHD main, Michael Widlok
+
+page 46 of 106
+
+The system shown on Figure 3.1.2.1 has only one D/A converter that is used only for
+(optional) digital data conversion. The controller can be characterized by:
++
+
+typically use only analog, well know and cheap parts
+
++
+
+it is robust and even heavy disturbances doesn't cause catastrophic damage to the
+galvoscanner
+
++
+
+tuning is done by potentiometers (one needs only a screwdriver to do this)
+
++
+
+even very high accuracy controllers doesn't need very low noise or uncommon parts
+
++
+
+it is known for long time in the industry and usually based on PID regulation
+algorithms
+
+–
+
+hardware realization is complicated and need careful engineering
+
+–
+
+retuning (for different application) is complicated and sometimes danger for the
+galvoscanner, because of interactions between controls and lack of visual feedback
+during setup
+
+–
+
+it not possible to precisely change regulation parameters
+
+–
+
+the controller works right with only one galvoscanner with one load
+
+–
+
+there is a problem with realization of uncommon regulation algorithms (like fuzzy)
+
+–
+
+galvoscanner protection circuits have to be implemented.
+
+3.1.3. Other control systems
+In the past there were a lot of attempts to improve the galvoscanner's control
+systems. Manufacturers concentrated on small modification of analog position
+controllers, trying to introduce something “new” before the others will do it. One
+company use derivate of the coil current as a “high frequency damping”, another
+provided adjustments for mysterious “big jump compensation” and so on.
+Unfortunately, beside these marketing slogans there are not any detailed informations
+about such attempts available.
+In fact none of these modifications are very important and don't improve the
+system much.
+
+3.2. Research galvoscanner control system
+Research systems should allow to perform planned laboratory tests and also
+should allow some modification of the system itself during research. Planned
+laboratory research was:
+–
+
+galvoscanner parameter identification (needed to simulation)
+
+–
+
+determine reference quality data o typical galvoscanner system to enable
+
+PHD main, Michael Widlok
+
+page 47 of 106
+
+comparison with modified one
+–
+
+verify results of simulation investigations
+
+–
+
+verify effectiveness of proposed ways of energy efficiency enhancement
+
+–
+
+look for other possibilities of improvement of system quality.
+Most important is that it should be very universal and easily measurable and
+
+reconfigurable. Hardware changes needed for the reconfiguration should be minimal or
+even eliminated. High accuracy, robust operation is also important. Galvoscanner
+protection is desirable, because during research there are many things that can go
+wrong. The best would be, when the protection circuits are completely independent of
+the control system or power amplifier. Then “experimental” parts can fail but
+protection will be still active, possibly saving the galvoscanner.
+After some initial tests and simulations author decided that reconfigurable
+analog position controller, power amplifier with current controller and digital signal
+forming block will the best fit the requirements. Such system will not needed very fast
+A/D, D/A converters or DSPs (as system with “mostly” digital controller presented in
+Chapter 3.1.1), but still it will be possible to reconfigure it (lack of reconfiguration
+possibility is main drawback of “mostly” analog control system from Chapter 3.1.2).
+Digital forming of the position reference signal causes that many “open loop”
+algorithms are possible to implement in precise and comfortable way. Figure 3.2.1
+shows the block diagram of the designed controller.
+
+Figure 3.2.1 Designed galvoscanner controller used for research
+
+PHD main, Michael Widlok
+
+page 48 of 106
+
+Following chapters will present the blocks form Figure 3.2.1 in details. To
+achieve high efficiency and low losses power amplifier is sourced form regulated +/24 V DC source. This is relatively low value (as for galvoscanner controllers) but it
+helps keeping the power components small. Position regulator needs another +5 V and
+position detector is feed form +/- 12 V source. All needed digital signal processing is
+done in the PC computer in this system, but in a production version of the controller it
+should be done in dedicated DPS.
+
+3.2.1. Current control loop
+Current controller is realized by power amplifier as shown on Figure 3.2.1. It
+takes current reference signal form position controller and set the galvoscanner current
+to follow it. As was mentioned before, galvoscanner parameters (inductance,
+resistance) and maximal amplifier output voltage limit maximum slew rate of the
+current. During fast moves current slew rate is usually not high enough. The only way
+to improve it, is to increase range of the amplifier output voltage changes, what needs
+respectively higher supply voltage. It makes the controller much more power
+demanding, less efficient and a bit danger for the galvoscanner.
+The amplifier uses modified proportional current regulator tuned to achieve
+minimum regulation time with no overshoot. Modification concentrates mainly on
+signal and feedback filtering to minimize risk of output ringing. In fact high frequency
+noise does not affect operation of the galvoscanner much, but it increases overall losses
+of the controller. Any ringing in the output signal might also increase high frequency
+noise generated by the controller. Additionally, even low level changes in the input will
+cause high output voltage variations because of high gain of the PI controller and
+inductive load.
+The protection of the galvoscanner and amplifier itself is integrated in the used
+device. Protection circuits consist of over current limiter, short circuit turn off and
+thermal protection. Additionally amplifier has external “enable” input that can by used
+to quickly turn off the output in the case of other errors.
+
+3.2.2. Position control loop
+During development it was not clear if pure digital, DSP – based position
+controller will not be the best choice. Author have even created general outlook of such
+system. However in this case high quality A/D, D/A converters and very fast DSP
+would be needed. For research system the speed and accuracy is even more important
+
+PHD main, Michael Widlok
+
+page 49 of 106
+
+then for typical application, because it is not clear what algorithms will be used or what
+parameters will be most important.
+Another problem is that available audio A/D and D/A converters can not be
+used without careful study. Such converters very often operates in pipelined mode [14],
+creating large delays between input and actual sample output. Analog system on the
+other side lack the ability to reconfigure the controller, what would be very desirable
+for the research system.
+Fortunately at the time of development Lattice introduced theirs isp-PAC
+programmable analog ICs. These devices are something that looks like PLD
+(programmable logic IC) but works with analog signals. Used device has four fully
+programmable differential amplifiers that can be also freely routed one to each other.
+Overview of the ispPAC-10 is given below on Figure 3.2.2.1 [13]. More details of the
+macro-cells and theirs simulation model was presented in Chapter 2.
+The ability to analog routing and setting the amplifiers by JTAG interface was
+something that research system needed. By using ispPAC-10 devices it is possible to
+realize fully analog but freely configurable position regulator. The design was not
+straight-forward, but finally a good interconnection scheme for the macro-cells was
+found. The cells are arranged as follows:
+Cell 1) Input signal filtering and creating position error signal. It also and outputs
+proportional regulator term
+Cell 2,3) Filtered differential term computation (they realize differentiate operation on
+the position signal)
+Cell 4) Modified integrator. This is the most meaningfully modified part of the
+controller (and the one that took the most time to design), because ordinary
+integration (as used in PID controller) does not work right in this controller
+The position controller realizes its basic operations of proportional, differential and
+integral terms computation, complemented by additional auxiliary operations enabling
+reduction of disadvantage effects. Programmable hardware ensures meaningful
+flexibility of different control algorithm applications. It also shows new way of
+controller construction, programmable by cooperating PC and helpful in experimental
+research work especially.
+During development a lot of problems have to be solved, for example
+programming device for ispPACs [15]. Finally the position regulator was created with
+single ispPAC-10 device and some additional passive circuits. The block diagram is
+presented on Figure 3.2.2.2.
+
+PHD main, Michael Widlok
+
+page 50 of 106
+
+Figure 3.2.2.1 Lattice ispPAC­10 programmable analog device 
+block diagram
+
+Figure 3.2.2.2 Analog position regulator realized with ispPAC­10 block 
+diagram
+
+PHD main, Michael Widlok
+
+page 51 of 106
+
+Galvoscanner position detector outputs differential current signal that is
+converted into 0-5 V differential voltage signal. I to V converter also acts as a filter,
+that cleans up detector switching noise and other disturbances. IspPAC-10 device has
+some additional passive components connected to further increase gain and time setting
+range. It is also connected to five pin JTAG header used for programming and testing
+[16]. The last block (Differential to Single Ended signal converter) is used to prepare
+the output signal for current control loop and power amplifier that drives galvoscanner's
+in single ended mode.
+Because ispPAC-10 has fully differential macro-cells, overall system is
+accurate and noise proof. In fact all signals are differential (including internal controller
+signals) except the “high power end“. The power amplifier needs single ended signal,
+however the differential – single ended conversion is done just before it. Differential
+configuration is also very resistant to power spikes or other power disturbances.
+Designed controller is well suited for research work because it is safe for
+galvoscanners (no galvoscanners have been damaged during design) and can be easily
+reconfigured.
+
+3.2.3. Digital position reference forming block
+As was shown on Figure 3.2.1 digital signal forming block is used to actively
+process digital input data. The idea of performing additional digital signal forming
+before D/A converter and analog controller (really being position reference) was born,
+when it was found that small and big position changes (or “jumps”) need different
+control parameters.
+Generally if small jumps were OK then system tends to overshoot at big jumps.
+On the other side if analog controller was tuned for big jumps, the small ones were
+realized to slowly. This effect is schematically shown on Figure 3.2.3.1. Even quite
+complicated regulators (non-PID) were not always acceptable. Such behavior was
+caused by torsion bar influence and by limited current slope in the galvoscanner. This
+typically calls for adaptive controllers that are very hard to design and implement,
+especially in analog domain.
+With the selected hardware platform it is not possible to make an adaptive
+regulator anyway, so a different solution was needed. After analyzing a few concepts,
+the digital signal forming block before D/A converter was added. The micro processor
+(or micro controller) fetches digital data points, analyzes them, and compute new points
+that can be better followed by an analog controller. This task does not require fast
+processor because very high sampling frequencies are rather not used.
+
+PHD main, Michael Widlok
+
+page 52 of 106
+
+Figure 3.2.3.1 Regulator tuning problems for small and large jumps
+
+Figure 3.2.3.2 Regulator tuning and operation of the digital signal forming block.  
+Black – reference signal, Dashed blue – signal formed for small jump, Dashed 
+green – signal formed for big jump, Dashed black – galvoscanner position
+Additionally algorithm runs in “open loop” further reducing processor load.
+During testing a normal PC was used, however most new micro-controllers (like PIC18
+or better dsPIC for example) would be enough for this task. Large memory is
+fortunately also not required. The analog controller have to be tuned “to the middle” small overshoot at big jumps, and not to large delay at small ones – as shown on left
+half of Figure 3.2.3.2.
+Right half of Figure 3.2.3.2 shows how the digital signal forming block is
+PHD main, Michael Widlok
+
+page 53 of 106
+
+working (dashed lines). For small jumps (blue line) it gives large “impulse” at the
+beginning of the move (assuring large acceleration of the galvoscanner). In contrast, for
+large jumps (green line) it reduces the slope of the input signal, finally setting the
+commanded level.
+The way of determining if large or small jump processing should take place
+have been hard to solve in first implementation of the controller, because hard “mode
+switching” (small – large jumps) created very unpredictable behavior. When the
+commanded position was set to square wave signal, with amplitude close to the preset
+boundary, some jumps were realized differently then others, and response time was not
+constant.
+
+Figure 3.2.3.3. Block diagram of the digital position reference signal forming block.
+Final implementation (shown on Figure 3.2.3.3) has both blocks working
+together. Firstly, large jump processing takes place, reducing signal slopes. Then, small
+jumps are boosted to achieve better acceleration and breaking. In this way there are no
+hard “mode switching”, because both block always work together, completing each
+other. Large and small jump processing blocks are realized as look-up tables in the PC.
+The context of these tables have been obtained empirically, by hand adjusting
+values to get the best response. Finally used algorithm has 2 separate look-up tables
+(256 values each) – one is responsible for reducing of the slope on big jumps, one for
+giving impulse on small jumps. To reduce quantization error (table pointers are 8 bit
+length) special smoothing function is used to extend output to 16 bits.
+The point is to reduce the error that is seen by analog controller and to prevent
+saturation of integration block. This idea works really good and seems to be much more
+universal and accurate then other methods used by some companies. However we have
+to remember that analyze is possible only if the points send to the galvoscanners are
+delayed from original. This might cause problems for certain applications, but it is
+possible to minimize the delays changing digital forming block parameters.
+This method also can not work for application that require real-time data
+
+PHD main, Michael Widlok
+
+page 54 of 106
+
+following, like target tracking. Such mode however needs different tuning of regulation
+parameters, and it will be presented later in chapter 5.
+
+3.2.4. Summary of galvoscanner control system
+Presented control system allows author to successfully test and debug many
+different galvoscanner's control algorithms: PD, PID, modified PID with and without
+digital signal forming block.
+The best results have been achieved by using mixed control system that consist of:
+•
+
+Digital data source - position vectors stored on hard disk on any other media
+
+•
+
+Digital signal forming block – running in the PC or DSP, prefetching data points
+and changing them to achieve maximum performance from analog position
+controller and galvoscanners
+
+•
+
+Analog position controller – build over ispPAC-10 programmable analog IC, that
+performs modified PID position control for galvoscanners
+
+•
+
+Power amplifier and current controller – amplifies low power differential signals
+from analog position regulator (to 24 V / 2 A max) for galvoscanner.
+
+•
+
+Controlled power supply for power amplifier – by controlling supply voltage for
+power amplifier it was possible to reduce losses and increase system efficiency.
+Details about this block will be given in following chapters
+
+•
+
+Programming device for ispPAC-10 ICs – please refer to appendix 1 for details.
+
+3.3. Complete controller and efficiency problems
+3.3.1. Complete controller used during research
+Previous chapters contains description of the main blocks that was used to build
+complete closed-loop galvoscanner's control system. Physically two channel's analog
+regulator and power amplifier was build on a single printed circuit board, measuring
+12x15 cm with surface mounted components. The board also has a heatsink for power
+amplifiers.
+Two channels was used because it was possible to test much more possibilities
+and configurations then with single channel. Two channels also allows projection of
+laser images on the screen, using wildly available and popular in laser shows business
+“ILDA” files. LSK galvoscanners was mounted on custom X-Y mounting platform
+with small mirrors on the shafts. The system is presented on Figure 3.3.1.1 and Figure
+3.3.1.2 below.
+
+PHD main, Michael Widlok
+
+page 55 of 106
+
+Figure 3.3.1.1 Analog regulator and 
+
+Figure 3.3.1.2 Galvoscanners 
+
+power amplifier main board
+
+with mirrors on the XY 
+mounting platform
+
+During tests various lasers were used, X-Y projection results are not described
+in this paper. Normal PC with DAC's card was used as a data source. The PC also
+performs digital signal forming needed by the analog regulators. During tests digital
+oscilloscope was used to record system responses, galvoscanner's voltage, current and
+other parameters.
+This system was initially used to create sample laser images or animations, but
+in fact visual effect is not very important or meaningful. To get the best looking images
+a special test pattern and tuning procedures should be used [17]. These procedures are
+not designed with accuracy in mind and systems that was tuned according to them often
+shows overshoots and other inaccuracies. However all this flaws are not important in
+the laser shows and in that are area they perform very well.
+Presented system would be best suited to material processing application, but it
+can work for any application that require precise rotor positioning, without any
+overshoot or oscillation. Speed is also an concern here, however only if reference
+position is reached without overshoots.
+
+PHD main, Michael Widlok
+
+page 56 of 106
+
+4. Soft-Switched power supply for galvoscanner control
+system
+4.1. Efficiency problems
+During initial tests it became evident that small heatsink used in the system is
+not enough for the power amplifiers. Firstly it was even not clear why they are running
+so hot, when the calculated galvoscanner power consumption is rather small (10 W
+maximum). However everything became clear when we look at the galvoscanner
+voltage and current way form Figure 4.1.1. Because of the large coil inductance,
+relatively high voltage (+/-24 V) is needed to achieve required current raise time, but
+during steady state (when rotor is not in neutral position) only a small portion of this
+voltage is needed.
+
+Figure 4.1.1. Galvoscanner voltage (blue) and current (green) during jump and 
+steady state
+This effect is explained on Figure 4.1.2 and Figure 4.1.3 below.
+
+PHD main, Michael Widlok
+
+page 57 of 106
+
+Figure 4.1.2 Equivalent circuit of output power amplifier and 
+galvoscanner during begging of the movement
+When the rotor is in neutral position (as on Figure 4.1.2) no current is needed. When
+the movement begins, we usually need high acceleration in short time, what means
+very fast current rise. Because of Lc (which is 1.8 mH for LSK galvoscanner) current
+controller need to apply all available voltage to the galvoscanner. In reality, with small
+loads, current never reach the limit – the raise time is still to low and we have to begin
+to break before that time. Because almost all of the supply voltage is on the
+galvoscanner very little power is dissipated in the power amplifier.
+
+Figure 4.1.3 Equivalent circuit for power amplifier and 
+galvoscanner during steady state with rotor out of neutral 
+position
+When the rotor is kept steady near maximum angle, as in Figure 4.1.3, the
+situation is different. Because of the torsion bar we need to supply constant current to
+the coil to keep the position. For LSK galvoscanners this current is about 0.5 – 0.7 A.
+Lc voltage is 0 with DC current, so all voltage is on the Rc, that is only 2.3 ohm in our
+example with 040EF galvoscanner. Rest of the supply voltage need to be dissipated in
+PHD main, Michael Widlok
+
+page 58 of 106
+
+the power amplifier. Now we can compute the steady state power losses in the
+amplifier:
+Pa=Ua⋅Ic=[Us− Ic⋅Rc]⋅Ic=[ 24V−0.5⋅2.3]⋅0.5=11.425W
+where:
+Pa [W ] -
+
+Power amplifier power losses
+
+Ua [V ]=Us− Ic⋅Rc -
+
+Power amplifier voltage
+
+Ic [ A]
+
+-
+
+Us [V ] -
+
+Galvoscanner coil current
+Power supply voltage
+
+More then 11 W of losses is needed just to keep the rotor steady! Average
+power consumption during normal operation is less, but during testing such situation is
+quite typical – for example we use low frequency square wave max to max when
+testing or tuning the regulators.
+To overcome this problem a special soft-switched power supply was used. This
+supply control the voltage that is actually needed by the galvoscanner and adjust it to
+limit the losses.
+
+4.1.1. Power supply requirements
+To increase efficiency of the system we need to provide a special controlled
+power supply. Output voltage of such supply should be similar to the voltage needed by
+the galvoscanner itself – in this way power lost on linear power amplifier would be
+minimal.
+Ideally the power supply should keep only small voltage loss on the amplifier,
+but realistically only reduction of the voltage during steady state is possible. The
+required voltage (during high speed operation) is changing to fast to be followed by any
+power supply. Fortunately losses during normal operation are not very high.
+Because galvoscanners (especially position detectors) and analog regulators are
+very sensitive to electrical noise very “quiet” power supply is required. EMI (ElectroMagnetic Interference) and other disturbances as well as noise in the supply voltage
+should be minimized. Output voltage also should be very well filtered. To achieve high
+efficiency with large variation of the voltage a high frequency switching supply is
+preferable. Switching power supplies are however known source of EMI what can
+disturb system operation [18], [19].
+To sum up power supply should meet particular requirements:
++
+
+Output voltage must be as high as needed by the galvoscanner in dynamic state
+(+/- 24 V), while output current must be at least maximum peak current allowed by
+
+PHD main, Michael Widlok
+
+page 59 of 106
+
+the galvoscanner (3-5 A)
++
+
+Output voltage need wide control range, form 0 to maximum value
+
++
+
+Output voltage regulation time should be low (below 10 ms)
+
++
+
+EMI generated by the supply should be minimal
+
++
+
+Power efficiency of the power supply should be high (over 90% is desirable).
+
+4.1.2. Power supply control problems
+Even the best regulated power supply will not work fast and accurate enough to
+constantly keep the voltage across power amplifier Ua low. If maximum possible
+efficiency is needed class “T” amplifiers [20] might be an answer and are subject for
+future tests.
+The considerations above let to formulate an idea of application of additional
+special low bandwidth voltage control loop that would control only the power supply.
+Such loop should reduce the losses during steady state (that are dominant) not
+disturbing amplifier and controller operation during transients. Power supply controller
+have to estimate time curve of needed voltage and set the reference to the power supply
+according to the estimated curve. Typical (not forward) control would produce errors
+like these graphically shown on Figure 4.1.2.1.
+
+Figure 4.1.2.1 Example output from power supply without voltage 
+prediction algorithm (solid line – minimum supply voltage, dashed line – 
+power supply output  voltage)
+During control process controller have to compute galvoscanner voltage
+u g  t  that is also amplifier output voltage. This signal defines minimum supply
+voltage u smin  t = u g t  . In reality supply voltage have to be higher to insure correct
+work of the amplifier itself, so we control power supply by using reference voltage:
+
+PHD main, Michael Widlok
+
+page 60 of 106
+
+u sref  t=u smin t u 0
+
+where u 0 - constant parameter.
+
+Minimum supply voltage u smin  t  and power supply reference voltage
+u sref  t is predicted in real – time, basing on galvoscanner position reference signal.
+Prediction algorithm have to include power supply dynamics (voltage rise/fall time) to
+achieve desired results. This algorithm can be realized in many ways, some of them
+will give better efficiency then others. In this research author wants to test the concept
+only, so simple prediction algorithm have been used.
+If the power supply is controlled from a microprocessor that also controls
+position data (for galvoscanners), we can analyze the data before it will be send to the
+galvoscanners and calculate the reference voltage. In this way the power supply doesn't
+need to be very fast – required voltage will always be reached on time if the digital
+system knows the delays. Such controller can also be integrated with digital signal
+forming block, presented before.
+
+4.1.3. Voltage reference prediction algorithm
+Presented power supply and it's control system was designed using standard PC
+computer running on QNX real-time operation system (today RTAI Linux is a good
+free alternative [21]). The computer outputs voltage reference to the power supply that
+controls it in analog mode. All other needed computations are done by the PC.
+Using previous example with the minimum supply voltage (from Figure
+4.1.2.1) the presented power supply with prediction algorithm is working like on
+Figure 4.1.3.1.
+
+Figure 4.1.3.1. Example output from microprocessor controlled power 
+supply with prediction algorithm (solid line – minimum supply voltage, 
+dashed line – power supply output voltage)
+
+PHD main, Michael Widlok
+
+page 61 of 106
+
+When required voltage changes quickly supply voltage is kept high, over the
+maximum required values. This might decrease efficiency and increase losses in power
+amplifiers but unfortunately there is no other (except class T amplifiers) way to keep
+maximum speed and accuracy. When galvoscanner is kept in one position for a long
+time supply voltage is reduced, but it is raised before fast moves begins. The situation
+becomes more complicated when we have two channels powered from single power
+supply. However microprocessor just do the same prediction of the reference voltage
+for two channels and chooses higher value.
+Of course it is possible that losses in one channel will be very high while it is
+stopped because the other one might need full voltage at the same time. Fortunately
+practice shows that such situation is very rare and the system works correctly. The
+losses in the power amplifiers are low and quite small heat sinks used are enough to
+keep acceptable temperature.
+Of course not all applications can use such implementation – for example target
+tracker don't know how the target will move, so a priori prediction of the needed
+voltage is totally impossible.
+
+4.1.4. Hardware configuration of the power supply controller
+For the presented research system a special innovative ZVS-CV (Zero Voltage
+Switching – Clamped Voltage) with modified power circuit was used. This power
+supply is greatly overpowered for the galvoscanners, but it was build with other uses in
+mind. It is also an experimental system itself.
+
+Figure 4.1.4.1 Block diagram of the voltage control system
+Figure 4.1.4.1 presents block diagram of the used configuration. Power supply is
+controlled from the same PC that also performs “digital signal forming” functions for
+PHD main, Michael Widlok
+
+page 62 of 106
+
+the analog regulator. The PC is also a source of data points that are read from memory
+during scanning or generated on the fly (for example square or sinusoidal waveform)
+during testing or tuning.
+
+4.2. Special, low noise ZVS-CV power supply
+4.2.1. Drawbacks of the typical ZVS-CV power supply
+As was stated before a very “quiet” power supply with low EMI is preferable
+especially for research purposes. It should be noted that most commercial ZVS power
+supplies are not well suited for this particular application because they are designed to
+work with mostly constant load that is in 80%-100% of nominal. Also fast voltage
+changes on the output are not allowed.
+Typical ZVS-CV power supply presented on Figure 4.2.1.1 operates at fixed
+frequency with variable phase shift between primary bridge branches [22]. This permit
+identical operation of the bridge branches independent of the output duty cycle. Each
+branch operates with 50% duty, what is needed for soft switching, while the output
+voltage can change. When M1 and M4 or M2 and M3 are on, transformer primary is
+supplied from input DC source. If the phase shift between 2 branches is less then 180°
+transformer primary is periodically short circuited by M1 and M3 or M2 and M4. In
+this state no power is transferred to load. If the MOSFETs in the same branch would be
+driven without any delays simultaneous conduction could occur, causing a short circuit
+of the DC source. Knowing very fast switching times of the MOSFETs and theirs low
+resistance an catastrophic failure would occur. Dead-time between commutation of
+MOSFETs in the same branch should be added prevent this. However this dead-time
+not only reduce the risk of the short circuit but also can achieve a ZVS operation.
+
+Figure 4.2.1.1. Normal ZVS­CV power supply
+
+PHD main, Michael Widlok
+
+page 63 of 106
+
+To understand this operation, let's assume that M1 and M4 are conducting
+(transferring power to load) and then, in the end of this period switch M1 is turned
+OFF. When both devices in the same branch are off, energy stored in transformer's
+leakage inductance LR will keep current flow in the same direction as before. This
+current can not now flow throw M1 or M2 so it would flow throw the capacitors C1
+and C4, discharging capacitance C2 and charging C1. The diodes prevent negative
+voltage on C2 and over DC supply voltage on C1. Finally when voltage across M2 is
+reduced to 0 the switch can by turn ON without lossless. The dead-time should be
+adjusted to match transition time that varies due to transformer primary current
+changes.
+During next transition (from M2, M4 to M2, M3) operation is similar, but the
+primary current is lower or even zero. We should keep in mind that with short circuited
+primary, the current flow is kept only by energy stored in LR. During next transition,
+when M4 turns OFF, LR energy might not suffices to charge C4 and discharge C3.
+The voltage across M4 will not goes to zero and lossy switching will occur.
+The primary current (LR current) is defined by the power supply load. When the load
+gets smaller current is reduced and lossy switching begins. M1 and M2 will be
+switched at zero voltage longer then M3 and M4, because LR current is always greater
+during M1, M2 transition. At no-load or very low-load the energy stored in LR is
+almost zero, so it is not possible to achieve zero voltage switching for any branch.
+Such ZVS-CV supplies have some problems with EMI and losses when output
+current drops below some critical value that is needed to keep zero voltage switching
+[23]. Then switches become hard switched thus EMI and losses increase. This is
+especially true for high power supplies that operate from high voltage DC sources.
+They use big power MOSFETs (IGBTs are usually to slow) that have large
+parasitic capacitance Cs. The MOSFETs cannot be mounted very close together
+because of the required heat sink. Fast switching of power devices causes very high
+pulse currents during commutation. When any MOSFET in the bridge is closing it
+shorts out it's own Cs (discharging it from full DC source voltage) and other
+MOSFET's Cs in the same branch is charged at the same time. The currents involved
+can easily reach 100 A or more in the pulses. These pulses are repeated two times each
+operating period of the supply.
+All energy stored in parasitic capacitances is lost in the MOSFETs during
+switching. This causes a lot of EMI in the rest of the circuit, especially if the input
+bridge is large, and losses are high. This generally does not cause problems with
+cooling (because heat sinks have to be designed for such power), but efficiency of
+PHD main, Michael Widlok
+
+page 64 of 106
+
+entire system will be significantly reduced. Normal ZVS-CV supplies should not be
+used in this mode, or should be completely turn off if no load is connected. To improve
+the low-load operation a saturable inductor is sometimes added in series with primary
+winding of the transformer. This technique does not work right when both phase shift
+and load are changing, and cannot help if load current is zero.
+
+4.2.2. Modification and design of the low EMI ZVS-CV converter with
+resonant inductors
+To solve the problems with EMI and low load operation a special ZVS-CV
+power supply have been designed with the objective to maximally reduce EMI and
+increase efficiency in all modes of operation [24]. Circuit shown on Figure 4.2.2.1
+consist of transformer (TR) fed from full bridge MOSFET converter (M1-M4).
+Parasitic capacitances (C1-C4) are also shown. The transformer does not have to have
+controlled leakage inductance, because two additional resonance inductors (LR1, LR2)
+are added. The transformer and output inductor (LF) are planar, because of very high
+losses caused by skin effect that could occur at this current level and frequency.
+
+Figure 4.2.2.1. Modified ZVS­CV converter with resonant inductors
+
+Resonance inductors LR1 and LR2 have to be carefully chosen to achieve ZVS mode
+and have no impact on normal operation of the supply (details will be given later). Also
+power MOSFETs have to be controlled from special “intelligent” driver that constantly
+sets dead-time (delay between switching of MOSFETs in the same converter branch).
+Output voltage (or current) is controlled by phase-shift like in normal ZVS-CV
+supply. If properly chosen, inductors LR1 and LR2 will cause ZVS independent of
+output current and phase shift in all switches. It is also possible to reduce LRt (leakage
+of the transformer), which reduces ringing at the output rectifier. The prototype has
+
+PHD main, Michael Widlok
+
+page 65 of 106
+
+active output rectifier made of low voltage MOSFETs that have less voltage drop then
+Schottky diodes. Rectifier MOSFETs are also much faster then diodes so ringing is
+lower. In fact even the fastest diodes turn on or off as a result of voltage level on anode
+and cathode, so they are always “late”.
+Active rectifier can be driven in the manner that all switches will be in proper
+state exactly when needed. Output filter inductor was chosen quite large not only to
+reduce current pulsation. It also reduces short circuit current and stress on power
+devices when such situation occurs.
+Above about 40-50% of nominal load presented power supply operates like
+normal ZVS-CV converter. Transformer current is much larger then LR1 or LR2
+current, so these inductors don't play any significant role is this mode. Large output
+filter inductor and active rectifier helps to keep the primary current high even during
+free wheeling period (when primary is shorted by MOSFETs). This current lead to
+identical operation (with ZVS mode) of both branches, independently of output
+voltage.
+Converter controller have to set the dead-time as short as possible according to
+load current and phase shift. Long dead-time reduces maximum duty-cycle and output
+voltage. Without load or with low load only inductors LR1 and LR2 can achieve ZVS,
+because transformer primary current is almost 0.
+
+4.2.3. Analysis of the modified ZVS-CV power supply
+To make theoretical analysis and find out the proper values of LR1 and LR2 a
+simplified schematic of single MOSFETs branch can be drawn. As shown on Figure
+4.2.3.1, only MOSFET's parasitic capacitances and inductor LR1 are taken into
+consideration. However to use this schematic it is necessary to know other power
+supply parameters before. Output voltage, current and input voltage are usually
+determined by the application.
+
+Figure 4.2.3.1. Simplified schematic of the single 
+converter branch
+PHD main, Michael Widlok
+
+page 66 of 106
+
+One of the most important parameter that is set by designer is the operating
+frequency. It is determined by allowed weight and size of the converter, magnetic
+materials used for cores and semiconductor devices. For this supply Fs = 70 kHz
+(period Ts = 14.286 µs) was chosen, because of magnetic cores and skin effect that
+might be problematic in high current windings of the transformer. Large output
+MOSFETs with big capacitances also work better at lower frequencies.
+The dead-time (Dt) between switching of MOSFETs in single branch was
+determined by the controller used and by the transition time at full load. At full load
+transformer current is large, so transition time is very short. Controller however, does
+not set the dead time properly when difference between full-load and low load deadtime is to big, so maximum Dt have to be limited. For this supply Dt = 350 ns at noload was chosen as the most optimal value.
+Parasitic MOSFET's capacitances C1 and C2 can be obtained from data sheets,
+but because of Muller's effect the capacitance should be increased by 4/3 for analysis.
+For devices used in the prototype correct value is 0.7 nF. Transformer capacitance can
+be spread symmetrical between C1, C2 and added to them. Measurements show that
+used transformer has 0.6 nF parasitic capacitance. Adding these values gives
+0.7
+
+0.6
+=1 nF for C1 and C2. This power supply was connected to 220 V AC
+2
+
+outlet that gives 300 V DC after input rectifier and filter.
+In Figure 4.2.3.1 we can see that there are four possible states of the circuit, but
+only three of them are valid from technical point of view. State with both switches
+closed will create short circuit with V1, V2, S2 and S1. The valid states are:
+–
+
+Switch S1 is ON and S2 is OFF - Inductor LR1 is supplied by single DC input
+source V1.
+
+–
+
+Switch S1 and S2 OFF – Inductor LR1 recharges C1 and C2
+
+–
+
+Switch S1 is OFF and S2 is ON – Symmetrical to 1, but the polarity across LR1 is
+reversed
+
+State 1 and 3 persist for T13=
+
+Ts
+14.286 µs
+− Dt=
+−350 ns =6.793 µs while state 2
+2
+2
+
+lasts for Dt = 350 ns. In state 1 and 3 voltage on LR1 is constant, while state 2 is short
+enough to assume that current in LR1 does not change. According to these statements
+every state can be described by an equation.
+
+PHD main, Michael Widlok
+
+page 67 of 106
+
+State 1 and 3:
+di
+U LR1= L R1⋅ LR1
+dt
+
+(1)
+
+LR1 voltage is constant while its current linearly increase. Maximum occurs at the end
+of state 1. In steady state LR1 current is symmetrical, so:
+1
+I LR1max = ⋅i LR1
+2
+
+(2)
+
+State 2:
+du
+I C1 =C1⋅ C1
+dt
+
+(3)
+
+During state 2 we can assume that C1 current is constant because LR1 is
+relatively large and Dt is short. C1 voltage increase form 0 to (V1+V2), while C2
+voltage decrease from (V1+V2) to 0. To achieve ZVS voltage across C1 or C2 must
+change by full DC input voltage or 300 V in dead-time period Dt. Currents in C1 and
+C2 have the same value but opposite sign, while LR1 current is the sum of them.
+I LR1 =2⋅I C1
+
+(4)
+
+From (1), (2), (3) and (4) maximum LR1 inductance and maximum current can
+be computed. The computed LR1 value can be seen as “the largest that achieve ZVS
+with given C1, C2 and Dt”.
+LR1=
+
+Ts− 2⋅Dt
+⋅Dt
+16⋅C1
+
+I LR1 =
+max
+
+0.5⋅Ts− Dt
+⋅Uz
+2⋅LR1
+
+(5), (6)
+
+The RMS current in LR1 can be easily computed, because it is symmetrical trianglewave, and we know its maximum.
+
+
+
+Ts
+
+1
+I LR1rms =
+⋅∫ i 2LR1  t=  3⋅I LR1 max
+Ts 0
+
+(7)
+
+Knowing that Ts = 14.28 µs, Dt = 350 ns and Uz = 150 V we get
+LR1 = 297.3 µH, I LR1 =1.71A and I LR1 rms =1A .
+max
+
+Computed
+
+value
+
+is
+
+the
+
+maximum value for LR1 that will achieve ZVS. Smaller inductors could be used, but in
+this case current would be higher and in fact we would end up with a bigger inductor
+and bigger losses.
+Theoretically average voltage across LR1 in steady state must be zero. M1-M2
+branch in the converter works with 50% duty-cycle all the time, but M3-M4 branch can
+PHD main, Michael Widlok
+
+page 68 of 106
+
+has some disturbances, when the phase shift is changing. However the duty-cycle
+differs very little form 50% and difference time is so small that it never causes any
+problems.
+
+4.2.4. Control system of the power supply
+Presented ZVS-CV converter is controlled by integrated circuit (UCC3895)
+specially designed for such application. It consist of phase controlled PWM module,
+two independent dead-time modules and analog amplifier. This amplifier can be used
+as an output voltage or current regulator. Because of the large time constant of the
+output LC filter (compared to the switching frequency) and to improve regulation
+accuracy two loop system was used. Inner current loop consist of PI regulator, while
+the voltage is controlled by PID regulator.
+Real device can easily change it's output voltage in about 1ms without any
+ringing and it is quiet enough (low EMI) to not disturb precision analog circuits.
+It is evident that presented system is rather complicated and it might be difficult
+to set up and tune out of the laboratory. However it proves that the idea is correct and it
+is worth to implement. Of course for miniature or low-cost system it is possible to scale
+it down, removing some blocks, or using simplified versions.
+
+4.2.5. Tests performed on the real device
+After successful commissioning of the presented power supply a lot of tests
+have been made. Designed prototype is over sized for the galvoscanner control system,
+but it have been build to also suit other applications. Performed tests include:
++
+
+EMI and other disturbances emission
+
++
+
+Efficiency for various output currents and voltages
+
++
+
+Output voltage and current ripple
+
++
+
+Response time for current or voltage reference signal
+
++
+
+ZVS for various loads
+
+All of the tests have been passed by the prototype.
+
+PHD main, Michael Widlok
+
+page 69 of 106
+
+5. Experimental results and regulator tuning methods
+5.1. Control system tuning requirements
+In previous chapters it was stated that almost every application needs different
+tuning of analog and digital controllers. For example image projector for laser shows
+will concentrate on overall look of the image, while accuracy and overshoots are not
+very important. On the other hand system used in material processing machine have to
+control position as accurately as possible, while speed control is secondary concern.
+We can also divide the applications between the ones where the data (position
+reference) is known a priori, and the ones where the position reference is difficult or
+even impossible to predict. This division very important for the system presented in this
+paper, because were the data is not predictable it is not possible to use digital signal
+forming block. Where the data is known we can even pass it throw digital forming, and
+store processed data before performing actual functions.
+The requirement to know the data a priori might seem to be a very serious
+limiting factor for the presented system. Fortunately most of the galvoscanner's
+applications have all data available before actual run. These applications are:
+•
+
+Material processing machines
+
+•
+
+Laser shows, image projection
+
+•
+
+Semiconductor processing
+
+•
+
+Most of medical applications
+
+Only a few others need to relay on unpredictable inputs. The most important is target
+tracking in military systems. In such systems target is “marked” by a laser beam that is
+placed on and follows it. The position accuracy is very important for target tracking
+applications, but in fact they do not produce very difficult signals for galvoscanner's
+position controller. For example Figure 5.1.1 presents example – often meet in reality
+2D trajectory of the target. Such trajectory consists of some sharp turns, and long
+straight runs.
+Next Figure 5.1.2 shows the required galvoscanner's position and speed to follow target
+form Figure 5.1.1. Solid line is X position and speed, while dashed line Y.
+
+PHD main, Michael Widlok
+
+page 70 of 106
+
+Figure 5.1.1. Example, arbitrary X­Y trajectory of the target
+
+Figure 5.1.2. Required X (solid line) and Y (dashed line) galvoscanner's position and 
+speed to track the target from previous figure
+As we can see from Figure 5.1.2 even quite complicated trajectory requires
+only slowly changing, continuous position signals. These signals are easy to follow for
+the position controller because they have no discontinuities or fast slopes in relation to
+galvoscanners possibilities. Galvoscanner controller should be tuned to achieve
+
+PHD main, Michael Widlok
+
+page 71 of 106
+
+minimum response time and maximal position control accuracy, without worrying
+about overshoots that could occur after the step input signal.
+Position controllers should always have error integration part. This is necessary,
+because it is impossible to set proportional error amplifiers for enough high gain, to
+achieve desired accuracy.
+High gain setting can very easy produce oscillations, quite often non damped,
+and in extreme cases oscillation with constantly increasing amplitude. Second case will
+almost surly destroy the galvoscanner.
+
+5.2. Position controller performance
+5.2.1. Methods for measuring position controller performance
+Companies that produce galvoscanners or drivers for them, gives some
+performance data, however it is not clear how it was really measured. On many data
+sheets we can see “step response time” or “small signal step response time”, but we can
+not be sure if the values given by different manufacturers means the same.
+When comparing performance achieved by different driver and galvoscanners
+common quality criterion is needed. However there is no defining the response times or
+position controller performance. Figure 5.2.1.1 shows different possibilities for
+response time determination. For standard rise-time “t1” can be used measured from
+10% to 90% of the full signal. However for material processing application step
+response rise-time “t”, measured form reference signal step to the point where 99% or
+even 99.5% of reference position is reached, would be much more valuable.
+For others applications (target tracking for example) step response time is not
+so important, anyway. Step signals usually do not exist there, however time delay from
+reference position waveform to actual position is critical. This concept can be seen on
+Figure 5.2.2.2, when we consider time delay between magenta (reference position) and
+green (actual position) waveform.
+When it comes to control system performance, situation is more complicated.
+As it was stated earlier controllers can be (and should be) tuned in different ways,
+dependent on the final application. For laser shows overshots, as shown on Figure
+5.2.1.2 are no problem, while for material processing they would be not acceptable.
+This means that regulation time can also be determined in different ways.
+
+PHD main, Michael Widlok
+
+page 72 of 106
+
+Figure 5.2.1.1. Different methods step response rise­time 
+determination.
+Comparing galvoscanner control systems is very hard and in fact can not be
+generally done for all systems. For this research author decided to tune his systems to
+get the shortest possible step response rise-time, without overshoots or oscillations.
+This method corresponds to “t” case in Figure 5.2.1.1 or “t3” case in Figure 5.2.1.2.
+
+Figure 5.2.1.2. Two main ways of step response rise­time 
+determination when (in overshoot case) overshoot occurs
+This method was used because it is the hardest to achieve in real world. Of
+course it is impossible to define where the galvoscanner's position reach reference
+value, because of limited accuracy of measurement. However measuring when the
+position pass 99% of reference position is relatively easy and accurate enough and this
+value will be used.
+
+PHD main, Michael Widlok
+
+page 73 of 106
+
+5.2.2. Position controller without digital position reference forming.
+Analog position controller used in research system was tuned to for the best
+performance, when working with digital signal forming block. Sinusoidal, triangle and
+square position reference signal were used in experimental tests, because they are most
+common for measuring performance of galvoscanner control systems used in material
+processing applications. An example waveforms are presented below on Figure 5.2.2.1,
+Figure 5.2.2.2 and Figure 5.2.2.3. Tests have been made for large and small rotor
+angles, while all data was recorded on digital oscilloscope. Blue waveform is the
+galvoscanner voltage, green is the actual position, while magenta is the position
+reference signal.
+
+Figure 5.2.2.1. Transient waveforms in sinusoidal reference case (magenta – ref. 
+Signal, green – galvoscanner position, blue – galvoscanner coil voltage).
+During large angle moves galvoscanner voltage seems to be wrong at 0 and 5-th
+ms. The problems however are not caused by analog position regulator, but by
+nonlinear behavior of the galvoscanner itself. The amplitude have been set large
+enough to pass the maximum angle of the rotor, and “touch” the nonlinear region. The
+same signal during small angle is clear and does not have any nonlinearities.
+
+PHD main, Michael Widlok
+
+page 74 of 106
+
+Figure 5.2.2.2. Transient waveforms in  triangle reference case (magenta – ref. Signal, 
+green – galvoscanner position, blue – galvoscanner coil voltage).
+Triangle signal looks as excepted – real rotor position is delayed from the
+reference, while the shape is closely followed. Only when the direction is changing
+position is not as sharp as the reference signal. All these tests were made with large
+mirrors mounted on the rotor, so the inertia was larger then in typical application.
+Case when square reference position signal was used needs some more
+comments. Small jumps looks normally (no overshoots) but large jumps are not
+followed in the best way. Galvoscanner position overshoots the reference about 5% and
+setting to the desired level takes 1.8 ms. This time is very long, especially if we take
+into account that reaching of the desired value takes only 0.6 ms. This behavior is
+caused mostly by integration block of this “modified PID” controller. Integral reaches
+higher level then needed to hold the rotor in final position, before this position is
+achieved. Then it takes a lot of time to reduce it to the desired value because error is
+small. This might seem that the integration coefficient should be reduced, but please
+keep in mind that this regulator should be used with digital signal forming applied to
+the reference signal. In that case the slopes would be reduced, effectively preventing all
+these problems.
+
+PHD main, Michael Widlok
+
+page 75 of 106
+
+Figure 5.2.2.3. Transient waveforms in square reference case (magenta – ref. 
+Signal, green – galvoscanner position, blue – galvoscanner coil voltage).
+It should be noted that current control is usually not able to follow current
+reference signal in transients, because of large galvoscanner inductance. To improve
+current rise and fall times much larger voltage have to be used what makes the system
+very inefficient.
+
+5.3. Performance of the new advanced control system
+5.3.1. Position controller with digital position reference forming block.
+As have been stated earlier digital position reference forming block performs
+two major functions: it reduces the slopes of the step input signals to the level
+reachable by the galvoscanner, and it gives a “boost” to the small steps, to achieve
+larger acceleration of the rotor.
+For large jumps, such behavior reduces the time when actual position is much
+different then reference position, effectively reducing overshoots caused by out of
+range work of position controller integrating part. For small jumps it achieves faster
+response times, increasing maximum galvoscanner speed. Separation between small,
+and large jumps is quite floating – it is difficult to define a precise boundary. The
+boundaries are also depended on galvoscanners or loads with different moment of
+inertia.
+
+PHD main, Michael Widlok
+
+page 76 of 106
+
+5.3.2. Small jump (step) processing and achieved performance
+Figure 5.3.2.1 Shows how the digital signal forming changes input position
+signal to improve small jumps performance. Unfortunately fast, low-voltage signals of
+the research system are hard to measure accurately. There the noise presented on both
+waveforms is mostly created by the digital oscilloscope and is not presented in real
+circuit. Oscillations on reference position signals are unfortunately not only the
+measuring errors.
+It took some time to figure out where they are created. Finally author found out
+that digital to analog converters used during research where responsible for such
+behavior. Final application should use high quality, minimum 12-bit DACs (Digital to
+Analog Converters), with low noise output amplifiers.
+Analog position regulator prefer being supplied by differential input signals,
+because of differential nature of input amplifiers. Used DACs unfortunately could not
+produce such signals. When working in noisy environment with long signal cables,
+using of differential DACs is strongly recommended.
+
+Figure 5.3.2.1. Digital signal forming during small jump (magenta – ref. Signal, green 
+– galvoscanner position).
+
+PHD main, Michael Widlok
+
+page 77 of 106
+
+Upper part of Figure 5.3.2.1 presents original input position signal (magenta)
+with galvoscanner step response (green) without digital position reference forming.
+Measured response time (input position step to the point when galvoscanner position
+reached 99% of final value) is about 0.74 ms. Take into account the long time, that is
+needed to reach last 10% of the final value.
+Lower part of this figure shows the same waveforms but with digital position
+reference signal forming applied. Response time is 0.55 ms now, and reaching critical
+last 10% is much faster. Below (on Figure 5.3.2.2) is shown how galvoscanner coil
+voltage has changed after application of digital position reference signal forming.
+
+Figure 5.3.2.2. Reference position signal and galvoscanner coil voltage with and 
+without digital signal forming (magenta – ref. Signal, blue – galvoscanner coil 
+voltage).
+For normal, not processed signal (left part) breaking is not done with full
+voltage, and acceleration last not as long as with processed signal (right part). Response
+time have been reduced form 0.74 ms to 0.55 ms (34%), that is a very short value for
+moving-iron galvoscanners. As was stated earlier, large mirrors have been used to
+expose all differences between systems and all parts of the move.
+
+PHD main, Michael Widlok
+
+page 78 of 106
+
+5.3.3. Large jump processing and achieved performance
+For large jumps digital signal forming works in different way. Instead of giving
+initial “boost” (which is not needed now anyway), it reduces the slope of the reference
+signal to the value that is reachable by the galvoscanner. Because of this there is no
+situation, when commanded position differs largely from actual position. Now integral
+part of the analog regulator does not have time to reach to high value, as it was
+common before.
+
+Figure 5.3.3.1. Reference position signal and actual position with and without digital 
+signal forming block (magenta – ref. Signal, green – galvoscanner position).
+Figure 5.3.3.1 Shows large signal step response of the galvoscanner with and
+without digital signal forming applied. Upper part shows not processed, “normal”
+signals. Reference position (green) has typical step shape. Actual position reaches
+desired value after 0.6ms, but it overshoots about 6%. Getting back to the final value
+takes another 1.5 ms which gives 2.1ms total response time.
+Long time needed to get back after overshoot is caused mostly by integral
+therm of modified “PID” analog regulator. Integral reaches to high value when actual
+position differs largely form commanded position, and then it takes a lot of time to
+
+PHD main, Michael Widlok
+
+page 79 of 106
+
+reduce it's value. After overshoot error is small, so all changes of the integral therm are
+slow.
+Application of the digital signal forming reduces difference between
+commanded and actual position in the beginning of the move, and integral therm does
+not have time to “over integrate” now. All move now takes only 1.1 ms which is nearly
+50% improvement.
+Unfortunately we also can see inaccuracy of the used DACs. In the upper part
+of Figure 5.3.3.1 there are oscillations, while on the lower part the signal is distorted at
+about 1.5 ms. It is not clear why the final value changing so long time after the actual
+move, while it should be rock solid at 1.5 ms. Galvoscanner position follows this false
+value, creating a feeling the actual move is very long.
+Next Figure 5.3.3.2 presents another view of the comparison. Digital signal
+forming have been applied to the falling slope, while raising have been left unchanged.
+
+Figure 5.3.3.2. Reference position signal and actual position for processed and 
+unprocessed signal (magenta – ref. Signal, green – galvoscanner position).
+It can be clearly seen that on falling edge both waveforms, commanded (green)
+and actual (magenta) are going very close together. On rising edge actual position can
+not follow the step signal. Galvoscanner reaches very high top speed but it can not
+break on time (because of integral regulator therm, as was explained earlier) and
+overshoots.
+
+PHD main, Michael Widlok
+
+page 80 of 106
+
+5.3.4. Performance improvements summary
+Response times for system with and without digital position reference signal
+forming have been summarized in Table 5 below.
+Table 5. Performance improvement over typical control system.
+Jump value
+
+Small jumps (below 20% of
+
+Response without digital
+
+Response time with digital
+
+position reference signal
+
+position reference signal
+
+forming
+
+forming
+
+0.74 ms
+
+0.55 ms (improvement
+
+full range)
+Large jumps (over 80% of
+
+34%)
+2.1 ms
+
+1.1 ms (improvement 48%)
+
+1.4 ms
+
+0.82 ms (improvement
+
+full range)
+Middle jumps (about 50%
+of full range)
+
+41%)
+
+Power efficiency improvement is very difficult to measure accurately. Power
+consumption is depended on input signal waveform, what makes comparison valuable
+only for one defined situation. The improvement is almost 0 if we use very signals with
+out many fast large jumps (galvoscanner is not stopped in one position), but it can be as
+large as 50% if we use signals when most of the time galvoscanner is kept in one
+position. Last situation was in fact frequent during laboratory research – we use low
+frequency square wave position reference, while observing results on the oscilloscope.
+In that case work without controlled power supply was impossible because of
+overheating output amplifiers – system consumed about 24 W of input power. With
+controlled power supply power consumption drops to 5-7 W. Table 6 shows achieved
+results for particular position reference signal.
+Table 6. Power consumption improvement over typical control system.
+Position reference signal
+Square wave full scale, 10
+
+Power consumption
+
+Power consumption with
+
+without voltage control
+
+voltage control
+
+24 W
+
+7 W (improvement 32%)
+
+Hz
+
+PHD main, Michael Widlok
+
+page 81 of 106
+
+5.3.5. Applications requirements summary
+Typical applications of galvoscanners can be dived to three major types, each of
+them needs different tunning and has to meet different requirements [6]:
+1) Laser shows, image projection – Position accuracy and response time are not
+very important if the overall look of the image is good. The main problems
+comes from very high laser powers that are needed, and because of this large
+mirrors. Data points are known a priori and it is possible to very easily
+implement digital signal forming before DACs and position regulators.
+2) Material processing – Accuracy is major concern here, while speed is not very
+important. As in point (1) all data is known before it is send to galvoscanner, so
+digital signal forming is also possible. With material processing machines
+accuracy is more often limited by the position sensors (integrated with
+galvoscanners) rather then used electronics.
+3) Target tracking/marking – Such applications needs both accuracy and speed,
+but in majority of all cases they produce “easy to follow” signals. Real targets
+can not change speed or turn instantly, so position signals are never
+discontinues or step. Of course no data is known a priori so digital position
+reference signal forming is difficult or impossible to realize. Fortunately with
+such signals properly designed and tuned analog controllers will give
+acceptable results.
+Control system presented in this research work can be used to almost all applications,
+without any, or with very little hardware modification. Programmable analog devices
+(ispPAC-10) allows changing every parameter of analog regulator, so achieving best
+performance image projecting as well as material processing is possible. We can also
+use digital signal forming block to further improve the system, but this time we will be
+limited to applications that know all data points before actual run.
+
+PHD main, Michael Widlok
+
+page 82 of 106
+
+6. Summary
+6.1. Summary of achieved results
+Galvoscanner control systems with position controllers are today not widely
+known by developers. Marketing consideration force manufacturers to creation of
+systems that are not suitable for research, and can be normally used only with one
+application.
+This paper presents fully programmable and configurable advanced
+galvoscanner control system, that can be used for many different applications without
+any hardware modifications. Regulation time have been reduced in comparison to other
+control systems, by using digital signal forming block and programmable analog
+regulator.
+Electrical efficiency of the system have been improved by using controlled,
+high-quality power supply with output voltage dependence of position reference, that
+reduce looses in the final power amplifier. All blocks of the system are controlled form
+PC, however it is possible to build a self contained system using modern signal
+processors or DSPs.
+
+6.2. Future research subjects
+6.2.1. Galvoscanner's operation with non-constant load
+Experiments showed, that when the load of the galvoscanner is changing (even
+only a little) retuning of the regulator is usually necessary. It is rather not possible to
+find an optimum for different loads, because it would slow down the response or even
+worse it could bring oscillations and overshoots in some cases. Oscillations are
+particularly danger for the galvoscanner.
+When the system is designed to work only in precisely known, unchanging
+conditions it is possible to fix all settings. However with time, even if load is constant,
+galvoscanner parameters might drift, as well as analog components used in the
+regulator. Thermal drift might also cause problems. Because of it some high precision
+galvoscanners have integrated heater and temperature sensor, to stabilize operation
+temperature of the unit [25].
+When the conditions are unknown, or when we know that the load will change
+other (adaptive) solutions are needed. There is nothing special in tuning digital
+regulators, but analog present much bigger challenge. Analog regulators are normally
+
+PHD main, Michael Widlok
+
+page 83 of 106
+
+fitted with mechanical potentiometers, that have to be set up by the user. If the
+application is supposed to work without any user intervention, or there are no persons
+qualified to set it up, we have to use components that will allow remote tunning,
+preferable from the micro-controller.
+Today there are digital potentiometers that could be used instead of mechanical
+ones, but analog programmable devices like ispPAC-10 seems to be much better
+solution. These elements allow not only to tune regulator parameters, but even allow to
+change the regulator configuration. With simple potentiometers we would need about
+5-6 separate units, and we still would be limited to the one configuration. With
+ispPAC-10 almost every think can be changed and we have only one IC on the board.
+Unfortunately fully configurable analog regulator alone is not enough to create
+a complete automatically tuned system. Above it, we need to know how to set it and we
+need some hardware that physically perform this task.
+
+6.2.2. Finding the optimum regulator parameters
+When galvoscanner load is changing, or even if the system changes it's
+scanning mode (for example from raster to vector) regulator parameters should change
+if the performance is critical. The problem is simple if the working conditions are
+changing in the previously known way. We can create a few sets of parameters and
+load appropriate set when it is needed. If the conditions are not known self tuning or
+self learning system can be applied.
+Such task is rather complicated (and it could be the subject of another research),
+but we have penalty of time to do it. After the conditions change, the controller sends a
+step or other command to the regulators, records the response, check if it is correct and
+if not slightly changes the parameters. Then it makes another try. To do such work
+there is no need to use very fast DSP because the computations are not done in real
+time. Only the sampling rate of the feedback is important to acquire enough points for
+the accurate computations. Block diagram of the system is shown below on
+Figure 6.2.2.1.
+During research only the first method (without feedback) was tried.
+Implementation of the active parameter tuning with the A/D converter feedback will be
+hopefully done during future test.
+
+PHD main, Michael Widlok
+
+page 84 of 106
+
+Figure 6.2.2.1. Automatic regulator tunning
+
+6.2.3. Class “T” power amplifiers
+Every galvoscanner control system needs power amplifier and very often
+current regulator in it's final stage. Linear power amplifiers are very accurate and can
+achieve very low noise and fast current regulation, but they are also very inefficient.
+Efficiency can be greatly improved by using actively regulated power supply, but there
+is also other alternative.
+Today switched power amplifier are constantly gaining popularity, because of
+high efficiency, but typical method (PWM with constant frequency) is not well suited
+for precise, high speed control as needed by galvoscanner control system. To achieve
+needed accuracy very high switching frequency would be needed, that can produce
+radio interference and EMI.
+Recently Tripath introduced class “T” switching power amplifiers (generally
+for audio applications), that can also be used for other tasks. These amplifiers uses very
+complicated circuits and algorithms, along with non constant switching frequency.
+Declared efficiency is about 70-80% with high quality MOSFETs used as power
+switches. These devices could possibly be used also for galvoscanner's controls systems
+with some modifications to the input stage and output filters. This ideal is generally
+worth to try, however there is some research work needed to incorporate Tripath ICs to
+the galvoscanner control system.
+
+PHD main, Michael Widlok
+
+page 85 of 106
+
+7. Appendix: ICSP programming device for ispPAC-10
+analog ICs.
+7.1. Genesis of the designed programmer
+Most of the new programmable integrated circuits have some form of In-Circuit
+Serial Programming (ICSP) interface. It enables to quickly program and test new
+firmware in different applications without any hardware changes. To program and test
+micro-controllers and other programmable devices (like ispPAC-10) a special service
+connector is provided on the board.
+There is no single standard for ICSP interface. Almost every manufacturer has
+it's own specification for ICSP capable devices and provides dedicated programming
+hardware. Often, even the same manufacturer has a few different programmers for
+different chip families. This can be accepted in mass production, but is rather
+problematic for designing and prototyping. The main problem is that such dedicated
+programmers are suitable only for single task – programming or testing. It means that
+designer have to have a lot of different programmers that often can not be connected to
+the PC at the same time. Sometimes software drivers for them uses incompatible input
+files format that creates further complication.
+To overcome this problems and to provide a single small and efficient
+programming device for many chips the new universal ICSP programmer was designed
+and build. In the begging, idea was to build single device that can program many
+different micro-controllers (MicroChip's PIC and ispPACs mostly) and eventually other
+programmable ICs (GAL22V10).
+However, during designing of software driver it was clear that it can be made to
+support many different communication standards like: SPI, I2C, JTAG or RS232. It
+was also possible to create a simple digital recorder with moderate sampling rate. The
+programmer can be used as an application debugger or tester, making it a very
+universal and handy device. Author uses it for about 4 years with good results for
+programming, testing and debugging his designs like: temperature controller for
+intelligent buildings, CD Player and of course this research work.
+
+7.2. Typical ICSP requirements
+ICSP usually does not need very high transmission rates however, time relation
+or signal sequences are often very strictly defined. Typically the start-up sequence or
+
+PHD main, Michael Widlok
+
+page 86 of 106
+
+programming pulses times and delays are specified within 10-50μs. Following this is
+guidelines is very important because it is quite easy to destroy programmed device in
+milliseconds. This is especially true for EEPROM or EPROM ICs because they are
+sensitive to programming pulses. FLASH ICs are much more robust. This means that
+every universal programming device should be able to give microseconds accuracy and
+should be very reliable. As was mentioned earlier, data transmission is not critical but it
+is also desirable to reduce programming time.
+If the programmer is also supposed to service as application debugger or digital
+recorder then the time resolution should be 2-5µs and clock frequency above 100 kHz.
+It might seem not very hard to reach, but we have take into account that different and
+sometimes not standard protocols have to be realized. It is impossible to use typical
+dedicated ICs to do the task, because of these reasons. There should be also possibility
+to configure lines as inputs or outputs on the fly, and to provide high power / high
+voltage outputs. Very desirable is also adjustable power supply and possibly a simple
+hardware. Finally (after a few tries) all this goals were met.
+
+7.3. Hardware of the programmer
+To cut costs and design time very simple hardware platform was chosen. The
+block diagram of the programmer is shown on Figure 7.3.1.
+
+Figure 7.3.1 Block diagram of the designed programming device
+
+PHD main, Michael Widlok
+
+page 87 of 106
+
+This cause very high load on control PC's processor especially during high frequency
+transmitting or receiving.
+The programmer has 3 configurable input or output lines with TTL signal
+levels, 3 output / high impedance TTL lines, 2 high voltage outputs (regulated
+1.2 - 15 V, 200 mA) and regulated 1.2 – 7 V power supply. Voltage regulator is shortcircuit protected and has 1 A current capability. The programmer consists of digital
+Input/Output block, high voltage lines amplifier and regulated power supply.
+Input/Output block is build over single programmable IC – Lattice
+GAL22V10. This device is fast, has high power TTL outputs, and is easily configurable
+for given tasks. As high power output block an ICL7667 dual amplifier was used to
+convert TTL signals from PC to 15 V / 200 mA outputs. An application power supply
+consists of an integrated voltage regulator with short circuit and over temperature
+protection block.
+All of the blocks are connected to PC standard parallel port (Centronics). This
+port was chosen because:
+1.
+
+Most PCs and Laptops have it
+
+2.
+
+It is very easy to configure and program it
+
+3.
+
+It does not need any special hardware to work
+
+4.
+
+It is robust
+
+5.
+
+Cables or other hardware is not critical for proper operation.
+
+The programmer has 20 pins connector and dedicated cable as a target application
+connection. Programmer needs its own power supply (8 – 15 V, 1.5 A maximum) for
+operation. It was build to enable powering it directly from control PC (12 V power
+line). However, if accurate high voltages are needed it is necessary to use dedicated
+stabilized power supply, that also have been build.
+
+7.4. Safety and isolation
+It is a good practice to implement some kind of isolation between PC (with its
+noisy power supply and main board) and programmed device or IC. Such isolation is
+usually achieved by using optical isolators and dedicated power supply with good line
+isolation, Figure 7.4.1.
+Presented programmer however does not have any galvanic isolation from PC.
+This means that PC, programmer and programmed device have to share the same
+ground and are all subjected to voltage surges if they occurs in any of the components.
+The isolation have not been implement because of quite complicated, bidirectional
+
+PHD main, Michael Widlok
+
+page 88 of 106
+
+interface between PC and programmer. To achieve isolation it would be necessary to
+add some logic to both sides of the isolators and also to provide power supply for that
+would share ground with PC.
+
+Figure 7.4.1. ICSP Programmer with optical isolation
+After some tests, it was decided that there will be no galvanic isolation from
+PC. Required complication of the hardware is not worth the increased protection. PC
+used for programming can be connected to power line (230 V, 50 Hz) with surge filters
+or even with isolation transformer, effectively reducing probability of component
+damage. Author using this programmer for about 4 years without any problems so far,
+so it can be assumed, that line filters with additional GAL IC between PC and
+programmed device is enough protection.
+
+7.5. Software drivers
+Programmer places all control tasks on PC. Such implementation is very
+universal and almost all interface standards can be realized with appropriate driver
+software. To meet needed performance a high quality real-time operation system and
+driver is essential. It is important that soft real-time is not enough because deadlines
+and jitter have to be kept below certain values all the time. Software failure can lead to
+destruction of the programmed device or meaningless received data.
+To meet these goals QNX was chosen as the real-time operating system. It is
+very fast, reliable, easy to configure and it was well know by the author. It is not
+
+PHD main, Michael Widlok
+
+page 89 of 106
+
+recommended to write real-time control programs under Windows, even if it is well
+know for most users and very popular, because of hard real time demands during
+programming procedure realization. Not many computer have QNX installed, so using
+the programmer out of the laboratory or without dedicated notebook is problematic.
+Concurrently work is in progress to port all the software to RTAI Linux, that will
+achieve similar performance but the driver is not ready yet.
+Control software was written in C – very popular and widely known language.
+The driver is implemented as a library of functions rather then stand alone program.
+Such configuration was chosen because it gives the best control of the programmer's
+hardware. It is very universal and easy to add new protocols or functions without any
+changes to the existing programs. Functions was grouped in the modules by category.
+Whole library consist of 17 modules 16 header files and over 60 functions, plus
+some “inline” functions, that are not accessible for the user. Many common
+communication standards and file formats are implement already (JTAG, SPI, I2C and
+so on). Functions also can be used to directly control programmer's lines. All of the
+functions can be used directly in any QNX program. It can be seen that by using the
+library it is very easy to load files in different formats and then send or receive
+application data. All parameters like speed, polarity, protocol or format can be changed
+on the fly in very short time – very useful for debugging.
+As was stated before time resolution and accuracy of micro seconds is needed
+to meet the ICSP programming specifications of some chips. Such short response time
+and low jitter is quite difficult to achieve even for hard real-time operation systems.
+QNX (and RTAI Linux) running on modern PCs however can meet such requirements.
+For QNX the easiest way was to disable all interrupts during critical time.
+To accurately measure time TSC (Time Stamp Counter) – 64 bits counter
+presented on every new PC processor was used. This counter is incremented at every
+clock cycle, so it is enough to know the frequency of the processor to measure the time.
+For testing 1.7 GHz Pentium 4 was used, however Pentium running on Intel mainboard is not the best choice for real-time use.
+Most of this boards have SMI (System Management Interrupt) “feature” - an
+interrupt that is called by system controller every few seconds. This is completely
+invisible for the software and OS, so it is impossible to block it in typical way. This can
+cause occasional jitter of several hundreds of micro seconds. It is sometimes possible to
+disable SMI by writing to main-board registers, but it is system depended and usually
+not documented anywhere. Unfortunately only that PC was available at that time.
+With 1.7 GHz clock it is theoretically possible to measure about 7 nsec, but
+PHD main, Michael Widlok
+
+page 90 of 106
+
+realistically this value is much longer i.e. about 0.7 μsec. This is cause mostly by long
+time needed to access I/O ports. The other problem is how long time can be measured
+in that way. TCS is 64 bits in nature, but to speed up operations typically only 32 bits
+are used, however functions for full 64 bits access are also provided. To give a good
+overview of possible measurement range for 32 and 64 bits counter the maximum
+available time is computed:
+For 32 bits
+T max=
+
+1
+4294967296
+⋅2 32 =
+≈ 2 . 5 seconds
+1 .7 GHz
+1700000000
+
+And for 64 bits
+1
+T max=
+⋅2 64≈1 .08⋅10 10 seconds≈125590 . 58 days≈ 344 years
+1 .7 GHz
+It is clear that even 32 bits counter should be sufficient for most of the time, but if one
+use 64 bits counter the measurement range is many times longer then the lifetime of
+typical PC.
+Using this programmer and drivers makes possible to very quickly reprogram
+ispPAC-10 chips in the analog regulator or to read the current configuration. Standard
+file format (JEDEC) is used for easy interface with other design tools provided by
+Lattice for the used chips.
+
+PHD main, Michael Widlok
+
+page 91 of 106
+
+8. Used symbols
+8.1. Galvoscanner parameters
+CR [] ,CL [ H ]
+
+-
+
+Galvoscanner DC resistance and inductance
+
+V⋅s
+] rad
+
+Back Electromotive force
+
+TRC [
+
+N⋅m
+] A
+
+Torque constant
+
+KTR[
+
+N⋅m
+] rad
+
+Torsion bar constant
+
+BEM [
+
+FR[
+
+N⋅m⋅s
+] rad
+
+Mechanical friction constant
+
+RIN [kg⋅m 2 ] -
+
+Rotor inertia
+
+MAN [rad ] -
+
+Maximum rotor angle
+
+8.2. Galvoscanner models state variables
+T E [ N⋅m ] -
+
+Electrical torque (created by coils)
+
+T TB [ N⋅m] -
+
+Torsion bar torque
+
+T FR [ N⋅m]
+
+-
+
+Mechanical friction torque
+
+I C [ A] -
+
+Galvoscanner current
+
+Uc [V ] -
+
+Galvoscanner voltage
+
+[
+
+rad
+] s
+
+Rotor angular velocity
+
+Pos[ rad ] -
+
+Rotor position
+
+Icom[ A] -
+
+Position detector common mode current
+
+Idif [
+
+A
+] rad
+
+PHD main, Michael Widlok
+
+Position detector differential current per radian
+
+page 92 of 106
+
+8.3. Power supply and voltage prediction algorithm
+u g  t [V ] -
+
+Galvoscanner voltage
+
+u smin  t [V ] -
+
+Minimum power supply voltage
+
+u sref  t [V ] -
+
+Power supply reference voltage
+
+LR1 , LR2[ H ] -
+
+Resonant inductors 1 and 2
+
+C1 ,C2[ F ] -
+
+Power switches capacitance
+
+Uz [V ] -
+
+½ of DC primary supply voltage
+
+Dt [ s ] -
+
+Delay time (between turn OFF on one
+
+switch and turn ON of the other in the same branch)
+Ts [ s ] -
+
+PHD main, Michael Widlok
+
+Switching period
+
+page 93 of 106
+
+Authors Publications
+1.
+
+ Michal Widlok:  Design of high efficiency, low noise ZVS­CV power supply 
+
+for laser diode.  EPE­PEMC,  Riga, 2004
+2.
+
+ Michal Widlok:  High efficiency, low voltage ZVS­CV DC­DC converter. 
+
+Zeszyty Elektrotechniki AGH,  Kraków, 2004
+3.
+
+ Michal Widlok:  Using Linux for real­time control of ICSP interface for 
+
+programmable device.  SENE,  Łódź, 2005
+4.
+
+ Michal Widlok:  ICSP programmer controlled with RT operation system 
+
+from PC parallel port.  Zeszyty Elektrotechniki AGH,  Kraków, 2005
+5.
+
+ Herbert Widlok, Michal Widlok:  Computer aided teaching of power 
+
+electronics.  EPE­PEMC,  Portoroz, 2006
+6.
+
+ Henryk Chodkiewicz, Ryszard Cichocki, Tomasz Stefanski,  Michal 
+
+Widlok:  Magnetometric method of sea mines detection.  UDT Europe,  Hamburg 2006
+7.
+
+ Henryk Chodkiewicz, Wacław Kosalka, Michal Widlok:  Construction and 
+
+testing of hydrodynamic trasducters for sea mines.  UDT Europe,  Naples, 2007
+
+Patent in preparation:
+Hydrodynamic sensor for non impact sea mines with differential transducers
+and electronically compensated static field, R&D Marine Technology Center,
+Gdynia 2007
+
+PHD main, Michael Widlok
+
+page 94 of 106
+
+List of Figures
+Figure 1.1.1. Dynamo transformer from Patent 2,488,734
+
+7
+
+Figure 1.1.2. Typical closed­loop galvoscanner control system block diagram
+
+8
+
+Figure 1.2.1. Recent laser path controller with beam interrupter
+
+11
+
+Figure 1.2.2. Raster scanning method for image projection
+
+11
+
+Figure 1.2.3 Vector scanning method for image projection
+
+11
+
+Figure 1.3.1 Cambridge Technology 6220hb moving coil galvoscanner
+
+13
+
+Figure 1.4.1 Block diagram of galvoscanner control  system used during research
+
+14
+
+Figure 1.5.1.1 General_Scanning GD­100PD galvoscanner outlook
+
+17
+
+Figure 1.5.1.2. GD­100PD internal parts
+
+17
+
+Figure 1.5.1.3 Moving iron galvoscanner  ­ rotor in neutral position (coils off)
+
+18
+
+Figure 1.5.1.4 Moving iron galvoscanner ­ rotor displaced (coils energized)
+
+18
+
+Figure 1.5.2.1 “Moving coil” galvoscanner block diagram
+
+19
+
+Figure 1.5.3.1 Closed loop operation mode
+
+20
+
+Figure 1.5.3.2 Open loop operation mode
+
+20
+
+Figure 1.5.3.3 Resonant operation mode
+
+20
+
+Figure 2.2.2.1. Block diagram of the galvoscanner mathematical model
+
+26
+
+Figure 2.2.2.2. Galvoscanner model implemented as Simulink block diagram
+
+27
+
+Figure 2.2.3.1 Galvoscanner model implemented as ngSpice schematic
+
+28
+
+Figure 2.4.1.1. Circuit used for coil inductance measurement
+
+33
+
+Figure 2.4.1.2. Circuit used for BEM measurement (2 galvoscanners used)
+
+34
+
+Figure 2.4.2.1 TRC measurement method
+
+36
+
+Figure 2.5.1.1. Galvoscanner model tests with small signals. Top – excitation voltage 
+and rotor position, Bottom – galvoscanner current. Blue – excitation voltage, magenta 
+– model response, green – galvoscanner response, yellow – model error
+
+39
+
+Figure 2.5.2.1: Model tests with large signals (triangle reference). Top – voltage and 
+current, Bottom – voltage and position. Blue – excitation voltage, magenta – model 
+response, green – galvoscanner response
+
+41
+
+Figure 2.5.2.2: Model tests with large signals (square reference). Top – voltage and 
+current, Bottom – voltage and position. Blue – excitation voltage, magenta – model 
+response, green – galvoscanner response
+
+42
+
+Figure 2.6.1 isp­PAC10 macro­cell block diagram
+
+43
+
+PHD main, Michael Widlok
+
+page 95 of 106
+
+Figure 3.1.1 Galvoscanner's controller block diagram
+
+44
+
+Figure 3.1.1.1 Digital galvoscanner controller
+
+45
+
+Figure 3.1.2.1 Analog galvoscanner controller
+
+46
+
+Figure 3.2.1 Designed galvoscanner controller used for research
+
+48
+
+Figure 3.2.2.1 Lattice ispPAC­10 programmable analog device block diagram
+
+51
+
+Figure 3.2.2.2 Analog position regulator realized with ispPAC­10 block diagram
+
+51
+
+Figure 3.2.3.1 Regulator tuning problems for small and large jumps
+
+53
+
+Figure 3.2.3.2 Regulator tuning and operation of the digital signal forming block. 
+Black – reference signal, Dashed blue – signal formed for small jump, Dashed green – 
+signal formed for big jump, Dashed black – galvoscanner position
+
+53
+
+Figure 3.2.3.3. Block diagram of the digital position reference signal forming block.
+54
+Figure 3.3.1.1 Analog regulator and power amplifier main board
+
+56
+
+Figure 3.3.1.2 Galvoscanners with mirrors on the XY mounting platform
+
+56
+
+Figure 4.1.1. Galvoscanner voltage (blue) and current (green) during jump and steady 
+state
+
+57
+
+Figure 4.1.2 Equivalent circuit of output power amplifier and galvoscanner during 
+begging of the movement
+
+58
+
+Figure 4.1.3 Equivalent circuit for power amplifier and galvoscanner during steady 
+state with rotor out of neutral position
+
+58
+
+Figure 4.1.2.1 Example output from power supply without voltage prediction 
+algorithm (solid line – minimum supply voltage, dashed line –  power supply output 
+voltage)
+
+60
+
+Figure 4.1.3.1. Example output from microprocessor controlled power supply with 
+prediction algorithm (solid line – minimum supply voltage, dashed line – power 
+supply output voltage)
+
+61
+
+Figure 4.1.4.1 Block diagram of the voltage control system
+
+62
+
+Figure 4.2.1.1. Normal ZVS­CV power supply
+
+63
+
+Figure 4.2.2.1. Modified ZVS­CV converter with resonant inductors
+
+65
+
+Figure 4.2.3.1. Simplified schematic of the single converter branch
+
+66
+
+Figure 5.1.1. Example, arbitrary X­Y trajectory of the target
+
+71
+
+Figure 5.1.2. Required X (solid line) and Y (dashed line) galvoscanner's position and 
+
+PHD main, Michael Widlok
+
+page 96 of 106
+
+speed to track the target from previous figure
+
+71
+
+Figure 5.2.1.1. Different methods step response rise­time determination.
+
+73
+
+Figure 5.2.1.2. Two main ways of step response rise­time determination when (in 
+overshoot case) overshoot occurs
+
+73
+
+Figure 5.2.2.1. Transient waveforms in sinusoidal reference case (magenta – ref. 
+Signal, green – galvoscanner position, blue – galvoscanner coil voltage).
+
+74
+
+Figure 5.2.2.2. Transient waveforms in  triangle reference case (magenta – ref. Signal, 
+green – galvoscanner position, blue – galvoscanner coil voltage).
+
+75
+
+Figure 5.2.2.3. Transient waveforms in square reference case (magenta – ref. Signal, 
+green – galvoscanner position, blue – galvoscanner coil voltage).
+
+76
+
+Figure 5.3.2.1. Digital signal forming during small jump (magenta – ref. Signal, green 
+– galvoscanner position).
+
+77
+
+Figure 5.3.2.2. Reference position signal and galvoscanner coil voltage with and 
+without digital signal forming (magenta – ref. Signal, blue – galvoscanner coil 
+voltage).
+
+78
+
+Figure 5.3.3.1. Reference position signal and actual position with and without digital 
+signal forming block (magenta – ref. Signal, green – galvoscanner position).
+
+79
+
+Figure 5.3.3.2. Reference position signal and actual position for processed and 
+unprocessed signal (magenta – ref. Signal, green – galvoscanner position).
+
+80
+
+Figure 6.2.2.1. Automatic regulator tunning
+
+85
+
+Figure 7.3.1 Block diagram of the designed programming device
+
+87
+
+Figure 7.4.1. ICSP Programmer with optical isolation
+
+89
+
+PHD main, Michael Widlok
+
+page 97 of 106
+
+Bibliography
+[1].
+
+Laser F/X: Galvanometrer theory of operation. www.laserfx.com
+
+[2].
+
+ Robert K. Mueller, Newton, Mass: Dynamo Transformer. Patent Nov. 22, 
+
+1949, 2,488,734, US Patent
+[3].
+
+ Laser show technology: Inside the Optical scanner. Laser show technology, 
+
+laser.shows.org/scanners.htm
+[4].
+
+ Laser show technology: Interscan. Laser show technology, 
+
+laser.show.org/interscan.htm
+[5].
+
+ Goldwaser S.: Sam's Laser FAQ. Samuel M. Goldwaser, 
+
+repairfaq.ece.drexel.edu/laserfaq.htm
+[6].
+
+ Cambridge Technology: Galvoscanners datasheets. Cambridge Technology, 
+
+Inc., www.cambridgetechnology.com
+[7].
+
+ Laser F/X: How laser shows work ­ Laser Projector. 
+
+www.laserfx.com/Works/Works3.html
+[8].
+
+ Laser F/X: How laser show work ­ Scanning system. 
+
+www.laserfx.com/Works/Works35.html
+[9].
+
+ Scilab Group: Scilab documentation. www.scilab.org
+
+[10].
+
+ Zalewski A., Cegieła R.: Matlab ­ obliczenia numeryczne i ich zastosowanie. 
+
+PWN, Warszawa 1997
+[11].
+
+ ngSpice group: ngSpice docummentation. ngspice.sourceforge.net
+
+[12].
+
+ LSK: Galvoscanner 040EF datasheet. Laser Scannig Keiser, 
+
+www.laserscanning.com
+[13].
+
+ Lattice: ispPAC10 Datasheet. www.latticesemi.com
+
+[14].
+
+ Analog Devices: Analog Devices book. www.analog.com
+
+[15].
+
+ Michał Widlok: ICSP programmer controlled with RT operation system from 
+
+PC parallel port. Zeszyty Elektrotechniki AGH, Krakow 2005
+[16].
+
+ Michal Widlok: Using Linux for real­time control of ICSP interface for 
+
+programmable device. SENE, Łódź, 2005
+[17].
+
+ ILDA group: ILDA articles. www.ilda.org
+
+[18].
+
+ Dieberger K., Ainger H., Grafman D.: Improving the full bridge, phase shift 
+
+ZVT converter for failure free op.. IAS, 1998
+[19].
+
+ Moham N., Tore M., Undeland W., Robbins P.: Power electronics. John 
+
+PHD main, Michael Widlok
+
+page 98 of 106
+
+Wiley & Sons, New Yourk 1999
+[20].
+
+ Tripath: Class "T" amplifiers. Tripath Technology, Inc., www.tripath.com
+
+[21].
+
+ RTAI project: RTAI documentation. www.rtai.org
+
+[22].
+
+ Dieberger K.: A new generation of power MOSFETs offers improved 
+
+performance. Advanced Power Technology, 1998
+[23].
+
+ Michał Widlok: Design of high efficiency, low noise ZVS­CV power supply for 
+
+laser diode. EPE­PEMC, Riga 2004
+[24].
+
+ Michał Widlok: High efficiency, low voltage ZVS­CV DC­DC converter. 
+
+Zeszyty Elektrotechniki AGH, Kraków 2004
+[25].
+
+ LSK: Technical papers. Laser Scanning Keiser, www.laserscanning.com
+
+[26].
+
+ Zdzisław Grunwald, praca zbiorowa: Napęd elektryczny. Wydawnictwo 
+
+naukowo­techniczne, Warszawa, 1987
+[27].
+
+ Sikorski W.: Słownik terminów i komunikatów komputerowych. Mikom, 
+
+Warszawa, 1993
+[28].
+
+ Henryk Tunia, Marian Kazmierkowski: Automatyka napędu 
+
+przekształtnikowego. PWM, Warszawa, 1987
+[29].
+
+ Redaktor Andrzej Horodecki: Sterowanie w napędzie elektrycznym i 
+
+energoelektronice. Wydawnictwo Politechniki Lubelskiej, Lublin, 1999
+[30].
+
+ Kazmierkowski M. P.,Tunia H: Automitic Control of Converte ­ Fed Drives. 
+
+PWN, Warszawa, 1994
+[31].
+
+ Citko T., Tunia H., Winiarski B: Układy rezonansowe w energoelektronice. 
+
+Wydawnictwo Politechniki Białostoskiej, Białystok, 2001
+[32].
+
+ De Doncker W., Lyons J.: The auxiliary resonant pole commutate converter. 
+
+IEEE, Industry Applications Society Annual Meeting, 1986
+[33].
+
+ Hua G., Young E., Winiarski B: Novel zero­current transition PWM. IEEE 
+
+Trans., November 1994
+[34].
+
+ Jabrzykowski S., Citko T.: Bridge configuration of class E converters. Archive 
+
+if El. Engineering, 2003
+[35].
+
+ Praca zbiorowa: Projektowanie przekształtnikow tyrystorowych. WNT, 
+
+Warszawa, 1974
+[36].
+
+ Tunia H., Smirnow A., Nowak M., Barlik R.: Układy energoelektroniczne ­  
+
+obliczanie modelowanie, projektowanie. WNT, Warszawa, 1982
+
+PHD main, Michael Widlok
+
+page 99 of 106
+
+[37].
+
+ Laningham I.: Poznaj Python w 24 godziny. Infoland, Warszawa, 2001
+
+[38].
+
+ Papamichalis P.: Digital signal processing theory, algorithms and 
+
+implementations. TII, Texas, 1994
+[39].
+
+ Sacha K.: Mikroprocesor w pytaniach i odpowiedziach. WNT, Warszawa, 
+
+1985
+[40].
+
+ Palassche R.: Scalone przetworniki A­C i C­A. Wyd. Komunikacji i Łączności, 
+
+Warszawa, 1997
+[41].
+
+ Glinka T.: Maszyny elektryczne wzbudzane magnesami trwałymi. 
+
+Wydawnictwo Politechniki Śląskiej, Gliwice, 2002
+[42].
+
+ Latek W.: Teoria maszyn elektrycznych. WNT, Warszawa, 1988
+
+[43].
+
+ Lukaniszyn M, Wrobel R., Jagieła M.: Komputerowe modelowanie 
+
+bezszczotkowych silników tarczowych. Oficyna wyd. Politechniki Opolskiej, Opole, 
+2002
+[44].
+
+ Sochodzki R.: Mikromaszyny elektryczne. Wydawnictwo Politechniki 
+
+Warszawszkiej, Warszawa, 1996
+[45].
+
+ Turowski J.: Obliczenia elektromagnetyczne maszyn i urządzeń elektrycznych. 
+
+WNT, Warszawa, 1982
+[46].
+
+ Pelczewski P.: Sterowanie optymalne układu napędowego nadążającego za 
+
+modelem. Politechnika Warszwska, Warszawa, 1987
+[47].
+
+ Turnau A.: Sterowanie docelowe układami nieliniowymi w czasie 
+
+rzeczywistym. Uczelniane wyd. Naukowo­dydaktyczne AGH, Kraków, 2002
+[48].
+
+ Senderski A.: Sterowanie pozycyjne napędem elektrycznym z ograniczonym 
+
+zrywem. Uczelniane wyd. Naukowo­techniczne AGH, Kraków, 1998
+[49].
+
+ Branch M. A., Grace A.: Matlab Optymization Toolbox user's guide. Math 
+
+Works, Inc., Natick, 1996
+[50].
+
+ Turnau A., Grega W., Kolek K.: Sterowanie w zintegrowanym środowisku 
+
+czasu rzeczywistego. CATIE, Kraków, 1997
+[51].
+
+ Martelli A.: Python cookbook. O'Reilly, USA, 2002
+
+[52].
+
+ Hollabaugh C.: Embedded Linux. Addison­Wesley, USA, 2002
+
+[53].
+
+ Praca zbiorowa: Debugging with GDB, GNU source level debugger. Wind 
+
+river systems, Alameda, 1994
+[54].
+
+ Embree P. M.: Digital signal processing C algorithms for real­time. Prentice 
+
+PHD main, Michael Widlok
+
+page 100 of 106
+
+Hall PTR, 1995
+[55].
+
+ Brodziewicz W., Jaszczak K.: Cyfrowe przetwarzanie sygnałów. WNT, 
+
+Warszawa, 1987
+[56].
+
+ RTO­MP­MSG­035: The effectiveness of modeling and simulation. R&T 
+
+Organisation, 2005
+[57].
+
+ Lakomy M., Zabrodzki J.: Cyfrowe układy scalone. PWN, Warszawa, 1986
+
+[58].
+
+ Banachowski L., Kreczmar A.: Analiza algorytmów i struktur danych. WNT, 
+
+Warszawa, 1989
+[59].
+
+ CHUA LEON O.: Komputerowa analiza układów elektronicznych algorytmy i 
+
+metody obliczeniowe. WNT, Warszawa, 1981
+[60].
+
+ Kirch O., Dawson T.: LINUX ­ podręcznik administratora sieci. Wyd. RM, 
+
+Warszawa, 2000
+[61].
+
+ Schwartz A.L.: Matlab Toolbox for solving optimal control problems. 
+
+MathWorks Inc., Natick, 1995
+[62].
+
+ Turnau A.: Przykład projektowania z wykorzystaniem pakietu Simulink. WNT, 
+
+Warszawa, 1993
+[63].
+
+ Senderski A.: Digital control of position electrical drive systems based on 3d 
+
+reference. IFAC Symposium, Zurich, 1991
+[64].
+
+ Tadeusiewicz R.: Sieci neurowowe. Akademicka oficyna wyd., Warszawa, 
+
+1993
+[65].
+
+ Varga Sz., Farkas S.: Realization of position controller by fuzzy logic. PEMC, 
+
+Budapest, 1996
+[66].
+
+ Yager R., Filev D.P.: Podstawy modelowania i sterowania rozmytego. WNT, 
+
+Warszawa, 1995
+[67].
+
+ Strzelecki R., Kasperek R., Fedyczak Z., Kobylecki G.: Sterowanie 
+
+impulsowymi sterownikami mocy prądu przem. o poprawionych właściwościach. 
+SENSE, Łódź, 1997
+[68].
+
+ ElennF.: UNIX. Administracja systemu. Oficyna wyd. READ ME, Warszawa, 
+
+1997
+[69].
+
+ Herbert Widlok, Michal Widlok: Computer aided teaching of power 
+
+electronics. EPE­PEMC, Portoroz, 2005
+[70].
+
+ Henryk Chodkiewicz, Ryszard Cichocki, Tomasz Stefanski,  Michał Widlok: 
+
+PHD main, Michael Widlok
+
+page 101 of 106
+
+Magnetometric method of sea mines detection. UDT Europe, Hamburg 2006
+[71].
+
+ Henryk Chodkiewicz, Waclaw Kosalka, Michal Widlok: Construction and 
+
+testing of hydrodynamic trasducters for sea mines. UDT Europe, Naples 2007
+
+This book has been created using only open-source software.
+
+PHD main, Michael Widlok
+
+page 102 of 106
+
+
