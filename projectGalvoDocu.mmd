@@ -542,19 +542,6 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 
 <center>![Regeleungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regeleungsnormalform für Systeme 3. Ordnung")</center>
 
-$$ M_{EL}(t) = J_R \cdot \frac{\partial~\omega}{\partial~t} + K_{FR} \cdot \omega(t) 
-\;\;\;\Leftrightarrow\;\;\;
-\frac{M_{EL}(t)}{J_R} = \frac{\partial~\omega}{\partial~t} + \frac{K_{FR}}{J_R} \cdot \omega(t) 
-\\\\ \phantom{.} \\\\
-\mathscr{L}\Bigg(\frac{M_{EL}(t)}{J_R}\Bigg) = \frac{M_{EL}(s)}{J_R} = s \cdot \Omega(s)-\omega(0) + \frac{K_{FR}}{J_R} \cdot \Omega(s) 
-\\\\ \phantom{.} \\\\ 
-G_{ME}(s) = \frac{\Omega(s)}{M_{EL}(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{J_R} \cdot \frac{1}{1 + \frac{1}{s} \frac{K_{FR}}{J_R}}
-\;\;\;\;\;\; mit\ \omega(0)=0
-$$ Zusammen mit der oben erwähnten Drehmomentkonstante und der Beziehung $M_{EL}(t) = i_L(t) \cdot K_{EL}$, wird die Übertragungsfunktion $G_{ME}(s)$ des mechanischen Subsystems in nachfolgendes Blockschaltbild überführt: 
-
-
-
-
 
 
 ### Testsignale ###
