@@ -84,6 +84,7 @@ Projekt __Galvo-Scanner__
  -->
 
 # Navigation #
+
 | Tastenkombination |                              Funktion                             |
 |-------------------|:-----------------------------------------------------------------:|
 | __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks <br><span style="background-color: yellow"> Testen ob auch in Windows 7/10: IExplorer, firefox, Chrome </span> |
@@ -261,33 +262,32 @@ Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten 
 
 ## Zeitabhängige Größen ##
 
-| Bezeichnung           | Symbol               | Einheit   | <span style="color: #bbb">engl. Bezeichnung</span>               |
-| --------------------- | :------------------: | :-------: | ---------------------------------------------------------------- |
-| Spulenstrom           | $i_L$                | $A$       | <span style="color: #bbb"> Coil current              </span>     |
-| Elek. Drehmoment      | $M_\{EL\}$           | $Nm$      | <span style="color: #bbb"> Electrical torque         </span>     |
-| Reibungsmoment        | $M_\{FR\}$           | $Nm$      | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
-| Torsionsfedermoment   | $M_\{TB\}$           | $Nm$      | <span style="color: #bbb"> Torsion bar torque        </span>     |
-| Drehimpuls            | $L_\omega$           | $Nm.s$    | <span style="color: #bbb"> Angular momentum          </span>     |
-| Winkelposition        | $\varphi_\{rad\}$    | $rad$     | <span style="color: #bbb"> Angular position          </span>     |
-|                       | $\varphi_\{deg\}$    | $°$       | <span style="color: #bbb">                           </span>     |
-| Winkelgeschwindigkeit | $\omega$             | $rad/s$   | <span style="color: #bbb"> Angular velocity          </span>     |
-| Stromregler Eingang   | $U_\{ccI\}$          | $V$       | <span style="color: #bbb"> Current controller input  </span>     |
-| Stromregler Ausgang   | $U_\{ccO\}$          | $V$       | <span style="color: #bbb"> Current controller output </span>     |
-| Spannung Messshunt    | $U_\{sh\}$           | $V$       | <span style="color: #bbb"> Shunt voltage             </span>     |
+| Bezeichnung           | Symbol               | Einheit            | <span style="color: #bbb">engl. Bezeichnung</span>               |
+| --------------------- | :------------------: | :----------------: | ---------------------------------------------------------------- |
+| Spulenstrom           | $i_L$                | $\si A$            | <span style="color: #bbb"> Coil current              </span>     |
+| Elek. Drehmoment      | $M_\{EL\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Electrical torque         </span>     |
+| Reibungsmoment        | $M_\{FR\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
+| Torsionsfedermoment   | $M_\{TB\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Torsion bar torque        </span>     |
+| Drehimpuls            | $L_\omega$           | $\si\{N.m.s\}$     | <span style="color: #bbb"> Angular momentum          </span>     |
+| Winkelposition        | $\varphi_\{rad\}$    | $\si\{rad\}$       | <span style="color: #bbb"> Angular position          </span>     |
+|                       | $\varphi_\{deg\}$    | $\si\{°\}$         | <span style="color: #bbb">                           </span>     |
+| Winkelgeschwindigkeit | $\omega$             | $\Si\{rad\per s\}$ | <span style="color: #bbb"> Angular velocity          </span>     |
+| Stromregler Eingang   | $U_\{ccI\}$          | $\si V$            | <span style="color: #bbb"> Current controller input  </span>     |
+| Stromregler Ausgang   | $U_\{ccO\}$          | $\si V$            | <span style="color: #bbb"> Current controller output </span>     |
+| Spannung Messshunt    | $U_\{sh\}$           | $\si V$            | <span style="color: #bbb"> Shunt voltage             </span>     |
 
 ## Konstanten ##
 
-| Bezeichnung              | Symbol                | Einheit         | <span style="color: #bbb">engl. Bezeichnung</span>          |
-| ------------------------ | :-------------------: | :-------------: | ----------------------------------------------------------- |
-| Wicklungsinduktivität    | $L$                   |  $H$            | <span style="color: #bbb">Coil inductance</span>            |
-| Wicklungswiderstand      | $R_L$                 | $\Omega$        | <span style="color: #bbb">Coil resistance</span>            |
-| Messwiderstand           | $R_\{SH\}$            | $\Omega$        | <span style="color: #bbb">Current shunt resistance</span>   |
-| Massenträgheit d. Rotors | $J_R$                 | $kg.m²$         | <span style="color: #bbb">Rotor inertia</span>              |
-| EMF-Konstante            | $K_\{EMF\}$           | $V.s/rad$       | <span style="color: #bbb">Back EMF const.</span>            |
-| Torsionsfederkonstante   | $K_\{TB\}$            | $Nm/rad$        | <span style="color: #bbb">Torsion bar torque const.</span>  |
-| Reibungskonstante        | $K_\{FR\}$            | $Nm.s/rad$      | <span style="color: #bbb">Friction torque const.</span>     |
-| El. Drehmomentkonstante  | $K_\{EL\}$            | $Nm/A$          | <span style="color: #bbb">El. magnetic torque const.</span> |
-
+| Bezeichnung              | Symbol                | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |
+| ------------------------ | :-------------------: | :--------------------: | ----------------------------------------------------------- |
+| Wicklungsinduktivität    | $L$                   | $\si H$                | <span style="color: #bbb">Coil inductance</span>            |
+| Wicklungswiderstand      | $R_L$                 | $\si\{\Omega\}$        | <span style="color: #bbb">Coil resistance</span>            |
+| Messwiderstand           | $R_\{SH\}$            | $\si\{\Omega\}$        | <span style="color: #bbb">Current shunt resistance</span>   |
+| Massenträgheit d. Rotors | $J_R$                 | $\si\{kg.m^2\}$        | <span style="color: #bbb">Rotor inertia</span>              |
+| EMF-Konstante            | $K_\{EMF\}$           | $\Si\{V.s\per rad\}$   | <span style="color: #bbb">Back EMF const.</span>            |
+| Torsionsfederkonstante   | $K_\{TB\}$            | $\Si\{N.m\per rad\}$   | <span style="color: #bbb">Torsion bar torque const.</span>  |
+| Reibungskonstante        | $K_\{FR\}$            | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |
+| El. Drehmomentkonstante  | $K_\{EL\}$            | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> |
 
 # Modellbildungsprozess #
 >"It's a bunch of shapes connected by lines." Dilbert 
@@ -347,7 +347,8 @@ Aus dem Energieerhaltungssatz kann das *Kräftegleichgewicht* abgeleitet werden.
 #### Impulsbilanzgleichung ####
 Wirkt auf einen Körper der Masse $m$ und dem Impuls $\vec I = m \cdot \vec v$ eine äußere Kraft $\vec F$, so gilt bei translatorischer Bewegung und $m=const$ entsprechend dem [Impulserhaltungssatz][@Impulserhaltung][^fnImpulserhaltung] folgende Bilanzgleichung: 
 
-\begin{equation} \frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t) \label{eqImpulsbil}\end{equation}
+\begin{equation}
+\frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t) \label{eqImpulsbil}\end{equation}
 
 Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. Analog wird die Impulsbilanz für rotiernde Körper mit der als skalar betrachteten Massenträgheit $J$ und bestehendem Drehimpuls $\vec L_s = J \cdot \vec \omega$ aufgestellt. Gleichung \eqref{eqDrehimpulsbil} wird folgerichtig als __Drehimpulsbilanzgleichung__ bezeichnet.
 
@@ -357,11 +358,11 @@ Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. 
 Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, wurden Galvoscanner als Aktor-Baugruppen eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt [Vorarbeit](#vorarbeit) angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt [generisches Modell](#generisches-modell) beschrieben. 
 
 ### Klassifizierung ###
-Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $Nm/s$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
+Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $\si{N.m/s}$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
 
-Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flußdichte des Erregermagnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten _"Moving Magnet Galvanometer"_ auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfelds ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von +-20° entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
+Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten _"Moving Magnet Galvanometer"_ auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
 
-Der vollständigkeit halber sollen an dieser Stelle einige paralleln zur Unterklasse der _elektronisch kommutierten_ Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff _"Brushless <a style="color: #aaa ">DC-</a>Motor"_ bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.
+Der Vollständigkeit halber sollen an dieser Stelle einige Parallelen zur Unterklasse der _elektronisch kommutierten_ Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff _"Brushless <a style="color: #aaa ">DC-</a>Motor"_ bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.
 
 ### Herstellerspezifikation ###
 Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge Technology_][cambridgeTech] handelt es sich um optische Scannereinheiten (Serie 6860) vom Typ _"Moving Magnet"_ mit integriertem Positionssensor, welcher auf Basis variabler Kapazitäten arbeitet. Die vom Hersteller liebevoll unter [__Veteran Galvo Motors__][veteranGalvo] kategorisierten Aktoren gehören zwar nicht mehr zu den aktuellen Produkten von _Cambridge Technology_, sind jedoch hervorragend geeignet für das hier dokumentierte Projektvorhaben. 
@@ -369,24 +370,24 @@ Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge
 Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.<br>
 <a name="refTableElectric"> </a>
 
-| Electrical Specifications           | Symbol                 | Value                             |                |        |
-| ----------------------------------- | ---------------------- | --------------------------------- | -------------- | ------ |
-| Coil Inductance                     | $L$          | 160µH                             |                | ±10%   |
-| Coil Resistance                     | $R_L$                  | 1.5 Ohm                         |                | ±10%   |
-| Back-EMF const.                     | $K_\{EMF\}$            | 0.17mV/degree/sec                 | 9.74mV/rad/s   | ±10%   |
-| RMS Current                         | $I_\{L-RMS\}$          | 4.6A @ T_case=50°C                |                | Max.   |
-| Peak Current                        | $I_\{L-PEAK\}$         | 25A                               |                | Max.   |
-| Small Angle Step<br>Response Time   |                        | 0.5ms (inertia<br>matched load)   |                |        |
+| Electrical Specifications | Symbol         | Value                          |                                   |                      |
+|---------------------------|----------------|--------------------------------|:---------------------------------:|:--------------------:|
+| Coil Inductance           | $L$            | $\SI\{160\}\{\micro\henry\}$   |                                   | $\pm\SI\{10\}\{\%\}$ |
+| Coil Resistance           | $R_L$          | $\SI\{1.5\}\{\ohm\}$           |                                   | $\pm\SI\{10\}\{\%\}$ |
+| Back-EMF const.           | $K_\{EMF\}$    | $\SI\{0.17\}\{mV s /\degree\}$ | $\SI\{9.74\}\{mV s /\radian\}$    | $\pm\SI\{10\}\{\%\}$ |
+| RMS Current               | $I_\{L-RMS\}$  | $\SI\{4.6\}\{A\}$              | at $\ T_\{case\}=\SI\{50\}\{°C\}$ | Max.                 |
+| Peak Current              | $I_\{L-PEAK\}$ | $\SI\{25\}\{A\}$               |                                   | Max.                 |
+| Step Response Time        | Small Angle    | $\SI\{0.5\}\{ms\}$             | inertia matched load              |                      |
 
 <a name="refTableMechanic"> </a>
 
-| Mechanical Specifications           | Symbol             | Value              |             |      |
-| ---                                 | ---                | ---                | ---         | ...  |
-| Angular Excursion                   | $\Delta\varphi_\{Max\}$ | 40°                | 0.698 rad/s |      |
-| Rotor Inertia                       | $J_R$              | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
-| Torque Constant                     | $K_\{EL\}$         | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
-| Maximum Coil Temperature            |                    | 110°C              |             |      |
-| Thermal Resistance<br>(Coil - Case) |                    | 1.5°C/Watt, Max    |             |      |
+| Mechanical Specifications           | Symbol                  | Value                        |                           |                      |
+| ---                                 | ---                     | ---                          | ---                       | ...                  |
+| Angular Excursion                   | $\Delta\varphi_\{Max\}$ | \SI\{40\}\{\degree\}         | \SI\{0.698\}\{\radian/s\} |                      |
+| Rotor Inertia                       | $J_R$                   | \SI\{0.6\}\{gm.cm^2\}        | \SI\{6e-8\}\{kg.m^2\}     | $\pm\SI\{10\}\{\%\}$ |
+| Torque Constant                     | $K_\{EL\}$              | \SI\{9.3*10^4\}\{dyne.cm/A\} | \SI\{9.3e-3\}\{N.m/A\}    | $\pm\SI\{10\}\{\%\}$ |
+| Maximum Coil Temperature            |                         | \SI\{110\}\{°C\}             |                           |                      |
+| Thermal Resistance<br>(Coil - Case) |                         | \SI\{1.5\}\{°C/\watt\}, Max  |                           |                      |
 
 <a name="refTablePositionDetect"> </a>
 
@@ -396,8 +397,8 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Scale Drift                      | 50PPM/°C, Maximum                       |      |
 | Zero Drift                       | 15 microradians/°C, Maximum             |      |
 | Repeatability, Short Term        | 8 microradians                          |      |
-| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
-| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
+| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
+| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
 
 <span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
 $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
@@ -413,15 +414,20 @@ $$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t)
 Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
 $$\mathscr{L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ 
 Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom: 
-$$ \begin{equation} G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$
+$$ \begin{equation}
+G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$
 Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des Nennerpolynoms von \eqref{eqGsAusg} bestimmt werden und beträgt $\; {\large\tau} = \frac{L}{R_L} = \frac{160\,\mu H}{1.5\,\Omega}\approx 107\,\mu s$. 
 
-Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entsehen da Systeme mit Nullstellenüberschuss keine bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
+Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entstehen da Systeme mit Nullstellenüberschuss keine Bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus Kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
 
 #### Back-EMF ####
-Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportinal mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch.
+Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportional mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch.
 
-In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17\,mV/degree/sec\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
+In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17\si{mV/degree/sec}\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
+
+$\Si{24}{\degree\per\second}$
+$\Si[number-unit-product={}]{24}{\degree\per\s}$
+$\num{24}\si{\degree\per\second}$
 
 $$\begin{aligned} 
 0.17,mV/degree/sec &= 9.74\times 10^{-3} V/rad/s \nonumber \\\
@@ -431,21 +437,22 @@ $$\begin{aligned}
 was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit 
 \begin{equation} u_{EMF}(t) = K_{EMF} \cdot \omega(t) \label{eqVemf} \end{equation} 
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
-\begin{equation} G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
+\begin{equation} 
+G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
 
 #### Elektrisch generiertes Drehmoment ####
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
 ### Mechanik ###
-Eine bewegte Masse speichert _kinetische Energie_ $E_{kin}$. Diese steigt dabei quadratisch zur Geschwindigkeit der bewegten Masse an. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Qadrat seiner Winkelgeschwindigkeit $\omega(t)$.
+Eine bewegte Masse speichert _kinetische Energie_ $E_{kin}$. Diese steigt dabei quadratisch zur Geschwindigkeit der bewegten Masse an. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
  
-Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhalted zusätzlich Näherungen und Annahmen die bisher getroffen wurden
+Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhaltet zusätzlich Näherungen und Annahmen die bisher getroffen wurden
 
 - elektrisches Drehmoment $\bf{M_{EL}}$
     + Erregerfeld gilt als konstant bezüglich Intensität ($\vec{B}, \vec{H}$) und Winkelpos. (siehe [Klassifizierung](#klassifizierung)) 
     + $M_{EL}$ ist im Bereich $\pm \frac{1}{2}\cdot \Delta\varphi_{Max} = \pm 20°$ proportional zum Spulenstrom $i_L(t)$
-    + Herstellerangaben zur Proportionalitätskonstante $K_{EL}$ vorhanden 
-- Trägheitsmoment $\bf{J_R}$ (alt. Inertialmoment) des rotiernden Körpers setzt sich zusammen aus 
+    + Herstellerangaben zum Proportionalitätsfaktor $K_{EL}$ vorhanden 
+- Trägheitsmoment $\bf{J_R}$ (alt. Inertialmoment) des rotierenden Körpers setzt sich zusammen aus 
     + Rotorwelle, Rotormagnet, Sensorscheibe und Spiegel
     + Die Drehachse wird als fest und die Rotormasse als homogen verteilt, angenommen 
         * Trägheitstensor darf in die skalare Größe des Trägheitsmoments überführt werden
@@ -471,7 +478,8 @@ In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich ei
 
 #### Mechanisches Teilsystem ####
 Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
-\begin{equation} J_R\,\frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}
+\begin{equation} 
+J_R\,\frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}
 Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. 
 \begin{equation}    
 J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon} \end{equation} Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
@@ -483,19 +491,16 @@ M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\bol
 M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
 \end{align} $$ Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits erwähnt. Nach einsetzen von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man dann eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
 
-\begin{equation} J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
+\begin{equation}
+J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
 \small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\\\ \phantom{.} \end{equation}
 
 Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen.
-$$ \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) $$ 
-
-<!-- $$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\bigg\lbrace\ i_L(t) {\bigg\rbrace} = s^2 \,\mathit{\large\mathit\Phi}\mathit{(s)}- s\,\varphi\mathit{(0)}-\dot\varphi\mathit{(0)} + \frac{K_{FR}}{J_R}\cdot s \,\mathit{\large\mathit\Phi}\mathit{(s)} - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot \mathit{\large\mathit\Phi}\mathit{(s)} $$
- -->
-<!-- I_L(s) &= s^2 \,{\large\Phi}(s) \cdot\frac{J_R}{K_{EL}}+ \frac{K_{FR}}{K_EL}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{K_EL} \cdot {\large\Phi}(s) \nonumber
- -->
-
-$$ \frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) $$
-
+\begin{equation} 
+\mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) \nonumber
+\\\\ \phantom{.} \\\\ \Downarrow \\\\ \phantom{.} \\\\
+\frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber
+\end{equation}
 Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
 Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$, können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
 
@@ -525,10 +530,11 @@ Die verwendeten Galvoscanner sind mit einem integrierten Positionsdetektor ausge
 Um den eingebauten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $\omega(t)$ durch einen einfachen Integrationsblock in die Winkelposition $\varphi(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
 
 #### Verbindung der Teilsysteme ####
-Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Der in [Positionssensor](#positionssensor) erwähnte Proportionalitätsfaktor $K_{PD}$ muss erst in der Rückführung von $\varphi(t)$ auf den ADC des diskreten Reglers beachtet werden.
+Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Der in Abschnitt [Positionssensor](#positionssensor) erwähnte Proportionalitätsfaktor $K_{PD}$ muss erst in der Rückführung von $\varphi(t)$ auf den ADC des diskreten Reglers beachtet werden.
 <center>![systemSubCmpl](./pics/simulExport/systemSubCmpl.svg "Zusammengesetztes Teilsysteme")</center>
-Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$, müssen entsprechend den linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} erzeugt werden. Das lineare Modell entspricht somit:
+Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$, müssen entsprechend den linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} erzeugt werden. Das resultierende, __lineare__ Modellist in folgender Abbildung gegeben:
 <center>![systemLinCmpl](./pics/simulExport/systemLinCmpl.svg "Lineares Aktor Modell")</center>
+
 
 $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
 
@@ -702,36 +708,37 @@ __[Iser:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*_
 # Trash #
 <a name="refTableElectric"> </a>
 
-| Elektrische Spezifikationen    |                              |                |      |
-| ---                            | ---                          | ---            | ...  |
-| Coil Resistance                | 1.5 Ohm                      |                | ±10% |
-| Coil Inductance                | 160µH                        |                | ±10% |
-| Back EMF Voltage               | 0.17mV/degree/sec            | 9.74mV/rad/sec | ±10% |
-| RMS Current                    | 4.6A @ T_case=50°C, Max      |                |      |
-| Peak Current                   | 25A, Max                     |                |      |
-| Small Angle Step Response Time | 0.5ms (inertia matched load) |                |      |
+| Elektrische Spezifikationen    |                              |                |                      |
+| ---                            | ---                          | ---            | ...                  |
+| Coil Resistance                | 1.5 Ohm                      |                | $\pm\SI\{10\}\{\%\}$ |
+| Coil Inductance                | 160µH                        |                | $\pm\SI\{10\}\{\%\}$ |
+| Back EMF Voltage               | 0.17mV/degree/sec            | 9.74mV/rad/sec | $\pm\SI\{10\}\{\%\}$ |
+| RMS Current                    | 4.6A @ T_case=50°C, Max      |                |                      |
+| Peak Current                   | 25A, Max                     |                |                      |
+| Small Angle Step Response Time | 0.5ms (inertia matched load) |                |                      |
+
 
 <a name="refTableMechanic"> </a>
 
-| Mechanical Specifications        |                    |             |      |
-| ---                              | ---                | ---         | ...  |
-| Rated Angular Excursion          | 40°                |             |      |
-| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | ±10% |
-| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | ±10% |
-| Maximum Coil Temperature         | 110°C              |             |      |
-| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |      |
+| Mechanical Specifications        |                    |             |                      |
+| ---                              | ---                | ---         | ...                  |
+| Rated Angular Excursion          | 40°                |             |                      |
+| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | $\pm\SI\{10\}\{\%\}$ |
+| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | $\pm\SI\{10\}\{\%\}$ |
+| Maximum Coil Temperature         | 110°C              |             |                      |
+| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |                      |
 
 <span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
 $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
 
-| Position Detector                |                                         |      |
-| ---                              | ---                                     |      |
-| Linearity                        | 99.9%, Minimum, over 40 degrees         |      |
-| Scale Drift                      | 50PPM/°C, Maximum                       |      |
-| Zero Drift                       | 15 microradians/°C, Maximum             |      |
-| Repeatability, Short Term        | 8 microradians                          |      |
-| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | ±20% |
-| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | ±20% |
+| Position Detector                |                                         |                      |
+| ---                              | ---                                     |                      |
+| Linearity                        | 99.9%, Minimum, over 40 degrees         |                      |
+| Scale Drift                      | 50PPM/°C, Maximum                       |                      |
+| Zero Drift                       | 15 microradians/°C, Maximum             |                      |
+| Repeatability, Short Term        | 8 microradians                          |                      |
+| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
+| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
 
 <p style="margin: 0em 18em 0em 9em; background: -webkit-linear-gradient(top left, #ccc 20%, #ccc 40%, rgba(250, 250, 250, 0) 100%);"> 
 </p>
@@ -780,3 +787,13 @@ Auch in der technischen Mechanik stützen sich viele mathematische Ansätze der 
 <!-- M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
 M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque} -->
 <!-- $$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$ --> 
+
+$\pm 20°\,s^{-1}$
+$\pm 20\si{°/s}$
+$\pm 20°\si{\per s}$
+$\pm 20\si[per-mode=symbol]{°/s}$
+$\pm 20\Si{°/s}$
+$\Si{\ang{\pm 20} \per s}$
+$\pm 20 \Si{\degree \per s}$
+$\ang{100}$
+$100°$
