@@ -381,22 +381,22 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 
 <a name="refTableMechanic"> </a>
 
-| Mechanical Specifications           | Symbol                  | Value                        |                           |                      |
-| ---                                 | ---                     | ---                          | ---                       | ...                  |
-| Angular Excursion                   | $\Delta\varphi_\{Max\}$ | \SI\{40\}\{\degree\}         | \SI\{0.698\}\{\radian/s\} |                      |
-| Rotor Inertia                       | $J_R$                   | \SI\{0.6\}\{gm.cm^2\}        | \SI\{6e-8\}\{kg.m^2\}     | $\pm\SI\{10\}\{\%\}$ |
-| Torque Constant                     | $K_\{EL\}$              | \SI\{9.3*10^4\}\{dyne.cm/A\} | \SI\{9.3e-3\}\{N.m/A\}    | $\pm\SI\{10\}\{\%\}$ |
-| Maximum Coil Temperature            |                         | \SI\{110\}\{°C\}             |                           |                      |
-| Thermal Resistance<br>(Coil - Case) |                         | \SI\{1.5\}\{°C/\watt\}, Max  |                           |                      |
+| Mechanical Specifications           | Symbol                  | Value                          |                             |                      |
+| ---                                 | ---                     | ---                            | ---                         | ...                  |
+| Angular Excursion                   | $\Delta\varphi_\{Max\}$ | $\SI\{40\}\{\degree\}$         | $\SI\{0.698\}\{\radian/s\}$ |                      |
+| Rotor Inertia                       | $J_R$                   | $\SI\{0.6\}\{gm.cm^2\}$        | $\SI\{6e-8\}\{kg.m^2\}$     | $\pm\SI\{10\}\{\%\}$ |
+| Torque Constant                     | $K_\{EL\}$              | $\SI\{9.3*10^4\}\{dyne.cm/A\}$ | $\SI\{9.3e-3\}\{N.m/A\}$    | $\pm\SI\{10\}\{\%\}$ |
+| Maximum Coil Temperature            |                         | $\SI\{110\}\{°C\}$             |                             |                      |
+| Thermal Resistance<br>(Coil - Case) |                         | $\SI\{1.5\}\{°C/\watt\}, Max$  |                             |                      |
 
 <a name="refTablePositionDetect"> </a>
 
-| Position Detector                | Value                                   |      |
-| ---                              | ---                                     |      |
-| Linearity                        | 99.9%, Minimum, over 40 degrees         |      |
-| Scale Drift                      | 50PPM/°C, Maximum                       |      |
-| Zero Drift                       | 15 microradians/°C, Maximum             |      |
-| Repeatability, Short Term        | 8 microradians                          |      |
+| Position Detector                | Value                                   |                      |
+| ---                              | ---                                     |                      |
+| Linearity                        | 99.9%, Minimum, over 40 degrees         |                      |
+| Scale Drift                      | 50PPM/°C, Maximum                       |                      |
+| Zero Drift                       | 15 microradians/°C, Maximum             |                      |
+| Repeatability, Short Term        | 8 microradians                          |                      |
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
 
@@ -425,11 +425,8 @@ Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeug
 
 In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17\si{mV/degree/sec}\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
 
-$\Si{24}{\degree\per\second}$
-$\Si[number-unit-product={}]{24}{\degree\per\s}$
-$\num{24}\si{\degree\per\second}$
-
 $$\begin{aligned} 
+\SI{0.17}{\milli V\per\degree\per\second} \\\
 0.17,mV/degree/sec &= 9.74\times 10^{-3} V/rad/s \nonumber \\\
 &= 9.74\times 10^{-3} Nm/A \nonumber
 \end{aligned}$$
