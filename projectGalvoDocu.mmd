@@ -84,13 +84,36 @@ Projekt __Galvo-Scanner__
  -->
 
 # Navigation #
-
 | Tastenkombination |                              Funktion                             |
 |-------------------|:-----------------------------------------------------------------:|
 | __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks <br><span style="background-color: yellow"> Testen ob auch in Windows 7/10: IExplorer, firefox, Chrome </span> |
 
+# Vorwort #
+Diese Ausarbeitung ist in Anlehnung an das Anerkennungsgespräch vom 02.11.2016 entstanden und dient der Einschätzung des Wissensstands.
+
+Gesprächsnotiz:
+
+| Modul    | Bezeichnung                                 |
+| -------- | ------------------------------------------  |
+| ELT201   | Softwareentwurf                             |
+| ELT203   | Betriebssysteme                             |
+| ELT204   | Hardwarenahe Programmierung I               |
+| ELT237   | Hardwarenahe Programmierung II (ab SS17)    |
+| ELT236   | Embedded Systems                            |
+| ELT247   | ~~Werkzeuge der Informations- und Kommun.~~ |
+
+1. Doku __*C*__-Projekt
+    - Umsetzung, nicht gesamten Weg
+    - nicht Architektur 
+2. Doku __*C++*__-Projekt bzw. OO
+    - Allg. wie bei 1.
+    - "Wozu Unterklasse XY erstellt" etc.
+3. Doku __*Embedded*__-Projekt 
+    - plattformübergreifende Inhalte
+    - inkl. Modell etc.
+
 # Einleitung #
-Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt ___bewusst___ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-)Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
+Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt __bewusst__ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-)Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
 
 * Analog-/Digitaltechnik 
 * Felder-Theorie (magnetische / elektrische)    
@@ -108,7 +131,7 @@ Einige konkreFür die Umsetzung eines  ___Systemplanung___ wie auch für die sp�
 Es folgen einige Worte zur Frage "Wie kam es zu dem Projekt?" und "Was wurde letztendlich Umgesetzt?". Das ursprüngliche Projektvorhaben wurde nur teilweise umgesetzt, soll aber hier der Vollständigkeit halber erwähnt werden. 
 
 ## Ursprüngliche Motivation ##
-Der Besuch einer mehrtägigen Schulungsveranstaltung der Firma _ANSYS_[^fnWikiAnsys] mit Schwerpunkt _ANSYS_ _Maxwell_[^fnMaxwell] sowie _ANSYS_ _Simplorer_[^fnSimplorer] im Rahmen meiner Formula Student Mitgliedschaft, weckte das Interesse an einem Projekt im Bereich "Multiphysik und Systemsimulation". Der nachfolgende Abschnitt "Projektziel" wurde der ursprünglichen Projektanfrage entnommen. Weitere Details sowie erste Simulationsergebnisse (Maxwell FEM-Modell + Simplorer Regelkreis), können in der ursprünglichen Projektanfrage[^fnAnfrageBrunner] eingesehen werden. 
+Der Besuch einer mehrtägigen Schulungsveranstaltung der Firma _ANSYS_[^fnWikiAnsys] mit Schwerpunkt _ANSYS_ _Maxwell_[^fnMaxwell] sowie _ANSYS_ _Simplorer_[^fnSimplorer] im Rahmen meiner Formula-Student Mitgliedschaft, weckte das Interesse an einem Projekt im Bereich "Multiphysik und Systemsimulation". Der nachfolgende Abschnitt "Projektziel" wurde der ursprünglichen Projektanfrage entnommen. Weitere Details sowie erste Simulationsergebnisse (Maxwell FEM-Modell + Simplorer Regelkreis), können in der ursprünglichen Projektanfrage[^fnAnfrageBrunner] eingesehen werden. 
 
 ><a name="refProjectDesc"/> Ziel des Projektes ist </a> der Aufbau eines funktionsfähigen XY-Galvanometer-Scanners mit selbstentworfenen Galvanometer-Motoren + Leistungstreiber und eines in C implementierten Software-Reglers (...). Als Galvanometer-Motor-Typ ist ein "Moving magnet motor" geplant. Um die Motorkonstruktion einfach zu halten, ist ein Stator Design mit nur einem Polpaar angedacht.
 <a name="refExplainFEMSol"/> </a>
@@ -138,14 +161,14 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
 
 # Projektziel #
-Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die Aktoren (Spiegelgalvanometer der Firma Cambridge) sind als gegeben zu betrachten (Zukaufteil). <img src="./pics/galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" sein so dass zumindest einfache geometrische Figuren auf einen hellen Hintergrund projiziert werden können. Die Regelung der Aktoren soll diskret realisiert und auf einem Mikrocontroller STM32F429i implementiert werden. Die Pixel-Koordinaten (Sollwerte) werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die Aktoren (Spiegelgalvanometer der Firma Cambridge) sind als gegeben zu betrachten (vergl. Bestandsbaugruppe, Lagerware). <img src="./pics/galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" sein so dass zumindest einfache geometrische Figuren auf einen hellen Hintergrund projiziert werden können. Die Positionsregelung der Drehachsen soll diskret realisiert und auf einem Mikrocontroller STM32F429i implementiert werden. Die Sollwerte der Pixel- oder Vektor-Koordinaten werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
 
-Zu Begin des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts "XY-Galvanometer-Scanner":
+Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts "XY-Galvanometer-Scanner":
 
 # Terminologie #
 Auf häufig wiederkehrende Begriffe wie z. B. Modell, Modellbildung oder System, soll hier kurz eingegangen werden da sie als Überbegriffe sehr universell definiert sein können. 
 
-## Galvanometer* ##
+## Galvanometer ##
 >Ein Galvanometer-Scanner ist ein hochdynamisches elektro-optisches Bauteil, bei dem <a style="color: #ddd ">ein</a> drehbare Spiegel von geringer Trägheit verwendet werden, um einen Laserstrahl mit hoher Genauigkeit und Wiederholbarkeit zu positionieren. Der Name Galvanometer bezieht sich auf den Motor-Typ.[^fnGalvoScanlab]
 
 ## System ##
@@ -265,7 +288,7 @@ Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten 
 | Bezeichnung           | Symbol               | Einheit            | <span style="color: #bbb">engl. Bezeichnung</span>               |
 | --------------------- | :------------------: | :----------------: | ---------------------------------------------------------------- |
 | Spulenstrom           | $i_L$                | $\si A$            | <span style="color: #bbb"> Coil current              </span>     |
-| Elek. Drehmoment      | $M_\{EL\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Electrical torque         </span>     |
+| Elektr. Drehmoment    | $M_\{EL\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Electrical torque         </span>     |
 | Reibungsmoment        | $M_\{FR\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
 | Torsionsfedermoment   | $M_\{TB\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Torsion bar torque        </span>     |
 | Drehimpuls            | $L_\omega$           | $\si\{N.m.s\}$     | <span style="color: #bbb"> Angular momentum          </span>     |
@@ -278,16 +301,16 @@ Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten 
 
 ## Konstanten ##
 
-| Bezeichnung              | Symbol                | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |
-| ------------------------ | :-------------------: | :--------------------: | ----------------------------------------------------------- |
-| Wicklungsinduktivität    | $L$                   | $\si H$                | <span style="color: #bbb">Coil inductance</span>            |
-| Wicklungswiderstand      | $R_L$                 | $\si\{\Omega\}$        | <span style="color: #bbb">Coil resistance</span>            |
-| Messwiderstand           | $R_\{SH\}$            | $\si\{\Omega\}$        | <span style="color: #bbb">Current shunt resistance</span>   |
-| Massenträgheit d. Rotors | $J_R$                 | $\si\{kg.m^2\}$        | <span style="color: #bbb">Rotor inertia</span>              |
-| EMF-Konstante            | $K_\{EMF\}$           | $\Si\{V.s\per rad\}$   | <span style="color: #bbb">Back EMF const.</span>            |
-| Torsionsfederkonstante   | $K_\{TB\}$            | $\Si\{N.m\per rad\}$   | <span style="color: #bbb">Torsion bar torque const.</span>  |
-| Reibungskonstante        | $K_\{FR\}$            | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |
-| El. Drehmomentkonstante  | $K_\{EL\}$            | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> |
+| Bezeichnung              | Symbol      | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |
+| ------------------------ | :---:       | :--------------------: | ----------------------------------------------------------- |
+| Wicklungsinduktivität    | $L$         | $\si H$                | <span style="color: #bbb">Coil inductance</span>            |
+| Wicklungswiderstand      | $R_L$       | $\si\{\Omega\}$        | <span style="color: #bbb">Coil resistance</span>            |
+| Messwiderstand           | $R_\{SH\}$  | $\si\{\Omega\}$        | <span style="color: #bbb">Current shunt resistance</span>   |
+| Massenträgheit d. Rotors | $J_R$       | $\si\{kg.m^2\}$        | <span style="color: #bbb">Rotor inertia</span>              |
+| EMF-Konstante            | $K_\{EMF\}$ | $\Si\{V.s\per rad\}$   | <span style="color: #bbb">Back EMF const.</span>            |
+| Torsionsfederkonstante   | $K_\{TB\}$  | $\Si\{N.m\per rad\}$   | <span style="color: #bbb">Torsion bar torque const.</span>  |
+| Reibungskonstante        | $K_\{FR\}$  | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |
+| El. Drehmomentkonstante  | $K_\{EL\}$  | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> |
 
 # Modellbildungsprozess #
 >"It's a bunch of shapes connected by lines." Dilbert 
@@ -302,12 +325,13 @@ Dieser Aussage entsprechend soll hier aus dem formellen Anforderungskatalog (ver
     * Mikrocontrollerplatine 
     * Signalkonditionierung
         - Pegelwandlung 
-        - Anti-Aliasing (ADC)
+        - Antialiasing (ADC)
         - Rekonstruktionsfilter (DAC)
 * Software 
-    * Implementierung der Regelalgorithmen
+    * Implementierung der Regelalgorithmen (Reglerelektronik)
+    * grafisches Schnittstellenprogramm zur Echtzeitkommunikation
 
-![abstractSystemC](./pics/abstractSystemC.svg "Erste Unterteilung") 
+![abstractSystemC](./pics/abstractSystemC.svg "Erste Unterteilung")
 
 ## Generisches Modell ##
 In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf die hier genutzte Modell-Art, so muss ein Modell entstehen dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ oder _"Galvanometer"_ die für das zu erzeugende Modell spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll ein entsprechendes Modell erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
@@ -437,6 +461,11 @@ Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G
 \begin{equation} 
 G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
 
+![](./pics/simulExport/mechSubA.svg)
+*Mechanisches Subsystem*
+
+<figure><img src='//discourse-meta.s3-us-west-1.amazonaws.com/original/2X/3/39239a7f2b0f0aa72bdd0d3c1880f15f1a967276.png'><figcaption>The discourse logo</figcaption></figure>
+
 #### Elektrisch generiertes Drehmoment ####
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
@@ -548,17 +577,39 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 
 ### Testsignale ###
 #### Problematik der Sättigung ####
-## Stellglied / Leistungsteil ##
-## Signalkonditionierung ##
-# Angaben zur Systemdynamik #
-## Spezifikationen des Gesamtsystems ##
-# Gesamtsystem
-## Warum ARM? ##
-# Software
+## ??? Stellglied / Leistungsteil ##
+## ??? Signalkonditionierung ##
+# ??? Angaben zur Systemdynamik #
+## ??? Spezifikationen des Gesamtsystems ##
+# Plattform #
+
+## Hardware ##
+### Warum ARM? ###
+Im Kapitel [Projektziel](#projektziel) 
+Bei der industriellen Produktentwicklung 
+
+### Muss es Cortex M4 sein? ###
+## Software ##
+
+# Software und Simulation #
+In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegangen werden, zum anderen wird die Simulationsumgebung vorgestellt. Der Bereich _Software und Simulation_ wird wie folgt untergliedert: 
+
+1. hardwarenahe Programmierung in __C__
+2. Entwurf eines kleinen, plattformunabhängigen GUI als Schnittstellenprogramm in __C++ / Qt__
+    * Echtzeit-Zustandsüberwachung
+    * Anpassung von Regelparametern etc.
+3. Elektroniksimulation mittels __LTspice__
+4. System- und Reglersimulation in __Simulink__
+5. Schnittstelle zwischen Hardware-Simulation (__Spice__) und Reglermodell (__Simulink__)
+    * MATLAB Skript zur <u>vollautomatischen</u> Modellgenerierung von Schaltungskomponenten wie
+        - Antialiasing- und Rekonstruktionsfiltern
+        - dem unterlegten, analogen Stromregler
+        - Endstufe sowie Stellglied
+
+
+
 ## DOXYGEN!!! ##
 ## CMSIS ##
-# Regelungstechnik
-## Diskretisierungsverfahren ##
 # Geschlossene Simulationsumgebung #
 ## Umsetzung in MATLAB / Simulink ##
 ## "frequency response model estimation" ##
@@ -567,7 +618,7 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 ## Endstufe -> LTspice -> MATLAB ##
 ## Levelshifter -> LTspice -> MATLAB ##
 ## Antialias / Rekonstruktionsfilter -> MATLAB ##
-# Simulationen und Verifizierung
+# Simulationen und Verifizierung #
 ## Step-by-Step ##
 ## Spice: Geht die Simulation nicht ... ##
 ###  ... geht auch der Testaufbau nicht! ###
@@ -575,25 +626,13 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 ### RC-Glied direkt an gepufferten DAC ###
 ### Testsignale im uC erzeugen ###
 ### Oszibilder mit MATLAB-Simulation vergl. ###
-# Modellparameter testen
-# Hardware
-# Resumee
-# Quellenangaben
-
-<!-- # geschlosseneModell #
-# Simulation #
-# SpezifikationedeGesamtsystem #
-# ModellierununSimulation #
-# Gesamtsystem #
-# Modellbildung #
-# ModellbildundeTeilsysteme #
+# ??? Regelungstechnik
+## ??? Diskretisierungsverfahren ##
+# ??? Gesamtsystem #
+# ??? Modellparameter testen #
 # Hardware #
-# Software #
-# UmsetzuniMATLAB/Simulink #
-# VerifizierundeModellmöglich? #
-# Modellparametebestimmeuntesten #
-# Schwerpunkt #
-# Quellenangaben # -->
+# Resümee #
+# Quellenangaben #
 
 [^fnWikiAnsys]: __*ANSYS*__ ["*(Kurzform für **AN**alysis **SYS**tem) ist eine Finite-Elemente-Software der Firma Ansys Inc., ehemals SASI (Swanson Analysis Systems Inc.).*"][wikiAnsys]
 
@@ -652,6 +691,8 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 [@Jx]: #citeInertialmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
 
 [@Impulserhaltung]: #citeImpulserhaltung "Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat."
+
+[@]
 
 <a name="citeMDA"/> </a>
 __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
@@ -793,3 +834,6 @@ $\Si{\ang{\pm 20} \per s}$
 $\pm 20 \Si{\degree \per s}$
 $\ang{100}$
 $100°$
+
+
+60 64 63 93 82 92 42 54
