@@ -6,83 +6,6 @@ Projekt __Galvo-Scanner__
 =========================== 
 [TOC]
 
-<!-- - Einleitung
-- Vorarbeit
-    - Ursprüngliche Motivation
-    - Fertigungsproblematik
-    - Industriell gefertigte Aktoren
-- Projektziel
-
-- Terminologie
-    - Galvanometer*
-    - System
-    - Modell
-        - Beispiel
-    - Modellbildung
-
-- Formelzeichen und Einheiten
-    - Zeitabhängige Größen
-    - Konstanten
-
-- Modellbildungsprozess
-    - Generisches Modell
-        - Mathematische Zusammenhänge
-            - Translation und Rotation
-            - Energiebilanz in allgemeiner Form
-            - Impulsbilanzgleichung
-
-    - Aktoren
-        - Klassifizierung
-        - Herstellerspezifikation
-        - Elektrisches Teilsystemen
-            - Back-EMF
-            - Elektrisch generiertes Drehmoment
-        - Mechanik
-            - Lastmoment
-            - Mechanisches Teilsystem
-            - Positionssensor
-        - Problematik der Sättigung
-            - Testsignale, keine Sprungantwort etc.
-
-    - Stellglied / Leistungsteil
-
-    - Signalkonditionierung
-
-- Angaben zur Systemdynamik
-    - Spezifikationen des Gesamtsystems
-
-- Gesamtsystem
-    + Warum ARM?
-- Software
-    + DOXYGEN!!!
-    + CMSIS
-
-- Regelungstechnik
-    + Diskretisierungsverfahren
-
-- Geschlossene Simulationsumgebung
-    + "frequency response model estimation"
-    + copy ltspice conform laplace function of the estimated system 
-    + Aktoren -> Simulink Modelle 
-    + Endstufe -> LTspice -> MATLAB
-    + Levelshifter -> LTspice -> MATLAB
-    + Antialias / Rekonstruktionsfilter -> MATLAB
-    +  
-- Simulationen und Verifizierung
-    + Step-by-Step
-    + Spice: Geht die Simulation nicht ...
-        + ... geht auch der Testaufbau nicht!
-    + Regelalgorithmen testen:
-        * RC-Glied direkt an gepufferten DAC
-        * Testsignale im uC erzeugen
-        * Oszibilder mit MATLAB-Simulation vergl.
-- Modellparameter testen
-- Hardware
-
-- Resumee
-- Quellenangaben
- -->
-
 # Navigation #
 | Tastenkombination |                              Funktion                             |
 |-------------------|:-----------------------------------------------------------------:|
@@ -111,6 +34,9 @@ Gesprächsnotiz:
 3. Doku __*Embedded*__-Projekt 
     - plattformübergreifende Inhalte
     - inkl. Modell etc.
+
+## V-Modell ##
+An einigen Stellen dieser Dokumentation wird auf Inhalte des V-Modells verwiesen bzw. auf diese Referenziert. Allgemein ist unter der Bezeichnung _V-Modell_ das aktuelle _V-Modell __XT___ zu verstehen. 
 
 # Einleitung #
 Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt __bewusst__ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-)Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
@@ -161,7 +87,7 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
 
 # Projektziel #
-Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die Aktoren (Spiegelgalvanometer der Firma Cambridge) sind als gegeben zu betrachten (vergl. Bestandsbaugruppe, Lagerware). <img src="./pics/galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" sein so dass zumindest einfache geometrische Figuren auf einen hellen Hintergrund projiziert werden können. Die Positionsregelung der Drehachsen soll diskret realisiert und auf einem Mikrocontroller STM32F429i implementiert werden. Die Sollwerte der Pixel- oder Vektor-Koordinaten werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die Aktoren (Spiegelgalvanometer der Firma Cambridge) sind als gegeben zu betrachten (vergl. Bestandsbaugruppe, Lagerware). <img src="./pics/galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" sein so dass zumindest einfache geometrische Figuren auf einen hellen Hintergrund projiziert werden können. Die Positionsregelung der Drehachsen soll diskret realisiert und auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. Die Sollwerte der Pixel- oder Vektor-Koordinaten werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
 
 Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts "XY-Galvanometer-Scanner":
 
@@ -584,11 +510,15 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 # Plattform #
 
 ## Hardware ##
+In Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. 
+
 ### Warum ARM? ###
-Im Kapitel [Projektziel](#projektziel) 
 Bei der industriellen Produktentwicklung 
 
 ### Muss es Cortex M4 sein? ###
+<img src="./pics/Cortex-M3-M4.png" title="Skalierung von Cortex M3 auf M4" width="80%" style="box-shadow: 0px 0px 0px 0px; border: 0px"/>
+
+
 ## Software ##
 
 # Software und Simulation #
@@ -692,7 +622,7 @@ In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegan
 
 [@Impulserhaltung]: #citeImpulserhaltung "Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat."
 
-[@]
+[@STM32F429i]: #citeSTM32F429i "High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"
 
 <a name="citeMDA"/> </a>
 __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
@@ -703,6 +633,8 @@ __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik 
 <a name="citeIserm"/> </a>
 __[Iser:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
 
+<a name="citeSTM32F429i"/> </a>
+__[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?querycriteria=productId=SS1577
 
 
 ---
