@@ -514,8 +514,16 @@ Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man
 (...)
 
 ## Hardware ##
-Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. Zahlreiche Projekte im Bereich klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später Original Hardware), steigerten das Interesse an der Entwicklung/Umsetzung komplexerer, umfangreicher Systeme. 
-Wie komplex ein Verbundsystem im Bereich 8-Bit Automotive werden kann, hat sich während meiner aktiven Teilnahme am Formula Student Projekt (Hochschule Karlsruhe, Semester 1...4, 2011-2013) herauskristallisiert (bis zu 6 selbst entworfene Steuergeräte auf Basis von Infineon's XC87x Serie im Rahmen eines studentischen Projekts). 
+Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. Zahlreiche Projekte im Bereich klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später Original Hardware), steigerten das Interesse im Bereich Hardware und hardwarenaher Programmierung. Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnten Erfahrung im Bereich Vernetzung (Infineons 8-Bit XC87x Derivate, CAN, CANoe) und Automotive erarbeitet werden.  
+
+Weit verbreitete 32-Bit Entwicklungsboards (siehe Liste) sind interessante Plattformen für _Embedded Linux_ und erfreuen sich teils großer Beliebtheit. 
+
+- Atmel's Grasshopper Board (AT32AP7000 application processor, AVR32 RISC, $210\si{DMIPS}$ @ $150\si{MHz}$)
+- BeagleBoard oder 
+- RaspberryPi I (ARM1176JZF, aarch: ARMv6, Familie: ARM11) bzw. 
+- RaspberryPi II (ARM Cortex A7, aarch: ARMv7, Familie: ARM Cortex A)
+
+Der Hardware-Bezug im Sinne hardwarenaher Programmierung, geht durch den Einsatz von Betriebssystemen natürlich weitestgehend verloren. 
 Schon seit längerem war ein Projekt geplant, bei dem der Einsatz eines 32-Bit Controllers gerechtfertigt werden konnte. 
  
 ### Warum ARM? ###
