@@ -509,28 +509,35 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 ## ??? Signalkonditionierung ##
 # ??? Angaben zur Systemdynamik #
 ## ??? Spezifikationen des Gesamtsystems ##
-# Projektplan / V-Modell #
+# Projektplan und V-Modell #
 Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren _V-Modell XT_ (eXtreme Tailoring, Anfang 2005 [^fnV-Modell-XT-Bund]) gibt es kaum noch Gründe, von einer Projektplanung _auf Basis_ des V-Modells abzusehen. 
 (...)
 
 ## Hardware ##
-Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. Zahlreiche Projekte im Bereich klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später Original Hardware), steigerten das Interesse im Bereich Hardware und hardwarenaher Programmierung. Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnten Erfahrung im Bereich Vernetzung (Infineons 8-Bit XC87x Derivate, CAN, CANoe) und Automotive erarbeitet werden.  
+Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
 
-Weit verbreitete 32-Bit Entwicklungsboards (siehe Liste) sind interessante Plattformen für _Embedded Linux_ und erfreuen sich teils großer Beliebtheit. 
+Zahlreiche Projekte im Bereich klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später original Hardware "AVR JTAGICE mkII"), steigerten kontinuierlich das Interesse. 
 
-- Atmel's Grasshopper Board (AT32AP7000 application processor, AVR32 RISC, $210\si{DMIPS}$ @ $150\si{MHz}$)
-- BeagleBoard oder 
-- RaspberryPi I (ARM1176JZF, aarch: ARMv6, Familie: ARM11) bzw. 
-- RaspberryPi II (ARM Cortex A7, aarch: ARMv7, Familie: ARM Cortex A)
-
-Der Hardware-Bezug im Sinne hardwarenaher Programmierung, geht durch den Einsatz von Betriebssystemen natürlich weitestgehend verloren. 
-Schon seit längerem war ein Projekt geplant, bei dem der Einsatz eines 32-Bit Controllers gerechtfertigt werden konnte. 
+Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte unbeschreibbar viel "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Co-Prozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden.
  
 ### Warum ARM? ###
-Natürlich bedeutet 32-Bit nicht gleich ARM. Dass es jedoch von Vorteil ist, sich mit der _Advanced RISC Machine_ der Firma _ARM Limited_ auseinander zu setzen, lässt sich z.B. durch das exponentielle Wachstum der  
+Mit der entsprechenden Routing-Karte hätte die vorhandene Evaluierungshardware von Atmel (STK600 + JTAG-Emulator), auf Controller mit AVR32 Architektur, erweitert werden können. Als überzeugter Linux-Anwender ist ein schwerwiegendes Kontra-Argumenten jedoch schnell genannt, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__. 
+Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur, mittlerweile auf mehr als __86 Milliarden!!!__ (2013: 50 Milliarden).
 
-### Warum Cortex M4? ###
-<img src="./pics/Cortex-M3-M4.png" title="Skalierung von Cortex M3 auf M4" width="80%" style="box-shadow: 0px 0px 0px 0px; border: 0px"/>
+> Today ARM technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
+
+### Warum Cortex-M Familie? ###
+Zahlreiche Entwicklungsboards und Plattformen für _Embedded Linux_ Anwendungen, und erfreuen sich teils großer Beliebtheit. 
+
+- BeagleBoard (OMAP3530 Chip, ARM Cortex A8 Prozessor, The $125 MSRP,  720MHz ARM Cortex-A8 )
+- RaspberryPi I (BCM2835 Chip, ARM1176JZF Prozessor, aarch: ARMv6, Familie: ARM11) 
+- RaspberryPi II (BCM2836 Chip, ARM Cortex A7 Prozessor, aarch: ARMv7, Familie: ARM Cortex A)
+- Atmel's Grasshopper Board (AT32AP7000 Chip, AVR32 RISC, $210\si{DMIPS}$ @ $150\si{MHz}$)
+
+Der Hardware-Bezug im Sinne hardwarenaher Programmierung, geht durch den Einsatz von Betriebssystemen natürlich weitestgehend verloren. 
+
+Natürlich bedeutet 32-Bit nicht gleich ARM. 
+
 
 ## Software ##
 # Software und Simulation #
@@ -638,6 +645,7 @@ In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegan
 
 [^fnV-Modell-XT-Bund]:  __*V-Modell XT auf*__ [www.cio.bund.de][V-Modell-XT-Bund] 
 
+[^fnBillionARM]: __*ARM Company profile*__ https://www.arm.com/about/company-profile
 
 [@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
 
