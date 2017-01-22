@@ -1,12 +1,12 @@
 {
-	"folders":
-	[
-		{
-			"folder_exclude_patterns":
-			[
-				"eagle"
-			],
-			"path": "."
-		}
-	]
+    "folders":
+    [
+        {
+            "path": ".",
+            "folder_exclude_patterns":
+            [
+                "eagle"
+            ],
+        }
+    ]
 }

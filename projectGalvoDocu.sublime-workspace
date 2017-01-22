@@ -180,104 +180,48 @@
 	"buffers":
 	[
 		{
-			"file": "projectGalvoDocu.mmd",
+			"file": "projectGalvoDocu.sublime-project",
 			"settings":
 			{
-				"buffer_size": 78910,
+				"buffer_size": 168,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
 	],
-	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system": "",
 	"build_system_choices":
 	[
-		[
-			[
-				[
-					"Packages/Makefile/Make.sublime-build",
-					""
-				],
-				[
-					"Packages/Makefile/Make.sublime-build",
-					"Clean"
-				]
-			],
-			[
-				"Packages/Makefile/Make.sublime-build",
-				"Clean"
-			]
-		],
-		[
-			[
-				[
-					"Packages/Makefile/Make.sublime-build",
-					""
-				],
-				[
-					"Packages/Makefile/Make.sublime-build",
-					"Clean"
-				],
-				[
-					"Packages/Markdown Preview/Markdown.sublime-build",
-					""
-				],
-				[
-					"Packages/User/pandoc-markdown-to-pdf.sublime-build",
-					""
-				],
-				[
-					"Packages/User/pandoc-markdown-to-word.sublime-build",
-					""
-				],
-				[
-					"Packages/User/udev_reload.sublime-build",
-					""
-				]
-			],
-			[
-				"Packages/Markdown Preview/Markdown.sublime-build",
-				""
-			]
-		],
-		[
-			[
-				[
-					"Packages/Python/Python.sublime-build",
-					""
-				],
-				[
-					"Packages/Python/Python.sublime-build",
-					"Syntax Check"
-				]
-			],
-			[
-				"Packages/Python/Python.sublime-build",
-				""
-			]
-		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 32.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "cle",
 		"selected_items":
 		[
 			[
-				"remo",
-				"Package Control: Remove Package"
+				"cle",
+				"Clear Console"
 			],
 			[
 				"prv",
 				"PackageResourceViewer: Extract Package"
 			],
 			[
-				"Package Control: insta",
+				"insta",
 				"Package Control: Install Package"
 			],
 			[
-				"insta",
+				"glue",
+				"Glue - Launch"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Package Control: insta",
 				"Package Control: Install Package"
 			],
 			[
@@ -348,6 +292,26 @@
 		"height": 114.0,
 		"history":
 		[
+			"l",
+			"os.syst",
+			"os.system",
+			"os.system('reset')",
+			"os.system('clear')",
+			"def cls(): os.system('clear')",
+			"def cls():",
+			"import os",
+			"window.clear",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\"})",
+			"view.run_command(\"show_panel\", {\"console\", \"visible\": \"false\"})",
+			"view.run_command(\"show_panel\", \"panel\": \"console\", \"visible\": \"false\")",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"visible\": \"false\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"glue\", \"toggle\": \"false\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"false\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"true\"})",
+			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"true\"}})",
+			"view.run_command(\"show_panel\", {\"panel\": {\"console\": \"hide\"}})",
+			"view.run_command(\"show_panel\", {\"panel\": {\"console\": \"open\"}})",
+			"windows.show_panel",
 			"window.extract_variables()",
 			"extract_variables()",
 			"window.extract_variables()",
@@ -411,8 +375,7 @@
 	},
 	"expanded_folders":
 	[
-		"/media/data/whz/projectGalvoDocu",
-		"/media/data/whz/projectGalvoDocu/pdfs"
+		"/media/data/whz/projectGalvoDocu"
 	],
 	"file_history":
 	[
@@ -626,27 +589,28 @@
 			[
 				{
 					"buffer": 0,
-					"file": "projectGalvoDocu.mmd",
-					"semi_transient": true,
+					"file": "projectGalvoDocu.sublime-project",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 78910,
+						"buffer_size": 168,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								715,
-								715
+								168,
+								168
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 102.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -686,25 +650,9 @@
 		]
 	},
 	"menu_visible": true,
-	"output.clang":
-	{
-		"height": 89.0
-	},
-	"output.exec":
-	{
-		"height": 204.0
-	},
 	"output.find_results":
 	{
 		"height": 0.0
-	},
-	"output.markdown":
-	{
-		"height": 88.0
-	},
-	"output.unsaved_changes":
-	{
-		"height": 88.0
 	},
 	"pinned_build_system": "Packages/Python/Python.sublime-build",
 	"project": "projectGalvoDocu.sublime-project",
