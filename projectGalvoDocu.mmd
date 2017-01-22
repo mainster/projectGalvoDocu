@@ -513,31 +513,58 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren _V-Modell XT_ (eXtreme Tailoring, Anfang 2005 [^fnV-Modell-XT-Bund]) gibt es kaum noch Gründe, von einer Projektplanung _auf Basis_ des V-Modells abzusehen. 
 (...)
 
-## Hardware ##
+# Plattform #
 Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
 
-Zahlreiche Projekte im Bereich klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später original Hardware "AVR JTAGICE mkII"), steigerten kontinuierlich das Interesse. 
+## STM32F429 Spezifikationen ##
+AN4566
+Digital data update rate
+The STM32 DAC output data need to be written to the DAC Holding Register (DHR), then
+the data is move to the DAC Output Register (DOR) for the conversion.
+Generally, the DAC data is saved in a memory (RAM), and the CPU is in charge of the
+transferring the data from RAM to DAC.
+When using the DMA, the overall performance of the system is increased by freeing up the
+core. This is because data is moved from memory to DAC by DMA, without need for any
+actions by the CPU. This keeps CPU resources free for other operations.
+The trigger of the DAC conversion can be done by the software, external triggers or by the
+timers. For the high speed conversion cases, it is recommended to use the timer trigger in
+combination with the data transfer done by the DMA.
+The transfer speed from memory to the DAC is limited by several factors, among them:
+• the clock cycle of the APB (DAC clock);
+• the DMA transfer cycle from memory to the DAC (includes the AHB to APB bridge);
+• the trigger mechanism itself.
+The DAC on STM32F407x microcontrollers is running on the APB1:
+• three cycles after the trigger, DHR data is moved to the DOR register;
+• at the same time a DMA request is generated from DAC to DMA;
+• DMA transfer takes at least one APB clock cycle.
+So a total of 4APB clock cycles are needed to update the DAC DOR register data. As APB1
+maximum clock is 42 MHz (for ST32F407x), 10.5 Msps is the maximum update rate for the
+DAC output register when timer trigger and the DMA are used for the data update.
+The minimum transfer clock cycle by DMA to the DAC is not the same for all STM32
+microcontrollers, because of the different bus configuration.
+The STM32 DAC system AN4566
+8/19 DocID026799 Rev 2
+Table 2 shows the maximum sampling rate for different STM32 products.
+Note: Values reported in Table 2 have been measured on the bench, when bus is not used by any
+other system: in real applications it’s necessary to have some margin.
+1.5 Summary
+By using external high speed OpAmp, it is possible to extend the speed performance of the
+STM32 DACs more than 1 Msps.
+In Section 2 we will provide an example showing how to use this technique on STM32
+products
+
+## Hardware ##
+Zahlreiche Projekte im Bereich Klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später original Hardware "AVR JTAGICE mkII"), steigerten kontinuierlich das Interesse. 
 
 Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte unbeschreibbar viel "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Co-Prozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden.
  
 ### Warum ARM? ###
 Mit der entsprechenden Routing-Karte hätte die vorhandene Evaluierungshardware von Atmel (STK600 + JTAG-Emulator), auf Controller mit AVR32 Architektur, erweitert werden können. Als überzeugter Linux-Anwender ist ein schwerwiegendes Kontra-Argumenten jedoch schnell genannt, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__. 
-Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur, mittlerweile auf mehr als __86 Milliarden!!!__ (2013: 50 Milliarden).
+Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als __86 Milliarden!!!__ (im Jahr 2013 erreichte ARM die 50 Milliarden Marke).
 
 > Today ARM technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
 
-### Warum Cortex-M Familie? ###
-Zahlreiche Entwicklungsboards und Plattformen für _Embedded Linux_ Anwendungen, und erfreuen sich teils großer Beliebtheit. 
-
-- BeagleBoard (OMAP3530 Chip, ARM Cortex A8 Prozessor, The $125 MSRP,  720MHz ARM Cortex-A8 )
-- RaspberryPi I (BCM2835 Chip, ARM1176JZF Prozessor, aarch: ARMv6, Familie: ARM11) 
-- RaspberryPi II (BCM2836 Chip, ARM Cortex A7 Prozessor, aarch: ARMv7, Familie: ARM Cortex A)
-- Atmel's Grasshopper Board (AT32AP7000 Chip, AVR32 RISC, $210\si{DMIPS}$ @ $150\si{MHz}$)
-
-Der Hardware-Bezug im Sinne hardwarenaher Programmierung, geht durch den Einsatz von Betriebssystemen natürlich weitestgehend verloren. 
-
-Natürlich bedeutet 32-Bit nicht gleich ARM. 
-
+### Warum Cortex-M4? ###
 
 ## Software ##
 # Software und Simulation #
@@ -699,6 +726,7 @@ __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?q
 [WillertUML]: http://www.embeddedcomputingconference.ch/pdf_2011/4c1-vanderheiden.pdf "UML statt „C“ Vorurteile gegenüber der UML?"
 [V-Modell-XT]: http://ftp.tu-clausthal.de/pub/institute/informatik/v-modell-xt/Releases/2.0/Dokumentation/V-Modell-XT-HTML/index.html "V-Modell XT Bundesministerium Des Innern (BMI)"
 [V-Modell-XT-Bund]: http://www.cio.bund.de/Web/DE/Architekturen-und-Standards/V-Modell-XT/vmodell_xt_node.html "V-Modell XT auf www.cio.bund.de"
+[wikiMikroarchs]: https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures#Designed_by_ARM "Umfangreiche Liste von ARM-Mikroarchitekturen"
 
 # Important Notes #
 - MathJax:
