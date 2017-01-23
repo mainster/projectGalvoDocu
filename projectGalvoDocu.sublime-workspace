@@ -180,10 +180,10 @@
 	"buffers":
 	[
 		{
-			"file": "projectGalvoDocu.sublime-project",
+			"file": "projectGalvoDocu.mmd",
 			"settings":
 			{
-				"buffer_size": 168,
+				"buffer_size": 78909,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -197,9 +197,13 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "cle",
+		"last_filter": "insta",
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"cle",
 				"Clear Console"
@@ -207,10 +211,6 @@
 			[
 				"prv",
 				"PackageResourceViewer: Extract Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"glue",
@@ -292,6 +292,7 @@
 		"height": 114.0,
 		"history":
 		[
+			"window.extract_variables()",
 			"l",
 			"os.syst",
 			"os.system",
@@ -379,6 +380,11 @@
 	],
 	"file_history":
 	[
+		"/home/mainster/scripts/split-markdown-src.sh",
+		"/media/data/whz/projectGalvoDocu/xaa",
+		"/home/mainster/&",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Glue.sublime-settings",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
 		"/home/mainster/.config/sublime-text-3/Packages/sublime-non-text-files/Non-text-files.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Non-text-files.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/sublime-non-text-files/Main.sublime-menu",
@@ -501,16 +507,11 @@
 		"/media/data/vems_mitch_944_brain/vems_firmware/kb.c",
 		"/media/data/vems_mitch_944_brain/vems_firmware/dispatcher.h",
 		"/media/data/vems_mitch_944_brain/vems_firmware/tables.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/tables.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/softpwm.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/softpwm.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/scancodes.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/ringbuf.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/reenable.h"
+		"/media/data/vems_mitch_944_brain/vems_firmware/tables.c"
 	],
 	"find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -589,25 +590,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "projectGalvoDocu.sublime-project",
-					"semi_transient": false,
+					"file": "projectGalvoDocu.mmd",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 168,
+						"buffer_size": 78909,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								168,
-								168
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
