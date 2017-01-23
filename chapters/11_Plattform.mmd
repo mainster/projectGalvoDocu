@@ -1,0 +1,119 @@
+# Plattform #
+Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
+
+## STM32F429 Spezifikationen ##
+AN4566
+Digital data update rate
+The STM32 DAC output data need to be written to the DAC Holding Register (DHR), then
+the data is move to the DAC Output Register (DOR) for the conversion.
+Generally, the DAC data is saved in a memory (RAM), and the CPU is in charge of the
+transferring the data from RAM to DAC.
+When using the DMA, the overall performance of the system is increased by freeing up the
+core. This is because data is moved from memory to DAC by DMA, without need for any
+actions by the CPU. This keeps CPU resources free for other operations.
+The trigger of the DAC conversion can be done by the software, external triggers or by the
+timers. For the high speed conversion cases, it is recommended to use the timer trigger in
+combination with the data transfer done by the DMA.
+The transfer speed from memory to the DAC is limited by several factors, among them:
+• the clock cycle of the APB (DAC clock);
+• the DMA transfer cycle from memory to the DAC (includes the AHB to APB bridge);
+• the trigger mechanism itself.
+The DAC on STM32F407x microcontrollers is running on the APB1:
+• three cycles after the trigger, DHR data is moved to the DOR register;
+• at the same time a DMA request is generated from DAC to DMA;
+• DMA transfer takes at least one APB clock cycle.
+So a total of 4APB clock cycles are needed to update the DAC DOR register data. As APB1
+maximum clock is 42 MHz (for ST32F407x), 10.5 Msps is the maximum update rate for the
+DAC output register when timer trigger and the DMA are used for the data update.
+The minimum transfer clock cycle by DMA to the DAC is not the same for all STM32
+microcontrollers, because of the different bus configuration.
+The STM32 DAC system AN4566
+8/19 DocID026799 Rev 2
+Table 2 shows the maximum sampling rate for different STM32 products.
+Note: Values reported in Table 2 have been measured on the bench, when bus is not used by any
+other system: in real applications it’s necessary to have some margin.
+1.5 Summary
+By using external high speed OpAmp, it is possible to extend the speed performance of the
+STM32 DACs more than 1 Msps.
+In Section 2 we will provide an example showing how to use this technique on STM32
+products
+
+## Hardware ##
+Zahlreiche Projekte im Bereich Klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später original Hardware "AVR JTAGICE mkII"), steigerten kontinuierlich das Interesse. 
+
+Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte unbeschreibbar viel "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Co-Prozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden.
+ 
+### Warum ARM? ###
+Mit der entsprechenden Routing-Karte hätte die vorhandene Evaluierungshardware von Atmel (STK600 + JTAG-Emulator), auf Controller mit AVR32 Architektur, erweitert werden können. Als überzeugter Linux-Anwender ist ein schwerwiegendes Kontra-Argumenten jedoch schnell genannt, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__. 
+Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als __86 Milliarden!!!__ (im Jahr 2013 erreichte ARM die 50 Milliarden Marke).
+
+> Today ARM technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
+
+### Warum Cortex-M4? ###
+Eine umfangreiche Liste (aller) unter ARM Holdings lizenzierten Mikroarchitekturen kann u.A. auf [wikipedia][wikiMikroarchs] eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche _(Classic, Embedded, Application)_ sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile _(Microcontroller, Real-time, Application)_[^fnArmProfiles] aufzuzeigen. 
+
+<a href="./pics/ArmRoadMap3.svg" target="_blank"><center>![](./pics/ArmRoadMap3.png "ARM's @@@@@@@@@@@@"){.scale75 .noborder}</center></a>
+
+Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwendungen erfreuen sich teils großer Beliebtheit (z.B, RaspberryPi). 
+
+|      Name      | Chip-Bezeichnung | Prozessor  | Architektur |    Profil   |  Familie   |        |
+|----------------|------------------|------------|-------------|-------------|------------|--------|
+| RaspberryPi I  | BCM2835          | ARM1176JZF | ARMv6       |             | ARM11      | 32-Bit |
+| RaspberryPi II | BCM2836          | Cortex A7  | ARMv7-A     | Application | Cortex A   | 32-Bit |
+| BeagleBoard    | OMAP3530         | Corttex A8 | ARMv7-A     | Application | Cortex A   | 32-Bit |
+| Grasshopper    | AT32AP7000       |            | AVR32 RISC  | Application | AVR32 RISC | 32-Bit |
+| (...)          |                  |            |             |             |            |        |
+
+Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme zu entwerfen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie das Einbinden eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), werden vor dem Compilieren des Embedded Linux Kernels vorgenommen. 
+Aber auch bei absolut determiniertem Interrupt-Handling würde die absolute Reaktionszeit (Interrupt latency) für die regelungstechnischen Aufgaben vermutlich nicht ausreichen. Auf jeden Fall geht der Hardware-Bezug, im Sinne hardwarenaher Programmierung, beim Einsatz von RT-Linux-artigen Betriebssystemen weitestgehend verloren. Die Entwicklung eines eigenen Betriebssystems im Bereich _Application-Processor_ ist u.A. wegen der Speicherverwaltung zu komplex und Zeitaufwendig. Alle Cortex-A werden an einer Speicherverwaltungshardware (MMU) betrieben.
+
+Grundsätzlich gilt der Zusammenhang: <a style="background-color: yellow;"> NACHWEIS??? </a> 
+
+<table>
+    <tr>
+        <td align="center">Prozessor mit MMU</td>
+        <td align="center">$\Rightarrow$</td>
+        <td align="center">Embedded OS notwendig</td>
+    </tr>
+    <tr>
+        <td align="center">Embedded OS gefordert</td>
+        <td align="center">$\Rightarrow$</td>
+        <td align="center">Prozessor mit MMU notwendig</td>
+    </tr>
+</table>
+
+---
+
+Ob als Hardware-Basis das Architektur-Profile _Microcontroller (Cortex-M Familie)_ oder _Real-time (Cortex-R Familie)_ gewählt werden soll, schien im ersten Moment klar zu sein. Die Cortex-R-Familie ist mit modernen Signalprozessoren (DSP) und Fließkomma-Hardware (FPU) ausgestattet und wurde speziell (trotzdem in Milliarden-Stückzahlen produziert) für kritische Echtzeit-Anwendungen entworfen. 
+
+>Fast response - optimized for high performance, hard real-time applications
+The __ARM® Cortex®-R__ real-time processors offer high-performance computing solutions for embedded systems where reliability, high availability, fault tolerance and/or deterministic real-time responses are needed. (...) The Cortex-R series processors provide fast time-to-market through proven technology shipped in billions of products, supported by the vast ARM ecosystem.[^fnCortexR]
+
+Bedenkt man jedoch, was für Aufgaben sonst noch von derartigen Controllern erledigt werden, (Nano-Positionierung in der Festplattentechnik, kritische Bereiche der Medizintechnik, autonome Quadrocopter ...), scheint die Notwendigkeit eines Cortex-R zur Realisierung des geplanten Projekts, nicht mehr unbedingt gegeben zu sein. 
+
+Weitere Argumente, die für den Einsatz eines Cortex-M sprechen:
+
+---
+
+- Cortex-M __ist__ ein Industriestandard (siehe Zitat oder [[Borm:2016, 1-24]][@Borm:2016] resp. [ARM_Entwicklerkonferenz_2012.pdf](http://www.embedded-world.eu/fileadmin/pictures/Events_2012/ARM_2012/CfP/CfP_ARM_Entwicklerkonferenz_2012.pdf))
+   
+>It is safe to say that the **Cortex-M** has become for the 32-bit world what the 8051
+is for the 8-bit – **an industry-standard core* supplied by many vendors, each of which dip the core in their own special sauce to provide differentiation in the market.[^fnWhichCortex] 
+
+- ARM's standardisierte Bibliothek zur Hardware-Abstraktion (CMSIS) beinhaltet bisher nur die **Cortex-M** Familie 
+
+> The **C**ortex **M**icrocontroller **S**oftware **I**nterface **S**tandard (CMSIS) is a vendor-independent hardware abstraction layer for the **Cortex®-M**.[^fnCMSISARM]
+
+- Mit dem Cortex-M4 bekommt die ARMv7-M CPU (neben optionaler FPU) Unterstützung von einem DSP mit 
+    * **SIMD** (**S**ingle-**I**nstruction-**M**ultiple-**A**ccess; primär für Bild-/Audioverarbeitung) Befehlen
+    * **MAC** (**M**ultiply-**AC**cumulate) Erweiterung was sich hervorragend zum erzeugen des Regel 
+
+---
+
+### Texas Instruments C2000 und der CLA ###
+(Nachtrag 11/2016)
+
+C2000's focus is on supporting control algorithms. The C28x "CPU" is really a DSP, and its instruction set has been extended to handle things like trigonometry and complex numbers. There's also a separate task-based processor called the Control Law Accelerator (CLA) that can run control algorithms independently of the CPU. The ADCs and PWMs support a lot of timing options, too. Performance varies from midrange (Piccolo) to high-end (dual-core Delfino). The big applications here are power converters, power line communication, industrial drives, and motor control
+
+<!-- http://www.emcu.it/CortexFamily/ArmRoadMap.png -->
+## Software ##
