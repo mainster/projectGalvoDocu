@@ -180,10 +180,47 @@
 	"buffers":
 	[
 		{
-			"file": "projectGalvoDocu.mmd",
+			"contents": "pandoc: No data detected in TGA file\n",
 			"settings":
 			{
-				"buffer_size": 78909,
+				"buffer_size": 37,
+				"line_ending": "Unix",
+				"name": "*ShellCommand Output*",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"file": "chapters/03_Einleitung.mmd",
+			"settings":
+			{
+				"buffer_size": 1321,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
+			"settings":
+			{
+				"buffer_size": 150,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+			"settings":
+			{
+				"buffer_size": 284,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/02_Vorwort.mmd",
+			"settings":
+			{
+				"buffer_size": 1150,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -196,13 +233,17 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 392.0,
-		"last_filter": "insta",
+		"height": 292.0,
+		"last_filter": "set synmar",
 		"selected_items":
 		[
 			[
-				"insta",
-				"Package Control: Install Package"
+				"set synmar",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"shell",
+				"shell_mdmerge"
 			],
 			[
 				"cle",
@@ -211,6 +252,34 @@
 			[
 				"prv",
 				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"shell_md",
+				"shell_mdmerge"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"clear",
+				"Clear Console"
+			],
+			[
+				"mark pre",
+				"Markdown HTML Preview"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"mar",
+				"Markdown HTML Preview"
+			],
+			[
+				"md",
+				"shell_mdmerge"
 			],
 			[
 				"glue",
@@ -285,13 +354,17 @@
 				"Markdown HTML Preview"
 			]
 		],
-		"width": 602.0
+		"width": 629.0
 	},
 	"console":
 	{
-		"height": 114.0,
+		"height": 189.0,
 		"history":
 		[
+			"import sublime_plugin.MultiCmdSelf",
+			"import sublime.MultiCmdSelf",
+			"MultiCmdSelf",
+			"import MultiCmdSelf",
 			"window.extract_variables()",
 			"l",
 			"os.syst",
@@ -380,17 +453,35 @@
 	],
 	"file_history":
 	[
+		"/media/data/whz/projectGalvoDocu/BACKprojectGalvoDocu.mmd",
+		"/home/mainster/&",
+		"/home/mainster/.config/sublime-text-3/Packages/User/ShellCommand.sublime-commands",
+		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/ShellCommand.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/multiCmdSelf/MultiCmdSelf.py",
+		"/home/mainster/.config/sublime-text-3/Packages/multiCmdSelf/Main.sublime-menu",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
+		"/home/mainster/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/Default.sublime-commands",
+		"/home/mainster/.config/sublime-text-3/Packages/User/ShellCommand.sublime-settings",
+		"/home/mainster/scripts/multi-markdown-mdmerger.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/User/multiMarkdown2Preview.sublime-build",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+		"/media/data/whz/projectGalvoDocu/out/04_02.mmd",
+		"/media/data/whz/projectGalvoDocu/out/chap_16.mmd",
+		"/media/data/whz/projectGalvoDocu/out/chap_12.mmd",
+		"/media/data/whz/projectGalvoDocu/out/chap_04.mmd",
+		"/media/data/whz/projectGalvoDocu/tmp.mmd",
 		"/home/mainster/scripts/split-markdown-src.sh",
 		"/media/data/whz/projectGalvoDocu/xaa",
-		"/home/mainster/&",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Glue.sublime-settings",
-		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
 		"/home/mainster/.config/sublime-text-3/Packages/sublime-non-text-files/Non-text-files.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Non-text-files.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/sublime-non-text-files/Main.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/Markdown.sublime-build",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/Main.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/Diagram.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/Main.sublime-menu",
@@ -489,25 +580,7 @@
 		"/media/data/vems_mitch_944_brain/vems_firmware/kb.h",
 		"/media/data/vems_mitch_944_brain/vems_firmware/heap.h",
 		"/media/data/vems_mitch_944_brain/vems_firmware/heap.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/fuelcontrol.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/eventqueue.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/eventqueue.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/dispatcher.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/TODO.txt",
-		"/media/data/vems_mitch_944_brain/vems_firmware/EmuMakefile",
-		"/media/data/vems_mitch_944_brain/vems_firmware/phasesignal.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/avr_make",
-		"/media/data/vems_mitch_944_brain/vems_firmware/storage.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/boostcontrol.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/boostcontrol.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/injector.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/pid.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/spi.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/spi.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/kb.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/dispatcher.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/tables.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/tables.c"
+		"/media/data/vems_mitch_944_brain/vems_firmware/fuelcontrol.c"
 	],
 	"find":
 	{
@@ -525,6 +598,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"zeitab",
 			"^(.) (...?) (...) (.{1,}) ",
 			" {2,}",
 			"fat",
@@ -590,11 +664,48 @@
 			[
 				{
 					"buffer": 0,
-					"file": "projectGalvoDocu.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 37,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"ShellCommand": true,
+							"ShellCommand_data":
+							{
+								"command":
+								[
+									"pandoc -S -s -f markdown -o try.pdf BACKprojectGalvoDocu.mmd"
+								],
+								"working_dir": "/media/data/whz/projectGalvoDocu"
+							},
+							"default_dir": "/media/data/whz/projectGalvoDocu",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "chapters/03_Einleitung.mmd",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 78909,
+						"buffer_size": 1321,
 						"regions":
 						{
 						},
@@ -613,7 +724,98 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								99,
+								99
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 70.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "chapters/02_Vorwort.mmd",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -636,11 +838,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -650,11 +859,19 @@
 		]
 	},
 	"menu_visible": true,
+	"output.ShellCommand":
+	{
+		"height": 88.0
+	},
+	"output.exec":
+	{
+		"height": 100.0
+	},
 	"output.find_results":
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"pinned_build_system": "Packages/User/pandoc-markdown-to-pdf.sublime-build",
 	"project": "projectGalvoDocu.sublime-project",
 	"replace":
 	{
@@ -696,7 +913,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 183.0,
+	"side_bar_width": 220.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
