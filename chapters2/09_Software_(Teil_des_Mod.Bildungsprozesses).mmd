@@ -1,0 +1,54 @@
+# Software (Teil des Mod.Bildungsprozesses) #
+1. Softwarearchitektur ist sowohl Prozess als auch Gegenstand.
+Der Prozess des Architekturentwurfs umfasst eine Folge strategischer Entscheidungen, während der Gegenstand schlicht das Ergebnis dieses Prozesses darstellt. Softwarearchitektur soll als Rückgrat für die Umsetzung der Spezifikation fungieren. Beachten Sie, dass wir dafür nicht ein spezifisches Softwareentwicklungsparadigma voraussetzen müssen wie Lean & Agile Development.
+
+Bemerkung 1: Strategische Entscheidungen beziehen sich auf Anforderungen und Einflussfaktoren, die die gesamte Architektur bestimmen. Die daraus resultierenden Design-Artefakte sind eng mit dem Rest der Architektur gekoppelt, was ihre Änderung schwierig und teuer macht. Beispiele hierfür sind fachliche Kernaspekte des Systems, Qualitätseigenschaften wie Performanz oder Sicherheit, Infrastrukturen für Modifizierbarkeit sowie Einschränkungen durch den Systemkontext wie Hardwareeigenschaften.
+
+Bemerkung 2: Alle Architektur-Design-Entscheidungen müssen sich aus Anforderungen und Unternehmenszielen ableiten lassen. Kurz gesagt: keine Entscheidung ohne einen (guten) Grund.
+
+Bemerkung 3: Manche mögen sich fragen, warum wir Softwarearchitektur auch als Prozess betrachten sollten. Es ist in der Praxis nicht ausreichend, einige Architektursichten zu beschreiben, also das Was. Darüber hinaus benötigen Informatiker Wissen darüber, wie die Architektur erstellt wurde und warum sie so ist, wie sie ist – also die Beschreibung des Wie und des Warum. Das mag für für einige Interessengruppen wie Nutzern von geringem Interesse sein, bietet aber relevante Informationen für Entwickler, Service-Mitarbeiter und Tester. Ein Beispiel ist das Aufspüren von Designfehlern. Wenn wir einem Fehler in unserem System begegnen, würden wir schon gerne wissen, welcher Konstruktionsfehler das Problem verursacht hat und welche weiteren Entscheidungen von dieser fehlerhaften Entscheidung abhängen. Das erlaubt uns Rückverfolgbarkeit und gibt uns die Möglichkeit, in einer systematischen Weise ein Rollback durchzuführen. Ebenso ist Prozesswissen wichtig für Architekturbewertungen.
+
+2. Architektur-Design erstreckt sich über den gesamten Lebenszyklus eines Systems.
+Und es beschränkt sich nicht nur auf seine Schöpfung. Es beginnt mit Planung und Anforderungsspezifikation und endet, wenn die auf Basis dieser Architektur gebauten Systeme ihr Lebensende erreichen.
+
+3. In einem naiven Sinn hat jedes softwareintensive System eine Softwarearchitektur.
+Das gilt auch, wenn seine Erstellung in einer vollständig unsystematischen oder unbeabsichtigten Weise erfolgte, also rein unter Verwendung von Ad-hoc-Entscheidungen. Was wir brauchen, ist ein systematischer Architekturentwurf, den gut definierte und priorisierte architektonisch relevante Anforderungen sowie Risiken antreiben. Manchmal möchten Entwickler einige oder sogar alle Teile eines bestehenden Systems mit einer unbekannten oder nur teilweise bekannten Softwarearchitektur (wieder-)verwenden. In diesem Fall ist Softwarearchäologie erforderlich, um zuvor die versteckte Softwarearchitektur zu extrahieren, zu entschlüsseln und explizit zu machen.
+
+4. Es gibt zwei Arten der Architekturqualität.
+Während die externe Qualität das von außen sichtbare Verhalten qualitativ und quantitativ vorgibt, definiert die interne die einfache Nutzbarkeit von Architekturartefakten (wie Einfachheit und Ausdrucksstärke) durch Entwickler, Tester, usw.
+
+Anmerkung: Eine Konsequenz aus der gewünschten guten Verständlichkeit der Architektur ist die Begrenzung des Softwarearchitektur-Designs auf eine kleine Anzahl hierarchischer Elemente wie System, Teilsysteme und Komponenten. Diese sollten SRP (Single Responsibility Principle) folgen. Dementsprechend ist die Verantwortung von Feinentwurf bzw. Implementierung, die Architektur zu erweitern und die Abstraktionen so lange zu konkretisieren, bis ausführbare Artefakte entstehen.
+
+5. Für die Architektur als Prozess benötigen wir eine konsistente Reihe von Leitlinien und Werkzeuge.
+Das soll hohe Qualität und "Business Alignment" gewährleisten. Ohne solche Richtlinien können Entwickler die Architektur mit zu vielen unterschiedlichen Idiomen, Mustern, Konzepten, Technologien, Paradigmen, Konventionen überladen, sodass letztlich die interne Qualität auf der Strecke bleibt.
+
+Anmerkung: Eine große Herausforderung ist die Zähmung inhärenter Komplexität bei gleichzeitiger Vermeidung unnötiger Komplexität. Letztere kann aus der Verwendung falscher Lösungen oder aus der falschen Anwendung der richtigen Lösungen resultieren.
+
+6. Softwarearchitektur als Gegenstand ist ein Mittel zur Kommunikation von Design-Entscheidungen an andere Beteiligte.
+Daher müssen alle Entscheidungen eine explizite und verständliche Beschreibung besitzen. Die verschiedenen Bestandteile der Architektur sollen für Leser in angemessener Weise dokumentiert vorliegen, also mit Beschreibung und Detaillierungsgrad abhängig von Rollen, Zielen, Aufgaben und Erwartungen der jeweiligen Zielgruppe. Zu diesem Zweck müssen Softwarearchitektur-Dokumentationen eine konsistente und vollständige Reihe von Architekturansichten bieten.
+
+Anmerkung 1: Da Softwarearchitektur ein Prozess und ein Gegenstand ist, umfasst ihre Dokumentation die Sequenz aller Design-Entscheidungen und deren zugrunde liegenden Zweck. Dadurch lassen sich Architekturansichten und Prozess aufeinander abbilden sowie die Rückverfolgbarkeit von Anforderungen und Entscheidungen ​​ermöglichen.
+
+Anmerkung 2: Softwarearchitektur schafft eine Basis für Design und Umsetzung. Es definiert den initialen Walking Skeleton für die Ableitung der Code-Basis. Daher ist einfache Verständlichkeit eine "conditio sine qua non".
+
+7. Eine Softwarearchitektur ist keine Insel, sondern in einen Kontext eingebettet.
+Somit ist es wichtig, die Architektur von ihrer Umgebung zu trennen, aber gleichzeitig die Schnittstellen und Wechselwirkungen zwischen System und Außenwelt zu berücksichtigen. Andernfalls ist es nicht möglich, eine geeignete Softwarearchitektur zu kreieren. Context Views und Use Case Views sind Beispiele, um diese Aspekte zu adressieren.
+
+8. Softwarearchitektur muss sowohl die Problemdomäne als auch den Lösungsbereich abdecken.
+Aus diesem Grund beschreibt ein nebulöser Begriff wie "Multi-Tier" keine Architektur. Um monolithisches Design zu vermeiden, sollten beide Domänen hierarchisch in Unterdomänen und deren Beziehungen strukturiert werden. Die Organisation der Softwarearchitektur-Aktivitäten erfolgt besser anhand der vorgenannten Subdomänen als in Abhängigkeit von der Linienorganisation. Conway's Law lässt grüßen!
+
+9. Softwarearchitektur ist nicht notwendigerweise auf ein einziges System eingeschränkt.
+Es könnte auch die Basis für eine Reihe von Systemen innerhalb eines bestimmten Problembereichs definieren. In solchen Wiederverwendungskontexten ist eine C/V-Analyse (= Commonality/Variability) erforderlich, um eine gemeinsame Basisarchitektur zu erstellen. Für eine bestimmte Implementierung lässt sich die Basisarchitektur so adaptieren, sodass darauf folgend Feinentwurf und Implementierung starten können.
+Beispiele: Produktlinien, Ökosysteme, Plattformen/Infrastrukturen, Bibliotheken.
+
+10. Architekturentwurf muss einem testgesteuerten Ansatz folgen und gut kommunizierbar sein.
+Nur so lässt sich die Architektur gut testen. Testen liefert relevante Informationen über die Architekturen, etwa die Lokalisierung von Qualitätsproblemen oder Konstruktionsfehlern. In diesem Kontext hat Testen eine erweiterte Bedeutung. Es umfasst auch quantitative und qualitative Architekturbewertungen.
+
+Sie haben es wahrscheinlich schon befürchtet. Ich kann nicht widerstehen. Lassen Sie mich zum Schluss an einer weiteren Definition von Softwarearchitektur versuchen:
+
+Software-Architektur
+
+ist ein Prozess, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
+ist ein Gegenstand, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
+Aber bei all den Bemühungen um die Begriffsdefinition dürfen wir das größte Dilemma für Softwarearchitekten nicht vergessen. Es gibt verschiedene Möglichkeiten, um eine gute Softwarearchitektur zu entwerfen, aber es gibt unendlich viele Möglichkeiten, um eine schlechte Architektur zu erstellen. Ein Schlaraffenland für Saboteure.
+
