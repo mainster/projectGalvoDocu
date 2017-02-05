@@ -11,10 +11,12 @@ Projekt __Galvo-Scanner__
 |-------------------|:-----------------------------------------------------------------:|
 | __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks <br><span style="background-color: yellow"> Testen ob auch in Windows 7/10: IExplorer, firefox, Chrome </span> |
 
+</center>
 # Vorwort #
 Diese Ausarbeitung ist in Anlehnung an das Anerkennungsgespräch vom 02.11.2016 entstanden und dient der Einschätzung des Wissensstands.
 
 Gesprächsnotiz:
+<center>
 
 | Modul    | Bezeichnung                                 |
 | -------- | ------------------------------------------  |
@@ -25,6 +27,7 @@ Gesprächsnotiz:
 | ELT236   | Embedded Systems                            |
 | ELT247   | ~~Werkzeuge der Informations- und Kommun.~~ |
 
+</center>
 1. Doku __*C*__-Projekt
     - Umsetzung, nicht gesamten Weg
     - nicht Architektur 
@@ -212,6 +215,7 @@ Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten 
 Aufgrund der hohen Anzahl an Abkürzung, vor allem aber der nicht immer intuitiv ableitbaren mechanischen und mechatronischen Kenngrößen, wurde an dieser Stelle ein eigenes Kapitel als zentrales Nachschlagewerk verfasst.   
 
 ## Zeitabhängige Größen ##
+<center>
 
 | Bezeichnung           | Symbol               | Einheit            | <span style="color: #bbb">engl. Bezeichnung</span>               |
 | --------------------- | :------------------: | :----------------: | ---------------------------------------------------------------- |
@@ -227,8 +231,10 @@ Aufgrund der hohen Anzahl an Abkürzung, vor allem aber der nicht immer intuitiv
 | Stromregler Ausgang   | $U_\{ccO\}$          | $\si V$            | <span style="color: #bbb"> Current controller output </span>     |
 | Spannung Messshunt    | $U_\{sh\}$           | $\si V$            | <span style="color: #bbb"> Shunt voltage             </span>     |
 
+</center>
 ## Konstanten ##
 Herstellerangaben 
+<center>
 
 | Bezeichnung              | Symbol      | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |
 | ------------------------ | :---:       | :--------------------: | ----------------------------------------------------------- |
@@ -241,6 +247,7 @@ Herstellerangaben
 | Reibungskonstante        | $K_\{FR\}$  | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |
 | El. Drehmomentkonstante  | $K_\{EL\}$  | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> |
 
+</center>
 # Modellbildungsprozess #
 >"It's a bunch of shapes connected by lines." Dilbert 
 [[MDA:2006, p.73]][@MDA:2006]
@@ -273,6 +280,8 @@ Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Ph
 ##### Translation und Rotation #####
 Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
 
+<center>
+
 | Translation                          | in eine Richtung         | Rotation                                  | um eine Achse             |
 |:-------------------------------------|:------------------------:|:------------------------------------------|:-------------------------:|
 | $s$                                  | Weg                      | $\varphi$                                 | Winkel                    |
@@ -286,7 +295,9 @@ Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einh
 | $W = \int F ds$                      | Arbeit                   | $W = \int M d\varphi$                     | Arbeit                    |
 | $P = F \cdot v$                      | Leistung                 | $P = M \cdot \omega$                      | Leistung                  |
 
-Das aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
+</center>
+
+Das Aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stets, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
 
 #### Energiebilanz in allgemeiner Form ####
 <img src="./pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, ...) kein Energiestrom, so unterliegt das Gebilde dem *Energieerhaltungssatz* wobei innerhalb der Grenenzen $N$ _verschiedene Energiearten_ $E_i$ vorhanden sein _können_ (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische _Umformung der mechanischen Größen_ $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.
@@ -322,6 +333,7 @@ Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge
 
 Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.<br>
 <a name="refTableElectric"> </a>
+<center>
 
 | Electrical Specifications | Symbol         | Value                          |                                   |                      |
 |---------------------------|----------------|--------------------------------|:---------------------------------:|:--------------------:|
@@ -332,7 +344,9 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Peak Current              | $I_\{L-PEAK\}$ | $\SI\{25\}\{A\}$               |                                   | Max.                 |
 | Step Response Time        | Small Angle    | $\SI\{0.5\}\{ms\}$             | inertia matched load              |                      |
 
+</center>
 <a name="refTableMechanic"> </a>
+<center>
 
 | Mechanical Specifications           | Symbol                  | Value                          |                             |                      |
 | ---                                 | ---                     | ---                            | ---                         | ...                  |
@@ -342,7 +356,9 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Maximum Coil Temperature            |                         | $\SI\{110\}\{°C\}$             |                             |                      |
 | Thermal Resistance<br>(Coil - Case) |                         | $\SI\{1.5\}\{°C/\watt\}, Max$  |                             |                      |
 
+</center>
 <a name="refTablePositionDetect"> </a>
+<center>
 
 | Position Detector                | Value                                   |                      |
 | ---                              | ---                                     |                      |
@@ -353,11 +369,12 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
 
+</center>
 <span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
 $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
 <br>
 
-### Elektrisches Teilsystemen ###
+### Elektrisches Teilsystem ###
 Das fertige Modell des Galvomotors setzt sich aus elektrischen und mechanischen Teilsystemen zusammen. Als Stellgröße der Regelstrecke bzw. der Aktoren wurde beim ersten Modellierungsversuch die __Eingangsspannung__ der Statorinduktivität verwendet. In differentieller Form ist die Zweipolbeziehung einer idealen Induktivität gegeben durch:
 $$ u(t)=L \cdot \frac{\partial~i_L}{\partial~t} $$
 Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
@@ -389,11 +406,6 @@ was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspr
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
 \begin{equation} 
 G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
-
-![](./pics/simulExport/mechSubA.svg)
-*Mechanisches Subsystem*
-
-<figure><img src='//discourse-meta.s3-us-west-1.amazonaws.com/original/2X/3/39239a7f2b0f0aa72bdd0d3c1880f15f1a967276.png'><figcaption>The discourse logo</figcaption></figure>
 
 #### Elektrisch generiertes Drehmoment ####
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
@@ -450,7 +462,7 @@ M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \la
 J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
 \small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\\\ \phantom{.} \end{equation}
 
-Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen.
+Es gibt nun _mehrere Ansätze_ wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen. Der 1. Ansatz lautet deshalb:
 \begin{equation} 
 \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) \nonumber
 \\\\ \phantom{.} \\\\ \Downarrow \\\\ \phantom{.} \\\\
@@ -500,68 +512,35 @@ Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [
 
 Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
 
-<center>![Regeleungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regeleungsnormalform für Systeme 3. Ordnung")</center>
-
-
+<center>![Regelungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung")</center>
 
 ### Testsignale ###
+(...)
+
 #### Problematik der Sättigung ####
+(...)
+
+### Softwarearchitektur ###
+(...)
+
+- ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
+- ist ein __Gegenstand__, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
+
+
+[Was-heißt-hier-Softwarearchitektur? - _Dr. Michael Stahl, Siemens AG_](https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html)
+
+---
+
+Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchitektur auch wenn die Entwicklung vollkommen unsystematisch erfolgt ist.
+
+- Erläuterung __Softwarearchäologie__
+- Erläuterung __Ad-hoc-decisions__
+
+
+
+
 ## ??? Stellglied / Leistungsteil ##
 ## ??? Signalkonditionierung ##
-# Software (Teil des Mod.Bildungsprozesses) #
-1. Softwarearchitektur ist sowohl Prozess als auch Gegenstand.
-Der Prozess des Architekturentwurfs umfasst eine Folge strategischer Entscheidungen, während der Gegenstand schlicht das Ergebnis dieses Prozesses darstellt. Softwarearchitektur soll als Rückgrat für die Umsetzung der Spezifikation fungieren. Beachten Sie, dass wir dafür nicht ein spezifisches Softwareentwicklungsparadigma voraussetzen müssen wie Lean & Agile Development.
-
-Bemerkung 1: Strategische Entscheidungen beziehen sich auf Anforderungen und Einflussfaktoren, die die gesamte Architektur bestimmen. Die daraus resultierenden Design-Artefakte sind eng mit dem Rest der Architektur gekoppelt, was ihre Änderung schwierig und teuer macht. Beispiele hierfür sind fachliche Kernaspekte des Systems, Qualitätseigenschaften wie Performanz oder Sicherheit, Infrastrukturen für Modifizierbarkeit sowie Einschränkungen durch den Systemkontext wie Hardwareeigenschaften.
-
-Bemerkung 2: Alle Architektur-Design-Entscheidungen müssen sich aus Anforderungen und Unternehmenszielen ableiten lassen. Kurz gesagt: keine Entscheidung ohne einen (guten) Grund.
-
-Bemerkung 3: Manche mögen sich fragen, warum wir Softwarearchitektur auch als Prozess betrachten sollten. Es ist in der Praxis nicht ausreichend, einige Architektursichten zu beschreiben, also das Was. Darüber hinaus benötigen Informatiker Wissen darüber, wie die Architektur erstellt wurde und warum sie so ist, wie sie ist – also die Beschreibung des Wie und des Warum. Das mag für für einige Interessengruppen wie Nutzern von geringem Interesse sein, bietet aber relevante Informationen für Entwickler, Service-Mitarbeiter und Tester. Ein Beispiel ist das Aufspüren von Designfehlern. Wenn wir einem Fehler in unserem System begegnen, würden wir schon gerne wissen, welcher Konstruktionsfehler das Problem verursacht hat und welche weiteren Entscheidungen von dieser fehlerhaften Entscheidung abhängen. Das erlaubt uns Rückverfolgbarkeit und gibt uns die Möglichkeit, in einer systematischen Weise ein Rollback durchzuführen. Ebenso ist Prozesswissen wichtig für Architekturbewertungen.
-
-2. Architektur-Design erstreckt sich über den gesamten Lebenszyklus eines Systems.
-Und es beschränkt sich nicht nur auf seine Schöpfung. Es beginnt mit Planung und Anforderungsspezifikation und endet, wenn die auf Basis dieser Architektur gebauten Systeme ihr Lebensende erreichen.
-
-3. In einem naiven Sinn hat jedes softwareintensive System eine Softwarearchitektur.
-Das gilt auch, wenn seine Erstellung in einer vollständig unsystematischen oder unbeabsichtigten Weise erfolgte, also rein unter Verwendung von Ad-hoc-Entscheidungen. Was wir brauchen, ist ein systematischer Architekturentwurf, den gut definierte und priorisierte architektonisch relevante Anforderungen sowie Risiken antreiben. Manchmal möchten Entwickler einige oder sogar alle Teile eines bestehenden Systems mit einer unbekannten oder nur teilweise bekannten Softwarearchitektur (wieder-)verwenden. In diesem Fall ist Softwarearchäologie erforderlich, um zuvor die versteckte Softwarearchitektur zu extrahieren, zu entschlüsseln und explizit zu machen.
-
-4. Es gibt zwei Arten der Architekturqualität.
-Während die externe Qualität das von außen sichtbare Verhalten qualitativ und quantitativ vorgibt, definiert die interne die einfache Nutzbarkeit von Architekturartefakten (wie Einfachheit und Ausdrucksstärke) durch Entwickler, Tester, usw.
-
-Anmerkung: Eine Konsequenz aus der gewünschten guten Verständlichkeit der Architektur ist die Begrenzung des Softwarearchitektur-Designs auf eine kleine Anzahl hierarchischer Elemente wie System, Teilsysteme und Komponenten. Diese sollten SRP (Single Responsibility Principle) folgen. Dementsprechend ist die Verantwortung von Feinentwurf bzw. Implementierung, die Architektur zu erweitern und die Abstraktionen so lange zu konkretisieren, bis ausführbare Artefakte entstehen.
-
-5. Für die Architektur als Prozess benötigen wir eine konsistente Reihe von Leitlinien und Werkzeuge.
-Das soll hohe Qualität und "Business Alignment" gewährleisten. Ohne solche Richtlinien können Entwickler die Architektur mit zu vielen unterschiedlichen Idiomen, Mustern, Konzepten, Technologien, Paradigmen, Konventionen überladen, sodass letztlich die interne Qualität auf der Strecke bleibt.
-
-Anmerkung: Eine große Herausforderung ist die Zähmung inhärenter Komplexität bei gleichzeitiger Vermeidung unnötiger Komplexität. Letztere kann aus der Verwendung falscher Lösungen oder aus der falschen Anwendung der richtigen Lösungen resultieren.
-
-6. Softwarearchitektur als Gegenstand ist ein Mittel zur Kommunikation von Design-Entscheidungen an andere Beteiligte.
-Daher müssen alle Entscheidungen eine explizite und verständliche Beschreibung besitzen. Die verschiedenen Bestandteile der Architektur sollen für Leser in angemessener Weise dokumentiert vorliegen, also mit Beschreibung und Detaillierungsgrad abhängig von Rollen, Zielen, Aufgaben und Erwartungen der jeweiligen Zielgruppe. Zu diesem Zweck müssen Softwarearchitektur-Dokumentationen eine konsistente und vollständige Reihe von Architekturansichten bieten.
-
-Anmerkung 1: Da Softwarearchitektur ein Prozess und ein Gegenstand ist, umfasst ihre Dokumentation die Sequenz aller Design-Entscheidungen und deren zugrunde liegenden Zweck. Dadurch lassen sich Architekturansichten und Prozess aufeinander abbilden sowie die Rückverfolgbarkeit von Anforderungen und Entscheidungen ​​ermöglichen.
-
-Anmerkung 2: Softwarearchitektur schafft eine Basis für Design und Umsetzung. Es definiert den initialen Walking Skeleton für die Ableitung der Code-Basis. Daher ist einfache Verständlichkeit eine "conditio sine qua non".
-
-7. Eine Softwarearchitektur ist keine Insel, sondern in einen Kontext eingebettet.
-Somit ist es wichtig, die Architektur von ihrer Umgebung zu trennen, aber gleichzeitig die Schnittstellen und Wechselwirkungen zwischen System und Außenwelt zu berücksichtigen. Andernfalls ist es nicht möglich, eine geeignete Softwarearchitektur zu kreieren. Context Views und Use Case Views sind Beispiele, um diese Aspekte zu adressieren.
-
-8. Softwarearchitektur muss sowohl die Problemdomäne als auch den Lösungsbereich abdecken.
-Aus diesem Grund beschreibt ein nebulöser Begriff wie "Multi-Tier" keine Architektur. Um monolithisches Design zu vermeiden, sollten beide Domänen hierarchisch in Unterdomänen und deren Beziehungen strukturiert werden. Die Organisation der Softwarearchitektur-Aktivitäten erfolgt besser anhand der vorgenannten Subdomänen als in Abhängigkeit von der Linienorganisation. Conway's Law lässt grüßen!
-
-9. Softwarearchitektur ist nicht notwendigerweise auf ein einziges System eingeschränkt.
-Es könnte auch die Basis für eine Reihe von Systemen innerhalb eines bestimmten Problembereichs definieren. In solchen Wiederverwendungskontexten ist eine C/V-Analyse (= Commonality/Variability) erforderlich, um eine gemeinsame Basisarchitektur zu erstellen. Für eine bestimmte Implementierung lässt sich die Basisarchitektur so adaptieren, sodass darauf folgend Feinentwurf und Implementierung starten können.
-Beispiele: Produktlinien, Ökosysteme, Plattformen/Infrastrukturen, Bibliotheken.
-
-10. Architekturentwurf muss einem testgesteuerten Ansatz folgen und gut kommunizierbar sein.
-Nur so lässt sich die Architektur gut testen. Testen liefert relevante Informationen über die Architekturen, etwa die Lokalisierung von Qualitätsproblemen oder Konstruktionsfehlern. In diesem Kontext hat Testen eine erweiterte Bedeutung. Es umfasst auch quantitative und qualitative Architekturbewertungen.
-
-Sie haben es wahrscheinlich schon befürchtet. Ich kann nicht widerstehen. Lassen Sie mich zum Schluss an einer weiteren Definition von Softwarearchitektur versuchen:
-
-Software-Architektur
-
-ist ein Prozess, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
-ist ein Gegenstand, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
-Aber bei all den Bemühungen um die Begriffsdefinition dürfen wir das größte Dilemma für Softwarearchitekten nicht vergessen. Es gibt verschiedene Möglichkeiten, um eine gute Softwarearchitektur zu entwerfen, aber es gibt unendlich viele Möglichkeiten, um eine schlechte Architektur zu erstellen. Ein Schlaraffenland für Saboteure.
-
 # ??? Angaben zur Systemdynamik #
 ## ??? Spezifikationen des Gesamtsystems ##
 # Projektplan und V-Modell #
@@ -625,6 +604,7 @@ Eine umfangreiche Liste (aller) unter ARM Holdings lizenzierten Mikroarchitektur
 <a href="./pics/ArmRoadMap3.svg" target="_blank"><center>![](./pics/ArmRoadMap3.png "ARM's @@@@@@@@@@@@"){.scale75 .noborder}</center></a>
 
 Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwendungen erfreuen sich teils großer Beliebtheit (z.B, RaspberryPi). 
+<center>
 
 |      Name      | Chip-Bezeichnung | Prozessor  | Architektur |    Profil   |  Familie   |        |
 |----------------|------------------|------------|-------------|-------------|------------|--------|
@@ -634,6 +614,7 @@ Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwen
 | Grasshopper    | AT32AP7000       |            | AVR32 RISC  | Application | AVR32 RISC | 32-Bit |
 | (...)          |                  |            |             |             |            |        |
 
+</center>
 Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme zu entwerfen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie das Einbinden eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), werden vor dem Compilieren des Embedded Linux Kernels vorgenommen. 
 Aber auch bei absolut determiniertem Interrupt-Handling würde die absolute Reaktionszeit (Interrupt latency) für die regelungstechnischen Aufgaben vermutlich nicht ausreichen. Auf jeden Fall geht der Hardware-Bezug, im Sinne hardwarenaher Programmierung, beim Einsatz von RT-Linux-artigen Betriebssystemen weitestgehend verloren. Die Entwicklung eines eigenen Betriebssystems im Bereich _Application-Processor_ ist u.A. wegen der Speicherverwaltung zu komplex und Zeitaufwendig. Alle Cortex-A werden an einer Speicherverwaltungshardware (MMU) betrieben.
 
@@ -873,6 +854,7 @@ __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?q
 
 # Trash #
 <a name="refTableElectric"> </a>
+<center>
 
 | Elektrische Spezifikationen    |                              |                |                      |
 | ---                            | ---                          | ---            | ...                  |
@@ -883,8 +865,10 @@ __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?q
 | Peak Current                   | 25A, Max                     |                |                      |
 | Small Angle Step Response Time | 0.5ms (inertia matched load) |                |                      |
 
+</center>
 
 <a name="refTableMechanic"> </a>
+<center>
 
 | Mechanical Specifications        |                    |             |                      |
 | ---                              | ---                | ---         | ...                  |
@@ -894,8 +878,10 @@ __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?q
 | Maximum Coil Temperature         | 110°C              |             |                      |
 | Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |                      |
 
+</center>
 <span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
 $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
+<center>
 
 | Position Detector                |                                         |                      |
 | ---                              | ---                                     |                      |
@@ -906,6 +892,7 @@ $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
 
+</center>
 <p style="margin: 0em 18em 0em 9em; background: -webkit-linear-gradient(top left, #ccc 20%, #ccc 40%, rgba(250, 250, 250, 0) 100%);"> 
 </p>
 

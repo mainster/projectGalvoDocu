@@ -30,6 +30,8 @@ Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Ph
 ##### Translation und Rotation #####
 Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
 
+<center>
+
 | Translation                          | in eine Richtung         | Rotation                                  | um eine Achse             |
 |:-------------------------------------|:------------------------:|:------------------------------------------|:-------------------------:|
 | $s$                                  | Weg                      | $\varphi$                                 | Winkel                    |
@@ -43,7 +45,9 @@ Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einh
 | $W = \int F ds$                      | Arbeit                   | $W = \int M d\varphi$                     | Arbeit                    |
 | $P = F \cdot v$                      | Leistung                 | $P = M \cdot \omega$                      | Leistung                  |
 
-Das aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
+</center>
+
+Das Aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stets, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
 
 #### Energiebilanz in allgemeiner Form ####
 <img src="./pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, ...) kein Energiestrom, so unterliegt das Gebilde dem *Energieerhaltungssatz* wobei innerhalb der Grenenzen $N$ _verschiedene Energiearten_ $E_i$ vorhanden sein _können_ (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische _Umformung der mechanischen Größen_ $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.
@@ -114,7 +118,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
 <br>
 
-### Elektrisches Teilsystemen ###
+### Elektrisches Teilsystem ###
 Das fertige Modell des Galvomotors setzt sich aus elektrischen und mechanischen Teilsystemen zusammen. Als Stellgröße der Regelstrecke bzw. der Aktoren wurde beim ersten Modellierungsversuch die __Eingangsspannung__ der Statorinduktivität verwendet. In differentieller Form ist die Zweipolbeziehung einer idealen Induktivität gegeben durch:
 $$ u(t)=L \cdot \frac{\partial~i_L}{\partial~t} $$
 Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
@@ -146,11 +150,6 @@ was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspr
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
 \begin{equation} 
 G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
-
-![](./pics/simulExport/mechSubA.svg)
-*Mechanisches Subsystem*
-
-<figure><img src='//discourse-meta.s3-us-west-1.amazonaws.com/original/2X/3/39239a7f2b0f0aa72bdd0d3c1880f15f1a967276.png'><figcaption>The discourse logo</figcaption></figure>
 
 #### Elektrisch generiertes Drehmoment ####
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
@@ -207,7 +206,7 @@ M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \la
 J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
 \small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\\\ \phantom{.} \end{equation}
 
-Es gibt nun mehrere Ansätze wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen.
+Es gibt nun _mehrere Ansätze_ wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen. Der 1. Ansatz lautet deshalb:
 \begin{equation} 
 \mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) \nonumber
 \\\\ \phantom{.} \\\\ \Downarrow \\\\ \phantom{.} \\\\
@@ -257,11 +256,32 @@ Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [
 
 Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
 
-<center>![Regeleungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regeleungsnormalform für Systeme 3. Ordnung")</center>
-
-
+<center>![Regelungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung")</center>
 
 ### Testsignale ###
+(...)
+
 #### Problematik der Sättigung ####
+(...)
+
+### Softwarearchitektur ###
+(...)
+
+- ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
+- ist ein __Gegenstand__, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
+
+
+[Was-heißt-hier-Softwarearchitektur? - _Dr. Michael Stahl, Siemens AG_](https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html)
+
+---
+
+Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchitektur auch wenn die Entwicklung vollkommen unsystematisch erfolgt ist.
+
+- Erläuterung __Softwarearchäologie__
+- Erläuterung __Ad-hoc-decisions__
+
+
+
+
 ## ??? Stellglied / Leistungsteil ##
 ## ??? Signalkonditionierung ##
