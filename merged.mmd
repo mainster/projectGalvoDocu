@@ -16,7 +16,6 @@ Projekt __Galvo-Scanner__
 Diese Ausarbeitung ist in Anlehnung an das Anerkennungsgespräch vom 02.11.2016 entstanden und dient der Einschätzung des Wissensstands.
 
 Gesprächsnotiz:
-<center>
 
 | Modul    | Bezeichnung                                 |
 | -------- | ------------------------------------------  |
@@ -27,7 +26,6 @@ Gesprächsnotiz:
 | ELT236   | Embedded Systems                            |
 | ELT247   | ~~Werkzeuge der Informations- und Kommun.~~ |
 
-</center>
 1. Doku __*C*__-Projekt
     - Umsetzung, nicht gesamten Weg
     - nicht Architektur 
@@ -54,7 +52,7 @@ Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca
 * Regelungstechnik
 * Diskretisierung von Systemen
 
-Einige konkreFür die Umsetzung eines  ___Systemplanung___ wie auch für die spätere Umsetzung als grundlegend und unerlässlich angesehen wird. Einige öffentliche Vorträge zum Thema "System Konzeption und Beschreibung in der Praxis" wurden am Karlsruher Institut für Technologie (KIT, Universität Karlsruhe) besucht. Dadurch konnten ergänzende Inhalte zum HsKA-Modul "Embedded Systems" erarbeitet und teils auch bei der konkreten Teilsystem-Auslegung umgesetzt werden. 
+Einige konkreFür die Umsetzung eines  __Systemplanung__ wie auch für die spätere Umsetzung als grundlegend und unerlässlich angesehen wird. Einige öffentliche Vorträge zum Thema "System Konzeption und Beschreibung in der Praxis" wurden am Karlsruher Institut für Technologie (KIT, Universität Karlsruhe) besucht. Dadurch konnten ergänzende Inhalte zum HsKA-Modul "Embedded Systems" erarbeitet und teils auch bei der konkreten Teilsystem-Auslegung umgesetzt werden. 
 
 # Vorarbeit #
 Es folgen einige Worte zur Frage "Wie kam es zu dem Projekt?" und "Was wurde letztendlich Umgesetzt?". Das ursprüngliche Projektvorhaben wurde nur teilweise umgesetzt, soll aber hier der Vollständigkeit halber erwähnt werden. 
@@ -114,9 +112,9 @@ Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der 
 Hinsichtlich eines _Software-Systems_ wird der Begriff _System_ in der [IEEE 1471][ieee1471] wie folgt definiert:
 >Ein System ist ein aus Teilen zusammengesetztes und strukturiertes Ganzes. Es hat eine Funktion, erfüllt einen Zweck und verfügt über eine Architektur. [[MDA:2006, p.57]][@MDA:2006]
 
-<!-- Der Begriff System ist hier und im Folgenden als Abkürzung für Teilsystem zu verstehen. -->
+Der Begriff _System_ ist hier und im Folgenden als Abkürzung für _Teilsystem_ zu verstehen.
 
-## Modell ##    
+## Modell ##
 Um ein Modell beschreiben zu können, muss zuvor das System *gewählt* werden, dessen tatsächliche Eigenschaften über den *__Prozess__ der Modellbildung* abstrahiert werden soll. Auch für den Begriff *Modell* finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. Einige werden im folgenden zitiert: 
 Die Grundlagen der Modellierung schuf Herbert Stachowiak 1973 mit der Veröffentlichung der "Allgemeinen Modelltheorie". Demnach ist ein Modell durch __Abbildung__, __Verkürzung__ und __Pragmatismus__ gekennzeichnet.[^fnStachowiak]
 
@@ -212,13 +210,12 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten einer Softwarearchitektur beschränkt. Auch im Hardwarebereich kann ein Unternehmen durch frühzeitig eingeleitete Abstraktionsprozesse, u. U. eine _Gleichförmigkeit_ zu geplanten Folgeprojekten erkennen und das Teilsystem _"von Heute"_ bereits zugunsten eines Teilsystems _"von Morgen"_ optimieren.
 
 # Formelzeichen und Einheiten #
-Aufgrund der hohen Anzahl an Abkürzung, vor allem aber der nicht immer intuitiv ableitbaren mechanischen und mechatronischen Kenngrößen, wurde an dieser Stelle ein eigenes Kapitel als zentrales Nachschlagewerk verfasst.   
+Aufgrund der hohen Anzahl an Abkürzung, vor allem aber der nicht immer intuitiv ableitbaren mechanischen und mechatronischen Kenngrößen, wurde an dieser Stelle ein eigenes Kapitel als zentrales Nachschlagewerk eingeführt.   
 
 ## Zeitabhängige Größen ##
-<center>
 
 | Bezeichnung           | Symbol               | Einheit            | <span style="color: #bbb">engl. Bezeichnung</span>               |
-| --------------------- | :------------------: | :----------------: | ---------------------------------------------------------------- |
+|-----------------------|:--------------------:|:------------------:|------------------------------------------------------------------|
 | Spulenstrom           | $i_L$                | $\si A$            | <span style="color: #bbb"> Coil current              </span>     |
 | Elektr. Drehmoment    | $M_\{EL\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Electrical torque         </span>     |
 | Reibungsmoment        | $M_\{FR\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
@@ -231,23 +228,21 @@ Aufgrund der hohen Anzahl an Abkürzung, vor allem aber der nicht immer intuitiv
 | Stromregler Ausgang   | $U_\{ccO\}$          | $\si V$            | <span style="color: #bbb"> Current controller output </span>     |
 | Spannung Messshunt    | $U_\{sh\}$           | $\si V$            | <span style="color: #bbb"> Shunt voltage             </span>     |
 
-</center>
 ## Konstanten ##
-Herstellerangaben 
-<center>
+Alle Aktor-bezogenen Konstanten wurden in der letzten Spalte mit einem _A_ gekennzeichnet und entspringen der [Herstellerspezifikation](#refTableElectric). 
 
-| Bezeichnung              | Symbol      | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |
-| ------------------------ | :---:       | :--------------------: | ----------------------------------------------------------- |
-| Wicklungsinduktivität    | $L$         | $\si H$                | <span style="color: #bbb">Coil inductance</span>            |
-| Wicklungswiderstand      | $R_L$       | $\si\{\Omega\}$        | <span style="color: #bbb">Coil resistance</span>            |
-| Messwiderstand           | $R_\{SH\}$  | $\si\{\Omega\}$        | <span style="color: #bbb">Current shunt resistance</span>   |
-| Massenträgheit d. Rotors | $J_R$       | $\si\{kg.m^2\}$        | <span style="color: #bbb">Rotor inertia</span>              |
-| EMF-Konstante            | $K_\{EMF\}$ | $\Si\{V.s\per rad\}$   | <span style="color: #bbb">Back EMF const.</span>            |
-| Torsionsfederkonstante   | $K_\{TB\}$  | $\Si\{N.m\per rad\}$   | <span style="color: #bbb">Torsion bar torque const.</span>  |
-| Reibungskonstante        | $K_\{FR\}$  | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |
-| El. Drehmomentkonstante  | $K_\{EL\}$  | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> |
+| Bezeichnung              | Symbol      | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |   |
+|--------------------------|:-----------:|:----------------------:|-------------------------------------------------------------|---|
+| Wicklungsinduktivität    | $L$         | $\si H$                | <span style="color: #bbb">Coil inductance</span>            | A |
+| Wicklungswiderstand      | $R_L$       | $\si\{\Omega\}$        | <span style="color: #bbb">Coil resistance</span>            | A |
+| Messwiderstand           | $R_\{SH\}$  | $\si\{\Omega\}$        | <span style="color: #bbb">Current shunt resistance</span>   |   |
+| Massenträgheit d. Rotors | $J_R$       | $\si\{kg.m^2\}$        | <span style="color: #bbb">Rotor inertia</span>              | A |
+| EMF-Konstante            | $K_\{EMF\}$ | $\Si\{V.s\per rad\}$   | <span style="color: #bbb">Back EMF const.</span>            | A |
+| Torsionsfederkonstante   | $K_\{TB\}$  | $\Si\{N.m\per rad\}$   | <span style="color: #bbb">Torsion bar torque const.</span>  |   |
+| Reibungskonstante        | $K_\{FR\}$  | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |   |
+| El. Drehmomentkonstante  | $K_\{EL\}$  | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> | A |
+|                          |             |                        |                                                             |   |
 
-</center>
 # Modellbildungsprozess #
 >"It's a bunch of shapes connected by lines." Dilbert 
 [[MDA:2006, p.73]][@MDA:2006]
@@ -353,7 +348,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Angular Excursion                   | $\Delta\varphi_\{Max\}$ | $\SI\{40\}\{\degree\}$         | $\SI\{0.698\}\{\radian/s\}$ |                      |
 | Rotor Inertia                       | $J_R$                   | $\SI\{0.6\}\{gm.cm^2\}$        | $\SI\{6e-8\}\{kg.m^2\}$     | $\pm\SI\{10\}\{\%\}$ |
 | Torque Constant                     | $K_\{EL\}$              | $\SI\{9.3*10^4\}\{dyne.cm/A\}$ | $\SI\{9.3e-3\}\{N.m/A\}$    | $\pm\SI\{10\}\{\%\}$ |
-| Maximum Coil Temperature            |                         | $\SI\{110\}\{°C\}$             |                             |                      |
+| Max. Coil Temperature               |                         | $\SI\{110\}\{°C\}$             |                             |                      |
 | Thermal Resistance<br>(Coil - Case) |                         | $\SI\{1.5\}\{°C/\watt\}, Max$  |                             |                      |
 
 </center>
@@ -411,7 +406,8 @@ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \fr
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
 ### Mechanik ###
-Eine bewegte Masse speichert _kinetische Energie_ $E_{kin}$. Diese steigt dabei quadratisch zur Geschwindigkeit der bewegten Masse an. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
+Eine _bewegte_ Masse speichert die _kinetische Energie_ $E_{kin}$. Neben dem Linearfaktor _m_ steigt $E_{kin}$ dabei quadratisch zur Geschwindigkeit, mit der sich die Masse bewegt. 
+Rotiert ein Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
  
 Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhaltet zusätzlich Näherungen und Annahmen die bisher getroffen wurden
 
