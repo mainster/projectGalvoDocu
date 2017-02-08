@@ -1,5 +1,11 @@
 # Projektziel #
-Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Vei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies und sind als gegeben zu betrachten (vergl. Bestandsbaugruppe, Lagerware). <img src="./pics/galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" durchgeführt werden können so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. Die Positionsregelung der Spiegelachsen soll diskret realisiert und auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. Die Sollwerte der Pixel-Koordinaten werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies <yelBg>(Modell 6860???)</yelBg>. Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_). 
 
-Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts "XY-Galvo Scanner".
+1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. 
+
+2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. 
+
+3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, y-Pos, Laser-Blanking] im Speicher des STM32F4 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+
+Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
 

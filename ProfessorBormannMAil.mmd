@@ -1,0 +1,32 @@
+<!-- temp toc -->
+[TOC]
+
+<!-- temp toc -->
+[TOC]
+
+<!-- temp toc -->
+[TOC]
+
+<!-- temp toc -->
+[TOC]
+
+<!-- temp toc -->
+[TOC]
+
+Sehr geehrter Professor Bormann,
+auf Basis eines ARM Cortex-M4 habe ich vor einiger Zeit ein recht umfangreiches Projekt im Bereich "Hybride Regelungstechnik" teilweise umgesetzt. Mittels zweier Spiegel-Galvanometer (Cambr link) sollte eine kleine Laserlichtquelle ausreichend schnell in X- und Y-Richtung abgelenkt werden, sodass zumindest einfache geometrische Figuren auf einen hellen Hintergrund abgebildet werden können (eine Art "Effekt-" bzw. "Show-Laser"-System).
+
+Als übergeordnetes Projektziel wurde eine Simulationsumgebung entwickelt, um das Gesamtsystem(!) näherungsweise "geschlossen" simulieren zu können. 
+
+werden ko    von der Konzeption über die Modellbildung/Simulation (MATLAB/Simulink, LTSpice) bis hin zur Prototyp-Hardware (Eagle CAD)
+
+   Als "Endprodukt" sollte eine Art  aufgebaut werden. 
+
+
+[Q: Is the CLA independent from the main CPU?][http://processors.wiki.ti.com/index.php/Control_Law_Accelerator_(C2000_CLA)_FAQ#Q:_Is_the_CLA_independent_from_the_main_CPU.3F]
+>Yes. Once the CLA is configured by the main CPU it can execute algorithms independently of the main CPU. The CLA has its own bus structure, register set, pipeline and processing unit. In addition the CLA can access __a host of peripheral registers directly__...
+
+__What means a host of registers?__
+
+>...This makes it ideal for handling time-critical control loops but it can also be used for filtering or math algorithms. Please refer to your device specific documentation for the list of CLA accessible peripherals.
+

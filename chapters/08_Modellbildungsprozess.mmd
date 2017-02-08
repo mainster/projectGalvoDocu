@@ -83,6 +83,7 @@ Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge
 
 Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.<br>
 <a name="refTableElectric"> </a>
+<center>
 
 | Electrical Specifications | Symbol         | Value                          |                                   |                      |
 |---------------------------|----------------|--------------------------------|:---------------------------------:|:--------------------:|
@@ -100,7 +101,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Angular Excursion                   | $\Delta\varphi_\{Max\}$ | $\SI\{40\}\{\degree\}$         | $\SI\{0.698\}\{\radian/s\}$ |                      |
 | Rotor Inertia                       | $J_R$                   | $\SI\{0.6\}\{gm.cm^2\}$        | $\SI\{6e-8\}\{kg.m^2\}$     | $\pm\SI\{10\}\{\%\}$ |
 | Torque Constant                     | $K_\{EL\}$              | $\SI\{9.3*10^4\}\{dyne.cm/A\}$ | $\SI\{9.3e-3\}\{N.m/A\}$    | $\pm\SI\{10\}\{\%\}$ |
-| Maximum Coil Temperature            |                         | $\SI\{110\}\{°C\}$             |                             |                      |
+| Max. Coil Temperature               |                         | $\SI\{110\}\{°C\}$             |                             |                      |
 | Thermal Resistance<br>(Coil - Case) |                         | $\SI\{1.5\}\{°C/\watt\}, Max$  |                             |                      |
 
 <a name="refTablePositionDetect"> </a>
@@ -114,6 +115,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
 | Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
 
+</center>
 <span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
 $\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
 <br>
@@ -155,33 +157,34 @@ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \fr
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
 ### Mechanik ###
-Eine bewegte Masse speichert _kinetische Energie_ $E_{kin}$. Diese steigt dabei quadratisch zur Geschwindigkeit der bewegten Masse an. Rotiert eine Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
+Eine _bewegte_ Masse speichert die _kinetische Energie_ $E_{kin}$. Neben dem Linearfaktor _m_ steigt $E_{kin}$ dabei quadratisch zur Geschwindigkeit, mit der sich die Masse bewegt. 
+Rotiert ein Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
  
 Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhaltet zusätzlich Näherungen und Annahmen die bisher getroffen wurden
 
-- elektrisches Drehmoment $\bf{M_{EL}}$
+- elektrisches Drehmoment $\,\bf{M_{EL}}$
     + Erregerfeld gilt als konstant bezüglich Intensität ($\vec{B}, \vec{H}$) und Winkelpos. (siehe [Klassifizierung](#klassifizierung)) 
-    + $M_{EL}$ ist im Bereich $\pm \frac{1}{2}\cdot \Delta\varphi_{Max} = \pm 20°$ proportional zum Spulenstrom $i_L(t)$
-    + Herstellerangaben zum Proportionalitätsfaktor $K_{EL}$ vorhanden 
-- Trägheitsmoment $\bf{J_R}$ (alt. Inertialmoment) des rotierenden Körpers setzt sich zusammen aus 
+    + $M_{EL}$ ist im Bereich $\,\pm \frac{1}{2}\cdot \Delta\varphi_{Max} = \pm 20°$ proportional zum Spulenstrom $\,i_L(t)$
+    + Herstellerangaben zum Proportionalitätsfaktor $\,K_{EL}$ vorhanden 
+- Trägheitsmoment $\,\bf{J_R}$ (alt. Inertialmoment) des rotierenden Körpers setzt sich zusammen aus 
     + Rotorwelle, Rotormagnet, Sensorscheibe und Spiegel
     + Die Drehachse wird als fest und die Rotormasse als homogen verteilt, angenommen 
         * Trägheitstensor darf in die skalare Größe des Trägheitsmoments überführt werden
-    + Herstellerangabe zum skalaren Trägheitsmoment $J_R$ vorhanden 
-- mechanische Reibung $\bf{M_{FR}}$, verursacht durch Reibungsverluste in
+    + Herstellerangabe zum skalaren Trägheitsmoment $\,J_R$ vorhanden 
+- mechanische Reibung $\,\bf{M_{FR}}$, verursacht durch Reibungsverluste in
     + Kugellager, Positionssensor, keine Herstellerangaben
-- äußeres Lastmoment / Rückstellmoment $\bf{M_{TB}}$  
+- äußeres Lastmoment / Rückstellmoment $\,\bf{M_{TB}}$  
     + siehe [Lastmoment](#lastmoment)
     + keine Herstellerangaben
 
 #### Lastmoment ####
 Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine zuverlässigen Quellen gefunden werden. Die Vermutung, dass die Rotorwelle einem statischen Lastmoment ausgesetzt ist, soll im folgenden kurz begründet werden:
 
-1. Rückstellung der Rotorwelle bis auf ±4° um die Mittelstellung wenn Spannungsfrei geschaltet
+1. selbständiges Rückstellen der Rotorwelle bis auf ±4° um die Mittelstellung wenn Spannungsfrei geschaltet
     - Die Rotorwelle wird automatisch in Mittelstellung zurück gedreht wenn das elektrische Moment zu 0 wird.
-    - Dieser Effekt könnte, abhängig von Aufbau und Geometrie des magnetischen Statorkreises, auch darauf zurück zu führen sein, dass sich bei Mittelstellung der geringste magnetische Widerstand einstellt. Anders formuliert, könnte die Rückstellbewegung auch auf die [Reluktanzkraft](https://de.wikipedia.org/wiki/Reluktanzkraft "https://de.wikipedia.org/wiki/Reluktanzkraft") zurückzuführen sein.  
+    - Dieser Effekt könnte, abhängig von Aufbau und Geometrie des magnetischen Statorkreises, auch darauf zurück zu führen sein, dass sich bei Mittelstellung der geringste magnetische Widerstand einstellt. Anders formuliert: Die Rückstellbewegung könnte auch auf die [Reluktanzkraft](https://de.wikipedia.org/wiki/Reluktanzkraft "https://de.wikipedia.org/wiki/Reluktanzkraft") zurückzuführen sein.  
 3. Kräftegleichgewicht bei sehr geringen Statorströmen (wenige mA)
-    - Wird ein minimaler Gleichstrom in die Motorspule eingeprägt, so stellt sich im Bereich $\Delta\varphi_\{Max\}$ ein Gleichgewichtszustand des Drehwinkels ein. 
+    - Wird ein minimaler Gleichstrom in die Motorwicklung eingeprägt, so stellt sich im Bereich $\,\Delta\varphi_\{Max\}$ ein Gleichgewichtszustand des Drehwinkels ein. 
 2. Quelle: Mechanisches Funktionsprinzip von Effektlasern auf [www.laserfx.com][laserfx]
 4. Elektrische "Erdung" des Rotorkörpers um elektrostatischen Effekten vorzubeugen
 

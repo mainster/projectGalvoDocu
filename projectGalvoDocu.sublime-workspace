@@ -4,6 +4,86 @@
 		"selected_items":
 		[
 			[
+				"refF",
+				"refFilePatt"
+			],
+			[
+				"TO",
+				"TOC_STRING"
+			],
+			[
+				"mdFile",
+				"mdFileDir"
+			],
+			[
+				"sub",
+				"sublime"
+			],
+			[
+				"insert",
+				"insertPos"
+			],
+			[
+				"bord",
+				"border-color"
+			],
+			[
+				"Quellen",
+				"Quellenangaben\t(20_Quellenangaben.mmd)"
+			],
+			[
+				"fil",
+				"filename"
+			],
+			[
+				"ins",
+				"insert"
+			],
+			[
+				"S",
+				"Signalverarbeitung"
+			],
+			[
+				"ope",
+				"openpath"
+			],
+			[
+				"Simulat",
+				"Simulationsumgebung\t(merged.mmd)"
+			],
+			[
+				"Gesamt",
+				"Gesamtmodell\t(merged.mmd)"
+			],
+			[
+				"Modell",
+				"Modellierung\t(merged.mmd)"
+			],
+			[
+				"Hin",
+				"Hintergrund\t(merged.mmd)"
+			],
+			[
+				"Zusammen",
+				"Zusammenfassen\t(merged.mmd)"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"key",
+				"keywords"
+			],
+			[
+				"hea",
+				"heading"
+			],
+			[
+				"colo",
+				"background-color"
+			],
+			[
 				"Bildu",
 				"Bildfunktion"
 			],
@@ -21,10 +101,6 @@
 			],
 			[
 				"border-co",
-				"border-color"
-			],
-			[
-				"bord",
 				"border-color"
 			],
 			[
@@ -188,55 +264,55 @@
 	"buffers":
 	[
 		{
-			"file": "merged.mmd",
+			"file": "chapters/11_Plattform.mmd",
 			"settings":
 			{
-				"buffer_size": 94240,
+				"buffer_size": 25239,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/mainster/compiledStuff/brntool/README.md",
+			"file": "chapters/20_Quellenangaben.mmd",
 			"settings":
 			{
-				"buffer_size": 2057,
+				"buffer_size": 11539,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/Makefile",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
 			"settings":
 			{
-				"buffer_size": 2266,
+				"buffer_size": 7967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ProfessorBormannMAil.mmd",
+			"settings":
+			{
+				"buffer_size": 1637,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "./lib/USB_OTG/libusbcore.a\n./lib/USB_Device/Core/libusbdevcore.a\n./lib/USB_Device/Class/cdc/libusbdevcdc.a\n./lib/fat_fs/libfatfs.a\n./lib/StdPeriph/libstdperiph.a\n",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 			"settings":
 			{
-				"buffer_size": 162,
-				"line_ending": "Unix",
-				"name": "./lib/USB_OTG/libusbcore.a"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
-			"settings":
-			{
-				"buffer_size": 284,
+				"buffer_size": 26598,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "README.md",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 			"settings":
 			{
-				"buffer_size": 1271,
+				"buffer_size": 54326,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -248,10 +324,90 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 172.0,
-		"last_filter": "set mult",
+		"height": 392.0,
+		"last_filter": "mark",
 		"selected_items":
 		[
+			[
+				"mark",
+				"Markdown HTML Preview"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"synta mark",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"trans",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"markd",
+				"Markdown HTML Preview"
+			],
+			[
+				"clear",
+				"Clear Console"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"tra",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"tran",
+				"DoxyDoxygen: Translate Selection To..."
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
+				"set syn diff",
+				"Set Syntax: Diff"
+			],
+			[
+				"set sy lo",
+				"Set Syntax: log2"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"subl syna",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"synta",
+				"Plugin Development: Convert Syntax to .sublime-syntax"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
 			[
 				"set mult",
 				"Set Syntax: MultiMarkdown"
@@ -265,32 +421,12 @@
 				"shell_mdmerge"
 			],
 			[
-				"cle",
-				"Clear Console"
-			],
-			[
-				"prv",
-				"PackageResourceViewer: Extract Package"
-			],
-			[
 				"shell_md",
 				"shell_mdmerge"
 			],
 			[
-				"clea",
-				"Clear Console"
-			],
-			[
-				"clear",
-				"Clear Console"
-			],
-			[
 				"mark pre",
 				"Markdown HTML Preview"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"mar",
@@ -323,10 +459,6 @@
 			[
 				"mark prev",
 				"Markdown Preview: Preview in Browser"
-			],
-			[
-				"mark",
-				"Markdown HTML Preview"
 			],
 			[
 				"markdownEd",
@@ -380,81 +512,134 @@
 		"height": 189.0,
 		"history":
 		[
-			"import sublime_plugin.MultiCmdSelf",
-			"import sublime.MultiCmdSelf",
-			"MultiCmdSelf",
-			"import MultiCmdSelf",
-			"window.extract_variables()",
-			"l",
-			"os.syst",
-			"os.system",
-			"os.system('reset')",
-			"os.system('clear')",
-			"def cls(): os.system('clear')",
-			"def cls():",
-			"import os",
-			"window.clear",
-			"view.run_command(\"show_panel\", {\"panel\": \"console\"})",
-			"view.run_command(\"show_panel\", {\"console\", \"visible\": \"false\"})",
-			"view.run_command(\"show_panel\", \"panel\": \"console\", \"visible\": \"false\")",
-			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"visible\": \"false\"})",
-			"view.run_command(\"show_panel\", {\"panel\": \"glue\", \"toggle\": \"false\"})",
-			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"false\"})",
-			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"true\"})",
-			"view.run_command(\"show_panel\", {\"panel\": \"console\", \"toggle\": \"true\"}})",
-			"view.run_command(\"show_panel\", {\"panel\": {\"console\": \"hide\"}})",
-			"view.run_command(\"show_panel\", {\"panel\": {\"console\": \"open\"}})",
-			"windows.show_panel",
-			"window.extract_variables()",
-			"extract_variables()",
-			"window.extract_variables()",
-			"window.extract_variables(packages)",
-			"window.extract_variables({packages})",
-			"window.extract_variables({\"packages\"})",
-			"window.extract_variables()",
-			"window.extract_variables(\"packages\")",
-			"sublime.Settings.has(dd)",
-			"sublime.Settings.has(\"s\")",
-			"sublime.Settings",
-			"sublime.settings",
-			"window.extract_variables(\"packages\")",
-			"window.extract_variables()",
-			"sublime.Window extract_variables()",
-			"sublime.extract_variables()",
-			"sublime.extract_variables",
-			"sublime.show_settings(\"Non-text-files\")",
-			"sublime.load_settings(\"Non-text-files\")",
-			"sublime.load_settings(base_name)",
-			"view.run_command(\"new_file\", {\"file\": {\"${package}/Non-text-files.sublime-settings\"}})",
-			"view.run_command(\"new_file\", {\"file\": \"${package}/Non-text-files.sublime-settings\"})",
-			"view.run_command(\"open_file\", {\"file\": \"${package}/Non-text-files.sublime-settings\"})",
-			"view.run_command(\"goto_line\", {\"line\": 10})",
-			"view.run_command(\"goto_line\", \"4\" )",
-			"view.run_command(\"goto_line\", \"line\": 4)",
-			"view.run_command(\"goto_line\", 4)",
-			"view.run_command(\"goto_line\")",
-			"view.run_command(\"open_file\")",
-			"view.run_command(\"open_file\", {\"file\": \"${packages}/Non-text-files.sublime-settings\"})",
-			"import ",
-			"import help",
-			".env",
-			"env",
-			"view.help",
-			"view.list",
+			"regErase=view.find(TOC_STRING, 0, sublime.LITERAL)",
+			"view.find(TOC_STRING, 0, sublime.LITERAL)",
+			"window.active_view().id()",
+			"window.active_view()",
+			"view.current_active().id()",
+			"view.current_active()",
+			"view.id()",
+			"id()",
 			"view",
-			"view.run_command(\"open_file\", {\"file\": \"${packages}/Non-text-files.sublime-settings\"})",
-			"view.run_command(\"goto_line\", {\"line\": 10})",
-			" os.environ",
+			"Self",
+			"self",
+			"view.erase(view.this,sublime.Region(0,2))",
+			"view.erase(view,sublime.Region(0,2))",
+			"view.erase(Edit,sublime.Region(0,2))",
+			"view.erase(edit,sublime.Region(0,2))",
+			"view.erase(edit sublime.Region(0,2))",
+			"window.active_view()",
+			"tview.edit",
+			"tview=window.active_view()",
+			"window.active_view()",
+			"window.active_view().erase(sublime.Edit, sublime.Region(1,3))",
+			"window.active_view().erase(Edit, sublime.Region(1,3))",
+			"window.active_view().erase(sublime.Region(1,3))",
+			"window.active_view().erase(edit, sublime.Region(1,3))",
+			"window.active_view()",
+			"window.id()",
+			"window.id",
+			"window.id()",
+			"window.id",
+			"Window.id",
+			"Window",
+			"this",
+			"sublime.Window.id()",
+			"self.sublime.Window.active_view()",
+			"sublime.Window.active_view()",
+			"sublime.Window",
+			"sublime.window()",
+			"sublime.window",
+			"view.erase(window.active_View(), sublime.Region(0,2))",
+			"view.erase(sublime.Window.active_View(), sublime.Region(0,2))",
+			"view.erase(sublime.window.active_View(), sublime.Region(0,2))",
+			"view.erase(sublime.Edit, sublime.Region(0,2))",
+			"view.erase(sublime.edit, sublime.Region(0,2))",
+			"view.erase(edit, sublime.Region(0,2))",
+			"view.erase(view.this, sublime.Region(0,2))",
+			"view.erase(this, sublime.Region(0,2))",
+			"view.find(TOC_STRING, 0, sublime.LITERAL)",
+			"view.find(TOC_STRING, 0, sublime.LITERAL).begin()",
+			"view.find(TOC_STRING, 0, sublime.LITERAL)",
+			"view.find(\"[TOC]\", 0, sublime.LITERAL)",
+			"view.find(\"(\\[TOC\\])\", 0, sublime.LITERAL)",
+			"view.find(\"(\\[TOC\\])\", 0)",
+			"view.find(\"(TOC)\", 0)",
+			"view.find(\"([TOC])\", 0)",
+			"view.find(\"[TOC]\", 0)",
+			"print(TOC_STRING)",
+			"view.find(TOC_STRING, 0)",
+			"view.insert(0, TOC_STRING)",
+			"view.insert(edit, 0, TOC_STRING)",
+			"TOC_STRING=\"[TOC]\\n\\n\"",
+			"view.find(\"[TOC]\", 0).begin()",
+			"view.find(\"[TOC]\", 0)",
+			"view.insert(0, \"[TOC]\\n\")",
+			"view.insert(edit, 0, \"[TOC]\\n\")",
+			"self.view.insert(edit, 0, \"[TOC]\\n\")",
+			"view.file_name()",
+			"print(\"CWD: \", os.getcwd())",
+			"os.listdir(\".\")",
+			"fd=open(\"20_Quellenangaben.mmd\",\"r+\")",
+			"os.path.dirname(view.file_name())",
+			"os.path.dirname()",
+			"os.path()",
+			"os.listdir(\".\")",
+			"view.file_name()",
+			"self.view.file_name()",
+			"os.listdir(\".\")",
 			"os",
 			"import os",
-			"print os.environ['HOME']",
-			"import os",
-			"view.packages",
-			"$packages",
-			"Help",
-			"help",
-			"?",
-			"reset"
+			"os",
+			"os.listdir(\".\")",
+			"print( \\",
+			"print \\ ",
+			"print \\",
+			"if regErase > sublime.Region(-1,-1): {",
+			"if regErase > sublime.Region(-1,-1):\\",
+			"if regErase > sublime.Region(-1,-1): \\",
+			"if regErase > sublime.Region(-1,-1): ",
+			"if regErase > sublime.Region(-1,-1): print(\"bigger\");",
+			"if regErase > sublime.Region(-1,-1) print(\"bigger\");",
+			"if regErase > sublime.Region(-1,-1) print(\"bigger\")",
+			"if regErase > sublime.Region(-1,-1): print(\"bigger\")",
+			"regErase=sublime.Region(2,6)",
+			"sublime.Region(2,6)",
+			"\"\\n\" + \"\".join(qlines)",
+			"\"\\n\" , \"\".join(qlines)",
+			"\"\\n\" , \"\".join(qlines)\"",
+			"\"\\n\" + \"\".join(qlines)\"",
+			"\"\\n\"+\".join(qlines)\"",
+			"\"\".join(qlines)",
+			"\"\".join(\"\\n\", qlines)",
+			"\"\".join(\"\\n\" + qlines)",
+			"qlines",
+			"print(\"\".join(qlines))",
+			"print(\"\\n\".join(qlines))",
+			"\"\\n\".join(qlines)",
+			"'\\n'.join(qlines)",
+			"print(qlines[:].merge())",
+			"print(qlines[:])",
+			"print(qlines[0])",
+			"pos.begin()",
+			"pos(0)",
+			"pos",
+			"pos[0]",
+			"pos=view.find(qlines[0],0)",
+			"view.find(qlines[0],0)",
+			"view.find(\"### Texas Instruments C2000 und der CLA ###\",0)",
+			"view.find(qlines[0],0)",
+			"view.find(qlines[0])",
+			"view.find_all(qlines[0])",
+			"print(qlines[0])",
+			"fd = open(quellenfile, \"r+\");  qlines = fd.readlines(); fd.close();",
+			"qlines",
+			"qlines = fd.readlines()",
+			"qlines",
+			"qfiles",
+			"view.find_all(qlines[0])",
+			"sf = self.view.find_all(qlines[0])",
+			"print(qlines(1))sf = self.view.find_all(qlines[0])"
 		]
 	},
 	"distraction_free":
@@ -468,19 +653,73 @@
 	},
 	"expanded_folders":
 	[
-		"/media/data/whz/projectGalvoDocu"
+		"/media/data/whz/projectGalvoDocu",
+		"/media/data/whz/projectGalvoDocu/chapters"
 	],
 	"file_history":
 	[
+		"/home/mainster/scripts/notifyRepeatMin.sh",
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/markdown-preview/MarkdownPreview.py",
+		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.mmd",
+		"/tmp/MarkdownPreview.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/markdownChapters.sublime-build",
+		"/home/mainster/scripts/mdAppendCites.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/home/mainster/.config/sublime-text-3/Packages/MarkdownChaptered/MarkdownChaptered.py",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/brntool_patched.py",
+		"/home/mainster/.config/sublime-text-3/Packages/MarkdownEditing/indent_list_item.py",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/README.md",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
+		"/home/mainster/&",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_delta_webuicfg_python_try1_DECRIPTED.diff",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/brntool",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/brntool.py",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntoolOrig/brntool.py",
+		"/media/data/galvo_pdfs/gtkterm/12-08-2014/adjusting_setpoint_2",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-06_18-46-34_fix.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-06_18-46-34.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try1_DECRYPTED.txt",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_diff_webuicfg_python_try1_DECRIPTED.txt",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try2_DECRYPTED.txt",
+		"/media/data/whz/projectGalvoDocu/Sehr geehrter Professor Bormann",
+		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+		"/home/mainster/scripts/split-merge-markdowns.sh",
+		"/media/data/whz/projectGalvoDocu/chapters/08_Modellbildungsprozess.mmd",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/outmerged.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/arcadyan_decrypter_v0.05a/Out.txt",
+		"/home/mainster/.config/sublime-text-3/Packages/User/log2.sublime-syntax",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/oem.log2",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/arcadyan_decrypter_v0.05a/out.txt",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-05_04-25-30.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-05_04-50-56.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-05_05-22-05.log",
+		"/media/data/whz/projectGalvoDocu/oem.log2",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/out2",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-05_04-44-45.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-05_04-46-58.log",
+		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/out",
+		"/media/data/whz/projectGalvoDocu/chapters/09_Software_(Teil_des_Mod.Bildungsprozesses).mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+		"/media/data/whz/projectGalvoDocu/README.md",
+		"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/Makefile",
+		"/media/data/output_2017-02-05_04-44-45.log",
+		"/media/data/output_2017-02-05_04-46-58.log",
+		"/media/data/output_2017-02-05_04-50-56.log",
+		"/home/mainster/compiledStuff/brntool/README.md",
+		"/home/mainster/compiledStuff/brntool/brntool.py",
+		"/media/data/output_2017-02-05_05-22-05.log",
+		"/media/data/output_2017-02-05_04-25-30.log",
+		"/media/data/output_2017-02-05_04-24-26.log",
 		"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/.cproject",
 		"/media/data/whz/projectGalvoDocu/chapters/06_Terminologie.mmd",
-		"/home/mainster/scripts/split-merge-markdowns.sh",
 		"/media/data/whz/projectGalvoDocu/merge.sh",
 		"/home/mainster/scripts/split-markdown-src.sh",
-		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
 		"/media/data/xxx/galvo_P2.txt",
 		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
-		"/home/mainster/&",
 		"/media/data/whz/projectGalvoDocu/BACKprojectGalvoDocu.mmd",
 		"/home/mainster/.config/sublime-text-3/Packages/User/ShellCommand.sublime-commands",
 		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/ShellCommand.sublime-settings",
@@ -495,7 +734,6 @@
 		"/home/mainster/.config/sublime-text-3/Packages/User/ShellCommand.sublime-settings",
 		"/home/mainster/scripts/multi-markdown-mdmerger.sh",
 		"/home/mainster/.config/sublime-text-3/Packages/User/multiMarkdown2Preview.sublime-build",
-		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
 		"/media/data/whz/projectGalvoDocu/out/04_02.mmd",
 		"/media/data/whz/projectGalvoDocu/out/chap_16.mmd",
 		"/media/data/whz/projectGalvoDocu/out/chap_12.mmd",
@@ -547,59 +785,7 @@
 		"/media/data/vems_mitch_944_brain/firmware/adc.h",
 		"/media/data/vems_mitch_944_brain/firmware/emulator/defines.h",
 		"/media/data/vems_mitch_944_brain/firmware/etc/kpafactor4115.h",
-		"/media/data/vems_mitch_944_brain/firmware/tables.h",
-		"/home/mainster/.config/sublime-text-3/Packages/SublimeCodeIntel/SublimeCodeIntel.sublime-settings",
-		"/media/data/vems_mitch_944_brain/firmware/vems.sublime-project",
-		"/media/data/vems_mitch_944_brain/firmware/actuators.cr",
-		"/media/data/vems_mitch_944_brain/firmware/eventqueue.h",
-		"/usr/lib/avr/include/avr/crc16.h",
-		"/media/data/vems_mitch_944_brain/firmware/avr_make",
-		"/media/data/vems_mitch_944_brain/firmware/EmuMakefile",
-		"/usr/lib/avr/include/avr/signal.h",
-		"/media/data/vems_mitch_944_brain/firmware/doxygen.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/avr/adc.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/benchmark.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/vems.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/compile_time.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/heap.lst",
-		"/media/data/vems_mitch_944_brain/vems_firmware/heap.o",
-		"/media/data/vems_mitch_944_brain/vems_firmware/magicstr.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/varstr.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/my_make",
-		"/media/data/vems_mitch_944_brain/vems_firmware/timing.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/global.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/fuelcalc.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/comm.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/comm.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/firmware_revision.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/ve.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/ve.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/lcd_display.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/engine.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/wbo2.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/timing.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/actuators.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/storage.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/menu.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/menu.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/makefile",
-		"/media/data/vems_mitch_944_brain/vems_firmware/lcd_display.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/handler2k.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/handler2k.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/iac.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/iac.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/benchmark.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/scheduler.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/scheduler.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/helpers.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/helpers.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/lcd.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/adc.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/actuators.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/sipr.h",
-		"/media/data/vems_mitch_944_brain/vems_firmware/sipr.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/ringbuf.c",
-		"/media/data/vems_mitch_944_brain/vems_firmware/multitooth.h"
+		"/media/data/vems_mitch_944_brain/firmware/tables.h"
 	],
 	"find":
 	{
@@ -617,6 +803,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"open_in_browser",
+			"**",
+			"\\| \\w+ +\\|",
+			"([{}])",
+			"\\begin",
+			"qlines",
+			"quellenfile",
+			"sf",
+			"make",
+			"citeBorm",
+			"]:",
+			"bold",
+			"\\*\\*",
+			"(Cortex-[ARM])",
+			"VR9",
+			"^(?:(?:(?:0?[13578]|1[02])(\\/|-|\\.)31)\\1|(?:(?:0?[1,3-9]|1[0-2])(\\/|-|\\.)(?:29|30)\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:0?2(\\/|-|\\.)29\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\\/|-|\\.)(?:0?[1-9]|1\\d|2[0-8])\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$",
+			"Tuning DDR begin",
+			" \\$",
+			"refTableElectric",
+			"68",
+			"\\|$[^\\|]$",
+			"\\|$\\|$",
+			"$[^\\|]$\\|",
+			"^[^\\|]^\\|",
+			"^\\|",
+			"table",
+			":\n",
 			"lib(.*)\\.a",
 			"\\.\\/lib\\/USB\\_.*/",
 			"use",
@@ -656,9 +869,23 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"",
+			"\\\\\\1",
+			"\\\\1",
+			"refBuf",
+			"refFile",
+			"tmp",
+			"chapterHead",
+			"__",
+			"__\\1__",
+			"**\\1**",
+			" $\\\\,",
+			" $\\,",
+			"|\n\n</center>",
+			"<center>\n\n|",
 			"\\1",
 			"",
 			" |\\1|\\2|\\3|\\4",
@@ -684,120 +911,125 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "merged.mmd",
+					"file": "chapters/11_Plattform.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 94240,
+						"buffer_size": 25239,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								22166,
-								22166
+								13719,
+								13719
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"parser": "markdown",
+							"spell_check": true,
 							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "browser"
+							"tab_size": 4,
+							"target": "browser",
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 87.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/home/mainster/compiledStuff/brntool/README.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2057,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								757,
-								757
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "disk"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2805.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/Makefile",
+					"buffer": 1,
+					"file": "chapters/20_Quellenangaben.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2266,
+						"buffer_size": 11539,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								581,
-								581
+								6265,
+								6265
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Makefile/Makefile.sublime-syntax"
+							"auto_complete": false,
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1530.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 162,
+						"buffer_size": 7967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								162,
-								162
+								4562,
+								4562
 							]
 						],
 						"settings":
 						{
-							"auto_name": "./lib/USB_OTG/libusbcore.a",
-							"default_dir": "/media/data/whz/projectGalvoDocu",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1677.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ProfessorBormannMAil.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1322,
+								1322
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"parser": "markdown",
+							"syntax": "Packages/Markdown/MultiMarkdown.sublime-syntax",
+							"target": "browser"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -814,62 +1046,64 @@
 			[
 				{
 					"buffer": 4,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 284,
+						"buffer_size": 26598,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								99,
-								99
+								9528,
+								9528
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 39.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "README.md",
+					"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1271,
+						"buffer_size": 54326,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1000,
-								1000
+								48566,
+								48566
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "browser"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"target": "browser",
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3545.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -877,7 +1111,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -903,7 +1137,7 @@
 		"cols":
 		[
 			0.0,
-			0.5,
+			0.514117647058,
 			1.0
 		],
 		"rows":
@@ -925,7 +1159,7 @@
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/User/pandoc-markdown-to-pdf.sublime-build",
+	"pinned_build_system": "Packages/User/markdownChapters.sublime-build",
 	"project": "projectGalvoDocu.sublime-project",
 	"replace":
 	{
