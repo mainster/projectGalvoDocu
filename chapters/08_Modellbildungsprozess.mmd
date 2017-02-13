@@ -13,19 +13,19 @@ Dieser Aussage entsprechend soll hier aus dem formellen Anforderungskatalog (ver
         - Pegelwandlung 
         - Antialiasing (ADC)
         - Rekonstruktionsfilter (DAC)
-* Software 
+* Software
     * Implementierung der Regelalgorithmen (Reglerelektronik)
     * grafisches Schnittstellenprogramm zur Echtzeitkommunikation
 
 ![abstractSystemC](./pics/abstractSystemC.svg "Erste Unterteilung")
 
 ## Generisches Modell ##
-In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ respektive _"Galvanometer"_ die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
+In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ respektive _"Galvanometer"_ die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
 
 Die Analogie zu _generic types_ in objektorientierten Programmiersprachen ist nur teilweise zulässig. Vergleicht man diese Methode jedoch mit der in [Vorarbeit](#vorarbeit) aufgezeigten, nämlich einem Aktor-Computermodell, abhängig von Geometrie und Materialparametern, so finden sich doch einige Eigenschaften, die analog verwendet werden können.
 
 ### Mathematische Zusammenhänge ###
-Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich z. B. durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt beispielsweise, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
+Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich bekanntlich durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt unter anderem, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers, unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
 
 ##### Translation und Rotation #####
 Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
@@ -254,20 +254,14 @@ $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+
 ### Aktor Gesamtmodell ###
 Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [Verbindung der Teilsysteme](#verbindung-der-teilsysteme). Die Winkelposition wird im Bereich $|\,\varphi\,| > 1/2\cdot\Delta\varphi_\{Max\}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| > 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert.   
 
-### Regelungsnormalform ###
-> Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
-
-Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
-
-<center>![Regelungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung")</center>
-
 ### Testsignale ###
 (...)
 
 #### Problematik der Sättigung ####
 (...)
 
-### Softwarearchitektur ###
+
+## Softwarearchitektur ###
 (...)
 
 - ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.

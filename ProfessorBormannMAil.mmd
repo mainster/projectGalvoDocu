@@ -1,32 +1,45 @@
-<!-- temp toc -->
-[TOC]
-
-<!-- temp toc -->
-[TOC]
-
-<!-- temp toc -->
-[TOC]
-
-<!-- temp toc -->
-[TOC]
-
-<!-- temp toc -->
-[TOC]
-
 Sehr geehrter Professor Bormann,
-auf Basis eines ARM Cortex-M4 habe ich vor einiger Zeit ein recht umfangreiches Projekt im Bereich "Hybride Regelungstechnik" teilweise umgesetzt. Mittels zweier Spiegel-Galvanometer (Cambr link) sollte eine kleine Laserlichtquelle ausreichend schnell in X- und Y-Richtung abgelenkt werden, sodass zumindest einfache geometrische Figuren auf einen hellen Hintergrund abgebildet werden können (eine Art "Effekt-" bzw. "Show-Laser"-System).
 
-Als übergeordnetes Projektziel wurde eine Simulationsumgebung entwickelt, um das Gesamtsystem(!) näherungsweise "geschlossen" simulieren zu können. 
+auf Basis eines ARM Cortex-M4F habe ich mir vor einiger Zeit ein Projekt im Bereich "Hybride Regelungstechnik" erarbeitet. Mittels zweier Spiegel-Galvanometer sollte eine kleine Laserlichtquelle ausreichend schnell in X- und Y-Richtung abgelenkt werden, sodass zumindest einfache geometrische Figuren auf einem hellen Hintergrund abgebildet werden können (vergl. "Effekt-" bzw. "Show-Laser", siehe Anhang). Als übergeordnetes Projektziel wurde eine Simulationsumgebung (MATLAB/Simulink, LTSpice) entwickelt, um das Gesamtsystem(!) näherungsweise geschlossen simulieren zu können (...). 
 
-werden ko    von der Konzeption über die Modellbildung/Simulation (MATLAB/Simulink, LTSpice) bis hin zur Prototyp-Hardware (Eagle CAD)
+[STM32F429i:](http://www.st.com/content/st_com/en/products/microcontrollers/stm32-32-bit-arm-cortex-mcus/stm32f4-series/stm32f429-439/stm32f429ai.html) _Cortex-M4, 225 DMIPS@180 MHz, 3x 12-Bit ADC 2.4 MSPS (7.2 MSPS interleaved), 2x 12-Bit DAC 10 MSPS, FPU_
+Neben der Tatsache, dass ich mich in CMSIS und die weit verbreiteten Cortex-M einarbeiten wollte, waren die __integrierten DAC__-Module des STM32F429i ein wichtiger Grund bei der Wahl des Controllers.
+Da sich während des Projektverlaufs herausgestellt hat, dass der STM32F4 bezüglich PID-Algorithmen und Abtastrate "keinesfalls überdimensioniert" ist, vor allem aber aufgrund Ihrer DSP-I/DSP-II Unterlagen, habe ich mich etwas mit dem CLA der dort angesprochenen C28x Familie auseinandergesetzt.
 
-   Als "Endprodukt" sollte eine Art  aufgebaut werden. 
+Während weiterer Recherchen haben sich ein paar Fragen aufgetan.
 
+---
+__TI FAQ, C2000, CLA__
+<a href="http://processors.wiki.ti.com/index.php/Control_Law_Accelerator_(C2000_CLA)_FAQ#Q:_Is_the_CLA_independent_from_the_main_CPU.3F">Q: Is the CLA independent from the main CPU?</a>
+>Yes. Once the CLA is configured by the main CPU it can execute algorithms independently of the main CPU. The CLA has its own bus structure, register set, pipeline and processing unit. In addition the CLA can access __a host of__ peripheral registers directly...
 
-[Q: Is the CLA independent from the main CPU?][http://processors.wiki.ti.com/index.php/Control_Law_Accelerator_(C2000_CLA)_FAQ#Q:_Is_the_CLA_independent_from_the_main_CPU.3F]
->Yes. Once the CLA is configured by the main CPU it can execute algorithms independently of the main CPU. The CLA has its own bus structure, register set, pipeline and processing unit. In addition the CLA can access __a host of peripheral registers directly__...
+Prinzipiell sind mir die Vorteile des CLA soweit klar, die Formulierung "...__a host of__..." macht mich etwas unsicher. Steckt in dem letzten Satz etwa mehr als
+>In addition the CLA can access __a hosts__ peripheral registers directly...
+>In addition the CLA can access __a lot of__ peripheral registers directly...
 
-__What means a host of registers?__
+Im Grunde wird doch darauf hingewiesen, dass der CLA, obwohl es sich um einen Coprozessor handelt, trotzdem auf die Standard-Register (ADC result register, ...) der internen Peripheriegeräte zugreifen kann!?   
 
->...This makes it ideal for handling time-critical control loops but it can also be used for filtering or math algorithms. Please refer to your device specific documentation for the list of CLA accessible peripherals.
+---
+__Cortex-M4 = DSC?__
+In einer [Einführung]("http://www.embedded.com/design/programming-languages-and-tools/4438667/Basics-of-the-Cortex-MCU-Software-Interface-Standard--Part-1---CMSIS-Specification-") in die CMSIS Spezifikation ist mir der Satz
+> The Cortex-M4 is a 'digital signal controller' with a number of enhancements to support DSP algorithms. 
 
+aufgefallen. 
+
+Würden Sie das auch so formulieren, also dass der Cortex-M4 unter __DSC__ eingeordnet wird (siehe "ELT130\_Version\_2016.pdf", Folie 33)? 
+
+---
+__Warum überhaupt auf ARM setzen?__
+In einem [Artikel von _Markt&Technik_]("http://www.infineon.com/dgdl/1102_Zizala_MarktUndTechnik2.pdf?fileId=db3a304335b504400135beaeb21468e8") von 2011 (Markierung siehe Anhang) wird der damalige MCU-Marketing-Manager von TI sinngemäß zitiert, dass der Cortex-M0 (als Coprozessor eines Cortex-M4) überhaupt nicht mit dem CLA (als Coprozessor des C28x) vergleichbar wäre. 
+
+Ist diese Aussage auch zutreffend wenn man TI's CLA (als Coprozessor des C28x) mit einem fließkomma-fähigen DSP (als Coprozessor des Cortex-M4f) vergleicht?
+
+---
+ Da ich in meiner Projekt-Dokumentation einen Abschnitt über das Thema vorgesehen habe, würde ich mich über eine Rückmeldung freuen. 
+
+[Markt&Technik]("/media/data/whz/warum_überhaupt_auf_arm_setzen.pdf")
+![](/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150604_04h31m28s_lowres.jpg)
+![](/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150611_00h12m28s_lowres.jpg)
+![](/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150612_17h48m50s_lowres.jpg)
+![](/media/data/galvo/pics_fotos/email_bormann/galvo_ctrl_soldering_20150327_20h14m06s.jpg)
+![](/media/data/galvo/pics_fotos/email_bormann/galvo_workbench_cmpl_20150406_11h20m45s_lowres.jpg)
