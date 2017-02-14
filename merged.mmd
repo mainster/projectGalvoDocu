@@ -1,9 +1,9 @@
-Title:  Projekt Galvo-Scanner  
+Title:  Projekt: XY-Galvo Scanner  
 Author: Del Basso, Manuel  
 Date:   WHZ, November, 2016  
 
-Projekt __Galvo-Scanner__
-=========================== 
+Projekt: __XY-Galvo Scanner__
+============================== 
 [TOC]
 
 # Navigation #
@@ -62,7 +62,7 @@ Der Besuch einer mehrtägigen Schulungsveranstaltung der Firma _ANSYS_[^fnWikiAn
 
 ><a name="refProjectDesc"/> Ziel des Projektes ist </a> der Aufbau eines funktionsfähigen XY-Galvanometer-Scanners mit selbstentworfenen Galvanometer-Motoren + Leistungstreiber und eines in C implementierten Software-Reglers (...). Als Galvanometer-Motor-Typ ist ein "Moving magnet motor" geplant. Um die Motorkonstruktion einfach zu halten, ist ein Stator Design mit nur einem Polpaar angedacht.
 <a name="refExplainFEMSol"/> </a>
->Unter Zuhilfenahme der FEM-Simulationsumgebung "Maxwell" und "Simplorer", sollen Reglerparameter anhand eines nichtlinearen Modells des Galvanometer-Motors optimiert werden. Die Sollwert-Vorgaben für die XY-Winkelpositionen werden vorerst als einfache Lookup-Tabellen direkt auf dem Mikrocontroller erzeugt, welcher auch die diskreten Reglerfunktionen übernehmen soll. 
+>Unter Zuhilfenahme der FEM-Simulationsumgebung "Maxwell" + "Simplorer", sollen Reglerparameter anhand eines nichtlinearen Modells des Galvanometer-Motors optimiert werden. Die Sollwert-Vorgaben für die XY-Winkelpositionen werden vorerst als einfache Lookup-Tabellen direkt auf dem Mikrocontroller erzeugt, welcher auch die diskreten Reglerfunktionen übernehmen soll. 
 
 >Sollte das geplante System soweit funktionieren, dass mit dem Scanner einfache geometrische Figuren erzeugt werden können (Kreise, Quadrate, Achter, ...), könnte eine PC-Software zur Erzeugung von Pixelkoordinaten inkl. Dunkeltastung des Lasers als Erweiterung angedacht werden.
     
@@ -88,9 +88,13 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
 
 # Projektziel #
-Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Vei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies und sind als gegeben zu betrachten (vergl. Bestandsbaugruppe, Lagerware). <img src="./pics/galvoMirrorsXY_2.svg" title="Funktionsprinzip XY-Scanner" align="top" height="190px" style="float:right; margin: 1em 0em 0em 1em;"/>Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" durchgeführt werden können so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. Die Positionsregelung der Spiegelachsen soll diskret realisiert und auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. Die Sollwerte der Pixel-Koordinaten werden im Speicher des STM32 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies <yelBg>(Modell 6860???)</yelBg>. Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_). 
 
-Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts "XY-Galvo Scanner".
+1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. 
+2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. 
+3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, y-Pos, Laser-Blanking] im Speicher des STM32F4 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+
+Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
 
 # Terminologie #
 Auf häufig wiederkehrende Begriffe wie z. B. Modell, Modellbildung oder System, soll hier kurz eingegangen werden da sie als Überbegriffe sehr universell definiert sein können. 
@@ -258,19 +262,21 @@ Dieser Aussage entsprechend soll hier aus dem formellen Anforderungskatalog (ver
         - Pegelwandlung 
         - Antialiasing (ADC)
         - Rekonstruktionsfilter (DAC)
-* Software 
+* Software
     * Implementierung der Regelalgorithmen (Reglerelektronik)
     * grafisches Schnittstellenprogramm zur Echtzeitkommunikation
 
 ![abstractSystemC](./pics/abstractSystemC.svg "Erste Unterteilung")
 
+<yelBg>...So what???</yelBg>
+
 ## Generisches Modell ##
-In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, dass in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ respektive _"Galvanometer"_ die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
+In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ respektive _"Galvanometer"_ die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
 
 Die Analogie zu _generic types_ in objektorientierten Programmiersprachen ist nur teilweise zulässig. Vergleicht man diese Methode jedoch mit der in [Vorarbeit](#vorarbeit) aufgezeigten, nämlich einem Aktor-Computermodell, abhängig von Geometrie und Materialparametern, so finden sich doch einige Eigenschaften, die analog verwendet werden können.
 
 ### Mathematische Zusammenhänge ###
-Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich z. B. durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt beispielsweise, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
+Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich bekanntlich durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt unter anderem, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers, unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
 
 ##### Translation und Rotation #####
 Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
@@ -339,9 +345,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Peak Current              | $I_\{L-PEAK\}$ | $\SI\{25\}\{A\}$               |                                   | Max.                 |
 | Step Response Time        | Small Angle    | $\SI\{0.5\}\{ms\}$             | inertia matched load              |                      |
 
-</center>
 <a name="refTableMechanic"> </a>
-<center>
 
 | Mechanical Specifications           | Symbol                  | Value                          |                             |                      |
 | ---                                 | ---                     | ---                            | ---                         | ...                  |
@@ -351,9 +355,7 @@ Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Ser
 | Max. Coil Temperature               |                         | $\SI\{110\}\{°C\}$             |                             |                      |
 | Thermal Resistance<br>(Coil - Case) |                         | $\SI\{1.5\}\{°C/\watt\}, Max$  |                             |                      |
 
-</center>
 <a name="refTablePositionDetect"> </a>
-<center>
 
 | Position Detector                | Value                                   |                      |
 | ---                              | ---                                     |                      |
@@ -405,7 +407,7 @@ G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \fr
 #### Elektrisch generiertes Drehmoment ####
 Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
 
-### Mechanik ###
+### Mechanisches Teilsystem ###
 Eine _bewegte_ Masse speichert die _kinetische Energie_ $E_{kin}$. Neben dem Linearfaktor _m_ steigt $E_{kin}$ dabei quadratisch zur Geschwindigkeit, mit der sich die Masse bewegt. 
 Rotiert ein Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
  
@@ -502,21 +504,11 @@ $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+
 
 ### Aktor Gesamtmodell ###
 Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [Verbindung der Teilsysteme](#verbindung-der-teilsysteme). Die Winkelposition wird im Bereich $|\,\varphi\,| > 1/2\cdot\Delta\varphi_\{Max\}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| > 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert.   
-
-### Regelungsnormalform ###
-> Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
-
-Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
-
-<center>![Regelungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung")</center>
-
-### Testsignale ###
 (...)
 
-#### Problematik der Sättigung ####
-(...)
-
-### Softwarearchitektur ###
+<!-- ### Testsignale ### -->
+<!-- #### Problematik der Sättigung #### -->
+## Softwarearchitektur ###
 (...)
 
 - ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
@@ -535,10 +527,10 @@ Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchite
 
 
 
-## ??? Stellglied / Leistungsteil ##
-## ??? Signalkonditionierung ##
-# ??? Angaben zur Systemdynamik #
-## ??? Spezifikationen des Gesamtsystems ##
+<!-- ## Stellglied / Leistungsteil ## -->
+<!-- ## Signalkonditionierung ##  -->
+<!-- # Angaben zur Systemdynamik # -->
+<!-- ## Spezifikationen des Gesamtsystems ## -->
 # Projektplan und V-Modell #
 Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren _V-Modell XT_ (eXtreme Tailoring, Anfang 2005 [^fnV-Modell-XT-Bund]) gibt es kaum noch Gründe, von einer Projektplanung _auf Basis_ des V-Modells abzusehen. 
 (...)
@@ -546,7 +538,130 @@ Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man
 # Plattform #
 Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
 
-## STM32F429 Spezifikationen ##
+Zahlreiche [DIY-Projekte][diyList] steigerten kontinuierlich das Interesse in vielen Bereichen der Hard- und Softwareentwicklung. Meist wurden 8-Bit RISC Controller ATmega/ATXmega der Firma Atmel für diverse Projekte eingesetzt. Mit der Anschaffung des Evaluierungsboards STK-600 inklusive AVR JTAGICE mkII Debugger, stand zwar eine hochflexible Hardware-Plattform (nahezu alle 8-Bit AT(X)mega + AVR32 Controller) zur Verfügung, in Sachen Software-Entwicklungsumgebung war man allerdings (ist noch immer?) an Microsoft .NET und somit an Windows gebunden. Als überzeugter UNIX Anwender blieb somit nur der Betrieb einer virtuellen Windows-Maschine (inkl. aller Windows Treiber-Probleme), wenn man alle Funktionen des JTAG-Emulators nutzen wollte.
+
+Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte jede Menge "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Coprozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden. Außerdem konnten und mussten Methoden getestet und Angewandt werden, um einen gewissen Grad an Plattformunabhängigkeit zu erlangen. Das Sponsoring der KEIL uVison4 Lizenzen musste in jeder Saison erneuert werden und konnte nie als gegeben betrachtet werden. Die vollständigen, GCC-kompatiblen HSK-Bibliotheken (M.Sc. D. Fandrey), sind auf [sourceforge.net](https://sourceforge.net/projects/hsk/files/stats/timeline?dates=2010-02-02+to+2017-02-08) veröffentlicht.      
+
+<div class="boxed">
+Das oberste Gebot bei der Wahl der Hardware-Plattform, war also die Unabhängigkeit ihrer Software-Plattform.
+</div>
+
+### Warum ARM? ###
+Durch die entsprechende Routing-Karte konnte auf der vorhandenen Evaluierungshardware von Atmel auch Controller mit AVR32-Architektur betrieben werden. Das schwerwiegende Kontra-Argument, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__, soll hier als Grund genannt werden der zum Ausschluss von AVR32 führte.
+
+Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als <yelBg>__86__ Milliarden</yelBg> (im Jahr 2013 erreichte ARM die 50 Milliarden Marke).
+
+> Today ARM technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
+
+### Warum Cortex-M4? ###
+Eine umfangreiche Liste (aller) unter ARM Holdings lizenzierten Mikroarchitekturen kann u.A. auf [wikipedia][wikiMikroarchs] eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche _(Classic, Embedded, Application)_ sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile _(Microcontroller, Real-time, Application)_[^fnArmProfiles] aufzuzeigen: 
+
+<a href="./pics/ArmRoadMap3.svg" target="_blank"><center>![ssss](./pics/ArmRoadMap3.png "ARM - Devices Roadmap"){.scale75 .noborder}</center></a>
+
+Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwendungen, erfreuen sich teils großer Beliebtheit (z.B, RaspberryPi Serie). 
+<center>
+
+|      Name      | Chip-Bezeichnung | Prozessor  | Architektur |    Profil   |  Familie   |        |
+|----------------|------------------|------------|-------------|-------------|------------|--------|
+| RaspberryPi I  | BCM2835          | ARM1176JZF | ARMv6       |             | ARM11      | 32-Bit |
+| RaspberryPi II | BCM2836          | Cortex A7  | ARMv7-A     | Application | Cortex A   | 32-Bit |
+| BeagleBoard    | OMAP3530         | Corttex A8 | ARMv7-A     | Application | Cortex A   | 32-Bit |
+| Grasshopper    | AT32AP7000       |            | AVR32 RISC  | Application | AVR32 RISC | 32-Bit |
+| (...)          |                  |            |             |             |            |        |
+
+</center>Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme einzusetzen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie die Einbindung eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), werden vor dem Compilieren des Kernels durch den entsprechenden _Realtime Preemption patch_ vorgenommen. 
+Aber auch bei absolut determiniertem Interrupt-Handling würde die absolute Reaktionszeit (Interrupt latency) für die regelungstechnischen Aufgaben vermutlich nicht ausreichen. Auf jeden Fall geht der Hardware-Bezug, im Sinne hardwarenaher Programmierung, beim Einsatz von RT-Linux-artigen Betriebssystemen weitestgehend verloren. Die Entwicklung eines eigenen Betriebssystems im Bereich _Application-Processor_ ist u.A. wegen der Speicherverwaltung zu komplex und Zeitaufwendig. Alle __Cortex-A__ werden an einer Speicherverwaltungshardware (MMU) betrieben.
+
+<center>
+
+<table class="caption">
+    <tr>
+        <td align="center">Prozessor mit MMU</td>
+        <td align="center">$\Rightarrow$</td>
+        <td align="center">Embedded OS notwendig</td>
+    </tr>
+    <tr>
+        <td align="center">Embedded OS gefordert</td>
+        <td align="center">$\Rightarrow$</td>
+        <td align="center">Prozessor mit MMU notwendig</td>
+    </tr>
+</table>
+_Zusammenhang zwischen MMU und der Notwendigkeit eines OS._ <yelBg class="scale">__NACHWEIS__ ???</yelBg>
+</center>
+
+#### Architektur-Profil M oder R ####
+Ob als Hardware-Basis das Architektur-Profile _Microcontroller (__Cortex-M__ Familie)_ oder _Real-time (__Cortex-R__ Familie)_ gewählt werden soll, schien im ersten Moment klar zu sein. Die __Cortex-R__-Familie ist mit modernen Signalprozessoren (DSP) und Fließkomma-Hardware (FPU) ausgestattet und wurde speziell (trotzdem in Milliarden-Stückzahlen produziert) für kritische Echtzeit-Anwendungen entworfen.
+
+>Fast response - optimized for high performance, hard real-time applications
+The __ARM® Cortex®-R__ real-time processors offer high-performance computing solutions for embedded systems where reliability, high availability, fault tolerance and/or deterministic real-time responses are needed. (...) The __Cortex-R__ series processors provide fast time-to-market through proven technology shipped in billions of products, supported by the vast ARM ecosystem.[^fnCortexR]
+
+Bedenkt man jedoch, was für Aufgaben sonst noch von derartigen Controllern erledigt werden, (Nano-Positionierung in der Festplattentechnik, kritische Bereiche der Medizintechnik, autonome Quadrocopter, ...), scheint die Notwendigkeit eines __Cortex-R__ zur Realisierung des geplanten Projekts nicht mehr unbedingt gegeben zu sein.
+
+Nachfolgend werden hingegen einige wichtige __Pro-Argumente__ für den Einsatz eines __Cortex-M__ aufgezeigt:
+
+---
+__Cortex-M ist__ ein Industriestandard (siehe Zitat oder [[Borm:2016, 1-24]][@Borm:2016] resp. [ARM_Entwicklerkonferenz_2012.pdf](http://www.embedded-world.eu/fileadmin/pictures/Events_2012/ARM_2012/CfP/CfP_ARM_Entwicklerkonferenz_2012.pdf))
+
+>It is safe to say that the **Cortex-M** has become for the 32-bit world what the 8051
+is for the 8-bit – **an industry-standard core** supplied by many vendors, each of which dip the core in their own special sauce to provide differentiation in the market.[^fnWhichCortex] 
+
+ARM's standardisierte Bibliothek zur Hardware-Abstraktion (CMSIS) beinhaltet bisher nur die __Cortex-M__ Familie 
+
+> The **C**ortex **M**icrocontroller Software Interface Standard (CMSIS) is a vendor-independent hardware abstraction layer for the **Cortex®-M** family.[^fnCMSISARM]
+
+Mit dem **Cortex-M**<a style="color: red; font-weight: bold;">4</a> bekommt die ARMv7-M CPU (neben optionaler FPU) Unterstützung von einem DSP. Dadurch werden wichtige Zusatzfunktionen wie  
+
+- der **SIMD** (Single-Instruction-Multiple-Access) Befehlssatz (primär für Bild-/Audioverarbeitung) sowie
+- eine **MAC** (Multiply-Accumulate) Einheit
+
+zur Verfügung gestellt. 
+
+### Multiply-Accumulate / Sum-Of-Products ###
+Die Rechenoperation $y \leftarrow y + \left(a \cdot b\right)$ ist in der digitalen Signalverarbeitung von zentraler Bedeutung. Sie fungiert als Schlüsselkomponente [[Borm2:2016, 1-18]][@Borm:2016] für grundlegende Impulsfilter-Algorithmen wie _FIR_ bzw. _IIR_ und wird bei der _diskreten Fourier Transformation_ sowie zur numerischen Berechnung von _Faltungsintegralen_ eingesetzt.
+
+|        Algorithmus        |                                       Berechnungsvorschrift                                       |
+|---------------------------|---------------------------------------------------------------------------------------------------|
+| Finite Impulse Response   | $$y[n] = \sum_\{k=0\}^M\{a_k \cdot x(n-k)\}$$                                                     |
+| Infinite Impulse Response | $$y[n] = \sum_\{k=0\}^M\{a_k \cdot x(n-k)\}+\sum_\{k=1\}^N\{b_k \cdot y(n-k)\}$$                  |
+| Diskrete Faltung          | $$y[n] = \sum_\{k=0\}^M\{x(k) \cdot h(n-k)\}$$                                                    |
+| Diskrete Fourier Transf.  | $$X[k] = \sum_\{n=0\}^\{N-1\} \{ x(n) \cdot \exp^\{-i \,\left( 2 \pi/N \right) \, n \cdot k\}\}$$ |
+
+
+### Texas Instruments C2000 und der CLA ###
+(Nachtrag 11/2016)
+
+Die C2000 Familie von TI konzentriert sich u.A. auf eine optimale Unterstützung von Regelalgorithmen und unterstützt Methoden zur effektiven Signalverarbeitung. Der _Kern_ ist in Form eines nativen Signalprozessors eingebettet (CPU = DSP). Somit handelt es sich bei der C2000 Familie nicht um moderne Mikrocontroller (___µC___) mit DSP als Coprozessor wie z.B. bei den Cortex-M4 basierten STM32F429i, sondern vielmehr um eine neue [__SoC__][@SoC]-Klasse welche zutreffend als Klasse der __digitalen Signal Controller__ (___DSC___) bezeichnet wird. Der erweiterte Befehlssatz zielt auf die Abarbeitungsgeschwindigkeit mathematischer Prozessketten und verbessert den _"Durchsatz"_ in Trigonometrie-Berechnungen sowie bei der Behandlung komplexer Zahlen. Die bereits erwähnte Optimierung hinsichtlich diskreter Regelalgorithmen fällt jedoch primär auf TI's Task-basierten Coprozessor, dem _Control Law Accelerator_ (___CLA___), zurück. Der CLA führt zuvor initialisierte (Regler-) Algorithmen unabhängig von der Host-CPU aus und unterstützt
+Die ADCs und PWMs unterstützen auch viele Timing-Optionen. Die Leistung variiert von Midrange (Piccolo) zu High-End (Dual-Core Delfino). Die großen Anwendungen sind hier Stromrichter, Netzkommunikation, Industrieantriebe und Motorsteuerung
+
+
+C2000's focus is on supporting control algorithms. The C28x "CPU" is really a DSP, and its instruction set has been extended to handle things like trigonometry and complex numbers. There's also a separate task-based processor called the Control Law Accelerator (CLA) that can run control algorithms independently of the CPU. The ADCs and PWMs support a lot of timing options, too. Performance varies from midrange (Piccolo) to high-end (dual-core Delfino). The big applications here are power converters, power line communication, industrial drives, and motor control
+
+<!-- http://www.emcu.it/CortexFamily/ArmRoadMap.png --> 
+
+## Software ##
+
+---
+<a name="diyList"></a> 
+DIY-Projekt Beispiele:
+
+- Telefonkarte auslesen/emulieren
+- programmierbare IR-Fernbedienung
+- (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays
+- später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs
+- später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. 
+    * bewegter Bilderrahmen mit FAT SD-Karte (SPI-DMA)
+    * aktive Namensschilder auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Displays</a> 
+- diverse Projekte im Bereich der ISM-Band-Kommunikation wie z.B. 
+    * RFM12(B) @ 433MHz: 
+        - USB Funk-Chat
+        - System: "Finde Mutters Autoschlüssel"
+    * RFMega128 Wifi link-in 
+    * ZigBee
+- (...)
+
+---
+
+<!-- ## STM32F429 Spezifikationen ##
 AN4566
 Digital data update rate
 The STM32 DAC output data need to be written to the DAC Holding Register (DHR), then
@@ -581,121 +696,52 @@ other system: in real applications it’s necessary to have some margin.
 By using external high speed OpAmp, it is possible to extend the speed performance of the
 STM32 DACs more than 1 Msps.
 In Section 2 we will provide an example showing how to use this technique on STM32
-products
+products -->
 
-## Hardware ##
-Zahlreiche Projekte im Bereich Klein- bzw. Kleinstsysteme (Telefonkarte! auslesen/emulieren, programmierbare IR-Fernbedienung, (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays, später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs, später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. bewegter Bilderrahmen, "Namensschildchen" auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Display-Basis, diverse Projekte im Bereich ISM-Band-Kommunikation <a style="background-color: yellow;">wie RFM12 Module oder ZigBee</a> (...), alles auf Atmel's AVR8-AT(X)mega RISC Controllern, STK600 Entwicklungsboard + JTAG ISP-MKII Clone, später original Hardware "AVR JTAGICE mkII"), steigerten kontinuierlich das Interesse. 
 
-Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte unbeschreibbar viel "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Co-Prozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden.
- 
-### Warum ARM? ###
-Mit der entsprechenden Routing-Karte hätte die vorhandene Evaluierungshardware von Atmel (STK600 + JTAG-Emulator), auf Controller mit AVR32 Architektur, erweitert werden können. Als überzeugter Linux-Anwender ist ein schwerwiegendes Kontra-Argumenten jedoch schnell genannt, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__. 
-Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als __86 Milliarden!!!__ (im Jahr 2013 erreichte ARM die 50 Milliarden Marke).
-
-> Today ARM technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
-
-### Warum Cortex-M4? ###
-Eine umfangreiche Liste (aller) unter ARM Holdings lizenzierten Mikroarchitekturen kann u.A. auf [wikipedia][wikiMikroarchs] eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche _(Classic, Embedded, Application)_ sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile _(Microcontroller, Real-time, Application)_[^fnArmProfiles] aufzuzeigen. 
-
-<a href="./pics/ArmRoadMap3.svg" target="_blank"><center>![](./pics/ArmRoadMap3.png "ARM's @@@@@@@@@@@@"){.scale75 .noborder}</center></a>
-
-Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwendungen erfreuen sich teils großer Beliebtheit (z.B, RaspberryPi). 
-<center>
-
-|      Name      | Chip-Bezeichnung | Prozessor  | Architektur |    Profil   |  Familie   |        |
-|----------------|------------------|------------|-------------|-------------|------------|--------|
-| RaspberryPi I  | BCM2835          | ARM1176JZF | ARMv6       |             | ARM11      | 32-Bit |
-| RaspberryPi II | BCM2836          | Cortex A7  | ARMv7-A     | Application | Cortex A   | 32-Bit |
-| BeagleBoard    | OMAP3530         | Corttex A8 | ARMv7-A     | Application | Cortex A   | 32-Bit |
-| Grasshopper    | AT32AP7000       |            | AVR32 RISC  | Application | AVR32 RISC | 32-Bit |
-| (...)          |                  |            |             |             |            |        |
-
-</center>
-Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme zu entwerfen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie das Einbinden eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), werden vor dem Compilieren des Embedded Linux Kernels vorgenommen. 
-Aber auch bei absolut determiniertem Interrupt-Handling würde die absolute Reaktionszeit (Interrupt latency) für die regelungstechnischen Aufgaben vermutlich nicht ausreichen. Auf jeden Fall geht der Hardware-Bezug, im Sinne hardwarenaher Programmierung, beim Einsatz von RT-Linux-artigen Betriebssystemen weitestgehend verloren. Die Entwicklung eines eigenen Betriebssystems im Bereich _Application-Processor_ ist u.A. wegen der Speicherverwaltung zu komplex und Zeitaufwendig. Alle Cortex-A werden an einer Speicherverwaltungshardware (MMU) betrieben.
-
-Grundsätzlich gilt der Zusammenhang: <a style="background-color: yellow;"> NACHWEIS??? </a> 
-
-<table>
-    <tr>
-        <td align="center">Prozessor mit MMU</td>
-        <td align="center">$\Rightarrow$</td>
-        <td align="center">Embedded OS notwendig</td>
-    </tr>
-    <tr>
-        <td align="center">Embedded OS gefordert</td>
-        <td align="center">$\Rightarrow$</td>
-        <td align="center">Prozessor mit MMU notwendig</td>
-    </tr>
-</table>
-
----
-
-Ob als Hardware-Basis das Architektur-Profile _Microcontroller (Cortex-M Familie)_ oder _Real-time (Cortex-R Familie)_ gewählt werden soll, schien im ersten Moment klar zu sein. Die Cortex-R-Familie ist mit modernen Signalprozessoren (DSP) und Fließkomma-Hardware (FPU) ausgestattet und wurde speziell (trotzdem in Milliarden-Stückzahlen produziert) für kritische Echtzeit-Anwendungen entworfen. 
-
->Fast response - optimized for high performance, hard real-time applications
-The __ARM® Cortex®-R__ real-time processors offer high-performance computing solutions for embedded systems where reliability, high availability, fault tolerance and/or deterministic real-time responses are needed. (...) The Cortex-R series processors provide fast time-to-market through proven technology shipped in billions of products, supported by the vast ARM ecosystem.[^fnCortexR]
-
-Bedenkt man jedoch, was für Aufgaben sonst noch von derartigen Controllern erledigt werden, (Nano-Positionierung in der Festplattentechnik, kritische Bereiche der Medizintechnik, autonome Quadrocopter ...), scheint die Notwendigkeit eines Cortex-R zur Realisierung des geplanten Projekts, nicht mehr unbedingt gegeben zu sein. 
-
-Weitere Argumente, die für den Einsatz eines Cortex-M sprechen:
-
----
-
-- Cortex-M __ist__ ein Industriestandard (siehe Zitat oder [[Borm:2016, 1-24]][@Borm:2016] resp. [ARM_Entwicklerkonferenz_2012.pdf](http://www.embedded-world.eu/fileadmin/pictures/Events_2012/ARM_2012/CfP/CfP_ARM_Entwicklerkonferenz_2012.pdf))
-   
->It is safe to say that the **Cortex-M** has become for the 32-bit world what the 8051
-is for the 8-bit – **an industry-standard core* supplied by many vendors, each of which dip the core in their own special sauce to provide differentiation in the market.[^fnWhichCortex] 
-
-- ARM's standardisierte Bibliothek zur Hardware-Abstraktion (CMSIS) beinhaltet bisher nur die **Cortex-M** Familie 
-
-> The **C**ortex **M**icrocontroller **S**oftware **I**nterface **S**tandard (CMSIS) is a vendor-independent hardware abstraction layer for the **Cortex®-M**.[^fnCMSISARM]
-
-- Mit dem Cortex-M4 bekommt die ARMv7-M CPU (neben optionaler FPU) Unterstützung von einem DSP mit 
-    * **SIMD** (**S**ingle-**I**nstruction-**M**ultiple-**A**ccess; primär für Bild-/Audioverarbeitung) Befehlen
-    * **MAC** (**M**ultiply-**AC**cumulate) Erweiterung was sich hervorragend zum erzeugen des Regel 
-
----
-
-### Texas Instruments C2000 und der CLA ###
-(Nachtrag 11/2016)
-
-C2000's focus is on supporting control algorithms. The C28x "CPU" is really a DSP, and its instruction set has been extended to handle things like trigonometry and complex numbers. There's also a separate task-based processor called the Control Law Accelerator (CLA) that can run control algorithms independently of the CPU. The ADCs and PWMs support a lot of timing options, too. Performance varies from midrange (Piccolo) to high-end (dual-core Delfino). The big applications here are power converters, power line communication, industrial drives, and motor control
-
-<!-- http://www.emcu.it/CortexFamily/ArmRoadMap.png -->
-## Software ##
 # Software und Simulation #
-In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegangen werden, zum anderen wird die Simulationsumgebung vorgestellt. Der Bereich _Software und Simulation_ wird wie folgt untergliedert: 
+In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-zu-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich _Software und Simulation_ wird wie folgt untergliedert: 
 
-1. hardwarenahe Programmierung in __C__
-2. Entwurf eines kleinen, plattformunabhängigen GUI als Schnittstellenprogramm in __C++ / Qt__
-    * Echtzeit-Zustandsüberwachung
-    * Anpassung von Regelparametern etc.
-3. Elektroniksimulation mittels __LTspice__
-4. System- und Reglersimulation in __Simulink__
-5. Schnittstelle zwischen Hardware-Simulation (__Spice__) und Reglermodell (__Simulink__)
-    * MATLAB Skript zur <u>vollautomatischen</u> Modellgenerierung von Schaltungskomponenten wie
-        - Antialiasing- und Rekonstruktionsfiltern
-        - dem unterlegten, analogen Stromregler
-        - Endstufe sowie Stellglied
+<yelBg>Place TOC here!!!</yelBg>
 
+## Entwicklungsumgebung ##
+Wie bereits in der Einleitung zu [Plattform](#plattform) sowie im Abschnitt [Warum ARM?](#warum-arm) angesprochen, wird dem Thema _Plattformunabhängigkeit_ ein hoher Stellenwert zugesprochen. Deshalb soll an dieser Stelle nicht weiter auf die zwar weit verbreitete, hoch integrierte, jedoch für viel Geld (8260 € [_MDK-ARM Pro, Stand 02/2017_](https://elmicro.com/de/keilarm.html)) vertriebene Entwicklungsumgebung _KEIL µVision MDK_, eingegangen werden.
+
+Das von [IBM][eclipseIBM] ins leben gerufene, und mittlerweile von der _Eclipse Foundation_ getragene, quelloffene Software Projekt __Eclipse__, bildet die Grundlage für viele moderne Entwicklungsumgebungen. Ob nun Plugin-basierte Erweiterungen wie z.B. OpenOCD _(On-Chip Debugger)_, diverse Cross-Compiler _(für AVR, ARM, ...)_ inklusive Board-Support-Packages, oder aber komplette (kommerzielle) IDEs _(Vorzeigebeispiel: TI's CodeComposerStudio)_, das Eclipse-Basisframework bleibt das Gleiche - Unabhängig von der Architektur des Entwicklungsrechners. 
+
+Die wohl bekanntesten _Eclipse-CDT_ Erweiterungen für ARM-Basierte Controller sind unter der Bezeichnung [_GNU ARM Eclipse_][eclipseGnuArm] bekannt. Die Plugin-Familie kann bequem über das Software-Repositorie nachgerüstet werden. 
+
+Ebenfalls auf Eclipse Basis hat ST/AC6 vor einiger Zeit die quelloffene Entwicklungsumgebung __SW4STM32__ [(_System workbench for STM32_)][stST4STM32] veröffentlicht welche ST's gesamte 32-Bit Sparte unterstützt. Vergleichbar mit dem Konzept von KEIL's MDK werden ST-Evaluierungsboards in Form von Board-Support-Packages unterstützt. 
+
+> The System Workbench toolchain, called SW4STM32, is a free multi-OS software development environment based on Eclipse, which supports the full range of STM32 microcontrollers and associated boards. 
+(...) The STM32 Open Development Environment is compatible with a number of IDEs including IAR EWARM, __Keil MDK__, mbed and GCC-based environments.[^fnStMultiOs]
+
+## Hardwarenahe Programmierung (__C__) ##
+In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f, speziell der STM32F429i, bei diesem Projekt zum Einsatz kam. Hier soll auf das konkrete ___wie___ eingegangen werden. 
+    
+### Doxygen ###
+
+<yelBg>Href to doxygen/html/index.html</yelBg>
+
+### CMSIS ###
+
+## PC-Schnittstellenprogramm (__C++ / Qt__) ##
+### Echtzeit-Zustandsüberwachung ###
+### Parameter Manipulation ###
+## Schaltungssimulation / Netzwerkanalyse (__LTspice__) ##
+
+## System- und Reglersimulation (__Simulink__) ##
+## Schnittstelle Spice-to-Simulink (__MATLAB__)
+### LTspice <-> MATLAB: Freqency response estimation  ###
+- Antialiasing- und Rekonstruktionsfiltern
+- dem unterlegten, analogen Stromregler
+- Endstufe sowie Stellglied
+- Signalkonditionierung
 
 ## Debuggen in sw4stm32 ##
-## DOXYGEN!!! ##
-## CMSIS ##
-# Geschlossene Simulationsumgebung #
-## Umsetzung in MATLAB / Simulink ##
-## "frequency response model estimation" ##
-## copy ltspice conform laplace function of the estimated system  ##
-## Aktoren -> Simulink Modelle  ##
-## Endstufe -> LTspice -> MATLAB ##
-## Levelshifter -> LTspice -> MATLAB ##
-## Antialias / Rekonstruktionsfilter -> MATLAB ##
 # Simulationen und Verifizierung #
 ## Step-by-Step ##
-
 ## Spice: Geht die Simulation nicht ... ##
-
 ###  ... geht auch der Testaufbau nicht! ###
 
 ## Regelalgorithmen testen: ##
@@ -706,9 +752,19 @@ In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegan
 
 ### Oszibilder mit MATLAB-Simulation vergl. ###
 
-# ??? Regelungstechnik
+# Regelungstechnik
+(...)
 
 ## ??? Diskretisierungsverfahren ##
+(...)
+
+## Regelungsnormalform ##
+> Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
+
+Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
+
+<center>![Regelungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung")</center>
+
 
 # ??? Gesamtsystem #
 # ??? Modellparameter testen #
@@ -775,11 +831,13 @@ In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegan
 
 [^fnArmProfiles]: __ARM Cortex Architektur-Profile__ http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html
 
-[^fnLinuxRtPatch]: __Harte Echtzeit mit Linux Kernel Patch__ https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO
+[^fnLinuxRtPatch]: __"Harte Echtzeit" mittels Linux Kernel Patch__ https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO
 
 [^fnCortexR]: __Cortex-R Family outline__ http://www.arm.com/products/processors/cortex-r
 
 [^fnCMSISARM]: __CMSIS - Cortex Microcontroller Software Interface Standard__ https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php
+
+[^fnStMultiOs]: __STMicroelectronics - About SW4STM32__ http://www.st.com/en/development-tools/sw4stm32.html
 
 [@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
 
@@ -793,7 +851,14 @@ In diesem Abschnitt soll zum einen auf die Umsetzung des Software-Teils eingegan
 
 [@STM32F429i]: #citeSTM32F429i "High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"
 
-[@Borm:2016]: #citeBorm "WHZ - ELT130 Vorlesung Version 6.0.pdf"
+[@Borm:2016]: #citeBorm "WHZ - ELT130 Digitale Signalprozessoren I - Vorlesung Version 6.0.pdf"
+
+[@Borm2:2016]: #citeBorm2 "WHZ - ELT230 Digitale Signalprozessoren II - Vorlesung Version 4.0.pdf"
+
+[@SOP]: #citeBorm2 "What are typical DSP algorithms? An equation, called “Sum of Products” (SOP) is the __key element__ in most DSP algorithms"
+
+[@SoC]: #citeSoC "Ein System-on-Chip (SoC) ist ein komplettes System auf einem Chip, das verschiedenste Schaltungsteile integriert hat. Ein System-on-Chip ist die Integration von Zentraleinheiten, weiteren Prozessoren, Controllern, Speicherbausteinen, Random Access Memories (RAM) und Read Only Memories (ROM), Power-Management und anderen Komponenten auf einem einzelnen Die-Chip. Die einzelnen Komponenten eines System-on-Chip werden über den internen Bus oder in Punkt-zu-Punkt-Verbindung miteinander verbunden, wobei Bus-Architekturen nur eine gewisse Anzahl an Kommunikationspartnern effizient miteinander verbinden können."
+
 
 <a name="citeMDA"/> </a>
 __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
@@ -807,6 +872,8 @@ __[Iser:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*_
 <a name="citeSTM32F429i"/> </a>
 __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?querycriteria=productId=SS1577
 
+<a name="citeSoC"/> 
+__SoC__ _System-on-Chip_ http://www.itwissen.info/definition/lexikon/System-on-Chip-SoC-system-on-chip.html
 
 ---
 
@@ -836,8 +903,9 @@ __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?q
 [V-Modell-XT]: http://ftp.tu-clausthal.de/pub/institute/informatik/v-modell-xt/Releases/2.0/Dokumentation/V-Modell-XT-HTML/index.html "V-Modell XT Bundesministerium Des Innern (BMI)"
 [V-Modell-XT-Bund]: http://www.cio.bund.de/Web/DE/Architekturen-und-Standards/V-Modell-XT/vmodell_xt_node.html "V-Modell XT auf www.cio.bund.de"
 [wikiMikroarchs]: https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures#Designed_by_ARM "Umfangreiche Liste von ARM-Mikroarchitekturen"
-
-# Important Notes #
+[eclipseIBM]: http://www.ibm.com/developerworks/rational/library/nov05/cernosek/
+[eclipseGnuArm]: http://gnuarmeclipse.github.io/ "GCC - GNU Compiler Collection - for Eclipse"
+[stST4STM32]: http://www.st.com/en/ecosystems/stm32-open-development-environment.html "System Workbench for STM32"# Important Notes #
 - MathJax:
     + Math Settings:
         * Zoom Trigger: No Zoom
