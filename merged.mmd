@@ -91,7 +91,9 @@ Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gesp
 <img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies <yelBg>(Modell 6860???)</yelBg>. Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_). 
 
 1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. 
+
 2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. 
+
 3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, y-Pos, Laser-Blanking] im Speicher des STM32F4 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
 
 Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
@@ -504,10 +506,14 @@ $$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+
 
 ### Aktor Gesamtmodell ###
 Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [Verbindung der Teilsysteme](#verbindung-der-teilsysteme). Die Winkelposition wird im Bereich $|\,\varphi\,| > 1/2\cdot\Delta\varphi_\{Max\}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| > 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert.   
+
+### Testsignale ###
 (...)
 
-<!-- ### Testsignale ### -->
-<!-- #### Problematik der Sättigung #### -->
+#### Problematik der Sättigung ####
+(...)
+
+
 ## Softwarearchitektur ###
 (...)
 
@@ -527,10 +533,10 @@ Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchite
 
 
 
-<!-- ## Stellglied / Leistungsteil ## -->
-<!-- ## Signalkonditionierung ##  -->
-<!-- # Angaben zur Systemdynamik # -->
-<!-- ## Spezifikationen des Gesamtsystems ## -->
+## ??? Stellglied / Leistungsteil ##
+## ??? Signalkonditionierung ##
+# ??? Angaben zur Systemdynamik #
+## ??? Spezifikationen des Gesamtsystems ##
 # Projektplan und V-Modell #
 Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren _V-Modell XT_ (eXtreme Tailoring, Anfang 2005 [^fnV-Modell-XT-Bund]) gibt es kaum noch Gründe, von einer Projektplanung _auf Basis_ des V-Modells abzusehen. 
 (...)
@@ -698,7 +704,6 @@ STM32 DACs more than 1 Msps.
 In Section 2 we will provide an example showing how to use this technique on STM32
 products -->
 
-
 # Software und Simulation #
 In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-zu-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich _Software und Simulation_ wird wie folgt untergliedert: 
 
@@ -739,9 +744,19 @@ In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f,
 - Signalkonditionierung
 
 ## Debuggen in sw4stm32 ##
+# Geschlossene Simulationsumgebung #
+## Umsetzung in MATLAB / Simulink ##
+## "frequency response model estimation" ##
+## copy ltspice conform laplace function of the estimated system  ##
+## Aktoren -> Simulink Modelle  ##
+## Endstufe -> LTspice -> MATLAB ##
+## Levelshifter -> LTspice -> MATLAB ##
+## Antialias / Rekonstruktionsfilter -> MATLAB ##
 # Simulationen und Verifizierung #
 ## Step-by-Step ##
+
 ## Spice: Geht die Simulation nicht ... ##
+
 ###  ... geht auch der Testaufbau nicht! ###
 
 ## Regelalgorithmen testen: ##
@@ -905,7 +920,9 @@ __SoC__ _System-on-Chip_ http://www.itwissen.info/definition/lexikon/System-on-C
 [wikiMikroarchs]: https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures#Designed_by_ARM "Umfangreiche Liste von ARM-Mikroarchitekturen"
 [eclipseIBM]: http://www.ibm.com/developerworks/rational/library/nov05/cernosek/
 [eclipseGnuArm]: http://gnuarmeclipse.github.io/ "GCC - GNU Compiler Collection - for Eclipse"
-[stST4STM32]: http://www.st.com/en/ecosystems/stm32-open-development-environment.html "System Workbench for STM32"# Important Notes #
+[stST4STM32]: http://www.st.com/en/ecosystems/stm32-open-development-environment.html "System Workbench for STM32"
+
+# Important Notes #
 - MathJax:
     + Math Settings:
         * Zoom Trigger: No Zoom
