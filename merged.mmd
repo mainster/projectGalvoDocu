@@ -88,13 +88,19 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
 
 # Projektziel #
-<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies <yelBg>(Modell 6860???)</yelBg>. Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_). 
+<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_).
 
-1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. 
+<par><img src="./pics/camb_6860_large_mirrors_sml.png" title="Cambridge Technologies Galvanometer Modell 6860" align="right" height="290px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
 
-2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. 
+1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.
+2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden.
+3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher eines 32-Bit ARM Controllers (Cortex-Familie) abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können.
+4. Das System soll auf ein Computermodell abgebildet werden, so dass
+    - unterschiedliche Regelalgorithmen getestet werden können.
+    - Hardware-Anpassungen der Signalkonditionierung (Antialiasing/Rekonstruktionsfilter) mit minimalem Aufwand simuliert werden können.
+5. Die Prototyp-Hardware soll bereits in der Lage sein, alle notwendigen Zustandsgrößen zu messen um einen Modell-getriebenen Regler-Ansatz im Zustandsraum evaluieren zu können.
 
-3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, y-Pos, Laser-Blanking] im Speicher des STM32F4 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+</par>
 
 Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
 
@@ -535,8 +541,8 @@ Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchite
 
 ## ??? Stellglied / Leistungsteil ##
 ## ??? Signalkonditionierung ##
-# ??? Angaben zur Systemdynamik #
-## ??? Spezifikationen des Gesamtsystems ##
+<!-- # Angaben zur Systemdynamik # -->
+<!-- ## Spezifikationen des Gesamtsystems ## -->
 # Projektplan und V-Modell #
 Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren _V-Modell XT_ (eXtreme Tailoring, Anfang 2005 [^fnV-Modell-XT-Bund]) gibt es kaum noch Gründe, von einer Projektplanung _auf Basis_ des V-Modells abzusehen. 
 (...)
@@ -744,29 +750,22 @@ In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f,
 - Signalkonditionierung
 
 ## Debuggen in sw4stm32 ##
-# Geschlossene Simulationsumgebung #
-## Umsetzung in MATLAB / Simulink ##
-## "frequency response model estimation" ##
-## copy ltspice conform laplace function of the estimated system  ##
-## Aktoren -> Simulink Modelle  ##
-## Endstufe -> LTspice -> MATLAB ##
-## Levelshifter -> LTspice -> MATLAB ##
-## Antialias / Rekonstruktionsfilter -> MATLAB ##
+<!-- # Geschlossene Simulationsumgebung # -->
+<!-- ## Umsetzung in MATLAB / Simulink ## -->
+<!-- ## "frequency response model estimation" ## -->
+<!-- ## copy ltspice conform laplace function of the estimated system  ## -->
+<!-- ## Aktoren -> Simulink Modelle  ## -->
+<!-- ## Endstufe -> LTspice -> MATLAB ## -->
+<!-- ## Levelshifter -> LTspice -> MATLAB ## -->
+<!-- ## Antialias / Rekonstruktionsfilter -> MATLAB ## -->
 # Simulationen und Verifizierung #
 ## Step-by-Step ##
-
-## Spice: Geht die Simulation nicht ... ##
-
-###  ... geht auch der Testaufbau nicht! ###
-
+<!-- ## Spice: Geht die Simulation nicht ... ## -->
+<!-- ###  ... geht auch der Testaufbau nicht! ### -->
 ## Regelalgorithmen testen: ##
-
 ### RC-Glied direkt an gepufferten DAC ###
-
 ### Testsignale im uC erzeugen ###
-
 ### Oszibilder mit MATLAB-Simulation vergl. ###
-
 # Regelungstechnik
 (...)
 
@@ -787,7 +786,27 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 # Resümee #
 
 # Quellenangaben #
+[@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
 
+[@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
+
+[@Iser:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
+
+[@Jx]: #citeInertialmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
+
+[@Impulserhaltung]: #citeImpulserhaltung "Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat."
+
+[@STM32F429i]: #citeSTM32F429i "High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"
+
+[@Borm:2016]: #citeBorm "WHZ - ELT130 Digitale Signalprozessoren I - Vorlesung Version 6.0.pdf"
+
+[@Borm2:2016]: #citeBorm2 "WHZ - ELT230 Digitale Signalprozessoren II - Vorlesung Version 4.0.pdf"
+
+[@SOP]: #citeBorm2 "What are typical DSP algorithms? An equation, called “Sum of Products” (SOP) is the __key element__ in most DSP algorithms"
+
+[@SoC]: #citeSoC "Ein System-on-Chip (SoC) ist ein komplettes System auf einem Chip, das verschiedenste Schaltungsteile integriert hat. Ein System-on-Chip ist die Integration von Zentraleinheiten, weiteren Prozessoren, Controllern, Speicherbausteinen, Random Access Memories (RAM) und Read Only Memories (ROM), Power-Management und anderen Komponenten auf einem einzelnen Die-Chip. Die einzelnen Komponenten eines System-on-Chip werden über den internen Bus oder in Punkt-zu-Punkt-Verbindung miteinander verbunden, wobei Bus-Architekturen nur eine gewisse Anzahl an Kommunikationspartnern effizient miteinander verbinden können."
+
+---
 [^fnWikiAnsys]: __*ANSYS*__ ["*(Kurzform für **AN**alysis **SYS**tem) ist eine Finite-Elemente-Software der Firma Ansys Inc., ehemals SASI (Swanson Analysis Systems Inc.).*"][wikiAnsys]
 
 [^fnMaxwell]: *ANSYS* __*Maxwell*__ ["*is the premier low frequency electromagnetic field simulation software for engineers tasked with designing and analyzing 2-D and 3-D electromagnetic devices.*"][AnsMaxwell]
@@ -854,43 +873,22 @@ Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematisch
 
 [^fnStMultiOs]: __STMicroelectronics - About SW4STM32__ http://www.st.com/en/development-tools/sw4stm32.html
 
-[@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
-
-[@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
-
-[@Iser:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
-
-[@Jx]: #citeInertialmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
-
-[@Impulserhaltung]: #citeImpulserhaltung "Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat."
-
-[@STM32F429i]: #citeSTM32F429i "High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"
-
-[@Borm:2016]: #citeBorm "WHZ - ELT130 Digitale Signalprozessoren I - Vorlesung Version 6.0.pdf"
-
-[@Borm2:2016]: #citeBorm2 "WHZ - ELT230 Digitale Signalprozessoren II - Vorlesung Version 4.0.pdf"
-
-[@SOP]: #citeBorm2 "What are typical DSP algorithms? An equation, called “Sum of Products” (SOP) is the __key element__ in most DSP algorithms"
-
-[@SoC]: #citeSoC "Ein System-on-Chip (SoC) ist ein komplettes System auf einem Chip, das verschiedenste Schaltungsteile integriert hat. Ein System-on-Chip ist die Integration von Zentraleinheiten, weiteren Prozessoren, Controllern, Speicherbausteinen, Random Access Memories (RAM) und Read Only Memories (ROM), Power-Management und anderen Komponenten auf einem einzelnen Die-Chip. Die einzelnen Komponenten eines System-on-Chip werden über den internen Bus oder in Punkt-zu-Punkt-Verbindung miteinander verbunden, wobei Bus-Architekturen nur eine gewisse Anzahl an Kommunikationspartnern effizient miteinander verbinden können."
 
 
-<a name="citeMDA"/> </a>
+<a name="citeMDA"> </a>
 __[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
 
-<a name="citeProbst"/> </a>
+<a name="citeProbst"> </a>
 __[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;*__
 
-<a name="citeIserm"/> </a>
+<a name="citeIserm"> </a>
 __[Iser:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
 
-<a name="citeSTM32F429i"/> </a>
+<a name="citeSTM32F429i"> </a>
 __[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?querycriteria=productId=SS1577
 
-<a name="citeSoC"/> 
+<a name="citeSoC"> </a>
 __SoC__ _System-on-Chip_ http://www.itwissen.info/definition/lexikon/System-on-Chip-SoC-system-on-chip.html
-
----
 
 [AnfragePdf]: ./Projektanfrage_Galvanometer-Scanner_Prof_Brunner.pdf "Dokument mit Projektanfrage" 
 [AnsMaxwell]: http://www.ansys.com/Products/Electronics/ANSYS-Maxwell "Products/Electronics: "Maxwell""
@@ -991,7 +989,7 @@ Durch die zeitliche Ableitung $\dot{\vec{L}}$ erhält man den Drehmomentvektor $
 \dot{\vec{L}} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) + \vec{r} \times \left( m \cdot \dot{\vec{v}} \right) \nonumber
 \end{align}
 
-<!-- > Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum]  -->
+> Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum] 
 
 ---
 __Parameterableitung eines Vektors mit konstanter Länge__ 
@@ -1018,9 +1016,9 @@ Der Drehimpulsvektor $\vec{L}$ eines starren Körpers wird definirt als Kreuzpro
 Auch in der technischen Mechanik stützen sich viele mathematische Ansätze der Dynamik auf Bilanzgleichungen diverser physikalischer Größen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. In diesem Fall bestimmt die _Anfangsbedingung_ das Energieniveau des Systems. 
 <p style="margin-top: 2em; background-color: yellow; padding: 1em"> Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende, aber auch vollkommen unspezifische Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. </p><p style="text-align: right; margin-top: -1em; margin-bottom: 2.5em"> vergl. [[Iser:2008, 61]][@Iser:2008]</p>
 
-<!-- M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
-M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque} -->
-<!-- $$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$ --> 
+M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
+M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
+$$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$ 
 
 $\pm 20°\,s^{-1}$
 $\pm 20\si{°/s}$

@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"paddi",
+				"padding-left"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"camb",
+				"camb_6860_large_mirrors_sml.png\tFile"
+			],
+			[
 				"chap",
 				"chapDirName"
 			],
@@ -364,45 +376,55 @@
 	"buffers":
 	[
 		{
-			"file": "merged.mmd",
+			"file": "chapters/02_Vorwort.mmd",
 			"settings":
 			{
-				"buffer_size": 94825,
+				"buffer_size": 1150,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/21_Important_Notes.mmd",
+			"file": "chapters/03_Einleitung.mmd",
 			"settings":
 			{
-				"buffer_size": 243,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/chapterMerge.py",
-			"settings":
-			{
-				"buffer_size": 7931,
+				"buffer_size": 1319,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/22_Trash.mmd",
+			"file": "chapters/04_Vorarbeit.mmd",
 			"settings":
 			{
-				"buffer_size": 6716,
+				"buffer_size": 4433,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/MarkdownTOC.sublime-settings",
+			"file": "chapters/05_Projektziel.mmd",
 			"settings":
 			{
-				"buffer_size": 351,
+				"buffer_size": 1691,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/20_Trash.mmd",
+			"settings":
+			{
+				"buffer_size": 6689,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/18_Quellenangaben.mmd",
+			"settings":
+			{
+				"buffer_size": 11945,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -411,7 +433,7 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 			"settings":
 			{
-				"buffer_size": 27023,
+				"buffer_size": 27199,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -433,10 +455,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 132.0,
-		"last_filter": "",
+		"height": 392.0,
+		"last_filter": "lore",
 		"selected_items":
 		[
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
 			[
 				"markdown",
 				"Set Syntax: Markdown"
@@ -456,10 +482,6 @@
 			[
 				"trimm",
 				"Trimmer: Trim trailing whitespace."
-			],
-			[
-				"lore",
-				"Add some Lorem Gibson"
 			],
 			[
 				"colo",
@@ -783,14 +805,17 @@
 	],
 	"file_history":
 	[
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/12_Software_und_Simulation.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/chapterMerge.py",
+		"/media/data/whz/projectGalvoDocu/chapters/22_Trash.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownTOC.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/merge.py",
 		"/media/data/whz/projectGalvoDocu/merge.py",
 		"/home/mainster/.config/sublime-text-3/Packages/MarkdownEditing/README.md",
 		"/home/mainster/.config/sublime-text-3/Packages/MarkdownTOC/MarkdownTOC.sublime-settings",
 		"/home/mainster/compiledStuff/tocbot/README.md",
-		"/media/data/whz/projectGalvoDocu/chapters/12_Software_und_Simulation.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.mmd",
-		"/media/data/whz/projectGalvoDocu/merged.mmd",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 		"/media/data/whz/projectGalvoDocu/chapters/11_Plattform.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/08_Modellbildungsprozess.mmd",
@@ -907,10 +932,7 @@
 		"/etc/exportsHome",
 		"/home/mainster/CODES_local/sw4stm32_workbench/stm32fxxx_hal_libraries_mj/01-STM32Fxxx_Keil_CMSIS_Default_Project/TM/readme.txt",
 		"/media/data/vems_mitch_944_brain/firmware/helpers.h",
-		"/media/data/vems_mitch_944_brain/firmware/sys/airdenfactor.h",
-		"/media/data/vems_mitch_944_brain/firmware/sys/barofac4115.h",
-		"/media/data/vems_mitch_944_brain/firmware/sys/barofac4250.h",
-		"/media/data/vems_mitch_944_brain/firmware/sys/matfactor.h"
+		"/media/data/vems_mitch_944_brain/firmware/sys/airdenfactor.h"
 	],
 	"find":
 	{
@@ -928,6 +950,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"hei",
 			"refFilePatt",
 			"#",
 			"yellowBg",
@@ -1049,106 +1072,16 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "merged.mmd",
+					"file": "chapters/02_Vorwort.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 94825,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1709,
-								1709
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"parser": "markdown",
-							"syntax": "Packages/Markdown/Markdown.sublime-syntax",
-							"target": "browser"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3455.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "chapters/21_Important_Notes.mmd",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 243,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								243,
-								243
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/chapterMerge.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7931,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1802,
-								1802
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "chapters/22_Trash.mmd",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6716,
+						"buffer_size": 1150,
 						"regions":
 						{
 						},
@@ -1162,7 +1095,9 @@
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+							"parser": "markdown",
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"target": "browser"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1172,32 +1107,126 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/MarkdownTOC.sublime-settings",
+					"buffer": 1,
+					"file": "chapters/03_Einleitung.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 351,
+						"buffer_size": 1319,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								148,
-								148
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"auto_complete": false,
+							"parser": "markdown",
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"target": "browser"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chapters/04_Vorarbeit.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4433,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2250,
+								2250
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"parser": "markdown",
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"target": "browser"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "chapters/05_Projektziel.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1691,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1565,
+								1565
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"parser": "markdown",
+							"spell_check": true,
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"target": "browser"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "chapters/20_Trash.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6588,
+								6588
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1454.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1208,35 +1237,67 @@
 			[
 				{
 					"buffer": 5,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+					"file": "chapters/18_Quellenangaben.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 27023,
+						"buffer_size": 11945,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8563,
-								8563
+								2224,
+								2224
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"auto_complete": false,
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1134.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 6,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 27199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17272,
+								17272
+							]
+						],
+						"settings":
+						{
+							"parser": "markdown",
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"target": "browser",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 					"semi_transient": false,
 					"settings":
@@ -1263,7 +1324,7 @@
 						"translation.y": 3696.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
