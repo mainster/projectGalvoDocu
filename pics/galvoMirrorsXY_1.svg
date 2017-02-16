@@ -10,8 +10,8 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="171.56068"
-   height="80.641846"
+   width="245.88107mm"
+   height="112.13115mm"
    id="svg2"
    version="1.1"
    inkscape:version="0.92.0 unknown"
@@ -1180,11 +1180,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="11.209601"
-     inkscape:cx="52.697784"
-     inkscape:cy="30.774922"
+     inkscape:zoom="0.24769953"
+     inkscape:cx="2223.5981"
+     inkscape:cy="102.44095"
      inkscape:document-units="px"
-     inkscape:current-layer="layer8"
+     inkscape:current-layer="layer7"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1029"
@@ -1202,7 +1202,8 @@
      fit-margin-top="0"
      fit-margin-left="0"
      fit-margin-right="0"
-     fit-margin-bottom="0" />
+     fit-margin-bottom="0"
+     units="mm" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -1211,7 +1212,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -1220,133 +1221,31 @@
      id="layer6"
      inkscape:label="maxwell"
      style="display:inline"
-     transform="translate(-334.24196,-447.3883)" />
+     transform="translate(41.999484,-275.8079)" />
   <g
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="imp2"
      style="display:inline"
-     transform="translate(-334.24196,-447.3883)" />
+     transform="translate(41.999484,-275.8079)" />
   <g
      inkscape:groupmode="layer"
      id="layer2"
      inkscape:label="import"
      style="display:inline;opacity:0.49308759"
-     transform="translate(-334.24196,-447.3883)" />
+     transform="translate(41.999484,-275.8079)" />
   <g
      inkscape:label="galvocase"
      inkscape:groupmode="layer"
      id="layer1"
      style="display:inline"
-     transform="translate(-334.24196,-447.3883)" />
+     transform="translate(41.999484,-275.8079)" />
   <g
      inkscape:groupmode="layer"
      id="layer3"
      inkscape:label="nextTry"
      style="display:inline;opacity:0.95670998"
-     transform="translate(-334.24196,-447.3883)">
-    <g
-       transform="matrix(0.71355971,-0.18940314,0.5952485,0.64301704,-238.24368,375.72671)"
-       style="display:inline;opacity:0.81999966"
-       id="g4040-5"
-       inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
-      <rect
-         style="fill:#454545;fill-opacity:1;stroke:#000000;stroke-width:0.0192;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect3974-19"
-         width="64.380951"
-         height="35.428574"
-         x="622.9707"
-         y="367.5177"
-         rx="1.0666667"
-         ry="1.0666667" />
-      <path
-         inkscape:connector-curvature="0"
-         id="path4035-71"
-         d="m 598.36532,385.30014 c 43.52103,-0.25983 78.309,-1.03041 121.82997,-1.29013"
-         style="display:inline;opacity:0.81999966;fill:none;stroke:#000000;stroke-width:0.48143801;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.92575198, 0.48143799;stroke-dashoffset:0;stroke-opacity:1"
-         sodipodi:nodetypes="cc" />
-      <rect
-         ry="1.0666667"
-         rx="1.0666667"
-         y="366.80618"
-         x="623.87231"
-         height="35.428574"
-         width="64.380951"
-         id="rect3976-3"
-         style="fill:#bababa;fill-opacity:1;stroke:#000000;stroke-width:0.10013315;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-    </g>
-    <g
-       id="g4223"
-       transform="matrix(0.99972381,0.02209073,-0.02350113,0.93972608,12.189713,14.546054)"
-       style="opacity:0.81922081"
-       inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90">
-      <rect
-         style="fill:#5e5e5e;fill-opacity:0.92788463;stroke:#000000;stroke-width:0.10450689;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
-         id="rect4300"
-         width="53.369251"
-         height="26.838188"
-         x="-170.52007"
-         y="-560.98462"
-         rx="1.1122711"
-         ry="0.92815542"
-         transform="matrix(-0.99329967,-0.11556715,-0.57499511,-0.81815684,0,0)" />
-      <path
-         style="display:inline;opacity:0.73819742;fill:none;stroke:#000000;stroke-width:0.32719857;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.98159571, 0.32719857;stroke-dashoffset:0;stroke-opacity:1"
-         d="m 402.66639,461.94127 92.94659,7.56906"
-         id="path4237"
-         inkscape:connector-curvature="0" />
-      <rect
-         transform="matrix(-0.99329967,-0.11556715,-0.57499511,-0.81815684,0,0)"
-         ry="0.92815542"
-         rx="1.1122711"
-         y="-561.82422"
-         x="-169.57745"
-         height="26.838188"
-         width="53.369251"
-         id="rect4191"
-         style="fill:#bababa;fill-opacity:1;stroke:#000000;stroke-width:0.10443529;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 476.77749,455.37818 c -0.7219,1.92192 -0.7219,1.92192 -0.7219,1.92192"
-         id="path4257"
-         inkscape:connector-curvature="0" />
-      <path
-         style="fill:none;stroke:#000000;stroke-width:0.09021567;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         d="m 423.48075,451.45381 0.4897,-0.63325"
-         id="path4302"
-         inkscape:connector-curvature="0" />
-    </g>
-    <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 458.39648,461.80338 -1.63493,0.53319 -94.98476,32.00931"
-       id="path4227"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 334.94825,475.43345 120.69498,-13.72239 3.1367,37.35923 2.09432,-37.21762 -72.26894,51.40563"
-       id="path4354"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccccc"
-       inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       style="fill:none;stroke:#fd0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 361.77679,461.52134 96.61969,0.28203 -96.61969,65.36704"
-       id="path4356"
-       inkscape:connector-curvature="0"
-       sodipodi:nodetypes="ccc"
-       inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
+     transform="translate(41.999484,-275.8079)">
     <g
        style="display:inline"
        id="g4358"
@@ -1358,101 +1257,211 @@
          id="g13223"
          transform="translate(83.754275,-26.173212)" />
     </g>
-    <path
-       style="fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       d="m 458.39644,461.80339 0.38349,37.2669"
-       id="path8949"
-       inkscape:connector-curvature="0"
-       inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:type="arc"
-       style="opacity:0.59227468;fill:none;stroke:#000000;stroke-width:0.64242023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
-       id="path8951"
-       sodipodi:cx="372.26819"
-       sodipodi:cy="504.4537"
-       sodipodi:rx="3.9318306"
-       sodipodi:ry="7.4546428"
-       d="m 368.55168,502.02059 a 3.9318306,7.4546428 0 0 1 4.0967,-4.9866 3.9318306,7.4546428 0 0 1 3.51383,6.38841 3.9318306,7.4546428 0 0 1 -2.45601,7.96948 3.9318306,7.4546428 0 0 1 -4.6606,-2.6673"
-       sodipodi:start="3.474073"
-       sodipodi:end="2.5315352"
-       transform="matrix(1,0,0.23738485,0.97141568,0,0)"
-       sodipodi:open="true"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <path
-       sodipodi:type="arc"
-       style="display:inline;opacity:0.59227468;fill:none;stroke:#000000;stroke-width:0.64242023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
-       id="path8951-5"
-       sodipodi:cx="-308.17371"
-       sodipodi:cy="-475.69528"
-       sodipodi:rx="3.9318306"
-       sodipodi:ry="7.4546432"
-       d="m -311.89021,-478.12839 a 3.9318306,7.4546432 0 0 1 4.09669,-4.9866 3.9318306,7.4546432 0 0 1 3.51384,6.38841 3.9318306,7.4546432 0 0 1 -2.45602,7.96947 3.9318306,7.4546432 0 0 1 -4.66059,-2.6673"
-       sodipodi:start="3.474073"
-       sodipodi:end="2.5315352"
-       transform="matrix(-0.99999673,0.00255559,-0.23986662,-0.97080585,0,0)"
-       sodipodi:open="true"
-       inkscape:export-xdpi="90"
-       inkscape:export-ydpi="90" />
-    <g
-       style="display:inline;opacity:0.95670998"
-       id="g1034">
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="path13219"
-         d="m 595.58809,415.22628 -11.73196,-4.31987 12.42102,-0.99539 -0.89332,2.72372 z"
-         style="display:inline;opacity:0.95670998;fill:#ff0045;fill-opacity:1;stroke:#ff0000;stroke-width:0.52346426;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-         transform="matrix(0.40754136,0,0,0.40754136,263.16301,338.00655)" />
-      <path
-         inkscape:export-ydpi="90"
-         inkscape:export-xdpi="90"
-         inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
-         sodipodi:nodetypes="ccc"
-         inkscape:connector-curvature="0"
-         id="path4365-6"
-         d="m 458.77993,499.07029 47.00828,7.08242 5.17695,0.77998"
-         style="fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:none" />
-    </g>
   </g>
   <g
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="axes"
      style="display:inline"
-     transform="translate(-16.120064,-0.0253135)">
+     transform="translate(360.12138,171.55509)">
     <g
        inkscape:groupmode="layer"
        id="layer8"
        inkscape:label="xax"
        transform="matrix(0.40754136,0,0,0.40754136,-38.78211,-114.06356)"
-       style="display:inline">
-      <path
-         transform="translate(83.754275,-26.173221)"
-         inkscape:connector-curvature="0"
-         id="path4714"
-         d="m 52.694357,374.93296 131.660413,92.8123"
-         style="display:inline;opacity:0.95670998;fill:none;stroke:#000000;stroke-width:1.49333334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)" />
-    </g>
+       style="display:inline" />
     <g
        inkscape:groupmode="layer"
        id="layer7"
        inkscape:label="yax"
        transform="translate(-318.1219,-447.36299)"
        style="display:inline">
-      <path
-         transform="matrix(0.40754136,0,0,0.40754136,313.47312,322.63276)"
-         style="display:inline;opacity:0.95670998;fill:none;stroke:#000000;stroke-width:1.49333334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-5)"
-         d="M 118.52457,340.79628 V 501.88194"
-         id="path4022"
-         inkscape:connector-curvature="0" />
-      <path
-         style="display:inline;opacity:0.95670998;fill:none;stroke:#000000;stroke-width:0.60859507;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-5-3)"
-         d="M 361.77679,527.17041 V 461.52134"
-         id="path4022-7"
-         inkscape:connector-curvature="0" />
+      <g
+         id="g5578"
+         transform="matrix(5.2553701,0,0,5.2553701,-1798.5647,-2075.3832)">
+        <g
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+           id="g4040-5"
+           style="display:inline;opacity:0.81999966"
+           transform="matrix(0.71355971,-0.18940314,0.5952485,0.64301704,-238.24368,375.72671)">
+          <rect
+             ry="1.0666667"
+             rx="1.0666667"
+             y="367.5177"
+             x="622.9707"
+             height="35.428574"
+             width="64.380951"
+             id="rect3974-19"
+             style="fill:#454545;fill-opacity:1;stroke:#000000;stroke-width:0.0192;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <path
+             sodipodi:nodetypes="cc"
+             style="display:inline;opacity:0.81999966;fill:none;stroke:#000000;stroke-width:0.48143801;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.92575198, 0.48143799;stroke-dashoffset:0;stroke-opacity:1"
+             d="m 598.36532,385.30014 c 43.52103,-0.25983 78.309,-1.03041 121.82997,-1.29013"
+             id="path4035-71"
+             inkscape:connector-curvature="0" />
+          <rect
+             style="fill:#bababa;fill-opacity:1;stroke:#000000;stroke-width:0.10013315;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect3976-3"
+             width="64.380951"
+             height="35.428574"
+             x="623.87231"
+             y="366.80618"
+             rx="1.0666667"
+             ry="1.0666667" />
+        </g>
+        <g
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+           style="display:inline;opacity:0.81922081"
+           transform="matrix(0.99972381,0.02209073,-0.02350113,0.93972608,12.189714,14.546054)"
+           id="g4223">
+          <rect
+             transform="matrix(-0.99329967,-0.11556715,-0.57499511,-0.81815684,0,0)"
+             ry="0.92815542"
+             rx="1.1122711"
+             y="-560.98462"
+             x="-170.52007"
+             height="26.838188"
+             width="53.369251"
+             id="rect4300"
+             style="fill:#5e5e5e;fill-opacity:0.92788463;stroke:#000000;stroke-width:0.10450689;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4237"
+             d="m 402.66639,461.94127 92.94659,7.56906"
+             style="display:inline;opacity:0.73819742;fill:none;stroke:#000000;stroke-width:0.32719857;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.98159571, 0.32719857;stroke-dashoffset:0;stroke-opacity:1" />
+          <rect
+             style="fill:#bababa;fill-opacity:1;stroke:#000000;stroke-width:0.10443529;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+             id="rect4191"
+             width="53.369251"
+             height="26.838188"
+             x="-169.57745"
+             y="-561.82422"
+             rx="1.1122711"
+             ry="0.92815542"
+             transform="matrix(-0.99329967,-0.11556715,-0.57499511,-0.81815684,0,0)" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4257"
+             d="m 476.77749,455.37818 c -0.7219,1.92192 -0.7219,1.92192 -0.7219,1.92192"
+             style="fill:none;stroke:#000000;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+          <path
+             inkscape:connector-curvature="0"
+             id="path4302"
+             d="m 423.48075,451.45381 0.4897,-0.63325"
+             style="fill:none;stroke:#000000;stroke-width:0.09021567;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+        </g>
+        <path
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+           sodipodi:nodetypes="ccc"
+           inkscape:connector-curvature="0"
+           id="path4227"
+           d="m 458.39648,461.80338 -1.63493,0.53319 -94.98476,32.00931"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="translate(4e-6,3.5e-6)" />
+        <path
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+           sodipodi:nodetypes="ccccc"
+           inkscape:connector-curvature="0"
+           id="path4354"
+           d="m 334.94825,475.43345 120.69498,-13.72239 3.1367,37.35923 2.09432,-37.21762 -72.26894,51.40563"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="translate(4e-6,3.5e-6)" />
+        <path
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+           sodipodi:nodetypes="ccc"
+           inkscape:connector-curvature="0"
+           id="path4356"
+           d="m 361.77679,461.52134 96.61969,0.28203 -96.61969,65.36704"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#fd0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="translate(4e-6,3.5e-6)" />
+        <path
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+           inkscape:connector-curvature="0"
+           id="path8949"
+           d="m 458.39644,461.80339 0.38349,37.2669"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+           transform="translate(4e-6,3.5e-6)" />
+        <path
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           sodipodi:open="true"
+           transform="matrix(1,0,0.23738485,0.97141568,4e-6,3.5e-6)"
+           sodipodi:end="2.5315352"
+           sodipodi:start="3.474073"
+           d="m 368.55168,502.02059 a 3.9318306,7.4546428 0 0 1 4.0967,-4.9866 3.9318306,7.4546428 0 0 1 3.51383,6.38841 3.9318306,7.4546428 0 0 1 -2.45601,7.96948 3.9318306,7.4546428 0 0 1 -4.6606,-2.6673"
+           sodipodi:ry="7.4546428"
+           sodipodi:rx="3.9318306"
+           sodipodi:cy="504.4537"
+           sodipodi:cx="372.26819"
+           id="path8951"
+           style="display:inline;opacity:0.59227468;fill:none;stroke:#000000;stroke-width:0.64242023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
+           sodipodi:type="arc" />
+        <path
+           inkscape:export-ydpi="90"
+           inkscape:export-xdpi="90"
+           sodipodi:open="true"
+           transform="matrix(-0.99999673,0.00255559,-0.23986662,-0.97080585,4e-6,3.5e-6)"
+           sodipodi:end="2.5315352"
+           sodipodi:start="3.474073"
+           d="m -311.89021,-478.12839 a 3.9318306,7.4546432 0 0 1 4.09669,-4.9866 3.9318306,7.4546432 0 0 1 3.51384,6.38841 3.9318306,7.4546432 0 0 1 -2.45602,7.96947 3.9318306,7.4546432 0 0 1 -4.66059,-2.6673"
+           sodipodi:ry="7.4546432"
+           sodipodi:rx="3.9318306"
+           sodipodi:cy="-475.69528"
+           sodipodi:cx="-308.17371"
+           id="path8951-5"
+           style="display:inline;opacity:0.59227468;fill:none;stroke:#000000;stroke-width:0.64242023;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker-start:url(#Arrow2Mstart)"
+           sodipodi:type="arc" />
+        <g
+           id="g1034"
+           style="display:inline;opacity:0.95670998"
+           transform="translate(4e-6,3.5e-6)">
+          <path
+             transform="matrix(0.40754136,0,0,0.40754136,263.16301,338.00655)"
+             style="display:inline;opacity:0.95670998;fill:#ff0045;fill-opacity:1;stroke:#ff0000;stroke-width:0.52346426;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+             d="m 595.58809,415.22628 -11.73196,-4.31987 12.42102,-0.99539 -0.89332,2.72372 z"
+             id="path13219"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="ccccc" />
+          <path
+             style="fill:none;stroke:#ff0000;stroke-width:0.21333334;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:none;marker-mid:none;marker-end:none"
+             d="m 458.77993,499.07029 47.00828,7.08242 5.17695,0.77998"
+             id="path4365-6"
+             inkscape:connector-curvature="0"
+             sodipodi:nodetypes="ccc"
+             inkscape:export-filename="/media/data/hs-zwickau/nacharbeit_anrechn/path8951-8.png"
+             inkscape:export-xdpi="90"
+             inkscape:export-ydpi="90" />
+        </g>
+        <path
+           transform="matrix(0.40754136,0,0,0.40754136,313.47312,322.63276)"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#000000;stroke-width:1.49333334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
+           d="m 52.694357,374.93296 131.660413,92.8123"
+           id="path4714"
+           inkscape:connector-curvature="0" />
+        <path
+           transform="matrix(0.40754136,0,0,0.40754136,313.47312,322.63276)"
+           inkscape:connector-curvature="0"
+           id="path4022"
+           d="M 118.52457,340.79628 V 501.88194"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#000000;stroke-width:1.49333334;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-5)" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path4022-7"
+           d="M 361.77679,527.17041 V 461.52134"
+           style="display:inline;opacity:0.95670998;fill:none;stroke:#000000;stroke-width:0.60859507;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#Arrow2Mstart-5-3)" />
+      </g>
     </g>
   </g>
   <g
@@ -1460,5 +1469,5 @@
      id="layer5"
      inkscape:label="last"
      style="display:inline"
-     transform="translate(-334.24196,-447.3883)" />
+     transform="translate(41.999484,-275.8079)" />
 </svg>
