@@ -1,11 +1,50 @@
-# Projektziel #
-<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies <yelBg>(Modell 6860???)</yelBg>. Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_). 
+# Projektziel und Anforderungskatalog #
+<h4 class="specs"><span>Stand der Technik</span></h4>
+Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, _quasi-kontinuierliche_ Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.
 
-1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen. 
+<h4 class="specs"><span>Systemzweck</span></h4>
+Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die __Modellbildung__ und __Simulation__ des Gesamtsystems soll als __Schwerpunktthema__ betrachtet und entsprechend ausgearbeitet werden.
 
-2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden. 
+<h4 class="specs"><span>Systemfunktionen im Detail</span></h4>
+Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als __physisches System__ bezeichnet während im Abschnitt __Simulationsumgebung__ das Computermodell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.
 
-3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, y-Pos, Laser-Blanking] im Speicher des STM32F4 abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können. 
+<specs>Physisches System</specs>
+Die [___"Moving-magnet"___](#klassifizierung) Galvanometer der Firma Cambridge bilden das Herzstück des Laserscanner-Aufbaus.   
+
+<specs>Simulationsumgebung</specs>
+Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. <center><boxed>Die Forderung nach Zeitinvarianz impliziert jedoch immer auch __Rückwirkungsfreiheit__ unter den Teilsystemen.</boxed></center> 
+Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskrete r Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
+Aus dem Modellzweck oder Kontext, wird die notwendige _Modellgranularität_ (siehe Abschnitt [Modell](#modell)) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.   
+
+<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
+
+Design
+Systemeinsatz
+<h4 class="specs"><span>Allgemeine Anforderungen</span></h4>
+Safety!
+
+Quality --> testbild resol
+
+- safe state guard
+- exceptions
+
+<h4 class="specs"><span>Systemanforderungen</span></h4>
+
+<par align="right"><img src="./pics/camb_6860_large_mirrors_sml.png" title="Cambridge Technologies Galvanometer Modell 6860" align="right" height="310px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
+
+<div class="spaced" markdown=1>
+
+0. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_).
+1. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller implementiert werden.
+2. Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.
+3. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.
+4. Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.
+5. Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.
+6. Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.
+
+</div>
+
+</par>
 
 Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
 

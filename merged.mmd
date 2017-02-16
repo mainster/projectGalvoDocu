@@ -52,7 +52,7 @@ Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca
 * Regelungstechnik
 * Diskretisierung von Systemen
 
-Einige konkreFür die Umsetzung eines  __Systemplanung__ wie auch für die spätere Umsetzung als grundlegend und unerlässlich angesehen wird. Einige öffentliche Vorträge zum Thema "System Konzeption und Beschreibung in der Praxis" wurden am Karlsruher Institut für Technologie (KIT, Universität Karlsruhe) besucht. Dadurch konnten ergänzende Inhalte zum HsKA-Modul "Embedded Systems" erarbeitet und teils auch bei der konkreten Teilsystem-Auslegung umgesetzt werden. 
+Einige konkreFür die Umsetzung eines __Systemplanung__ wie auch für die spätere Umsetzung als grundlegend und unerlässlich angesehen wird. Einige öffentliche Vorträge zum Thema "System Konzeption und Beschreibung in der Praxis" wurden am Karlsruher Institut für Technologie (KIT, Universität Karlsruhe) besucht. Dadurch konnten ergänzende Inhalte zum HsKA-Modul "Embedded Systems" erarbeitet und teils auch bei der konkreten Teilsystem-Auslegung umgesetzt werden. 
 
 # Vorarbeit #
 Es folgen einige Worte zur Frage "Wie kam es zu dem Projekt?" und "Was wurde letztendlich Umgesetzt?". Das ursprüngliche Projektvorhaben wurde nur teilweise umgesetzt, soll aber hier der Vollständigkeit halber erwähnt werden. 
@@ -87,18 +87,51 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 
 Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
 
-# Projektziel #
-<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_).
+# Projektziel und Anforderungskatalog #
+<h4 class="specs"><span>Stand der Technik</span></h4>
+Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, _quasi-kontinuierliche_ Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.
 
-<par><img src="./pics/camb_6860_large_mirrors_sml.png" title="Cambridge Technologies Galvanometer Modell 6860" align="right" height="290px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
+<h4 class="specs"><span>Systemzweck</span></h4>
+Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die __Modellbildung__ und __Simulation__ des Gesamtsystems soll als __Schwerpunktthema__ betrachtet und entsprechend ausgearbeitet werden.
 
-1. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.
-2. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation (MATLAB/Simulink/LTSpice) auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden.
-3. Die Sollwerte der Pixel-Koordinaten werden als 3-Wertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher eines 32-Bit ARM Controllers (Cortex-Familie) abgelegt und sollen über eine PC-Schnittstelle aktualisiert werden können.
-4. Das System soll auf ein Computermodell abgebildet werden, so dass
-    - unterschiedliche Regelalgorithmen getestet werden können.
-    - Hardware-Anpassungen der Signalkonditionierung (Antialiasing/Rekonstruktionsfilter) mit minimalem Aufwand simuliert werden können.
-5. Die Prototyp-Hardware soll bereits in der Lage sein, alle notwendigen Zustandsgrößen zu messen um einen Modell-getriebenen Regler-Ansatz im Zustandsraum evaluieren zu können.
+<h4 class="specs"><span>Systemfunktionen im Detail</span></h4>
+Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als __physisches System__ bezeichnet während im Abschnitt __Simulationsumgebung__ das Computermodell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.
+
+<specs>Physisches System</specs>
+Die [___"Moving-magnet"___](#klassifizierung) Galvanometer der Firma Cambridge bilden das Herzstück des Laserscanner-Aufbaus.   
+
+<specs>Simulationsumgebung</specs>
+Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. <center><boxed>Die Forderung nach Zeitinvarianz impliziert jedoch immer auch __Rückwirkungsfreiheit__ unter den Teilsystemen.</boxed></center> 
+Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskrete r Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
+Aus dem Modellzweck oder Kontext, wird die notwendige _Modellgranularität_ (siehe Abschnitt [Modell](#modell)) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.   
+
+<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
+
+Design
+Systemeinsatz
+<h4 class="specs"><span>Allgemeine Anforderungen</span></h4>
+Safety!
+
+Quality --> testbild resol
+
+- safe state guard
+- exceptions
+
+<h4 class="specs"><span>Systemanforderungen</span></h4>
+
+<par align="right"><img src="./pics/camb_6860_large_mirrors_sml.png" title="Cambridge Technologies Galvanometer Modell 6860" align="right" height="310px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
+
+<div class="spaced" markdown=1>
+
+0. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_).
+1. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller implementiert werden.
+2. Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.
+3. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.
+4. Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.
+5. Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.
+6. Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.
+
+</div>
 
 </par>
 
@@ -333,7 +366,7 @@ Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigt
 ### Klassifizierung ###
 Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $\si{N.m/s}$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
 
-Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten _"Moving Magnet Galvanometer"_ auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
+Bei der Modellierung von DC-Motoren wird der Zusammenhang zwischen Motorstrom und Drehmoment oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die Drehmomentkonstante, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten ___"Moving-magnet"__ Galvanometer auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
 
 Der Vollständigkeit halber sollen an dieser Stelle einige Parallelen zur Unterklasse der _elektronisch kommutierten_ Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff _"Brushless <a style="color: #aaa ">DC-</a>Motor"_ bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.
 
@@ -554,9 +587,7 @@ Zahlreiche [DIY-Projekte][diyList] steigerten kontinuierlich das Interesse in vi
 
 Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte jede Menge "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Coprozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden. Außerdem konnten und mussten Methoden getestet und Angewandt werden, um einen gewissen Grad an Plattformunabhängigkeit zu erlangen. Das Sponsoring der KEIL uVison4 Lizenzen musste in jeder Saison erneuert werden und konnte nie als gegeben betrachtet werden. Die vollständigen, GCC-kompatiblen HSK-Bibliotheken (M.Sc. D. Fandrey), sind auf [sourceforge.net](https://sourceforge.net/projects/hsk/files/stats/timeline?dates=2010-02-02+to+2017-02-08) veröffentlicht.      
 
-<div class="boxed">
-Das oberste Gebot bei der Wahl der Hardware-Plattform, war also die Unabhängigkeit ihrer Software-Plattform.
-</div>
+<boxed>Das oberste Gebot bei der Wahl der Hardware-Plattform, war also die Unabhängigkeit ihrer Software-Plattform.</boxed>
 
 ### Warum ARM? ###
 Durch die entsprechende Routing-Karte konnte auf der vorhandenen Evaluierungshardware von Atmel auch Controller mit AVR32-Architektur betrieben werden. Das schwerwiegende Kontra-Argument, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__, soll hier als Grund genannt werden der zum Ausschluss von AVR32 führte.
