@@ -9,17 +9,41 @@ Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY
 <h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
 Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als __physisches System__ bezeichnet während im Abschnitt __Simulationsumgebung__ das Computermodell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.
 
-<sp><span>Physisches System:</span></sp><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Die beiden [_"Moving-magnet"_](#klassifizierung) Galvanometer der Firma Cambridge Technologies, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls auf zwei Koordinaten-Punkte einer ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. Aus zwei aufeinander folgenden XY-Tupel lässt sich somit eine Geradengleichung ableiten. Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
+```bash
+sudo pip install numpy svgwrite svgpathtools
+```
+
+
+<h4 class="sp"><span>Physisches System</span></h4><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Die beiden <lkey>[Moving-magnet Galvanometer](#klassifizierung)</lkey> der Firma Cambridge Technologies, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls auf zwei Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt 
+
+<lmjx>$ \eq{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} } $</lmjx>
+
+Um einen Vektor $\vec x$ der Länge $\left| \vec x\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec x$ entlang einer Geraden $\,g\,$ durch  
+
+<lmjx>$ g:\;\;\;\vec{x}=\vec p + \lambda\cdot\vec v\; $</lmjx>
+
+beschrieben. Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade eindeutig bezüglich eines Koordinatenursprungs ab.  
+
+ auch als   = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} $</lmjx>
+
+wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
+Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um 
+
+Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
 
 $$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvektor der Geraden erhält man, je nachdem ob $a$ oder $b$ ungleich null ist, durch Wahl von
 <center>$ {\vec {p}}={\begin{pmatrix}c/a\\\0\end{pmatrix}}\;\;\; $ oder $ \;\;\;{\vec {p}}={\begin{pmatrix}0\\\c/b\end{pmatrix}} $.</center>
-Die später eingesetzte Laserquelle sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb. <a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" height="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/></a>Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+Die später eingesetzte Laserquelle sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb. <a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" class="noborder" align="bottom" height="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/></a>Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
 
-<sp><span>Simulationsumgebung:</span>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. <center><boxed>Die Forderung nach Zeitinvarianz impliziert immer auch __Rückwirkungsfreiheit__ unter den Teilsystemen.</boxed></center> 
-Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskrete r Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
-Aus dem Modellzweck oder Kontext, wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.</sp>
+<h4 class="sp"><span>Simulationsumgebung</span></h4>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. 
 
+<boxed>Die Forderung nach Zeitinvarianz impliziert immer auch __Rückwirkungsfreiheit__ zwischen den Teilsystemen.</boxed> 
 
+Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
+
+Aus dem Modellzweck oder Kontext, wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
+
+Entsprechend sind auch Modelle für das Stellglied und den Messumformer + Tiefpass zu erstellen.   
 
 Design
 Systemeinsatz

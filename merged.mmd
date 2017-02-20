@@ -88,24 +88,33 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
 
 # Projektziel und Anforderungskatalog #
-<h4 class="specs"><span>Stand der Technik</span></h4>
+
+<h4 class="sphd"><span>Stand der Technik</span></h4>
 Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, _quasi-kontinuierliche_ Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.
 
-<h4 class="specs"><span>Systemzweck</span></h4>
+<h4 class="sphd"><span>Systemzweck</span></h4>
 Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die __Modellbildung__ und __Simulation__ des Gesamtsystems soll als __Schwerpunktthema__ betrachtet und entsprechend ausgearbeitet werden.
 
-<h4 class="specs"><span>Systemfunktionen im Detail</span></h4>
+<h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
 Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als __physisches System__ bezeichnet während im Abschnitt __Simulationsumgebung__ das Computermodell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.
 
-<specs>Physisches System</specs>
-Die [___"Moving-magnet"___](#klassifizierung) Galvanometer der Firma Cambridge bilden das Herzstück des Laserscanner-Aufbaus.   
+<!-- (#klassifizierung) -->
 
-<specs>Simulationsumgebung</specs>
-Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. <center><boxed>Die Forderung nach Zeitinvarianz impliziert jedoch immer auch __Rückwirkungsfreiheit__ unter den Teilsystemen.</boxed></center> 
-Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskrete r Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
-Aus dem Modellzweck oder Kontext, wird die notwendige _Modellgranularität_ (siehe Abschnitt [Modell](#modell)) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.   
+<h4 class="sp"><span>Physisches System</span></h4><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Die beiden <a class="lkey"><span>Moving magnet Galvanometer</span></a> der Firma Cambridge Technologies, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls auf zwei Koordinaten-Punkte einer ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <a class="lkey">[Moving magnet Galvanometer](#klassifizierung)</a> Aus zwei aufeinander folgenden XY-Tupel lässt sich somit eine Geradengleichung ableiten. Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
 
-<img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="top" height="180px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
+$$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvektor der Geraden erhält man, je nachdem ob $a$ oder $b$ ungleich null ist, durch Wahl von
+<center>$ {\vec {p}}={\begin{pmatrix}c/a\\\0\end{pmatrix}}\;\;\; $ oder $ \;\;\;{\vec {p}}={\begin{pmatrix}0\\\c/b\end{pmatrix}} $.</center>
+Die später eingesetzte Laserquelle sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb. <a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" class="noborder" align="bottom" height="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/></a>Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+
+<h4 class="sp"><span>Simulationsumgebung</span></h4>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. 
+
+<boxed>Die Forderung nach Zeitinvarianz impliziert immer auch __Rückwirkungsfreiheit__ zwischen den Teilsystemen.</boxed> 
+
+Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
+
+Aus dem Modellzweck oder Kontext, wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
+
+Entsprechend sind auch Modelle für das Stellglied und den Messumformer + Tiefpass zu erstellen.   
 
 Design
 Systemeinsatz
@@ -119,7 +128,6 @@ Quality --> testbild resol
 
 <h4 class="specs"><span>Systemanforderungen</span></h4>
 
-<par align="right"><img src="./pics/camb_6860_large_mirrors_sml.png" title="Cambridge Technologies Galvanometer Modell 6860" align="right" height="310px" style="float:right; margin: 0.2em 0em 0em 1em;"/>
 
 <div class="spaced" markdown=1>
 
