@@ -14,17 +14,15 @@ sudo pip install numpy svgwrite svgpathtools
 ```
 
 
-<h4 class="sp"><span>Physisches System</span></h4><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Die beiden <lkey>[Moving-magnet Galvanometer](#klassifizierung)</lkey> der Firma Cambridge Technologies, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls auf zwei Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt 
+<h4 class="sp"><span>Physisches System</span></h4><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Die beiden <lkey>[Moving-magnet Galvanometer](#klassifizierung)</lkey> der Firma Cambridge Technologies, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt 
 
-<lmjx>$ \eq{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} } $</lmjx>
+<lmjx>$$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} }{eqDirVect} $$</lmjx>
 
 Um einen Vektor $\vec x$ der Länge $\left| \vec x\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec x$ entlang einer Geraden $\,g\,$ durch  
 
 <lmjx>$ g:\;\;\;\vec{x}=\vec p + \lambda\cdot\vec v\; $</lmjx>
 
-beschrieben. Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade eindeutig bezüglich eines Koordinatenursprungs ab.  
-
- auch als   = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} $</lmjx>
+beschrieben. Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ ab.  
 
 wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
 Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um 
@@ -41,7 +39,7 @@ Die später eingesetzte Laserquelle sollte für Dauerbetrieb ausgelegt sein. Die
 
 Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
 
-Aus dem Modellzweck oder Kontext, wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeit-diskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
+Aus dem Modellzweck oder Kontext wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
 
 Entsprechend sind auch Modelle für das Stellglied und den Messumformer + Tiefpass zu erstellen.   
 
