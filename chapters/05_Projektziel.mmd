@@ -9,20 +9,19 @@ Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY
 <h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
 Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als __physisches System__ bezeichnet während im Abschnitt __Simulationsumgebung__ das Computermodell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.
 
-```bash
+<!-- ```bash
 sudo pip install numpy svgwrite svgpathtools
-```
+``` -->
 
+<h4 class="sp"><span>Physisches System</span></h4><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"></img>Die beiden <lkey>[Moving-magnet Galvanometer](#klassifizierung)</lkey> der Firma [Cambridge Technologies](http://www.cambridgetechnology.com), bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt 
 
-<h4 class="sp"><span>Physisches System</span></h4><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860" align="top" width="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/>Die beiden <lkey>[Moving-magnet Galvanometer](#klassifizierung)</lkey> der Firma Cambridge Technologies, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt 
+<lmjx>$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} }{eqDirVect} $</lmjx>
 
-<lmjx>$$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} }{eqDirVect} $$</lmjx>
-
-Um einen Vektor $\vec x$ der Länge $\left| \vec x\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec x$ entlang einer Geraden $\,g\,$ durch  
+Um einen Vektor $\vec x$ der Länge $\left| \vec x\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec x$ entlang einer Geraden $\,g\,$ beschrieben durch:
 
 <lmjx>$ g:\;\;\;\vec{x}=\vec p + \lambda\cdot\vec v\; $</lmjx>
 
-beschrieben. Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ ab.  
+Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade $\,g\,$ eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ ab.  
 
 wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
 Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um 
@@ -71,4 +70,5 @@ Quality --> testbild resol
 </par>
 
 Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
-
+http://www
+[http://www.cambridgetechnology.com/]: .cambridgetechnology.com/
