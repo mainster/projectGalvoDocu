@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"gro",
+				"group\t(MarkdownPreview.py)"
+			],
+			[
+				"input",
+				"inputfile"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"rea",
+				"readlines〔function〕"
+			],
+			[
 				"chec",
 				"checkbox\t(styleMdb.css)"
 			],
@@ -38,10 +54,6 @@
 			[
 				"temp",
 				"tempfile"
-			],
-			[
-				"file",
-				"file_name"
 			],
 			[
 				"padd",
@@ -502,18 +514,6 @@
 			[
 				"Projektpla",
 				"Projektplanung"
-			],
-			[
-				"V-",
-				"V-Modell-XT-Bund"
-			],
-			[
-				"fnV",
-				"fnV-Modell-XT-Bund"
-			],
-			[
-				"V",
-				"V-Modell"
 			]
 		]
 	},
@@ -523,34 +523,52 @@
 			"file": "chapters/05_Projektziel.mmd",
 			"settings":
 			{
-				"buffer_size": 8673,
+				"buffer_size": 8361,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/mathjax.html",
+			"settings":
+			{
+				"buffer_size": 1228,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "svgparser.py",
+			"settings":
+			{
+				"buffer_size": 1470,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "from xml.dom import minidom"
 			}
 		},
 		{
 			"file": "pics/gnu.svg",
 			"settings":
 			{
-				"buffer_size": 42657,
+				"buffer_size": 15246,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/run_multiple_commands.py",
+			"file": "pics/square1.svg",
 			"settings":
 			{
-				"buffer_size": 2463,
+				"buffer_size": 264,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublToolbox.py",
+			"file": "/home/mainster/scripts/svgparse.py",
 			"settings":
 			{
-				"buffer_size": 3441,
+				"buffer_size": 735,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -817,13 +835,34 @@
 				"Markdown HTML Preview"
 			]
 		],
-		"width": 629.0
+		"width": 514.0
 	},
 	"console":
 	{
 		"height": 189.0,
 		"history":
 		[
+			"' '.join(svg_string)",
+			"string.join(svg_string)",
+			"import string",
+			"string.join(svg_string)",
+			"svg_string.merge()",
+			"svg_string.merge",
+			"svg_string.join()",
+			"svg_string",
+			"svg_string = fd.readlines()",
+			"fd = open(view.file_name(), 'r+')",
+			"fd = open(self.view.file_name(), 'r+')",
+			"view",
+			"edit.view",
+			"for p in sys.path",
+			"for p in sys.path:",
+			"for p in sys.path: print(p);",
+			"for p in sys.path: print(p)",
+			"sys.path",
+			"import sys",
+			"sys.path",
+			"from svg.path import parse_path",
 			"sublime.log_commands(False)",
 			"sublime.log_commands(True)",
 			"sublime.log_commands(\"false\")",
@@ -930,28 +969,7 @@
 			"sublime.run_command(\"open_url\", [\"url\", \"goto\", \"targetSpeech\": \"de\" ])",
 			"sublime.run_command(\"open_url\", [\"url\": \"goto\", \"targetSpeech\": \"de\" ])",
 			"sublime.run_command(\"open_url\", {\"url\": \"goto\", \"targetSpeech\": \"de\" })",
-			"sublime.run_command(\"open_url\", {\"url\": \"goto\" })",
-			"sublime.run_command(\"open_url\", \"args\", { \"url\": \"goto\" })",
-			"sublime.run_command(\"open_url\", \"args\": { \"url\": \"goto\" })",
-			"sublime.run_command(\"open_url\")",
-			"sublime.run_command(\"example\")",
-			"sublime.run_command(\"Example\")",
-			"sublime.run_command(\"example\")",
-			"sublime.run_command(\"merge_chapters\")",
-			"p.sub(r'\\1\\2\\4',txt)",
-			"p = re.compile('(href=\\\")(.*)(\\&\\#160;)(\\\")', re.VERBOSE)",
-			"p.sub(r'\\1\\2\\3',txt)",
-			"p = re.compile('(href=\\\")( [^(\\&)]* )(\\\")', re.VERBOSE)",
-			"p.sub(r'\\1\\2\\3',txt)",
-			"p = re.compile('(href=\\\")( [^}]* )(\\\")', re.VERBOSE)",
-			"p.sub(r'__\\1__',txt)",
-			"p.sub(r'\\1',txt)",
-			"p = re.compile('href=\\\" ( [^}]* ) \\\"', re.VERBOSE)",
-			"txt",
-			"p.sub(r'\\1',txt)",
-			"p = re.compile('(\\&\\#160;\\\")', re.VERBOSE)",
-			"p.sub(r'\\1\\2',txt)",
-			"p = re.compile('(href\\=\\\".*)(\\&\\#160;\\\")', re.VERBOSE)"
+			"sublime.run_command(\"open_url\", {\"url\": \"goto\" })"
 		]
 	},
 	"distraction_free":
@@ -971,6 +989,11 @@
 	],
 	"file_history":
 	[
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublToolbox.py",
+		"/media/data/whz/projectGalvoDocu/pics/gnuBack.svg",
+		"/media/data/whz/projectGalvoDocu/pics/gnu1.svg",
+		"/media/data/whz/projectGalvoDocu/pics/gnu.svg",
+		"/home/mainster/.config/sublime-text-3/Packages/User/run_multiple_commands.py",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Main.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Default Main.sublime-package",
 		"/home/mainster/.config/sublime-text-3/Packages/User/mathjax.html",
@@ -1093,12 +1116,7 @@
 		"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/.cproject",
 		"/media/data/whz/projectGalvoDocu/merge.sh",
 		"/home/mainster/scripts/split-markdown-src.sh",
-		"/media/data/xxx/galvo_P2.txt",
-		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-word.sublime-build",
-		"/media/data/whz/projectGalvoDocu/BACKprojectGalvoDocu.mmd",
-		"/home/mainster/.config/sublime-text-3/Packages/User/ShellCommand.sublime-commands",
-		"/home/mainster/.config/sublime-text-3/Packages/ShellCommand/ShellCommand.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/multiCmdSelf/MultiCmdSelf.py"
+		"/media/data/xxx/galvo_P2.txt"
 	],
 	"find":
 	{
@@ -1116,6 +1134,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			">>> ",
 			"log",
 			"^",
 			"\\#",
@@ -1230,6 +1249,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"",
 			"# ",
 			"",
 			"\\2_\\1",
@@ -1279,7 +1299,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1288,15 +1308,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8673,
+						"buffer_size": 8361,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1472,
-								1472
+								2343,
+								2343
 							]
 						],
 						"settings":
@@ -1308,27 +1328,88 @@
 							"target": "browser"
 						},
 						"translation.x": 0.0,
-						"translation.y": 204.0,
+						"translation.y": 357.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "pics/gnu.svg",
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/mathjax.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 42657,
+						"buffer_size": 1228,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2576,
-								2576
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "svgparser.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1089,
+								1089
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"auto_name": "from xml.dom import minidom",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 192.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "pics/gnu.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15246,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								663,
+								663
 							]
 						],
 						"settings":
@@ -1338,82 +1419,71 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 546.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/run_multiple_commands.py",
+					"buffer": 4,
+					"file": "pics/square1.svg",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2463,
+						"buffer_size": 264,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								843,
-								843
+								184,
+								184
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/XML/XML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
+				},
 				{
-					"buffer": 3,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublToolbox.py",
+					"buffer": 5,
+					"file": "/home/mainster/scripts/svgparse.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3441,
+						"buffer_size": 735,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2915,
-								2881
+								442,
+								442
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 84.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 					"semi_transient": false,
 					"settings":
@@ -1425,8 +1495,8 @@
 						"selection":
 						[
 							[
-								48948,
-								48948
+								10730,
+								10730
 							]
 						],
 						"settings":
@@ -1435,15 +1505,15 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 4128.0,
+						"translation.x": 0.0,
+						"translation.y": 1372.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 					"semi_transient": false,
 					"settings":
@@ -1467,14 +1537,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 448.0,
+						"translation.y": 294.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/User/chapterMerge.py",
 					"semi_transient": false,
 					"settings":
@@ -1500,7 +1570,7 @@
 						"translation.y": 126.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1523,18 +1593,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.616292798111,
 			1.0
 		],
 		"rows":
@@ -1590,7 +1653,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
