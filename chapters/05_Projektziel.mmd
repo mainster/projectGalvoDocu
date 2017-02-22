@@ -21,9 +21,23 @@ Um einen Vektor $\vec x$ der Länge $\left| \vec x\right|$ anhand zweier Koordin
 
 <lmjx>$ g:\;\;\;\vec{x}=\vec p + \lambda\cdot\vec v\; $</lmjx>
 
-Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade $\,g\,$ eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ ab. Das System soll in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten um die notwendigen Quelldaten zu erzeugen. Die Koordinaten zur Positionierung und Dunkeltastung des Laserstrahls, werden am Rechner im SVG-Dateiformat (svg-Editor: Inkscape o. ä.) zur Verfügung gestellt.
+Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und Richtungsvektor $\;\vec v\;$ bilden die Gerade $\,g\,$ eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ ab. Das System soll in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten um die notwendigen Quelldaten zu erzeugen. Die Koordinaten zur Positionierung und Dunkeltastung des Laserstrahls werden am Rechner mittels SVG-Dateiformat (Inkscape) definiert und von einem SVG-Parser (python Skript: svgCoord.py) in eine C-Header-Datei exportiert.
 
-![](./pics/gnu.svg)
+<table class="noalter" style="border-spacing: 0px; margin: 0; padding: -20px;">
+  <tr>
+    <td><center><a href="./pics/gnu_untouched.svg" target="_blank"><img src="./pics/gnu_untouched.svg" title="The GNU" class="noborder" /></a></center></td>
+    <td><center><a href="./pics/gnu_beziers.svg" target="_blank"><img src="./pics/gnu_beziers.svg" title="GNU Outline, Bezier Pfade" class="noborder" /></a></center></td>
+  </tr>
+  <tr>
+    <td><center><a href="./pics/gnu_flatten.svg" target="_blank"><img src="./pics/gnu_flatten.svg" title="GNU Outline, reduziert auf Linien-Segmente" class="noborder" /></a></center></td>
+    <td><center><a href="./pics/gnu_flatten_mod.svg" target="_blank"><img src="./pics/gnu_flatten_mod.svg" title="GNU Outline, visualisierte Knotenpunkte" class="noborder" /></a></center></td>
+  </tr>
+</table>
+<br>
+
+<!-- 
+<a href="https://www.gnu.org/graphics/nu-gnu.svg"><img src="./pics/gnu_untouched.svg" title="The GNU" align="left" width="50%"/></a><a href="./pics/gnu_beziers.svg" target="_blank"><img src="./pics/gnu_beziers.svg" title="GNU Outline, Bezier Pfade" align="right" width="50%"/></a>
+<a href="./pics/gnu_flatten.svg" target="_blank"><img src="./pics/gnu_flatten.svg" title="GNU Outline, reduziert auf Linien-Segmente" align="top" width="50%"/></a><a href="./pics/gnu_mod.svg" target="_blank"><img src="./pics/gnu_mod.svg" title="GNU Outline, visualisierte Knotenpunkte" align="right" width="50%"/></a> -->
 
 Die später eingesetzte <lkey>Laserquelle</lkey> sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb. <a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" class="noborder" align="bottom" height="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/></a>Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
 

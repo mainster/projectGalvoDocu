@@ -28,46 +28,76 @@ from svg.path import parse_path
 from xml.dom import minidom
 from shutil import copyfile
 
-SVG_END_TAG="</svg>\n"
-svgfile = ''
-
+##
+## Template string of circle node marker shape
+##
 circleTempStr=['<circle',
-	'\tstyle="opacity:.8;fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"',
-	'\tid="path<UID>"',
+	'\tstyle="opacity:<OPACITY>;fill:<FILL_COLOR>;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"',
+	'\tid="nodeMarker_<UID>"',
 	'\tcx="<CX>"',
 	'\tcy="<CY>"',
 	'\tr="<R>" />']
 
-# Returns template based node marker 
-def nodeMarker(cx, cy, uid, r=2):
+
+
+##
+## @brief      Pretty prints the node buffer.
+##
+## @param      lines   Buffer which holds all lines, splitted from svg paths.
+##
+## @return     -
+##
+def prettyPrint(lines):
+	# Find the largest x or y value in whole nodes buffer
+	MAX = max([ max(line) for line in lines ]); 
+	exp = 1;
+
+	# Ceil to next decade
+	while math.ceil(MAX/10**exp) != 1.0:	
+		exp += 1
+
+	# decimal places (2) + dot separator (1) = 3  
+	formatstr = '%%%i.%if' % (exp+2+1, 2)
+
+	# Format/round lines buffer
+	lines = [[ formatstr % node for node in line ] for line in lines ]
+
+	for node in lines:
+		print(node)
+
+
+##
+## @brief      Returns xml tag of a template based node marker shape.
+##
+## @param      cx          The nodes x-coordinate.
+## @param      cy          The nodes y-coordinate.
+## @param      uid         An uniq node-marker-identifier, integer.
+## @param      r           Node marker radius.
+## @param      opacity     Node marker opacity.
+## @param      fillColor   Node marker fill color.
+##
+## @return     Node marker xml tag.
+##
+def nodeMarker(cx, cy, uid, r=2, opacity=.8, fillColor='#ff0000'):
 	return [ p
-	.replace('<CX>', str(cx)).replace('<CY>', str(cy))
-	.replace('<UID>', str(uid)).replace('<R>', str(r)) 
+	.replace('<CX>', str(cx))
+	.replace('<CY>', str(cy))
+	.replace('<UID>', str(uid))
+	.replace('<R>', str(r)) 
+	.replace('<OPACITY>', str(opacity))
+	.replace('<FILL_COLOR>', str(fillColor)) 
 	for p in circleTempStr ]
 
-def main(argv):
-	inputfile = ''
-	try:
-		onodes, args = getopt.getopt(argv,"hi:",["ifile="])
-	except getopt.GetoptError:
-		print '%s -i <inputfile>' % os.path.basename(__file__)
-		sys.exit(2)
 
-	for opt, arg in onodes:
-		if opt == '-h':
-			print '%s -i <inputfile>' % os.path.basename(__file__)
-			sys.exit()
-		elif opt in ("-i", "--ifile"):
-			inputfile = arg
-
-	print("inputfile: %s" % inputfile)
-
-	if inputfile != None:
-		return inputfile
-	else:
-		print 'Input file is "%s"' % inputfile
-		return None
-
+##
+## @brief      Acts as parser core. Creates buffers containing XML tag payload.
+##
+## @param      svgfile   The svg file whose nodes are to be marked.
+##
+## @return     paths: 	Holds all node coordinates of a defined svg path. 
+## 			   offs:	Returns transformation/translation coordinates if 
+## 			   			corresponding tags wherefound, else (0, 0)
+##
 def doParse(svgfile):
 	fd = open(svgfile,'r+')
 	lbuff = fd.readlines()
@@ -80,20 +110,15 @@ def doParse(svgfile):
 	# Request for perhaps-attribute 'offs'
 	rawTransform = [ path.getAttribute('transform') for path in svg_dom.getElementsByTagName('g') ]
 
+	offs = (0, 0)
 	if rawTransform:
 		m = re.findall('translate\(([-+]?[0-9\.]+)\,([-+]?[0-9\.]+)\)', rawTransform[0], re.DOTALL)
 		offs = [ float(m[0][0]), float(m[0][1]) ]
-	else: 
-		offs = (0, 0)
 
 	paths = []
 	if rawPathsIds:	
 		for s in rawPathsIds:			
 			paths += parse_path(s[0])
-			# ma = re.findall('pathRightEye', str(s[1]))
-			# if ma != []: print(s)
-	else:
-		paths = None
 
 	return (paths, offs)
 
@@ -108,6 +133,7 @@ def doParse(svgfile):
 ## @return     -
 ##
 def placeNodeMarker(svgfile, nodes, MARKER_SIZE = 3):
+	SVG_END_TAG='</svg>\n'
 	# Open svg, read lines to buffer, close file	
 	fd = open(svgfile,'r+')
 	lines = fd.readlines()
@@ -136,12 +162,46 @@ def placeNodeMarker(svgfile, nodes, MARKER_SIZE = 3):
 	fd.writelines(lines)
 	fd.close()
 
-#########################################
 
+##
+## @brief      Input argument parsing.
+##
+## @param      argv   List of input arguments.
+##
+## @return     Input file path, doPretty flag.
+##
+def main(argv):
+	inputfile = ''
+	doPretty = False
+	cmdUsage = '%s -i <inputfile> [-p]' % os.path.basename(__file__)
+	try:
+		onodes, args = getopt.getopt(argv,"hi:p",["ifile=", "pretty"])
+	except getopt.GetoptError:
+		print cmdUsage
+		sys.exit(2)
+
+	for opt, arg in onodes:
+		if opt == '-h':
+			print cmdUsage
+			sys.exit()
+		elif opt in ("-i", "--ifile"):
+			inputfile = arg
+		elif opt in ("-p", "--pretty"):
+			doPretty = True
+
+	if not os.path.isfile(inputfile):
+		print('Input file "%s" not valied!' % inputfile)
+
+	return (inputfile, doPretty)
+
+###############################################################################
+## 	Script run.
+###############################################################################
 if __name__ == "__main__":
 	paths = []
 	try:
-		svgfile = main(sys.argv[1:])
+		# Parse input arguments
+		(svgfile, doPretty) = main(sys.argv[1:])
 		# Get paths from vector graphic
 		(paths, offs) = doParse(svgfile)
 	except:
@@ -169,28 +229,15 @@ if __name__ == "__main__":
 		pts.append( (line[0], line[1]) )
 		pts.append( (line[2], line[3]) )
 
-
-	# Place node markers in svgfile
+	# Place node markers in svgfile.
 	placeNodeMarker(svgfile, pts, 2)
 
-	################
-	# Pretty print:
-	################
+	# Pretty print nodes to console.
+	if doPretty:
+		prettyPrint(lines)
+###############################################################################
+## 	Script end.
+###############################################################################
 
-	# Find the largest x or y value in whole nodes buffer
-	MAX = max([ max(line) for line in lines ]); 
-	exp = 1;
 
-	# Ceil to next decade
-	while math.ceil(MAX/10**exp) != 1.0:	
-		exp += 1
-
-	# decimal places (2) + dot separator (1) = 3  
-	formatstr = '%%%i.%if' % (exp+2+1, 2)
-
-	# Format/round lines buffer
-	lines = [[ formatstr % node for node in line ] for line in lines ]
-
-	for node in lines:
-		print(node)
 

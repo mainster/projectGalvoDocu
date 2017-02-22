@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"padd",
+				"padding"
+			],
+			[
+				"border-col",
+				"border-collapse"
+			],
+			[
+				"bord",
+				"border-spacing"
+			],
+			[
+				"ex",
+				"exists\t(MarkdownPreview.py)"
+			],
+			[
+				"prett",
+				"prettyPrint"
+			],
+			[
+				"Fa",
+				"False\t(MarkdownPreview.py)"
+			],
+			[
+				"fill",
+				"fillColor"
+			],
+			[
 				"gro",
 				"group\t(MarkdownPreview.py)"
 			],
@@ -54,10 +82,6 @@
 			[
 				"temp",
 				"tempfile"
-			],
-			[
-				"padd",
-				"padding-left"
 			],
 			[
 				"inl",
@@ -166,10 +190,6 @@
 			[
 				"text-a",
 				"text-anchor"
-			],
-			[
-				"bord",
-				"border\t(styleMdb.css)"
 			],
 			[
 				"back",
@@ -494,26 +514,6 @@
 			[
 				"JTAG",
 				"JTAGICE"
-			],
-			[
-				"Arch",
-				"Architektur"
-			],
-			[
-				"hardware",
-				"hardwarenaher"
-			],
-			[
-				"Progr",
-				"Programmierung"
-			],
-			[
-				"Pr",
-				"Projektes"
-			],
-			[
-				"Projektpla",
-				"Projektplanung"
 			]
 		]
 	},
@@ -523,8 +523,25 @@
 			"file": "chapters/05_Projektziel.mmd",
 			"settings":
 			{
-				"buffer_size": 8748,
+				"buffer_size": 10232,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/pics/gnu_flatten.svg",
+			"settings":
+			{
+				"buffer_size": 15020,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/pics/gnu_untouched.svg",
+			"settings":
+			{
+				"buffer_size": 14894,
 				"line_ending": "Unix"
 			}
 		},
@@ -537,62 +554,19 @@
 			}
 		},
 		{
-			"file": "chapters/pics/square1_mod.svg",
-			"settings":
-			{
-				"buffer_size": 7946,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/pics/square1.svg",
-			"settings":
-			{
-				"buffer_size": 2147,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/pics/gnu.svg",
-			"settings":
-			{
-				"buffer_size": 14960,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "svgparser.py",
-			"settings":
-			{
-				"buffer_size": 4703,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
-			"settings":
-			{
-				"buffer_size": 56840,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/scripts/svgparse.py",
-			"settings":
-			{
-				"buffer_size": 735,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 			"settings":
 			{
-				"buffer_size": 30314,
+				"buffer_size": 30409,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/pics/gnu_beziers.svg",
+			"settings":
+			{
+				"buffer_size": 17713,
 				"line_ending": "Unix"
 			}
 		}
@@ -841,7 +815,7 @@
 				"Markdown HTML Preview"
 			]
 		],
-		"width": 584.0
+		"width": 565.0
 	},
 	"console":
 	{
@@ -995,6 +969,14 @@
 	],
 	"file_history":
 	[
+		"/home/mainster/scripts/svgparse.py",
+		"/media/data/whz/projectGalvoDocu/chapters/pics/square1_mod.svg",
+		"/media/data/whz/projectGalvoDocu/chapters/pics/square1.svg",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/media/data/whz/projectGalvoDocu/svgCoord.py",
+		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu_beziers.svg",
+		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu_untouched.svg",
+		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu.svg",
 		"/media/data/whz/projectGalvoDocu/pics/gnu.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/sigma.svg",
@@ -1028,7 +1010,6 @@
 		"/media/data/whz/projectGalvoDocu/chapters/18_Quellenangaben.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/08_Modellbildungsprozess.mmd",
 		"/home/mainster/.config/sublime-text-3/Packages/Open URL/open_url.py",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 		"/media/data/whz/projectGalvoDocu/chapters/03_Einleitung.mmd",
 		"/home/mainster/scripts/hidden/rexbindkeys.sh",
 		"/home/mainster/scripts/xdg-open.sh",
@@ -1115,14 +1096,7 @@
 		"/media/data/whz/projectGalvoDocu/chapters/09_Software_(Teil_des_Mod.Bildungsprozesses).mmd",
 		"/home/mainster/.config/sublime-text-3/Packages/User/pandoc-markdown-to-pdf.sublime-build",
 		"/media/data/whz/projectGalvoDocu/README.md",
-		"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/Makefile",
-		"/media/data/output_2017-02-05_04-44-45.log",
-		"/media/data/output_2017-02-05_04-46-58.log",
-		"/media/data/output_2017-02-05_04-50-56.log",
-		"/home/mainster/compiledStuff/brntool/README.md",
-		"/home/mainster/compiledStuff/brntool/brntool.py",
-		"/media/data/output_2017-02-05_05-22-05.log",
-		"/media/data/output_2017-02-05_04-25-30.log"
+		"/media/data/CODES/sw4stm32_workbench/STM32F4_USB_CDC/Makefile"
 	],
 	"find":
 	{
@@ -1140,6 +1114,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"width=\"100%\"",
+			"width=100%",
+			"45%",
+			"svgfile",
+			"_pretty",
+			"doParse",
 			"(\\t+) ",
 			"(\\t+ )",
 			">>> ",
@@ -1254,9 +1234,14 @@
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": true,
+		"regex": false,
 		"replace_history":
 		[
+			"",
+			"width=\"50%\"",
+			"width=\"100%\"",
+			"50%",
+			"doPretty",
 			"\\1",
 			"",
 			"# ",
@@ -1317,15 +1302,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8748,
+						"buffer_size": 10232,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2801,
-								2801
+								3698,
+								3698
 							]
 						],
 						"settings":
@@ -1337,20 +1322,80 @@
 							"target": "browser"
 						},
 						"translation.x": 0.0,
-						"translation.y": 181.0,
+						"translation.y": 487.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "chapters/pics/gnu_flatten.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15020,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1361,
+								1361
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chapters/pics/gnu_untouched.svg",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 14894,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 4,
+			"selected": 2,
 			"sheets":
 			[
 				{
-					"buffer": 1,
+					"buffer": 3,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/User/mathjax.html",
 					"semi_transient": false,
 					"settings":
@@ -1376,203 +1421,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "chapters/pics/square1_mod.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7946,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7742,
-								7742
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "chapters/pics/square1.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2147,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2147,
-								2147
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "chapters/pics/gnu.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14960,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1242,
-								1242
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "svgparser.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4703,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								226,
-								226
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 56840,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								10730,
-								10730
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1470.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/home/mainster/scripts/svgparse.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 735,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								442,
-								442
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30314,
+						"buffer_size": 30409,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9254,
-								9254
+								21080,
+								21080
 							]
 						],
 						"settings":
@@ -1583,10 +1449,40 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 315.0,
+						"translation.y": 3915.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "chapters/pics/gnu_beziers.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17713,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								806,
+								806
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 90.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1676,7 +1572,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
