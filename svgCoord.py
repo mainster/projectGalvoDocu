@@ -29,11 +29,11 @@ from shutil import copyfile
 from svg.path import parse_path
 from xml.dom import minidom
 from lxml import etree
-# from xml.dom.minidom import toprettyxml 
 from collections import namedtuple  
 from numpy.lib.recfunctions import append_fields
-# from xml.etree.ElementTree import Element, SubElement, Comment, tostring
-# from ElementTree_pretty import prettify
+from subprocess import call
+from mdLibs import mdosd as osd
+from abc import abstractmethod # ABCMeta
 
 #-------------------------------------------------------------------------------
 ## Template string of circle node marker shape
@@ -46,21 +46,24 @@ circleTempStr=['<circle',
 	'\tr="<R>" />']
 
 R='{http://www.w3.org/2000/svg}'
+MATLAB_PRJ='/home/mainster/CODES_local/matlab_workspace'
 
 #-------------------------------------------------------------------------------
 ## @brief      Provides a storage class for path object payloads.
 ##
 class Paths:
-	def __init__(self, name, path):
+	def __init__(self, name, path, offs=(0, 0)):
 		self.name = name
 		self.lines = []
 		self.nodes = []
 
 		for n in path:
+			# print(n)
 			m = re.findall('(start|end)\=\((-?[0-9\.]+)([+-][0-9\.]+)j\)', str(n), re.DOTALL)
+			# print("matches: ", np.shape(m))
 			self.lines.append((
-				float(m[0][1]), float(m[0][2]), 
-				float(m[1][1]), float(m[1][2])) )
+				float(m[0][1]) + offs[0], float(m[0][2]) + offs[1], 
+				float(m[1][1]) + offs[0], float(m[1][2]) + offs[1]))
 
 		# Derive nodes from line objects
 		[ (self.nodes.append((line[0], line[1])),
@@ -133,41 +136,75 @@ class Style_t:
 			print("(%s : %s)" % (self.styAttrs.keys()[k], self.styAttrs.values()[k]))
 
 #-------------------------------------------------------------------------------
-## @brief      Pretty prints the node buffer.
-## @param      data   Buffer which holds lines or nodes from svg paths.
+## @brief      Class to provide output generator (prettyPrint, write log)
 ##
-def prettyPrint(data):
-	# Find the largest x or y value in whole nodes buffer
-	
-	try:
-		MAX = max( [ max(line) for line in data ] )
-	except:
-		print("Exception max([])")
-		MAX = 1000
+class Output(object):
+	def __init__(self, mPaths, logfile=None):
+		self.logfile = logfile
+		self.lines = []
+		self.linesPretty = []
+		self.nlines = []
 
-	exp = 1;
+		[(self.lines.append(path.getLines()), 
+			self.nlines.append(len(path.getLines()))) for path in mPaths]
+		self.nlines = sum(self.nlines)
+
+		try:
+			self.max = max( [max(line) for line in self.lines] )
+		except:
+			self.max = 1000
+			osd.warn("Exception max([])")
+
+		# decimal places (2) + dot separator (1) = 3  
+		formatstr = '%%%i.%if' % (self.getPreceedSpace(self.max)+2+1, 2)
+
+		# Format/round data buffer
+		# self.linesPretty = [[formatstr % node for node in line] for line in self.lines[0]]
+		for path in self.lines:
+			for pline in path:
+				line = []
+				[line.append(formatstr % node) for node in pline] 
+				self.linesPretty.append(line)
 
 	# Ceil to next decade
-	while math.ceil(MAX/10**exp) != 1.0:	
-		exp += 1
+	def getPreceedSpace(self, value):
+		exp = 1;
+		while math.ceil(self.max/10**exp) != 1.0:	
+			exp += 1
+		return exp
 
-	# decimal places (2) + dot separator (1) = 3  
-	formatstr = '%%%i.%if' % (exp+2+1, 2)
-
-	# Format/round data buffer
-	data = [[ formatstr % node for node in line ] for line in data ]
-	for el in data: 
-		print(el)
+	@abstractmethod
+	def out(self, numberLines=False):
+		# self.numberLines = numberLines
+		pass
 
 #-------------------------------------------------------------------------------
-## @brief      Return a pretty-printed XML string for the Element.
-## @param      elem   The element to prettify
-## @return     Pretty XML element.
+## @brief      Pretty prints the node buffer.
 ##
-def prettyElem(elem):
-    rough_string = ElementTree.tostring(elem, 'utf-8')
-    reparsed = minidom.parseString(rough_string)
-    return reparsed.toprettyxml(indent="\t")
+class PrettyPrint(Output):
+	def out(self, numberLines=False):
+		if numberLines:
+			prefix = '%%%ii:' % self.getPreceedSpace(len(self.linesPretty))
+			for k in range(len(self.linesPretty)): 
+				print(prefix % (k+1), self.linesPretty[k])
+		else:
+			for line in self.linesPretty:
+				print(line) 
+
+#-------------------------------------------------------------------------------
+## @brief      Writes a log file to filesystem
+##
+class CreateLog(Output):
+	def out(self):
+		try:
+			fd = open(self.logfile, 'w')
+			for line in self.linesPretty:
+				fd.write('\t'.join(line) + '\n')
+
+			fd.close()
+			osd.ok('%s' % logfile, 'Logfile successfully written').send()
+		except:
+			osd.warn('Exception while writing logfile').send()
 
 #-------------------------------------------------------------------------------
 ## @brief      Returns xml tag of a template bed node marker shape.
@@ -207,7 +244,8 @@ def doParse(infile):
 	if svg_dom.getElementsByTagName('g'):
 		if max([ g.hasAttribute("transform") for g in svg_dom.getElementsByTagName('g') ]):
 			rawTransform = [ g.hasAttribute("transform") for g in svg_dom.getElementsByTagName('g') ]
-			m = re.findall('translate\(([-+]?[0-9\.]+)\,([-+]?[0-9\.]+)\)', rawTransform[0], re.DOTALL)
+			m = re.findall('translate\(([-+]?[0-9\.]+)\,([-+]?[0-9\.]+)\)', 
+				g.getAttribute('transform'), re.DOTALL)
 			offs = [ float(m[0][0]), float(m[0][1]) ]
 	print("No xml-tag <g> found!")
 
@@ -216,7 +254,8 @@ def doParse(infile):
 		path.getAttribute('id')) for path in svg_dom.getElementsByTagName('path') ]
 	# Create Path() class instance
 	mPaths = []
-	[ mPaths.append( Paths(s[1], parse_path(s[0])) ) for s in rawPathsIds ]
+	[ mPaths.append( Paths(s[1], parse_path(s[0]), offs) ) for s in rawPathsIds ]
+	print(mPaths[0])
 	return (mPaths, offs)
 
 #-------------------------------------------------------------------------------
@@ -287,16 +326,22 @@ def placeNodeMarker(infile, mPaths, MARKER_SIZE = 3, suffix=''):
 	fd.close()
 
 #-------------------------------------------------------------------------------
-## @brief      Input argument parsing.
+## @brief      Input argument parser.
 ## @param      argv   List of input arguments.
 ## @return     Input file path, doPretty flag.
 ##
 def main(argv):
-	inputfile = ''
-	doPretty = False
-	cmdUsage = '%s -i <inputfile> [-p]' % os.path.basename(__file__)
+	flags = { 'logfile': False, 'strokes': False, 'marker': False, 'pretty': False }
+
+	infile = None
+	logfile = None
+
+	cmdUsage = '%s -i <infile> [-p]' % os.path.basename(__file__)
+
+
 	try:
-		onodes, args = getopt.getopt(argv,"hi:p",["ifile=", "pretty"])
+		onodes, args = getopt.getopt(argv,"hi:smpl:",
+			["ifile=", "strokes", "marker", "pretty", "logfile="])
 	except getopt.GetoptError:
 		print(cmdUsage)
 		sys.exit(2)
@@ -305,50 +350,109 @@ def main(argv):
 		if opt == '-h':
 			print(cmdUsage)
 			sys.exit()
-		elif opt in ("-i", "--ifile"):
-			inputfile = arg
-		elif opt in ("-p", "--pretty"):
-			doPretty = True
+		elif opt in ("-i", "--ifile"):		infile = arg
+		elif opt in ("-l", "--logfile"): 	flags['logfile'] = True; logfile = arg
+		elif opt in ("-s", "--strokes"):	flags['strokes'] = True
+		elif opt in ("-m", "--marker"):	 	flags['marker'] = True
+		elif opt in ("-p", "--pretty"):	 	flags['pretty'] = True
 
-	if not os.path.isfile(inputfile):
-		print('Input file "%s" not valied!' % inputfile)
+	if not os.path.isfile(infile):
+		print('Input file "%s" not valied!' % infile)
 
-	return (inputfile, doPretty)
-
+	return (infile, logfile, flags)
+ 
 #-------------------------------------------------------------------------------
 ## Script run.
 ##
 if __name__ == "__main__":
-
 	mPaths = []
+
+	print('sys.argv: ', sys.argv)
+
 	try: 
-		(infile, doPretty) = main(sys.argv[1:])	# Parse input arguments
+		(infile, logfile, flags) = main(sys.argv[1:])		# Parse input arguments
+	except: 
+		# if not infile: print("Argument for -i not given"); exit()
+		print("Exception while getopts!")
+		osd.crit("Exception while getopts!").send()
+
+	try:
 		(mPaths, offs) = doParse(infile)			# Get paths from vector graphic
 	except: 
-		if not infile: print("Argument for -i not given"); exit()
 		if not mPaths:	print("Error, no paths or bad -i argument"); exit()
 
 	if offs: 
 		print("offs attr: %f, %f" % (offs[0], offs[1]))
 
+	ofile = infile 
+	suff = '_mod'
 	# Manipulate path style attributes
-	ofile = styleManipulate(infile, 'stroke-opacity:0.3', '_mod')
+	if flags['strokes']: 	
+		ofile = styleManipulate(infile, 'stroke-opacity:0.3', suff)
+		suff = ''
 
 	# Place node markers into xml-tree of selected infile.
-	placeNodeMarker(ofile, mPaths, 2, '')
+	if flags['marker']:		
+		placeNodeMarker(ofile, mPaths, 2, suff)
+
+# , MATLAB_PRJ + os.path.basename(infile) + '.log'
+	printPretty = PrettyPrint(mPaths)
+	logCreate = CreateLog(mPaths, logfile=logfile)
 
 	# Pretty print(nodes to console.)
-	if doPretty:
-		for path in mPaths:
-			prettyPrint(path.getLines())
+	if flags['pretty']:
+		printPretty.out(numberLines=True)
 
-		lin = []
-		[ lin.append(len(path.getLines())) for path in mPaths ] 
+	if flags['logfile']:
+		logCreate.out()
 
-		print("Paths count: %i" % len(mPaths))
-		print("Lines count: %i" % sum(lin))	
-		print("Nodes count: %i" % (sum(lin)+len(mPaths)))
+	lin = []
+	[ lin.append(len(path.getLines())) for path in mPaths ]
+	print("Paths count: %i" % len(mPaths))
+	print("Lines count: %i" % sum(lin))	
+	print("Nodes count: %i" % (sum(lin)+len(mPaths)))
+
+	# print("logfile: %s" % logfile)
+	# print('len(logData): %i' % len(logData), logData)
+		# osd.osdwarn(MATLAB_PRJ + os.path.basename(infile).splitext()[0] + '.log',msgTitle='log write',tSec=10)
+
 ###############################################################################
 ## 	Script end.
 ###############################################################################
 
+
+# class Xml_t:
+# 	def __init__(self, file):
+# 		self.tree = etree.parse(infile)
+# 		self.root = self.tree.getroot()
+
+# 		pStyles = dict()
+
+# 		for g in self.root.findall(R + 'g'):
+# 			try:
+# 				if g.getAttr('inkscape:label') != 'payload':
+# 					continue
+# 				else:
+
+# 					for path in be.findall(R + 'path'):
+# 						# Create a Style_t instance for each path tag in xml source tree.
+# 						pStyles[ path.get('id') ] = Style_t(path.get('id'), path.get('style'))
+# 						pStyles[ path.get('id') ].setAttr( valPair )
+# 			except:
+# 				continue
+
+# 		print("be elements: ", [ g.tag.replace(R, '') for g in baseElems ] )
+
+# 	for be in baseElems:
+# 		# Create dict with pathID keys and style object as value
+
+# 		for path in be.findall(R + 'path'):
+# 			ID = path.get('id')
+# 			path.set('style', pStyles[ID].getAttrStr())
+
+# 	# Write back the modified xml tree
+# 	outfile = os.path.splitext(infile)[0] + suffix + os.path.splitext(infile)[1]
+
+# 	with open(outfile, 'w') as fd:
+# 		fd.write(etree.tostring(tree, pretty_print=True, encoding='utf8'))
+# 	return outfile
