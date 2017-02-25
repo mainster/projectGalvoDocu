@@ -4,6 +4,54 @@
 		"selected_items":
 		[
 			[
+				"MAT",
+				"MATLAB_PRJ"
+			],
+			[
+				"logf",
+				"logfile"
+			],
+			[
+				"arg",
+				"argv"
+			],
+			[
+				"osd",
+				"osdinfo\tclass"
+			],
+			[
+				"ms",
+				"msgTitle\tstatement"
+			],
+			[
+				"msg",
+				"msgType\tstatement"
+			],
+			[
+				"typ",
+				"typeMap"
+			],
+			[
+				"msgT",
+				"msgTitle"
+			],
+			[
+				"msgTitle",
+				"msgTitle=DEF"
+			],
+			[
+				"Pack",
+				"Package\t(Main.sublime-menu)"
+			],
+			[
+				"pack",
+				"package-settings\t(Main.sublime-menu)"
+			],
+			[
+				"getA",
+				"getAttribute"
+			],
+			[
 				"sty",
 				"styAttrs"
 			],
@@ -466,54 +514,6 @@
 			[
 				"Quellen",
 				"Quellenangaben\t(20_Quellenangaben.mmd)"
-			],
-			[
-				"ins",
-				"insert"
-			],
-			[
-				"S",
-				"Signalverarbeitung"
-			],
-			[
-				"ope",
-				"openpath"
-			],
-			[
-				"Gesamt",
-				"Gesamtmodell\t(merged.mmd)"
-			],
-			[
-				"Hin",
-				"Hintergrund\t(merged.mmd)"
-			],
-			[
-				"Zusammen",
-				"Zusammenfassen\t(merged.mmd)"
-			],
-			[
-				"key",
-				"keywords"
-			],
-			[
-				"hea",
-				"heading"
-			],
-			[
-				"colo",
-				"background-color"
-			],
-			[
-				"Bildu",
-				"Bildfunktion"
-			],
-			[
-				"cha",
-				"chapToc"
-			],
-			[
-				"Div",
-				"Divby3"
 			]
 		]
 	},
@@ -523,25 +523,25 @@
 			"file": "chapters/05_Projektziel.mmd",
 			"settings":
 			{
-				"buffer_size": 10220,
+				"buffer_size": 10539,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test.xml",
+			"file": "pics/gnu_flatten_lowres.svg",
 			"settings":
 			{
-				"buffer_size": 707,
-				"encoding": "UTF-8",
+				"buffer_size": 14198,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "pics/square1.svg",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
 			"settings":
 			{
-				"buffer_size": 2199,
+				"buffer_size": 9223,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -549,7 +549,7 @@
 			"file": "svgCoord.py",
 			"settings":
 			{
-				"buffer_size": 12690,
+				"buffer_size": 15122,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -562,30 +562,78 @@
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
-		},
-		{
-			"file": "pics/gnu_flatten.svg",
-			"settings":
-			{
-				"buffer_size": 16239,
-				"line_ending": "Unix"
-			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/Python/Python.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
 	],
 	"build_varint": "",
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "insta",
+		"last_filter": "cle",
 		"selected_items":
 		[
 			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Extract Package"
+			],
+			[
 				"insta",
 				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Disable Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ena",
+				"Package Control: Enable Package"
+			],
+			[
+				"clea",
+				"Clear Console"
+			],
+			[
+				"goto",
+				"GotoLineEnhanced: Prompt goto line"
 			],
 			[
 				"disa pa",
@@ -596,16 +644,8 @@
 				"Package Control: Remove Package"
 			],
 			[
-				"prv",
-				"PackageResourceViewer: Extract Package"
-			],
-			[
 				"trans",
 				"DoxyDoxygen: Translate Selection To..."
-			],
-			[
-				"cle",
-				"Clear Console"
 			],
 			[
 				"tra",
@@ -686,10 +726,6 @@
 			[
 				"mark",
 				"Markdown HTML Preview"
-			],
-			[
-				"clea",
-				"Clear Console"
 			],
 			[
 				"synta mark",
@@ -812,10 +848,6 @@
 				"Diagram: Generate Diagrams for Active View"
 			],
 			[
-				"ins",
-				"Package Control: Install Package"
-			],
-			[
 				"add repo",
 				"Package Control: Add Repository"
 			],
@@ -831,6 +863,59 @@
 		"height": 189.0,
 		"history":
 		[
+			"m.ok('fddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddf', tSec=1).send()",
+			"m.ok('fddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddf').send()",
+			"m.ok('ff').send()",
+			"from mdLibs import mdosd as m",
+			"len(msgTitle + msgBody)*.5",
+			"len(msgTitle + msgBody)*.2",
+			"len(msgTitle + msgBody)*.05",
+			"len(msgTitle + msgBody)",
+			"len([msgTitle, msgBody])",
+			"len(msgTitle, msgBody)",
+			"len(msgTitle)",
+			"msgTitle='dfghjk'; msgBody='dssssssssss'",
+			"from mdLibs import mdosd as m; m.osdwarn('dd').send()",
+			"m.osdwarn('dd').send()",
+			"from mdLibs import mdosd as m",
+			"from mdLibs import mdosd",
+			"import mdosd",
+			"from enum import Enum",
+			"exit()",
+			"from mdLibs import mdosd as m",
+			"sys.version",
+			"dir(sys)",
+			"import sys",
+			"import customerExample as ce",
+			"import customerExamples.Customer",
+			"import customerExamples",
+			"import customer",
+			"os.getcwd()",
+			"Customer('mm', 10)",
+			"os.getcwd()",
+			"dir (os)",
+			"dir os",
+			"os",
+			"import os",
+			"os",
+			"import CustomerExample",
+			"import Customer",
+			"view.run_command(\"md_osd\")",
+			"import numpy",
+			"import platform; platform.python_version()",
+			"import sys; print(sys.version)",
+			"import numpy as np",
+			"import math",
+			"print(plugin_name)",
+			"print plug",
+			"plugin_name=\"plugin+\"",
+			"plugin_name",
+			"sublime.log_commands(False)",
+			"view.run_command(\"join_lines\", \" \")",
+			"view.run_command(\"join_lines\")",
+			"view.run_command('open_terminal_project_folder')",
+			"view.run_command(\"open_terminal_project_folder\")",
+			"sublime.run_command(\"open_terminal_project_folder\")",
 			"sublime.log_commands(True)",
 			"sublime.log_commands(False)",
 			"sublime.log_commands(True)",
@@ -905,60 +990,7 @@
 			"re.match('g', id)",
 			"import re",
 			"re.match('g', id)",
-			"if re",
-			"id=\"g4570\"",
-			"modes",
-			"modes.append('ddd')",
-			"modes=['']",
-			"if currentGroupMode not in groupModes:",
-			"if currentGroupMode not in groupModes: groupModes.append(currentGroupMode)",
-			"currentGroupMode",
-			"currentMode",
-			"[ currentGroupMode for m in groupModes ]",
-			"currentGroupMode='new'",
-			"groupModes.find()",
-			"groupModes.fi",
-			"groupModes",
-			"[ currentGroupMode for m in groupModes ]",
-			"currentGroupMode='m2'",
-			"groupModes=['m1', 'm2', 'm7']",
-			"svg.NodeList()",
-			"svg=DOMTree.documentElement",
-			"DOMTree.documentElement",
-			"collection.hasAttribute(\"shelf\")",
-			"if collection.hasAttribute(\"shelf\"): print(\"has\");",
-			"if collection.hasAttribute(\"shelf\"): print(\"has\")",
-			"collection = DOMTree.documentElement",
-			"DOMTree = xml.dom.minidom.parse(xmlf)",
-			"import xml.sax",
-			"DOMTree = xml.dom.minidom.parse(xmlf)",
-			"from xml.dom.minidom import parse",
-			"DOMTree = xml.dom.minidom.parse(xmlf)",
-			"xmlf = view.file_name().replace('svg', 'xml')",
-			"xmlf = self.view.file_name().replace('svg', 'xml')",
-			"shutil.copy2(view.file_name(), newf)",
-			"print(newf)",
-			"newf=view.file_name().replace('svg', 'xml')",
-			"print(newf)",
-			"newf=view.file_name().replace('svg', 'xml')",
-			"shutil.copy2(view.file_name, )",
-			"shutil.copy2(view.file_name, view.file_name().replace('svg', 'xml'))",
-			"shutil.copy2(self.view.file_name, self.view.file_name().replace('svg', 'xml'))",
-			"import shutil",
-			"tmpxml.write('Some data')",
-			"tmpxml = tempfile.NamedTemporaryFile('w+t')",
-			"tmpxml.tmpxml = tempfile.NamedTemporaryFile('w+t')",
-			"tmpxml.Name()",
-			"tmpxml",
-			"tmpxml.name()",
-			"tmpxml=tempfile.NamedTemporaryFile('w+')",
-			"print(\"Temp dir: %s\" % tempfile.gettempdir())",
-			"import tempfile",
-			"view.run_command(\"xml_nodes_svg\")",
-			"view.run_command(\"open_url\", {\"url\": \"https://translate.google.com/?hl=en#auto/en/\" })",
-			"view.run_command(\"open_url\", {\"url\": \"goto\", \"targetSpeech\": \"en\"})",
-			"view.run_command(\"open_url\", {\"url\": \"goto\", \"targetSpeech\": \"de\"})",
-			"view.run_command(\"open_url\", {\"url\": \"goto\"})"
+			"if re"
 		]
 	},
 	"distraction_free":
@@ -978,8 +1010,48 @@
 	],
 	"file_history":
 	[
-		"/home/mainster/.config/sublime-text-3/Packages/User/sublime_plugin",
+		"/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+		"/home/mainster/CODES_local/matlab_workspace/pretty.log",
+		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Context.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Main.sublime-menu",
 		"/media/data/whz/projectGalvoDocu/svgCoord.py",
+		"/tmp/enum34-1.1.6/README",
+		"/tmp/enum34-1.1.6/setup.cfg",
+		"/tmp/enum34-1.1.6/MANIFEST.in",
+		"/tmp/enum34-1.1.6/PKG-INFO",
+		"/tmp/enum34-1.1.6/enum/README",
+		"/tmp/enum34-1.1.6/enum/__init__.py",
+		"/media/data/CODES/pythons/mdLibs/mdosd/setup.py",
+		"/home/mainster/CODES_local/pythons/saleSys.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/README.md",
+		"/home/mainster/.config/sublime-text-3/Packages/User/mdosd.py",
+		"/home/mainster/scripts/hidden/xdg-open.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/PythonTraceback/Main.sublime-menu",
+		"/home/mainster/.config/sublime-text-3/Packages/User/vectorMaths.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Verbose/Verbose.py",
+		"/opt/sublime_text/sublime_plugin.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Jedi - Python autocompletion/sublime_jedi.sublime-settings",
+		"/usr/lib/python2.7/dist-packages/pyosd/__init__.py",
+		"/media/data/whz/projectGalvoDocu/pics/square1_mod.svg",
+		"/media/data/whz/projectGalvoDocu/pics/gnu_flatten.svg",
+		"/media/data/whz/projectGalvoDocu/pics/square1.svg",
+		"/media/data/whz/projectGalvoDocu/pics/gnu_flatten_mod.svg",
+		"/tmp/pretty.log",
+		"/home/mainster/.config/sublime-text-3/Packages/multiple-commands/README.md",
+		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
+		"/media/data/whz/projectGalvoDocu/pics/gnu_bezier.svg",
+		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten_modcol1_mod.svg",
+		"/media/data/whz/projectGalvoDocu/test.xml",
+		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten.svg",
+		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten_mod.svg",
+		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten_modcol1.svg",
+		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten_mod_mod.svg",
+		"/media/data/whz/projectGalvoDocu/pics2/square1_mod.svg",
+		"/media/data/whz/projectGalvoDocu/pics2/square1.svg",
+		"/media/data/whz/projectGalvoDocu/pics/camb_6860_large_mirrors_sml.xcf",
+		"/home/mainster/.config/sublime-text-3/Packages/User/sublime_plugin",
 		"/home/mainster/.config/sublime-text-3/Packages/User/mathjax.html",
 		"/home/mainster/.config/sublime-text-3/Packages/MarkdownEditing/Main.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/DoxyDoxygen/Context.sublime-menu",
@@ -990,8 +1062,6 @@
 		"/User/Preferences.sublime-settings",
 		"/User/Default (Linux).sublime-keymap",
 		"/media/data/kfw.html",
-		"/media/data/whz/projectGalvoDocu/pics/gnu_flatten_mod.svg",
-		"/media/data/whz/projectGalvoDocu/pics/square1.svg",
 		"/media/data/whz/projectGalvoDocu/pics/gnus/gnu_flatten.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu_beziers.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten.svg",
@@ -1061,51 +1131,13 @@
 		"/home/mainster/compiledStuff/tocbot/README.md",
 		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/11_Plattform.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/06_Terminologie.mmd",
 		"/media/data/whz/projectGalvoDocu/ProfessorBormannMAil.mmd",
 		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150604_04h31m28s_lowres.jpg",
 		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150611_00h12m28s_lowres.jpg",
 		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150612_17h48m50s_lowres.jpg",
 		"/media/data/galvo/pics_fotos/email_bormann/galvo_ctrl_soldering_20150327_20h14m06s.jpg",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_workbench_cmpl_20150406_11h20m45s_lowres.jpg",
-		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
-		"/home/mainster/scripts/searchDocTEMPLATE.sh",
-		"/media/data/galvo_pdfs/screenshots_erster_aufbau/back/info",
-		"/media/data/whz/projectGalvoDocu/chapters/15_Regelungstechnik.mmd",
-		"/media/data/whz/projectGalvoDocu/referencesGrepper.py",
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownChaptered.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Terminal.sublime-settings",
-		"/media/data/ZyXel_P-2602H_W/rom-0",
-		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.md",
-		"/home/mainster/scripts/notifyRepeatMin.sh",
-		"/home/mainster/.config/sublime-text-3/Packages/User/nonUserBaseConfigPlacer.sh",
-		"/home/mainster/.config/sublime-text-3/Packages/markdown-preview/MarkdownPreview.py",
-		"/tmp/MarkdownPreview.py",
-		"/home/mainster/.config/sublime-text-3/Packages/User/markdownChapters.sublime-build",
-		"/home/mainster/scripts/mdAppendCites.sh",
-		"/home/mainster/.config/sublime-text-3/Packages/MarkdownChaptered/MarkdownChaptered.py",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/brntool_patched.py",
-		"/home/mainster/.config/sublime-text-3/Packages/MarkdownEditing/indent_list_item.py",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/README.md",
-		"/home/mainster/&",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_delta_webuicfg_python_try1_DECRIPTED.diff",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/brntool",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntool/brntool.py",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/brntoolOrig/brntool.py",
-		"/media/data/galvo_pdfs/gtkterm/12-08-2014/adjusting_setpoint_2",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-06_18-46-34_fix.log",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/output_2017-02-06_18-46-34.log",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try1_DECRYPTED.txt",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_diff_webuicfg_python_try1_DECRIPTED.txt",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try2_DECRYPTED.txt",
-		"/media/data/whz/projectGalvoDocu/Sehr geehrter Professor Bormann",
-		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
-		"/home/mainster/scripts/split-merge-markdowns.sh",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/outmerged.log",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/arcadyan_decrypter_v0.05a/Out.txt",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/oem.log2",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/arcadyan_decrypter_v0.05a/out.txt"
+		"/media/data/galvo/pics_fotos/email_bormann/galvo_workbench_cmpl_20150406_11h20m45s_lowres.jpg"
 	],
 	"find":
 	{
@@ -1123,6 +1155,29 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"logFile",
+			"inputfile",
+			"balance",
+			"print ([^\\\"].*)",
+			"ICONS_PATH",
+			"writeLogfile",
+			"writeLog",
+			"gnu_flatten",
+			"'",
+			"$",
+			"\\,",
+			"[\\[\\]\\']",
+			"\\, ",
+			"[\\[\\]\\']",
+			"\\\\vec x",
+			" \t\t",
+			" \n",
+			"$",
+			"run_terminal",
+			"Bezier curves",
+			"doParse",
+			"Computermodell",
+			":\n",
 			"doxy",
 			"print (.*)$",
 			"width=\"100%\"",
@@ -1227,20 +1282,7 @@
 			"^([0-9])",
 			"@Iser:2008",
 			"fnArnoldMagn",
-			"^\\!",
-			"board",
-			"border",
-			"\\-D",
-			"V-Modell-XT-Bund",
-			"^>",
-			"^\\>",
-			">",
-			"V-Modell%20XT",
-			"zusammengesetztes und strukturiertes Ganzes. Es ha",
-			"ARM",
-			"s",
-			"NTS",
-			"- "
+			"^\\!"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1248,6 +1290,21 @@
 		"regex": true,
 		"replace_history":
 		[
+			"logfile",
+			"infile",
+			"print(\"\\1\")",
+			"writeLogFile",
+			"writeLogfile",
+			"gnu_flatten_lowres",
+			"",
+			";",
+			"\\t",
+			"",
+			"\\t",
+			"",
+			"\\\\vec s",
+			"\\vec s",
+			" ",
 			"print(\\1)",
 			"",
 			"width=\"50%\"",
@@ -1305,7 +1362,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1314,15 +1371,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10220,
+						"buffer_size": 10539,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2865,
-								2865
+								3787,
+								3787
 							]
 						],
 						"settings":
@@ -1334,93 +1391,94 @@
 							"target": "browser"
 						},
 						"translation.x": 0.0,
+						"translation.y": 374.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "pics/gnu_flatten_lowres.svg",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14198,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								752,
+								752
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
-				},
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
 				{
-					"buffer": 1,
-					"file": "test.xml",
+					"buffer": 2,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 707,
+						"buffer_size": 9223,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								489,
-								489
+								170,
+								170
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
-				{
-					"buffer": 2,
-					"file": "pics/square1.svg",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2199,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1286,
-								1286
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 45.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
 				{
 					"buffer": 3,
 					"file": "svgCoord.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12690,
+						"buffer_size": 15122,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7757,
-								7757
+								1322,
+								1322
 							]
 						],
 						"settings":
@@ -1430,7 +1488,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1697.0,
+						"translation.y": 56.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1449,8 +1507,8 @@
 						"selection":
 						[
 							[
-								21080,
-								21080
+								12934,
+								12934
 							]
 						],
 						"settings":
@@ -1461,37 +1519,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3915.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "pics/gnu_flatten.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16239,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								47,
-								47
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3393.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
@@ -1502,7 +1530,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 23.0
+		"height": 21.0
 	},
 	"input":
 	{
@@ -1528,7 +1556,7 @@
 		"cols":
 		[
 			0.0,
-			0.506470588235,
+			0.552891172998,
 			1.0
 		],
 		"rows":
@@ -1550,7 +1578,7 @@
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "Packages/User/markdownChapters.sublime-build",
+	"pinned_build_system": "",
 	"project": "projectGalvoDocu.sublime-project",
 	"replace":
 	{
@@ -1568,12 +1596,12 @@
 	},
 	"select_project":
 	{
-		"height": 0.0,
+		"height": 500.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 380.0
 	},
 	"select_symbol":
 	{
