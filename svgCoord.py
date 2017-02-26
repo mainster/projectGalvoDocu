@@ -34,6 +34,7 @@ from numpy.lib.recfunctions import append_fields
 from subprocess import call
 from mdLibs import mdosd as osd
 from abc import abstractmethod # ABCMeta
+from pprint import pprint 
 
 #-------------------------------------------------------------------------------
 ## Template string of circle node marker shape
@@ -48,32 +49,50 @@ circleTempStr=['<circle',
 R='{http://www.w3.org/2000/svg}'
 MATLAB_PRJ='/home/mainster/CODES_local/matlab_workspace'
 
+DEBUG = True
+
+class dprint:
+	def __init__(self, args):
+		global DEBUG
+		if DEBUG: 
+			print(os.path.basename(__file__), end=' ')
+			print(args)
+
 #-------------------------------------------------------------------------------
 ## @brief      Provides a storage class for path object payloads.
 ##
 class Paths:
+	# Static variables, access through class
 	def __init__(self, name, path, offs=(0, 0)):
 		self.name = name
+		self.valid = True 
 		self.lines = []
 		self.nodes = []
 
-		for n in path:
-			# print(n)
-			m = re.findall('(start|end)\=\((-?[0-9\.]+)([+-][0-9\.]+)j\)', str(n), re.DOTALL)
-			# print("matches: ", np.shape(m))
-			self.lines.append((
-				float(m[0][1]) + offs[0], float(m[0][2]) + offs[1], 
-				float(m[1][1]) + offs[0], float(m[1][2]) + offs[1]))
+		# Check for empty path
+		if len(path) is 0:
+			dprint("Empty path, id: %s " % self.name)
+			self.valid = False
+		else:
+			for n in path:
+				m = re.findall('(start|end)\=\((-?[0-9\.]+)([+-][0-9\.]+)j\)', str(n), re.DOTALL)
+				self.lines.append((
+					float(m[0][1]) + offs[0], float(m[0][2]) + offs[1], 
+					float(m[1][1]) + offs[0], float(m[1][2]) + offs[1]))
 
-		# Derive nodes from line objects
-		[ (self.nodes.append((line[0], line[1])),
-			self.nodes.append((line[2], line[3]))) for line in self.lines ]
+			# Derive nodes from line objects
+			[ (self.nodes.append((line[0], line[1])),
+				self.nodes.append((line[2], line[3]))) for line in self.lines ]
 
 	def getLines(self):
 		return self.lines
 
 	def getNodes(self):
 		return self.nodes
+
+	def isValid(self):
+		return self.valid
+
 
 #-------------------------------------------------------------------------------
 ## @brief      Class for inkscape svg objects style attributes.
@@ -149,11 +168,21 @@ class Output(object):
 			self.nlines.append(len(path.getLines()))) for path in mPaths]
 		self.nlines = sum(self.nlines)
 
-		try:
-			self.max = max( [max(line) for line in self.lines] )
-		except:
-			self.max = 1000
-			osd.warn("Exception max([])")
+		# try:
+		self.max = [max(line) for line in self.lines]
+		# print("shape: %i" % 
+		# 	re.findall('\(([0-9]+)\,([0-9]+)\)', 
+		# 	str(np.shape(self.max)), re.DOTALL)[0][0])
+		
+		while [0][0] > 1:
+			print(self.max)
+			self.max = max(self.max)
+		
+		# except:
+		# 	self.max = 1000
+		# 	osd.warn("Exception max([])")
+
+		print('max: %i' % self.max)
 
 		# decimal places (2) + dot separator (1) = 3  
 		formatstr = '%%%i.%if' % (self.getPreceedSpace(self.max)+2+1, 2)
@@ -168,6 +197,7 @@ class Output(object):
 
 	# Ceil to next decade
 	def getPreceedSpace(self, value):
+		# print('len: %i  shape:' % len(value), np.shape(value))
 		exp = 1;
 		while math.ceil(self.max/10**exp) != 1.0:	
 			exp += 1
@@ -255,7 +285,19 @@ def doParse(infile):
 	# Create Path() class instance
 	mPaths = []
 	[ mPaths.append( Paths(s[1], parse_path(s[0]), offs) ) for s in rawPathsIds ]
-	print(mPaths[0])
+
+	invEl = []
+	# Check for invalid path elements and remove them
+	# for k in range(len(mPaths)):
+	# 	if not mPaths[k].isValid():
+	# 		invEl.append(k)
+
+	[ invEl.append(k) if not mPaths[k].isValid() else '' for k in range(len(mPaths)) ]
+	# print("lbefore: %i  len(mPaths): %i" % (lbefore, len(mPaths)))
+	print("invEl: ", invEl)
+	for k in invEl:
+		del mPaths[k]  
+	
 	return (mPaths, offs)
 
 #-------------------------------------------------------------------------------
@@ -376,10 +418,13 @@ if __name__ == "__main__":
 		print("Exception while getopts!")
 		osd.crit("Exception while getopts!").send()
 
-	try:
-		(mPaths, offs) = doParse(infile)			# Get paths from vector graphic
-	except: 
-		if not mPaths:	print("Error, no paths or bad -i argument"); exit()
+	# try:
+	(mPaths, offs) = doParse(infile)			# Get paths from vector graphic
+	# except: 
+	if not mPaths:	print("Error, no paths or bad -i argument"); exit()
+
+	for p in mPaths:
+		print(p.getLines())
 
 	if offs: 
 		print("offs attr: %f, %f" % (offs[0], offs[1]))
