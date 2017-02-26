@@ -4,6 +4,86 @@
 		"selected_items":
 		[
 			[
+				"inv",
+				"invEl"
+			],
+			[
+				"inva",
+				"invalidElem"
+			],
+			[
+				"mpat",
+				"mpath"
+			],
+			[
+				"is",
+				"isValid"
+			],
+			[
+				"base",
+				"basename"
+			],
+			[
+				"DE",
+				"DEBUG"
+			],
+			[
+				"fin",
+				"find\t(SublimeMdbToolbox.py)"
+			],
+			[
+				"line",
+				"lines"
+			],
+			[
+				"num",
+				"numberLines\tFalse"
+			],
+			[
+				"numb",
+				"numberLines"
+			],
+			[
+				"form",
+				"formatstr_"
+			],
+			[
+				"li",
+				"lines"
+			],
+			[
+				"Wri",
+				"WriteLogfile"
+			],
+			[
+				"Pre",
+				"PrettyPrint"
+			],
+			[
+				"p",
+				"pretty"
+			],
+			[
+				"prett",
+				"pretty"
+			],
+			[
+				"lin",
+				"linesPretty\tstatement"
+			],
+			[
+				"abs",
+				"abstractmethod"
+			],
+			[
+				"msg",
+				"msgTitle\tNone"
+			],
+			[
+				"wa",
+				"warn\t(SublimeMdbToolbox.py)"
+			],
+			[
 				"MAT",
 				"MATLAB_PRJ"
 			],
@@ -22,10 +102,6 @@
 			[
 				"ms",
 				"msgTitle\tstatement"
-			],
-			[
-				"msg",
-				"msgType\tstatement"
 			],
 			[
 				"typ",
@@ -142,10 +218,6 @@
 			[
 				"ex",
 				"exists\t(MarkdownPreview.py)"
-			],
-			[
-				"prett",
-				"prettyPrint"
 			],
 			[
 				"Fa",
@@ -442,78 +514,6 @@
 			[
 				"cont",
 				"continue\t(MarkdownPreview.py)"
-			],
-			[
-				"chara",
-				"chapater\t(MarkdownPreview.py)"
-			],
-			[
-				"STM32",
-				"STM32F429i"
-			],
-			[
-				"Cortex",
-				"Cortex-M4"
-			],
-			[
-				"refF",
-				"refFile"
-			],
-			[
-				"bloc",
-				"blockquotIndent\t(styleMdb.css)"
-			],
-			[
-				"scal",
-				"scale\t(styleMdb.css)"
-			],
-			[
-				"und",
-				"underline"
-			],
-			[
-				"backgr",
-				"background-color"
-			],
-			[
-				"red",
-				"redText\t(styleMdb.css)"
-			],
-			[
-				"re",
-				"red"
-			],
-			[
-				"yello",
-				"yellowBg\t(styleMdb.css)"
-			],
-			[
-				"Hardware",
-				"Hardware-Plattform"
-			],
-			[
-				"temp_",
-				"temp_toc_refs"
-			],
-			[
-				"refer",
-				"references"
-			],
-			[
-				"TO",
-				"TOC_STRING"
-			],
-			[
-				"mdFile",
-				"mdFileDir"
-			],
-			[
-				"insert",
-				"insertPos"
-			],
-			[
-				"Quellen",
-				"Quellenangaben\t(20_Quellenangaben.mmd)"
 			]
 		]
 	},
@@ -532,7 +532,31 @@
 			"file": "pics/gnu_flatten_lowres.svg",
 			"settings":
 			{
-				"buffer_size": 14198,
+				"buffer_size": 13910,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
+			"settings":
+			{
+				"buffer_size": 4424,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+			"settings":
+			{
+				"buffer_size": 1764,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/pythons/saleSys.py",
+			"settings":
+			{
+				"buffer_size": 2086,
 				"line_ending": "Unix"
 			}
 		},
@@ -549,8 +573,16 @@
 			"file": "svgCoord.py",
 			"settings":
 			{
-				"buffer_size": 15122,
+				"buffer_size": 16352,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/mainster/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
+			"settings":
+			{
+				"buffer_size": 335,
 				"line_ending": "Unix"
 			}
 		},
@@ -600,9 +632,13 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "cle",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"tras",
+				"DoxyDoxygen: Translate Selection To..."
+			],
 			[
 				"cle",
 				"Clear Console"
@@ -732,10 +768,6 @@
 				"Set Syntax: MultiMarkdown"
 			],
 			[
-				"tras",
-				"DoxyDoxygen: Translate Selection To..."
-			],
-			[
 				"markd",
 				"Markdown HTML Preview"
 			],
@@ -863,6 +895,71 @@
 		"height": 189.0,
 		"history":
 		[
+			"import numpy as np",
+			"i,j = np.unravel_index(a.argmax(), a.shape)",
+			"a=l1",
+			"dir(array)",
+			"array.flatten(l1)",
+			"import array",
+			"array.flatten(l1)",
+			"l1.flatten()",
+			"l1",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)')).groups()",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(,6)'))[0][0]",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)'))[0][0]",
+			"m[0][1]",
+			"m[0][0]",
+			"m[1]",
+			"m[0]",
+			"m=re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)'))",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)')).groups()",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)')).group()",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)')).group",
+			"re.findall('\\(([0-9]+)\\,([0-9]+)\\)', str('(12,6)'))",
+			"rc.findall(rc=re.compile()'(12, 4)', re.DOTALL)",
+			"rc.findall('(12, 4)', re.DOTALL)",
+			"rc.groups('(12, 4)', re.DOTALL)",
+			"rc.match('(12, 4)', re.DOTALL)",
+			"rc=re.compile('\\(([0-9]+)\\,([0-9]+)\\)')",
+			"rc.match('(12, 4)', re.DOTALL)",
+			"rc=re.compile('\\(([2-9][0-9]*\\,)|([1-9][0-9]+)')",
+			"rc.pattern",
+			"rc.pattern()",
+			"rc.pattern('(12, 4)')",
+			"rc.pattern('(12, 4)', rc.DOTALL)",
+			"rc.match('(12, 4)', re.DOTALL)",
+			"rc.match('(12, 4)', rc.DOTALL)",
+			"rc.match('(212, 4)')",
+			"rc.match('(12, 4)')",
+			"rc=re.compile('\\(([2-9][0-9]*\\,)|([1-9][0-9]*)')",
+			"rc.match('(12, 4)')",
+			"rc.match('(1, 4)')",
+			"rc.match('(2, 4)')",
+			"rc.match('(22, 4)')",
+			"dir(rc)",
+			"rc",
+			"rc=re.compile('\\(([2-9][0-9]*\\,)|([0-9]{2,})')",
+			"ms=[re.match('\\(([2-9][0-9]*\\,).*', str(ln), re.DOTALL) for ln in l1]; pprint(ms)",
+			"ms=[re.match('\\(([2-9][0-9]*\\,)|([0-9]{2,}).*', str(ln), re.DOTALL) for ln in l1]; pprint(ms)",
+			"ms=[re.match('\\(([2-9][0-9]*\\,)|([0-9]{2,}).*', str(ln), re.DOTALL) for ln in l1]; print(ms)",
+			"pprint(ms)",
+			"ms=[re.match('\\(([2-9][0-9]*\\,)|([0-9]{2,})', str(ln), re.DOTALL) for ln in l1]",
+			"l1",
+			"pprint(ms)",
+			"from pprint import pprint",
+			"pprint(ms)",
+			"print(ms)",
+			"ms=[re.match('\\(([2-9][0-9]*\\,)|([0-9]{2,})', str(ln)) for ln in l1]",
+			"[re.match('\\(([2-9][0-9]*\\,)|([0-9]{2,})', str(ln)) for ln in l1]",
+			"m",
+			"m=re.match('\\(([2-9][0-9]*\\,)|([0-9]{2,})', str(l1[1]))",
+			"l1[1]",
+			"l1",
+			"l1=[(22, 4), (23, 4), (11, 4), (12, 4), (1, 4), (2, 4)]",
+			"import re",
+			"dir(m)",
+			"from mdLibs import mdosd as m",
+			"dir(osd)",
 			"m.ok('fddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddf', tSec=1).send()",
 			"m.ok('fddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddf').send()",
 			"m.ok('ff').send()",
@@ -925,72 +1022,7 @@
 			"sublime.log_commands(True)",
 			"log.commands",
 			"' '.join(svg_string)",
-			"string.join(svg_string)",
-			"import string",
-			"string.join(svg_string)",
-			"svg_string.merge()",
-			"svg_string.merge",
-			"svg_string.join()",
-			"svg_string",
-			"svg_string = fd.readlines()",
-			"fd = open(view.file_name(), 'r+')",
-			"fd = open(self.view.file_name(), 'r+')",
-			"view",
-			"edit.view",
-			"for p in sys.path",
-			"for p in sys.path:",
-			"for p in sys.path: print(p);",
-			"for p in sys.path: print(p)",
-			"sys.path",
-			"import sys",
-			"sys.path",
-			"from svg.path import parse_path",
-			"sublime.log_commands(False)",
-			"sublime.log_commands(True)",
-			"sublime.log_commands(\"false\")",
-			"sublime.log_commands(false)",
-			"sublime.log_commands(fals)",
-			"sublime.get_log_commands",
-			"sublime.log_commands",
-			"sublime.get_log_commands()",
-			"sublime.log_commands()",
-			"sublime.log_command()",
-			"sublime.log_command",
-			"re.match('g', id)",
-			"view.run_command('insert', 100)",
-			"view.run_command('insert', 100, 'dd')",
-			"run_command('insert', 100, {\"String\": \"ssdd\"})",
-			"view.run_command('insert', 100, {\"String\": \"ssdd\"})",
-			"view.run_command('insert', {\"String\": \"ssdd\"})",
-			"view.file_name()",
-			"view.file_name",
-			"view",
-			"view.run_command('insert', {\"String\": \"ssdd\"})",
-			"view.run_command(\"insert\", {\"String\": \"ssdd\"})",
-			"edit.run_command(\"insert\", {\"String\": \"ssdd\"})",
-			"view.run_command(\"insert\", {\"String\": \"ssdd\"})",
-			"view.run_command(\"insert\", {\"string\": \"ssdd\"})",
-			"view.run_command(\"insert\", {\"string\", \"ssdd\"})",
-			"view.run_command(\"insert\", [\"string\", \"ssdd\"])",
-			"view.run_command(\"insert\", \"string\", \"ssdd\")",
-			"view.run_command(\"insert\", \"string\": \"ssdd\")",
-			"view.run_command(\"insert\", \"ssdd\")",
-			"insert",
-			"run_command(\"insert\", { \"text\": \"ddss\" })",
-			"view.run_command(\"insert\", { \"text\": \"ddss\" })",
-			"view.run_command(\"insert\", { \"text\", \"ddss\" })",
-			"view.run_command(\"insert\", \"text\", \"ddss\")",
-			"view.run_command(\"insert\", \"text\": \"ddss\")",
-			"view.run_command(\"insert\")",
-			"view.run_command(\"paste\")",
-			"from svg.path import Path, Line, Arc, CubicBezier, QuadraticBezier",
-			"re.match(r'^g[0-9]+', id)",
-			"if re.match(r'^g[0-9]+', id)",
-			"re.match('gd', id)",
-			"re.match('g', id)",
-			"import re",
-			"re.match('g', id)",
-			"if re"
+			"string.join(svg_string)"
 		]
 	},
 	"distraction_free":
@@ -1010,8 +1042,10 @@
 	],
 	"file_history":
 	[
-		"/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+		"/home/mainster/.config/sublime-text-3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
 		"/home/mainster/CODES_local/matlab_workspace/pretty.log",
+		"/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
+		"/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Context.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Main.sublime-menu",
 		"/media/data/whz/projectGalvoDocu/svgCoord.py",
@@ -1135,9 +1169,7 @@
 		"/media/data/whz/projectGalvoDocu/ProfessorBormannMAil.mmd",
 		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150604_04h31m28s_lowres.jpg",
 		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150611_00h12m28s_lowres.jpg",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150612_17h48m50s_lowres.jpg",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_ctrl_soldering_20150327_20h14m06s.jpg",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_workbench_cmpl_20150406_11h20m45s_lowres.jpg"
+		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150612_17h48m50s_lowres.jpg"
 	],
 	"find":
 	{
@@ -1155,6 +1187,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"invalidElem",
+			"writelogfile",
+			"osd",
 			"logFile",
 			"inputfile",
 			"balance",
@@ -1279,10 +1314,7 @@
 			" [0-9]+\\];...",
 			"\\,",
 			"([0-9])$",
-			"^([0-9])",
-			"@Iser:2008",
-			"fnArnoldMagn",
-			"^\\!"
+			"^([0-9])"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1290,6 +1322,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"invEl",
 			"logfile",
 			"infile",
 			"print(\"\\1\")",
@@ -1378,8 +1411,8 @@
 						"selection":
 						[
 							[
-								3787,
-								3787
+								2688,
+								2688
 							]
 						],
 						"settings":
@@ -1394,7 +1427,7 @@
 						"translation.y": 374.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1403,15 +1436,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14198,
+						"buffer_size": 13910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								752,
-								752
+								1182,
+								1182
 							]
 						],
 						"settings":
@@ -1421,20 +1454,108 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 112.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4424,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								839,
+								839
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/User/Log.sublime-syntax"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1764,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								182,
+								182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/media/data/CODES/pythons/saleSys.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2086,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								563,
+								563
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
-					"buffer": 2,
+					"buffer": 5,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
 					"semi_transient": false,
 					"settings":
@@ -1461,24 +1582,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 6,
 					"file": "svgCoord.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15122,
+						"buffer_size": 16352,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1322,
-								1322
+								5936,
+								5936
 							]
 						],
 						"settings":
@@ -1488,14 +1609,45 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 56.0,
+						"translation.y": 1161.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 7,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 335,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_complete": true,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 					"semi_transient": false,
 					"settings":
@@ -1522,7 +1674,7 @@
 						"translation.y": 3393.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1612,7 +1764,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
