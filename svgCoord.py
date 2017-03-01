@@ -36,6 +36,9 @@ from mdLibs import mdosd as osd
 from abc import abstractmethod # ABCMeta
 from pprint import pprint 
 
+# Aliases
+dim = np.shape
+
 #-------------------------------------------------------------------------------
 ## Template string of circle node marker shape
 ##
@@ -49,14 +52,17 @@ circleTempStr=['<circle',
 R='{http://www.w3.org/2000/svg}'
 MATLAB_PRJ='/home/mainster/CODES_local/matlab_workspace'
 
-DEBUG = True
+DEBUG = False
 
 class dprint:
-	def __init__(self, args):
+	def __init__(self, arg, opt=None):
 		global DEBUG
 		if DEBUG: 
 			print(os.path.basename(__file__), end=' ')
-			print(args)
+			if opt != None: 	
+				print(arg, opt)
+			else: 
+				print(arg)
 
 #-------------------------------------------------------------------------------
 ## @brief      Provides a storage class for path object payloads.
@@ -158,8 +164,9 @@ class Style_t:
 ## @brief      Class to provide output generator (prettyPrint, write log)
 ##
 class Output(object):
-	def __init__(self, mPaths, logfile=None):
+	def __init__(self, mPaths, logfile=None, incfile=None):
 		self.logfile = logfile
+		self.incfile = incfile
 		self.lines = []
 		self.linesPretty = []
 		self.nlines = []
@@ -168,20 +175,10 @@ class Output(object):
 			self.nlines.append(len(path.getLines()))) for path in mPaths]
 		self.nlines = sum(self.nlines)
 
-		# try:
+		# Find max 2d vector element
 		self.max = [max(line) for line in self.lines]
-		# print("shape: %i" % 
-		# 	re.findall('\(([0-9]+)\,([0-9]+)\)', 
-		# 	str(np.shape(self.max)), re.DOTALL)[0][0])
-		
-		while [0][0] > 1:
-			print(self.max)
+		while dim(self.max):
 			self.max = max(self.max)
-		
-		# except:
-		# 	self.max = 1000
-		# 	osd.warn("Exception max([])")
-
 		print('max: %i' % self.max)
 
 		# decimal places (2) + dot separator (1) = 3  
@@ -232,9 +229,42 @@ class CreateLog(Output):
 				fd.write('\t'.join(line) + '\n')
 
 			fd.close()
-			osd.ok('%s' % logfile, 'Logfile successfully written').send()
+			osd.ok('%s' % self.logfile, 'Logfile successfully written').send()
 		except:
 			osd.warn('Exception while writing logfile').send()
+
+class CreateInclude(Output):
+	def out(self): 
+		try:
+			fd = open(self.incfile, 'w')
+
+			fd.write(
+				"""#include <stdio.h>
+#include <stdint.h>
+				
+typedef float node_t[2];      /* A nodes X- and Y- values */
+typedef node_t lseg_t[2];     /* A line segment is defined by 2 nodes (x1,y1),(x2,y2) */
+typedef lseg_t svg_t[2];      /* An array of line segments */
+				
+				
+const lseg_t gnu[ ] = {
+""")
+
+			for k in range(len(self.linesPretty)):
+				line = self.linesPretty[k]
+				if k < len(self.linesPretty) - 1:
+					fd.write('\t{{ %s, %s }, { %s, %s }},\n' 
+						% (str(line[0]), str(line[1]), str(line[2]), str(line[3])))
+				else:
+					fd.write('\t{{ %s, %s }, { %s, %s }}\n};\n' 
+						% (str(line[0]), str(line[1]), str(line[2]), str(line[3])))
+			
+			fd.close()
+			osd.ok('%s' % self.incfile, 'IncFile successfully written').send()
+		except (ValueError, TypeError) as e:
+			print('Exception while writing incfile:\n%s' % e.message)
+			osd.warn('Exception while writing incfile:\n%s' % e.message).send()
+
 
 #-------------------------------------------------------------------------------
 ## @brief      Returns xml tag of a template bed node marker shape.
@@ -373,19 +403,19 @@ def placeNodeMarker(infile, mPaths, MARKER_SIZE = 3, suffix=''):
 ## @return     Input file path, doPretty flag.
 ##
 def main(argv):
-	flags = { 'logfile': False, 'strokes': False, 'marker': False, 'pretty': False }
+	flags = { 'logfile': False, 'incfile': False, 'strokes': False, 'marker': False, 'pretty': False }
 
 	infile = None
-	logfile = None
+	outs = {'logfile':'', 'incfile':''}
 
 	cmdUsage = '%s -i <infile> [-p]' % os.path.basename(__file__)
 
 
 	try:
-		onodes, args = getopt.getopt(argv,"hi:smpl:",
-			["ifile=", "strokes", "marker", "pretty", "logfile="])
+		onodes, args = getopt.getopt(argv,"hi:smpl:c:",
+			["ifile=", "strokes", "marker", "pretty", "logfile=", "incfile="])
 	except getopt.GetoptError:
-		print(cmdUsage)
+		print(cmdUsage, getopt.GetoptError)
 		sys.exit(2)
 
 	for opt, arg in onodes:
@@ -393,7 +423,8 @@ def main(argv):
 			print(cmdUsage)
 			sys.exit()
 		elif opt in ("-i", "--ifile"):		infile = arg
-		elif opt in ("-l", "--logfile"): 	flags['logfile'] = True; logfile = arg
+		elif opt in ("-l", "--logfile"): 	flags['logfile'] = True; outs['logfile'] = arg
+		elif opt in ("-c", "--incfile"):flags['incfile'] = True; outs['incfile'] = arg
 		elif opt in ("-s", "--strokes"):	flags['strokes'] = True
 		elif opt in ("-m", "--marker"):	 	flags['marker'] = True
 		elif opt in ("-p", "--pretty"):	 	flags['pretty'] = True
@@ -401,7 +432,7 @@ def main(argv):
 	if not os.path.isfile(infile):
 		print('Input file "%s" not valied!' % infile)
 
-	return (infile, logfile, flags)
+	return (infile, outs, flags)
  
 #-------------------------------------------------------------------------------
 ## Script run.
@@ -409,22 +440,23 @@ def main(argv):
 if __name__ == "__main__":
 	mPaths = []
 
-	print('sys.argv: ', sys.argv)
+	dprint('sys.argv: ', sys.argv)
 
 	try: 
-		(infile, logfile, flags) = main(sys.argv[1:])		# Parse input arguments
+		(infile, outs, flags) = main(sys.argv[1:])		# Parse input arguments
+		logfile = outs['logfile']
+		incfile = outs['incfile']
 	except: 
-		# if not infile: print("Argument for -i not given"); exit()
 		print("Exception while getopts!")
 		osd.crit("Exception while getopts!").send()
 
-	# try:
-	(mPaths, offs) = doParse(infile)			# Get paths from vector graphic
-	# except: 
-	if not mPaths:	print("Error, no paths or bad -i argument"); exit()
+	try:
+		(mPaths, offs) = doParse(infile)			# Get paths from vector graphic
+	except: 
+		if not mPaths:	print("Error, no paths or bad -i argument"); exit()
 
 	for p in mPaths:
-		print(p.getLines())
+		dprint(p.getLines())
 
 	if offs: 
 		print("offs attr: %f, %f" % (offs[0], offs[1]))
@@ -443,13 +475,12 @@ if __name__ == "__main__":
 # , MATLAB_PRJ + os.path.basename(infile) + '.log'
 	printPretty = PrettyPrint(mPaths)
 	logCreate = CreateLog(mPaths, logfile=logfile)
+	includeCreate = CreateInclude(mPaths, incfile=incfile)
 
 	# Pretty print(nodes to console.)
-	if flags['pretty']:
-		printPretty.out(numberLines=True)
-
-	if flags['logfile']:
-		logCreate.out()
+	if flags['pretty']: 	printPretty.out(numberLines=True)
+	if flags['logfile']: 	logCreate.out()
+	if flags['incfile']:	includeCreate.out()
 
 	lin = []
 	[ lin.append(len(path.getLines())) for path in mPaths ]

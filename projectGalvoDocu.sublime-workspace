@@ -4,6 +4,102 @@
 		"selected_items":
 		[
 			[
+				"node",
+				"node_t"
+			],
+			[
+				"Vektor",
+				"Vektorgrafiken"
+			],
+			[
+				"fig",
+				"figcaption\tTag"
+			],
+			[
+				"just",
+				"justify"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"margi",
+				"margin-left"
+			],
+			[
+				"bord",
+				"border-top"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"small",
+				"smaller"
+			],
+			[
+				"flo",
+				"floatR"
+			],
+			[
+				"top",
+				"topaligned"
+			],
+			[
+				"backgr",
+				"background-image"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"alig",
+				"align=\"top"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"inl",
+				"inline"
+			],
+			[
+				"class",
+				"class=〔attribute〕"
+			],
+			[
+				"box",
+				"boxed"
+			],
+			[
+				"head",
+				"header"
+			],
+			[
+				"width",
+				"width=\"200px\t(test.html)"
+			],
+			[
+				"gnu",
+				"gnu_orig.svg"
+			],
+			[
+				"u",
+				"url\t(styleMdb.css)"
+			],
+			[
+				"Vektr",
+				"Vektorgrafiken"
+			],
+			[
 				"inv",
 				"invEl"
 			],
@@ -192,28 +288,12 @@
 				"name"
 			],
 			[
-				"a",
-				"append"
-			],
-			[
 				"rawPa",
 				"rawPaths"
 			],
 			[
-				"node",
-				"nodes"
-			],
-			[
-				"padd",
-				"padding"
-			],
-			[
 				"border-col",
 				"border-collapse"
-			],
-			[
-				"bord",
-				"border-spacing"
 			],
 			[
 				"ex",
@@ -276,16 +356,8 @@
 				"tempfile"
 			],
 			[
-				"inl",
-				"inline-block"
-			],
-			[
 				"mar",
 				"markdown=1\t(styleMdb.css)"
-			],
-			[
-				"marg",
-				"margin-left"
 			],
 			[
 				"l",
@@ -294,10 +366,6 @@
 			[
 				"text-dec",
 				"text-decoration-style"
-			],
-			[
-				"alig",
-				"align-self"
 			],
 			[
 				"inli",
@@ -310,14 +378,6 @@
 			[
 				"paddi",
 				"padding-left"
-			],
-			[
-				"box",
-				"boxed\t(styleMdb.css)"
-			],
-			[
-				"margi",
-				"margin-left"
 			],
 			[
 				"cen",
@@ -388,10 +448,6 @@
 				"background-color"
 			],
 			[
-				"head",
-				"header\t(styleMdb.css)"
-			],
-			[
 				"ce",
 				"centered\t(styleMdb.css)"
 			],
@@ -458,62 +514,6 @@
 			[
 				"border-",
 				"border-spacing"
-			],
-			[
-				"Modell",
-				"Modellbildung\t(03_Einleitung.mmd)"
-			],
-			[
-				"Fer",
-				"Fertigungsprozesse\t(04_Vorarbeit.mmd)"
-			],
-			[
-				"Prototy",
-				"Prototypen\t(04_Vorarbeit.mmd)"
-			],
-			[
-				"target",
-				"targetSpeech"
-			],
-			[
-				"open",
-				"open_new_tab〔function〕"
-			],
-			[
-				"targ",
-				"targetSpeech"
-			],
-			[
-				"camb",
-				"camb_6860_large_mirrors_sml.png\tFile"
-			],
-			[
-				"chap",
-				"chapDirName"
-			],
-			[
-				"Entwickl",
-				"Entwicklungsumgebung"
-			],
-			[
-				"repl",
-				"replace"
-			],
-			[
-				"wri",
-				"writelines〔function〕"
-			],
-			[
-				"Work",
-				"Workbench\t(12_Software_und_Simulation.mmd)"
-			],
-			[
-				"Plattf",
-				"Plattformunabhängigkeit\t(11_Plattform.mmd)"
-			],
-			[
-				"cont",
-				"continue\t(MarkdownPreview.py)"
 			]
 		]
 	},
@@ -523,7 +523,25 @@
 			"file": "chapters/05_Projektziel.mmd",
 			"settings":
 			{
-				"buffer_size": 10539,
+				"buffer_size": 12652,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.c",
+			"settings":
+			{
+				"buffer_size": 301,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.h",
+			"settings":
+			{
+				"buffer_size": 798,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -537,18 +555,18 @@
 			}
 		},
 		{
-			"file": "/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
-			"settings":
-			{
-				"buffer_size": 4424,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
 			"settings":
 			{
 				"buffer_size": 1764,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pics/C_diag2.svg",
+			"settings":
+			{
+				"buffer_size": 3646,
 				"line_ending": "Unix"
 			}
 		},
@@ -561,28 +579,11 @@
 			}
 		},
 		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
-			"settings":
-			{
-				"buffer_size": 9223,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "svgCoord.py",
 			"settings":
 			{
-				"buffer_size": 16352,
+				"buffer_size": 16190,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
-			"settings":
-			{
-				"buffer_size": 335,
 				"line_ending": "Unix"
 			}
 		},
@@ -590,15 +591,52 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 			"settings":
 			{
-				"buffer_size": 30409,
+				"buffer_size": 34146,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"contents": ".markdown-body div.fig figcaption,\n.markdown-body figure figcaption,\n.markdown-body div.fig ccaption,\n.markdown-body figure ccaption,\n.markdown-body div.fig lcaption,\n.markdown-body figure lcaption {\n    background-color: #E7FFE7;\n    width:          inherit - 2*var(--figure-to-img-margin-top);\n    /*color:            #595959;*/\n    font-style:     italic;\n    font-size:      90%;\n    /*margin-left:  3px;*/\n    /*margin-right:     3px;*/\n    border:         none;\n}\n\n.markdown-body div.fig.box figcaption,\n.markdown-body figure.box figcaption,\n.markdown-body div.fig.box ccaption,\n.markdown-body figure.box ccaption,\n.markdown-body div.fig.box lcaption,\n.markdown-body figure.box lcaption {\n    border-top:     1px solid #DEDEDE !important;\n    padding-top:    5px;\n}\n\n.markdown-body lcaption { color:red; text-align: left; }\n.markdown-body ccaption { color:blue; text-align: center; }\n\n",
+			"settings":
+			{
+				"buffer_size": 891,
+				"line_ending": "Unix",
+				"name": ".markdown-body div.fig figcaption,"
+			}
 		}
 	],
-	"build_system": "Packages/Python/Python.sublime-build",
+	"build_system": "Packages/C++/C++ Single File.sublime-build",
 	"build_system_choices":
 	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/User/markdownChapters.sublime-build",
+					""
+				],
+				[
+					"Packages/User/mkDoxy.sublime-build",
+					""
+				],
+				[
+					"Packages/User/udev_reload.sublime-build",
+					""
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
 		[
 			[
 				[
@@ -632,9 +670,25 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "",
+		"last_filter": "run",
 		"selected_items":
 		[
+			[
+				"run",
+				"Build With: C++ Single File - Run"
+			],
+			[
+				"url",
+				"Open URL"
+			],
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
 			[
 				"tras",
 				"DoxyDoxygen: Translate Selection To..."
@@ -714,14 +768,6 @@
 			[
 				"col",
 				"Color Picker"
-			],
-			[
-				"colo",
-				"Color Picker"
-			],
-			[
-				"lore",
-				"Add some Lorem Gibson"
 			],
 			[
 				"syn bash",
@@ -895,6 +941,21 @@
 		"height": 189.0,
 		"history":
 		[
+			"sublime.log_commands(True)",
+			"np.shape(l3)",
+			"l3",
+			"l3=[l2,l2,l2]",
+			"l3=[l2,l2;l2]",
+			"l2",
+			"l2=(l1,l1)",
+			"l1",
+			"import numpy as np",
+			"np.shape(l1)",
+			"l1",
+			"l1=[(1,2),(1,2)*2,(1,2)*4]",
+			"l1=random(1,10)",
+			"l1=rand(1,10)",
+			"l1",
 			"import numpy as np",
 			"i,j = np.unravel_index(a.argmax(), a.shape)",
 			"a=l1",
@@ -1007,22 +1068,7 @@
 			"print plug",
 			"plugin_name=\"plugin+\"",
 			"plugin_name",
-			"sublime.log_commands(False)",
-			"view.run_command(\"join_lines\", \" \")",
-			"view.run_command(\"join_lines\")",
-			"view.run_command('open_terminal_project_folder')",
-			"view.run_command(\"open_terminal_project_folder\")",
-			"sublime.run_command(\"open_terminal_project_folder\")",
-			"sublime.log_commands(True)",
-			"sublime.log_commands(False)",
-			"sublime.log_commands(True)",
-			"sublime.log_commands(False)",
-			"sublime.log_commands(True)",
-			"sublime.log_commands(False)",
-			"sublime.log_commands(True)",
-			"log.commands",
-			"' '.join(svg_string)",
-			"string.join(svg_string)"
+			"sublime.log_commands(False)"
 		]
 	},
 	"distraction_free":
@@ -1042,9 +1088,22 @@
 	],
 	"file_history":
 	[
+		"/home/mainster/CODES_local/multiDimArr.c",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.html",
+		"/media/data/javaviewFull/readme.txt",
+		"/media/data/javaviewFull/readme_linux.txt",
+		"/home/mainster/CODES_local/quad.c",
+		"/media/data/whz/projectGalvoDocu/test.mmd",
+		"/media/data/whz/projectGalvoDocu/test.html",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
+		"/media/data/whz/projectGalvoDocu/_includes/image.html",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
+		"/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu.mat",
+		"/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
 		"/home/mainster/.config/sublime-text-3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
 		"/home/mainster/CODES_local/matlab_workspace/pretty.log",
-		"/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
 		"/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Context.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Main.sublime-menu",
@@ -1074,7 +1133,6 @@
 		"/home/mainster/.config/sublime-text-3/Packages/multiple-commands/README.md",
 		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
 		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
-		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
 		"/media/data/whz/projectGalvoDocu/pics/gnu_bezier.svg",
 		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten_modcol1_mod.svg",
 		"/media/data/whz/projectGalvoDocu/test.xml",
@@ -1157,19 +1215,7 @@
 		"/home/mainster/.config/sublime-text-3/Packages/Open URL/README.md",
 		"/media/data/whz/projectGalvoDocu/chapters/12_Software_und_Simulation.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/22_Trash.mmd",
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownTOC.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/merge.py",
-		"/media/data/whz/projectGalvoDocu/merge.py",
-		"/home/mainster/.config/sublime-text-3/Packages/MarkdownEditing/README.md",
-		"/home/mainster/.config/sublime-text-3/Packages/MarkdownTOC/MarkdownTOC.sublime-settings",
-		"/home/mainster/compiledStuff/tocbot/README.md",
-		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/11_Plattform.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/06_Terminologie.mmd",
-		"/media/data/whz/projectGalvoDocu/ProfessorBormannMAil.mmd",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150604_04h31m28s_lowres.jpg",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150611_00h12m28s_lowres.jpg",
-		"/media/data/galvo/pics_fotos/email_bormann/galvo_active_beam_single_axis_20150612_17h48m50s_lowres.jpg"
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownTOC.sublime-settings"
 	],
 	"find":
 	{
@@ -1187,6 +1233,28 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"typedef is initialized (use decltype instead)",
+			"\\t\\{ ([0-9\\.]+)\\, ([0-9\\.]+)\\, ([0-9\\.]+)\\, ([0-9\\.]+) \\}",
+			"<img",
+			"figure-to-img-margin-top",
+			"figure",
+			" fr",
+			"\\.fl",
+			"\\.fr",
+			"\\.ab",
+			" at",
+			"\\.at",
+			"(\\.?)boxed",
+			"\\[class=\\\"(.*)\\\"\\]",
+			"figcaption",
+			"\\/\\*.*padd.*T",
+			"figure",
+			"img",
+			"style",
+			"overlay",
+			"style",
+			"overlay",
+			"\"\n",
 			"invalidElem",
 			"writelogfile",
 			"osd",
@@ -1292,29 +1360,7 @@
 			"\\|$[^\\|]$",
 			"\\|$\\|$",
 			"$[^\\|]$\\|",
-			"^[^\\|]^\\|",
-			"^\\|",
-			"table",
-			":\n",
-			"lib(.*)\\.a",
-			"\\.\\/lib\\/USB\\_.*/",
-			"use",
-			"HEAD",
-			"zeitab",
-			"^(.) (...?) (...) (.{1,}) ",
-			" {2,}",
-			"fat",
-			"const",
-			"const char _",
-			"const char \\_",
-			"^char",
-			"arduino",
-			"prim",
-			"([0-9]) ",
-			" [0-9]+\\];...",
-			"\\,",
-			"([0-9])$",
-			"^([0-9])"
+			"^[^\\|]^\\|"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1322,6 +1368,15 @@
 		"regex": true,
 		"replace_history":
 		[
+			"{{\\1, \\2}, {\\3, \\4}}",
+			"<figure><img",
+			" floatr",
+			".floatl",
+			".floatr",
+			".botal",
+			".topal",
+			"\\1box",
+			".\\1",
 			"invEl",
 			"logfile",
 			"infile",
@@ -1404,34 +1459,92 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10539,
+						"buffer_size": 12652,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2688,
-								2688
+								4263,
+								4263
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"parser": "markdown",
-							"spell_check": true,
+							"spell_check": false,
 							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "browser"
+							"target": "save"
 						},
 						"translation.x": 0.0,
-						"translation.y": 374.0,
+						"translation.y": 561.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 301,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								61,
+								61
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "pics/gnu_flatten_lowres.svg",
 					"semi_transient": false,
 					"settings":
@@ -1443,8 +1556,8 @@
 						"selection":
 						[
 							[
-								1182,
-								1182
+								1691,
+								1691
 							]
 						],
 						"settings":
@@ -1454,42 +1567,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 112.0,
+						"translation.y": 229.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4424,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								839,
-								839
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/User/Log.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
 					"semi_transient": false,
 					"settings":
@@ -1501,8 +1586,8 @@
 						"selection":
 						[
 							[
-								182,
-								182
+								823,
+								823
 							]
 						],
 						"settings":
@@ -1515,11 +1600,41 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
+					"file": "pics/C_diag2.svg",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1077,
+								1077
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"file": "/media/data/CODES/pythons/saleSys.py",
 					"semi_transient": false,
 					"settings":
@@ -1545,7 +1660,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1555,51 +1670,20 @@
 			"sheets":
 			[
 				{
-					"buffer": 5,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9223,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								170,
-								170
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "svgCoord.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16352,
+						"buffer_size": 16190,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5936,
-								5936
+								12840,
+								12840
 							]
 						],
 						"settings":
@@ -1609,41 +1693,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1161.0,
+						"translation.y": 897.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 335,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1652,29 +1705,60 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 30409,
+						"buffer_size": 34146,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12934,
-								12934
+								14277,
+								14277
 							]
 						],
 						"settings":
 						{
 							"parser": "markdown",
 							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"target": "browser",
+							"target": "save",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3393.0,
+						"translation.y": 832.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 891,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								891,
+								891
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".markdown-body div.fig figcaption,",
+							"default_dir": "/media/data/whz/projectGalvoDocu",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1682,7 +1766,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 34.0
 	},
 	"input":
 	{
@@ -1708,7 +1792,7 @@
 		"cols":
 		[
 			0.0,
-			0.552891172998,
+			0.41487808555,
 			1.0
 		],
 		"rows":
@@ -1764,7 +1848,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
+	"selected_group": 1,
 	"settings":
 	{
 	},
@@ -1772,7 +1856,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 220.0,
+	"side_bar_width": 233.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
