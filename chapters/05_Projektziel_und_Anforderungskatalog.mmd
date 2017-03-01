@@ -85,7 +85,7 @@ Die später eingesetzte <lkey>Laserquelle</lkey> sollte für Dauerbetrieb ausgel
 
 Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
 
-Aus dem Modellzweck oder Kontext wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
+Aus dem Modellzweck oder Kontext wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen, nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
 
 Entsprechend sind auch Modelle für das Stellglied und den Messumformer + Tiefpass zu erstellen.   
 
@@ -101,17 +101,14 @@ Quality --> testbild resol
 
 <h4 class="specs"><span>Systemanforderungen</span></h4>
 
-
 <div class="spaced" markdown=1>
-
 0. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_).
-1. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller implementiert werden.
+1. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden.
 2. Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.
 3. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.
 4. Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.
 5. Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.
 6. Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.
-
 </div>
 
 </par>

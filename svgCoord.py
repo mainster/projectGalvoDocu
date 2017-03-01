@@ -161,7 +161,7 @@ class Style_t:
 			print("(%s : %s)" % (self.styAttrs.keys()[k], self.styAttrs.values()[k]))
 
 #-------------------------------------------------------------------------------
-## @brief      Class to provide output generator (prettyPrint, write log)
+## @brief      Class to provide an output generator (prettyPrint, write log, write header)
 ##
 class Output(object):
 	def __init__(self, mPaths, logfile=None, incfile=None):
@@ -495,40 +495,3 @@ if __name__ == "__main__":
 ###############################################################################
 ## 	Script end.
 ###############################################################################
-
-
-# class Xml_t:
-# 	def __init__(self, file):
-# 		self.tree = etree.parse(infile)
-# 		self.root = self.tree.getroot()
-
-# 		pStyles = dict()
-
-# 		for g in self.root.findall(R + 'g'):
-# 			try:
-# 				if g.getAttr('inkscape:label') != 'payload':
-# 					continue
-# 				else:
-
-# 					for path in be.findall(R + 'path'):
-# 						# Create a Style_t instance for each path tag in xml source tree.
-# 						pStyles[ path.get('id') ] = Style_t(path.get('id'), path.get('style'))
-# 						pStyles[ path.get('id') ].setAttr( valPair )
-# 			except:
-# 				continue
-
-# 		print("be elements: ", [ g.tag.replace(R, '') for g in baseElems ] )
-
-# 	for be in baseElems:
-# 		# Create dict with pathID keys and style object as value
-
-# 		for path in be.findall(R + 'path'):
-# 			ID = path.get('id')
-# 			path.set('style', pStyles[ID].getAttrStr())
-
-# 	# Write back the modified xml tree
-# 	outfile = os.path.splitext(infile)[0] + suffix + os.path.splitext(infile)[1]
-
-# 	with open(outfile, 'w') as fd:
-# 		fd.write(etree.tostring(tree, pretty_print=True, encoding='utf8'))
-# 	return outfile
