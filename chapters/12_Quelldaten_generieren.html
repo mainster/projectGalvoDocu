@@ -328,7 +328,11 @@ img.floatl, div.floatl,	figure.floatl {
 	border-top: 	1px solid #DEDEDE !important;
 	padding-top: 	5px;
 }
-
+.markdown-body table.noborder th,
+.markdown-body table.noborder tr,
+.markdown-body table.noborder td {
+	border-width: 0 !important;
+}
 /* View spaced lists: 
 	<div class="spaced" markdown=1>
 	1. jjj
@@ -1396,47 +1400,54 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>05_Projektziel_und_Anforderungskatalog</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
+<title>12_Quelldaten_generieren</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
 
 <div class="toc">
 <ul>
-<li><a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a></li>
+<li><a href="#quelldaten-generieren">Quelldaten generieren</a></li>
 <li><a href="#quellenangaben">Quellenangaben</a></li>
 </ul>
 </div>
-<h1 id="projektziel-und-anforderungskatalog"><a name="user-content-projektziel-und-anforderungskatalog" href="#projektziel-und-anforderungskatalog" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projektziel und Anforderungskatalog</h1>
-<h4 class="sphd"><span>Stand der Technik</span></h4>
-
-<p>Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, <em>quasi-kontinuierliche</em> Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.</p>
-<h4 class="sphd"><span>Systemzweck</span></h4>
-
-<p>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die <strong>Modellbildung</strong> und <strong>Simulation</strong> des Gesamtsystems soll als <strong>Schwerpunktthema</strong> betrachtet und entsprechend ausgearbeitet werden.</p>
-<h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
-
-<p>Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als <strong>physisches System</strong> bezeichnet während im Abschnitt <strong>Simulationsumgebung</strong> das Computermopdell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.</p>
-<h4 class="sp"><span>Physisches System</span></h4>
-
-<figure class="floatr topal" style="width:185px"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860"><figcaption>Cambridge Technologies Galvanometer Modell 6860</figcaption></figure>
-
-<p>Die beiden <lkey><a href="#klassifizierung">Moving-magnet Galvanometer</a></lkey> der Firma <a href="http://www.cambridgetechnology.com">Cambridge Technologies</a>, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt </p>
-<p><lmjx>$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\B_y-A_y\end{pmatrix} }{eqDirVect3} $</lmjx></p>
-<p>Um einen Vektor $\vec s$ der Länge $\left| \vec s\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec s$ entlang einer Geraden $\,g\,$ beschrieben durch:</p>
-<p>$$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$</p>
-<p>Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungsvorschrift für die Implementierung auf dem Mikrocontroller formulieren (siehe Quellcodeausschnitt). Um die notwendigen Quelldaten automatisch erzeugen zu können, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. Die Koordinaten zur Positionierung sowie das Signal zur Dunkeltastung des Laserstrahls, werden am PC über das SVG-Dateiformat (z. B. Inkscape) definiert und mittels XML-Parser <a href="#xml-parser"><em>python Skript: svgCoord.py</em></a>) in eine C-Header-Datei exportiert.</p>
-<table class="noalter" style="border-spacing: 0px; margin: 0; padding: 0px;"><figure>
-  <tr>
-    <td><center><a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"><figure><img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder" /><figcaption>Grafik im SVG Format (www.gnu.org)</figcaption></a></center></td>
-    <td><center><a href="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_bezier.svg" target="_blank"><figure><img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /><figcaption>Flächen und Gradienten entfernt, Outline besteht aus Bezier-Kurven</figcaption></a></center></td>
-  </tr>
-  <tr>
-    <td><center><a href="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres.svg" target="_blank"><figure><img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert, Inkscape: Extensions => Modify Path => Flatten Bezier...</figcaption></a></center></td>
-    <td><center><a href="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres_mod.svg" title="GNU Outline, visualisierte Knotenpunkte" class="noborder" /><figcaption>Visualisierte Knotenpunkte</figcaption></a></center></td>
-  </tr><figcaption><center><b><em>GNU Kopf</b> als skalierbare Vektorgrafik</em></center></figcaption></figure>
+<h1 id="quelldaten-generieren"><a name="user-content-quelldaten-generieren" href="#quelldaten-generieren" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quelldaten generieren</h1>
+<p>Die Koordinaten zur Positionierung sowie das Signal zur Dunkel&shy;tastung des Laserstrahls werden am PC über das SVG-Dateiformat (z. B. Inkscape) definiert und mittels XML-Parser (<a href="#xml-parser"><em>python Skript: svgCoord.py</em></a>) in eine C-Header-Datei exportiert. Der Ablauf zur Erzeugung neuer Quelldaten ist nachfolgend exemplarisch widergegeben:</p>
+<table class="noalter" style="width: 100%; border-spacing: 0px; margin: 0; padding: 0px; border: 0px solid white;">
+  <tbody> <figure> <figcaption><center><b><em>GNU Kopf</b> als skalierbare Vektorgrafik</em></center></figcaption>
+    <tr>
+      <td>
+        <a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"> <figure style="width: 300px"> <img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder"/> <figcaption>Grafik im SVG Format (www.gnu.org)</figcaption> </figure> </a>
+      </td>
+      <td>
+        <a href="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_bezier.svg" target="_blank"> <figure style="width: 300px"> <img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /> <figcaption>Flächen und Gradienten entfernt</figcaption> </figure> </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"> <center>
+        <a href="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres.svg" target="_blank"><figure style="width: 300px"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert</figcaption></a>
+      </center> </td>
+    </tr>
+  </tbody> </figure>
 </table>
 
-<p><br></p>
-<p>Gegenüber Rastergrafiken (Pixelgrafik, &ldquo;Punkt-für-Punk&rdquo;) besitzen Vektorgrafiken den großen Vorteil, dass eine Transformation denkbar einfach durchgeführt werden kann. Soll zum Beispiel die letzte Abbildung <em>(Visualisierte Knotenpunkte)</em> skaliert werden, genügt eine triviale Skalarmultiplikation der Abbildungsmatrix mit einem Skalierungsfaktor $\;\lambda\;$. Genau so einfach kann eine Transformation mittels Drehmatrix $\,M_{Rot}\,$ abgebildet werden. </p>
+<table class="noalter noborder" style="display: inline-block;"> 
+  <tr> 
+    <td colspan="2" style="width: 40%">
+      Durch den in Inkscape durch&shy;ge&shy;führten Schritt <em>Bezier-Kurven auf lineare Splines reduzieren</em>, werden alle selektierten Bezier-Kurven durch (mehrere) Geraden interpoliert. Waren z. B. 20 Bezier-Kurven definiert, bleiben im XML-&shy;Baum 20 Pfade mit i. A. unter&shy;schied&shy;lich vielen Pfad&shy;seg&shy;men&shy;ten erhalten.
+    </td>
+    <td style="width: 20%""> <center><img src="/media/data/whz/projectGalvoDocu/chapters/pics/arrowstd_down.svg"/></center> </td>
+    <td colspan="2" style="width: 40%"">
+      Das python skript svgCoord.py ordnet alle XML-Tags <code>&#60;path ...&#62;</code> entsprechend der Information, ob die Laser&shy;quelle an oder aus sein soll. Pfade mit Farb&shy;attribut <em>Rot</em> werden später mit aktiver Laser&shy;quelle abge&shy;fahren, das Farb&shy;att&shy;ribut <em>Gelb</em> bedeutet ent&shy;sprechend "Laser&shy;quelle deaktivieren"
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 20%"> </td>
+    <td colspan="3" style="width: 60%"><center><a href="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="/media/data/whz/projectGalvoDocu/chapters/pics/gnu_flatten_lowres_mod.svg" /><figcaption>GNU Outline, visualisierte Knotenpunkte</figcaption></figure></a></center></td>
+    <td style="width: 20%"></td>    
+  </tr>
+</table>
+
+<p>Gegenüber Rastergrafiken (Pixelgrafik, &ldquo;Punkt-für-Punk&rdquo;) besitzen Vektorgrafiken den großen Vorteil, dass eine Transformation denkbar einfach durchgeführt werden kann. Soll zum Beispiel die letzte Abbildung <em>(Visualisierte Knotenpunkte)</em> skaliert werden, genügt eine triviale Skalarmultiplikation der Abbildungsmatrix mit einem Skalierungsfaktor $\,\lambda\,$. Genau so einfach kann eine Transformation mittels Drehmatrix $\,M_{Rot}\,$ erzeugt werden. </p>
 <p>$$ \eqlbl{ M_{Rot}(x)=\begin{pmatrix}cos(x) &amp; -sin(x) \\sin(x) &amp; cos(x) \end{pmatrix}}{eqRotMatrix} $$</p>
+<p>Im folgenden C-Listing werden zwei Transformationen der mittels Skript erzeugten Quelldaten (<code>lseg_t gnu[ ]</code>) durchgeführt. Die Ausgangsmatrizen werden jeweils in eine Datei exportiert sodass diese in MATLAB über den <code>load('&lt;pfad&gt;', '-ASCII')</code>-Befehl einfach wieder importiert und Linien-Segmentweise dargestellt werden können.  </p>
 <div class="codehilite"><pre><span class="cp">#include &lt;stdio.h&gt;</span>
 <span class="cp">#include &lt;stdlib.h&gt;</span>
 <span class="cp">#include &lt;stdint.h&gt;</span>
@@ -1709,50 +1720,42 @@ MathJax.Hub.Config({
 </pre></div>
 
 
-<!-- 
-<a href="https://www.gnu.org/graphics/nu-gnu.svg"><img src="./pics/gnu_untouched.svg" title="The GNU" align="left" width="50%"/></a><a href="./pics/gnu_beziers.svg" target="_blank"><img src="./pics/gnu_beziers.svg" title="GNU Outline, Bezier Pfade" align="right" width="50%"/></a>
-<a href="./pics/gnu_flatten_lowres.svg" target="_blank"><img src="./pics/gnu_flatten_lowres.svg" title="GNU Outline, reduziert auf Linien-Segmente" align="top" width="50%"/></a><a href="./pics/gnu_mod.svg" target="_blank"><img src="./pics/gnu_mod.svg" title="GNU Outline, visualisierte Knotenpunkte" align="right" width="50%"/></a> -->
+<p><br><br />
+Folgende MATLAB Befehle sind notwendig um die erzeugten <code>*.mat</code>-Dateien zu importieren und mittels <code>line([x1, x2], [y1, y2])</code> grafisch darzustellen:</p>
+<div class="codehilite"><pre><span class="c">%% Import gnu*.mat files and plot all line segments</span>
+<span class="n">paths</span><span class="p">={</span><span class="c">...</span>
+    <span class="s">&#39;res/gnuNorm.mat&#39;</span><span class="p">,</span><span class="c">...</span>
+    <span class="s">&#39;res/gnuScal.mat&#39;</span><span class="p">,</span><span class="c">...</span>
+    <span class="s">&#39;res/gnuRot.mat&#39;</span><span class="p">};</span>
 
-<p>Die später eingesetzte <lkey>Laserquelle</lkey> sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb. <a href="/media/data/whz/projectGalvoDocu/chapters/pics/galvoMirrorsXY_1.svg" target="_blank"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" height="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/></a>Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.</p>
-<h4 class="sp"><span>Simulationsumgebung</span></h4>
+<span class="n">delete</span><span class="p">(</span><span class="n">findall</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="s">&#39;type&#39;</span><span class="p">,</span><span class="s">&#39;line&#39;</span><span class="p">));</span> 
 
-<p>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, <strong>zeitinvariante</strong> Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. </p>
-<p><boxed>Die Forderung nach Zeitinvarianz impliziert immer auch <strong>Rückwirkungsfreiheit</strong> zwischen den Teilsystemen.</boxed> </p>
-<p>Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.</p>
-<p>Aus dem Modellzweck oder Kontext wird die notwendige <a href="#modell"><em>Modellgranularität</em></a> abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen, nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden <em>Rekonstruktionsfilter</em> zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme &ldquo;Antialiasing-&rdquo; und &ldquo;Rekonstruktionsfilter&rdquo; in das Computermodell des Gesamtsystems zu integrieren.</p>
-<p>Entsprechend sind auch Modelle für das Stellglied und den Messumformer + Tiefpass zu erstellen.   </p>
-<p>Design<br />
-Systemeinsatz<br />
-<h4 class="specs"><span>Allgemeine Anforderungen</span></h4><br />
-Safety!</p>
-<p>Quality &ndash;&gt; testbild resol</p>
+<span class="k">for</span> <span class="n">k</span><span class="p">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">paths</span><span class="p">)</span>
+    <span class="n">m</span> <span class="p">=</span> <span class="n">load</span><span class="p">(</span><span class="n">paths</span><span class="p">{</span><span class="n">k</span><span class="p">},</span> <span class="s">&#39;-ASCII&#39;</span><span class="p">);</span>
+    <span class="n">figure</span><span class="p">(</span><span class="n">k</span><span class="p">);</span>
+    <span class="c">% Prototyp line(): </span>
+    <span class="c">%   line([x1, x2], [y1, y2],...) NOT: </span>
+    <span class="c">%   line([x1, y1], [x2, y2],...)</span>
+    <span class="n">line</span><span class="p">(</span><span class="n">m</span><span class="p">(:,[</span><span class="mi">1</span> <span class="mi">3</span><span class="p">])</span><span class="o">&#39;</span><span class="p">,</span><span class="n">m</span><span class="p">(:,</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">4</span><span class="p">])</span><span class="o">&#39;</span><span class="p">,</span><span class="s">&#39;color&#39;</span><span class="p">,</span><span class="s">&#39;green&#39;</span><span class="p">);</span> 
+
+    <span class="n">set</span><span class="p">(</span><span class="n">gca</span><span class="p">,</span><span class="s">&#39;DataAspectRatio&#39;</span><span class="p">,[</span><span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span><span class="p">],</span><span class="c">...</span>
+        <span class="s">&#39;XLim&#39;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">.</span><span class="mi">6</span><span class="p">,</span> <span class="s">&#39;YLim&#39;</span><span class="p">,</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span> <span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="p">.</span><span class="mi">6</span><span class="p">,</span><span class="c">...</span>
+        <span class="s">&#39;GridAlpha&#39;</span><span class="p">,.</span><span class="mi">2</span><span class="p">);</span>
+
+    <span class="n">tmp</span> <span class="p">=</span> <span class="n">strsplit</span><span class="p">(</span><span class="n">paths</span><span class="p">{</span><span class="n">k</span><span class="p">},</span> <span class="s">&#39;/&#39;</span><span class="p">);</span>
+    <span class="n">title</span><span class="p">(</span><span class="n">tmp</span><span class="p">{</span><span class="k">end</span><span class="p">})</span>
+<span class="k">end</span>
+</pre></div>
+
+
+<p><center><figure><figcaption><em>In <b>MATLAB</b> visualisierte Matritzen</em></figcaption><a href="/media/data/whz/projectGalvoDocu/chapters/pics/matPlots/gnuNormw.svg" target="_blank"><figure class="box"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a><br />
+<a href="/media/data/whz/projectGalvoDocu/chapters/pics/matPlots/gnuScalw.svg" target="_blank"><figure class="box"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a><br />
+<a href="/media/data/whz/projectGalvoDocu/chapters/pics/matPlots/gnuRotw.svg" target="_blank"><figure class="box"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um $\,\pi/4\,$ rad gedrehte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a></figure></center></p>
+<p>ToDo:</p>
 <ul>
-<li>safe state guard</li>
-<li>exceptions</li>
+<li>Beam blanking</li>
+<li>3D-Transformation</li>
 </ul>
-<h4 class="specs"><span>Systemanforderungen</span></h4>
-
-<div class="spaced">
-<ol>
-<li>Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der <em>Baugruppen-Wahl</em>  als gegeben zu betrachten (vergl. <em>Bestandsbaugruppe</em>).</li>
-<li>Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller <a href="#citeSTM32F429i" title="High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"><em>STM32F429i</em></a> implementiert werden.</li>
-<li>Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.</li>
-<li>Die Positionierung des Laserpunktes soll hinreichend &ldquo;schnell&rdquo; und &ldquo;präzise&rdquo; erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.</li>
-<li>Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.</li>
-<li>Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.</li>
-<li>Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.</li>
-</ol>
-</div>
-<p></par></p>
-<p>Zu Beginn des Kapitels <a href="#modellbildungsprozess">Modellbildungsprozess</a> folgt eine erste Aufteilung des Projekts.</p>
-<!-- wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
-Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um
-
-Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
-
-$$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvektor der Geraden erhält man, je nachdem ob $a$ oder $b$ ungleich null ist, durch Wahl von
-<center>$ {\vec {p}}={\begin{pmatrix}c/a\\\0\end{pmatrix}}\;\;\; $ oder $ \;\;\;{\vec {p}}={\begin{pmatrix}0\\\c/b\end{pmatrix}} $.</center> -->
-
 <h1 id="quellenangaben"><a name="user-content-quellenangaben" href="#quellenangaben" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quellenangaben</h1>
 <hr />
 <p><a name="citeMDA"> </a><br />
