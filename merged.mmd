@@ -109,7 +109,6 @@ $$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$
 Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren. Um den Aufwand zur Erzeugung der notwendigen [Quelldaten](#quelldaten-generieren) gering zu halten, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. 
 
 
----
 <div style="display: inline;">
 Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
 </div>
@@ -601,7 +600,7 @@ Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man
 (...)
 
 # Plattform #
-Im Kapitel [Projektziel](#projektziel) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
+Im Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
 
 Zahlreiche [DIY-Projekte][diyList] steigerten kontinuierlich das Interesse in vielen Bereichen der Hard- und Softwareentwicklung. Meist wurden 8-Bit RISC Controller ATmega/ATXmega der Firma Atmel für diverse Projekte eingesetzt. Mit der Anschaffung des Evaluierungsboards STK-600 inklusive AVR JTAGICE mkII Debugger, stand zwar eine hochflexible Hardware-Plattform (nahezu alle 8-Bit AT(X)mega + AVR32 Controller) zur Verfügung, in Sachen Software-Entwicklungsumgebung war man allerdings (ist noch immer?) an Microsoft .NET und somit an Windows gebunden. Als überzeugter UNIX Anwender blieb somit nur der Betrieb einer virtuellen Windows-Maschine (inkl. aller Windows Treiber-Probleme), wenn man alle Funktionen des JTAG-Emulators nutzen wollte.
 
@@ -812,23 +811,46 @@ In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f,
 # Quelldaten generieren #
 Die Koordinaten zur Positionierung sowie das Signal zur Dunkel&shy;tastung des Laserstrahls werden am PC über das SVG-Dateiformat (z. B. Inkscape) definiert und mittels XML-Parser ([_python Skript: svgCoord.py_](#xml-parser)) in eine C-Header-Datei exportiert. Der Ablauf zur Erzeugung neuer Quelldaten ist nachfolgend exemplarisch widergegeben:
 
-<table class="noalter" style="border-spacing: 0px; margin: 0; padding: 0px;"><figure>
-  <tr>
-    <td><center><a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"><figure><img src="./pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder" /><figcaption>Grafik im SVG Format (www.gnu.org)</figcaption></a></center></td>
-    <td><center><a href="./pics/gnu_bezier.svg" target="_blank"><figure><img src="./pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /><figcaption>Flächen und Gradienten entfernt</figcaption></a></center></td>
+<table class="noalter" style="width: 100%; border-spacing: 0px; margin: 0; padding: 0px; border: 0px solid white;">
+  <tbody> <figure> <figcaption><center><b><em>GNU Kopf</b> als skalierbare Vektorgrafik</em></center></figcaption>
+    <tr>
+      <td>
+        <a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"> <figure style="width: 300px"> <img src="./pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder"/> <figcaption>Grafik im SVG Format (www.gnu.org)</figcaption> </figure> </a>
+      </td>
+      <td>
+        <a href="./pics/gnu_bezier.svg" target="_blank"> <figure style="width: 300px"> <img src="./pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /> <figcaption>Flächen und Gradienten entfernt</figcaption> </figure> </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"> <center>
+        <a href="./pics/gnu_flatten_lowres.svg" target="_blank"><figure style="width: 300px"><img src="./pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert</figcaption></a>
+      </center> </td>
+    </tr>
+  </tbody> </figure>
+</table>
+
+<table class="noalter noborder" style="display: inline-block;"> 
+  <tr> 
+    <td colspan="2" style="width: 40%">
+      Durch den in Inkscape durch&shy;ge&shy;führten Schritt <em>Bezier-Kurven auf lineare Splines reduzieren</em>, werden alle selektierten Bezier-Kurven durch (mehrere) Geraden interpoliert. Waren z. B. 20 Bezier-Kurven definiert, bleiben im XML-&shy;Baum 20 Pfade mit i. A. unter&shy;schied&shy;lich vielen Pfad&shy;seg&shy;men&shy;ten erhalten.
+    </td>
+    <td style="width: 20%""> <center><img src="./pics/arrowstd_down.svg"/></center> </td>
+    <td colspan="2" style="width: 40%"">
+      Das python skript svgCoord.py ordnet alle XML-Tags <code>&#60;path ...&#62;</code> entsprechend der Information, ob die Laser&shy;quelle an oder aus sein soll. Pfade mit Farb&shy;attribut <em>Rot</em> werden später mit aktiver Laser&shy;quelle abge&shy;fahren, das Farb&shy;att&shy;ribut <em>Gelb</em> bedeutet ent&shy;sprechend "Laser&shy;quelle deaktivieren"
+    </td>
   </tr>
   <tr>
-    <td><center><a href="./pics/gnu_flatten_lowres.svg" target="_blank"><figure><img src="./pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert</figcaption></a></center></td>
-    <td><center><a href="./pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="./pics/gnu_flatten_lowres_mod.svg" title="GNU Outline, visualisierte Knotenpunkte" class="noborder" /><figcaption>Visualisierte Knotenpunkte</figcaption></a></center></td>
-  </tr><figcaption><center><b><em>GNU Kopf</b> als skalierbare Vektorgrafik</em></center></figcaption></figure>
+    <td style="width: 20%"> </td>
+    <td colspan="3" style="width: 60%"><center><a href="./pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="./pics/gnu_flatten_lowres_mod.svg" /><figcaption>GNU Outline, visualisierte Knotenpunkte</figcaption></figure></a></center></td>
+    <td style="width: 20%"></td>    
+  </tr>
 </table>
-<br>
 
 Gegenüber Rastergrafiken (Pixelgrafik, "Punkt-für-Punk") besitzen Vektorgrafiken den großen Vorteil, dass eine Transformation denkbar einfach durchgeführt werden kann. Soll zum Beispiel die letzte Abbildung _(Visualisierte Knotenpunkte)_ skaliert werden, genügt eine triviale Skalarmultiplikation der Abbildungsmatrix mit einem Skalierungsfaktor $\,\lambda\,$. Genau so einfach kann eine Transformation mittels Drehmatrix $\,M_{Rot}\,$ erzeugt werden. 
 
 $$ \eqlbl{ M_{Rot}(x)=\begin{pmatrix}cos(x) & -sin(x) \\\sin(x) & cos(x) \end{pmatrix}}{eqRotMatrix} $$
 
-Im folgenden C-Listing werden zwei Transformationen der mittels python Skript erzeugten Quelldaten (`lseg_t gnu[ ]`) durchgeführt. Die Ausgangsmatrizen werden jeweils in eine Datei exportiert sodass diese in MATLAB über den `load('<pfad>', '-ASCII')`-Befehl einfach wieder importiert und Linien-Segmentweise dargestellt werden können.  
+Im folgenden C-Listing werden zwei Transformationen der mittels Skript erzeugten Quelldaten (`lseg_t gnu[ ]`) durchgeführt. Die Ausgangsmatrizen werden jeweils in eine Datei exportiert sodass diese in MATLAB über den `load('<pfad>', '-ASCII')`-Befehl einfach wieder importiert und Linien-Segmentweise dargestellt werden können.  
 
 ```c
 #include <stdio.h>
@@ -1132,24 +1154,14 @@ for k=1:length(paths)
 end
 ```
 
-<br>
-
 <center><figure><figcaption><em>In <b>MATLAB</b> visualisierte Matritzen</em></figcaption><a href="./pics/matPlots/gnuNormw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte "GNU-Kopf"-Matrix</figcaption></figure></a>
 <a href="./pics/matPlots/gnuScalw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte "GNU-Kopf"-Matrix</figcaption></figure></a>
 <a href="./pics/matPlots/gnuRotw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um $\,\pi/4\,$ rad gedrehte "GNU-Kopf"-Matrix</figcaption></figure></a></figure></center>
 
-<!-- <center><table class="noalter" style="width: 80%; border-width: 0px !important; border-spacing: 0px; margin: 0; padding: 0px;"><figure>
-  <tr>
-    <td><a href="./pics/matPlots/gnuNorm.svg" target="_blank"><figure><img src="./pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte "GNU-Kopf"-Matrix</figcaption></figure></a></td>
-  </tr>
-  <tr>
-    <td><a href="./pics/matPlots/gnuScal.svg" target="_blank"><figure><img src="./pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte "GNU-Kopf"-Matrix</figcaption></figure></a></td>
-  </tr>
-  <tr>
-    <td><a href="./pics/matPlots/gnuRot.svg" target="_blank"><figure><img src="./pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um Pi/4 rad gedrehte "GNU-Kopf"-Matrix</figcaption></figure></a></td>
-  </tr>
-<figcaption><center><em>In <b>MATLAB</b> visualisierte Matritzen</em></center></figcaption></figure>
-</table></center> -->
+ToDo:
+
+- Beam blanking
+- 3D-Transformation
 
 # Simulationen und Verifizierung #
 ## Step-by-Step ##
@@ -1313,7 +1325,7 @@ __SoC__ _System-on-Chip_ http://www.itwissen.info/definition/lexikon/System-on-C
 [eclipseGnuArm]: http://gnuarmeclipse.github.io/ "GCC - GNU Compiler Collection - for Eclipse"
 [stST4STM32]: http://www.st.com/en/ecosystems/stm32-open-development-environment.html "System Workbench for STM32"
 
-# Important Notes #
+# Notes #
 - MathJax:
     + Math Settings:
         * Zoom Trigger: No Zoom
