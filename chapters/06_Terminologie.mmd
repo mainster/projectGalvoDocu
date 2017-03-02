@@ -6,22 +6,19 @@ Auf häufig wiederkehrende Begriffe wie z. B. Modell, Modellbildung oder System,
 
 ## System ##
 Es gibt sehr abstrakte Definitionen des System-Begriffs. Auch in der soziologischen Systemtheorie werden System-Begriffe formuliert so dass z.B. durch menschliche Handlungen ein abstraktes Modell eines sozialen Systems angeregt bzw. dessen Systemantwort beschrieben werden kann. Eine sehr universelle Definition lautet z. B.:
-
 > "__System:__ a set of physical entities that interact and are observable, where the entities can be a specified quantity of matter or a volume in space." [^fnChRoy]
 ><p style="color: #707070 "> Eine Menge von physikalischen Einheiten die interagieren und beobachtbar sind, wobei sie eine definierte Menge Materie (bzw. eine bestimmte Anzahl an Teilchen) oder ein physischer Körper im Raum sein können. </p>
 
-Im folgenden beschränkt sich der System-Begriff auf die Systemtheorie als elementare Disziplin der Ingenieurswissenschaften.
 Systeme und Signale sind die beiden wichtigsten Konzepte der Systemtheorie. In der Praxis werden Gebilde oder Konstrukte als System bezeichnet, die bei Anregung mit einem Eingangssignal *x(t)* mit einem Ausgangssignal *y(t)* reagieren.[^fnRUnb] 
 
-Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der übergeordneten Aufgabe (Wie "dick" sind Pflichten- und Lasten- Heft?) entstehen zahlreiche Abstraktionsebenen die es zu *dokumentieren* und meist auch zu warten gilt. 
-
-Hinsichtlich eines _Software-Systems_ wird der Begriff _System_ in der [IEEE 1471][ieee1471] wie folgt definiert:
+Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der übergeordneten Aufgabe (Wie "dick" sind Pflichten- und Lasten- Heft?) entstehen zahlreiche Abstraktionsebenen die es zu *dokumentieren* und meist auch zu warten gilt. Hinsichtlich eines _Software-Systems_ wird der Begriff _System_ in der [IEEE 1471][ieee1471] wie folgt definiert:
 >Ein System ist ein aus Teilen zusammengesetztes und strukturiertes Ganzes. Es hat eine Funktion, erfüllt einen Zweck und verfügt über eine Architektur. [[MDA:2006, p.57]][@MDA:2006]
 
-Der Begriff _System_ ist hier und im Folgenden als Abkürzung für _Teilsystem_ zu verstehen.
+Im folgenden beschränkt sich der System-Begriff auf die Systemtheorie als elementare Disziplin der Ingenieurswissenschaften. Der Begriff _System_ ist hier und im Folgenden als Abkürzung für _Teilsystem_ zu verstehen.
 
 ## Modell ##
-Um ein Modell beschreiben zu können, muss zuvor das System *gewählt* werden, dessen tatsächliche Eigenschaften über den *__Prozess__ der Modellbildung* abstrahiert werden soll. Auch für den Begriff *Modell* finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. Einige werden im folgenden zitiert: 
+Um ein Modell beschreiben zu können, muss zuvor das System *gewählt* werden, dessen tatsächliche Eigenschaften über den *__Prozess__ der Modellbildung* abstrahiert werden soll. Auch für den Begriff *Modell* finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. 
+
 Die Grundlagen der Modellierung schuf Herbert Stachowiak 1973 mit der Veröffentlichung der "Allgemeinen Modelltheorie". Demnach ist ein Modell durch __Abbildung__, __Verkürzung__ und __Pragmatismus__ gekennzeichnet.[^fnStachowiak]
 
 >__*Abbildung*__
@@ -51,62 +48,14 @@ __Möglichkeit 1__
 <img src="./pics/elko_ersatz_hf_reload.svg" title="Realitätsgetreues Ersatzschaltbild eines RC-Tiefpassfilters" align="top" height="190px" style="float:right; margin: .4em 0em 0em 1em;"/>Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um eine Highend-Anlage handelt, sollte ein möglichst präzises Modell formuliert werden. Unter Berücksichtigung aller tatsächlich parasitärer Größen von passiven Bauelementen[^fnElektrBauelem] wie Serien&shy;induktivität (ESL) und Serien&shy;widerstände (ESR) der Anschluss&shy;drähte/Anordnung der Elektroden, der Isolations&shy;widerstände und der dielektrischen Absorption (Nachladeeffekt, Rda, Cda), ergibt sich für einen einfachen RC-Tiefpass mit einer Dämpfungsflanke von 20dB/Dekade, das nebenstehende Schaltbild. Da die Ordnung eines Systems direkt aus der Anzahl seiner unabhängigen Energiespeicher abgeleitet werden kann, muss dem geforderten mathematischen Modell eine __Differentialgleichung 5. Ordnung__!!! zugrunde gelegt werden. 
 
 __Möglichkeit 2__
-... dgl der Ordnung 1....
+Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um ein Audiogerät handelt, können eventuell störende Einflüsse im Frequenzbereiche jenseits von $100\si{kHz}$ als irrelevant betrachtet werden da die _auditive Wahrnehmung_ des menschlichen Gehörs für Frequenzen über $20\si{kHz}$ schlicht nicht mehr sensibel genug ist. Tatsächlich liegt die _Musikwahrnehmbarkeit_ noch deutlich unterhalb der $10\si{kHz}$ Grenze. Für das menschliche Gehör ist es also egal, ob ein TP-Filter im Bereich $900\si{kHz}\dots 1,4\si{MHz}$ eine Resonanzüberhöhung aufweist oder nicht.
 
+---
 Ein formuliertes Modell unterliegt also der Anforderung, möglichst alle __*relevanten*__ Charakteristika eines Systems abzubilden wobei der _Systemgrad_ minimal gehalten werden soll. So gelingt es, komplexe Zusammenhänge aufzuspalten und eine Problemstellung zu partitionieren.
 
 ## Modellbildung ##
 <a style="background-color: yellow;"> Top-Down- und Bottom-Up-Design
 In der Informatik bezeichnet man einen Entwicklungsprozess für Software als Top-down, wenn der Entwurf mit abstrahierten Objekten beginnt, die dann konkretisiert werden; der Prozess ist Bottom-up, wenn von einzelnen Detail-Aufgaben ausgegangen wird, die zur Erledigung übergeordneter Prozesse benötigt werden. Zudem wird im Zusammenhang mit Compilerbau von Top-down- und Bottom-up-Parsern gesprochen (genauere Informationen unter Top-Down- und Bottom-Up-Design). </a>
-
-Modellbildung
-Klassifikation von Modellen hinsichtlich ihrer Repräsentation:
-...
-Modell
-mentales Modell physikal. Modell
-analoges Modell
-Darstellungsmodell
-symbol. Modell
-mathemat. Modell
-grafisches Modell
-verbales Modell
-...
-
-
-Unter Modellbildung (Modellierung) versteht man den Prozess, von einem System
-ein Modell zu erstellen. Hierzu gehören folgende Schritte:
-1. Identifizierung der Systemgrenzen     Black-Box-Modell
-2. Identifizierung der Untersysteme und ihrer Beziehungen     Strukturmodell
-3. Definition von Relationen zwischen Variablen     Verhaltensmodell
-MK:III-21 Modeling Concepts © STEIN 2000-2015
-Modellbildung
-Ablauf der Top-Down-Modellbildung: Abstrakte Modelle werden auf weniger
-abstrakte Modelle abgebildet.
-mentales Modell
-Strukturmodell
-algorithm. Modell
-Computermodell
-Verhaltensmodell
-System + Frage
-Interpretation des
-konkreteren Modells
-Basis des abstrakteren.
-hohe Abstraktion
-niedrige Abstra
-
----
-
-Prozesse der Modellbildung: wiki
-Ablauf einer Modellbildung
-Bei der Modellbildung lassen sich folgende Prozesse differenzieren:
-
-Abgrenzung: Nichtberücksichtigung irrelevanter Objekte
-Reduktion: Weglassen von Objektdetails
-Dekomposition: Zerlegung, Auflösung in einzelne Segmente
-Aggregation: Vereinigung, Zusammenfassen von Segmenten zu einem Ganzen
-Abstraktion: Begriffs- bzw. Klassenbildung
-
----
 
 Die enormen Anforderungen, die aus Anwendersicht an Hard- und Softwarekomponenten gestellt werden, in Verbindung mit dem Aspekt der Wirtschaftlichkeit, machen sich bereits in der Projektierungsphase eines Auftrags bemerkbar. *"Reusability"* ist ein Begriff aus der Softwarearchitektur und charakterisiert Software (Quellcode, Dokumentation, Testumgebungen, ...) bezüglich ihrer *Wiederverwertbarkeit* in Folgeprojekten oder Folgeschritten des selben Projektes.[^fnReuseCode] Um einen Schritt weiter in Richtung _modellgetriebene Architektur_ (_engl. Model Driven Architecture_, __*MDA*__) zu gehen, soll an dieser Stelle ein Unterpunkt aus [[MDA:2006, p.17]][@MDA:2006], Kapitel _"Akute Probleme bei der Software-Erstellung"_, zitiert werden:
 
@@ -114,4 +63,3 @@ Die enormen Anforderungen, die aus Anwendersicht an Hard- und Softwarekomponente
 Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oftmals werden aber mehrere Projekte in der gleichen Fach- und/oder Technikdomäne durchgeführt. Genau so oft ähneln oder gleichen sich daher die (architekturellen) Konzepte der realisierten Anwendungen. Diese Gleichförmigkeit wird häufig übersehen oder schlicht ignoriert und anstatt diese domänen-spezifischen Konzepte wiederverwendbar zu machen, wird die gleiche Arbeit unnötigerweise mehrfach verrichtet.
 
 Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten einer Softwarearchitektur beschränkt. Auch im Hardwarebereich kann ein Unternehmen durch frühzeitig eingeleitete Abstraktionsprozesse, u. U. eine _Gleichförmigkeit_ zu geplanten Folgeprojekten erkennen und das Teilsystem _"von Heute"_ bereits zugunsten eines Teilsystems _"von Morgen"_ optimieren.
-
