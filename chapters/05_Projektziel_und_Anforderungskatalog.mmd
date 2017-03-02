@@ -17,48 +17,7 @@ Um einen Vektor $\vec s$ der Länge $\left| \vec s\right|$ anhand zweier Koordin
 
 $$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$
 
-Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinatenursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungsvorschrift für die Implementierung auf dem Mikrocontroller formulieren (siehe Quellcodeausschnitt). Um die notwendigen Quelldaten automatisch erzeugen zu können, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. Die Koordinaten zur Positionierung sowie das Signal zur Dunkeltastung des Laserstrahls, werden am PC über das SVG-Dateiformat (z. B. Inkscape) definiert und mittels XML-Parser [_python Skript: svgCoord.py_](#xml-parser)) in eine C-Header-Datei exportiert.
-
-```c
-#include <stdio.h>
-#include <stdint.h>
-
-typedef float node_t[2];      /* A nodes X- and Y- values */
-typedef node_t lseg_t[2];     /* A line segment is defined by 2 nodes (x1,y1),(x2,y2) */
-typedef lseg_t svg_t[ ];      
-
-svg_t Gnu[ ][2] = {
-   { 0.55703, 0.88948, 0.52622, 0.94901 },
-   { 0.52622, 0.94901, 0.50761, 0.91644 },
-   { 0.50761, 0.91644, 0.48707, 0.94969 }   
-}
-
-const svg_t gnu = {
-    { 0.55703, 0.88948, 0.52622, 0.94901 },
-    { 0.52622, 0.94901, 0.50761, 0.91644 },
-    { 0.50761, 0.91644, 0.48707, 0.94969 },
-    { 0.48707, 0.94969, 0.44022, 0.91600 },
-    { 0.44022, 0.91600, 0.38105, 0.83828 },
-    { 0.38105, 0.83828, 0.31376, 0.68246 },
-    { 0.25401, 0.37375, 0.38618, 0.29869 },
-    { 0.38618, 0.29869, 0.45309, 0.31194 },
-    { 0.45309, 0.31194, 0.53340, 0.29259 },
-    { 0.53340, 0.29259, 0.60887, 0.31001 },
-    { 0.60887, 0.31001, 0.68796, 0.30372 }
-};
-
-
-int main () {
-   for (uint8_t line = 0; line < sizeof(gnu)/sizeof(gnu[0]); line++) {
-      printf("Seg %i:\t%5.3g\t%5.3g\t%5.3g\t%5.3g\n", 
-             line, gnu[line][0], gnu[line][1], gnu[line][2], gnu[line][3]);
-   }
-   
-   return 0;
-}
-```
-
-Gegenüber Rastergrafiken (Pixelgrafik, "Punkt-für-Punk") besitzen Vektorgrafiken den großen Vorteil, dass eine Transformation denkbar einfach durchgeführt werden kann. Soll zum Beispiel nachfolgende Abbildung skaliert werden, genügt eine triviale Skalarmultiplikation der Abbildungsmatrix mit einem Skalierungsfaktor $\;\lambda\;$. 
+Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren (siehe Quellcodeausschnitt). Um die notwendigen Quelldaten automatisch erzeugen zu können, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. Die Koordinaten zur Positionierung sowie das Signal zur Dunkel&shy;tastung des Laserstrahls, werden am PC über das SVG-Dateiformat (z. B. Inkscape) definiert und mittels XML-Parser ([_python Skript: svgCoord.py_](#xml-parser)) in eine C-Header-Datei exportiert.
 
 
 <table class="noalter" style="border-spacing: 0px; margin: 0; padding: 0px;"><figure>
@@ -73,11 +32,287 @@ Gegenüber Rastergrafiken (Pixelgrafik, "Punkt-für-Punk") besitzen Vektorgrafik
 </table>
 <br>
 
-<!-- 
-<a href="https://www.gnu.org/graphics/nu-gnu.svg"><img src="./pics/gnu_untouched.svg" title="The GNU" align="left" width="50%"/></a><a href="./pics/gnu_beziers.svg" target="_blank"><img src="./pics/gnu_beziers.svg" title="GNU Outline, Bezier Pfade" align="right" width="50%"/></a>
-<a href="./pics/gnu_flatten_lowres.svg" target="_blank"><img src="./pics/gnu_flatten_lowres.svg" title="GNU Outline, reduziert auf Linien-Segmente" align="top" width="50%"/></a><a href="./pics/gnu_mod.svg" target="_blank"><img src="./pics/gnu_mod.svg" title="GNU Outline, visualisierte Knotenpunkte" align="right" width="50%"/></a> -->
+Gegenüber Rastergrafiken (Pixelgrafik, "Punkt-für-Punk") besitzen Vektorgrafiken den großen Vorteil, dass eine Transformation denkbar einfach durchgeführt werden kann. Soll zum Beispiel die letzte Abbildung _(Visualisierte Knotenpunkte)_ skaliert werden, genügt eine triviale Skalarmultiplikation der Abbildungsmatrix mit einem Skalierungsfaktor $\;\lambda\;$. Genau so einfach kann eine Transformation mittels Drehmatrix $\,M_{Rot}\,$ abgebildet werden. 
 
-Die später eingesetzte <lkey>Laserquelle</lkey> sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb. <a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><img src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" height="185px" style="float:right; margin: 0.2em 0em 0em 1em;"/></a>Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+$$ \eqlbl{ M_{Rot}(x)=\begin{pmatrix}cos(x) & -sin(x) \\\sin(x) & cos(x) \end{pmatrix}}{eqRotMatrix} $$
+
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <fcntl.h>
+#include <math.h>
+
+/**
+ * GCC compiler flag
+ */
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
+/**
+ * Typedef line segement.
+ * A line segment contains two nodes (x1,y1),(x2,y2) 
+ */
+typedef float lseg_t[4];      
+
+const lseg_t gnu[ ] = {
+  {  0.1624,  0.0612,  0.1624,  0.0612 },
+  {  0.1624,  0.0612,  0.1689,  0.0649 },
+  {  0.1689,  0.0649,  0.1718,  0.0571 },
+  {  0.1718,  0.0571,  0.1650,  0.0541 },
+  {  0.1650,  0.0541,  0.1624,  0.0612 },
+  { -0.0150,  0.0578, -0.0150,  0.0578 },
+  { -0.0150,  0.0578, -0.0083,  0.0572 },
+  { -0.0083,  0.0572, -0.0100,  0.0498 },
+  { -0.0100,  0.0498, -0.0167,  0.0511 },
+  { -0.0167,  0.0511, -0.0150,  0.0578 },
+  {  0.0642, -0.3263,  0.1553, -0.3317 },
+  {  0.1553, -0.3317,  0.2345, -0.3155 },
+  {  0.0987, -0.3861,  0.1005, -0.4032 },
+  {  0.0091, -0.3907,  0.0077, -0.4159 },
+  {  0.1986,  0.0467,  0.1795,  0.0397 },
+  {  0.1795,  0.0397,  0.1570,  0.0418 },
+  {  0.1896,  0.1019,  0.1577,  0.1116 },
+  {  0.1577,  0.1116,  0.1335,  0.1015 },
+  {  0.0184,  0.0952, -0.0232,  0.1155 },
+  { -0.0232,  0.1155, -0.0590,  0.0821 },
+  { -0.0107,  0.0698, -0.0107,  0.0698 },
+  { -0.0107,  0.0698,  0.0086,  0.0573 },
+  {  0.0086,  0.0573, -0.0084,  0.0380 },
+  { -0.0084,  0.0380, -0.0265,  0.0524 },
+  { -0.0265,  0.0524, -0.0107,  0.0698 },
+  {  0.0228,  0.0536, -0.0053,  0.0342 },
+  { -0.0053,  0.0342, -0.0542,  0.0478 },
+  {  0.0261,  0.0671,  0.0261,  0.0671 },
+  {  0.0261,  0.0671, -0.0193,  0.0690 },
+  { -0.0193,  0.0690, -0.0653,  0.0487 },
+  { -0.0653,  0.0487, -0.0358,  0.0778 },
+  { -0.0358,  0.0778,  0.0160,  0.0860 },
+  {  0.0160,  0.0860,  0.0261,  0.0671 },
+  {  0.1716,  0.0736,  0.1716,  0.0736 },
+  {  0.1716,  0.0736,  0.1844,  0.0579 },
+  {  0.1844,  0.0579,  0.1678,  0.0433 },
+  {  0.1678,  0.0433,  0.1524,  0.0620 },
+  {  0.1524,  0.0620,  0.1716,  0.0736 },
+  {  0.1408,  0.0763,  0.1408,  0.0763 },
+  {  0.1408,  0.0763,  0.1805,  0.0729 },
+  {  0.1805,  0.0729,  0.2013,  0.0574 },
+  {  0.2013,  0.0574,  0.2066,  0.0700 },
+  {  0.2066,  0.0700,  0.1742,  0.0860 },
+  {  0.1742,  0.0860,  0.1408,  0.0763 },
+  {  0.1969,  0.0942,  0.1969,  0.0797 },
+  {  0.2125, -0.0169,  0.1969,  0.0274 },
+  {  0.1921,  0.0932,  0.1960,  0.1455 },
+  {  0.1960,  0.1455,  0.1708,  0.1745 },
+  {  0.0610,  0.0826,  0.0257,  0.1532 },
+  {  0.0524, -0.4105,  0.0659, -0.4554 },
+  {  0.0659, -0.4554,  0.1005, -0.4030 },
+  {  0.1005, -0.4030,  0.1180, -0.4504 },
+  {  0.1180, -0.4504,  0.1826, -0.3773 },
+  {  0.1826, -0.3773,  0.2418, -0.3053 },
+  {  0.2418, -0.3053,  0.2493, -0.2417 },
+  { -0.0411, -0.1893, -0.0007, -0.2361 },
+  { -0.0007, -0.2361,  0.0503, -0.2507 },
+  {  0.0503, -0.2507,  0.1389, -0.2444 },
+  {  0.1389, -0.2444,  0.2211, -0.2532 },
+  {  0.2211, -0.2532,  0.2443, -0.2445 },
+  {  0.2443, -0.2445,  0.2617, -0.2164 },
+  {  0.2617, -0.2164,  0.2595, -0.1779 },
+  {  0.2595, -0.1779,  0.2763, -0.1332 },
+  {  0.2763, -0.1332,  0.2835, -0.1003 },
+  {  0.2835, -0.1003,  0.2714, -0.0652 },
+  {  0.2714, -0.0652,  0.2366, -0.0683 },
+  {  0.2366, -0.0683,  0.2008, -0.0335 },
+  {  0.2008, -0.0335,  0.1321,  0.0860 },
+  {  0.1321,  0.0860,  0.1592,  0.1532 },
+  {  0.0671, -0.0829,  0.0671, -0.0829 },
+  {  0.0671, -0.0829,  0.0671, -0.1075 },
+  {  0.0671, -0.1075,  0.0992, -0.1216 },
+  {  0.0992, -0.1216,  0.1234, -0.1336 },
+  {  0.1234, -0.1336,  0.1095, -0.0949 },
+  {  0.1095, -0.0949,  0.0671, -0.0829 },
+  {  0.0334, -0.1177,  0.0271, -0.0816 },
+  {  0.0271, -0.0816,  0.0383, -0.0586 },
+  {  0.0383, -0.0586,  0.0702, -0.0442 },
+  {  0.0702, -0.0442,  0.1244, -0.0597 },
+  {  0.1244, -0.0597,  0.1562, -0.1035 },
+  {  0.2120, -0.0539,  0.2134, -0.0325 },
+  {  0.2134, -0.0325,  0.2114,  0.0129 },
+  {  0.2114,  0.0129,  0.2488, -0.0251 },
+  {  0.2488, -0.0251,  0.3101, -0.0456 },
+  {  0.3101, -0.0456,  0.3576, -0.0410 },
+  {  0.3576, -0.0410,  0.3817, -0.0132 },
+  {  0.3817, -0.0132,  0.3552, -0.0100 },
+  {  0.3552, -0.0100,  0.3367,  0.0103 },
+  {  0.3367,  0.0103,  0.3194,  0.0516 },
+  { -0.0595,  0.1532, -0.1117,  0.1319 },
+  { -0.1117,  0.1319, -0.1383,  0.0463 },
+  { -0.1383,  0.0463, -0.1795, -0.0538 },
+  { -0.1795, -0.0538, -0.2925, -0.1128 },
+  { -0.2925, -0.1128, -0.3827, -0.1409 },
+  { -0.3827, -0.1409, -0.3381, -0.0809 },
+  { -0.3381, -0.0809, -0.3055,  0.0051 },
+  { -0.2460,  0.1262, -0.2460,  0.1262 },
+  { -0.2460,  0.1262, -0.2923,  0.0527 },
+  { -0.2923,  0.0527, -0.3052,  0.0062 },
+  { -0.3052,  0.0062, -0.3261,  0.0052 },
+  { -0.3261,  0.0052, -0.4020,  0.0332 },
+  { -0.4020,  0.0332, -0.4473,  0.0732 },
+  { -0.4473,  0.0732, -0.4753,  0.1278 },
+  { -0.4753,  0.1278, -0.4949,  0.2384 },
+  { -0.4949,  0.2384, -0.4402,  0.3583 },
+  { -0.4402,  0.3583, -0.3784,  0.4158 },
+  { -0.3784,  0.4158, -0.3014,  0.4493 },
+  { -0.3014,  0.4493, -0.1912,  0.4383 },
+  { -0.1912,  0.4383, -0.1287,  0.4095 },
+  { -0.1287,  0.4095, -0.0788,  0.4125 },
+  { -0.0788,  0.4125, -0.1214,  0.3777 },
+  { -0.1214,  0.3777, -0.2685,  0.3758 },
+  { -0.2685,  0.3758, -0.3203,  0.3546 },
+  { -0.3203,  0.3546, -0.3548,  0.3078 },
+  { -0.3548,  0.3078, -0.3788,  0.2210 },
+  { -0.3788,  0.2210, -0.3654,  0.1748 },
+  { -0.3654,  0.1748, -0.3269,  0.1495 },
+  { -0.3269,  0.1495, -0.2696,  0.1763 },
+  { -0.2696,  0.1763, -0.2114,  0.2344 },
+  { -0.2114,  0.2344, -0.1498,  0.2936 },
+  { -0.1498,  0.2936, -0.0827,  0.3235 },
+  { -0.0827,  0.3235, -0.0219,  0.3016 },
+  { -0.0219,  0.3016,  0.0306,  0.2798 },
+  {  0.0306,  0.2798,  0.0693,  0.2993 },
+  {  0.0693,  0.2993,  0.1263,  0.3177 },
+  {  0.1263,  0.3177,  0.1859,  0.2973 },
+  {  0.1859,  0.2973,  0.2308,  0.2461 },
+  {  0.2308,  0.2461,  0.2797,  0.1870 },
+  {  0.2797,  0.1870,  0.3372,  0.1610 },
+  {  0.3372,  0.1610,  0.3640,  0.1728 },
+  {  0.3640,  0.1728,  0.3895,  0.2229 },
+  {  0.3895,  0.2229,  0.3781,  0.3027 },
+  {  0.3781,  0.3027,  0.3450,  0.3564 },
+  {  0.3450,  0.3564,  0.2134,  0.3777 },
+  {  0.2134,  0.3777,  0.1904,  0.3980 },
+  {  0.1904,  0.3980,  0.1863,  0.4125 },
+  {  0.1863,  0.4125,  0.2327,  0.4087 },
+  {  0.2327,  0.4087,  0.3488,  0.4474 },
+  {  0.3488,  0.4474,  0.4250,  0.4280 },
+  {  0.4250,  0.4280,  0.4765,  0.3738 },
+  {  0.4765,  0.3738,  0.5000,  0.2964 },
+  {  0.5000,  0.2964,  0.4959,  0.1842 },
+  {  0.4959,  0.1842,  0.4512,  0.0988 },
+  {  0.4512,  0.0988,  0.3926,  0.0601 },
+  {  0.3926,  0.0601,  0.3198,  0.0507 },
+  {  0.3198,  0.0507,  0.2540,  0.1532 },
+  {  0.2540,  0.1532,  0.1880,  0.1963 },
+  {  0.1880,  0.1963,  0.1089,  0.1900 },
+  {  0.1089,  0.1900,  0.0334,  0.2074 },
+  {  0.0334,  0.2074, -0.0469,  0.1881 },
+  { -0.0469,  0.1881, -0.1138,  0.2013 },
+  { -0.1138,  0.2013, -0.2460,  0.1262 },
+  { -0.1862, -0.1825, -0.1190, -0.3383 },
+  { -0.1190, -0.3383, -0.0598, -0.4160 },
+  { -0.0598, -0.4160, -0.0129, -0.4497 },
+  { -0.0129, -0.4497,  0.0076, -0.4164 },
+  {  0.0076, -0.4164,  0.0262, -0.4490 },
+  {  0.0262, -0.4490,  0.0570, -0.3895 }
+};
+
+
+const lseg_t *pGnu = &gnu[0];
+lseg_t *pGnuTrans;
+
+/**
+ * @brief      Export matrix to MATLAB resource, M=load('gnu.mat', '-ASCII')
+ * @param      pI         Pointer to input matrix.
+ * @param[in]  nRows      Row count of input matrix.
+ * @param      filePath   The file path to MATLAB resource.
+ */
+int matrixExport(const lseg_t *pI, uint16_t nRows, char *filePath) {
+  FILE *fd = fopen(filePath, "w");
+  if (fd == NULL) {
+    printf("Error opening file!\n");
+    return -1;
+  }
+
+  for (uint16_t line = 0; line < nRows; line++) {
+    fprintf(fd, "% 6.4f\t% 6.4f\t% 6.4f\t% 6.4f\n",
+            (*pI)[0], (*pI)[1], (*pI)[2], (*pI)[3]);
+    pI++;
+  }
+
+  fclose(fd);
+  return 0;
+}
+
+
+/**
+ * @brief      Rotate a given [N][4] matrix by angle radians.
+ * @param      pI      Pointer to input matrix.
+ * @param      pO      Pointer to rotated matrix
+ * @param[in]  nRows   Row count of input matrix.
+ * @param[in]  angle   Rotation angle [rad].
+ * @param[in]  scale   Optional argument
+ */
+int matrixTransform(const lseg_t *pI, lseg_t *pO, uint16_t nRows, double angle, double scale = -1) {
+  for (uint16_t line = 0; line < nRows; line++) {
+    if (scale > 0) {
+      /* Scale start node (x_start, y_start) */
+      (*pO)[0] = (*pI)[0]*scale;
+      (*pO)[1] = (*pI)[1]*scale;
+
+      /* Scale end node (x_end, y_end) */
+      (*pO)[2] = (*pI)[2]*scale;
+      (*pO)[3] = (*pI)[3]*scale;
+
+      if (! line) printf("Scale by %f\n", scale);
+    }
+    else { 
+      /* Transform start node (x_start, y_start) */
+      (*pO)[0] = (*pI)[0]*cos(angle) + (*pI)[1]*sin(angle);
+      (*pO)[1] = (*pI)[1]*cos(angle) - (*pI)[0]*sin(angle);
+
+      /* Transform end node (x_end, y_end) */
+      (*pO)[2] = (*pI)[2]*cos(angle) + (*pI)[3]*sin(angle);
+      (*pO)[3] = (*pI)[3]*cos(angle) - (*pI)[2]*sin(angle);
+
+      if (! line) printf("Rotate by %f\n", angle);
+    }
+    pI++; 
+    pO++;
+  }
+
+  return 0;
+}
+
+/**
+ * @brief      Main function.
+ */
+int main (void) {
+  /* Calculate number of rows, i.e. number of line segments. */
+  int nRows = sizeof(gnu)/sizeof(gnu[0]);
+
+  /* maclloc clean memory portion for output matrix. */
+  pGnuTrans = (lseg_t *) calloc(nRows, sizeof(lseg_t));
+
+  /* Export unmodified matrix as MATLAB resource */
+  matrixExport(pGnu, nRows, "gnu.mat");
+
+  /* Rotate matrix by 45° and export. */
+  matrixTransform(pGnu, pGnuTrans, nRows, M_PI/4);
+  matrixExport(pGnuTrans, nRows, "gnuRot.mat");
+
+  /* Scale matrix to 75% and export. */
+  matrixTransform(pGnu, pGnuTrans, nRows, 0, .75);
+  matrixExport(pGnuTrans, nRows, "gnuScal.mat");
+
+  free(pGnuTrans);
+  return 0;
+}
+
+```
+
+<div style="display: inline;">
+Die später eingesetzte <lkey>Laserquelle</lkey> sollte für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt, geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+</div>
 
 <h4 class="sp"><span>Simulationsumgebung</span></h4>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter anhand eines Computermodells optimiert und die Stabilität eines parametrierten Regelkreises quantitativ ermittelt werden können. Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. 
 
@@ -86,8 +321,7 @@ Die später eingesetzte <lkey>Laserquelle</lkey> sollte für Dauerbetrieb ausgel
 Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
 
 Aus dem Modellzweck oder Kontext wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen, nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
-
-Entsprechend sind auch Modelle für das Stellglied und den Messumformer + Tiefpass zu erstellen.   
+Entsprechendes gilt auch für die Modellierung weiterer Teilsysteme wie z. B. dem Stellglied sowie Messumformer + Tiefpassfilterung.
 
 Design
 Systemeinsatz
