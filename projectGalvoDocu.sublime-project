@@ -8,5 +8,9 @@
                 "eagle"
             ],
         }
-    ]
+    ],
+    "settings":
+    {
+        "css": ["./sources/styleGalvoDocu.css"],
+    },
 }

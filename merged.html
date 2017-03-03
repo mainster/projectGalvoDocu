@@ -1,5 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="date" content="WHZ, November, 2016">
-<meta name="author" content="Del Basso, Manuel"><style>body {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="author" content="Del Basso, Manuel">
+<meta name="date" content="WHZ, November, 2016"><style>body {
 	border: 1px solid #ddd;
 	margin: 16px auto;
 	outline: 1300px solid #fff;
@@ -1442,6 +1442,7 @@ MathJax.Hub.Config({
 <li><a href="#konstanten">Konstanten</a></li>
 </ul>
 </li>
+<li><a href="#projektplan-und-v-modell">Projektplan und V-Modell</a></li>
 <li><a href="#modellbildungsprozess">Modellbildungsprozess</a><ul>
 <li><a href="#generisches-modell">Generisches Modell</a><ul>
 <li><a href="#mathematische-zusammenhange">Mathematische Zusammenhänge</a><ul>
@@ -1474,12 +1475,11 @@ MathJax.Hub.Config({
 </li>
 </ul>
 </li>
-<li><a href="#softwarearchitektur">Softwarearchitektur</a></li>
 <li><a href="#stellglied-leistungsteil">??? Stellglied / Leistungsteil</a></li>
 <li><a href="#signalkonditionierung">??? Signalkonditionierung</a></li>
 </ul>
 </li>
-<li><a href="#projektplan-und-v-modell">Projektplan und V-Modell</a></li>
+<li><a href="#softwarearchitektur">Softwarearchitektur</a></li>
 <li><a href="#plattform">Plattform</a><ul>
 <li><a href="#warum-arm">Warum ARM?</a></li>
 <li><a href="#warum-cortex-m4">Warum Cortex-M4?</a><ul>
@@ -1938,6 +1938,9 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 </tr>
 </tbody>
 </table>
+<h1 id="projektplan-und-v-modell"><a name="user-content-projektplan-und-v-modell" href="#projektplan-und-v-modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projektplan und V-Modell</h1>
+<p>Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren <em>V-Modell XT</em> (eXtreme Tailoring, Anfang 2005 <sup id="fnref:fnV-Modell-XT-Bund"><a class="footnote-ref" href="#fn:fnV-Modell-XT-Bund" rel="footnote">26</a></sup>) gibt es kaum noch Gründe, von einer Projektplanung <em>auf Basis</em> des V-Modells abzusehen. <br />
+(&hellip;)</p>
 <h1 id="modellbildungsprozess"><a name="user-content-modellbildungsprozess" href="#modellbildungsprozess" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modellbildungsprozess</h1>
 <blockquote>
 <p>&ldquo;It&rsquo;s a bunch of shapes connected by lines.&rdquo; Dilbert <br />
@@ -1958,22 +1961,23 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 </li>
 </ul>
 </li>
-<li>Software und Simulation<ul>
-<li>Eingebettete Hardware<ul>
+<li>Software, Tools und Simulation<ul>
+<li>Zielsystem: Eingebettete Hardware<ul>
 <li>Implementierung der Regelalgorithmen (Reglerelektronik)</li>
 <li>Sicherheitssystem (Überstromschutz, &ldquo;Error-Safe-State&rdquo;)</li>
 </ul>
 </li>
 <li>Entwicklungs-PC<ul>
-<li>MATLAB </li>
+<li>MATLAB/Simlunik, Systemmodellierung/Simulation</li>
+<li>LTspice, Subsystemmodellierung/Simulation</li>
+<li>Eagle CAD, Hardwareentwurf  </li>
+</ul>
+</li>
+<li>Schnittstellenprogramm zur Echtzeitkommunikation</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>grafisches Schnittstellenprogramm zur Echtzeitkommunikation</li>
-</ul>
-<figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/pics/abstractSystemC.svg" title="Abstraktes Modell des Regelkreises" /><figcaption>Abstraktes Modell des Regelkreises</figcaption></figure>
-
+<p><center><figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/pics/abstractSystemB.svg" title="Abstraktes Modell des Regelkreises" style="width: 1500px" /><figcaption>Abstraktes Modell des Regelkreises</figcaption></figure></center>  </p>
 <p><yelBg>&hellip;So what???</yelBg></p>
 <h2 id="generisches-modell"><a name="user-content-generisches-modell" href="#generisches-modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generisches Modell</h2>
 <p>In der Informatik sind <em>generische Typen</em> Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von <em>parametrischer Polymorphie</em>.<sup id="fnref:fnwikiGenericTypes"><a class="footnote-ref" href="#fn:fnwikiGenericTypes" rel="footnote">19</a></sup> Überträgt man den Begriff <em>generisch</em> auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ <em>&ldquo;Aktor&rdquo;</em> respektive <em>&ldquo;Galvanometer&rdquo;</em> die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als <em>Subsystem</em> <strong><em>Aktor</em></strong> auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. </p>
@@ -2358,13 +2362,53 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 <center><img alt="systemLinCmpl" src="/media/data/whz/projectGalvoDocu/pics/simulExport/systemLinCmpl.svg" title="Lineares Aktor Modell" /></center></p>
 <p>$$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$</p>
 <h3 id="aktor-gesamtmodell"><a name="user-content-aktor-gesamtmodell" href="#aktor-gesamtmodell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Aktor Gesamtmodell</h3>
-<p>Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt <a href="#verbindung-der-teilsysteme">Verbindung der Teilsysteme</a>. Die Winkelposition wird im Bereich $|\,\varphi\,| &gt; 1/2\cdot\Delta\varphi_{Max}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| &gt; 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert.   </p>
+<p>Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt <a href="#verbindung-der-teilsysteme">Verbindung der Teilsysteme</a>. Die Winkelposition wird im Bereich $|\,\varphi\,| &gt; 1/2\cdot\Delta\varphi_{Max}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| &gt; 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert. <br />
+<yelBg>Simulink Modelle</yelBg></p>
 <h3 id="testsignale"><a name="user-content-testsignale" href="#testsignale" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testsignale</h3>
-<p>(&hellip;)</p>
+<p><yelBg>(&hellip;)</yelBg></p>
 <h4 id="problematik-der-sattigung"><a name="user-content-problematik-der-sattigung" href="#problematik-der-sattigung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Problematik der Sättigung</h4>
-<p>(&hellip;)</p>
-<h2 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h2>
-<p>(&hellip;)<br />
+<p><yelBg>(&hellip;)</yelBg></p>
+<h2 id="stellglied-leistungsteil"><a name="user-content-stellglied-leistungsteil" href="#stellglied-leistungsteil" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>??? Stellglied / Leistungsteil</h2>
+<h2 id="signalkonditionierung"><a name="user-content-signalkonditionierung" href="#signalkonditionierung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>??? Signalkonditionierung</h2>
+<p><!-- # Angaben zur Systemdynamik # --><br />
+<!-- ## Spezifikationen des Gesamtsystems ## --></p>
+<h1 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h1>
+<blockquote>
+<p>Architektur ist die Kombination von utilitas, firmitas und venustas.<sup id="fnref:fnSwArchitekturIst"><a class="footnote-ref" href="#fn:fnSwArchitekturIst" rel="footnote">34</a></sup></p>
+</blockquote>
+<p><center></p>
+<table class="noalter" style="width: 100%">
+    <tbody style="text-align: left">
+        <tr style="font-weight: bold">
+            <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
+            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system</center></td>
+        </tr>
+        <tr>
+            <td>utilitas</td>
+            <td>Das Gebäude erfüllt seine Funktion</td>
+            <td rowspan="3">
+                <ul>
+                    <li>den Anforderungen entspricht (<b>utilitas</b>)</li>
+                    <li>robust ist (<b>firmitas</b>) und </li>
+                    <li>eine gewisse Schönheit besitzt (<b>venustas</b>)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>firmitas</td>
+            <td>Das Gebäude ist stabil</td>
+        </tr>
+        <tr>
+            <td>venustas</td>
+            <td>Das Gebäude ist ästhetisch gestaltet</td>
+        </tr>
+    </tbody>
+</table>
+
+<p></center></p>
+<p>Mit dieser klaren Aussage vor Augen befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr &ldquo;unscharf&rdquo; definierten Begriff der Softwarearchitektur. Die Aussagen und Formulierungen bezüglich <em>Architektur</em>, <em>Struktur</em> sowie <em>Muster</em> und <em>Vorgehen</em>, sollen in erster Linie Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. </p>
+<p>Außerdem soll an dieser Stelle nochmals auf die in Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a>, Abschnitt <em>Systemzweck</em>, formulierten Schwerpunktthemen Bezug genommen werden.  </p>
+<p>Die formelle Beschreibung einer Softwarearchitektur <br />
 <a href="http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf">Architektur und Architekturmuster</a> <br />
 Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.</p>
 <ul>
@@ -2377,13 +2421,6 @@ Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem e
 <li>Erläuterung <strong>Softwarearchäologie</strong></li>
 <li>Erläuterung <strong>Ad-hoc-decisions</strong></li>
 </ul>
-<h2 id="stellglied-leistungsteil"><a name="user-content-stellglied-leistungsteil" href="#stellglied-leistungsteil" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>??? Stellglied / Leistungsteil</h2>
-<h2 id="signalkonditionierung"><a name="user-content-signalkonditionierung" href="#signalkonditionierung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>??? Signalkonditionierung</h2>
-<p><!-- # Angaben zur Systemdynamik # --><br />
-<!-- ## Spezifikationen des Gesamtsystems ## --></p>
-<h1 id="projektplan-und-v-modell"><a name="user-content-projektplan-und-v-modell" href="#projektplan-und-v-modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projektplan und V-Modell</h1>
-<p>Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren <em>V-Modell XT</em> (eXtreme Tailoring, Anfang 2005 <sup id="fnref:fnV-Modell-XT-Bund"><a class="footnote-ref" href="#fn:fnV-Modell-XT-Bund" rel="footnote">26</a></sup>) gibt es kaum noch Gründe, von einer Projektplanung <em>auf Basis</em> des V-Modells abzusehen. <br />
-(&hellip;)</p>
 <h1 id="plattform"><a name="user-content-plattform" href="#plattform" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Plattform</h1>
 <p>Im Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a> wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein <a href="#citeSTM32F429i" title="High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"><em>STM32F429i</em></a> der Firma <em>STMicroelectronics</em> eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. </p>
 <p>Zahlreiche [DIY-Projekte][diyList] steigerten kontinuierlich das Interesse in vielen Bereichen der Hard- und Softwareentwicklung. Meist wurden 8-Bit RISC Controller ATmega/ATXmega der Firma Atmel für diverse Projekte eingesetzt. Mit der Anschaffung des Evaluierungsboards STK-600 inklusive AVR JTAGICE mkII Debugger, stand zwar eine hochflexible Hardware-Plattform (nahezu alle 8-Bit AT(X)mega + AVR32 Controller) zur Verfügung, in Sachen Software-Entwicklungsumgebung war man allerdings (ist noch immer?) an Microsoft .NET und somit an Windows gebunden. Als überzeugter UNIX Anwender blieb somit nur der Betrieb einer virtuellen Windows-Maschine (inkl. aller Windows Treiber-Probleme), wenn man alle Funktionen des JTAG-Emulators nutzen wollte.</p>
@@ -3325,6 +3362,9 @@ $100°$</p>
 </li>
 <li id="fn:fnStMultiOs">
 <p><strong>STMicroelectronics - About SW4STM32</strong> <a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html">http://www.st.com/en/development-tools/sw4stm32.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnStMultiOs" rev="footnote" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+</li>
+<li id="fn:fnSwArchitekturIst">
+<p><strong>Architektur ist &hellip;</strong> <a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf">https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnSwArchitekturIst" rev="footnote" title="Jump back to footnote 34 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></article></body></html>
