@@ -4,16 +4,120 @@
 		"selected_items":
 		[
 			[
+				"Software",
+				"Softwarearchitektur"
+			],
+			[
+				"cen",
+				"centered\t(styleMdb.css)"
+			],
+			[
+				"align",
+				"align-self"
+			],
+			[
+				"alig",
+				"align"
+			],
+			[
+				"ce",
+				"center"
+			],
+			[
+				"colu",
+				"column-count"
+			],
+			[
+				"inli",
+				"inline-block\t(styleMdb.css)"
+			],
+			[
+				"fig",
+				"figure\tTag"
+			],
+			[
+				"backgr",
+				"background"
+			],
+			[
+				"markdo",
+				"markdown=1\t(styleMdb.css)"
+			],
+			[
+				"bord",
+				"border-width"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"mid",
+				"middle\t(styleMdb.css)"
+			],
+			[
+				"arro",
+				"arrowstd_down.svg\tFile"
+			],
+			[
+				"pGn",
+				"pGnuTrans"
+			],
+			[
+				"incl",
+				"includes\t(merged.mmd)"
+			],
+			[
+				"matr",
+				"matrixExport"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"gnu",
+				"gnuRows"
+			],
+			[
+				"svg",
+				"svg_t"
+			],
+			[
+				"se",
+				"settings"
+			],
+			[
+				"paragra",
+				"paragraphNum"
+			],
+			[
+				"line",
+				"linesPretty\tstatement"
+			],
+			[
+				"m",
+				"message\tinstance"
+			],
+			[
+				"Valu",
+				"ValueError"
+			],
+			[
+				"outf",
+				"outfs"
+			],
+			[
 				"node",
 				"node_t"
 			],
 			[
 				"Vektor",
 				"Vektorgrafiken"
-			],
-			[
-				"fig",
-				"figcaption\tTag"
 			],
 			[
 				"just",
@@ -26,10 +130,6 @@
 			[
 				"margi",
 				"margin-left"
-			],
-			[
-				"bord",
-				"border-top"
 			],
 			[
 				"font-s",
@@ -48,20 +148,12 @@
 				"topaligned"
 			],
 			[
-				"backgr",
-				"background-image"
-			],
-			[
 				"marg",
 				"margin-top"
 			],
 			[
 				"padd",
 				"padding-top"
-			],
-			[
-				"alig",
-				"align=\"top"
 			],
 			[
 				"wi",
@@ -86,10 +178,6 @@
 			[
 				"width",
 				"width=\"200px\t(test.html)"
-			],
-			[
-				"gnu",
-				"gnu_orig.svg"
 			],
 			[
 				"u",
@@ -126,10 +214,6 @@
 			[
 				"fin",
 				"find\t(SublimeMdbToolbox.py)"
-			],
-			[
-				"line",
-				"lines"
 			],
 			[
 				"num",
@@ -368,20 +452,12 @@
 				"text-decoration-style"
 			],
 			[
-				"inli",
-				"inline"
-			],
-			[
 				"float",
 				"floatR\t(styleMdb.css)"
 			],
 			[
 				"paddi",
 				"padding-left"
-			],
-			[
-				"cen",
-				"center"
 			],
 			[
 				"font",
@@ -436,145 +512,72 @@
 				"div\tTag"
 			],
 			[
-				"align",
-				"text-align"
-			],
-			[
 				"text-a",
 				"text-anchor"
-			],
-			[
-				"back",
-				"background-color"
-			],
-			[
-				"ce",
-				"centered\t(styleMdb.css)"
-			],
-			[
-				"Simulat",
-				"Simulationsumgebung"
-			],
-			[
-				"find",
-				"find_selection"
-			],
-			[
-				"spe",
-				"specs\t(styleMdb.css)"
-			],
-			[
-				"sha",
-				"box-shadow"
-			],
-			[
-				"non",
-				"none"
-			],
-			[
-				"Computer",
-				"Computermodell"
-			],
-			[
-				"Re",
-				"Rekonstruktionsfilter"
-			],
-			[
-				"fil",
-				"file"
-			],
-			[
-				"py",
-				"pygArgs"
-			],
-			[
-				"us",
-				"usr\t(open_url.py)"
-			],
-			[
-				"under",
-				"underline\t(styleMdb.css)"
-			],
-			[
-				"zeit",
-				"zeit-diskreter"
-			],
-			[
-				"Modellbildu",
-				"Modellbildungsprozess"
-			],
-			[
-				"Model",
-				"Modellbildungsprozess"
-			],
-			[
-				"yel",
-				"yellow"
-			],
-			[
-				"border-",
-				"border-spacing"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "chapters/05_Projektziel.mmd",
+			"file": "chapters/08_Modellbildungsprozess.mmd",
 			"settings":
 			{
-				"buffer_size": 12652,
+				"buffer_size": 36723,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.c",
+			"contents": "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 1dfFcT0bQZb+DZ2MRSc4durSdTX87oKC =48Ek \n\n-----BEGIN PGP MESSAGE-----\nVersion: GnuPG v1.0.7 (MingW32)\n\nhQIOA68nz9GqU7SREAgAxWfwvpziO4N6KquxmeuYD/txfTceyXRZGVqAGFUGmOdE\n+K9PCLp/+p3cFC8OcOZg8WReI4wlpYzgS3/XsB4LL9MegSHwjjI9jNsnQOr9EeLA\nIgDEb1NeXZ499qnSY1ZvCy/VCF1O7H71y77VQTckpfyHgWvzkaaaheMC0r+JGLZO\n0w3NCTERFJ8XaXKz/+qw4gA7xxbpT9nXVXMwEwYgiAviJBJhdYw63oTlRYGgGzPh\nH2YVNv2TWnpWp816xi+sbM1ZsJJERnAZSADKFYZzYw4E73VhUlrX5YBY4WN7UmQw\nyg73zfJYBuJ8+HymPhUUNH7KFqT5T2Cv4TRJgeWvxAgA3/bSCxncZ640z7KlMCMk\nIskJkKRau6jeLJZKheZnyBoYiJLuJw+4FeOIkpk3ZKbWzk18kFT47x5kZA051g/p\nA300n5ivHauHQz8jVTXBNF800YtkknB4+H9q5lnVYik0JsPLKGX+/sjEJ01iWaWl\nwBC3poSYT+l63wNO73CDhx4VbpOzLgzbyNB6O67iuiQm2D9hLwk8L4YPOoMlfwyM\nkUmsZUX709sMBHZN/9aniaVBsLxszHw9xu5OuSz/lHkckplcwb94XDLh1KGGO+1Q\nLzbpFYPqe3BANLK5xxlQAAti/uk0XYltVJfUOCzyxl282X3Tp/77FtiGGb8RI1HY\nhslojkAQa9gK1+f44Y8LwHH5k7fQr+Q+luqP7inoEQWbpWW4hu80Wkafv/bzI/xu\nZ1qGcEVcJGJPP7QwQWUp53FbZuIq742CoxNklwvlnjhEaXa5rG2dmHUREawVzz+q\nM8RkPBZIBge0SVY=\n=WznL\n-----END PGP MESSAGE-----",
 			"settings":
 			{
-				"buffer_size": 301,
+				"buffer_size": 13788,
+				"line_ending": "Unix",
+				"name": "hQIMAzrKKMPr+U1TAQ//UBGb+FHcGWuL3bW3vsNM9hzeToIljp"
+			}
+		},
+		{
+			"file": "/tmp/mony",
+			"settings":
+			{
+				"buffer_size": 134738,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.h",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/SortLinesByColumn/SortLinesByColumn.py",
 			"settings":
 			{
-				"buffer_size": 798,
+				"buffer_size": 2460,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "pics/gnu_flatten_lowres.svg",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/SortLinesByColumn/SortLinesByColumn.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 13910,
+				"buffer_size": 300,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+			"file": "chapters/05_Projektziel_und_Anforderungskatalog.mmd",
 			"settings":
 			{
-				"buffer_size": 1764,
+				"buffer_size": 9670,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "pics/C_diag2.svg",
+			"file": "chapters/19_Quellenangaben.mmd",
 			"settings":
 			{
-				"buffer_size": 3646,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/media/data/CODES/pythons/saleSys.py",
-			"settings":
-			{
-				"buffer_size": 2086,
+				"buffer_size": 12044,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
@@ -582,7 +585,7 @@
 			"file": "svgCoord.py",
 			"settings":
 			{
-				"buffer_size": 16190,
+				"buffer_size": 16507,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -591,18 +594,27 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
 			"settings":
 			{
-				"buffer_size": 34146,
+				"buffer_size": 35055,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": ".markdown-body div.fig figcaption,\n.markdown-body figure figcaption,\n.markdown-body div.fig ccaption,\n.markdown-body figure ccaption,\n.markdown-body div.fig lcaption,\n.markdown-body figure lcaption {\n    background-color: #E7FFE7;\n    width:          inherit - 2*var(--figure-to-img-margin-top);\n    /*color:            #595959;*/\n    font-style:     italic;\n    font-size:      90%;\n    /*margin-left:  3px;*/\n    /*margin-right:     3px;*/\n    border:         none;\n}\n\n.markdown-body div.fig.box figcaption,\n.markdown-body figure.box figcaption,\n.markdown-body div.fig.box ccaption,\n.markdown-body figure.box ccaption,\n.markdown-body div.fig.box lcaption,\n.markdown-body figure.box lcaption {\n    border-top:     1px solid #DEDEDE !important;\n    padding-top:    5px;\n}\n\n.markdown-body lcaption { color:red; text-align: left; }\n.markdown-body ccaption { color:blue; text-align: center; }\n\n",
+			"file": "sources/gnuTrans.c",
 			"settings":
 			{
-				"buffer_size": 891,
-				"line_ending": "Unix",
-				"name": ".markdown-body div.fig figcaption,"
+				"buffer_size": 9831,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sources/gnu.mat",
+			"settings":
+			{
+				"buffer_size": 5056,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
 			}
 		}
 	],
@@ -670,9 +682,33 @@
 	"command_palette":
 	{
 		"height": 392.0,
-		"last_filter": "run",
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
+			[
+				"color",
+				"Color Picker"
+			],
+			[
+				"trimm",
+				"Trimmer: Trim trailing whitespace."
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"set ht",
+				"Set Syntax: HTML"
+			],
 			[
 				"run",
 				"Build With: C++ Single File - Run"
@@ -680,14 +716,6 @@
 			[
 				"url",
 				"Open URL"
-			],
-			[
-				"lore",
-				"Add some Lorem Gibson"
-			],
-			[
-				"colo",
-				"Color Picker"
 			],
 			[
 				"tras",
@@ -700,10 +728,6 @@
 			[
 				"prv",
 				"PackageResourceViewer: Extract Package"
-			],
-			[
-				"insta",
-				"Package Control: Install Package"
 			],
 			[
 				"pa",
@@ -758,10 +782,6 @@
 				"Clear Console"
 			],
 			[
-				"color",
-				"Color Picker"
-			],
-			[
 				"trans ",
 				"DoxyDoxygen: Translate Selection To..."
 			],
@@ -788,10 +808,6 @@
 			[
 				"open",
 				"Open URL"
-			],
-			[
-				"trimm",
-				"Trimmer: Trim trailing whitespace."
 			],
 			[
 				"markdown",
@@ -941,6 +957,13 @@
 		"height": 189.0,
 		"history":
 		[
+			"sublime.run_command(\"sort_lines_by_column\",this)",
+			"sublime.run_command(\"sort_lines_by_column\",edit)",
+			"sublime.run_command(\"sort_lines_by_column\")",
+			"osd.ok(\"ok\").send()",
+			"from mdLibs import mdosd as osd",
+			"import mdosd as osd",
+			"sublime.run_command(\"sort_lines_by_column\")",
 			"sublime.log_commands(True)",
 			"np.shape(l3)",
 			"l3",
@@ -1061,14 +1084,7 @@
 			"view.run_command(\"md_osd\")",
 			"import numpy",
 			"import platform; platform.python_version()",
-			"import sys; print(sys.version)",
-			"import numpy as np",
-			"import math",
-			"print(plugin_name)",
-			"print plug",
-			"plugin_name=\"plugin+\"",
-			"plugin_name",
-			"sublime.log_commands(False)"
+			"import sys; print(sys.version)"
 		]
 	},
 	"distraction_free":
@@ -1083,11 +1099,46 @@
 	"expanded_folders":
 	[
 		"/media/data/whz/projectGalvoDocu",
-		"/media/data/whz/projectGalvoDocu/chapters",
-		"/media/data/whz/projectGalvoDocu/pics"
+		"/media/data/whz/projectGalvoDocu/chapters"
 	],
 	"file_history":
 	[
+		"/media/data/whz/projectGalvoDocu/chapters/11_Software_und_Simulation.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+		"/media/data/whz/projectGalvoDocu/chapters/08_Modellbildungsprozess.html",
+		"/media/data/whz/projectGalvoDocu/pics/abstractSystemB.svg",
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/home/mainster/PDF/Whitepaper_SWArchitektur.pdf",
+		"/media/data/whz/projectGalvoDocu/chapters/06_Terminologie.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/19_Quellenangaben.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/10_Plattform.mmd",
+		"/home/mainster/scripts/split-merge-markdowns.sh",
+		"/media/data/whz/projectGalvoDocu/chapters/12_Quelldaten_generieren.mmd",
+		"/media/data/whz/projectGalvoDocu/pics/arrowstd_down.svg",
+		"/media/data/whz/projectGalvoDocu/pics/arrowstd.svg",
+		"/media/data/whz/projectGalvoDocu/pics/down_arrow.svg",
+		"/media/data/whz/projectGalvoDocu/pics/arrow-with-dropshadow.svg",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.html_.mmd",
+		"/media/data/whz/projectGalvoDocu/pics/matPlots/gnuRot.svg",
+		"/tmp/Projektziel und Anforderungskatalog.mmd",
+		"/media/data/whz/projectGalvoDocu/sources/gnuNormed.mat",
+		"/media/data/whz/projectGalvoDocu/sources/gnu.mat",
+		"/media/data/whz/projectGalvoDocu/sources/gnu.h",
+		"/media/data/whz/projectGalvoDocu/sources/gnuRot.mat",
+		"/media/data/whz/projectGalvoDocu/merged.html",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.html",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
+		"/tmp/Projektziel.mmd",
+		"/media/data/CODES/pythons/saleSys.py",
+		"/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+		"/media/data/whz/projectGalvoDocu/gnu.h",
+		"/media/data/whz/projectGalvoDocu/pics/gnu_flatten_lowres.svg",
+		"/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.h",
+		"/media/data/whz/projectGalvoDocu/gnuTrans.c",
 		"/home/mainster/CODES_local/multiDimArr.c",
 		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.html",
 		"/media/data/javaviewFull/readme.txt",
@@ -1095,16 +1146,13 @@
 		"/home/mainster/CODES_local/quad.c",
 		"/media/data/whz/projectGalvoDocu/test.mmd",
 		"/media/data/whz/projectGalvoDocu/test.html",
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Pretty JSON.sublime-settings",
 		"/media/data/whz/projectGalvoDocu/_includes/image.html",
 		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
 		"/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu.mat",
 		"/home/mainster/CODES_local/matlab_workspace/RT_projects/GalvoProjekt/gnu_flatten_lowres.svg.log",
-		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
 		"/home/mainster/.config/sublime-text-3/Packages/Pretty JSON/Pretty JSON.sublime-settings",
 		"/home/mainster/CODES_local/matlab_workspace/pretty.log",
-		"/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Context.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/SublimeJEDI/Main.sublime-menu",
 		"/media/data/whz/projectGalvoDocu/svgCoord.py",
@@ -1132,7 +1180,6 @@
 		"/tmp/pretty.log",
 		"/home/mainster/.config/sublime-text-3/Packages/multiple-commands/README.md",
 		"/home/mainster/.config/sublime-text-3/Packages/Terminal/Terminal.py",
-		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel.mmd",
 		"/media/data/whz/projectGalvoDocu/pics/gnu_bezier.svg",
 		"/media/data/whz/projectGalvoDocu/pics2/gnu_flatten_modcol1_mod.svg",
 		"/media/data/whz/projectGalvoDocu/test.xml",
@@ -1160,12 +1207,10 @@
 		"/home/mainster/scripts/svgparse.py",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/square1_mod.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/square1.svg",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu_untouched.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/gnu.svg",
 		"/media/data/whz/projectGalvoDocu/pics/gnu.svg",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/sigma.svg",
-		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/home/mainster/.config/sublime-text-3/Packages/SideBarEnhancements/Side Bar.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/r_square1.svg",
@@ -1183,39 +1228,9 @@
 		"/home/mainster/.config/sublime-text-3/Packages/User/svggeom.py",
 		"/media/data/whz/projectGalvoDocu/pics/nu-gnu.svg",
 		"/home/mainster/scripts/islimjet.sh",
-		"/media/data/whz/projectGalvoDocu/merged.mmd",
 		"/opt/fadecut/fadecut",
 		"/home/mainster/.fadecut/fadecutrc",
-		"/opt/fadecut/README.md",
-		"/opt/fadecut~/fadecut",
-		"/opt/fadecutMic/README.Debian.md",
-		"/opt/fadecutMic/README.md",
-		"/media/data/whz/projectGalvoDocu/chapters/18_Quellenangaben.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/08_Modellbildungsprozess.mmd",
-		"/home/mainster/.config/sublime-text-3/Packages/Open URL/open_url.py",
-		"/media/data/whz/projectGalvoDocu/chapters/03_Einleitung.mmd",
-		"/home/mainster/scripts/hidden/rexbindkeys.sh",
-		"/home/mainster/scripts/xdg-open.sh",
-		"/home/mainster/scripts/mkscript.sh",
-		"/home/mainster/scripts/ccat.sh",
-		"/media/data/whz/projectGalvoDocu/chapters/02_Vorwort.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/10_Plattform.mmd",
-		"/media/data/CODES/LTspiceWorkspace/LTSpice_projects/LIBRARYS/alternative_libs/Bordodynov/LTspiceIV/lib/sub/MDB_sub/PT1.sub",
-		"/media/data/CODES/LTspiceWorkspace/LTSpice_projects/LIBRARYS/alternative_libs/Bordodynov/LTspiceIV/lib/sub/MDB_sub/PT2.sub",
-		"/media/data/.wine_std/drive_c/Program Files (x86)/LTC_ALL/LTspiceIV_4.18_multiLibs/links/links",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown/MultiMarkdown.sublime-syntax",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown/Markdown.sublime-syntax",
-		"/home/mainster/.config/sublime-text-3/Packages/User/log2.sublime-syntax",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Log.sublime-syntax",
-		"/media/data/whz/projectGalvoDocu/chapters/20_Trash.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/04_Vorarbeit.mmd",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Default (Linux).sublime-mousemap",
-		"/home/mainster/.config/sublime-text-3/Packages/Open URL/open_url.sublime-commands",
-		"/home/mainster/.config/sublime-text-3/Packages/Open URL/README.md",
-		"/media/data/whz/projectGalvoDocu/chapters/12_Software_und_Simulation.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/22_Trash.mmd",
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownTOC.sublime-settings"
+		"/opt/fadecut/README.md"
 	],
 	"find":
 	{
@@ -1233,6 +1248,34 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"(.{65})",
+			"(.{64})",
+			"\\s",
+			"(.{64})",
+			" ",
+			"matlab",
+			"noborder",
+			"architektur",
+			"noalter",
+			"table",
+			"\\alpha",
+			"pM",
+			"gnuRows",
+			"pGnuRot",
+			"^",
+			"rowCount",
+			"{{ ([0-9\\.\\, ]+) }, { ([0-9\\.\\, ]+) }},",
+			"inherit",
+			"<figcaption><yelBg>ENTER CAPTION</yelBg></figcaption>",
+			"<figcaption></figcaption>",
+			"(<img .*\\/>)",
+			"img",
+			"sublime.load_settings",
+			"sett",
+			"paragraphNum",
+			"body",
+			"includefile",
+			"CreateLog",
 			"typedef is initialized (use decltype instead)",
 			"\\t\\{ ([0-9\\.]+)\\, ([0-9\\.]+)\\, ([0-9\\.]+)\\, ([0-9\\.]+) \\}",
 			"<img",
@@ -1332,35 +1375,7 @@
 			"\\[([0-9]+[\\:,\\.]){1,} ([0-9]+[\\:,\\.]?){1,}\\]",
 			"a:hover",
 			"import",
-			"color",
-			"for",
-			"5px",
-			"img",
-			"box",
-			"open_in_browser",
-			"**",
-			"\\| \\w+ +\\|",
-			"([{}])",
-			"\\begin",
-			"qlines",
-			"quellenfile",
-			"sf",
-			"make",
-			"citeBorm",
-			"]:",
-			"bold",
-			"\\*\\*",
-			"(Cortex-[ARM])",
-			"VR9",
-			"^(?:(?:(?:0?[13578]|1[02])(\\/|-|\\.)31)\\1|(?:(?:0?[1,3-9]|1[0-2])(\\/|-|\\.)(?:29|30)\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:0?2(\\/|-|\\.)29\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:(?:0?[1-9])|(?:1[0-2]))(\\/|-|\\.)(?:0?[1-9]|1\\d|2[0-8])\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$",
-			"Tuning DDR begin",
-			" \\$",
-			"refTableElectric",
-			"68",
-			"\\|$[^\\|]$",
-			"\\|$\\|$",
-			"$[^\\|]$\\|",
-			"^[^\\|]^\\|"
+			"color"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1368,6 +1383,21 @@
 		"regex": true,
 		"replace_history":
 		[
+			"\\1\n",
+			"\n",
+			"\\1\n",
+			"",
+			"x",
+			"pI",
+			"nRows",
+			"pGnuTrans",
+			" * ",
+			"nRows",
+			"{ \\1, \\2 },",
+			"<figcaption>ENTER CAPTION</figcaption>",
+			"<figcaption><yelBg>ENTER CAPTION</yelBg></figcaption>",
+			"<figure>\\1<figcaption></figcaption></figure>",
+			"incfile",
 			"{{\\1, \\2}, {\\3, \\4}}",
 			"<figure><img",
 			" floatr",
@@ -1450,91 +1480,92 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 3,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "chapters/05_Projektziel.mmd",
+					"file": "chapters/08_Modellbildungsprozess.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12652,
+						"buffer_size": 36723,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4263,
-								4263
+								34184,
+								34184
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"parser": "markdown",
-							"spell_check": false,
+							"spell_check": true,
 							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
 							"target": "save"
 						},
 						"translation.x": 0.0,
-						"translation.y": 561.0,
+						"translation.y": 7160.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13788,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12894,
+								12894
+							]
+						],
+						"settings":
+						{
+							"auto_name": "hQIMAzrKKMPr+U1TAQ//UBGb+FHcGWuL3bW3vsNM9hzeToIljp",
+							"default_dir": "/media/data/whz/projectGalvoDocu",
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 301,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								61
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
 					"buffer": 2,
-					"file": "/media/data/CODES/cpp_s_linux/gnuTrans/gnuTrans.h",
+					"file": "/tmp/mony",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 798,
+						"buffer_size": 134738,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								253,
-								253
+								6600,
+								6600
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1545,122 +1576,89 @@
 				},
 				{
 					"buffer": 3,
-					"file": "pics/gnu_flatten_lowres.svg",
+					"file": "/home/mainster/.config/sublime-text-3/Packages/SortLinesByColumn/SortLinesByColumn.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13910,
+						"buffer_size": 2460,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1691,
-								1691
+								541,
+								541
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
+							"auto_complete": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 229.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "/media/data/CODES/pythons/mdosd/mdLibs/mdosd.py",
+					"file": "/home/mainster/.config/sublime-text-3/Packages/SortLinesByColumn/SortLinesByColumn.sublime-settings",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1764,
+						"buffer_size": 300,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								823,
-								823
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "chapters/05_Projektziel_und_Anforderungskatalog.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37,
+								37
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "pics/C_diag2.svg",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 3646,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1077,
-								1077
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/media/data/CODES/pythons/saleSys.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2086,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								563,
-								563
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1670,20 +1668,49 @@
 			"sheets":
 			[
 				{
-					"buffer": 7,
-					"file": "svgCoord.py",
+					"buffer": 6,
+					"file": "chapters/19_Quellenangaben.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16190,
+						"buffer_size": 12044,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								12840,
-								12840
+								7043,
+								7043
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1428.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "svgCoord.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16507,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11234,
+								11234
 							]
 						],
 						"settings":
@@ -1693,10 +1720,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 897.0,
+						"translation.y": 4017.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1705,15 +1732,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 34146,
+						"buffer_size": 35055,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14277,
-								14277
+								14151,
+								14151
 							]
 						],
 						"settings":
@@ -1724,41 +1751,67 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 832.0,
+						"translation.y": 1521.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 9,
+					"file": "sources/gnuTrans.c",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 891,
+						"buffer_size": 9831,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								891,
-								891
+								9831,
+								9831
 							]
 						],
 						"settings":
 						{
-							"auto_name": ".markdown-body div.fig figcaption,",
-							"default_dir": "/media/data/whz/projectGalvoDocu",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1131.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "sources/gnu.mat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5056,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 10,
 					"type": "text"
 				}
 			]
@@ -1766,7 +1819,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -1792,7 +1845,7 @@
 		"cols":
 		[
 			0.0,
-			0.41487808555,
+			0.637959584658,
 			1.0
 		],
 		"rows":
@@ -1818,7 +1871,7 @@
 	"project": "projectGalvoDocu.sublime-project",
 	"replace":
 	{
-		"height": 62.0
+		"height": 86.0
 	},
 	"save_all_on_build": false,
 	"select_file":
@@ -1848,7 +1901,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -1856,7 +1909,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 233.0,
+	"side_bar_width": 270.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

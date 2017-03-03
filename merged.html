@@ -236,6 +236,7 @@ body .markdown-body
 	margin-bottom: 	1.5em;
 	margin-top: 	1em;
 	padding: 		1em;
+	border: 		none !important;
 }
 .markdown-body img.box {
 	-moz-box-sizing: border-box;
@@ -289,6 +290,13 @@ img.floatl, div.floatl,	figure.floatl {
 	margin-bottom: 	0em;
 	margin-top: 	0em;
 }
+
+/*.markdown-body div.fig.nobox img,
+.markdown-body figure.nobox img {
+	border: 		none !important;
+	box-shadow: 	none !important;
+}*/
+
 /* 
  * An image inside a figure of class="box" 
  * should NOT draw any border and remove padding
@@ -300,6 +308,7 @@ img.floatl, div.floatl,	figure.floatl {
 	box-shadow: 	none !important;
 	padding: 		0em;
 }
+
 
 .markdown-body div.fig figcaption,
 .markdown-body figure figcaption {
@@ -1660,7 +1669,7 @@ Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleist
 <p>$$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$</p>
 <p>Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren. Um den Aufwand zur Erzeugung der notwendigen <a href="#quelldaten-generieren">Quelldaten</a> gering zu halten, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. </p>
 <div style="display: inline;">
-Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="/media/data/whz/projectGalvoDocu/pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="/media/data/whz/projectGalvoDocu/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (Laserklasse 3B, 532nm (Grün), max. 50mW, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="/media/data/whz/projectGalvoDocu/pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="/media/data/whz/projectGalvoDocu/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (<a href="#jumptoSafety">Laserklasse 3B</a>, 532nm (Grün), <a href="#jumptoSafety">max. 50mW</a>, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
 </div>
 
 <h4 class="sp"><span>Simulationsumgebung</span></h4>
@@ -1670,16 +1679,11 @@ Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgeleg
 <p>Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.</p>
 <p>Aus dem Modellzweck oder Kontext wird die notwendige <a href="#modell"><em>Modellgranularität</em></a> abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen, nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden <em>Rekonstruktionsfilter</em> zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme &ldquo;Antialiasing-&rdquo; und &ldquo;Rekonstruktionsfilter&rdquo; in das Computermodell des Gesamtsystems zu integrieren.<br />
 Entsprechendes gilt auch für die Modellierung weiterer Teilsysteme wie z. B. Stellglied sowie Messumformer + Tiefpassfilterung. </p>
-<p>Design<br />
-Systemeinsatz<br />
-<h4 class="specs"><span>Allgemeine Anforderungen</span></h4><br />
-Safety!</p>
-<p>Quality &ndash;&gt; testbild resol</p>
-<ul>
-<li>safe state guard</li>
-<li>exceptions</li>
-</ul>
-<h4 class="specs"><span>Systemanforderungen</span></h4>
+<h4 class="sphd"><span>Design</span></h4>
+
+<h4 class="sphd"><span>Systemeinsatz</span></h4>
+
+<h4 class="sphd"><span>Systemanforderungen</span></h4>
 
 <div class="spaced">
 <ol>
@@ -1692,6 +1696,22 @@ Safety!</p>
 <li>Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.</li>
 </ol>
 </div>
+<h4 class="sphd"><span>Allgemeine Anforderungen</span></h4>
+
+<p><a name="jumptoSafety"> </a><br />
+<h4 class="sp"><span>Sicherheit</span></h4><br />
+Während der Entwicklungsphase ist stehts darauf zu achten dass </p>
+<ul>
+<li>zu keinem Zeitpunkt die Gefahr einer willkürlichen Positionierung des Laserstrahls gegeben ist!<ul>
+<li>Description of the &ldquo;safe state guard&rdquo; system</li>
+<li>exceptions and forced bias</li>
+</ul>
+</li>
+<li>Hardware-Komponenten vor Überlast geschützt sind! </li>
+</ul>
+<h4 class="sp"><span>Qualität</span></h4>
+
+<p>Um die &ldquo;Qualität&rdquo; der erzeugten Abbildungen effektiv messen zu können, soll auf eine Testmöglichkeit für das <a href="http://www.laserfx.com/Backstage.LaserFX.com/Systems/Scanning3.html">ILDA-Testpattern</a> implementiert werden. </p>
 <p></par></p>
 <p>Zu Beginn des Kapitels <a href="#modellbildungsprozess">Modellbildungsprozess</a> folgt eine erste Aufteilung des Projekts.</p>
 <!-- wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
@@ -1714,17 +1734,15 @@ $$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvek
 <p>&ldquo;<strong>System:</strong> a set of physical entities that interact and are observable, where the entities can be a specified quantity of matter or a volume in space.&rdquo; <sup id="fnref:fnChRoy"><a class="footnote-ref" href="#fn:fnChRoy" rel="footnote">5</a></sup><br />
 <p style="color: #707070 "> Eine Menge von physikalischen Einheiten die interagieren und beobachtbar sind, wobei sie eine definierte Menge Materie (bzw. eine bestimmte Anzahl an Teilchen) oder ein physischer Körper im Raum sein können. </p></p>
 </blockquote>
-<p>Im folgenden beschränkt sich der System-Begriff auf die Systemtheorie als elementare Disziplin der Ingenieurswissenschaften.<br />
-Systeme und Signale sind die beiden wichtigsten Konzepte der Systemtheorie. In der Praxis werden Gebilde oder Konstrukte als System bezeichnet, die bei Anregung mit einem Eingangssignal <em>x(t)</em> mit einem Ausgangssignal <em>y(t)</em> reagieren.<sup id="fnref:fnRUnb"><a class="footnote-ref" href="#fn:fnRUnb" rel="footnote">6</a></sup> </p>
-<p>Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der übergeordneten Aufgabe (Wie &ldquo;dick&rdquo; sind Pflichten- und Lasten- Heft?) entstehen zahlreiche Abstraktionsebenen die es zu <em>dokumentieren</em> und meist auch zu warten gilt. </p>
-<p>Hinsichtlich eines <em>Software-Systems</em> wird der Begriff <em>System</em> in der <a href="https://de.wikipedia.org/wiki/IEEE_1471" title="IEEE Recommended Practice for Architectural Description of Software-Intensive Systems">IEEE 1471</a> wie folgt definiert:</p>
+<p>Systeme und Signale sind die beiden wichtigsten Konzepte der Systemtheorie. In der Praxis werden Gebilde oder Konstrukte als System bezeichnet, die bei Anregung mit einem Eingangssignal <em>x(t)</em> mit einem Ausgangssignal <em>y(t)</em> reagieren.<sup id="fnref:fnRUnb"><a class="footnote-ref" href="#fn:fnRUnb" rel="footnote">6</a></sup> </p>
+<p>Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der übergeordneten Aufgabe (Wie &ldquo;dick&rdquo; sind Pflichten- und Lasten- Heft?) entstehen zahlreiche Abstraktionsebenen die es zu <em>dokumentieren</em> und meist auch zu warten gilt. Hinsichtlich eines <em>Software-Systems</em> wird der Begriff <em>System</em> in der <a href="https://de.wikipedia.org/wiki/IEEE_1471" title="IEEE Recommended Practice for Architectural Description of Software-Intensive Systems">IEEE 1471</a> wie folgt definiert:</p>
 <blockquote>
 <p>Ein System ist ein aus Teilen zusammengesetztes und strukturiertes Ganzes. Es hat eine Funktion, erfüllt einen Zweck und verfügt über eine Architektur. <a href="#citeMDA" title="V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;">[MDA:2006, p.57]</a></p>
 </blockquote>
-<p>Der Begriff <em>System</em> ist hier und im Folgenden als Abkürzung für <em>Teilsystem</em> zu verstehen.</p>
+<p>Im folgenden beschränkt sich der System-Begriff auf die Systemtheorie als elementare Disziplin der Ingenieurswissenschaften. Der Begriff <em>System</em> ist hier und im Folgenden als Abkürzung für <em>Teilsystem</em> zu verstehen.</p>
 <h2 id="modell"><a name="user-content-modell" href="#modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modell</h2>
-<p>Um ein Modell beschreiben zu können, muss zuvor das System <em>gewählt</em> werden, dessen tatsächliche Eigenschaften über den <em><strong>Prozess</strong> der Modellbildung</em> abstrahiert werden soll. Auch für den Begriff <em>Modell</em> finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. Einige werden im folgenden zitiert: <br />
-Die Grundlagen der Modellierung schuf Herbert Stachowiak 1973 mit der Veröffentlichung der &ldquo;Allgemeinen Modelltheorie&rdquo;. Demnach ist ein Modell durch <strong>Abbildung</strong>, <strong>Verkürzung</strong> und <strong>Pragmatismus</strong> gekennzeichnet.<sup id="fnref:fnStachowiak"><a class="footnote-ref" href="#fn:fnStachowiak" rel="footnote">16</a></sup></p>
+<p>Um ein Modell beschreiben zu können, muss zuvor das System <em>gewählt</em> werden, dessen tatsächliche Eigenschaften über den <em><strong>Prozess</strong> der Modellbildung</em> abstrahiert werden soll. Auch für den Begriff <em>Modell</em> finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. </p>
+<p>Die Grundlagen der Modellierung schuf Herbert Stachowiak 1973 mit der Veröffentlichung der &ldquo;Allgemeinen Modelltheorie&rdquo;. Demnach ist ein Modell durch <strong>Abbildung</strong>, <strong>Verkürzung</strong> und <strong>Pragmatismus</strong> gekennzeichnet.<sup id="fnref:fnStachowiak"><a class="footnote-ref" href="#fn:fnStachowiak" rel="footnote">16</a></sup></p>
 <blockquote>
 <p><strong><em>Abbildung</em></strong><br />
 Ein Modell ist stets ein Modell von etwas – nämlich Abbildung oder Repräsentation eines natürlichen oder eines künstlichen Originals, wobei dieses Original selbst auch wiederum ein Modell sein kann.</p>
@@ -1749,53 +1767,12 @@ Die folgende Beispielaufgabe soll diesen Zusammenhang etwas greifbarer darstelle
 <p><strong>Möglichkeit 1</strong><br />
 <img src="/media/data/whz/projectGalvoDocu/pics/elko_ersatz_hf_reload.svg" title="Realitätsgetreues Ersatzschaltbild eines RC-Tiefpassfilters" align="top" height="190px" style="float:right; margin: .4em 0em 0em 1em;"/>Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um eine Highend-Anlage handelt, sollte ein möglichst präzises Modell formuliert werden. Unter Berücksichtigung aller tatsächlich parasitärer Größen von passiven Bauelementen<sup id="fnref:fnElektrBauelem"><a class="footnote-ref" href="#fn:fnElektrBauelem" rel="footnote">18</a></sup> wie Serien&shy;induktivität (ESL) und Serien&shy;widerstände (ESR) der Anschluss&shy;drähte/Anordnung der Elektroden, der Isolations&shy;widerstände und der dielektrischen Absorption (Nachladeeffekt, Rda, Cda), ergibt sich für einen einfachen RC-Tiefpass mit einer Dämpfungsflanke von 20dB/Dekade, das nebenstehende Schaltbild. Da die Ordnung eines Systems direkt aus der Anzahl seiner unabhängigen Energiespeicher abgeleitet werden kann, muss dem geforderten mathematischen Modell eine <strong>Differentialgleichung 5. Ordnung</strong>!!! zugrunde gelegt werden. </p>
 <p><strong>Möglichkeit 2</strong><br />
-&hellip; dgl der Ordnung 1....</p>
+Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um ein Audiogerät handelt, können eventuell störende Einflüsse im Frequenzbereiche jenseits von $100\si{kHz}$ als irrelevant betrachtet werden da die <em>auditive Wahrnehmung</em> des menschlichen Gehörs für Frequenzen über $20\si{kHz}$ schlicht nicht mehr sensibel genug ist. Tatsächlich liegt die <em>Musikwahrnehmbarkeit</em> noch deutlich unterhalb der $10\si{kHz}$ Grenze. Für das menschliche Gehör ist es also egal, ob ein TP-Filter im Bereich $900\si{kHz}\dots 1,4\si{MHz}$ eine Resonanzüberhöhung aufweist oder nicht.</p>
+<hr />
 <p>Ein formuliertes Modell unterliegt also der Anforderung, möglichst alle <strong><em>relevanten</em></strong> Charakteristika eines Systems abzubilden wobei der <em>Systemgrad</em> minimal gehalten werden soll. So gelingt es, komplexe Zusammenhänge aufzuspalten und eine Problemstellung zu partitionieren.</p>
 <h2 id="modellbildung"><a name="user-content-modellbildung" href="#modellbildung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modellbildung</h2>
 <p><a style="background-color: yellow;"> Top-Down- und Bottom-Up-Design<br />
 In der Informatik bezeichnet man einen Entwicklungsprozess für Software als Top-down, wenn der Entwurf mit abstrahierten Objekten beginnt, die dann konkretisiert werden; der Prozess ist Bottom-up, wenn von einzelnen Detail-Aufgaben ausgegangen wird, die zur Erledigung übergeordneter Prozesse benötigt werden. Zudem wird im Zusammenhang mit Compilerbau von Top-down- und Bottom-up-Parsern gesprochen (genauere Informationen unter Top-Down- und Bottom-Up-Design). </a></p>
-<p>Modellbildung<br />
-Klassifikation von Modellen hinsichtlich ihrer Repräsentation:<br />
-&hellip;<br />
-Modell<br />
-mentales Modell physikal. Modell<br />
-analoges Modell<br />
-Darstellungsmodell<br />
-symbol. Modell<br />
-mathemat. Modell<br />
-grafisches Modell<br />
-verbales Modell<br />
-&hellip;</p>
-<p>Unter Modellbildung (Modellierung) versteht man den Prozess, von einem System<br />
-ein Modell zu erstellen. Hierzu gehören folgende Schritte:<br />
-1. Identifizierung der Systemgrenzen     Black-Box-Modell<br />
-2. Identifizierung der Untersysteme und ihrer Beziehungen     Strukturmodell<br />
-3. Definition von Relationen zwischen Variablen     Verhaltensmodell<br />
-MK:III-21 Modeling Concepts © STEIN 2000-2015<br />
-Modellbildung<br />
-Ablauf der Top-Down-Modellbildung: Abstrakte Modelle werden auf weniger<br />
-abstrakte Modelle abgebildet.<br />
-mentales Modell<br />
-Strukturmodell<br />
-algorithm. Modell<br />
-Computermodell<br />
-Verhaltensmodell<br />
-System + Frage<br />
-Interpretation des<br />
-konkreteren Modells<br />
-Basis des abstrakteren.<br />
-hohe Abstraktion<br />
-niedrige Abstra</p>
-<hr />
-<p>Prozesse der Modellbildung: wiki<br />
-Ablauf einer Modellbildung<br />
-Bei der Modellbildung lassen sich folgende Prozesse differenzieren:</p>
-<p>Abgrenzung: Nichtberücksichtigung irrelevanter Objekte<br />
-Reduktion: Weglassen von Objektdetails<br />
-Dekomposition: Zerlegung, Auflösung in einzelne Segmente<br />
-Aggregation: Vereinigung, Zusammenfassen von Segmenten zu einem Ganzen<br />
-Abstraktion: Begriffs- bzw. Klassenbildung</p>
-<hr />
 <p>Die enormen Anforderungen, die aus Anwendersicht an Hard- und Softwarekomponenten gestellt werden, in Verbindung mit dem Aspekt der Wirtschaftlichkeit, machen sich bereits in der Projektierungsphase eines Auftrags bemerkbar. <em>&ldquo;Reusability&rdquo;</em> ist ein Begriff aus der Softwarearchitektur und charakterisiert Software (Quellcode, Dokumentation, Testumgebungen, &hellip;) bezüglich ihrer <em>Wiederverwertbarkeit</em> in Folgeprojekten oder Folgeschritten des selben Projektes.<sup id="fnref:fnReuseCode"><a class="footnote-ref" href="#fn:fnReuseCode" rel="footnote">13</a></sup> Um einen Schritt weiter in Richtung <em>modellgetriebene Architektur</em> (<em>engl. Model Driven Architecture</em>, <strong><em>MDA</em></strong>) zu gehen, soll an dieser Stelle ein Unterpunkt aus <a href="#citeMDA" title="V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;">[MDA:2006, p.17]</a>, Kapitel <em>&ldquo;Akute Probleme bei der Software-Erstellung&rdquo;</em>, zitiert werden:</p>
 <blockquote>
 <p><strong>Äußere und innere Gleichförmigkeit von Projekten</strong> <br />
@@ -1966,7 +1943,7 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 <p>&ldquo;It&rsquo;s a bunch of shapes connected by lines.&rdquo; Dilbert <br />
 <a href="#citeMDA" title="V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;">[MDA:2006, p.73]</a></p>
 </blockquote>
-<p>Dieser Aussage entsprechend soll hier aus dem formellen Anforderungskatalog (vergl. Pflichtenheft) ein erstes abstraktes Modell abgeleitet werden. </p>
+<p>Dieser Aussage entsprechend soll hier aus dem formellen <a href="#projektziel-und-anforderungskatalog">Anforderungskatalog</a> (vergl. Pflichtenheft) ein erstes abstraktes Modell abgeleitet werden. </p>
 <ul>
 <li>Aktoren </li>
 <li>Sensoren</li>
@@ -1981,13 +1958,22 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 </li>
 </ul>
 </li>
-<li>Software<ul>
+<li>Software und Simulation<ul>
+<li>Eingebettete Hardware<ul>
 <li>Implementierung der Regelalgorithmen (Reglerelektronik)</li>
-<li>grafisches Schnittstellenprogramm zur Echtzeitkommunikation</li>
+<li>Sicherheitssystem (Überstromschutz, &ldquo;Error-Safe-State&rdquo;)</li>
+</ul>
+</li>
+<li>Entwicklungs-PC<ul>
+<li>MATLAB </li>
 </ul>
 </li>
 </ul>
-<p><img alt="abstractSystemC" src="/media/data/whz/projectGalvoDocu/pics/abstractSystemC.svg" title="Erste Unterteilung" /></p>
+</li>
+<li>grafisches Schnittstellenprogramm zur Echtzeitkommunikation</li>
+</ul>
+<figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/pics/abstractSystemC.svg" title="Abstraktes Modell des Regelkreises" /><figcaption>Abstraktes Modell des Regelkreises</figcaption></figure>
+
 <p><yelBg>&hellip;So what???</yelBg></p>
 <h2 id="generisches-modell"><a name="user-content-generisches-modell" href="#generisches-modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generisches Modell</h2>
 <p>In der Informatik sind <em>generische Typen</em> Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von <em>parametrischer Polymorphie</em>.<sup id="fnref:fnwikiGenericTypes"><a class="footnote-ref" href="#fn:fnwikiGenericTypes" rel="footnote">19</a></sup> Überträgt man den Begriff <em>generisch</em> auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ <em>&ldquo;Aktor&rdquo;</em> respektive <em>&ldquo;Galvanometer&rdquo;</em> die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als <em>Subsystem</em> <strong><em>Aktor</em></strong> auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. </p>
@@ -2378,13 +2364,14 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 <h4 id="problematik-der-sattigung"><a name="user-content-problematik-der-sattigung" href="#problematik-der-sattigung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Problematik der Sättigung</h4>
 <p>(&hellip;)</p>
 <h2 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h2>
-<p>(&hellip;)</p>
+<p>(&hellip;)<br />
+<a href="http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf">Architektur und Architekturmuster</a> <br />
+Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.</p>
 <ul>
 <li>ist ein <strong>Prozess</strong>, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.</li>
 <li>ist ein <strong>Gegenstand</strong>, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. </li>
 </ul>
 <p><a href="https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html">Was-heißt-hier-Softwarearchitektur? - <em>Dr. Michael Stahl, Siemens AG</em></a></p>
-<hr />
 <p>Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchitektur auch wenn die Entwicklung vollkommen unsystematisch erfolgt ist.</p>
 <ul>
 <li>Erläuterung <strong>Softwarearchäologie</strong></li>
@@ -2615,7 +2602,7 @@ In Section 2 we will provide an example showing how to use this technique on STM
 products -->
 
 <h1 id="software-und-simulation"><a name="user-content-software-und-simulation" href="#software-und-simulation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Software und Simulation</h1>
-<p>In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-zu-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich <em>Software und Simulation</em> wird wie folgt untergliedert: </p>
+<p>In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich <em>Software und Simulation</em> wird wie folgt untergliedert: </p>
 <p><yelBg>Place TOC here!!!</yelBg></p>
 <h2 id="entwicklungsumgebung"><a name="user-content-entwicklungsumgebung" href="#entwicklungsumgebung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Entwicklungsumgebung</h2>
 <p>Wie bereits in der Einleitung zu <a href="#plattform">Plattform</a> sowie im Abschnitt <a href="#warum-arm">Warum ARM?</a> angesprochen, wird dem Thema <em>Plattformunabhängigkeit</em> ein hoher Stellenwert zugesprochen. Deshalb soll an dieser Stelle nicht weiter auf die zwar weit verbreitete, hoch integrierte, jedoch für viel Geld (8260 € <a href="https://elmicro.com/de/keilarm.html"><em>MDK-ARM Pro, Stand 02/2017</em></a>) vertriebene Entwicklungsumgebung <em>KEIL µVision MDK</em>, eingegangen werden.</p>
