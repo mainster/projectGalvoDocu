@@ -7,7 +7,7 @@
     <tbody style="text-align: left">
         <tr style="font-weight: bold">
             <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
-            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system</center></td>
+            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system ...</center></td>
         </tr>
         <tr>
             <td>utilitas</td>
@@ -33,13 +33,50 @@
 
 </center>
 
-Mit dieser klaren Aussage vor Augen befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr "unscharf" definierten Begriff der Softwarearchitektur. Die Aussagen und Formulierungen bezüglich _Architektur_, _Struktur_ sowie _Muster_ und _Vorgehen_, sollen in erster Linie Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. 
+Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr "unscharf" definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich _Architektur_, _Struktur_ sowie _Muster_ oder _Vorgehen_, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. 
 
-Außerdem soll an dieser Stelle nochmals auf die in Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog), Abschnitt _Systemzweck_, formulierten Schwerpunktthemen Bezug genommen werden.  
+Zudem soll an dieser Stelle nochmals auf das in Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) (Abschnitt _Systemzweck_) formulierte Schwerpunktthema _"Modellbildung und Simulation"_ Bezug genommen werden.  
+
+
+```sequence
+Title: Here is a title
+A->B: Normal line
+B-->C: Dashed line
+C->>D: Open arrow
+D-->>A: Dashed open arrow
+```
+
+@startuml
+title __Diag1__
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+@diag_style: { "background-color": "yellow", "font-weight": "bold" }
+@diag_class: "boxed yelBg"
+@diag_title: "Diag1 title"
+@diag_width: "300px"
+@diag_float: "right"
+
 
 Die formelle Beschreibung einer Softwarearchitektur 
 [Architektur und Architekturmuster](http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf) 
 Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.
+
+@startuml
+title __Diag2__
+Alice -> Bob: Authentication Request
+Bob --> Alice: Authentication Response
+Alice -> Bob: Another authentication Request
+Alice <-- Bob: another authentication Response
+@enduml
+@diag_image_tag: <figure><img src="%s" width="100px"/>
+@diag_style: { "background-color": "yellow", "font-weight": "bold" }
+@diag_class: "boxed yelBg"
+@diag_title: "Diag2 title"
+@diag_width: "50%"
+@diag_float: "left"
 
 - ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
 - ist ein __Gegenstand__, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
