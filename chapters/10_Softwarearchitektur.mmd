@@ -1,3 +1,9 @@
+Title:      Projekt: XY-Galvo Scanner  
+Author:     Del Basso, Manuel
+Date:       02-11-2016
+Location:   WHZ
+Footicon:   ./pics/whz.png
+
 # Softwarearchitektur #
 >Architektur ist die Kombination von utilitas, firmitas und venustas.[^fnSwArchitekturIst]
 
@@ -35,48 +41,145 @@
 
 Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr "unscharf" definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich _Architektur_, _Struktur_ sowie _Muster_ oder _Vorgehen_, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. 
 
-Zudem soll an dieser Stelle nochmals auf das in Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) (Abschnitt _Systemzweck_) formulierte Schwerpunktthema _"Modellbildung und Simulation"_ Bezug genommen werden.  
+Zudem soll an dieser Stelle nochmals auf das in Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) (Abschnitt _Systemzweck_) formulierte Schwerpunktthema "_Modellbildung und Simulation_" Bezug genommen werden.  
+
+## Was ist Softwarearchitektur? ##
+Die Softwarearchitektur beschreibt die _grundlegenden_ __Komponenten__ und deren __Zusammenspiel__ innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, umfangreiche und komplexe Aufgabenstellungen frühzeitig zu partitionieren sodass ein Gesamtsystem in überschaubare Teilsysteme zerlegt werden kann. 
+
+Ein strukturierter Architekturentwurf ist in der Regel auf ganzer Linie gewinnbringend. Die Tatsache, dass ein gut durchdachter Architekturentwurf in den Anfängen eines neuen Projektes zusätzliche Arbeitsleistung = Zeit = Kosten einfordert, relativiert sich spätestens bei langfristiger Betrachtung eines Produkts. Besonders bei großen sowie langlebigen Softwaresystemen zahlt es sich aus, wenn man beispielsweise neuen Mitarbeitern neben der Softwaredokumentation (Implementierungsdetails. z. B. _Doxygen_) ein  Architekturmodell vorlegen kann. Des weiteren soll mit der in aller Regel höheren Produktqualität, mit einer einfacheren/besseren Projektplanung/Projektierung (bezüglich Zeitmanagement sowie "Man-Power"), besserer Erweiterbarkeit, Zertifizierungskriterien sowie mit dem Aspekt des Code-Reusing argumentiert werden. 
+
+In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon, wie unstrukturiert und von _Ad-hoc-decisions_ geplagt, der Entwicklungsprozess abgelaufen ist (<lkey>Reverse engeneering</lkey>). Dennoch hartnäckigen Modell-Verfechtern und Architekturentwurfsgegnern darf dann, als letzte gut gemeinte Überzeugungshilfe, eine Umschulung zum __Softwarearchäologen__ nahegelegt werden.
+
+## Model-Driven Architecture (MDA) ##
+Nachdem in einem _Bottom-Up_-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem _Top-Down_-Prinzip. Wird nun die funktionale Archi&shy;tektur&shy;beschreibung dieses Softwaresystems auf Basis einer __universellen__, d.h. platt&shy;form&shy;unab&shy;hängigen (__!__) Model&shy;lierungs&shy;sprache konzipiert und realisiert, so liegt dem erarbeiteten Produkt eine modell&shy;getriebene Softwareentwicklung zu Grunde (Model-driven software development, MDSD). Die Aufgabe der MDA ist es nun, eine Infrastruktur oder eben Architektur zur Verfügung zu stellen, um Softwareentwicklung auf Modellbasis und nicht mehr auf Code-Basis zu fördern bzw. erst zu ermöglichen.      
+
+### Unified Modeling Language (UML) ###
+Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der _Object Management Group_ __(OMG)__ entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte _Unified Modeling Language_ __(UML2)__, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. 
+
+### UML2 - Industriestandard ###
+Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekturentwurf in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.
+
+|        Merkmal        |                                                                                                                                                                                                    |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Diagrammunterstützung | Modelle können in Form von UML-&shy;Diagrammen dargestellt und auch als solche bearbeitet werden. Die graphische Notation ist in der UML-&shy;Spezi&shy;fika&shy;tion stan&shy;dar&shy;di&shy;sie&shy;rt
+| Codegenerierung       | Entsprechende UML-&shy;Werk&shy;zeuge können aus einem zuvor formu&shy;lierten Modell, einen Teil oder sogar die voll&shy;ständige Architektur&shy;-Imple&shy;mentierung in Form eines Quellcodes ableiten.                      |
+| Reverse Engineering   | Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.                                                       |
+| Modelltransformation  | Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum) |
+
+### Diagramme als Sicht ###
+Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene _Sichten_ handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine _Sicht_ repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  
+
+<a href="./pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="./pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a>
 
 
-```sequence
-Title: Here is a title
-A->B: Normal line
-B-->C: Dashed line
-C->>D: Open arrow
-D-->>A: Dashed open arrow
-```
+## Architekturkomponenten ##
+- reverse Engeneering
 
 @startuml
-title __Diag1__
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+skinparam componentStyle uml2
+package "Gesamtprojekt" {
+    package "Embedded Software" {       
+        [Actuator Safestate Guard]
+        [Diskreter PID-Regler]
+    } 
+    package "Modellbildung und Simulation" {
+        frame "Hardware" {
+            [Actuator Safestate Guard]
+        }
+        frame "PID" {
+            [Diskreter PID-Regler]
+        }
+    } 
+}
 @enduml
-@diag_style: { "background-color": "yellow", "font-weight": "bold" }
-@diag_class: "boxed yelBg"
-@diag_title: "Diag1 title"
-@diag_width: "300px"
-@diag_float: "right"
+@diag_align: "center"
+
+---
+
+@startuml
+skinparam componentStyle uml2
+package "Gesamtprojekt" {
+    package "Embedded Software" {       
+        frame "ASG" {
+            [Actuator Safestate Guard]
+        }
+        frame "PID" {
+            [Diskreter PID-Regler] 
+        }
+    } 
+    package "Modellbildung und Simulation" {
+        frame "Hardware" {
+            [Actuator Safestate Guard]
+        }
+        frame "PID" {
+            [Diskreter PID-Regler]
+        }
+    } 
+}
+@enduml
+@diag_align: "center"
+
+---
+
+@startuml
+boundary b1
+control c1
+b1 -(0)- c1
+
+component comp1
+interface interf1
+comp1 #~~( interf1
+
+:mode1actor: -0)- fooa1
+:mode1actorl: -le0)- foo1l
+
+[component1] 0)-(0-(0 [componentC]
+() component3 )-0-(0 "foo" [componentC]
+
+[aze1] #-->> [aze2]
+@enduml
+
+---
+
+@startuml
+package "Gesamtprojekt" {
+    [Embedded Software]
+    [Modellbildung und Simulation]
+    node "Other Groups" {
+        FTP - [Second Component]
+        [First Component] --> FTP
+    } 
+}
+@enduml
+@diag_align: "center"
+
+---
+
+@startditaa
++--------+   +-------+    +-------+
+|        +---+ ditaa +--> |       |
+|  Text  |   +-------+    |diagram|
+|Document|   |!magic!|    |       |
+|     {d}|   |       |    |       |
++---+----+   +-------+    +-------+
+    :                         ^
+    |       Lots of work      |
+    +-------------------------+
+@endditaa
+
+Komponentendigramm
+
+- zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems
+- die Darstellung umfasst meist Komponenten inklusive deren Schnittstellen oder Ports
+- Abhängigkeitsbeziehungen zwischen Komponenten untereinander können dargestellt werden
+- zeigt oft Notationselemente, die das Innere einer Komponente wiederspiegeln 
+- wird überwiegend zur Modellierung von komponentenbasierten Softwaresystemen eingesetzt
 
 
 Die formelle Beschreibung einer Softwarearchitektur 
 [Architektur und Architekturmuster](http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf) 
 Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.
 
-@startuml
-title __Diag2__
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
-@enduml
-@diag_image_tag: <figure><img src="%s" width="100px"/>
-@diag_style: { "background-color": "yellow", "font-weight": "bold" }
-@diag_class: "boxed yelBg"
-@diag_title: "Diag2 title"
-@diag_width: "50%"
-@diag_float: "left"
 
 - ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
 - ist ein __Gegenstand__, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
@@ -84,10 +187,8 @@ Alice <-- Bob: another authentication Response
 
 [Was-heißt-hier-Softwarearchitektur? - _Dr. Michael Stahl, Siemens AG_](https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html)
 
-Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchitektur auch wenn die Entwicklung vollkommen unsystematisch erfolgt ist.
 
-- Erläuterung __Softwarearchäologie__
-- Erläuterung __Ad-hoc-decisions__
+
 
 
 

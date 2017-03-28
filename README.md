@@ -34,7 +34,7 @@ pandoc -sSf markdown -o<file>.tex <file>.md
 ```
 
 ## Fixing LaTex sources ##
-```tex
+```latex
 (... packages)
 \usepackage{siunitx}
 \newcommand{\Si}{\large\si[per-mode=fraction]{1}}

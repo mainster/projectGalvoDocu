@@ -1,16 +1,42 @@
 {
-    "folders":
-    [
-        {
-            "path": ".",
-            "folder_exclude_patterns":
-            [
-                "eagle"
-            ],
-        }
-    ],
-    "settings":
-    {
-        "css": ["./sources/styleGalvoDocu.css"],
-    },
+		"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"/usr/bin/python3.5\" -u \"$file\""
+		}
+	],
+	"folders":
+	[
+		{
+			"folder_exclude_patterns":
+			[
+				"eagle"
+			],
+			"path": "."
+		}
+	],
+	"settings":
+	{
+		"css":
+		[
+			"./sources/styleGalvoDocu.css"
+		],
+		
+		"anaconda_linting": true,
+		"anaconda_linting_behaviour": "always",
+		"pep257": false,
+		"python_interpreter": "/usr/bin/python3.5",
+		"test_command": "python -m unittest discover",
+		"use_pylint": false,
+		"validate_imports": false,
+
+        "extra_paths":
+        [
+            "/opt/sublime_text/",
+            "/home/mainster/CODES_local/pythons/swampy-2.1.5/"
+        ]
+	}
 }

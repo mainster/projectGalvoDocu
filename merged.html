@@ -1,5 +1,5 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="author" content="Del Basso, Manuel">
-<meta name="date" content="WHZ, November, 2016"><style>body {
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="date" content="WHZ, November, 2016">
+<meta name="author" content="Del Basso, Manuel"><style>body {
 	border: 1px solid #ddd;
 	margin: 16px auto;
 	outline: 1300px solid #fff;
@@ -200,7 +200,7 @@ body .markdown-body
  * Include paragraph numbering: 
  * In the generated html file, append this class to body as follows:
  * 
- * <article class="markdown-body paragraphNum">;
+ * <article class="markdown-body">;
  * <article class="markdown-body paragraphNum"> 
  * 
  ***************************************/
@@ -1410,7 +1410,7 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>Projekt: XY-Galvo Scanner</title></head><body><article class="markdown-body paragraphNum"><h1 id="projekt-xy-galvo-scanner"><a name="user-content-projekt-xy-galvo-scanner" href="#projekt-xy-galvo-scanner" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projekt: <strong>XY-Galvo Scanner</strong></h1>
+<title>Projekt: XY-Galvo Scanner</title></head><body><article class="markdown-body"><h1 id="projekt-xy-galvo-scanner"><a name="user-content-projekt-xy-galvo-scanner" href="#projekt-xy-galvo-scanner" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projekt: <strong>XY-Galvo Scanner</strong></h1>
 <div class="toc">
 <ul>
 <li><a href="#projekt-xy-galvo-scanner">Projekt: XY-Galvo Scanner</a></li>
@@ -1479,7 +1479,18 @@ MathJax.Hub.Config({
 <li><a href="#signalkonditionierung">??? Signalkonditionierung</a></li>
 </ul>
 </li>
-<li><a href="#softwarearchitektur">Softwarearchitektur</a></li>
+<li><a href="#softwarearchitektur">Softwarearchitektur</a><ul>
+<li><a href="#was-ist-softwarearchitektur">Was ist Softwarearchitektur?</a></li>
+<li><a href="#model-driven-architecture-mda">Model-Driven Architecture (MDA)</a><ul>
+<li><a href="#unified-modeling-language-uml">Unified Modeling Language (UML)</a><ul>
+<li><a href="#uml2-industriestandard-im-bereich-mda">UML2 - Industriestandard im Bereich MDA</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#architekturkomponenten">Architekturkomponenten</a></li>
+</ul>
+</li>
 <li><a href="#plattform">Plattform</a><ul>
 <li><a href="#warum-arm">Warum ARM?</a></li>
 <li><a href="#warum-cortex-m4">Warum Cortex-M4?</a><ul>
@@ -2381,7 +2392,7 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
     <tbody style="text-align: left">
         <tr style="font-weight: bold">
             <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
-            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system</center></td>
+            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system ...</center></td>
         </tr>
         <tr>
             <td>utilitas</td>
@@ -2406,8 +2417,64 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 </table>
 
 <p></center></p>
-<p>Mit dieser klaren Aussage vor Augen befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr &ldquo;unscharf&rdquo; definierten Begriff der Softwarearchitektur. Die Aussagen und Formulierungen bezüglich <em>Architektur</em>, <em>Struktur</em> sowie <em>Muster</em> und <em>Vorgehen</em>, sollen in erster Linie Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. </p>
-<p>Außerdem soll an dieser Stelle nochmals auf die in Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a>, Abschnitt <em>Systemzweck</em>, formulierten Schwerpunktthemen Bezug genommen werden.  </p>
+<p>Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr &ldquo;unscharf&rdquo; definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich <em>Architektur</em>, <em>Struktur</em> sowie <em>Muster</em> oder <em>Vorgehen</em>, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. </p>
+<p>Zudem soll an dieser Stelle nochmals auf das in Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a> (Abschnitt <em>Systemzweck</em>) formulierte Schwerpunktthema &ldquo;<em>Modellbildung und Simulation</em>&rdquo; Bezug genommen werden.  </p>
+<h2 id="was-ist-softwarearchitektur"><a name="user-content-was-ist-softwarearchitektur" href="#was-ist-softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Was ist Softwarearchitektur?</h2>
+<p>Die Softwarearchitektur beschreibt die <em>grundlegenden</em> <strong>Komponenten</strong> und deren <strong>Zusammenspiel</strong> innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, ein komplexes Gesamtsystem frühzeitig zu partitionieren und in überschaubare Teilsysteme zu zerlegen. In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon wie unstrukturiert der Entwicklungsprozess abgelaufen ist.</p>
+<h2 id="model-driven-architecture-mda"><a name="user-content-model-driven-architecture-mda" href="#model-driven-architecture-mda" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Model-Driven Architecture (MDA)</h2>
+<p>Nachdem in einem <em>Bottom-Up</em>-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem <em>Top-Down</em>-Prinzip. Wird nun die funktionale Architekturbeschreibung dieses Softwaresystems auf Basis einer <strong>universellen</strong>, d.h. plattformunabhängigen (<strong>!</strong>) Modellierungssprache konzipiert und realiasiert, so besitzt das erarbeitete Produkt eine modellgetriebene Architektur (Model-driven-architecture, MDA). Wird in diesem Kontext der oftmals nur auf die Hardwareumgebung bezogene Begriff <em>Plattform</em>, explizit auf Hard- und Software erweitert, bleibt nicht mehr viel Spielraum bei der Wahl der geeigneten Entwurfsmethode.</p>
+<h3 id="unified-modeling-language-uml"><a name="user-content-unified-modeling-language-uml" href="#unified-modeling-language-uml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Unified Modeling Language (UML)</h3>
+<p>Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der <em>Object Management Group</em> <strong>(OMG)</strong> entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte <em>Unified Modeling Language</em> <strong>(UML2)</strong>, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. </p>
+<h4 id="uml2-industriestandard-im-bereich-mda"><a name="user-content-uml2-industriestandard-im-bereich-mda" href="#uml2-industriestandard-im-bereich-mda" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UML2 - Industriestandard im Bereich MDA</h4>
+<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_0.png"  style=""/></center></p>
+<p>Aus einer Vielzahl von Eigenschaften und Argumenten, die für eine Architekturbeschreibung in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.</p>
+<table>
+<thead>
+<tr>
+<th>Merkmal</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Diagrammunterstützung</td>
+<td>Modelle können in Form von UML-&shy;Diagrammen dargestellt und auch als solche bearbeitet werden. Die graphische Notation ist in der UML-&shy;Spezi&shy;fika&shy;tion stan&shy;dar&shy;di&shy;sie&shy;rt</td>
+</tr>
+<tr>
+<td>Codegenerierung</td>
+<td>Entsprechende UML-&shy;Werk&shy;zeuge können aus einem zuvor formu&shy;lierten Modell, einen Teil oder sogar die voll&shy;ständige Architektur&shy;-Imple&shy;mentierung in Form eines Quellcodes ableiten.</td>
+</tr>
+<tr>
+<td>Reverse Engineering</td>
+<td>Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.</td>
+</tr>
+<tr>
+<td>Modelltransformation</td>
+<td>Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Dekomposition </li>
+<li>UML-Diagramme sind Ansichten eines UML-Modells</li>
+</ul>
+<h2 id="architekturkomponenten"><a name="user-content-architekturkomponenten" href="#architekturkomponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturkomponenten</h2>
+<p>Diagrammen</p>
+<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_1.png"  style=""/></center></p>
+<hr />
+<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_2.png"  style=""/></center></p>
+<hr />
+<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_3.png"  style=""/></center></p>
+<hr />
+<p><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_4.png"  style=""/><br />
+Komponentendigramm</p>
+<ul>
+<li>zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems</li>
+<li>die Darstellung umfasst meist Komponenten inklusive deren Schnittstellen oder Ports</li>
+<li>Abhängigkeitsbeziehungen zwischen Komponenten untereinander können dargestellt werden</li>
+<li>zeigt oft Notationselemente, die das Innere einer Komponente wiederspiegeln </li>
+<li>wird überwiegend zur Modellierung von komponentenbasierten Softwaresystemen eingesetzt</li>
+</ul>
 <p>Die formelle Beschreibung einer Softwarearchitektur <br />
 <a href="http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf">Architektur und Architekturmuster</a> <br />
 Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.</p>
@@ -2416,7 +2483,6 @@ Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem e
 <li>ist ein <strong>Gegenstand</strong>, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. </li>
 </ul>
 <p><a href="https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html">Was-heißt-hier-Softwarearchitektur? - <em>Dr. Michael Stahl, Siemens AG</em></a></p>
-<p>Allgemein betrachtet besitzt jedes softwareintensive System eine Softwarearchitektur auch wenn die Entwicklung vollkommen unsystematisch erfolgt ist.</p>
 <ul>
 <li>Erläuterung <strong>Softwarearchäologie</strong></li>
 <li>Erläuterung <strong>Ad-hoc-decisions</strong></li>
@@ -3322,19 +3388,19 @@ $100°$</p>
 <p><strong><em>Generischer Typ</em></strong> <a href="https://de.wikipedia.org/wiki/Generischer_Typ" title="Generischer Typ"><em>Wikipedia: Generischer Typ</em></a> &#160;<a class="footnote-backref" href="#fnref:fnwikiGenericTypes" rev="footnote" title="Jump back to footnote 19 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnGalvoScanlab">
-<p><strong><em>Galvanometer-Scanner</em></strong> <a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;"><a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;"><a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner">http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnGalvoScanlab" rev="footnote" title="Jump back to footnote 20 in the text">&#8617;</a></p>
+<p><strong><em>Galvanometer-Scanner</em></strong> <a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;"><a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;"><a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;">http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnGalvoScanlab" rev="footnote" title="Jump back to footnote 20 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnInertialmoment">
 <p><strong><em>Trägheitsmoment</em></strong> <a href="https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment"><a href="https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment"><a href="https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment">https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment</a></a></a>   <a name="citeInertialmoment"/> </a>&#160;<a class="footnote-backref" href="#fnref:fnInertialmoment" rev="footnote" title="Jump back to footnote 21 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnAngularMomentum">
-<p><strong><em>Drehimpuls und Drehmoment</em></strong> <a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;"><a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;"><a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls">https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnAngularMomentum" rev="footnote" title="Jump back to footnote 22 in the text">&#8617;</a></p>
+<p><strong><em>Drehimpuls und Drehmoment</em></strong> <a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;"><a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;"><a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;">https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnAngularMomentum" rev="footnote" title="Jump back to footnote 22 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnImpulserhaltung">
 <p><strong><em>Impulserhaltungssatz</em></strong> <a href="https://de.wikipedia.org/wiki/Impulserhaltungssatz"><a href="https://de.wikipedia.org/wiki/Impulserhaltungssatz"><a href="https://de.wikipedia.org/wiki/Impulserhaltungssatz">https://de.wikipedia.org/wiki/Impulserhaltungssatz</a></a></a>   <a name="citeImpulserhaltung"/> </a>&#160;<a class="footnote-backref" href="#fnref:fnImpulserhaltung" rev="footnote" title="Jump back to footnote 23 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnMesystoDglSys">
-<p><strong><em>Interpretation der Übertragungsfunktion</em></strong> <a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;"><a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;"><a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html">http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnMesystoDglSys" rev="footnote" title="Jump back to footnote 24 in the text">&#8617;</a></p>
+<p><strong><em>Interpretation der Übertragungsfunktion</em></strong> <a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;"><a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;"><a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;">http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnMesystoDglSys" rev="footnote" title="Jump back to footnote 24 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnV-Modell-XT">
 <p><strong><em>Das deutsche Referenzmodell für Systementwicklungsprojekte Vers. 2.0</em></strong> <a href="http://ftp.tu-clausthal.de/pub/institute/informatik/v-modell-xt/Releases/2.0/Dokumentation/V-Modell-XT-HTML/index.html" title="V-Modell XT Bundesministerium Des Innern (BMI)"><em>Hosted by ftp.tu-clausthal.de</em></a>&#160;<a class="footnote-backref" href="#fnref:fnV-Modell-XT" rev="footnote" title="Jump back to footnote 25 in the text">&#8617;</a></p>
@@ -3343,28 +3409,28 @@ $100°$</p>
 <p><strong><em>V-Modell XT auf</em></strong> <a href="http://www.cio.bund.de/Web/DE/Architekturen-und-Standards/V-Modell-XT/vmodell_xt_node.html" title="V-Modell XT auf www.cio.bund.de"><a href="http://www.cio.bund.de"><a href="http://www.cio.bund.de"><a href="http://www.cio.bund.de">www.cio.bund.de</a></a></a></a> &#160;<a class="footnote-backref" href="#fnref:fnV-Modell-XT-Bund" rev="footnote" title="Jump back to footnote 26 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnBillionARM">
-<p><strong><em>ARM Company profile</em></strong> <a href="https://www.arm.com/about/company-profile&#160;"><a href="https://www.arm.com/about/company-profile&#160;"><a href="https://www.arm.com/about/company-profile">https://www.arm.com/about/company-profile&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnBillionARM" rev="footnote" title="Jump back to footnote 27 in the text">&#8617;</a></p>
+<p><strong><em>ARM Company profile</em></strong> <a href="https://www.arm.com/about/company-profile&#160;"><a href="https://www.arm.com/about/company-profile&#160;"><a href="https://www.arm.com/about/company-profile&#160;">https://www.arm.com/about/company-profile&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnBillionARM" rev="footnote" title="Jump back to footnote 27 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnWhichCortex">
-<p><strong>SILICON LABS - Which ARM Cortex Core Is the Right?</strong> <a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf">https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnWhichCortex" rev="footnote" title="Jump back to footnote 28 in the text">&#8617;</a></p>
+<p><strong>SILICON LABS - Which ARM Cortex Core Is the Right?</strong> <a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;">https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnWhichCortex" rev="footnote" title="Jump back to footnote 28 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnArmProfiles">
-<p><strong>ARM Cortex Architektur-Profile</strong> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;"><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;"><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnArmProfiles" rev="footnote" title="Jump back to footnote 29 in the text">&#8617;</a></p>
+<p><strong>ARM Cortex Architektur-Profile</strong> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;"><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;"><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnArmProfiles" rev="footnote" title="Jump back to footnote 29 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnLinuxRtPatch">
-<p><strong>&ldquo;Harte Echtzeit&rdquo; mittels Linux Kernel Patch</strong> <a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;"><a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;"><a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO">https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnLinuxRtPatch" rev="footnote" title="Jump back to footnote 30 in the text">&#8617;</a></p>
+<p><strong>&ldquo;Harte Echtzeit&rdquo; mittels Linux Kernel Patch</strong> <a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;"><a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;"><a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;">https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnLinuxRtPatch" rev="footnote" title="Jump back to footnote 30 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnCortexR">
-<p><strong>Cortex-R Family outline</strong> <a href="http://www.arm.com/products/processors/cortex-r&#160;"><a href="http://www.arm.com/products/processors/cortex-r&#160;"><a href="http://www.arm.com/products/processors/cortex-r">http://www.arm.com/products/processors/cortex-r&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnCortexR" rev="footnote" title="Jump back to footnote 31 in the text">&#8617;</a></p>
+<p><strong>Cortex-R Family outline</strong> <a href="http://www.arm.com/products/processors/cortex-r&#160;"><a href="http://www.arm.com/products/processors/cortex-r&#160;"><a href="http://www.arm.com/products/processors/cortex-r&#160;">http://www.arm.com/products/processors/cortex-r&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnCortexR" rev="footnote" title="Jump back to footnote 31 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnCMSISARM">
-<p><strong>CMSIS - Cortex Microcontroller Software Interface Standard</strong> <a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;"><a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;"><a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php">https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnCMSISARM" rev="footnote" title="Jump back to footnote 32 in the text">&#8617;</a></p>
+<p><strong>CMSIS - Cortex Microcontroller Software Interface Standard</strong> <a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;"><a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;"><a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;">https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnCMSISARM" rev="footnote" title="Jump back to footnote 32 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnStMultiOs">
-<p><strong>STMicroelectronics - About SW4STM32</strong> <a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html">http://www.st.com/en/development-tools/sw4stm32.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnStMultiOs" rev="footnote" title="Jump back to footnote 33 in the text">&#8617;</a></p>
+<p><strong>STMicroelectronics - About SW4STM32</strong> <a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;">http://www.st.com/en/development-tools/sw4stm32.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnStMultiOs" rev="footnote" title="Jump back to footnote 33 in the text">&#8617;</a></p>
 </li>
 <li id="fn:fnSwArchitekturIst">
-<p><strong>Architektur ist &hellip;</strong> <a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf">https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnSwArchitekturIst" rev="footnote" title="Jump back to footnote 34 in the text">&#8617;</a></p>
+<p><strong>Architektur ist &hellip;</strong> <a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;">https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnSwArchitekturIst" rev="footnote" title="Jump back to footnote 34 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div></article></body></html>
