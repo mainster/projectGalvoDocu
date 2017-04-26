@@ -56,8 +56,89 @@ body .markdown-body
 	font-style: italic;
 }
 
+.titleHeader {
+    width: 1300px;
+    height: 120px;
+
+    font-family:Helvetica, Arial, sans-serif;
+}
+.logo {
+    float: left;
+    padding: 10px 20px;
+    background: #004B35;
+    height: 55px;
+    width: 700px;
+}
+.logoWhz {
+    height:100px;
+    width: 100px;	
+}
+.footer {
+	font-size: 7;
+	font-style: italic;
+	color: #404040;
+}
+/*title, meta {
+	display: block !important;
+}
+*/
+
+/*.header{
+    width: 950px;
+    font-family:Helvetica, Arial, sans-serif;
+}
+.logo {
+    float: left;
+    height: 55px;
+    padding: 10px 20px;
+    background: #004B35;
+    width: 700px;
+}
+.logoClient {
+    float: right;
+    height: 55px;
+    line-height: 55px;
+    padding: 10px 0px;
+    margin:0px -10px 0px 0px;
+    font-size: 30px;
+    color: #004B35;
+    overflow:hidden;
+    font-weight: bold;
+    width: 200px;
+    text-align: right;
+}
+.logoClient img {
+    max-height: 40px;
+    max-width:200px;
+    margin: 0px;
+}
+.clear {
+    clear: both;
+}*/
+
+/*footer {
+	display: inline-block;
+	font-size: 8;
+	color: red;
+}
+head, title, link[href][rel], meta {
+	display: block;
+}
+link[href][rel]::after {
+	content: attr(rel);
+	text-transform: capitalize;
+}
+
+meta[charset]::after {
+	content: 'Charset: ' attr(charset);
+}
+
+meta[name][content]::after {
+	content: attr(name) ': ' attr(content);
+	text-transform: capitalize;
+}*/
 /****************************************
- * Spec sheet headers 
+ * Spec sheet headers
  ***************************************/
 .markdown-body boxed {
 	display: 			block;
@@ -70,6 +151,24 @@ body .markdown-body
 	margin: 			1.5em 0 1.5em 0;
 	/*padding-top: 		10em;*/
 }
+.markdown-body mBox {
+	display: 			inline-block;
+	font-size: 			95%;
+	background-color: 	#DBDBDB;
+	font-family: monospace, monospace;
+	border: 			0px solid #C8C8C8;
+	-webkit-box-shadow: 2px 3px 2px 0px rgba(56,56,56,0.38);
+	-moz-box-shadow: 	2px 3px 2px 0px rgba(56,56,56,0.38);
+	box-shadow: 		2px 3px 2px 0px rgba(56,56,56,0.38);
+	text-align: 		center;
+	padding: 			2px 5px 2px 5px;
+	margin: 			.5em .2em .5em .2em;
+	border-radius: 		5px;
+}
+.markdown-body mBox.l {
+	margin-left: 2.5em;
+}
+
 .markdown-body specs {
 	/* Sections for spec sheet */
 	background-color: 	#fcfcfc;
@@ -81,59 +180,59 @@ body .markdown-body
 	text-align: 		top;
 	/*background-color: 	yellow;*/
 }
-/* 
- * Horizontal centered line in header texts 
+/*
+ * Horizontal centered line in header texts
  */
 .markdown-body h4.sphd,
 .markdown-body h4.sp {
 	margin:			44px 0 22px 0;
 	vertical-align: middle;
 	text-align: 	center;
-} 
-/* 
- * Spec sheet header 
+}
+/*
+ * Spec sheet header
  */
-.markdown-body h4.sphd { 
+.markdown-body h4.sphd {
 	background: 	#d8d8d8; 	/* For browsers that do not support gradients */
     background:		-webkit-linear-gradient(left, white, #d8d8d8, white); 	/* For Safari 5.1 to 6.0 */
     background:		-o-linear-gradient(left, white, #d8d8d8, white); 		/* For Opera 11.1 to 12.0 */
     background:	 	-moz-linear-gradient(left, white, #d8d8d8, white); 		/* For Firefox 3.6 to 15 */
     background: 	linear-gradient(left, white, #d8d8d8, white); 			/* Standard syntax */
 	line-height: 	1px;
-	font-size: 		120%; 
-}	
-/* 
- * Spec sheet subheader 
+	font-size: 		120%;
+}
+/*
+ * Spec sheet subheader
  */
-.markdown-body h4.sp 	{ 
+.markdown-body h4.sp 	{
 	background: 	#E6E6E6; 	/* For browsers that do not support gradients */
     background:		-webkit-linear-gradient(left, white, #E6E6E6, white); 	/* For Safari 5.1 to 6.0 */
     background:		-o-linear-gradient(left, white, #E6E6E6, white); 		/* For Opera 11.1 to 12.0 */
     background:	 	-moz-linear-gradient(left, white, #E6E6E6, white); 		/* For Firefox 3.6 to 15 */
     background: 	linear-gradient(left, white, #E6E6E6, white); 			/* Standard syntax */
 	line-height: 	1px;
-	font-size: 		100%; 
+	font-size: 		100%;
 	text-align: 		left;
 	/*margin-right: 	50%*/
-}	
-.markdown-body h4.sphd span, 
-.markdown-body h4.sp span {
-    padding-right: 		10px;    
 }
-.markdown-body h4.sphd span { 
+.markdown-body h4.sphd span,
+.markdown-body h4.sp span {
+    padding-right: 		10px;
+}
+.markdown-body h4.sphd span {
     background-color: 	#FCFCFC;
 	border:				1px solid #d8d8d8;
     padding-left: 		10px;
 	/*margin-left: 		0px; */
 }
-.markdown-body h4.sp span { 
+.markdown-body h4.sp span {
     background-color: 	white;
 	border:				none;
 	padding-left: 		none;
 }
 
 /****************************************
- * For all images and figures 
+ * For all images and figures
  ***************************************/
 /*.markdown-body figure {
 	background: 	white;
@@ -158,7 +257,7 @@ body .markdown-body
 }*/
 
 /****************************************
- * For pictures of class f1  
+ * For pictures of class f1
  ***************************************/
 /*.markdown-body figure.f1 {
 	-moz-box-sizing: border-box;
@@ -189,20 +288,21 @@ body .markdown-body
 
 
  /****************************************
- * Declaring variables 
+ * Declaring variables
  ***************************************/
 :root {
   --figure-to-img-margin-top: 	1em;
   --figure-to-img-padding: 		1em;
+  --figure-to-img-padding-oszi:	1.5em 0 1em 0;
   --floatbox-text-margin: 		1.5em;
 }
 /****************************************
- * Include paragraph numbering: 
+ * Include paragraph numbering:
  * In the generated html file, append this class to body as follows:
- * 
+ *
  * <article class="markdown-body">;
- * <article class="markdown-body paragraphNum"> 
- * 
+ * <article class="markdown-body paragraphNum">
+ *
  ***************************************/
 .paragraphNum {
     counter-reset: paragraph;
@@ -220,16 +320,16 @@ body .markdown-body
     color:		red;
 }
 /****************************************
- * Different styles/layouts for images: 
+ * Different styles/layouts for images:
  ****************************************
  	+ Simple image
  		- no border, no caption, may float
 	+ Simple boxed image
-		- Border box and shadow, may float 
+		- Border box and shadow, may float
 	+ Figure including a caption
-		- Image with border box and shadow 		 
+		- Image with border box and shadow
 	+ Boxed Figure including a caption
-		- Image, no border 		 
+		- Image, no border
  ***************************************/
 .markdown-body img {
 	max-width: 		100%;
@@ -251,14 +351,14 @@ body .markdown-body
     font-size: 		90%;
     /*line-height: 	90%;*/
 }
-.markdown-body div.fig, 
+.markdown-body div.fig,
 .markdown-body figure {
 	/*position: 		relative;*/
 	max-width: 		100%;
 	margin-bottom: 	1.5 * var(--figure-to-img-margin-top);
 	margin-top: 	var(--figure-to-img-margin-top);
 }
-.markdown-body div.fig.box, 
+.markdown-body div.fig.box,
 .markdown-body figure.box {
 	-moz-box-sizing: border-box;
 	box-sizing: 	border-box;
@@ -266,17 +366,20 @@ body .markdown-body
 	box-shadow: 	0px 0px 10px #d3d3d3;
 	padding: 		var(--figure-to-img-padding);
 }
+.markdown-body figure.oszi {
+	padding: 		var(--figure-to-img-padding-oszi) !important;
+}
 
 img.topal, div.topal, figure.topal { margin-top: 0 !important; }
 img.botal, div.botal, figure.botal { margin-bottom: 0 !important; }
 
 img.floatr, div.floatr, figure.floatr {
-	float: 			right; 
-	margin: 		0.2em 0 0 var(--floatbox-text-margin); 
+	float: 			right;
+	margin: 		0.2em 0 0 var(--floatbox-text-margin);
 }
-img.floatl, div.floatl,	figure.floatl { 
-	float: 			left; 
-	margin: 		0.2em var(--floatbox-text-margin) 0 0; 
+img.floatl, div.floatl,	figure.floatl {
+	float: 			left;
+	margin: 		0.2em var(--floatbox-text-margin) 0 0;
 }
 .markdown-body div.fig img,
 .markdown-body figure img {
@@ -297,8 +400,8 @@ img.floatl, div.floatl,	figure.floatl {
 	box-shadow: 	none !important;
 }*/
 
-/* 
- * An image inside a figure of class="box" 
+/*
+ * An image inside a figure of class="box"
  * should NOT draw any border and remove padding
  */
 .markdown-body div.fig.box img,
@@ -325,12 +428,12 @@ img.floatl, div.floatl,	figure.floatl {
 .markdown-body div.fig figcaption.la,
 .markdown-body figure figcaption.la {
 	/*color:				red !important; */
-	text-align: 		left; 
+	text-align: 		left;
 }
 .markdown-body div.fig figcaption.just,
 .markdown-body figure figcaption.just {
 	/*color:				red !important; */
-	text-align: 		justify; 
+	text-align: 		justify;
 }
 
 .markdown-body div.fig.box figcaption,
@@ -343,18 +446,18 @@ img.floatl, div.floatl,	figure.floatl {
 .markdown-body table.noborder td {
 	border-width: 0 !important;
 }
-/* View spaced lists: 
+li {
+    /* Abstand zu Aufzählungszeichen/Nummer */
+    padding-left: .65em !important;    
+}
+/* View spaced lists:
 	<div class="spaced" markdown=1>
 	1. jjj
 	2. spaced from jjj
 	</div>*/
 .spaced li {
-
 	/* Abstand nach Aufzälungs/Listenzeile */
 	padding-bottom: .75em;
-
-	/* Abstand zu Aufzählungszeichen/Nummer */
-	padding-left: .65em;
 }
 /* Linked Keywords */
 .markdown-body lkey {
@@ -412,7 +515,7 @@ div.centered {
 	text-align: center;
 }
 div.centered table {
-	margin: 0 auto; 
+	margin: 0 auto;
 	text-align: left;
 }
 .markdown-body sup {
@@ -431,11 +534,11 @@ div.centered table {
 	bottom: -0.25em;
 }
 .scale75 {
-	width: 75%;	
+	width: 75%;
 }
 .noborder {
 	/*border-color: none !important; */
-	box-shadow: none !important; 
+	box-shadow: none !important;
 	border-width: 0px !important;
 }
 .markdown-body hr {
@@ -487,7 +590,7 @@ div.centered table {
 }
 .markdown-body .codehilitetable pre,
 .markdown-body .codehilitetable div.codehilite {
-	margin: 0; 
+	margin: 0;
 }
 .markdown-body .linenos,
 .markdown-body .code,
@@ -614,9 +717,10 @@ div.centered table {
 	border-radius: 2px;
 	border: 1px solid #cfcfcf;
 	color: #000;
-	padding: 3px 5px;
+	padding: 1px 4px; 
+    margin: 0px 2px;        /*@@@MDB 31-03-2017*/
 	line-height: 10px;
-	font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	font: 13px Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	display: inline-block;
 }
 .markdown-body>*:first-child {
@@ -2426,7 +2530,7 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 <h3 id="unified-modeling-language-uml"><a name="user-content-unified-modeling-language-uml" href="#unified-modeling-language-uml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Unified Modeling Language (UML)</h3>
 <p>Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der <em>Object Management Group</em> <strong>(OMG)</strong> entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte <em>Unified Modeling Language</em> <strong>(UML2)</strong>, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. </p>
 <h4 id="uml2-industriestandard-im-bereich-mda"><a name="user-content-uml2-industriestandard-im-bereich-mda" href="#uml2-industriestandard-im-bereich-mda" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UML2 - Industriestandard im Bereich MDA</h4>
-<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_0.png"  style=""/></center></p>
+<p><center><img title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_0.png" class=""  style=""/></center></p>
 <p>Aus einer Vielzahl von Eigenschaften und Argumenten, die für eine Architekturbeschreibung in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.</p>
 <table>
 <thead>
@@ -2460,13 +2564,13 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 </ul>
 <h2 id="architekturkomponenten"><a name="user-content-architekturkomponenten" href="#architekturkomponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturkomponenten</h2>
 <p>Diagrammen</p>
-<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_1.png"  style=""/></center></p>
+<p><center><img title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_1.png" class=""  style=""/></center></p>
 <hr />
-<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_2.png"  style=""/></center></p>
+<p><center><img title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_2.png" class=""  style=""/></center></p>
 <hr />
-<p><center><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_3.png"  style=""/></center></p>
+<p><center><img title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_3.png" class=""  style=""/></center></p>
 <hr />
-<p><img title="" class="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_4.png"  style=""/><br />
+<p><img title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_4.png" class=""  style=""/><br />
 Komponentendigramm</p>
 <ul>
 <li>zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems</li>
