@@ -1,9 +1,3 @@
-Title:      Projekt: XY-Galvo Scanner  
-Author:     Del Basso, Manuel
-Date:       02-11-2016
-Location:   WHZ
-Footicon:   ./pics/whz.png
-
 # Softwarearchitektur #
 >Architektur ist die Kombination von utilitas, firmitas und venustas.[^fnSwArchitekturIst]
 
@@ -122,26 +116,6 @@ package "Gesamtprojekt" {
 ---
 
 @startuml
-boundary b1
-control c1
-b1 -(0)- c1
-
-component comp1
-interface interf1
-comp1 #~~( interf1
-
-:mode1actor: -0)- fooa1
-:mode1actorl: -le0)- foo1l
-
-[component1] 0)-(0-(0 [componentC]
-() component3 )-0-(0 "foo" [componentC]
-
-[aze1] #-->> [aze2]
-@enduml
-
----
-
-@startuml
 package "Gesamtprojekt" {
     [Embedded Software]
     [Modellbildung und Simulation]
@@ -186,10 +160,4 @@ Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem e
 
 
 [Was-heißt-hier-Softwarearchitektur? - _Dr. Michael Stahl, Siemens AG_](https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html)
-
-
-
-
-
-
 

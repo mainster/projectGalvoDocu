@@ -1,4 +1,4 @@
-p<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
 	border: 1px solid #ddd;
 	margin: 16px auto;
 	outline: 1300px solid #fff;
@@ -333,7 +333,7 @@ meta[name][content]::after {
  * Include paragraph numbering:
  * In the generated html file, append this class to body as follows:
  *
- * <article class="markdown-body paragraphNum">;
+ * <article class="markdown-body">;
  * <article class="markdown-body paragraphNum">
  *
  ***************************************/
@@ -1554,242 +1554,60 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>10_Softwarearchitektur</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
-
-<div class="toc">
-<ul>
-<li><a href="#softwarearchitektur">Softwarearchitektur</a><ul>
-<li><a href="#was-ist-softwarearchitektur">Was ist Softwarearchitektur?</a></li>
-<li><a href="#model-driven-architecture-mda">Model-Driven Architecture (MDA)</a><ul>
-<li><a href="#unified-modeling-language-uml">Unified Modeling Language (UML)</a></li>
-<li><a href="#uml2-industriestandard">UML2 - Industriestandard</a></li>
-<li><a href="#diagramme-als-sicht">Diagramme als Sicht</a></li>
-</ul>
-</li>
-<li><a href="#architekturkomponenten">Architekturkomponenten</a></li>
-</ul>
-</li>
-<li><a href="#quellenangaben">Quellenangaben</a></li>
-</ul>
-</div>
-<h1 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h1>
+<title>06_Terminologie</title></head><body><article class="markdown-body"><h1 id="terminologie"><a name="user-content-terminologie" href="#terminologie" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Terminologie</h1>
+<p>Auf häufig wiederkehrende Begriffe wie z. B. Modell, Modellbildung oder System, soll hier kurz eingegangen werden da sie als Überbegriffe sehr universell definiert sein können. </p>
+<h2 id="galvanometer"><a name="user-content-galvanometer" href="#galvanometer" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Galvanometer</h2>
 <blockquote>
-<p>Architektur ist die Kombination von utilitas, firmitas und venustas.<sup id="fnref:fnSwArchitekturIst"><a class="footnote-ref" href="#fn:fnSwArchitekturIst" rel="footnote">34</a></sup></p>
+<p>Ein Galvanometer-Scanner ist ein hochdynamisches elektro-optisches Bauteil, bei dem <a style="color: #ddd ">ein</a> drehbare Spiegel von geringer Trägheit verwendet werden, um einen Laserstrahl mit hoher Genauigkeit und Wiederholbarkeit zu positionieren. Der Name Galvanometer bezieht sich auf den Motor-Typ.[^fnGalvoScanlab]</p>
 </blockquote>
-<p><center></p>
-<table class="noalter" style="width: 100%">
-    <tbody style="text-align: left">
-        <tr style="font-weight: bold">
-            <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
-            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system ...</center></td>
-        </tr>
-        <tr>
-            <td>utilitas</td>
-            <td>Das Gebäude erfüllt seine Funktion</td>
-            <td rowspan="3">
-                <ul>
-                    <li>den Anforderungen entspricht (<b>utilitas</b>)</li>
-                    <li>robust ist (<b>firmitas</b>) und </li>
-                    <li>eine gewisse Schönheit besitzt (<b>venustas</b>)</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>firmitas</td>
-            <td>Das Gebäude ist stabil</td>
-        </tr>
-        <tr>
-            <td>venustas</td>
-            <td>Das Gebäude ist ästhetisch gestaltet</td>
-        </tr>
-    </tbody>
-</table>
-
-<p></center></p>
-<p>Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr &ldquo;unscharf&rdquo; definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich <em>Architektur</em>, <em>Struktur</em> sowie <em>Muster</em> oder <em>Vorgehen</em>, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. </p>
-<p>Zudem soll an dieser Stelle nochmals auf das in Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a> (Abschnitt <em>Systemzweck</em>) formulierte Schwerpunktthema &ldquo;<em>Modellbildung und Simulation</em>&rdquo; Bezug genommen werden.  </p>
-<h2 id="was-ist-softwarearchitektur"><a name="user-content-was-ist-softwarearchitektur" href="#was-ist-softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Was ist Softwarearchitektur?</h2>
-<p>Die Softwarearchitektur beschreibt die <em>grundlegenden</em> <strong>Komponenten</strong> und deren <strong>Zusammenspiel</strong> innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, umfangreiche und komplexe Aufgabenstellungen frühzeitig zu partitionieren sodass ein Gesamtsystem in überschaubare Teilsysteme zerlegt werden kann. </p>
-<p>Ein strukturierter Architekturentwurf ist in der Regel auf ganzer Linie gewinnbringend. Die Tatsache, dass ein gut durchdachter Architekturentwurf in den Anfängen eines neuen Projektes zusätzliche Arbeitsleistung = Zeit = Kosten einfordert, relativiert sich spätestens bei langfristiger Betrachtung eines Produkts. Besonders bei großen sowie langlebigen Softwaresystemen zahlt es sich aus, wenn man beispielsweise neuen Mitarbeitern neben der Softwaredokumentation (Implementierungsdetails. z. B. <em>Doxygen</em>) ein  Architekturmodell vorlegen kann. Des weiteren soll mit der in aller Regel höheren Produktqualität, mit einer einfacheren/besseren Projektplanung/Projektierung (bezüglich Zeitmanagement sowie &ldquo;Man-Power&rdquo;), besserer Erweiterbarkeit, Zertifizierungskriterien sowie mit dem Aspekt des Code-Reusing argumentiert werden. </p>
-<p>In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon, wie unstrukturiert und von <em>Ad-hoc-decisions</em> geplagt, der Entwicklungsprozess abgelaufen ist (<lkey>Reverse engeneering</lkey>). Dennoch hartnäckigen Modell-Verfechtern und Architekturentwurfsgegnern darf dann, als letzte gut gemeinte Überzeugungshilfe, eine Umschulung zum <strong>Softwarearchäologen</strong> nahegelegt werden.</p>
-<h2 id="model-driven-architecture-mda"><a name="user-content-model-driven-architecture-mda" href="#model-driven-architecture-mda" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Model-Driven Architecture (MDA)</h2>
-<p>Nachdem in einem <em>Bottom-Up</em>-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem <em>Top-Down</em>-Prinzip. Wird nun die funktionale Archi&shy;tektur&shy;beschreibung dieses Softwaresystems auf Basis einer <strong>universellen</strong>, d.h. platt&shy;form&shy;unab&shy;hängigen (<strong>!</strong>) Model&shy;lierungs&shy;sprache konzipiert und realisiert, so liegt dem erarbeiteten Produkt eine modell&shy;getriebene Softwareentwicklung zu Grunde (Model-driven software development, MDSD). Die Aufgabe der MDA ist es nun, eine Infrastruktur oder eben Architektur zur Verfügung zu stellen, um Softwareentwicklung auf Modellbasis und nicht mehr auf Code-Basis zu fördern bzw. erst zu ermöglichen.      </p>
-<h3 id="unified-modeling-language-uml"><a name="user-content-unified-modeling-language-uml" href="#unified-modeling-language-uml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Unified Modeling Language (UML)</h3>
-<p>Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der <em>Object Management Group</em> <strong>(OMG)</strong> entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte <em>Unified Modeling Language</em> <strong>(UML2)</strong>, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. </p>
-<h3 id="uml2-industriestandard"><a name="user-content-uml2-industriestandard" href="#uml2-industriestandard" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UML2 - Industriestandard</h3>
-<p>Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekturentwurf in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.</p>
-<table>
-<thead>
-<tr>
-<th>Merkmal</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Diagrammunterstützung</td>
-<td>Modelle können in Form von UML-&shy;Diagrammen dargestellt und auch als solche bearbeitet werden. Die graphische Notation ist in der UML-&shy;Spezi&shy;fika&shy;tion stan&shy;dar&shy;di&shy;sie&shy;rt</td>
-</tr>
-<tr>
-<td>Codegenerierung</td>
-<td>Entsprechende UML-&shy;Werk&shy;zeuge können aus einem zuvor formu&shy;lierten Modell, einen Teil oder sogar die voll&shy;ständige Architektur&shy;-Imple&shy;mentierung in Form eines Quellcodes ableiten.</td>
-</tr>
-<tr>
-<td>Reverse Engineering</td>
-<td>Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.</td>
-</tr>
-<tr>
-<td>Modelltransformation</td>
-<td>Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="diagramme-als-sicht"><a name="user-content-diagramme-als-sicht" href="#diagramme-als-sicht" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Diagramme als Sicht</h3>
-<p>Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene <em>Sichten</em> handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine <em>Sicht</em> repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  </p>
-<p><a href="/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a></p>
-<h2 id="architekturkomponenten"><a name="user-content-architekturkomponenten" href="#architekturkomponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturkomponenten</h2>
-<ul>
-<li>reverse Engeneering</li>
-</ul>
-<p><center><img class="" title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_0.png"  style=""/></center></p>
-<hr />
-<p><center><img class="" title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_1.png"  style=""/></center></p>
-<hr />
-<p><center><img class="" title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_2.png"  style=""/></center></p>
-<hr />
-<p><img class="" title="" src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_3.png"  style=""/><br />
-Komponentendigramm</p>
-<ul>
-<li>zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems</li>
-<li>die Darstellung umfasst meist Komponenten inklusive deren Schnittstellen oder Ports</li>
-<li>Abhängigkeitsbeziehungen zwischen Komponenten untereinander können dargestellt werden</li>
-<li>zeigt oft Notationselemente, die das Innere einer Komponente wiederspiegeln </li>
-<li>wird überwiegend zur Modellierung von komponentenbasierten Softwaresystemen eingesetzt</li>
-</ul>
-<p>Die formelle Beschreibung einer Softwarearchitektur <br />
-<a href="http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf">Architektur und Architekturmuster</a> <br />
-Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.</p>
-<ul>
-<li>ist ein <strong>Prozess</strong>, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.</li>
-<li>ist ein <strong>Gegenstand</strong>, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. </li>
-</ul>
-<p><a href="https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html">Was-heißt-hier-Softwarearchitektur? - <em>Dr. Michael Stahl, Siemens AG</em></a></p>
-<h1 id="quellenangaben"><a name="user-content-quellenangaben" href="#quellenangaben" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quellenangaben</h1>
-<hr />
-<p><a name="citeMDA"> </a><br />
-<strong>[MDA:2006]</strong> <em>V. Gruhn, D. Pieper, C. Röttgers;</em> <strong><em>MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;</em></strong></p>
-<p><a name="citeProbst"> </a><br />
-<strong>[Probst:2011]</strong> <em>Uwe Probst;</em> <strong><em>Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;</em></strong></p>
-<p><a name="citeIserm"> </a><br />
-<strong>[Iser:2008]</strong> <em>Rolf Isermann;</em> <strong><em>Mechatronische Systeme - Grundlagen; 2008;</em></strong></p>
-<p><a name="citeSTM32F429i"> </a><br />
-<strong>[STM32F4 Series]</strong> <a href="http://www.st.com/en/microcontrollers/stm32f4-series.html?querycriteria=productId=SS1577">http://www.st.com/en/microcontrollers/stm32f4-series.html?querycriteria=productId=SS1577</a></p>
-<p><a name="citeSoC"> </a><br />
-<strong>SoC</strong> <em>System-on-Chip</em> <a href="http://www.itwissen.info/definition/lexikon/System-on-Chip-SoC-system-on-chip.html">http://www.itwissen.info/definition/lexikon/System-on-Chip-SoC-system-on-chip.html</a></p>
-<div class="footnote">
-<hr />
+<h2 id="system"><a name="user-content-system" href="#system" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>System</h2>
+<p>Es gibt sehr abstrakte Definitionen des System-Begriffs. Auch in der soziologischen Systemtheorie werden System-Begriffe formuliert so dass z.B. durch menschliche Handlungen ein abstraktes Modell eines sozialen Systems angeregt bzw. dessen Systemantwort beschrieben werden kann. Eine sehr universelle Definition lautet z. B.:</p>
+<blockquote>
+<p>&ldquo;<strong>System:</strong> a set of physical entities that interact and are observable, where the entities can be a specified quantity of matter or a volume in space.&rdquo; [^fnChRoy]<br />
+<p style="color: #707070 "> Eine Menge von physikalischen Einheiten die interagieren und beobachtbar sind, wobei sie eine definierte Menge Materie (bzw. eine bestimmte Anzahl an Teilchen) oder ein physischer Körper im Raum sein können. </p></p>
+</blockquote>
+<p>Systeme und Signale sind die beiden wichtigsten Konzepte der Systemtheorie. In der Praxis werden Gebilde oder Konstrukte als System bezeichnet, die bei Anregung mit einem Eingangssignal <em>x(t)</em> mit einem Ausgangssignal <em>y(t)</em> reagieren.[^fnRUnb] </p>
+<p>Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der übergeordneten Aufgabe (Wie &ldquo;dick&rdquo; sind Pflichten- und Lasten- Heft?) entstehen zahlreiche Abstraktionsebenen die es zu <em>dokumentieren</em> und meist auch zu warten gilt. Hinsichtlich eines <em>Software-Systems</em> wird der Begriff <em>System</em> in der [IEEE 1471][ieee1471] wie folgt definiert:</p>
+<blockquote>
+<p>Ein System ist ein aus Teilen zusammengesetztes und strukturiertes Ganzes. Es hat eine Funktion, erfüllt einen Zweck und verfügt über eine Architektur. [[MDA:2006, p.57]][@MDA:2006]</p>
+</blockquote>
+<p>Im folgenden beschränkt sich der System-Begriff auf die Systemtheorie als elementare Disziplin der Ingenieurswissenschaften. Der Begriff <em>System</em> ist hier und im Folgenden als Abkürzung für <em>Teilsystem</em> zu verstehen.</p>
+<h2 id="modell"><a name="user-content-modell" href="#modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modell</h2>
+<p>Um ein Modell beschreiben zu können, muss zuvor das System <em>gewählt</em> werden, dessen tatsächliche Eigenschaften über den <em><strong>Prozess</strong> der Modellbildung</em> abstrahiert werden soll. Auch für den Begriff <em>Modell</em> finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. </p>
+<p>Die Grundlagen der Modellierung schuf Herbert Stachowiak 1973 mit der Veröffentlichung der &ldquo;Allgemeinen Modelltheorie&rdquo;. Demnach ist ein Modell durch <strong>Abbildung</strong>, <strong>Verkürzung</strong> und <strong>Pragmatismus</strong> gekennzeichnet.[^fnStachowiak]</p>
+<blockquote>
+<p><strong><em>Abbildung</em></strong><br />
+Ein Modell ist stets ein Modell von etwas – nämlich Abbildung oder Repräsentation eines natürlichen oder eines künstlichen Originals, wobei dieses Original selbst auch wiederum ein Modell sein kann.</p>
+<p><strong><em>Verkürzung</em></strong><br />
+Ein Modell erfasst im Allgemeinen nicht alle Attribute des Originals, sondern nur diejenigen, die dem Modellschaffer bzw. Modellnutzer relevant erscheinen.</p>
+<p><strong><em>Pragmatismus</em></strong><br />
+Modelle sind ihren Originalen nicht eindeutig zugeordnet. Sie erfüllen ihre Ersetzungsfunktion für</p>
 <ol>
-<li id="fn:fnWikiAnsys">
-<p><strong><em>ANSYS</em></strong> <a href="https://de.wikipedia.org/wiki/ANSYS_(Software)" title="ANSYS (Software)">&ldquo;<em>(Kurzform für <strong>AN</strong>alysis <strong>SYS</strong>tem) ist eine Finite-Elemente-Software der Firma Ansys Inc., ehemals SASI (Swanson Analysis Systems Inc.).</em>&ldquo;</a>&#160;<a class="footnote-backref" href="#fnref:fnWikiAnsys" rev="footnote" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnMaxwell">
-<p><em>ANSYS</em> <strong><em>Maxwell</em></strong> <a href="http://www.ansys.com/Products/Electronics/ANSYS-Maxwell" title="Products/Electronics: &quot;Maxwell&quot;">&ldquo;<em>is the premier low frequency electromagnetic field simulation software for engineers tasked with designing and analyzing 2-D and 3-D electromagnetic devices.</em>&ldquo;</a>&#160;<a class="footnote-backref" href="#fnref:fnMaxwell" rev="footnote" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnSimplorer">
-<p><em>ANSYS</em> <strong><em>Simplorer</em></strong> <a href="http://www.ansys.com/it-IT/Products/Systems/ANSYS-Simplorer" title="Products/Systems: &quot;Simplorer&quot;">&ldquo;<em>is a powerful platform for modeling, simulating and analyzing virtual system prototypes.(…) broad support for assembling system-level physical models and helping product development organizations connect conceptual design, analysis and system verification.</em>&ldquo;</a>&#160;<a class="footnote-backref" href="#fnref:fnSimplorer" rev="footnote" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnArnoldMagn">
-<p><strong><em>Arnold Magnetics</em></strong> <a href="http://www.arnoldmagnetics.com/en-us/Technical-Library/Magnet-Manufacturing-Process" title="Magnet manufacturing process"><em>&ldquo;The magnet material is both brittle and very hard (Rockwell C 57 to 61) and requires diamond wheels for slicing and diamond or special abrasive wheels for grinding.&rdquo;</em></a>&#160;<a class="footnote-backref" href="#fnref:fnArnoldMagn" rev="footnote" title="Jump back to footnote 4 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnChRoy">
-<p><strong><em>C. Roy, W. Oberkampf, 2010</em></strong> <a href="https://books.google.de/books/about/Verification_and_Validation_in_Scientifi.html?id=7d26zLEJ1FUC&amp;redir_esc=y" title="Online book resource"><em>Verification and Validation in Scientific Computing</em></a> &#160;<a class="footnote-backref" href="#fnref:fnChRoy" rev="footnote" title="Jump back to footnote 5 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnRUnb">
-<p><strong><em>Rolf Unbehauen, 2002</em></strong> <a href="https://books.google.de/books?id=zcbnBQAAQBAJ&amp;pg=PA1&amp;lpg=PA1&amp;dq=Systeme+und+Signale+sind+die+beiden+wichtigsten+Konzepte+der+Systemtheorie&amp;source=bl&amp;ots=je6qEA32bz&amp;sig=UagREGj3tQWfEyX9y_OzGwfVWH0&amp;hl=de&amp;sa=X&amp;ved=0ahUKEwjo_MDMjKPQAhXEPhQKHfVBBz0Q6AEIIzAC#v=onepage&amp;q=Systeme%20und%20Signale%20sind%20die%20beiden%20wichtigsten%20Konzepte%20der%20Systemtheorie&amp;f=false" title="Online book resource"><em>Systemtheorie 1: Allg. Grundlagen, Signale und lineare Systeme im Zeit- und Frequenzbereich</em></a>&#160;<a class="footnote-backref" href="#fnref:fnRUnb" rev="footnote" title="Jump back to footnote 6 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnAnfrageBrunner">
-<p><strong><em>Projektanfrage HsKA</em></strong> <a href="./Projektanfrage_Galvanometer-Scanner_Prof_Brunner.pdf" title="Dokument mit Projektanfrage"><em>Projektanfrage_Galvanometer-Scanner_Prof_Brunner.pdf</em></a>&#160;<a class="footnote-backref" href="#fnref:fnAnfrageBrunner" rev="footnote" title="Jump back to footnote 7 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnMultiDomain">
-<p><strong><em>Multi-Domain-Modelle</em></strong> <em>oder auch</em> <strong><em>Multiphysik-Modelle</em></strong> <em>sind Simulationsmodelle, die Systeme über mehrere physikalische Domänen hinweg, in ihren Eigenschaften beschreiben und ihre Wechselwirkungen simulieren können. Hier wurden Statik/Kinematik (Mechanik-Domäne), Magnetostatik/Magnetodynamik (allg. Elektrodynamik, Elektrik-Domäne) sowie thermodynamische Vorgänge in einem planar- oder 3-dimensionalen FEM-Modell simuliert.</em>&#160;<a class="footnote-backref" href="#fnref:fnMultiDomain" rev="footnote" title="Jump back to footnote 8 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnWikiSys">
-<p><strong><em>Systemtheorie</em></strong> <a href="https://de.wikipedia.org/wiki/Systemtheorie_(Ingenieurwissenschaften)" title="Systemtheorie (Ingenieurwissenschaften)"><em>Wikipedia: Systemtheorie (Ing.)</em></a>&#160;<a class="footnote-backref" href="#fnref:fnWikiSys" rev="footnote" title="Jump back to footnote 9 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnCapSens">
-<p><strong><em>Differential-Drehkondensator</em></strong> <a href="https://de.wikipedia.org/wiki/Datei:Differential-Varko.svg" title="Variabler Drehkondensator (differentiell)"><em>Wikipedia: Differential-Drehkondensator</em></a>&#160;<a class="footnote-backref" href="#fnref:fnCapSens" rev="footnote" title="Jump back to footnote 10 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnNoBrainChip">
-<p><strong><em>Chip without text</em></strong> <a href="http://www.clker.com/cliparts/e/5/2/J/G/G/chip-without-text.svg/"><a href="http://www.clker.com/cliparts/e/5/2/J/G/G/chip-without-text.svg/"><a href="http://www.clker.com/cliparts/e/5/2/J/G/G/chip-without-text.svg/">http://www.clker.com/cliparts/e/5/2/J/G/G/chip-without-text.svg/</a></a></a> &#160;<a class="footnote-backref" href="#fnref:fnNoBrainChip" rev="footnote" title="Jump back to footnote 11 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnBrain">
-<p><strong><em>Brain</em></strong> <a href="http://troy-halverson.appspot.com/IsmProv/brain.svg"><a href="http://troy-halverson.appspot.com/IsmProv/brain.svg"><a href="http://troy-halverson.appspot.com/IsmProv/brain.svg">http://troy-halverson.appspot.com/IsmProv/brain.svg</a></a></a> &#160;<a class="footnote-backref" href="#fnref:fnBrain" rev="footnote" title="Jump back to footnote 12 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnReuseCode">
-<p><strong><em>Reusability</em></strong> <a href="https://en.wikipedia.org/wiki/Reusability" title="Reusability (Computer science and software engineering)"><em>Wikipedia: Reusability</em></a>&#160;<a class="footnote-backref" href="#fnref:fnReuseCode" rev="footnote" title="Jump back to footnote 13 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnRoSe">
-<p><strong><em>K. H. Rollke, K. Sennholz</em></strong> <em>Grund und Leistungskurs Informatik; Cornelsen Verlag, Berlin, 1994</em>&#160;<a class="footnote-backref" href="#fnref:fnRoSe" rev="footnote" title="Jump back to footnote 14 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnHarms09">
-<p><strong><em>Eike Harms</em></strong> <a href="http://docplayer.org/16028346-Zur-erlangung-des-akademischen-grades-eines-doktors-der-ingenieurwissenschaften.html" title="Dissertation - Universität Karlsruhe"><em>Konfigurationsmanagement unter Berücksichtigung von Verwendungsinstanzen</em></a> &#160;<a class="footnote-backref" href="#fnref:fnHarms09" rev="footnote" title="Jump back to footnote 15 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnStachowiak">
-<p><strong><em>Herbert Stachowiak</em></strong> <a href="https://books.google.de/books?hl=de&amp;id=DK-EAAAAIAAJ&amp;focus=searchwithinvolume&amp;q=Ein+Modell+ist+stets+ein+Modell+von+etwas" title="Online book resource"><em>Allgemeine Modelltheorie</em></a> 1973, Kap. 2.1.1.1, S. 131 &hellip; 133&#160;<a class="footnote-backref" href="#fnref:fnStachowiak" rev="footnote" title="Jump back to footnote 16 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnPapula2">
-<p><strong><em>Lothar Papula</em></strong> <a href="https://www.pdf-archive.com/2015/03/28/papula-mathematik-fuer-ingenieure-2/papula-mathematik-fuer-ingenieure-2.pdf" title="Volltext: Mathematik für Ingenieure und Naturwissenschaftler Band 2"><em>Mathematik für Ingenieure und Naturwissenschaftler Band 2</em></a> 2009, Kap. 1.4 S. 348&#160;<a class="footnote-backref" href="#fnref:fnPapula2" rev="footnote" title="Jump back to footnote 17 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnElektrBauelem">
-<p><strong><em>R. Großmann, A. Frey</em></strong> <a href="http://www.hs-augsburg.de/~ragr/Topics/SCHT2/Common/Skript_EB_V3.3.pdf" title="Elektronische Bauelemente"><em>Elektronische Bauelemente</em></a>&#160;<a class="footnote-backref" href="#fnref:fnElektrBauelem" rev="footnote" title="Jump back to footnote 18 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnwikiGenericTypes">
-<p><strong><em>Generischer Typ</em></strong> <a href="https://de.wikipedia.org/wiki/Generischer_Typ" title="Generischer Typ"><em>Wikipedia: Generischer Typ</em></a> &#160;<a class="footnote-backref" href="#fnref:fnwikiGenericTypes" rev="footnote" title="Jump back to footnote 19 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnGalvoScanlab">
-<p><strong><em>Galvanometer-Scanner</em></strong> <a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;"><a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;"><a href="http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;">http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnGalvoScanlab" rev="footnote" title="Jump back to footnote 20 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnInertialmoment">
-<p><strong><em>Trägheitsmoment</em></strong> <a href="https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment"><a href="https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment"><a href="https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment">https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment</a></a></a>   <a name="citeInertialmoment"/> </a>&#160;<a class="footnote-backref" href="#fnref:fnInertialmoment" rev="footnote" title="Jump back to footnote 21 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnAngularMomentum">
-<p><strong><em>Drehimpuls und Drehmoment</em></strong> <a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;"><a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;"><a href="https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;">https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnAngularMomentum" rev="footnote" title="Jump back to footnote 22 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnImpulserhaltung">
-<p><strong><em>Impulserhaltungssatz</em></strong> <a href="https://de.wikipedia.org/wiki/Impulserhaltungssatz"><a href="https://de.wikipedia.org/wiki/Impulserhaltungssatz"><a href="https://de.wikipedia.org/wiki/Impulserhaltungssatz">https://de.wikipedia.org/wiki/Impulserhaltungssatz</a></a></a>   <a name="citeImpulserhaltung"/> </a>&#160;<a class="footnote-backref" href="#fnref:fnImpulserhaltung" rev="footnote" title="Jump back to footnote 23 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnMesystoDglSys">
-<p><strong><em>Interpretation der Übertragungsfunktion</em></strong> <a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;"><a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;"><a href="http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;">http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnMesystoDglSys" rev="footnote" title="Jump back to footnote 24 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnV-Modell-XT">
-<p><strong><em>Das deutsche Referenzmodell für Systementwicklungsprojekte Vers. 2.0</em></strong> <a href="http://ftp.tu-clausthal.de/pub/institute/informatik/v-modell-xt/Releases/2.0/Dokumentation/V-Modell-XT-HTML/index.html" title="V-Modell XT Bundesministerium Des Innern (BMI)"><em>Hosted by ftp.tu-clausthal.de</em></a>&#160;<a class="footnote-backref" href="#fnref:fnV-Modell-XT" rev="footnote" title="Jump back to footnote 25 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnV-Modell-XT-Bund">
-<p><strong><em>V-Modell XT auf</em></strong> <a href="http://www.cio.bund.de/Web/DE/Architekturen-und-Standards/V-Modell-XT/vmodell_xt_node.html" title="V-Modell XT auf www.cio.bund.de"><a href="http://www.cio.bund.de"><a href="http://www.cio.bund.de"><a href="http://www.cio.bund.de">www.cio.bund.de</a></a></a></a> &#160;<a class="footnote-backref" href="#fnref:fnV-Modell-XT-Bund" rev="footnote" title="Jump back to footnote 26 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnBillionARM">
-<p><strong><em>ARM Company profile</em></strong> <a href="https://www.arm.com/about/company-profile&#160;"><a href="https://www.arm.com/about/company-profile&#160;"><a href="https://www.arm.com/about/company-profile&#160;">https://www.arm.com/about/company-profile&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnBillionARM" rev="footnote" title="Jump back to footnote 27 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnWhichCortex">
-<p><strong>SILICON LABS - Which ARM Cortex Core Is the Right?</strong> <a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;"><a href="https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;">https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnWhichCortex" rev="footnote" title="Jump back to footnote 28 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnArmProfiles">
-<p><strong>ARM Cortex Architektur-Profile</strong> <a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;"><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;"><a href="http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;">http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnArmProfiles" rev="footnote" title="Jump back to footnote 29 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnLinuxRtPatch">
-<p><strong>&ldquo;Harte Echtzeit&rdquo; mittels Linux Kernel Patch</strong> <a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;"><a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;"><a href="https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;">https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnLinuxRtPatch" rev="footnote" title="Jump back to footnote 30 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnCortexR">
-<p><strong>Cortex-R Family outline</strong> <a href="http://www.arm.com/products/processors/cortex-r&#160;"><a href="http://www.arm.com/products/processors/cortex-r&#160;"><a href="http://www.arm.com/products/processors/cortex-r&#160;">http://www.arm.com/products/processors/cortex-r&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnCortexR" rev="footnote" title="Jump back to footnote 31 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnCMSISARM">
-<p><strong>CMSIS - Cortex Microcontroller Software Interface Standard</strong> <a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;"><a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;"><a href="https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;">https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnCMSISARM" rev="footnote" title="Jump back to footnote 32 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnStMultiOs">
-<p><strong>STMicroelectronics - About SW4STM32</strong> <a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;"><a href="http://www.st.com/en/development-tools/sw4stm32.html&#160;">http://www.st.com/en/development-tools/sw4stm32.html&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnStMultiOs" rev="footnote" title="Jump back to footnote 33 in the text">&#8617;</a></p>
-</li>
-<li id="fn:fnSwArchitekturIst">
-<p><strong>Architektur ist &hellip;</strong> <a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;"><a href="https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;">https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf&#160;</a></a></a><a class="footnote-backref" href="#fnref:fnSwArchitekturIst" rev="footnote" title="Jump back to footnote 34 in the text">&#8617;</a></p>
-</li>
+<li>bestimmte Subjekte (für wen?)</li>
+<li>innerhalb bestimmter Zeitintervalle (wann?)</li>
+<li>unter Einschränkung auf bestimmte gedankliche oder tätliche Operationen (wozu?).</li>
 </ol>
-</div></article></body></html>
+</blockquote>
+<p>Eine kompaktere Definition wurde einem Lehrbuch <em>&ldquo;Grund- und Leistungskurs Informatik&rdquo;</em> von <em>Karl-Hermann Rollke</em> und <em>Klaus Sennholz</em> entnommen: </p>
+<blockquote>
+<p>Ein <em>Modell</em> ist ein durch Abstraktion (<strong>Reduzierung</strong> und Verallgemeinerung) gewonnenes <strong>Abbild</strong> eines bestimmten Ausschnitts der Realität. Das Modell wird zu dem Zweck entworfen, den für die Lösung eines <em>bestimmten</em> Problems relevanten Teil der Wirklichkeit für den Menschen oder eine Maschine (Computer) überschaubar und <em>operationalisierbar</em> zu machen.[^fnRoSe]</p>
+</blockquote>
+<p><a style="background-color: yellow;"> &hellip;ist es wichtig, den Systemgrad minimal zu halten.<br />
+Die folgende Beispielaufgabe soll diesen Zusammenhang etwas greifbarer darstellen: </a></p>
+<h3 id="beispiel"><a name="user-content-beispiel" href="#beispiel" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Beispiel</h3>
+<p>Für eine analoge Filterschaltung wird ein mathematisches Modell gefordert. Die Schaltung soll zur Tiefpassfilterung in einer <strong>Highend-HiFi</strong> Stereoanlage eingesetzt werden. Für den Übergang vom Durchlass- in den Sperrbereich ist eine Dämpfung von 20dB/Dekade vorgegeben. Anhand des Modells soll das Dämpfungsverhalten mittels einiger harmonischer Testsignale untersucht werden können. </p>
+<p><strong>Möglichkeit 1</strong><br />
+<img src="/media/data/whz/projectGalvoDocu/chapters/pics/elko_ersatz_hf_reload.svg" title="Realitätsgetreues Ersatzschaltbild eines RC-Tiefpassfilters" align="top" height="190px" style="float:right; margin: .4em 0em 0em 1em;"/>Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um eine Highend-Anlage handelt, sollte ein möglichst präzises Modell formuliert werden. Unter Berücksichtigung aller tatsächlich parasitärer Größen von passiven Bauelementen[^fnElektrBauelem] wie Serien&shy;induktivität (ESL) und Serien&shy;widerstände (ESR) der Anschluss&shy;drähte/Anordnung der Elektroden, der Isolations&shy;widerstände und der dielektrischen Absorption (Nachladeeffekt, Rda, Cda), ergibt sich für einen einfachen RC-Tiefpass mit einer Dämpfungsflanke von 20dB/Dekade, das nebenstehende Schaltbild. Da die Ordnung eines Systems direkt aus der Anzahl seiner unabhängigen Energiespeicher abgeleitet werden kann, muss dem geforderten mathematischen Modell eine <strong>Differentialgleichung 5. Ordnung</strong>!!! zugrunde gelegt werden. </p>
+<p><strong>Möglichkeit 2</strong><br />
+Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um ein Audiogerät handelt, können eventuell störende Einflüsse im Frequenzbereiche jenseits von $100\si{kHz}$ als irrelevant betrachtet werden da die <em>auditive Wahrnehmung</em> des menschlichen Gehörs für Frequenzen über $20\si{kHz}$ schlicht nicht mehr sensibel genug ist. Tatsächlich liegt die <em>Musikwahrnehmbarkeit</em> noch deutlich unterhalb der $10\si{kHz}$ Grenze. Für das menschliche Gehör ist es also egal, ob ein TP-Filter im Bereich $900\si{kHz}\dots 1,4\si{MHz}$ eine Resonanzüberhöhung aufweist oder nicht.</p>
+<hr />
+<p>Ein formuliertes Modell unterliegt also der Anforderung, möglichst alle <strong><em>relevanten</em></strong> Charakteristika eines Systems abzubilden wobei der <em>Systemgrad</em> minimal gehalten werden soll. So gelingt es, komplexe Zusammenhänge aufzuspalten und eine Problemstellung zu partitionieren.</p>
+<h2 id="modellbildung"><a name="user-content-modellbildung" href="#modellbildung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modellbildung</h2>
+<p><a style="background-color: yellow;"> Top-Down- und Bottom-Up-Design<br />
+In der Informatik bezeichnet man einen Entwicklungsprozess für Software als Top-down, wenn der Entwurf mit abstrahierten Objekten beginnt, die dann konkretisiert werden; der Prozess ist Bottom-up, wenn von einzelnen Detail-Aufgaben ausgegangen wird, die zur Erledigung übergeordneter Prozesse benötigt werden. Zudem wird im Zusammenhang mit Compilerbau von Top-down- und Bottom-up-Parsern gesprochen (genauere Informationen unter Top-Down- und Bottom-Up-Design). </a></p>
+<p>Die enormen Anforderungen, die aus Anwendersicht an Hard- und Softwarekomponenten gestellt werden, in Verbindung mit dem Aspekt der Wirtschaftlichkeit, machen sich bereits in der Projektierungsphase eines Auftrags bemerkbar. <em>&ldquo;Reusability&rdquo;</em> ist ein Begriff aus der Softwarearchitektur und charakterisiert Software (Quellcode, Dokumentation, Testumgebungen, &hellip;) bezüglich ihrer <em>Wiederverwertbarkeit</em> in Folgeprojekten oder Folgeschritten des selben Projektes.[^fnReuseCode] Um einen Schritt weiter in Richtung <em>modellgetriebene Architektur</em> (<em>engl. Model Driven Architecture</em>, <strong><em>MDA</em></strong>) zu gehen, soll an dieser Stelle ein Unterpunkt aus [[MDA:2006, p.17]][@MDA:2006], Kapitel <em>&ldquo;Akute Probleme bei der Software-Erstellung&rdquo;</em>, zitiert werden:</p>
+<blockquote>
+<p><strong>Äußere und innere Gleichförmigkeit von Projekten</strong> <br />
+Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oftmals werden aber mehrere Projekte in der gleichen Fach- und/oder Technikdomäne durchgeführt. Genau so oft ähneln oder gleichen sich daher die (architekturellen) Konzepte der realisierten Anwendungen. Diese Gleichförmigkeit wird häufig übersehen oder schlicht ignoriert und anstatt diese domänen-spezifischen Konzepte wiederverwendbar zu machen, wird die gleiche Arbeit unnötigerweise mehrfach verrichtet.</p>
+</blockquote>
+<p>Natürlich ist der Begriff der <em>Wiederverwertbarkeit</em> nicht nur auf Komponenten einer Softwarearchitektur beschränkt. Auch im Hardwarebereich kann ein Unternehmen durch frühzeitig eingeleitete Abstraktionsprozesse, u. U. eine <em>Gleichförmigkeit</em> zu geplanten Folgeprojekten erkennen und das Teilsystem <em>&ldquo;von Heute&rdquo;</em> bereits zugunsten eines Teilsystems <em>&ldquo;von Morgen&rdquo;</em> optimieren.</p></article></body></html>

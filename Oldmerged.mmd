@@ -1,8 +1,6 @@
-Title:      Projekt: XY-Galvo Scanner  
-Author:     Del Basso, Manuel
-Date:       02-11-2016
-Location:   WHZ
-Footicon:   ./pics/whz.png
+Title:  Projekt: XY-Galvo Scanner  
+Author: Del Basso, Manuel  
+Date:   WHZ, November, 2016  
 
 Projekt: __XY-Galvo Scanner__
 ============================== 
@@ -586,20 +584,31 @@ Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit d
 Zudem soll an dieser Stelle nochmals auf das in Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) (Abschnitt _Systemzweck_) formulierte Schwerpunktthema "_Modellbildung und Simulation_" Bezug genommen werden.  
 
 ## Was ist Softwarearchitektur? ##
-Die Softwarearchitektur beschreibt die _grundlegenden_ __Komponenten__ und deren __Zusammenspiel__ innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, umfangreiche und komplexe Aufgabenstellungen frühzeitig zu partitionieren sodass ein Gesamtsystem in überschaubare Teilsysteme zerlegt werden kann. 
+Die Softwarearchitektur beschreibt die _grundlegenden_ __Komponenten__ und deren __Zusammenspiel__ innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, ein komplexes Gesamtsystem frühzeitig zu partitionieren und in überschaubare Teilsysteme zu zerlegen. In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon wie unstrukturiert der Entwicklungsprozess abgelaufen ist.
 
-Ein strukturierter Architekturentwurf ist in der Regel auf ganzer Linie gewinnbringend. Die Tatsache, dass ein gut durchdachter Architekturentwurf in den Anfängen eines neuen Projektes zusätzliche Arbeitsleistung = Zeit = Kosten einfordert, relativiert sich spätestens bei langfristiger Betrachtung eines Produkts. Besonders bei großen sowie langlebigen Softwaresystemen zahlt es sich aus, wenn man beispielsweise neuen Mitarbeitern neben der Softwaredokumentation (Implementierungsdetails. z. B. _Doxygen_) ein  Architekturmodell vorlegen kann. Des weiteren soll mit der in aller Regel höheren Produktqualität, mit einer einfacheren/besseren Projektplanung/Projektierung (bezüglich Zeitmanagement sowie "Man-Power"), besserer Erweiterbarkeit, Zertifizierungskriterien sowie mit dem Aspekt des Code-Reusing argumentiert werden. 
-
-In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon, wie unstrukturiert und von _Ad-hoc-decisions_ geplagt, der Entwicklungsprozess abgelaufen ist (<lkey>Reverse engeneering</lkey>). Dennoch hartnäckigen Modell-Verfechtern und Architekturentwurfsgegnern darf dann, als letzte gut gemeinte Überzeugungshilfe, eine Umschulung zum __Softwarearchäologen__ nahegelegt werden.
-
-## Model-Driven Architecture (MDA) ##
-Nachdem in einem _Bottom-Up_-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem _Top-Down_-Prinzip. Wird nun die funktionale Archi&shy;tektur&shy;beschreibung dieses Softwaresystems auf Basis einer __universellen__, d.h. platt&shy;form&shy;unab&shy;hängigen (__!__) Model&shy;lierungs&shy;sprache konzipiert und realisiert, so liegt dem erarbeiteten Produkt eine modell&shy;getriebene Softwareentwicklung zu Grunde (Model-driven software development, MDSD). Die Aufgabe der MDA ist es nun, eine Infrastruktur oder eben Architektur zur Verfügung zu stellen, um Softwareentwicklung auf Modellbasis und nicht mehr auf Code-Basis zu fördern bzw. erst zu ermöglichen.      
+## Model-Driven Architecture (MDA)
+Nachdem in einem _Bottom-Up_-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem _Top-Down_-Prinzip. Wird nun die funktionale Architekturbeschreibung dieses Softwaresystems auf Basis einer __universellen__, d.h. plattformunabhängigen (__!__) Modellierungssprache konzipiert und realiasiert, so besitzt das erarbeitete Produkt eine modellgetriebene Architektur (Model-driven-architecture, MDA). Wird in diesem Kontext der oftmals nur auf die Hardwareumgebung bezogene Begriff _Plattform_, explizit auf Hard- und Software erweitert, bleibt nicht mehr viel Spielraum bei der Wahl der geeigneten Entwurfsmethode.
 
 ### Unified Modeling Language (UML) ###
 Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der _Object Management Group_ __(OMG)__ entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte _Unified Modeling Language_ __(UML2)__, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. 
 
-### UML2 - Industriestandard ###
-Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekturentwurf in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.
+#### UML2 - Industriestandard im Bereich MDA ####
+
+
+@startuml
+Class01 <|-- Class02
+Class01 <|-- Class03
+Class03 -- Class04
+Class03 -- Class05
+Class03 -- Class06
+Class04 -- Class07
+Class04 -- Class08
+Class04 -- Class09
+@enduml
+@diag_align: "center"
+
+
+Aus einer Vielzahl von Eigenschaften und Argumenten, die für eine Architekturbeschreibung in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.
 
 |        Merkmal        |                                                                                                                                                                                                    |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -608,14 +617,11 @@ Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekture
 | Reverse Engineering   | Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.                                                       |
 | Modelltransformation  | Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum) |
 
-### Diagramme als Sicht ###
-Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene _Sichten_ handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine _Sicht_ repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  
-
-<a href="./pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="./pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a>
-
+- Dekomposition 
+- UML-Diagramme sind Ansichten eines UML-Modells
 
 ## Architekturkomponenten ##
-- reverse Engeneering
+Diagrammen
 
 @startuml
 skinparam componentStyle uml2
@@ -660,26 +666,6 @@ package "Gesamtprojekt" {
 }
 @enduml
 @diag_align: "center"
-
----
-
-@startuml
-boundary b1
-control c1
-b1 -(0)- c1
-
-component comp1
-interface interf1
-comp1 #~~( interf1
-
-:mode1actor: -0)- fooa1
-:mode1actorl: -le0)- foo1l
-
-[component1] 0)-(0-(0 [componentC]
-() component3 )-0-(0 "foo" [componentC]
-
-[aze1] #-->> [aze2]
-@enduml
 
 ---
 
@@ -731,11 +717,13 @@ Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem e
 
 
 
-
+- Erläuterung __Softwarearchäologie__
+- Erläuterung __Ad-hoc-decisions__
 
 
 
 # Plattform #
+
 Im Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
 
 Zahlreiche [DIY-Projekte][diyList] steigerten kontinuierlich das Interesse in vielen Bereichen der Hard- und Softwareentwicklung. Meist wurden 8-Bit RISC Controller ATmega/ATXmega der Firma Atmel für diverse Projekte eingesetzt. Mit der Anschaffung des Evaluierungsboards STK-600 inklusive AVR JTAGICE mkII Debugger, stand zwar eine hochflexible Hardware-Plattform (nahezu alle 8-Bit AT(X)mega + AVR32 Controller) zur Verfügung, in Sachen Software-Entwicklungsumgebung war man allerdings (ist noch immer?) an Microsoft .NET und somit an Windows gebunden. Als überzeugter UNIX Anwender blieb somit nur der Betrieb einer virtuellen Windows-Maschine (inkl. aller Windows Treiber-Probleme), wenn man alle Funktionen des JTAG-Emulators nutzen wollte.
@@ -767,7 +755,7 @@ Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwen
 | Grasshopper    | AT32AP7000       |            | AVR32 RISC  | Application | AVR32 RISC | 32-Bit |
 | (...)          |                  |            |             |             |            |        |
 
-</center>Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme einzusetzen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie das Einbinden eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), wird vor dem compilieren des Kernels durch den entsprechenden _Realtime Preemption patch_ vorgenommen. 
+</center>Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme einzusetzen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie die Einbindung eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), werden vor dem Compilieren des Kernels durch den entsprechenden _Realtime Preemption patch_ vorgenommen. 
 Aber auch bei absolut determiniertem Interrupt-Handling würde die absolute Reaktionszeit (Interrupt latency) für die regelungstechnischen Aufgaben vermutlich nicht ausreichen. Auf jeden Fall geht der Hardware-Bezug, im Sinne hardwarenaher Programmierung, beim Einsatz von RT-Linux-artigen Betriebssystemen weitestgehend verloren. Die Entwicklung eines eigenen Betriebssystems im Bereich _Application-Processor_ ist u.A. wegen der Speicherverwaltung zu komplex und Zeitaufwendig. Alle __Cortex-A__ werden an einer Speicherverwaltungshardware (MMU) betrieben.
 
 <center>
@@ -830,6 +818,7 @@ Die Rechenoperation $y \leftarrow y + \left(a \cdot b\right)$ ist in der digital
 
 Die C2000 Familie von TI konzentriert sich u.A. auf eine optimale Unterstützung von Regelalgorithmen und unterstützt Methoden zur effektiven Signalverarbeitung. Der _Kern_ ist in Form eines nativen Signalprozessors eingebettet (CPU = DSP). Somit handelt es sich bei der C2000 Familie nicht um moderne Mikrocontroller (___µC___) mit DSP als Coprozessor wie z.B. bei den Cortex-M4 basierten STM32F429i, sondern vielmehr um eine neue [__SoC__][@SoC]-Klasse welche zutreffend als Klasse der __digitalen Signal Controller__ (___DSC___) bezeichnet wird. Der erweiterte Befehlssatz zielt auf die Abarbeitungsgeschwindigkeit mathematischer Prozessketten und verbessert den _"Durchsatz"_ in Trigonometrie-Berechnungen sowie bei der Behandlung komplexer Zahlen. Die bereits erwähnte Optimierung hinsichtlich diskreter Regelalgorithmen fällt jedoch primär auf TI's Task-basierten Coprozessor, dem _Control Law Accelerator_ (___CLA___), zurück. Der CLA führt zuvor initialisierte (Regler-) Algorithmen unabhängig von der Host-CPU aus und unterstützt
 Die ADCs und PWMs unterstützen auch viele Timing-Optionen. Die Leistung variiert von Midrange (Piccolo) zu High-End (Dual-Core Delfino). Die großen Anwendungen sind hier Stromrichter, Netzkommunikation, Industrieantriebe und Motorsteuerung
+
 
 C2000's focus is on supporting control algorithms. The C28x "CPU" is really a DSP, and its instruction set has been extended to handle things like trigonometry and complex numbers. There's also a separate task-based processor called the Control Law Accelerator (CLA) that can run control algorithms independently of the CPU. The ADCs and PWMs support a lot of timing options, too. Performance varies from midrange (Piccolo) to high-end (dual-core Delfino). The big applications here are power converters, power line communication, industrial drives, and motor control
 
