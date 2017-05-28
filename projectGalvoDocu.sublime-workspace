@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"mo",
+				"move"
+			],
+			[
+				"spl",
+				"splitext"
+			],
+			[
+				"slu",
+				"slugify"
+			],
+			[
+				"repl",
+				"replace"
+			],
+			[
+				"str",
+				"strval"
+			],
+			[
+				"remo",
+				"remove_non_ascii"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"call",
+				"caller_method"
+			],
+			[
+				"DO",
+				"DO_CHAPTER_COMPILE"
+			],
+			[
+				"for",
+				"format"
+			],
+			[
 				"font",
 				"font-size-doc-table"
 			],
@@ -22,10 +62,6 @@
 			[
 				"revers",
 				"reversed〔class〕"
-			],
-			[
-				"re",
-				"readlines〔function〕"
 			],
 			[
 				"bord",
@@ -196,10 +232,6 @@
 				"next_line"
 			],
 			[
-				"call",
-				"caller_method"
-			],
-			[
 				"first",
 				"first_line_after_block"
 			],
@@ -352,10 +384,6 @@
 				"basicConfig"
 			],
 			[
-				"str",
-				"string"
-			],
-			[
 				"floa",
 				"float\t(styleMdb.css)"
 			],
@@ -486,34 +514,6 @@
 			[
 				"te",
 				"temporary"
-			],
-			[
-				"puml",
-				"puml_blocks"
-			],
-			[
-				"ty",
-				"type\t(styleMdb.css)"
-			],
-			[
-				"digra",
-				"diagram_file"
-			],
-			[
-				"diagram",
-				"diagram_files"
-			],
-			[
-				"sour",
-				"sourceFile"
-			],
-			[
-				"process",
-				"processor"
-			],
-			[
-				"sou",
-				"sourceFile"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "chapters/10_Softwarearchitektur.mmd",
 			"settings":
 			{
-				"buffer_size": 11367,
+				"buffer_size": 10962,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -532,126 +532,51 @@
 			"file": "merged.mmd",
 			"settings":
 			{
-				"buffer_size": 126987,
+				"buffer_size": 128595,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": " <font\\ color=red>rsync\\ <font\\ color=blue>-h\\ --progress\\ --stats\\ -r\\ -t\\ --modify-window=1\\ -l\\ -D\\ --update\\ --exclude=**/*tmp*/\\ \n\nrsync -h --progress --stats -r -t --modify-window=1 -l -D /mnt/Users/Katrin/Pictures /media/ssdd/ --dry-run\nrsync -h --progress --stats -r -t --modify-window=1 -l -D /mnt/Users /media/sdc1/katrinBackup/USERS --exclude=/mnt/Users/Katrin/Pictures --exclude=/mnt/Users/Katrin/Pictures/*\n\n--exclude=/mnt/Users/Katrin/Pictures --exclude=/mnt/Users/Katrin/Pictures/*\nrsync -h --progress --stats -r -tgo -p -l -D --update --delete-after --delete-excluded  /mnt/Users /mnt2/",
+			"file": "chapters/05_Projektziel_und_Anforderungskatalog.mmd",
 			"settings":
 			{
-				"buffer_size": 602,
+				"buffer_size": 9892,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "DLIB & BITFIELD & DCL test..\n{\"dat\":[3040,3193,3370,3485,3583,3681,3732,3765,3773,3757,3719,3636,3553,3450,3285,723,572,438,285,189,115,45,15,7,32,73,133,245,352,475,663,820,988,1232,1419,1614,1876,2073,2274,2529,2710,2884,3099,3246,3377,3526,3613,3686,3748,3772,3772,3746,3700,3634,3514,3406,3280,3086,2925,2752,2510,2319,2123,1857,1660,1465,1213,1031,859,648,505,379,235,151,85,28,12,13,48,100,171,293,409,538,737,899,1074,1323,1513,1708,1971,2172,2367,2620,2796,2965,3174,3312,3433,3571,3652,3713,3762,3777,3769,3726,3670,3595,3463,3346,3213,3010,2841,2666,2416,2225,2027,1760,1565,1372,1126,943,778,577,444,322,191,116,60,18,7,23,72,132,212,348,471,610,816,982,1161,1414,1607,1804,2066,2268,2460,2705,2880,3044,3244,3374,3489,3612,3684,3736,3772,3773,3757,3701,3635,3551,3408,3283,3142,2930,2758,2577,2324,2128,1930,1663,1471,1280,1035,863,702,509,382,271,152,85,41,14,15,35,98,168,257,405,536,680,895,1069,1255,1509,1703,1902,2168,2362,2554,2793,2960,3122,3307,3429,3536,3652,3712,3751,3776,3769,3741,3671,3596,3502,3350,3214,3067,2845,2671,2486,2228,2034,1832,1570,1377,1188,948,782,629,445,325,224,119,61,26,9,21,54,132,210,307,467,606,758,978,1158,1346,1605,1801,1998,2263,2455,2643,2875,0]\n",
+			"settings":
+			{
+				"buffer_size": 1199,
 				"line_ending": "Unix",
-				"name": "<font\\ color=red>rsync\\ <font\\ color=blue>-h\\ --p"
+				"name": "DLIB & BITFIELD & DCL test.."
 			}
 		},
 		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
+			"file": "/tmp/iii",
 			"settings":
 			{
-				"buffer_size": 2514,
+				"buffer_size": 285316,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "chapters/20_Quellenangaben.mmd",
+			"settings":
+			{
+				"buffer_size": 12044,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "chapters/00_TOC.mmd",
+			"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 			"settings":
 			{
-				"buffer_size": 206,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/pics/UML-Diagrammhierarchie_Mdb.svg",
-			"settings":
-			{
-				"buffer_size": 323776,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/usr/bin/miniterm.py",
-			"settings":
-			{
-				"buffer_size": 32319,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "### Table 111. PIE MUXed Peripheral Interrupt Vector Table (SPRUFB0D.pdf:124) ###\n\n<div style=\"font-size: 7pt;\" markdown=1>\n\n\n| Group   | INTx.8      | INTx.7      | INTx.6      | INTx.5      | INTx.4      | INTx.3      | INTx.2      | INTx.1      |\n|:--------|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|\n| INT1.y  | WAKEINT     | TINT0       | ADCINT      | XINT2       | XINT1       | Reserved    | SEQ2INT     | SEQ1INT     |\n|         | (LPM/WD)    | (TIMER 0)   | (ADC)       | Ext-Int_2   | Ext-Int_1   | -           | (ADC)       | (ADC)       |\n|         | 0xD4E       | 0xD4C       | 0xD4A       | 0xD48       | 0xD46       | 0xD44       | 0xD42       | 0xD40       |\n| IRQ ID  |       39    |       38    |       37    |       36    |       35    |       34    |       33    |       32    |\n| INT2.y  | Reserved    | Reserved    | EPWM6_TZINT | EPWM5_TZINT | EPWM4_TZINT | EPWM3_TZINT | EPWM2_TZINT | EPWM1_TZINT |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD5E       | 0xD5C       | 0xD5A       | 0xD58       | 0xD56       | 0xD54       | 0xD52       | 0xD50       |\n| IRQ ID  |       47    |       46    |       45    |       44    |       43    |       42    |       41    |       40    |\n| INT3.y  | Reserved    | Reserved    | EPWM6_INT   | EPWM5_INT   | EPWM4_INT   | EPWM3_INT   | EPWM2_INT   | EPWM1_INT   |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD6E       | 0xD6C       | 0xD6A       | 0xD68       | 0xD66       | 0xD64       | 0xD62       | 0xD60       |\n| IRQ ID  |       55    |       54    |       53    |       52    |       51    |       50    |       49    |       48    |\n| INT4.y  | Reserved    | Reserved    | ECAP6_INT   | ECAP5_INT   | ECAP4_INT   | ECAP3_INT   | ECAP2_INT   | ECAP1_INT   |\n|         | -           | -           | (eCAP6)     | (eCAP5)     | (eCAP4)     | (eCAP3)     | (eCAP2)     | (eCAP1)     |\n|         | 0xD7E       | 0xD7C       | 0xD7A       | 0xD78       | 0xD76       | 0xD74       | 0xD72       | 0xD70       |\n| IRQ ID  |       63    |       62    |       61    |       60    |       59    |       58    |       57    |       56    |\n| INT5.y  | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | EQEP2_INT   | EQEP1_INT   |\n|         | -           | -           | -           | -           | -           | -           | (eQEP2)     | (eQEP1)     |\n|         | 0xD8E       | 0xD8C       | 0xD8A       | 0xD88       | 0xD86       | 0xD84       | 0xD82       | 0xD80       |\n| IRQ ID  |       71    |       70    |       69    |       68    |       67    |       66    |       65    |       64    |\n| INT6.y  | Reserved    | Reserved    | MXINTA      | MRINTA      | MXINTB      | MRINTB      | SPITXINTA   | SPIRXINTA   |\n|         | (McBSP-A)   | (McBSP-A)   | (McBSP-B)   | (McBSP-B)   | (SPI-A)     | (SPI-A)     |             |             |\n|         | 0xD9E       | 0xD9C       | 0xD9A       | 0xD98       | 0xD96       | 0xD94       | 0xD92       | 0xD90       |\n| IRQ ID  |       79    |       78    |       77    |       76    |       75    |       74    |       73    |       72    |\n| INT7.y  | Reserved    | Reserved    | DINTCH6     | DINTCH5     | DINTCH4     | DINTCH3     | DINTCH2     | DINTCH1     |\n|         | (DMA6)      | (DMA5)      | (DMA4)      | (DMA3)      | (DMA2)      | (DMA1)      |             |             |\n|         | 0xDAE       | 0xDAC       | 0xDAA       | 0xDA8       | 0xDA6       | 0xDA4       | 0xDA2       | 0xDA0       |\n| IRQ ID  |       87    |       86    |       85    |       84    |       83    |       82    |       81    |       80    |\n| INT8.y  | Reserved    | Reserved    | SCITXINTC   | SCIRXINTC   | Reserved    | Reserved    | I2CINT2A    | I2CINT1A    |\n|         | -           | -           | (SCI-C)     | (SCI-C)     | -           | -           | (I2C-A)     | (I2C-A)     |\n|         | 0xDBE       | 0xDBC       | 0xDBA       | 0xDB8       | 0xDB6       | 0xDB4       | 0xDB2       | 0xDB0       |\n| IRQ ID  |       95    |       94    |       93    |       92    |       91    |       90    |       89    |       88    |\n| INT9.y  | ECAN1INTB   | ECAN0INTB   | ECAN1INTA   | ECAN0INTA   | SCITXINTB   | SCIRXINTB   | SCITXINTA   | SCIRXINTA   |\n|         | (CAN-B)     | (CAN-B)     | (CAN-A)     | (CAN-A)     | (SCI-B)     | (SCI-B)     | (SCI-A)     | (SCI-A)     |\n|         | 0xDCE       | 0xDCC       | 0xDCA       | 0xDC8       | 0xDC6       | 0xDC4       | 0xDC2       | 0xDC0       |\n| IRQ ID  |             |             |             |             |             |             |             |       96    |\n| INT10.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | 0xDDE       | 0xDDC       | 0xDDA       | 0xDD8       | 0xDD6       | 0xDD4       | 0xDD2       | 0xDD0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT11.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |             |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT12.y | LUF         | LVF         | Reserved    | XINT7       | XINT6       | XINT5       | XINT4       | XINT3       |\n|         | (FPU)       | (FPU)       | -           | Ext-Int_7   | Ext-Int_6   | Ext-Int_5   | Ext-Int_4   | Ext-Int_3   |\n|         | 0xDFE       | 0xDFC       | 0xDFA       | 0xDF8       | 0xDF6       | 0xDF4       | 0xDF2       | 0xDF0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n\n\n</div>\n\n<!-- \n| Group   | INTx.8      | INTx.7      | INTx.6      | INTx.5      | INTx.4      | INTx.3      | INTx.2      | INTx.1      |\n|:--------|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|\n| INT1.y  | WAKEINT     | TINT0       | ADCINT      | XINT2       | XINT1       | Reserved    | SEQ2INT     | SEQ1INT     |\n|         | (LPM/WD)    | (TIMER 0)   | (ADC)       | Ext-Int_2   | Ext-Int_1   | -           | (ADC)       | (ADC)       |\n|         | 0xD4E       | 0xD4C       | 0xD4A       | 0xD48       | 0xD46       | 0xD44       | 0xD42       | 0xD40       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT2.y  | Reserved    | Reserved    | EPWM6_TZINT | EPWM5_TZINT | EPWM4_TZINT | EPWM3_TZINT | EPWM2_TZINT | EPWM1_TZINT |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD5E       | 0xD5C       | 0xD5A       | 0xD58       | 0xD56       | 0xD54       | 0xD52       | 0xD50       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT3.y  | Reserved    | Reserved    | EPWM6_INT   | EPWM5_INT   | EPWM4_INT   | EPWM3_INT   | EPWM2_INT   | EPWM1_INT   |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD6E       | 0xD6C       | 0xD6A       | 0xD68       | 0xD66       | 0xD64       | 0xD62       | 0xD60       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT4.y  | Reserved    | Reserved    | ECAP6_INT   | ECAP5_INT   | ECAP4_INT   | ECAP3_INT   | ECAP2_INT   | ECAP1_INT   |\n|         | -           | -           | (eCAP6)     | (eCAP5)     | (eCAP4)     | (eCAP3)     | (eCAP2)     | (eCAP1)     |\n|         | 0xD7E       | 0xD7C       | 0xD7A       | 0xD78       | 0xD76       | 0xD74       | 0xD72       | 0xD70       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT5.y  | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | EQEP2_INT   | EQEP1_INT   |\n|         | -           | -           | -           | -           | -           | -           | (eQEP2)     | (eQEP1)     |\n|         | 0xD8E       | 0xD8C       | 0xD8A       | 0xD88       | 0xD86       | 0xD84       | 0xD82       | 0xD80       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT6.y  | Reserved    | Reserved    | MXINTA      | MRINTA      | MXINTB      | MRINTB      | SPITXINTA   | SPIRXINTA   |\n|         | (McBSP-A)   | (McBSP-A)   | (McBSP-B)   | (McBSP-B)   | (SPI-A)     | (SPI-A)     |             |             |\n|         | 0xD9E       | 0xD9C       | 0xD9A       | 0xD98       | 0xD96       | 0xD94       | 0xD92       | 0xD90       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT7.y  | Reserved    | Reserved    | DINTCH6     | DINTCH5     | DINTCH4     | DINTCH3     | DINTCH2     | DINTCH1     |\n|         | (DMA6)      | (DMA5)      | (DMA4)      | (DMA3)      | (DMA2)      | (DMA1)      |             |             |\n|         | 0xDAE       | 0xDAC       | 0xDAA       | 0xDA8       | 0xDA6       | 0xDA4       | 0xDA2       | 0xDA0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT8.y  | Reserved    | Reserved    | SCITXINTC   | SCIRXINTC   | Reserved    | Reserved    | I2CINT2A    | I2CINT1A    |\n|         | -           | -           | (SCI-C)     | (SCI-C)     | -           | -           | (I2C-A)     | (I2C-A)     |\n|         | 0xDBE       | 0xDBC       | 0xDBA       | 0xDB8       | 0xDB6       | 0xDB4       | 0xDB2       | 0xDB0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT9.y  | ECAN1INTB   | ECAN0INTB   | ECAN1INTA   | ECAN0INTA   | SCITXINTB   | SCIRXINTB   | SCITXINTA   | SCIRXINTA   |\n|         | (CAN-B)     | (CAN-B)     | (CAN-A)     | (CAN-A)     | (SCI-B)     | (SCI-B)     | (SCI-A)     | (SCI-A)     |\n|         | 0xDCE       | 0xDCC       | 0xDCA       | 0xDC8       | 0xDC6       | 0xDC4       | 0xDC2       | 0xDC0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT10.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | 0xDDE       | 0xDDC       | 0xDDA       | 0xDD8       | 0xDD6       | 0xDD4       | 0xDD2       | 0xDD0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT11.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |             |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT12.y | LUF         | LVF         | Reserved    | XINT7       | XINT6       | XINT5       | XINT4       | XINT3       |\n|         | (FPU)       | (FPU)       | -           | Ext-Int_7   | Ext-Int_6   | Ext-Int_5   | Ext-Int_4   | Ext-Int_3   |\n|         | 0xDFE       | 0xDFC       | 0xDFA       | 0xDF8       | 0xDF6       | 0xDF4       | 0xDF2       | 0xDF0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n -->",
-			"file": "/home/mainster/CODES_local/ccs7_workspace/MD_F2833x_LIB/PIEINT_vectTable.md",
-			"file_size": 12546,
-			"file_write_time": 131353633652932122,
-			"settings":
-			{
-				"buffer_size": 12546,
-				"line_ending": "Unix",
-				"name": "INTx.8 INTx.7 INTx.6 INTx.5 INTx.4 INTx.3 INTx.2 I"
-			}
-		},
-		{
-			"contents": "### Table 111. PIE MUXed Peripheral Interrupt Vector Table (SPRUFB0D.pdf:124) ###\n\n<div style=\"font-size: 7pt;\" markdown=1>\n\n\n| Group   | INTx.8      | INTx.7      | INTx.6      | INTx.5      | INTx.4      | INTx.3      | INTx.2      | INTx.1      |\n|:--------|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|\n| INT1.y  | WAKEINT     | TINT0       | ADCINT      | XINT2       | XINT1       | Reserved    | SEQ2INT     | SEQ1INT     |\n|         | (LPM/WD)    | (TIMER 0)   | (ADC)       | Ext-Int_2   | Ext-Int_1   | -           | (ADC)       | (ADC)       |\n|         | 0xD4E       | 0xD4C       | 0xD4A       | 0xD48       | 0xD46       | 0xD44       | 0xD42       | 0xD40       |\n| IRQ ID  |       39    |       38    |       37    |       36    |       35    |       34    |       33    |       32    |\n| INT2.y  | Reserved    | Reserved    | EPWM6_TZINT | EPWM5_TZINT | EPWM4_TZINT | EPWM3_TZINT | EPWM2_TZINT | EPWM1_TZINT |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD5E       | 0xD5C       | 0xD5A       | 0xD58       | 0xD56       | 0xD54       | 0xD52       | 0xD50       |\n| IRQ ID  |       47    |       46    |       45    |       44    |       43    |       42    |       41    |       40    |\n| INT3.y  | Reserved    | Reserved    | EPWM6_INT   | EPWM5_INT   | EPWM4_INT   | EPWM3_INT   | EPWM2_INT   | EPWM1_INT   |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD6E       | 0xD6C       | 0xD6A       | 0xD68       | 0xD66       | 0xD64       | 0xD62       | 0xD60       |\n| IRQ ID  |       55    |       54    |       53    |       52    |       51    |       50    |       49    |       48    |\n| INT4.y  | Reserved    | Reserved    | ECAP6_INT   | ECAP5_INT   | ECAP4_INT   | ECAP3_INT   | ECAP2_INT   | ECAP1_INT   |\n|         | -           | -           | (eCAP6)     | (eCAP5)     | (eCAP4)     | (eCAP3)     | (eCAP2)     | (eCAP1)     |\n|         | 0xD7E       | 0xD7C       | 0xD7A       | 0xD78       | 0xD76       | 0xD74       | 0xD72       | 0xD70       |\n| IRQ ID  |       63    |       62    |       61    |       60    |       59    |       58    |       57    |       56    |\n| INT5.y  | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | EQEP2_INT   | EQEP1_INT   |\n|         | -           | -           | -           | -           | -           | -           | (eQEP2)     | (eQEP1)     |\n|         | 0xD8E       | 0xD8C       | 0xD8A       | 0xD88       | 0xD86       | 0xD84       | 0xD82       | 0xD80       |\n| IRQ ID  |       71    |       70    |       69    |       68    |       67    |       66    |       65    |       64    |\n| INT6.y  | Reserved    | Reserved    | MXINTA      | MRINTA      | MXINTB      | MRINTB      | SPITXINTA   | SPIRXINTA   |\n|         | (McBSP-A)   | (McBSP-A)   | (McBSP-B)   | (McBSP-B)   | (SPI-A)     | (SPI-A)     |             |             |\n|         | 0xD9E       | 0xD9C       | 0xD9A       | 0xD98       | 0xD96       | 0xD94       | 0xD92       | 0xD90       |\n| IRQ ID  |       79    |       78    |       77    |       76    |       75    |       74    |       73    |       72    |\n| INT7.y  | Reserved    | Reserved    | DINTCH6     | DINTCH5     | DINTCH4     | DINTCH3     | DINTCH2     | DINTCH1     |\n|         | (DMA6)      | (DMA5)      | (DMA4)      | (DMA3)      | (DMA2)      | (DMA1)      |             |             |\n|         | 0xDAE       | 0xDAC       | 0xDAA       | 0xDA8       | 0xDA6       | 0xDA4       | 0xDA2       | 0xDA0       |\n| IRQ ID  |       87    |       86    |       85    |       84    |       83    |       82    |       81    |       80    |\n| INT8.y  | Reserved    | Reserved    | SCITXINTC   | SCIRXINTC   | Reserved    | Reserved    | I2CINT2A    | I2CINT1A    |\n|         | -           | -           | (SCI-C)     | (SCI-C)     | -           | -           | (I2C-A)     | (I2C-A)     |\n|         | 0xDBE       | 0xDBC       | 0xDBA       | 0xDB8       | 0xDB6       | 0xDB4       | 0xDB2       | 0xDB0       |\n| IRQ ID  |       95    |       94    |       93    |       92    |       91    |       90    |       89    |       88    |\n| INT9.y  | ECAN1INTB   | ECAN0INTB   | ECAN1INTA   | ECAN0INTA   | SCITXINTB   | SCIRXINTB   | SCITXINTA   | SCIRXINTA   |\n|         | (CAN-B)     | (CAN-B)     | (CAN-A)     | (CAN-A)     | (SCI-B)     | (SCI-B)     | (SCI-A)     | (SCI-A)     |\n|         | 0xDCE       | 0xDCC       | 0xDCA       | 0xDC8       | 0xDC6       | 0xDC4       | 0xDC2       | 0xDC0       |\n| IRQ ID  |             |             |             |             |             |             |             |       96    |\n| INT10.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | 0xDDE       | 0xDDC       | 0xDDA       | 0xDD8       | 0xDD6       | 0xDD4       | 0xDD2       | 0xDD0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT11.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |             |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT12.y | LUF         | LVF         | Reserved    | XINT7       | XINT6       | XINT5       | XINT4       | XINT3       |\n|         | (FPU)       | (FPU)       | -           | Ext-Int_7   | Ext-Int_6   | Ext-Int_5   | Ext-Int_4   | Ext-Int_3   |\n|         | 0xDFE       | 0xDFC       | 0xDFA       | 0xDF8       | 0xDF6       | 0xDF4       | 0xDF2       | 0xDF0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n\n\n</div>\n\n<!-- \n| Group   | INTx.8      | INTx.7      | INTx.6      | INTx.5      | INTx.4      | INTx.3      | INTx.2      | INTx.1      |\n|:--------|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|:-----------:|\n| INT1.y  | WAKEINT     | TINT0       | ADCINT      | XINT2       | XINT1       | Reserved    | SEQ2INT     | SEQ1INT     |\n|         | (LPM/WD)    | (TIMER 0)   | (ADC)       | Ext-Int_2   | Ext-Int_1   | -           | (ADC)       | (ADC)       |\n|         | 0xD4E       | 0xD4C       | 0xD4A       | 0xD48       | 0xD46       | 0xD44       | 0xD42       | 0xD40       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT2.y  | Reserved    | Reserved    | EPWM6_TZINT | EPWM5_TZINT | EPWM4_TZINT | EPWM3_TZINT | EPWM2_TZINT | EPWM1_TZINT |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD5E       | 0xD5C       | 0xD5A       | 0xD58       | 0xD56       | 0xD54       | 0xD52       | 0xD50       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT3.y  | Reserved    | Reserved    | EPWM6_INT   | EPWM5_INT   | EPWM4_INT   | EPWM3_INT   | EPWM2_INT   | EPWM1_INT   |\n|         | -           | -           | (ePWM6)     | (ePWM5)     | (ePWM4)     | (ePWM3)     | (ePWM2)     | (ePWM1)     |\n|         | 0xD6E       | 0xD6C       | 0xD6A       | 0xD68       | 0xD66       | 0xD64       | 0xD62       | 0xD60       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT4.y  | Reserved    | Reserved    | ECAP6_INT   | ECAP5_INT   | ECAP4_INT   | ECAP3_INT   | ECAP2_INT   | ECAP1_INT   |\n|         | -           | -           | (eCAP6)     | (eCAP5)     | (eCAP4)     | (eCAP3)     | (eCAP2)     | (eCAP1)     |\n|         | 0xD7E       | 0xD7C       | 0xD7A       | 0xD78       | 0xD76       | 0xD74       | 0xD72       | 0xD70       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT5.y  | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | EQEP2_INT   | EQEP1_INT   |\n|         | -           | -           | -           | -           | -           | -           | (eQEP2)     | (eQEP1)     |\n|         | 0xD8E       | 0xD8C       | 0xD8A       | 0xD88       | 0xD86       | 0xD84       | 0xD82       | 0xD80       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT6.y  | Reserved    | Reserved    | MXINTA      | MRINTA      | MXINTB      | MRINTB      | SPITXINTA   | SPIRXINTA   |\n|         | (McBSP-A)   | (McBSP-A)   | (McBSP-B)   | (McBSP-B)   | (SPI-A)     | (SPI-A)     |             |             |\n|         | 0xD9E       | 0xD9C       | 0xD9A       | 0xD98       | 0xD96       | 0xD94       | 0xD92       | 0xD90       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT7.y  | Reserved    | Reserved    | DINTCH6     | DINTCH5     | DINTCH4     | DINTCH3     | DINTCH2     | DINTCH1     |\n|         | (DMA6)      | (DMA5)      | (DMA4)      | (DMA3)      | (DMA2)      | (DMA1)      |             |             |\n|         | 0xDAE       | 0xDAC       | 0xDAA       | 0xDA8       | 0xDA6       | 0xDA4       | 0xDA2       | 0xDA0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT8.y  | Reserved    | Reserved    | SCITXINTC   | SCIRXINTC   | Reserved    | Reserved    | I2CINT2A    | I2CINT1A    |\n|         | -           | -           | (SCI-C)     | (SCI-C)     | -           | -           | (I2C-A)     | (I2C-A)     |\n|         | 0xDBE       | 0xDBC       | 0xDBA       | 0xDB8       | 0xDB6       | 0xDB4       | 0xDB2       | 0xDB0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT9.y  | ECAN1INTB   | ECAN0INTB   | ECAN1INTA   | ECAN0INTA   | SCITXINTB   | SCIRXINTB   | SCITXINTA   | SCIRXINTA   |\n|         | (CAN-B)     | (CAN-B)     | (CAN-A)     | (CAN-A)     | (SCI-B)     | (SCI-B)     | (SCI-A)     | (SCI-A)     |\n|         | 0xDCE       | 0xDCC       | 0xDCA       | 0xDC8       | 0xDC6       | 0xDC4       | 0xDC2       | 0xDC0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT10.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | 0xDDE       | 0xDDC       | 0xDDA       | 0xDD8       | 0xDD6       | 0xDD4       | 0xDD2       | 0xDD0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT11.y | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    | Reserved    |             |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n|         | -           | -           | -           | -           | -           | -           | -           | -           |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n| INT12.y | LUF         | LVF         | Reserved    | XINT7       | XINT6       | XINT5       | XINT4       | XINT3       |\n|         | (FPU)       | (FPU)       | -           | Ext-Int_7   | Ext-Int_6   | Ext-Int_5   | Ext-Int_4   | Ext-Int_3   |\n|         | 0xDFE       | 0xDFC       | 0xDFA       | 0xDF8       | 0xDF6       | 0xDF4       | 0xDF2       | 0xDF0       |\n| IRQ ID  |             |             |             |             |             |             |             |             |\n -->",
-			"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/PIEINT_vectTable.md",
-			"file_size": 12546,
-			"file_write_time": 131353633652932122,
-			"settings":
-			{
-				"buffer_size": 12546,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/scripts/meminfo.sh",
-			"settings":
-			{
-				"buffer_size": 3952,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/compiledStuff/PCGU1000driver_2009-07-13/Komponente/libusb.pp",
-			"settings":
-			{
-				"buffer_size": 13289,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/scripts/unspace",
-			"settings":
-			{
-				"buffer_size": 630,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/scripts/qemuWin7.sh",
-			"settings":
-			{
-				"buffer_size": 3429,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "qemu-system-x86_64\n-enable-kvm\n-name win7_x64\n-S\n-machine pc-i440fx-xenial,accel=kvm,usb=off\n-cpu IvyBridge,hv_time,hv_relaxed,hv_vapic,hv_spinlocks=0x1fff\n-m 2000\n-realtime mlock=off\n-smp 2,sockets=2,cores=1,threads=1\n-uuid d29a56c3-6cf1-46c4-894e-d4b0a48bc2e7\n-no-user-config\n-nodefaults\n-chardev socket,id=charmonitor,path=/var/lib/libvirt/qemu/domain-win7_x64/monitor.sock,server,nowait\n-mon chardev=charmonitor,id=monitor,mode=control\n-rtc base=localtime,driftfix=slew\n-global kvm-pit.lost_tick_policy=discard\n-no-hpet\n-no-shutdown\n-global PIIX4_PM.disable_s3=1\n-global PIIX4_PM.disable_s4=1\n-boot strict=on\n-device ich9-usb-ehci1,id=usb,bus=pci.0,addr=0x6.0x7\n-device ich9-usb-uhci1,masterbus=usb.0,firstport=0,bus=pci.0,multifunction=on,addr=0x6\n-device ich9-usb-uhci2,masterbus=usb.0,firstport=2,bus=pci.0,addr=0x6.0x1\n-device ich9-usb-uhci3,masterbus=usb.0,firstport=4,bus=pci.0,addr=0x6.0x2\n-device virtio-serial-pci,id=virtio-serial0,bus=pci.0,addr=0x5\n-drive file=/media/USB3_BACK/Windows7_64_xps_vdi2kvm.img,format=raw,if=none,id=drive-ide0-0-0\n-device ide-hd,bus=ide.0,unit=0,drive=drive-ide0-0-0,id=ide0-0-0,bootindex=1\n-netdev tap,fd=26,id=hostnet0\n-device rtl8139,netdev=hostnet0,id=net0,mac=52:54:00:ae:96:92,bus=pci.0,addr=0x3\n-chardev pty,id=charserial0\n-device isa-serial,chardev=charserial0,id=serial0\n-chardev spicevmc,id=charchannel0,name=vdagent\n-device virtserialport,bus=virtio-serial0.0,nr=1,chardev=charchannel0,id=channel0,name=com.redhat.spice.0\n-device usb-tablet,id=input0\n-spice port=5900,addr=127.0.0.1,disable-ticketing,image-compression=off,seamless-migration=on\n-k de\n-device VGA,id=video0,vgamem_mb=16,bus=pci.0,addr=0x2\n-device qxl,id=video1,ram_size=67108864,vram_size=67108864,vgamem_mb=16,bus=pci.0,addr=0x8\n-device intel-hda,id=sound0,bus=pci.0,addr=0x4\n-device hda-duplex,id=sound0-codec0,bus=sound0.0,cad=0\n-chardev spicevmc,id=charredir0,name=usbredir\n-device usb-redir,chardev=charredir0,id=redir0\n-chardev spicevmc,id=charredir1,name=usbredir\n-device usb-redir,chardev=charredir1,id=redir1\n-device usb-host,hostbus=3,hostaddr=21,id=hostdev0\n-device virtio-balloon-pci,id=balloon0,bus=pci.0,addr=0x7\n-msg timestamp=on",
-			"settings":
-			{
-				"buffer_size": 2165,
-				"line_ending": "Unix",
-				"name": "qemu-system-x86_64"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/CalcIrqIdCommand.py",
-			"settings":
-			{
-				"buffer_size": 2045,
+				"buffer_size": 89147,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -660,71 +585,7 @@
 			"file": "/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 3061,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/DIMM100_pinout.md",
-			"settings":
-			{
-				"buffer_size": 8267,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/CODES_local/pythons/subprocess_clipboard.py",
-			"settings":
-			{
-				"buffer_size": 2190,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/styleMdb_ccsMd.css",
-			"settings":
-			{
-				"buffer_size": 37799,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "chapters/11_Plattform.mmd",
-			"settings":
-			{
-				"buffer_size": 14985,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "body {\n\tborder: 1px solid #ddd;\n\tmargin: 16px auto;\n\toutline: 1300px solid #fff;\n\twidth: 155em;\n}\nbody .markdown-body\n{\n\t/*max-width: 1900px*/\t\t/*Defines the html page width*/\n\tpadding: 30px;\n}\n@font-face {\n\tfont-family: fontawesome-mini;\n\tsrc: url(data:font/woff;charset=utf-8;base64,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) format('woff');\n}\n@font-face {\n\tfont-family: octicons-anchor;\n\tsrc: url(data:font/woff;charset=utf-8;base64,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) format('woff');\n}\n.markdown-body {\n\t-ms-text-size-adjust: \t\t100%;\n\t-webkit-text-size-adjust: \t100%;\n\tcolor: \t\t\t#333333;\n\toverflow: \t\thidden;\n\tfont-family: \t\"Helvetica Neue\", Helvetica, \"Segoe UI\", Arial, freesans, sans-serif;\n\tfont-size: \t\t16px;\n\tline-height: \t1.4em;\n\toverflow: \t\thidden;\n\ttext-align: \tjustify;\t/*Force text-align attribute to justify text blocks*/\n\tpadding-top: \t1.3em;\n\t-webkit-hyphens: auto;\n\t-moz-hyphens: auto;\n\t-ms-hyphens: auto;\n\thyphens: auto;\n\t/*word-wrap: \t\tbreak-word;*/\n}\n.markdown-body b,\n.markdown-body strong {\n\tfont-weight: bold;\n}\n.markdown-body mark {\n\tbackground: #ff0;\n\tcolor: #000;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n.markdown-body sub,\n.markdown-body sup {\n\t/*background-color: yellow;*/\n\t/*font-weight: bold;*/\n\tfont-size: 75%;\n\tline-height: 0;\n\tposition: relative;\n\tvertical-align: baseline;\n\tfont-style: italic;\n}\n\n.titleHeader {\n    width: 1300px;\n    height: 120px;\n\n    font-family:Helvetica, Arial, sans-serif;\n}\n.logo {\n    float: left;\n    padding: 10px 20px;\n    background: #004B35;\n    height: 55px;\n    width: 700px;\n}\n.logoWhz {\n    height:100px;\n    width: 100px;\t\n}\n.footer {\n\tfont-size: 7;\n\tfont-style: italic;\n\tcolor: #404040;\n}\n/*title, meta {\n\tdisplay: block !important;\n}\n*/\n\n/*.header{\n    width: 950px;\n    font-family:Helvetica, Arial, sans-serif;\n}\n.logo {\n    float: left;\n    height: 55px;\n    padding: 10px 20px;\n    background: #004B35;\n    width: 700px;\n}\n.logoClient {\n    float: right;\n    height: 55px;\n    line-height: 55px;\n    padding: 10px 0px;\n    margin:0px -10px 0px 0px;\n    font-size: 30px;\n    color: #004B35;\n    overflow:hidden;\n    font-weight: bold;\n    width: 200px;\n    text-align: right;\n}\n.logoClient img {\n    max-height: 40px;\n    max-width:200px;\n    margin: 0px;\n}\n.clear {\n    clear: both;\n}*/\n\n/*footer {\n\tdisplay: inline-block;\n\tfont-size: 8;\n\tcolor: red;\n}\nhead, title, link[href][rel], meta {\n\tdisplay: block;\n}\nlink[href][rel]::after {\n\tcontent: attr(rel);\n\ttext-transform: capitalize;\n}\n\nmeta[charset]::after {\n\tcontent: 'Charset: ' attr(charset);\n}\n\nmeta[name][content]::after {\n\tcontent: attr(name) ': ' attr(content);\n\ttext-transform: capitalize;\n}*/\n/****************************************\n * Spec sheet headers\n ***************************************/\n.markdown-body boxed {\n\tdisplay: \t\t\tblock;\n\tborder: \t\t\t2px solid red;\n\t-webkit-box-shadow: 6px 7px 5px 0px rgba(56,56,56,0.38);\n\t-moz-box-shadow: \t6px 7px 5px 0px rgba(56,56,56,0.38);\n\tbox-shadow: \t\t6px 7px 5px 0px rgba(56,56,56,0.38);\n\ttext-align: \t\tcenter;\n\tpadding: \t\t\t2px .3em 2px .3em;\n\tmargin: \t\t\t1.5em 0 1.5em 0;\n\t/*padding-top: \t\t10em;*/\n}\n.markdown-body mBox {\n\tdisplay: \t\t\tinline-block;\n\tfont-size: \t\t\t95%;\n\tbackground-color: \t#DBDBDB;\n\tfont-family: monospace, monospace;\n\tborder: \t\t\t0px solid #C8C8C8;\n\t-webkit-box-shadow: 2px 3px 2px 0px rgba(56,56,56,0.38);\n\t-moz-box-shadow: \t2px 3px 2px 0px rgba(56,56,56,0.38);\n\tbox-shadow: \t\t2px 3px 2px 0px rgba(56,56,56,0.38);\n\ttext-align: \t\tcenter;\n\tpadding: \t\t\t2px 5px 2px 5px;\n\tmargin: \t\t\t.5em .2em .5em .2em;\n\tborder-radius: \t\t5px;\n}\n.markdown-body mBox.l {\n\tmargin-left: 2.5em;\n}\n.markdown-body rdf { color: red; }\n.markdown-body gnf { color: green; }\n.markdown-body buf { color: blue; }\n.markdown-body orf { color: orange; }\n.markdown-body rdb { background-color: red; }\n.markdown-body gnb { background-color: green; }\n.markdown-body bub { background-color: blue; }\n.markdown-body orb { background-color: orange; }\n.markdown-body yeb { background-color: yellow; }\n.markdown-body lrdb { background-color: #E39696; }\n\n.markdown-body rdb,\n.markdown-body gnb,\n.markdown-body bub,\n.markdown-body orb,\n.markdown-body yeb,\n.markdown-body lrdb {\n    padding-left: 3px;\n    padding-right: 3px;\n}\n\n\n.markdown-body specs {\n\t/* Sections for spec sheet */\n\tbackground-color: \t#fcfcfc;\n\tborder-bottom: \t\t1px solid #d8d8d8;\n\tfont-size: \t\t\t100%;\n\tfont-weight: \t\tbold;\n\tline-height: \t\t200%;\n\tmargin-top: \t\t1.4em;\n\ttext-align: \t\ttop;\n\t/*background-color: \tyellow;*/\n}\n/*\n * Horizontal centered line in header texts\n */\n.markdown-body h4.sphd,\n.markdown-body h4.sp {\n\tmargin:\t\t\t44px 0 22px 0;\n\tvertical-align: middle;\n\ttext-align: \tcenter;\n}\n/*\n * Spec sheet header\n */\n.markdown-body h4.sphd {\n\tbackground: \t#d8d8d8; \t/* For browsers that do not support gradients */\n    background:\t\t-webkit-linear-gradient(left, white, #d8d8d8, white); \t/* For Safari 5.1 to 6.0 */\n    background:\t\t-o-linear-gradient(left, white, #d8d8d8, white); \t\t/* For Opera 11.1 to 12.0 */\n    background:\t \t-moz-linear-gradient(left, white, #d8d8d8, white); \t\t/* For Firefox 3.6 to 15 */\n    background: \tlinear-gradient(left, white, #d8d8d8, white); \t\t\t/* Standard syntax */\n\tline-height: \t1px;\n\tfont-size: \t\t120%;\n}\n/*\n * Spec sheet subheader\n */\n.markdown-body h4.sp \t{\n\tbackground: \t#E6E6E6; \t/* For browsers that do not support gradients */\n    background:\t\t-webkit-linear-gradient(left, white, #E6E6E6, white); \t/* For Safari 5.1 to 6.0 */\n    background:\t\t-o-linear-gradient(left, white, #E6E6E6, white); \t\t/* For Opera 11.1 to 12.0 */\n    background:\t \t-moz-linear-gradient(left, white, #E6E6E6, white); \t\t/* For Firefox 3.6 to 15 */\n    background: \tlinear-gradient(left, white, #E6E6E6, white); \t\t\t/* Standard syntax */\n\tline-height: \t1px;\n\tfont-size: \t\t100%;\n\ttext-align: \t\tleft;\n\t/*margin-right: \t50%*/\n}\n.markdown-body h4.sphd span,\n.markdown-body h4.sp span {\n    padding-right: \t\t10px;\n}\n.markdown-body h4.sphd span {\n    background-color: \t#FCFCFC;\n\tborder:\t\t\t\t1px solid #d8d8d8;\n    padding-left: \t\t10px;\n\t/*margin-left: \t\t0px; */\n}\n.markdown-body h4.sp span {\n    background-color: \twhite;\n\tborder:\t\t\t\tnone;\n\tpadding-left: \t\tnone;\n}\n\n/****************************************\n * For all images and figures\n ***************************************/\n/*.markdown-body figure {\n\tbackground: \twhite;\n\tborder: \t\t1px solid gainsboro;\n\tmargin: \t\t0;\n\tpadding:\t\t0;\n\tposition: \t\trelative;\n}\n.markdown-body img {\n\t-moz-box-sizing: border-box;\n\tborder: \t\t3px solid #e6e6e6;\n\tbox-shadow: \t0px 0px 10px #d3d3d3;\n\tbox-sizing: \tborder-box;\n\tmargin-bottom: \t1.5em;\n\tmargin-top: \t1em;\n\tmax-width: \t\t100% !important;\n\tpadding: \t\t1em;\n}\n.markdown-body figcaption {\n  padding: \t\t\t10px;\n  text-align: \t\tcenter;\n}*/\n\n/****************************************\n * For pictures of class f1\n ***************************************/\n/*.markdown-body figure.f1 {\n\t-moz-box-sizing: border-box;\n\tborder: \t\t3px solid #e6e6e6;\n\tbox-shadow: \t0px 0px 10px #d3d3d3;\n\tbox-sizing: \tborder-box;\n\tmargin-bottom: \t1.5em;\n\tmargin-top: \t1em;\n\tmax-width: \t\t100% !important;\n\tpadding: \t\t0em;\n\tposition: \t\trelative;\n}\n.markdown-body img.f1 {\n\t-moz-box-sizing: border-box;\n\twidth:\t\t\tinherit;\n\tborder: \t\tnone;\n\tbox-shadow: \tnone;\n\tbox-sizing: \tborder-box;\n\tmargin: \t\t0;\n\tpadding: \t\t1em 1em 0 1em;\n}\n.markdown-body figcaption.f1 {\n\tborder-top: \t1px solid #DEDEDE;\n\tpadding: \t\t20px;\n\ttext-align: \tcenter;\n\twidth:\t\t\tinherit;\n}*/\n\n\n /****************************************\n * Declaring variables\n ***************************************/\n:root {\n  --figure-to-img-margin-top: \t1em;\n  --figure-to-img-padding: \t\t1em;\n  --floatbox-text-margin: \t\t1.5em;\n}\n/****************************************\n * Include paragraph numbering:\n * In the generated html file, append this class to body as follows:\n *\n * <article class=\"markdown-body\">;\n * <article class=\"markdown-body paragraphNum\">\n *\n ***************************************/\n.paragraphNum {\n    counter-reset: paragraph;\n    padding-left: 10px;\n}\n.paragraphNum p:before {\n    position: absolute;\n    margin-left: -30px;\n    color: #A4A4FF;\n    font-size:\t8pt;\n    content: counter(paragraph);\n    counter-increment: paragraph;\n}\n.paragraphNum p:before:hover {\n    color:\t\tred;\n}\n/****************************************\n * Different styles/layouts for images:\n ****************************************\n \t+ Simple image\n \t\t- no border, no caption, may float\n\t+ Simple boxed image\n\t\t- Border box and shadow, may float\n\t+ Figure including a caption\n\t\t- Image with border box and shadow\n\t+ Boxed Figure including a caption\n\t\t- Image, no border\n ***************************************/\n.markdown-body img {\n\tmax-width: \t\t100%;\n\tmargin-bottom: \t1.5em;\n\tmargin-top: \t1em;\n\tpadding: \t\t1em;\n\tborder: \t\tnone !important;\n}\n.markdown-body img.box {\n\t-moz-box-sizing: border-box;\n\tbox-sizing: \tborder-box;\n\tborder: \t\t3px solid #e6e6e6;\n\tbox-shadow: \t0px 0px 10px #d3d3d3;\n}\n\n.markdown-body div.fig {\n    text-align: \tcenter;\n    font-style: \titalic;\n    font-size: \t\t90%;\n    /*line-height: \t90%;*/\n}\n.markdown-body div.fig,\n.markdown-body figure {\n\t/*position: \t\trelative;*/\n\tmax-width: \t\t100%;\n\tmargin-bottom: \t1.5 * var(--figure-to-img-margin-top);\n\tmargin-top: \tvar(--figure-to-img-margin-top);\n}\n.markdown-body div.fig.box,\n.markdown-body figure.box {\n\t-moz-box-sizing: border-box;\n\tbox-sizing: \tborder-box;\n\tborder: \t\t3px solid #e6e6e6;\n\tbox-shadow: \t0px 0px 10px #d3d3d3;\n\tpadding: \t\tvar(--figure-to-img-padding);\n}\n\nimg.topal, div.topal, figure.topal { margin-top: 0 !important; }\nimg.botal, div.botal, figure.botal { margin-bottom: 0 !important; }\n\nimg.floatr, div.floatr, figure.floatr {\n\tfloat: \t\t\tright;\n\tmargin: \t\t0.2em 0 0 var(--floatbox-text-margin);\n}\nimg.floatl, div.floatl,\tfigure.floatl {\n\tfloat: \t\t\tleft;\n\tmargin: \t\t0.2em var(--floatbox-text-margin) 0 0;\n}\n.markdown-body div.fig img,\n.markdown-body figure img {\n\t/*background-color: #FFFFCA;*/\n\t-moz-box-sizing: border-box;\n\twidth:\t\t\tinherit !important;\n\theight: \t\tinherit !important;\n\tbox-sizing: \tborder-box;\n\tborder: \t\t3px solid #e6e6e6;\n\tbox-shadow: \t0px 0px 10px #d3d3d3;\n\tmargin-bottom: \t0em;\n\tmargin-top: \t0em;\n}\n\n/*.markdown-body div.fig.nobox img,\n.markdown-body figure.nobox img {\n\tborder: \t\tnone !important;\n\tbox-shadow: \tnone !important;\n}*/\n\n/*\n * An image inside a figure of class=\"box\"\n * should NOT draw any border and remove padding\n */\n.markdown-body div.fig.box img,\n.markdown-body figure.box img {\n\t/*background-color: yellow;*/\n\tborder:\t\t\tnone !important;\n\tbox-shadow: \tnone !important;\n\tpadding: \t\t0em;\n}\n\n\n.markdown-body div.fig figcaption,\n.markdown-body figure figcaption {\n\t/*background-color: #E7FFE7;*/\n\twidth:\t\t\tinherit - 2*var(--figure-to-img-margin-top);\n\tcolor: \t\t\t#595959;\n\ttext-align: \tcenter;\n\tfont-style: \titalic;\n    font-size: \t\t95%;\n\tmargin:\t\t\t3px;\n\tborder: \t\tnone;\n}\n\n.markdown-body div.fig figcaption.la,\n.markdown-body figure figcaption.la {\n\t/*color:\t\t\t\tred !important; */\n\ttext-align: \t\tleft;\n}\n.markdown-body div.fig figcaption.just,\n.markdown-body figure figcaption.just {\n\t/*color:\t\t\t\tred !important; */\n\ttext-align: \t\tjustify;\n}\n\n.markdown-body div.fig.box figcaption,\n.markdown-body figure.box figcaption {\n\tborder-top: \t1px solid #DEDEDE !important;\n\tpadding-top: \t5px;\n}\n.markdown-body table.noborder th,\n.markdown-body table.noborder tr,\n.markdown-body table.noborder td {\n\tborder-width: 0 !important;\n}\n/* View spaced lists:\n\t<div class=\"spaced\" markdown=1>\n\t1. jjj\n\t2. spaced from jjj\n\t</div>*/\n.spaced li {\n\n\t/* Abstand nach Aufzälungs/Listenzeile */\n\tpadding-bottom: .75em;\n\n\t/* Abstand zu Aufzählungszeichen/Nummer */\n\tpadding-left: .65em;\n}\n/* Linked Keywords */\n.markdown-body lkey {\n\tdisplay: \t\t\tinline;\n\tfont-size: \t\t\t100%;\n\t/*color: \t\t\t\t#000;*/\n\tfont-weight: \t\tbold;\n\t/*font-style:\t\titalic;*/\n\tline-height: \t\tfont-size;\n    background-color: \t#FCFCFC;\n\tborder-bottom: \t\t1px solid #D4D4D4;\n\tmargin-left:\t\t1px;\n\tmargin-right:\t\t1px;\n}\n/* Left aligned mathjax paragraph */\n.markdown-body lmjx {\n\tpadding-left: 6em;\n}\n/* A href inside custom class lkey */\n.markdown-body lkey a {\n\tpadding-left: \t\t3px;\n\tpadding-right: \t\t3px;\n\tcolor: \t\t\t\t#2E70B1;\n\ttext-decoration: \tnone;\n}\n.markdown-body lkey:hover,\n.markdown-body lkey:focus,\n.markdown-body lkey:active {\n\t/*padding-left: \t\t2px;*/\n\t/*padding-right: \t\t2px;*/\n\tmargin-left:\t\t0px;\n\tmargin-right:\t\t0px;\n\tborder: \t\t\t1px solid red;\n}\n.markdown-body lkey a:hover,\n.markdown-body lkey a:focus,\n.markdown-body lkey a:active {\n\ttext-decoration: \tnone !important;\n\tborder:\t\t\t\tnone !important;\n}\n.markdown-body yelBg {\n\tbackground-color: yellow;\n\tcolor: red !important;\n\tpadding-left: 6px;\n\tpadding-right: 6px;\n\tborder: 0px solid #C2C2C2;\n}\n.markdown-body yelBg:hover {\n\tfont-weight: bold;\n}\n.markdown-body yelBg:hover.scale {\n\tfont-size: 150% !important;\n}\ndiv.centered {\n\ttext-align: center;\n}\ndiv.centered table {\n\tmargin: 0 auto;\n\ttext-align: left;\n}\n.markdown-body sup {\n\tbackground-color: yellow;\n\tfont-weight: bold;\n\tfont-size: 75%;\n\tline-height: 0;\n\tposition: relative;\n\tvertical-align: baseline;\n\tfont-style: italic;\n}\n.markdown-body sup {\n\ttop: -0.5em;\n}\n.markdown-body sub {\n\tbottom: -0.25em;\n}\n.scale75 {\n\twidth: 75%;\n}\n.noborder {\n\t/*border-color: none !important; */\n\tbox-shadow: none !important;\n\tborder-width: 0px !important;\n}\n.markdown-body hr {\n\t-moz-box-sizing: content-box;\n\tbox-sizing: content-box;\n\theight: 0;\n}\n.markdown-body pre {\n\toverflow: auto;\n}\n.markdown-body code,\n.markdown-body kbd,\n.markdown-body pre,\n.markdown-body samp {\n\tfont-family: monospace, monospace;\n\tfont-size: 1em;\n}\n.markdown-body input {\n\tcolor: inherit;\n\tfont: inherit;\n\tmargin: 0;\n}\n.markdown-body html input[disabled] {\n\tcursor: default;\n}\n.markdown-body input[type=\"checkbox\"] {\n\tbox-sizing: border-box;\n\tpadding: 0;\n}\n.markdown-body table {\n\tborder-collapse: collapse;\n\tborder-spacing: 0;\n\tpadding-top: 1em;\n\tpadding-bottom: 1em;\n}\n.markdown-body table[class=caption] {\n\tpadding-bottom: 0em;\n}\n.markdown-body td,\n.markdown-body th {\n\tpadding: 0;\n}\n.markdown-body .codehilitetable {\n\tborder: 0;\n\tborder-spacing: 0;\n}\n.markdown-body .codehilitetable tr {\n\tborder: 0;\n}\n.markdown-body .codehilitetable pre,\n.markdown-body .codehilitetable div.codehilite {\n\tmargin: 0;\n}\n.markdown-body .linenos,\n.markdown-body .code,\n.markdown-body .codehilitetable td {\n\tborder: 0;\n\tpadding: 0;\n}\n.markdown-body td:not(.linenos) .linenodiv {\n\tpadding: 0 !important;\n}\n.markdown-body .code {\n\twidth: 100%;\n}\n.markdown-body .linenos div pre,\n.markdown-body .linenodiv pre,\n.markdown-body .linenodiv {\n\tborder: 0;\n\t-webkit-border-radius: 0;\n\t-moz-border-radius: 0;\n\tborder-radius: 0;\n\t-webkit-border-top-left-radius: 3px;\n\t-webkit-border-bottom-left-radius: 3px;\n\t-moz-border-radius-topleft: 3px;\n\t-moz-border-radius-bottomleft: 3px;\n\tborder-top-left-radius: 3px;\n\tborder-bottom-left-radius: 3px;\n}\n.markdown-body .code div pre,\n.markdown-body .code div {\n\tborder: 0;\n\t-webkit-border-radius: 0;\n\t-moz-border-radius: 0;\n\tborder-radius: 0;\n\t-webkit-border-top-right-radius: 3px;\n\t-webkit-border-bottom-right-radius: 3px;\n\t-moz-border-radius-topright: 3px;\n\t-moz-border-radius-bottomright: 3px;\n\tborder-top-right-radius: 3px;\n\tborder-bottom-right-radius: 3px;\n}\n.markdown-body * {\n\t-moz-box-sizing: border-box;\n\tbox-sizing: border-box;\n}\n.markdown-body input {\n\tfont: 13px Helvetica, arial, freesans, clean, sans-serif, \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n\tline-height: normal;\n}\n.markdown-body a {\n\tcolor: #4183c4;\n\ttext-decoration: none;\n}\n.markdown-body a:hover,\n.markdown-body a:focus,\n.markdown-body a:active {\n\ttext-decoration: underline;\n}\n.markdown-body hr {\n\theight: 0;\n\tmargin: 15px 0;\n\toverflow: hidden;\n\tbackground: transparent;\n\tborder: 0;\n\tborder-bottom: 1px solid #ddd;\n}\n.markdown-body hr:before,\n.markdown-body hr:after {\n\tdisplay: table;\n\tcontent: \" \";\n}\n.markdown-body hr:after {\n\tclear: both;\n}\n.markdown-body blockquote {\n\tpadding: 0px 15px;\n\tmargin-left: 0.1em;\n\tmargin-right: 1.5em;\n\tcolor: #777;\n\tborder-left: 4px solid #ddd;\n\tfont-style: italic;\n\t/*margin: 1.25em;*/\n}\n.markdown-body blockquote>:first-child {\n\tmargin-top: 2em;\n}\n.markdown-body blockquote>:last-child {\n\tmargin-bottom: 2em;\n}\n.markdown-body ul,\n.markdown-body ol {\n\tpadding: 0;\n\tmargin-top: 0;\n\tmargin-bottom: 0;\n}\n.markdown-body ol ol,\n.markdown-body ul ol {\n\tlist-style-type: lower-roman;\n}\n.markdown-body ul ul ol,\n.markdown-body ul ol ol,\n.markdown-body ol ul ol,\n.markdown-body ol ol ol {\n\tlist-style-type: lower-alpha;\n}\n.markdown-body dd {\n\tmargin-left: 0;\n}\n.markdown-body code,\n.markdown-body pre,\n.markdown-body samp {\n\tfont-family: Consolas, \"Liberation Mono\", Menlo, Courier, monospace;\n\tfont-size: 12px;\n}\n.markdown-body pre {\n\tmargin-top: 0;\n\tmargin-bottom: 0;\n}\n.markdown-body kbd {\n\tbackground-color: #e7e7e7;\n\tbackground-image: -moz-linear-gradient(#fefefe, #e7e7e7);\n\tbackground-image: -webkit-linear-gradient(#fefefe, #e7e7e7);\n\tbackground-image: linear-gradient(#fefefe, #e7e7e7);\n\tbackground-repeat: repeat-x;\n\tborder-radius: 2px;\n\tborder: 1px solid #cfcfcf;\n\tcolor: #000;\n\tpadding: 3px 5px;\n\tline-height: 10px;\n\tfont: 11px Consolas, \"Liberation Mono\", Menlo, Courier, monospace;\n\tdisplay: inline-block;\n}\n.markdown-body>*:first-child {\n\tmargin-top: 0 !important;\n}\n.markdown-body>*:last-child {\n\tmargin-bottom: 0 !important;\n}\n.markdown-body .headeranchor-link {\n\tposition: absolute;\n\ttop: 0;\n\tbottom: 0;\n\tleft: 0;\n\tdisplay: block;\n\tpadding-right: 6px;\n\tpadding-left: 30px;\n\tmargin-left: -30px;\n}\n.markdown-body .headeranchor-link:focus {\n\toutline: none;\n}\n/* ------- Headers ------- */\n/* ----------------------- */\n.markdown-body h1,\n.markdown-body h2,\n.markdown-body h3,\n.markdown-body h4,\n.markdown-body h5,\n.markdown-body h6 {\n\t/*background-color: #fcfcfc;*/\n\t/*border-top: \t\t1px solid #d8d8d8;*/\n\t/*border-bottom: \t1px solid #f0f0f0;*/\n\tfont-size: \t\t\t2em;\n\tfont-weight: \t\tbold;\n\tline-height: \t\t100%;\n\tposition: \t\t\trelative;\n\ttext-anchor: \t\tmiddle;\n\tmargin-bottom: \t\t.6em;\n}\n.markdown-body h1 .headeranchor,\n.markdown-body h2 .headeranchor,\n.markdown-body h3 .headeranchor,\n.markdown-body h4 .headeranchor,\n.markdown-body h5 .headeranchor,\n.markdown-body h6 .headeranchor {\n\tdisplay: none;\n\tcolor: #000;\n\tvertical-align: left;\n}\n.markdown-body h1:hover .headeranchor-link,\n.markdown-body h2:hover .headeranchor-link,\n.markdown-body h3:hover .headeranchor-link,\n.markdown-body h4:hover .headeranchor-link,\n.markdown-body h5:hover .headeranchor-link,\n.markdown-body h6:hover .headeranchor-link {\n\theight: 1em;\n\tpadding-left: 8px;\n\tmargin-left: -30px;\n\tline-height: 1;\n\ttext-decoration: none;\n}\n.markdown-body h1:hover .headeranchor-link .headeranchor,\n.markdown-body h2:hover .headeranchor-link .headeranchor,\n.markdown-body h3:hover .headeranchor-link .headeranchor,\n.markdown-body h4:hover .headeranchor-link .headeranchor,\n.markdown-body h5:hover .headeranchor-link .headeranchor,\n.markdown-body h6:hover .headeranchor-link .headeranchor {\n\tdisplay: inline-block;\n}\n.markdown-body h1 {\n\tbackground-color: \t#fcfcfc;\n\tborder-bottom: \t\t1px solid #d8d8d8;\n\tborder-top: \t\t1px solid #d8d8d8;\n\tfont-size: \t\t\t200%;\n\tline-height: \t\t140%;\n\t/*margin-bottom: \t\t.6em;*/\n\tmargin-top: \t\t1.4em;\n\t/*padding-bottom: \t0.1em;*/\n}\n.markdown-body h2 {\n\t/*background-color: \t#fcfcfc;*/\n\t/*border-top: \t\t1px solid #d8d8d8;*/\n\tborder-bottom: \t\t1px solid #d8d8d8;\n\tfont-size: \t\t\t175%;\n\tline-height: \t\t140%;\n\t/*margin-bottom: \t\t.5em;*/\n\tmargin-top: \t\t1em;\n\t/*padding-bottom: \t0.1em;*/\n}\n.markdown-body h3 {\n\t/*background-color: \t#fcfcfc;*/\n\t/*border-top: \t\t1px solid #d8d8d8;*/\n\tborder-bottom: \t\t1px solid #f0f0f0;\n\tfont-size: \t\t\t150%;\n\tline-height: \t\tfont-size;\n\tmargin-bottom: \t\t.5em;\n\tmargin-top: \t\t1em;\n\t/*padding-bottom: \t0.1em;*/\n}\n.markdown-body h4 {\n\t/*background-color: #fcfcfc;*/\n\t/*border-top: \t\t1px solid #d8d8d8;*/\n\t/*border-bottom: \t1px solid #f0f0f0;*/\n\tfont-size: \t\t\t125%;\n\tline-height: \t\tfont-size;\n\tpadding-bottom: \t0.1em;\n\tmargin-top: \t\t1.5em;\n\t/*margin-bottom: \t\t.4em;*/\n\t/*padding-bottom: \t0.1em;*/\n}\n.markdown-body h5 {\n\t/*background-color: #fcfcfc;*/\n\t/*border-top: \t\t1px solid #d8d8d8;*/\n\t/*border-bottom: \t1px solid #f0f0f0;*/\n\tfont-size: \t\t\t110%;\n\tline-height: \t\tfont-size;\n\tpadding-bottom: \t0.1em;*/\n\tmargin-top: \t\t.8em;\n\t/*margin-bottom: \t\t.4em;*/\n\t/*padding-bottom: \t0.1em;*/\n}\n.markdown-body h6 {\n\tfont-size: .8em;\n\tcolor: #777;\n}\n.markdown-body p,\n.markdown-body blockquote,\n.markdown-body ul,\n.markdown-body ol,\n.markdown-body dl,\n.markdown-body table,\n.markdown-body pre,\n.markdown-body .admonition {\n\tmargin-top: 0;\n\tmargin-bottom: 18px;\n\t/*background-color: purple;*/\n}\n.markdown-body hr {\n\theight: 4px;\n\tpadding: 0;\n\tmargin: 16px 0;\n\tbackground-color: #e7e7e7;\n\tborder: 0 none;\n}\n.markdown-body ul,\n.markdown-body ol {\n\t/* Absatzformat listen */\n\tpadding-left: 2em;\n\t/*margin-bottom: 2em;*/\n\tcolor: #555;\n\tfont-style: italic;\n\tbackground-color: #fefefe;\n\t/*line-height: 1.8em*/\n\t/*background-color: green;*/\n}\n.markdown-body ul ul,\n.markdown-body ul ol,\n.markdown-body ol ol,\n.markdown-body ol ul {\n\tmargin-top: 0;\n\tmargin-bottom: 0;\n}\n.markdown-body li>p {\n\t/*margin-top: 16px;*/\n\tmargin-top: 2em;\n\n\t/* Absatzformat Fußnoten */\n\t/*background-color: red;*/\n}\n.markdown-body dl {\n\tpadding: 0;\n}\n.markdown-body dl dt {\n\tpadding: 0;\n\tmargin-top: 16px;\n\tfont-size: 1em;\n\tfont-style: italic;\n\tfont-weight: bold;\n}\n.markdown-body dl dd {\n\tpadding: 0 16px;\n\tmargin-bottom: 16px;\n}\n.markdown-body table {\n\tdisplay: block;\n\twidth: 100%;\n\toverflow: auto;\n\tword-break: normal;\n\tword-break: keep-all;\n}\n.markdown-body table th {\n\tfont-weight: bold;\n\tbackground-color: #E6E6E6;\n\tborder: 1px solid #8F8F8F;\n}\n.markdown-body table th,\n.markdown-body table td {\n\tpadding: 6px 13px;\n\tborder: 1px solid #ddd;\n}\n.markdown-body table tr {\n\tbackground-color: #fff;\n\tborder-top: 1px solid #ccc;\n}\n.markdown-body table tr:nth-child(4n+1) {\n    background-color: #f8f8f8;\n    border-top: 2px solid blue;\n}\n.markdown-body table tr:nth-child(4n) {\n    font-weight: bold;\n}\n.markdown-body table.noalter tr:nth-child(2n) {\n\tbackground-color: #fff !important;\n}\n.markdown-body code,\n.markdown-body samp {\n\tpadding: 0;\n\tpadding-top: 0.2em;\n\tpadding-bottom: 0.2em;\n\tmargin: 0;\n\tfont-size: 85%;\n\tbackground-color: rgba(0,0,0,0.04);\n\tborder-radius: 3px;\n}\n.markdown-body code:before,\n.markdown-body code:after {\n\tletter-spacing: -0.2em;\n\tcontent: \"\\00a0\";\n}\n.markdown-body pre>code {\n\tpadding: 0;\n\tmargin: 0;\n\tfont-size: 100%;\n\tword-break: normal;\n\twhite-space: pre;\n\tbackground: transparent;\n\tborder: 0;\n}\n.markdown-body .codehilite {\n\tmargin-bottom: 16px;\n}\n.markdown-body .codehilite pre,\n.markdown-body pre {\n\tpadding: 16px;\n\toverflow: auto;\n\tfont-size: 85%;\n\tline-height: 1.45;\n\tbackground-color: #f7f7f7;\n\tborder-radius: 3px;\n}\n.markdown-body .codehilite pre {\n\tmargin-bottom: 0;\n\tword-break: normal;\n}\n.markdown-body pre {\n\tword-wrap: normal;\n}\n.markdown-body pre code {\n\tdisplay: inline;\n\tmax-width: initial;\n\tpadding: 0;\n\tmargin: 0;\n\toverflow: initial;\n\tline-height: inherit;\n\tword-wrap: normal;\n\tbackground-color: transparent;\n\tborder: 0;\n}\n.markdown-body pre code:before,\n.markdown-body pre code:after {\n\tcontent: normal;\n}\n/* Ermahnung */\n.markdown-body .admonition {\n\t-webkit-border-radius: 3px;\n\t-moz-border-radius: 3px;\n\tposition: relative;\n\tborder-radius: 3px;\n\tborder: 1px solid #e0e0e0;\n\tborder-left: 6px solid #333;\n\tpadding: 10px 10px 10px 30px;\n}\n.markdown-body .admonition table {\n\tcolor: #333;\n}\n.markdown-body .admonition p {\n\tpadding: 0;\n}\n.markdown-body .admonition-title {\n\tfont-weight: bold;\n\tmargin: 0;\n}\n.markdown-body .admonition>.admonition-title {\n\tcolor: #333;\n}\n.markdown-body .attention>.admonition-title {\n\tcolor: #a6d796;\n}\n.markdown-body .caution>.admonition-title {\n\tcolor: #d7a796;\n}\n.markdown-body .hint>.admonition-title {\n\tcolor: #96c6d7;\n}\n.markdown-body .danger>.admonition-title {\n\tcolor: #c25f77;\n}\n.markdown-body .question>.admonition-title {\n\tcolor: #96a6d7;\n}\n.markdown-body .note>.admonition-title {\n\tcolor: #d7c896;\n}\n.markdown-body .admonition:before,\n.markdown-body .attention:before,\n.markdown-body .caution:before,\n.markdown-body .hint:before,\n.markdown-body .danger:before,\n.markdown-body .question:before,\n.markdown-body .note:before {\n\tfont: normal normal 16px fontawesome-mini;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n\tline-height: 1.5;\n\tcolor: #333;\n\tposition: absolute;\n\tleft: 0;\n\ttop: 0;\n\tpadding-top: 10px;\n\tpadding-left: 10px;\n}\n.markdown-body .admonition:before {\n\tcontent: \"\\f056\\00a0\";\n\tcolor: 333;\n}\n.markdown-body .attention:before {\n\tcontent: \"\\f058\\00a0\";\n\tcolor: #a6d796;\n}\n.markdown-body .caution:before {\n\tcontent: \"\\f06a\\00a0\";\n\tcolor: #d7a796;\n}\n.markdown-body .hint:before {\n\tcontent: \"\\f05a\\00a0\";\n\tcolor: #96c6d7;\n}\n.markdown-body .danger:before {\n\tcontent: \"\\f057\\00a0\";\n\tcolor: #c25f77;\n}\n.markdown-body .question:before {\n\tcontent: \"\\f059\\00a0\";\n\tcolor: #96a6d7;\n}\n.markdown-body .note:before {\n\tcontent: \"\\f040\\00a0\";\n\tcolor: #d7c896;\n}\n.markdown-body .admonition::after {\n\tcontent: normal;\n}\n.markdown-body .attention {\n\tborder-left: 6px solid #a6d796;\n}\n.markdown-body .caution {\n\tborder-left: 6px solid #d7a796;\n}\n.markdown-body .hint {\n\tborder-left: 6px solid #96c6d7;\n}\n.markdown-body .danger {\n\tborder-left: 6px solid #c25f77;\n}\n.markdown-body .question {\n\tborder-left: 6px solid #96a6d7;\n}\n.markdown-body .note {\n\tborder-left: 6px solid #d7c896;\n}\n.markdown-body .admonition>*:first-child {\n\tmargin-top: 0 !important;\n}\n.markdown-body .admonition>*:last-child {\n\tmargin-bottom: 0 !important;\n}\n/* progress bar*/\n.markdown-body .progress {\n\tdisplay: block;\n\twidth: 300px;\n\tmargin: 10px 0;\n\theight: 24px;\n\t-webkit-border-radius: 3px;\n\t-moz-border-radius: 3px;\n\tborder-radius: 3px;\n\tbackground-color: #ededed;\n\tposition: relative;\n\tbox-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);\n}\n.markdown-body .progress-label {\n\tposition: absolute;\n\ttext-align: center;\n\tfont-weight: bold;\n\twidth: 100%; margin: 0;\n\tline-height: 24px;\n\tcolor: #333;\n\ttext-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;\n\t-webkit-font-smoothing: antialiased !important;\n\twhite-space: nowrap;\n\toverflow: hidden;\n}\n.markdown-body .progress-bar {\n\theight: 24px;\n\tfloat: left;\n\t-webkit-border-radius: 3px;\n\t-moz-border-radius: 3px;\n\tborder-radius: 3px;\n\tbackground-color: #96c6d7;\n\tbox-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);\n\tbackground-size: 30px 30px;\n\tbackground-image: -webkit-linear-gradient(\n\t\t135deg, rgba(255, 255, 255, .4) 27%,\n\t\ttransparent 27%,\n\t\ttransparent 52%, rgba(255, 255, 255, .4) 52%,\n\t\trgba(255, 255, 255, .4) 77%,\n\t\ttransparent 77%, transparent\n\t\t);\n\tbackground-image: -moz-linear-gradient(\n\t\t135deg,\n\t\trgba(255, 255, 255, .4) 27%, transparent 27%,\n\t\ttransparent 52%, rgba(255, 255, 255, .4) 52%,\n\t\trgba(255, 255, 255, .4) 77%, transparent 77%,\n\t\ttransparent\n\t\t);\n\tbackground-image: -ms-linear-gradient(\n\t\t135deg,\n\t\trgba(255, 255, 255, .4) 27%, transparent 27%,\n\t\ttransparent 52%, rgba(255, 255, 255, .4) 52%,\n\t\trgba(255, 255, 255, .4) 77%, transparent 77%,\n\t\ttransparent\n\t\t);\n\tbackground-image: -o-linear-gradient(\n\t\t135deg,\n\t\trgba(255, 255, 255, .4) 27%, transparent 27%,\n\t\ttransparent 52%, rgba(255, 255, 255, .4) 52%,\n\t\trgba(255, 255, 255, .4) 77%, transparent 77%,\n\t\ttransparent\n\t\t);\n\tbackground-image: linear-gradient(\n\t\t135deg,\n\t\trgba(255, 255, 255, .4) 27%, transparent 27%,\n\t\ttransparent 52%, rgba(255, 255, 255, .4) 52%,\n\t\trgba(255, 255, 255, .4) 77%, transparent 77%,\n\t\ttransparent\n\t\t);\n}\n.markdown-body .progress-100plus .progress-bar {\n\tbackground-color: #a6d796;\n}\n.markdown-body .progress-80plus .progress-bar {\n\tbackground-color: #c6d796;\n}\n.markdown-body .progress-60plus .progress-bar {\n\tbackground-color: #d7c896;\n}\n.markdown-body .progress-40plus .progress-bar {\n\tbackground-color: #d7a796;\n}\n.markdown-body .progress-20plus .progress-bar {\n\tbackground-color: #d796a6;\n}\n.markdown-body .progress-0plus .progress-bar {\n\tbackground-color: #c25f77;\n}\n.markdown-body .candystripe-animate .progress-bar{\n\t-webkit-animation: animate-stripes 3s linear infinite;\n\t-moz-animation: animate-stripes 3s linear infinite;\n\tanimation: animate-stripes 3s linear infinite;\n}\n@-webkit-keyframes animate-stripes {\n\t0% {\n\t\tbackground-position: 0 0;\n\t}\n\t100% {\n\t\tbackground-position: 60px 0;\n\t}\n}\n@-moz-keyframes animate-stripes {\n\t0% {\n\t\tbackground-position: 0 0;\n\t}\n\t100% {\n\t\tbackground-position: 60px 0;\n\t}\n}\n@keyframes animate-stripes {\n\t0% {\n\t\tbackground-position: 0 0;\n\t}\n\t100% {\n\t\tbackground-position: 60px 0;\n\t}\n}\n.markdown-body .gloss .progress-bar {\n\tbox-shadow:\n\tinset 0 4px 12px rgba(255, 255, 255, .7),\n\tinset 0 -12px 0 rgba(0, 0, 0, .05);\n}\n/* Multimarkdown Critic Blocks */\n.markdown-body .critic_mark {\n\tbackground: #ff0;\n}\n.markdown-body .critic_delete {\n\tcolor: #c82829;\n\ttext-decoration: line-through;\n}\n.markdown-body .critic_insert {\n\tcolor: #718c00 ;\n\ttext-decoration: underline;\n}\n.markdown-body .critic_comment {\n\tcolor: #8e908c;\n\tfont-style: italic;\n}\n.markdown-body .headeranchor {\n\tfont: normal normal 16px octicons-anchor;\n\tline-height: 1;\n\tdisplay: inline-block;\n\ttext-decoration: none;\n\t-webkit-font-smoothing: antialiased;\n\t-moz-osx-font-smoothing: grayscale;\n\t-webkit-user-select: none;\n\t-moz-user-select: none;\n\t-ms-user-select: none;\n\tuser-select: none;\n}\n.headeranchor:before {\n\tcontent: '\\f05c';\n}\n.markdown-body .task-list-item {\n\tlist-style-type: none;\n}\n.markdown-body .task-list-item+.task-list-item {\n\tmargin-top: 3px;\n}\n.markdown-body .task-list-item input {\n\tmargin: 0 4px 0.25em -20px;\n\tvertical-align: middle;\n}\n/* Media */\n@media only screen and (min-width: 480px) {\n\t.markdown-body {\n\t\tfont-size:14px;\n\t}\n}\n@media only screen and (min-width: 768px) {\n\t.markdown-body {\n\t\tfont-size:16px;\n\t}\n}\n@media print {\n\t.markdown-body * {\n\t\tbackground: transparent !important;\n\t\tcolor: black !important;\n\t\tfilter:none !important;\n\t\t-ms-filter: none !important;\n\t}\n\t.markdown-body {\n\t\tfont-size:12pt;\n\t\tmax-width:100%;\n\t\toutline:none;\n\t\tborder: 0;\n\t}\n\t.markdown-body a,\n\t.markdown-body a:visited {\n\t\ttext-decoration: underline;\n\t}\n\t.markdown-body .headeranchor-link {\n\t\tdisplay: none;\n\t}\n\t.markdown-body a[href]:after {\n\t\tcontent: \" (\" attr(href) \")\";\n\t}\n\t.markdown-body abbr[title]:after {\n\t\tcontent: \" (\" attr(title) \")\";\n\t}\n\t.markdown-body .ir a:after,\n\t.markdown-body a[href^=\"javascript:\"]:after,\n\t.markdown-body a[href^=\"#\"]:after {\n\t\tcontent: \"\";\n\t}\n\t.markdown-body pre {\n\t\twhite-space: pre;\n\t\twhite-space: pre-wrap;\n\t\tword-wrap: break-word;\n\t}\n\t.markdown-body pre,\n/*\t.markdown-body blockquote {\n\t\tborder: 1px solid #999;\n\t\tpadding-right: 1em;\n\t\tpage-break-inside: avoid;\n\t\t}*/\n\t\t.markdown-body .progress,\n\t\t.markdown-body .progress-bar {\n\t\t\t-moz-box-shadow: none;\n\t\t\t-webkit-box-shadow: none;\n\t\t\tbox-shadow: none;\n\t\t}\n\t\t.markdown-body .progress {\n\t\t\tborder: 1px solid #ddd;\n\t\t}\n\t\t.markdown-body .progress-bar {\n\t\t\theight: 22px;\n\t\t\tborder-right: 1px solid #ddd;\n\t\t}\n\t\t.markdown-body tr,\n\t\t.markdown-body img {\n\t\t\tpage-break-inside: avoid;\n\t\t}\n\t\t.markdown-body p,\n\t\t.markdown-body h2,\n\t\t.markdown-body h3 {\n\t\t\torphans: 3;\n\t\t\twidows: 3;\n\t\t}\n\t\t.markdown-body h2,\n\t\t.markdown-body h3 {\n\t\t\tpage-break-after: avoid;\n\t\t}\n\t}\n",
-			"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/styleMdb_ccsMd.css",
-			"file_size": 37503,
-			"file_write_time": 131352852640513292,
-			"settings":
-			{
-				"buffer_size": 37500,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
-			"settings":
-			{
-				"buffer_size": 83435,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
-			"settings":
-			{
-				"buffer_size": 37515,
+				"buffer_size": 3251,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -793,10 +654,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 32.0,
-		"last_filter": "colo",
+		"height": 52.0,
+		"last_filter": "set syn py",
 		"selected_items":
 		[
+			[
+				"set syn py",
+				"Set Syntax: Python"
+			],
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"lore",
+				"Add some Lorem Gibson"
+			],
 			[
 				"colo",
 				"Color Picker"
@@ -812,10 +685,6 @@
 			[
 				"insta",
 				"Package Control: Install Package"
-			],
-			[
-				"cle",
-				"Clear Console"
 			],
 			[
 				"anac d",
@@ -860,10 +729,6 @@
 			[
 				"install ",
 				"Package Control: Install Package"
-			],
-			[
-				"lore",
-				"Add some Lorem Gibson"
 			],
 			[
 				"prett",
@@ -1149,6 +1014,66 @@
 		"height": 178.0,
 		"history":
 		[
+			"files",
+			"[files.append(os.path.join(os.getcwd(), cf)) for cf in list(filter(lambda x: 'pdf' in x, os.listdir(os.getcwd())))]",
+			"files=[]",
+			"os.path.join(os.getcwd(), files[2])",
+			"files",
+			"files=os.listdir(os.getcwd())",
+			"files=os.listdir.abspath(os.getcwd())",
+			"os.getcwd()",
+			"os.listdir.abspath(os.getcwd())",
+			"os.listdir(os.getcwd())",
+			"os.chdir('/media/data/ti/TMS320F28379D_docs')",
+			"os.listdir(os.getcwd())",
+			"import os",
+			"os.listdir(os.getcwd())",
+			"os.listdir(os.getcwd()))",
+			"os.listdir(os.getcwd())))",
+			"fn.replace('TMS', 'ä')",
+			"fn.replace('TMS', 'ä', fn)",
+			"re.findall('TMS', fn)",
+			"re.match('TMS', fn).group()",
+			"re.match('TMS', fn).groups()",
+			"re.match('TMS', fn)",
+			"import re",
+			"re.match('TMS', fn)",
+			"fn.index('TMS')",
+			"'TMS' in fn",
+			"fn.finds('TMS')",
+			"fn",
+			"fn.find('TMS')",
+			"fn.dind('TMS')",
+			"fn='TMS320F28379D_TMS320F28377D_TMS320F28376D_TMS320F28375D_TMS320F28374D_Dual-Core_DelfinoMicrocontrollers_Rev_G'",
+			"os.listdir(os.getcwd())",
+			"os.getcwd()",
+			"os.cwd",
+			"os.cwd()",
+			"os.pwd()",
+			"os.pwd",
+			"list(filter(lambda x: 'pdf' in x, os.listdir()))",
+			"os.listdir()",
+			"os.chdir('/media/data/ti/TMS320F28379D_docs')",
+			"os.chdir(ir'/media/data/ti/TMS320F28379D_docs')",
+			"os.cdh(ir'/media/data/ti/TMS320F28379D_docs')",
+			"os.cd('/media/data/ti/TMS320F28379D_docs')",
+			"os.listdir()",
+			"os.path.ls()",
+			"os.path.dir()",
+			"os.path()",
+			"import os",
+			"os.path()",
+			"pp(dir(argparse))",
+			"pp(dir(argparser))",
+			"from pprint import pprint as pp",
+			"import argparse",
+			"print('toc_ref \"{}\"'.format(mode))",
+			"print('toc_ref \"%s\"'.format(mode))",
+			"mode='insert'",
+			"settings.get(\"chapter_compile\")",
+			"settings.get(\"inline_diagram\")",
+			"settings.has(\"inline_diagram\")",
+			"settings = sublime.load_settings('MarkdownPreview.sublime-settings')",
 			"view.run_command('align_markdown_table')",
 			"aligns.index('lefts')",
 			"aligns.index('left')",
@@ -1216,67 +1141,7 @@
 			"lsegs[k][1:-1]",
 			"pp(lsegs)",
 			"lsegs",
-			"lsegs.append([' INT1.y  ', ' WAKEINT   ', ' TINT0     ', ' ADCINT      ', ' XINT2       ', ' XINT1       ', ' Reserved    ', ' SEQ2INT     ', ' SEQ1INT     '])",
-			"lsegs=[[' INT1.y  ', ' WAKEINT   ', ' TINT0     ', ' ADCINT      ', ' XINT2       ', ' XINT1       ', ' Reserved    ', ' SEQ2INT     ', ' SEQ1INT     ']]",
-			"lsegs=[]",
-			"[print(x) for x in range(7-1, -1,-1)]",
-			"[print(x) for x in range(7-1, -1,1)]",
-			"[print(x) for x in range(7-1, -1)]",
-			"[print(x) for x in range(7-1, 0)]",
-			"[print(x) for x in range(7-1, 0,-1)]",
-			"[print(x) for x in range(7-1, 1,-1)]",
-			"[print(x) for x in range(7,1,-1)]",
-			"[print(x) from x in range(7,1,-1)]",
-			"range(7,1,-1)",
-			"5*' '",
-			"range(3)*' '",
-			"range(3)",
-			"range('')",
-			"range",
-			"view.file_name()",
-			"view.file__name()",
-			"view.name()",
-			"view.name",
-			"view.substr(view.full_line(view.sel()[0]))",
-			"view.sel()[0]",
-			"print(dir(view.sel()))",
-			"print(dir(view.sel()",
-			"view.sel()",
-			"view.substr(view.full_line(2))",
-			"view.substr(view.full_line(1))",
-			"view.substr(view.full_line(view.sel()))",
-			"view.read_line()",
-			"view.readline()",
-			"import numpy as np",
-			"pp(sys.path)",
-			"import tkinter",
-			"from Lumpy import Lumpy; lum=Lumpy(); lum.make_reference()",
-			"sys.path.insert(0, '/usr/lib/python3.3/tkinter')",
-			"from Lumpy import Lumpy; lum=Lumpy(); lum.make_reference()",
-			"pp(sys.path)",
-			"sys.path.insert(0, '/home/mainster/CODES_local/pythons/swampy-2.1.5')",
-			"pp(sys.path)",
-			"from pprint import pprint as pp",
-			"pp",
-			"ppsys.path",
-			"sys.path",
-			"import sys",
-			"sys.path",
-			"from Lumpy import Lumpy; lum=Lumpy(); lum.make_reference()",
-			"print(view.run_command('save'))",
-			"re.findall('\\w+', view.substr(view.find('^#+\\s(\\w+)',0)))[0]",
-			"re.findall('\\w+', view.substr(view.find('^#+\\s(\\w+)',0)))",
-			"re.match('\\w+', view.substr(view.find('^#+\\s(\\w+)',0)))",
-			"re.match('\\w+', view.substr(view.find('^#+\\s(\\w+)',0))",
-			"view.substr(view.find('^#+\\s(\\w+)',0))",
-			"view.find('^#+\\s(\\w+)',0)",
-			"view.find('^(\\w+)',0)",
-			"view.find_all('^(\\w+)')",
-			"view.find_all('^#+(\\w+)')",
-			"re.find_all('^#+')",
-			"re.findall('^#+')",
-			"re.find('^#+')",
-			"import re"
+			"lsegs.append([' INT1.y  ', ' WAKEINT   ', ' TINT0     ', ' ADCINT      ', ' XINT2       ', ' XINT1       ', ' Reserved    ', ' SEQ2INT     ', ' SEQ1INT     '])"
 		]
 	},
 	"distraction_free":
@@ -1291,31 +1156,65 @@
 	"expanded_folders":
 	[
 		"/media/data/whz/projectGalvoDocu",
-		"/media/data/whz/projectGalvoDocu/chapters"
+		"/media/data/whz/projectGalvoDocu/chapters",
+		"/media/data/whz/projectGalvoDocu/matlab"
 	],
 	"file_history":
 	[
+		"/media/data/CODES/ccs7_theBeast/_B_dlib_PID_dcl/.ccsproject",
+		"/media/data/CODES/ccs7_theBeast/_B_dlib_PID_dcl/.cproject",
+		"/media/data/CODES/ccs7_theBeast/_B_dlib_PID_dcl/.project",
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/media/data/whz/projectGalvoDocu/merged.html",
+		"/home/mainster/&",
+		"/home/mainster/CODES_local/pythons/mdTocRefCleaner.py",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/mainster/CODES_local/pythons/pdfTitleExtractor.py",
+		"/tmp/refs.mmd",
+		"/tmp/06_Terminologie.mmd",
+		"/media/data/whz/projectGalvoDocu/starUML_workspace/DateClass.cpp",
+		"/home/mainster/.config/sublime-text-3/Packages/User/Side Bar.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/User/snipsMdb/pyTemplate.sublime-snippet",
+		"/tmp/texasinstrumentsc2000.mlpkginstall",
+		"/media/mainster/P2/syslinux.cfg",
+		"/media/mainster/extdata/PXEboot/pxelinux.cfg/default",
+		"/media/data/whz/projectGalvoDocu/chapters/10_Softwarearchitektur.html",
+		"/tmp/styleMdb_projectGalvoDocu.css",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/media/data/whz/projectGalvoDocu/chapters/11_Plattform.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/10_Softwarearchitektur.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
+		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/styleMdb_ccsMd.css",
+		"/media/data/whz/projectGalvoDocu/chapters/00_TOC.mmd",
+		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/styleMdb_ccsMd.css",
+		"/home/mainster/CODES_local/pythons/subprocess_clipboard.py",
+		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/DIMM100_pinout.md",
+		"/home/mainster/scripts/meminfo.sh",
+		"/home/mainster/.config/sublime-text-3/Packages/User/CalcIrqIdCommand.py",
+		"/home/mainster/scripts/qemuWin7.sh",
+		"/home/mainster/scripts/unspace",
+		"/home/mainster/compiledStuff/PCGU1000driver_2009-07-13/Komponente/libusb.pp",
+		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/PIEINT_vectTable.md",
+		"/home/mainster/CODES_local/ccs7_workspace/MD_F2833x_LIB/PIEINT_vectTable.md",
+		"/usr/bin/miniterm.py",
+		"/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.svg",
+		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/tmp/titi",
 		"/home/mainster/compiledStuff/pdfcrack/Makefile.patch",
 		"/home/mainster/compiledStuff/pdfcrack/Makefile.orig",
 		"/home/mainster/compiledStuff/pdfcrack/Makefile",
 		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/PIEINT_vectTable.md",
-		"/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/styleMdb_ccsMd.css",
 		"/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb1.svg",
 		"/tmp/titi3",
 		"/media/data/CODES/ccs7_workspace3/MD_BSP_EXPLORER_F28335/.DIMM100_pinout.md.html",
 		"/home/mainster/CODES_local/ccs7_workspace3/eclipseGfmMarkdownPlugin_mdbStyles.css",
 		"/media/data/CODES/ccs7_workspace3/MD_BSP_EXPLORER_F28335/DIMM100_pinout.md",
 		"/opt/ti/ccsv7/tirex/ti-rex-core/public/stylesheets/markdown.css",
-		"/media/data/whz/projectGalvoDocu/chapters/10_Softwarearchitektur.html",
 		"/home/mainster/CODES_local/ccs7_workspace2/ELT131_01/main.c",
 		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.mmd",
-		"/media/data/whz/projectGalvoDocu/merged.mmd",
 		"/media/data/whz/projectGalvoDocu/README.md",
 		"/media/data/whz/reports/ELT131/out.tex",
-		"/media/data/whz/projectGalvoDocu/chapters/10_Softwarearchitektur.mmd",
 		"/media/data/whz/reports/ELT131/ELT131_LAB_01/out.tex",
-		"/home/mainster/scripts/unspace",
 		"/media/data/whz/projectGalvoDocu/sources/gnuTrans.c",
 		"/media/data/CODES/ccs6_workspaces/ELT131_F28335_workspace/ELT131_01/main.c",
 		"/media/data/CODES/ccs7_workspace2/ELT131_01/main.c",
@@ -1331,7 +1230,6 @@
 		"/home/mainster/CODES_local/dia_diagram_workspace/pyumltest.py",
 		"/home/mainster/.pythonrc",
 		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
-		"/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
 		"/media/data/whz/projectGalvoDocu/svgCoord.py",
 		"/media/data/whz/projectGalvoDocu/pics/gnus2/gnu_flatten.svg",
 		"/home/mainster/.config/sublime-text-3/Packages/anaconda/Context.sublime-menu",
@@ -1358,7 +1256,6 @@
 		"/media/data/CODES/papyrus_uml_workspace/firstUml/theModel.uml",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/README.md",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
 		"/media/data/whz/gcalcli_emv_pr",
 		"/tmp/tmp7xeowg.md",
 		"/tmp/newname",
@@ -1386,43 +1283,12 @@
 		"/usr/bin/vpnWhz.sh",
 		"/usr/bin/vp",
 		"/media/data/whz/projectGalvoDocu/try.py",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
 		"/home/mainster/CODES_local/pythons/saleSys.py",
 		"/home/mainster/CODES_local/pythons/customerExample.pyc",
 		"/tmp/mdall.py",
 		"/home/mainster/.config/sublime-text-3/Packages/User/FilesystemAutocompletion.sublime-settings",
 		"/home/mainster/.config/sublime-text-3/Packages/FileSystem Autocompletion/fscompletion.py",
-		"/tmp/tmpk5h_qx.mmd",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/decrypted.credentials.txt",
-		"/media/data/o2_Box_6431_Arcadyan_VGV7510KW22_zwickau/o2Box6431_bins/o2Box6431_python_try1_DECRYPTED.txt",
-		"/tmp/untitled",
-		"/media/data/whz/projectGalvoDocu/chapters/10_Softwarearchitektur-w8dl1l.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example.wsd",
-		"/home/mainster/.config/sublime-text-3/Packages/User/SublimeMdbToolbox.py",
-		"/home/mainster/.config/sublime-text-3/Packages/User/extractUmlBlocksCommand.py",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/diagram_plugin.py",
-		"/home/mainster/.config/sublime-text-3/Packages/yUML/README.md",
-		"/home/mainster/.config/sublime-text-3/Packages/User/Diagram.sublime-settings",
-		"/tmp/test",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/test",
-		"/tmp/untitled.wsd",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/${packages}/User/MarkdownPreview.sublime-settings",
-		"/tmp/untitled-jbpv25.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/README.md",
-		"/tmp/.fr-8H1xhn/Vorl1715_grdl3nl4c97g6mpq2m24n8l0kk@group.calendar.google.com.ics",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/non-latin-example.wsd",
-		"/home/mainster/.config/sublime-text-3/Packages/yUML/yUML.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/User/yUML.sublime-settings",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-60uct1.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-wvxsu7.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-e2iilf.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-o7d2mi.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-mztl10.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-mh8m90.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-m7n1b4.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/example-ije021.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/non-latin-example-l81_80.png",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/samples/non-latin-example-21wyqo.png"
+		"/tmp/tmpk5h_qx.mmd"
 	],
 	"find":
 	{
@@ -1440,6 +1306,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"inc",
+			" Regelkreises quantitativ ermittelt werden können",
+			"Ein Modell ist stets ein Modell von etwas ",
+			"ORIGINAL_PROJECT_ROOT",
+			"<!",
+			"inspect",
+			"CodeImport",
+			"chapter_compile",
+			"settings\\.get\\(\\\".*\\\"\\)",
+			"temp_toc_refs",
+			"refere",
+			"get_contents",
+			"get_references",
+			"openNav",
+			"scrip",
+			"Portfolio",
+			"^",
+			"??? Signalkonditionierung",
 			"\\si",
 			"uml",
 			"@uml",
@@ -1549,32 +1433,15 @@
 			"extract_diagram_attr",
 			"inlineAttrs",
 			"defaultAttrs",
-			"gen_image_tag",
-			"defaultAttrs",
-			"list(filter",
-			"defTag",
-			"passedDict",
-			"img_attrs",
-			"default_style_str",
-			"extract_diagram_attr",
-			"generate_inline_placement",
-			"diag_style_str",
-			"image_attrs",
-			"diag_style_str",
-			"generate_inline_placement",
-			"print",
-			"_FILE_",
-			", '",
-			"/home/mainster/CODES_local/pythons/",
-			"^\\s+##\\s\\s+",
-			"p[\\s\\.] "
+			"gen_image_tag"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"//",
 			"\n-",
 			"\\1  ",
 			"|:\\1:|",
@@ -1701,8 +1568,7 @@
 			"logfile",
 			"infile",
 			"print(\"\\1\")",
-			"writeLogFile",
-			"writeLogfile"
+			"writeLogFile"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1713,7 +1579,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1722,20 +1588,19 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11367,
+						"buffer_size": 10962,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8035,
-								8035
+								8041,
+								8041
 							]
 						],
 						"settings":
 						{
-							"buffer_scroll_name": "456151af",
 							"parser": "markdown",
 							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
 							"tab_size": 4,
@@ -1744,10 +1609,10 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1496.0,
+						"translation.y": 1653.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 20,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -1756,39 +1621,189 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 126987,
+						"buffer_size": 128595,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11170,
-								11170
+								8465,
+								8465
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"bs_sintax": "multimarkdown",
-							"buffer_scroll_name": "854f0f49",
 							"parser": "markdown",
 							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
 							"target": "save"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2549.0,
+						"translation.y": 1972.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "chapters/05_Projektziel_und_Anforderungskatalog.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9892,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6539,
+								6539
+							]
+						],
+						"settings":
+						{
+							"parser": "markdown",
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"target": "save"
+						},
+						"translation.x": 0.0,
+						"translation.y": 935.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1199,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1199,
+								1199
+							]
+						],
+						"settings":
+						{
+							"auto_name": "DLIB & BITFIELD & DCL test..",
+							"default_dir": "/media/data/whz/projectGalvoDocu",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/tmp/iii",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 285316,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1270,
+								1270
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1134.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 5,
+					"file": "chapters/20_Quellenangaben.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 602,
+						"buffer_size": 12044,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 6,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 89147,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5026,
+								5026
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2475.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3251,
 						"regions":
 						{
 						},
@@ -1801,449 +1816,9 @@
 						],
 						"settings":
 						{
-							"auto_name": "<font\\ color=red>rsync\\ <font\\ color=blue>-h\\ --p",
-							"default_dir": "/media/data/whz/projectGalvoDocu",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/SideBarEnhancements/Open With/Side Bar.sublime-menu",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2514,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "54cf5fa7",
-							"open_with_edit": true,
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 21,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "chapters/00_TOC.mmd",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 206,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "46faabe2",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 18,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "chapters/pics/UML-Diagrammhierarchie_Mdb.svg",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 323776,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1068,
-								1068
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "f9dcaee5",
-							"syntax": "Packages/XML/XML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "/usr/bin/miniterm.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 32319,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "39386949",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3654.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 17,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "/home/mainster/CODES_local/ccs7_workspace/MD_F2833x_LIB/PIEINT_vectTable.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12546,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"auto_name": "INTx.8 INTx.7 INTx.6 INTx.5 INTx.4 INTx.3 INTx.2 I",
-							"buffer_scroll_name": "2ad71e34",
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "save",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/PIEINT_vectTable.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12546,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								107,
-								107
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"buffer_scroll_name": "332fbbdb",
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "save",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "/home/mainster/scripts/meminfo.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3952,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3601,
-								3601
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "1f32d842",
-							"syntax": "Packages/ShellScriptImproved/Shell-Unix-Generic.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 698.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "/home/mainster/compiledStuff/PCGU1000driver_2009-07-13/Komponente/libusb.pp",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13289,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "2d3ebb78",
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1470.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "/home/mainster/scripts/unspace",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 630,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								39,
-								39
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "64b29cf3",
-							"syntax": "Packages/ShellScriptImproved/Shell-Unix-Generic.sublime-syntax",
-							"tab_size": 3,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "/home/mainster/scripts/qemuWin7.sh",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3429,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3392,
-								3392
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "5f8c9cd3",
-							"syntax": "Packages/ShellScriptImproved/Shell-Unix-Generic.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 588.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2165,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2165,
-								2165
-							]
-						],
-						"settings":
-						{
-							"auto_name": "qemu-system-x86_64",
-							"default_dir": "/media/data/whz/projectGalvoDocu",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/CalcIrqIdCommand.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2045,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								742,
-								742
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"buffer_scroll_name": "c4e299ee",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3061,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": true,
-							"bs_sintax": "json",
-							"buffer_scroll_name": "8e33797e",
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 84.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/DIMM100_pinout.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8267,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								77,
-								77
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"buffer_scroll_name": "9679f123",
-							"parser": "markdown",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"target": "save",
-							"word_wrap": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -2251,202 +1826,13 @@
 					},
 					"stack_index": 4,
 					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "/home/mainster/CODES_local/pythons/subprocess_clipboard.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2190,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								506,
-								506
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "6fa1285d",
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 18,
-					"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/documentation/styleMdb_ccsMd.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37799,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								28304,
-								28304
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "b14c34aa",
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 5250.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 19,
-					"file": "chapters/11_Plattform.mmd",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14985,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5252,
-								5252
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "4d08e1a0",
-							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 22,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 20,
-					"file": "/media/data/CODES/ccs7_workspace/MD_F2833x_LIB/styleMdb_ccsMd.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37500,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								15975,
-								16025
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "929c7021",
-							"syntax": "Packages/CSS/CSS.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 5264.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 21,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 83435,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"bs_sintax": "python",
-							"buffer_scroll_name": "75a80460",
-							"parser": "markdown",
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"tab_size": 4,
-							"target": "save",
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1426.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 19,
-					"type": "text"
-				},
-				{
-					"buffer": 22,
-					"file": "/home/mainster/.config/sublime-text-3/Packages/User/styleMdb.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37515,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"buffer_scroll_name": "b02cf06c",
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 21.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -2472,7 +1858,7 @@
 		"cols":
 		[
 			0.0,
-			0.633487593367,
+			0.648589328715,
 			1.0
 		],
 		"rows":
@@ -2502,7 +1888,7 @@
 	"project": "projectGalvoDocu.sublime-project",
 	"replace":
 	{
-		"height": 82.0
+		"height": 42.0
 	},
 	"save_all_on_build": false,
 	"select_file":
@@ -2540,7 +1926,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 294.0,
+	"side_bar_width": 278.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -305,7 +305,7 @@ meta[name][content]::after {
  * Include paragraph numbering:
  * In the generated html file, append this class to body as follows:
  *
- * <article class="markdown-body paragraphNum">;
+ * <article class="markdown-body">;
  * <article class="markdown-body paragraphNum">
  *
  ***************************************/
@@ -1526,126 +1526,88 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>10_Softwarearchitektur</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
+<title>05_Projektziel_und_Anforderungskatalog</title></head><body><article class="markdown-body"><!-- temp toc -->
 
 <div class="toc">
 <ul>
-<li><a href="#softwarearchitektur">Softwarearchitektur</a><ul>
-<li><a href="#was-ist-softwarearchitektur">Was ist Softwarearchitektur?</a></li>
-<li><a href="#model-driven-architecture-mda">Model-Driven Architecture (MDA)</a><ul>
-<li><a href="#unified-modeling-language-uml">Unified Modeling Language (UML)</a></li>
-<li><a href="#uml2-industriestandard">UML2 - Industriestandard</a></li>
-<li><a href="#diagramme-als-sicht">Diagramme als Sicht</a></li>
-</ul>
-</li>
-<li><a href="#architekturkomponenten">Architekturkomponenten</a></li>
-</ul>
-</li>
+<li><a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a></li>
 <li><a href="#quellenangaben">Quellenangaben</a></li>
 </ul>
 </div>
-<h1 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h1>
-<blockquote>
-<p>Architektur ist die Kombination von utilitas, firmitas und venustas.<sup id="fnref:fnSwArchitekturIst"><a class="footnote-ref" href="#fn:fnSwArchitekturIst" rel="footnote">34</a></sup></p>
-</blockquote>
-<p><center></p>
-<table class="noalter" style="width: 100%">
-    <tbody style="text-align: left">
-        <tr style="font-weight: bold">
-            <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
-            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system ...</center></td>
-        </tr>
-        <tr>
-            <td>utilitas</td>
-            <td>Das Gebäude erfüllt seine Funktion</td>
-            <td rowspan="3">
-                <ul>
-                    <li>den Anforderungen entspricht (<b>utilitas</b>)</li>
-                    <li>robust ist (<b>firmitas</b>) und </li>
-                    <li>eine gewisse Schönheit besitzt (<b>venustas</b>)</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>firmitas</td>
-            <td>Das Gebäude ist stabil</td>
-        </tr>
-        <tr>
-            <td>venustas</td>
-            <td>Das Gebäude ist ästhetisch gestaltet</td>
-        </tr>
-    </tbody>
-</table>
+<h1 id="projektziel-und-anforderungskatalog"><a name="user-content-projektziel-und-anforderungskatalog" href="#projektziel-und-anforderungskatalog" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projektziel und Anforderungskatalog</h1>
+<h4 class="sphd"><span>Stand der Technik</span></h4>
 
-<p></center></p>
-<p>Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr &ldquo;unscharf&rdquo; definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich <em>Architektur</em>, <em>Struktur</em> sowie <em>Muster</em> oder <em>Vorgehen</em>, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. </p>
-<p>Zudem soll an dieser Stelle nochmals auf das in Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a> (Abschnitt <em>Systemzweck</em>) formulierte Schwerpunktthema &ldquo;<em>Modellbildung und Simulation</em>&rdquo; Bezug genommen werden.  </p>
-<h2 id="was-ist-softwarearchitektur"><a name="user-content-was-ist-softwarearchitektur" href="#was-ist-softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Was ist Softwarearchitektur?</h2>
-<p>Die Softwarearchitektur beschreibt die <em>grundlegenden</em> <strong>Komponenten</strong> und deren <strong>Zusammenspiel</strong> innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, umfangreiche und komplexe Aufgabenstellungen frühzeitig zu partitionieren sodass ein Gesamtsystem in überschaubare Teilsysteme zerlegt werden kann. </p>
-<p>Ein strukturierter Architekturentwurf ist in der Regel auf ganzer Linie gewinnbringend. Die Tatsache, dass ein gut durchdachter Architekturentwurf in den Anfängen eines neuen Projektes zusätzliche Arbeitsleistung = Zeit = Kosten einfordert, relativiert sich spätestens bei langfristiger Betrachtung eines Produkts. Besonders bei großen sowie langlebigen Softwaresystemen zahlt es sich aus, wenn man beispielsweise neuen Mitarbeitern neben der Softwaredokumentation (Implementierungsdetails. z. B. <em>Doxygen</em>) ein  Architekturmodell vorlegen kann. Des weiteren soll mit der in aller Regel höheren Produktqualität, mit einer einfacheren/besseren Projektplanung/Projektierung (bezüglich Zeitmanagement sowie &ldquo;Man-Power&rdquo;), besserer Erweiterbarkeit, Zertifizierungskriterien sowie mit dem Aspekt des Code-Reusing argumentiert werden. </p>
-<p>In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon, wie unstrukturiert und von <em>Ad-hoc-decisions</em> geplagt, der Entwicklungsprozess abgelaufen ist (<lkey>Reverse engeneering</lkey>). Dennoch hartnäckigen Modell-Verfechtern und Architekturentwurfsgegnern darf dann, als letzte gut gemeinte Überzeugungshilfe, eine Umschulung zum <strong>Softwarearchäologen</strong> nahegelegt werden.</p>
-<h2 id="model-driven-architecture-mda"><a name="user-content-model-driven-architecture-mda" href="#model-driven-architecture-mda" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Model-Driven Architecture (MDA)</h2>
-<p>Nachdem in einem <em>Bottom-Up</em>-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem <em>Top-Down</em>-Prinzip. Wird nun die funktionale Archi&shy;tektur&shy;beschreibung dieses Softwaresystems auf Basis einer <strong>universellen</strong>, d.h. platt&shy;form&shy;unab&shy;hängigen (<strong>!</strong>) Model&shy;lierungs&shy;sprache konzipiert und realisiert, so liegt dem erarbeiteten Produkt eine modell&shy;getriebene Softwareentwicklung zu Grunde (Model-driven software development, MDSD). Die Aufgabe der MDA ist es nun, eine Infrastruktur oder eben Architektur zur Verfügung zu stellen, um Softwareentwicklung auf Modellbasis und nicht mehr auf Code-Basis zu fördern bzw. erst zu ermöglichen.      </p>
-<h3 id="unified-modeling-language-uml"><a name="user-content-unified-modeling-language-uml" href="#unified-modeling-language-uml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Unified Modeling Language (UML)</h3>
-<p>Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der <em>Object Management Group</em> <strong>(OMG)</strong> entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte <em>Unified Modeling Language</em> <strong>(UML2)</strong>, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. </p>
-<h3 id="uml2-industriestandard"><a name="user-content-uml2-industriestandard" href="#uml2-industriestandard" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UML2 - Industriestandard</h3>
-<p>Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekturentwurf in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.</p>
-<table>
-<thead>
-<tr>
-<th>Merkmal</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Diagrammunterstützung</td>
-<td>Modelle können in Form von UML-&shy;Diagrammen dargestellt und auch als solche bearbeitet werden. Die graphische Notation ist in der UML-&shy;Spezi&shy;fika&shy;tion stan&shy;dar&shy;di&shy;sie&shy;rt</td>
-</tr>
-<tr>
-<td>Codegenerierung</td>
-<td>Entsprechende UML-&shy;Werk&shy;zeuge können aus einem zuvor formu&shy;lierten Modell, einen Teil oder sogar die voll&shy;ständige Architektur&shy;-Imple&shy;mentierung in Form eines Quellcodes ableiten.</td>
-</tr>
-<tr>
-<td>Reverse Engineering</td>
-<td>Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.</td>
-</tr>
-<tr>
-<td>Modelltransformation</td>
-<td>Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="diagramme-als-sicht"><a name="user-content-diagramme-als-sicht" href="#diagramme-als-sicht" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Diagramme als Sicht</h3>
-<p>Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene <em>Sichten</em> handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine <em>Sicht</em> repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  </p>
-<p><a href="/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a></p>
-<h2 id="architekturkomponenten"><a name="user-content-architekturkomponenten" href="#architekturkomponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturkomponenten</h2>
+<p>Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, <em>quasi-kontinuierliche</em> Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.</p>
+<h4 class="sphd"><span>Systemzweck</span></h4>
+
+<p>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die <strong>Modellbildung</strong> und <strong>Simulation</strong> des Gesamtsystems soll als <strong>Schwerpunktthema</strong> betrachtet und entsprechend ausgearbeitet werden.</p>
+<h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
+
+<p>Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als <strong>physisches System</strong> bezeichnet während im Abschnitt <strong>Simulationsumgebung</strong> das Computermopdell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.</p>
+<h4 class="sp"><span>Physisches System</span></h4>
+
+<figure class="floatr topal" style="width:185px"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860"><figcaption>Cambridge Technologies Galvanometer Modell 6860</figcaption></figure>
+
+<p>Die beiden <lkey><a href="#klassifizierung">Moving-magnet Galvanometer</a></lkey> der Firma <a href="http://www.cambridgetechnology.com">Cambridge Technologies</a>, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt </p>
+<p><lmjx>$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\B_y-A_y\end{pmatrix} }{eqDirVect3} $</lmjx></p>
+<p>Um einen Vektor $\vec s$ der Länge $\left| \vec s\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec s$ entlang einer Geraden $\,g\,$ beschrieben durch:</p>
+<p>$$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$</p>
+<p>Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren. Um den Aufwand zur Erzeugung der notwendigen <a href="#quelldaten-generieren">Quelldaten</a> gering zu halten, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. </p>
+<div style="display: inline;">
+Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="/media/data/whz/projectGalvoDocu/chapters/pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="/media/data/whz/projectGalvoDocu/chapters/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (<a href="#jumptoSafety">Laserklasse 3B</a>, 532nm (Grün), <a href="#jumptoSafety">max. 50mW</a>, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+</div>
+
+<h4 class="sp"><span>Simulationsumgebung</span></h4>
+
+<p>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter mittels Computermodell optimiert werden können. Um quantitative Aussagen bezüglich Stabilität und Robustheit nachweisen zu können, sind entsprechende Simulationen immer dann unerlässlich, wenn es sich um Systeme handelt die durch instabilie Betriebszustände beschädigt oder zerstört werden können. <br />
+Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, <strong>zeitinvariante</strong> Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. </p>
+<p><boxed>Die Forderung nach Zeitinvarianz impliziert immer auch <strong>Rückwirkungsfreiheit</strong> zwischen den Teilsystemen.</boxed> </p>
+<p>Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.</p>
+<p>Aus dem Modellzweck oder Kontext wird die notwendige <a href="#modell"><em>Modellgranularität</em></a> abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen, nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden <em>Rekonstruktionsfilter</em> zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme &ldquo;Antialiasing-&rdquo; und &ldquo;Rekonstruktionsfilter&rdquo; in das Computermodell des Gesamtsystems zu integrieren.<br />
+Entsprechendes gilt auch für die Modellierung weiterer Teilsysteme wie z. B. Stellglied sowie Messumformer + Tiefpassfilterung. </p>
+<h4 class="sphd"><span>Design</span></h4>
+
+<h4 class="sphd"><span>Systemeinsatz</span></h4>
+
+<h4 class="sphd"><span>Systemanforderungen</span></h4>
+
+<div class="spaced">
+<ol>
+<li>Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der <em>Baugruppen-Wahl</em>  als gegeben zu betrachten (vergl. <em>Bestandsbaugruppe</em>).</li>
+<li>Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller <a href="#citeSTM32F429i" title="High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"><em>STM32F429i</em></a> implementiert werden.</li>
+<li>Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.</li>
+<li>Die Positionierung des Laserpunktes soll hinreichend &ldquo;schnell&rdquo; und &ldquo;präzise&rdquo; erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.</li>
+<li>Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.</li>
+<li>Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.</li>
+<li>Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.</li>
+</ol>
+</div>
+<h4 class="sphd"><span>Allgemeine Anforderungen</span></h4>
+
+<p><a name="jumptoSafety"> </a><br />
+<h4 class="sp"><span>Sicherheit</span></h4><br />
+Während der Entwicklungsphase ist stehts darauf zu achten dass </p>
 <ul>
-<li>reverse Engeneering</li>
+<li>zu keinem Zeitpunkt die Gefahr einer willkürlichen Positionierung des Laserstrahls gegeben ist!<ul>
+<li>Description of the &ldquo;safe state guard&rdquo; system</li>
+<li>exceptions and forced bias</li>
 </ul>
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_0.png" title="" class=""  style=""/></center></p>
-<hr />
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_1.png" title="" class=""  style=""/></center></p>
-<hr />
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_2.png" title="" class=""  style=""/></center></p>
-<hr />
-<p><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_3.png" title="" class=""  style=""/><br />
-Komponentendigramm</p>
-<ul>
-<li>zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems</li>
-<li>die Darstellung umfasst meist Komponenten inklusive deren Schnittstellen oder Ports</li>
-<li>Abhängigkeitsbeziehungen zwischen Komponenten untereinander können dargestellt werden</li>
-<li>zeigt oft Notationselemente, die das Innere einer Komponente wiederspiegeln </li>
-<li>wird überwiegend zur Modellierung von komponentenbasierten Softwaresystemen eingesetzt</li>
+</li>
+<li>Hardware-Komponenten vor Überlast geschützt sind! </li>
 </ul>
-<p>Die formelle Beschreibung einer Softwarearchitektur <br />
-<a href="http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf">Architektur und Architekturmuster</a> <br />
-Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.</p>
-<ul>
-<li>ist ein <strong>Prozess</strong>, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.</li>
-<li>ist ein <strong>Gegenstand</strong>, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. </li>
-</ul>
-<p><a href="https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html">Was-heißt-hier-Softwarearchitektur? - <em>Dr. Michael Stahl, Siemens AG</em></a></p>
+<h4 class="sp"><span>Qualität</span></h4>
+
+<p>Um die &ldquo;Qualität&rdquo; der erzeugten Abbildungen effektiv messen zu können, soll auf eine Testmöglichkeit für das <a href="http://www.laserfx.com/Backstage.LaserFX.com/Systems/Scanning3.html">ILDA-Testpattern</a> implementiert werden. </p>
+<p></par></p>
+<p>Zu Beginn des Kapitels <a href="#modellbildungsprozess">Modellbildungsprozess</a> folgt eine erste Aufteilung des Projekts.</p>
+<!-- wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
+Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um
+
+Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
+
+$$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvektor der Geraden erhält man, je nachdem ob $a$ oder $b$ ungleich null ist, durch Wahl von
+<center>$ {\vec {p}}={\begin{pmatrix}c/a\\\0\end{pmatrix}}\;\;\; $ oder $ \;\;\;{\vec {p}}={\begin{pmatrix}0\\\c/b\end{pmatrix}} $.</center> -->
+
 <h1 id="quellenangaben"><a name="user-content-quellenangaben" href="#quellenangaben" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quellenangaben</h1>
 <hr />
 <p><a name="citeMDA"> </a><br />
