@@ -61,6 +61,19 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/****************************************
+ * Feture sidebar
+ ***************************************/
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+
 .markdown-body h4.foldable {
 	margin:			0 0 1em 0 !important;
 	/*padding: 		0 !important;*/
@@ -164,87 +177,102 @@ meta[name][content]::after {
  * Spec sheet headers
  ***************************************/
 .markdown-body boxed {
-	display: 			block;
-	border: 			2px solid red;
-	-webkit-box-shadow: 6px 7px 5px 0px rgba(56,56,56,0.38);
-	-moz-box-shadow: 	6px 7px 5px 0px rgba(56,56,56,0.38);
-	box-shadow: 		6px 7px 5px 0px rgba(56,56,56,0.38);
-	text-align: 		center;
-	padding: 			2px .3em 2px .3em;
-	margin: 			1.5em 0 1.5em 0;
-	/*padding-top: 		10em;*/
+    display:            block;
+    border:             2px solid red;
+    -webkit-box-shadow: 6px 7px 5px 0px rgba(56,56,56,0.38);
+    -moz-box-shadow:    6px 7px 5px 0px rgba(56,56,56,0.38);
+    box-shadow:         6px 7px 5px 0px rgba(56,56,56,0.38);
+    text-align:         center;
+    padding:            2px .3em 2px .3em;
+    margin:             1.5em 0 1.5em 0;
+    /*padding-top:      10em;*/
 }
 .markdown-body mBox {
-	display: 			inline-block;
-	font-size: 			95%;
-	background-color: 	#DBDBDB;
-	font-family: monospace, monospace;
-	border: 			0px solid #C8C8C8;
-	-webkit-box-shadow: 2px 3px 2px 0px rgba(56,56,56,0.38);
-	-moz-box-shadow: 	2px 3px 2px 0px rgba(56,56,56,0.38);
-	box-shadow: 		2px 3px 2px 0px rgba(56,56,56,0.38);
-	text-align: 		center;
-	padding: 			2px 5px 2px 5px;
-	margin: 			.5em .2em .5em .2em;
-	border-radius: 		5px;
+    display:            inline-block;
+    font-size:          95%;
+    background-color:   #DBDBDB;
+    font-family: monospace, monospace;
+    border:             0px solid #C8C8C8;
+    -webkit-box-shadow: 2px 3px 2px 0px rgba(56,56,56,0.38);
+    -moz-box-shadow:    2px 3px 2px 0px rgba(56,56,56,0.38);
+    box-shadow:         2px 3px 2px 0px rgba(56,56,56,0.38);
+    text-align:         center;
+    padding:            2px 5px 2px 5px;
+    margin:             .5em .2em .5em .2em;
+    border-radius:      5px;
 }
 .markdown-body mBox.l {
-	margin-left: 2.5em;
+    margin-left: 2.5em;
+}
+.markdown-body blockquote>:last-child {
+    margin-bottom: 1em !important;
 }
 /*
  * Horizontal centered line in header texts
  */
-.markdown-body h4.sphd,
+/*.markdown-body h4.sphd,
 .markdown-body h4.sp {
-	margin:			44px 0 22px 0;
-	vertical-align: middle;
-	text-align: 	center;
+    margin:         22px 0 22px 0;
+    vertical-align: middle;
+    text-anchor:    middle;
+}*/
+.markdown-body details summary h4.sphd,
+.markdown-body details summary h4.sp {
+    margin:         0 0 .25em 0;
+    /*padding:      0 !important;*/
+    vertical-align: middle !important;
+    /*padding-bottom: 3px;*/
 }
 /*
  * Spec sheet header
  */
 .markdown-body h4.sphd {
-	background: 	#d8d8d8; 	/* For browsers that do not support gradients */
-    background:		-webkit-linear-gradient(left, white, #d8d8d8, white); 	/* For Safari 5.1 to 6.0 */
-    background:		-o-linear-gradient(left, white, #d8d8d8, white); 		/* For Opera 11.1 to 12.0 */
-    background:	 	-moz-linear-gradient(left, white, #d8d8d8, white); 		/* For Firefox 3.6 to 15 */
-    background: 	linear-gradient(left, white, #d8d8d8, white); 			/* Standard syntax */
-	line-height: 	1px;
-	font-size: 		120%;
+    background:     #d8d8d8;    /* For browsers that do not support gradients */
+    background:     -webkit-linear-gradient(left, white, #d8d8d8, white);   /* For Safari 5.1 to 6.0 */
+    background:     -o-linear-gradient(left, white, #d8d8d8, white);        /* For Opera 11.1 to 12.0 */
+    background:     -moz-linear-gradient(left, white, #d8d8d8, white);      /* For Firefox 3.6 to 15 */
+    background:     linear-gradient(left, white, #d8d8d8, white);           /* Standard syntax */
+    line-height:    1px;
+    font-size:      120%;
+    text-align:     center;
 }
 /*
  * Spec sheet subheader
  */
-.markdown-body h4.sp 	{
-	background: 	#E6E6E6; 	/* For browsers that do not support gradients */
-    background:		-webkit-linear-gradient(left, white, #E6E6E6, white); 	/* For Safari 5.1 to 6.0 */
-    background:		-o-linear-gradient(left, white, #E6E6E6, white); 		/* For Opera 11.1 to 12.0 */
-    background:	 	-moz-linear-gradient(left, white, #E6E6E6, white); 		/* For Firefox 3.6 to 15 */
-    background: 	linear-gradient(left, white, #E6E6E6, white); 			/* Standard syntax */
-	line-height: 	1px;
-	font-size: 		100%;
-	text-align: 		left;
-	/*margin-right: 	50%*/
+.markdown-body h4.sp    {
+    background:     #E6E6E6;    /* For browsers that do not support gradients */
+    background:     -webkit-linear-gradient(left, white, #E6E6E6, white);   /* For Safari 5.1 to 6.0 */
+    background:     -o-linear-gradient(left, white, #E6E6E6, white);        /* For Opera 11.1 to 12.0 */
+    background:     -moz-linear-gradient(left, white, #E6E6E6, white);      /* For Firefox 3.6 to 15 */
+    background:     linear-gradient(left, white, #E6E6E6, white);           /* Standard syntax */
+    line-height:    1px;
+    font-size:      100%;
+    text-align:     left;
+
+    /*margin-right:     50%*/
 }
 .markdown-body h4.sphd span,
 .markdown-body h4.sp span {
-    padding-right: 		10px;
+    padding-right:      10px;
 }
 .markdown-body h4.sphd span.codehd,
 .markdown-body h4.sp span.codehd {
-    box-shadow: 		8px 8px 5px #B3B3B3;
-    margin-top: 		6em !important;
+    -webkit-box-shadow: 6px 7px 5px 0px #B3B3B3;
+    -moz-box-shadow:    6px 7px 5px 0px #B3B3B3;
+    box-shadow:         6px 7px 5px 0px #B3B3B3;
+    background-color:   #fcfcfc;
+    padding-left:       10px;
+    /*margin-top:         .6em !important;*/
 }
 .markdown-body h4.sphd span {
-    background-color: 	#FCFCFC;
-	border:				1px solid #d8d8d8;
-    padding-left: 		10px;
-	/*margin-left: 		0px; */
+    background-color:   #FCFCFC;
+    border:             1px solid #d8d8d8;
+    padding-left:      10px;
 }
 .markdown-body h4.sp span {
-    background-color: 	white;
-	border:				none;
-	padding-left: 		none;
+    background-color:   white;
+    border:             none;
+    margin-left:        10px;
 }
 
 /****************************************
@@ -1526,126 +1554,74 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>10_Softwarearchitektur</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
+<title>12_Software_und_Simulation</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
 
 <div class="toc">
 <ul>
-<li><a href="#softwarearchitektur">Softwarearchitektur</a><ul>
-<li><a href="#was-ist-softwarearchitektur">Was ist Softwarearchitektur?</a></li>
-<li><a href="#model-driven-architecture-mda">Model-Driven Architecture (MDA)</a><ul>
-<li><a href="#unified-modeling-language-uml">Unified Modeling Language (UML)</a></li>
-<li><a href="#uml2-industriestandard">UML2 - Industriestandard</a></li>
-<li><a href="#diagramme-als-sicht">Diagramme als Sicht</a></li>
+<li><a href="#software-und-simulation">Software und Simulation</a><ul>
+<li><a href="#hardwarenahe-programmierung-c">Hardwarenahe Programmierung (C)</a><ul>
+<li><a href="#entwicklungsumgebungen-und-toolchains">Entwicklungsumgebungen und Toolchains</a></li>
+<li><a href="#sw4stm32-toolchainide">SW4STM32 Toolchain/IDE</a></li>
+<li><a href="#dokumentation">Dokumentation</a></li>
 </ul>
 </li>
-<li><a href="#architekturkomponenten">Architekturkomponenten</a></li>
+<li><a href="#pc-schnittstellenprogramm-c-qt">PC-Schnittstellenprogramm (C++ / Qt)</a><ul>
+<li><a href="#echtzeit-zustandsuberwachung">Echtzeit-Zustandsüberwachung</a></li>
+<li><a href="#parameter-manipulation">Parameter Manipulation</a></li>
+</ul>
+</li>
+<li><a href="#schaltungssimulation-und-netzwerkanalyse-ltspice">Schaltungssimulation und Netzwerkanalyse (LTspice)</a></li>
+<li><a href="#system-und-reglersimulation-simulink">System- und Reglersimulation (Simulink)</a></li>
+<li><a href="#schnittstelle-spice-to-simulink-matlab">Schnittstelle Spice-to-Simulink (MATLAB)</a><ul>
+<li><a href="#ltspice-matlab-freqency-response-estimation">LTspice &lt;-&gt; MATLAB: Freqency response estimation</a></li>
+</ul>
+</li>
+<li><a href="#debuggen-in-sw4stm32">Debuggen in sw4stm32</a></li>
 </ul>
 </li>
 <li><a href="#quellenangaben">Quellenangaben</a></li>
 </ul>
 </div>
-<h1 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h1>
+<h1 id="software-und-simulation"><a name="user-content-software-und-simulation" href="#software-und-simulation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Software und Simulation</h1>
+<p>In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich <em>Software und Simulation</em> wird wie folgt untergliedert: </p>
+<h2 id="hardwarenahe-programmierung-c"><a name="user-content-hardwarenahe-programmierung-c" href="#hardwarenahe-programmierung-c" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Hardwarenahe Programmierung (<strong>C</strong>)</h2>
+<p>In Kapitel <a href="#plattform">Plattform</a> wurde erläutert, <strong><em>warum</em></strong> der Cortex-M4f, speziell der STM32F429i, bei diesem Projekt zum Einsatz kam. Hier soll auf das konkrete <strong><em>wie</em></strong> eingegangen werden. </p>
+<h3 id="entwicklungsumgebungen-und-toolchains"><a name="user-content-entwicklungsumgebungen-und-toolchains" href="#entwicklungsumgebungen-und-toolchains" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Entwicklungsumgebungen und Toolchains</h3>
+<p>Wie bereits in der Einleitung zu <a href="#plattform">Plattform</a> sowie im Abschnitt <a href="#warum-arm">Warum ARM?</a> angesprochen, wird dem Thema <em>Plattformunabhängigkeit</em> ein hoher Stellenwert zugesprochen. Deshalb soll an dieser Stelle nicht weiter auf die zwar weit verbreitete, hoch integrierte, jedoch für viel Geld (8260 € <a href="https://elmicro.com/de/keilarm.html"><em>MDK-ARM Pro, Stand 02/2017</em></a>) vertriebene Entwicklungsumgebung <em>KEIL µVision MDK</em>, eingegangen werden.</p>
+<p>Das von <a href="http://www.ibm.com/developerworks/rational/library/nov05/cernosek/">IBM</a> ins leben gerufene, und mittlerweile von der <em>Eclipse Foundation</em> getragene, quelloffene Software Projekt <strong>Eclipse</strong>, bildet die Grundlage für viele moderne Entwicklungsumgebungen. Ob nun Plugin-basierte Erweiterungen wie z.B. OpenOCD <em>(On-Chip Debugger)</em>, diverse Cross-Compiler <em>(für AVR, ARM, &hellip;)</em> inklusive Board-Support-Packages, oder aber komplette proprietäre IDEs <em>(Vorzeigebeispiel: TI&rsquo;s CodeComposerStudio)</em>: </p>
+<p><boxed>Das Eclipse-Basisframework und somit auch der Plugin-Adapter sind für alle Eclipse-basierten IDEs identisch&hellip; Und das, <strong>unabhängig</strong> von der Plattform der Entwicklungsrechner.</boxed> </p>
+<p>Die wohl bekanntesten <em>Eclipse-CDT</em> Erweiterungen für ARM-Basierte Controller sind unter der Bezeichnung <a href="http://gnuarmeclipse.github.io/" title="GCC - GNU Compiler Collection - for Eclipse"><em>GNU ARM Eclipse</em></a> bekannt. Die Plugin-Familie kann bequem über das Software-Repositorie nachgerüstet werden. </p>
+<h3 id="sw4stm32-toolchainide"><a name="user-content-sw4stm32-toolchainide" href="#sw4stm32-toolchainide" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>SW4STM32 Toolchain/IDE</h3>
+<p>Ebenfalls auf Eclipse Basis wurde von ST/AC6 die noch junge, quelloffene Entwicklungsumgebung <strong>SW4STM32</strong> <a href="http://www.st.com/en/ecosystems/stm32-open-development-environment.html" title="System Workbench for STM32">(<em>System workbench for STM32</em>)</a> veröffentlicht welche ST&rsquo;s gesamte 32-Bit Sparte unterstützt. Neben den Standard-Cross-Toolchains integriert SW4STM32, vergleichbar mit dem Konzept von KEIL&rsquo;s MDK Plattform, ein Verwaltungsmodul zur Installation von Board-Support-Packages für ST-Evaluierungsboards. Außerdem wird vom CMSIS-CORE, der CMSIS-DSP Bibliothek und der CMSIS-Driver Schnittstelle Gebrauch gemacht. </p>
 <blockquote>
-<p>Architektur ist die Kombination von utilitas, firmitas und venustas.<sup id="fnref:fnSwArchitekturIst"><a class="footnote-ref" href="#fn:fnSwArchitekturIst" rel="footnote">34</a></sup></p>
+<p>The System Workbench toolchain, called SW4STM32, is a free multi-OS software development environment based on Eclipse, which supports the full range of STM32 microcontrollers and associated boards. (&hellip;) The STM32 Open Development Environment is compatible with a number of IDEs including IAR EWARM, <strong>Keil MDK</strong>, mbed and GCC-based environments.<sup id="fnref:fnStMultiOs"><a class="footnote-ref" href="#fn:fnStMultiOs" rel="footnote">33</a></sup></p>
 </blockquote>
-<p><center></p>
-<table class="noalter" style="width: 100%">
-    <tbody style="text-align: left">
-        <tr style="font-weight: bold">
-            <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
-            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system ...</center></td>
-        </tr>
-        <tr>
-            <td>utilitas</td>
-            <td>Das Gebäude erfüllt seine Funktion</td>
-            <td rowspan="3">
-                <ul>
-                    <li>den Anforderungen entspricht (<b>utilitas</b>)</li>
-                    <li>robust ist (<b>firmitas</b>) und </li>
-                    <li>eine gewisse Schönheit besitzt (<b>venustas</b>)</li>
-                </ul>
-            </td>
-        </tr>
-        <tr>
-            <td>firmitas</td>
-            <td>Das Gebäude ist stabil</td>
-        </tr>
-        <tr>
-            <td>venustas</td>
-            <td>Das Gebäude ist ästhetisch gestaltet</td>
-        </tr>
-    </tbody>
-</table>
-
-<p></center></p>
-<p>Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr &ldquo;unscharf&rdquo; definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich <em>Architektur</em>, <em>Struktur</em> sowie <em>Muster</em> oder <em>Vorgehen</em>, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. </p>
-<p>Zudem soll an dieser Stelle nochmals auf das in Kapitel <a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a> (Abschnitt <em>Systemzweck</em>) formulierte Schwerpunktthema &ldquo;<em>Modellbildung und Simulation</em>&rdquo; Bezug genommen werden.  </p>
-<h2 id="was-ist-softwarearchitektur"><a name="user-content-was-ist-softwarearchitektur" href="#was-ist-softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Was ist Softwarearchitektur?</h2>
-<p>Die Softwarearchitektur beschreibt die <em>grundlegenden</em> <strong>Komponenten</strong> und deren <strong>Zusammenspiel</strong> innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, umfangreiche und komplexe Aufgabenstellungen frühzeitig zu partitionieren sodass ein Gesamtsystem in überschaubare Teilsysteme zerlegt werden kann. </p>
-<p>Ein strukturierter Architekturentwurf ist in der Regel auf ganzer Linie gewinnbringend. Die Tatsache, dass ein gut durchdachter Architekturentwurf in den Anfängen eines neuen Projektes zusätzliche Arbeitsleistung = Zeit = Kosten einfordert, relativiert sich spätestens bei langfristiger Betrachtung eines Produkts. Besonders bei großen sowie langlebigen Softwaresystemen zahlt es sich aus, wenn man beispielsweise neuen Mitarbeitern neben der Softwaredokumentation (Implementierungsdetails. z. B. <em>Doxygen</em>) ein  Architekturmodell vorlegen kann. Des weiteren soll mit der in aller Regel höheren Produktqualität, mit einer einfacheren/besseren Projektplanung/Projektierung (bezüglich Zeitmanagement sowie &ldquo;Man-Power&rdquo;), besserer Erweiterbarkeit, Zertifizierungskriterien sowie mit dem Aspekt des Code-Reusing argumentiert werden. </p>
-<p>In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon, wie unstrukturiert und von <em>Ad-hoc-decisions</em> geplagt, der Entwicklungsprozess abgelaufen ist (<lkey>Reverse engeneering</lkey>). Dennoch hartnäckigen Modell-Verfechtern und Architekturentwurfsgegnern darf dann, als letzte gut gemeinte Überzeugungshilfe, eine Umschulung zum <strong>Softwarearchäologen</strong> nahegelegt werden.</p>
-<h2 id="model-driven-architecture-mda"><a name="user-content-model-driven-architecture-mda" href="#model-driven-architecture-mda" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Model-Driven Architecture (MDA)</h2>
-<p>Nachdem in einem <em>Bottom-Up</em>-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem <em>Top-Down</em>-Prinzip. Wird nun die funktionale Archi&shy;tektur&shy;beschreibung dieses Softwaresystems auf Basis einer <strong>universellen</strong>, d.h. platt&shy;form&shy;unab&shy;hängigen (<strong>!</strong>) Model&shy;lierungs&shy;sprache konzipiert und realisiert, so liegt dem erarbeiteten Produkt eine modell&shy;getriebene Softwareentwicklung zu Grunde (Model-driven software development, MDSD). Die Aufgabe der MDA ist es nun, eine Infrastruktur oder eben Architektur zur Verfügung zu stellen, um Softwareentwicklung auf Modellbasis und nicht mehr auf Code-Basis zu fördern bzw. erst zu ermöglichen.      </p>
-<h3 id="unified-modeling-language-uml"><a name="user-content-unified-modeling-language-uml" href="#unified-modeling-language-uml" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Unified Modeling Language (UML)</h3>
-<p>Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der <em>Object Management Group</em> <strong>(OMG)</strong> entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte <em>Unified Modeling Language</em> <strong>(UML2)</strong>, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. </p>
-<h3 id="uml2-industriestandard"><a name="user-content-uml2-industriestandard" href="#uml2-industriestandard" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>UML2 - Industriestandard</h3>
-<p>Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekturentwurf in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.</p>
-<table>
-<thead>
-<tr>
-<th>Merkmal</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Diagrammunterstützung</td>
-<td>Modelle können in Form von UML-&shy;Diagrammen dargestellt und auch als solche bearbeitet werden. Die graphische Notation ist in der UML-&shy;Spezi&shy;fika&shy;tion stan&shy;dar&shy;di&shy;sie&shy;rt</td>
-</tr>
-<tr>
-<td>Codegenerierung</td>
-<td>Entsprechende UML-&shy;Werk&shy;zeuge können aus einem zuvor formu&shy;lierten Modell, einen Teil oder sogar die voll&shy;ständige Architektur&shy;-Imple&shy;mentierung in Form eines Quellcodes ableiten.</td>
-</tr>
-<tr>
-<td>Reverse Engineering</td>
-<td>Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.</td>
-</tr>
-<tr>
-<td>Modelltransformation</td>
-<td>Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="diagramme-als-sicht"><a name="user-content-diagramme-als-sicht" href="#diagramme-als-sicht" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Diagramme als Sicht</h3>
-<p>Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene <em>Sichten</em> handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine <em>Sicht</em> repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  </p>
-<p><a href="/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/chapters/pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a></p>
-<h2 id="architekturkomponenten"><a name="user-content-architekturkomponenten" href="#architekturkomponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturkomponenten</h2>
+<p>Neben den offensichtlichen und teils schon genannten Vorteilen quelloffener Softwareprojekte, soll hier nochmals der Eclipse Plugin-Adapter als wichtigstes Argument für die Wahl der Entwicklungsumgebung genannt werden.  </p>
+<h3 id="dokumentation"><a name="user-content-dokumentation" href="#dokumentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dokumentation</h3>
+<p>Die Dokumentation zur Anwendungssoftware &ldquo;GalvoScanner v1.4&rdquo; wie auch für die im Projektverlauf entwickelten Bibliotheken <strong>MD_STM32F4_Libraries</strong> wurde mit dem de-facto Standard Dokumentations&shy;werkzeug <em>Doxygen</em> aufbereitet. Das quelloffene, 1997 von <em>Dimitri van Heesch</em> in die &ldquo;Public Domain&rdquo; entlassene Dokumentations&shy;werkzeug zählt m. E. zu den Parade&shy;beispielen im Bereich Open Source und Platt&shy;form&shy;unab&shy;hängigkeit.</p>
+<p><a href="/media/data/whz/projectGalvoDocu/embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/doxygen/html/index.html">Link zur index.html der Doxy-Dokumentation</a></p>
+<h2 id="pc-schnittstellenprogramm-c-qt"><a name="user-content-pc-schnittstellenprogramm-c-qt" href="#pc-schnittstellenprogramm-c-qt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>PC-Schnittstellenprogramm (<strong>C++ / Qt</strong>)</h2>
+<h3 id="echtzeit-zustandsuberwachung"><a name="user-content-echtzeit-zustandsuberwachung" href="#echtzeit-zustandsuberwachung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Echtzeit-Zustandsüberwachung</h3>
+<h3 id="parameter-manipulation"><a name="user-content-parameter-manipulation" href="#parameter-manipulation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Parameter Manipulation</h3>
+<h2 id="schaltungssimulation-und-netzwerkanalyse-ltspice"><a name="user-content-schaltungssimulation-und-netzwerkanalyse-ltspice" href="#schaltungssimulation-und-netzwerkanalyse-ltspice" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Schaltungssimulation und Netzwerkanalyse (<strong>LTspice</strong>)</h2>
+<h2 id="system-und-reglersimulation-simulink"><a name="user-content-system-und-reglersimulation-simulink" href="#system-und-reglersimulation-simulink" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>System- und Reglersimulation (<strong>Simulink</strong>)</h2>
+<h2 id="schnittstelle-spice-to-simulink-matlab"><a name="user-content-schnittstelle-spice-to-simulink-matlab" href="#schnittstelle-spice-to-simulink-matlab" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Schnittstelle Spice-to-Simulink (<strong>MATLAB</strong>)</h2>
+<h3 id="ltspice-matlab-freqency-response-estimation"><a name="user-content-ltspice-matlab-freqency-response-estimation" href="#ltspice-matlab-freqency-response-estimation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>LTspice &lt;-&gt; MATLAB: Freqency response estimation</h3>
 <ul>
-<li>reverse Engeneering</li>
+<li>Antialiasing- und Rekonstruktionsfiltern</li>
+<li>dem unterlegten, analogen Stromregler</li>
+<li>Endstufe sowie Stellglied</li>
+<li>Signalkonditionierung</li>
 </ul>
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_0.png" title="" class=""  style=""/></center></p>
-<hr />
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_1.png" title="" class=""  style=""/></center></p>
-<hr />
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_2.png" title="" class=""  style=""/></center></p>
-<hr />
-<p><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/10_Softwarearchitektur-diag_3.png" title="" class=""  style=""/><br />
-Komponentendigramm</p>
-<ul>
-<li>zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems</li>
-<li>die Darstellung umfasst meist Komponenten inklusive deren Schnittstellen oder Ports</li>
-<li>Abhängigkeitsbeziehungen zwischen Komponenten untereinander können dargestellt werden</li>
-<li>zeigt oft Notationselemente, die das Innere einer Komponente wiederspiegeln </li>
-<li>wird überwiegend zur Modellierung von komponentenbasierten Softwaresystemen eingesetzt</li>
-</ul>
-<p>Die formelle Beschreibung einer Softwarearchitektur <br />
-<a href="http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf">Architektur und Architekturmuster</a> <br />
-Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.</p>
-<ul>
-<li>ist ein <strong>Prozess</strong>, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.</li>
-<li>ist ein <strong>Gegenstand</strong>, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. </li>
-</ul>
-<p><a href="https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html">Was-heißt-hier-Softwarearchitektur? - <em>Dr. Michael Stahl, Siemens AG</em></a></p>
+<h2 id="debuggen-in-sw4stm32"><a name="user-content-debuggen-in-sw4stm32" href="#debuggen-in-sw4stm32" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Debuggen in sw4stm32</h2>
+<p><!-- # Geschlossene Simulationsumgebung # --><br />
+<!-- ## Umsetzung in MATLAB / Simulink ## --><br />
+<!-- ## "frequency response model estimation" ## --><br />
+<!-- ## copy ltspice conform laplace function of the estimated system  ## --><br />
+<!-- ## Aktoren -> Simulink Modelle  ## --><br />
+<!-- ## Endstufe -> LTspice -> MATLAB ## --><br />
+<!-- ## Levelshifter -> LTspice -> MATLAB ## --><br />
+<!-- ## Antialias / Rekonstruktionsfilter -> MATLAB ## --></p>
 <h1 id="quellenangaben"><a name="user-content-quellenangaben" href="#quellenangaben" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quellenangaben</h1>
 <hr />
 <p><a name="citeMDA"> </a><br />

@@ -10,12 +10,12 @@ Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), kon
 ### Warum ARM? ###
 Durch die entsprechende Routing-Karte konnte auf der vorhandenen Evaluierungshardware von Atmel auch Controller mit AVR32-Architektur betrieben werden. Das schwerwiegende Kontra-Argument, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__, soll hier als Grund genannt werden der zum Ausschluss von AVR32 führte.
 
-Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als <yelBg>__86__ Milliarden</yelBg> (im Jahr 2013 erreichte ARM die 50 Milliarden Marke).
+Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als <yelBg>__86__ Milliarden</yelBg> (im Jahr 2013 erreichte ARM® die 50 Milliarden Marke).
 
-> Today ARM technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
+> Today ARM® technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
 
 ### Warum Cortex-M4? ###
-Eine umfangreiche Liste (aller) unter ARM Holdings lizenzierten Mikroarchitekturen kann u.A. auf [wikipedia][wikiMikroarchs] eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche _(Classic, Embedded, Application)_ sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile _(Microcontroller, Real-time, Application)_[^fnArmProfiles] aufzuzeigen: 
+Eine umfangreiche Liste (aller) unter ARM® Holdings lizenzierten Mikroarchitekturen kann u.A. auf [wikipedia][wikiMikroarchs] eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche _(Classic, Embedded, Application)_ sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile _(Microcontroller, Real-time, Application)_[^fnArmProfiles] aufzuzeigen: 
 
 <a href="./pics/ArmRoadMap3.svg" target="_blank"><center>![ssss](./pics/ArmRoadMap3.png "ARM - Devices Roadmap"){.scale75 .noborder}</center></a>
 
@@ -54,7 +54,7 @@ _Zusammenhang zwischen MMU und der Notwendigkeit eines OS._ <yelBg class="scale"
 Ob als Hardware-Basis das Architektur-Profile _Microcontroller (__Cortex-M__ Familie)_ oder _Real-time (__Cortex-R__ Familie)_ gewählt werden soll, schien im ersten Moment klar zu sein. Die __Cortex-R__-Familie ist mit modernen Signalprozessoren (DSP) und Fließkomma-Hardware (FPU) ausgestattet und wurde speziell (trotzdem in Milliarden-Stückzahlen produziert) für kritische Echtzeit-Anwendungen entworfen.
 
 >Fast response - optimized for high performance, hard real-time applications
-The __ARM® Cortex®-R__ real-time processors offer high-performance computing solutions for embedded systems where reliability, high availability, fault tolerance and/or deterministic real-time responses are needed. (...) The __Cortex-R__ series processors provide fast time-to-market through proven technology shipped in billions of products, supported by the vast ARM ecosystem.[^fnCortexR]
+The __ARM® Cortex®-R__ real-time processors offer high-performance computing solutions for embedded systems where reliability, high availability, fault tolerance and/or deterministic real-time responses are needed. (...) The __Cortex-R__ series processors provide fast time-to-market through proven technology shipped in billions of products, supported by the vast ARM® ecosystem.[^fnCortexR]
 
 Bedenkt man jedoch, was für Aufgaben sonst noch von derartigen Controllern erledigt werden, (Nano-Positionierung in der Festplattentechnik, kritische Bereiche der Medizintechnik, autonome Quadrocopter, ...), scheint die Notwendigkeit eines __Cortex-R__ zur Realisierung des geplanten Projekts nicht mehr unbedingt gegeben zu sein.
 
@@ -66,7 +66,7 @@ __Cortex-M ist__ ein Industriestandard (siehe Zitat oder [[Borm:2016, 1-24]][@Bo
 >It is safe to say that the **Cortex-M** has become for the 32-bit world what the 8051
 is for the 8-bit – **an industry-standard core** supplied by many vendors, each of which dip the core in their own special sauce to provide differentiation in the market.[^fnWhichCortex] 
 
-ARM's standardisierte Bibliothek zur Hardware-Abstraktion (CMSIS) beinhaltet bisher nur die __Cortex-M__ Familie 
+Der von ARM® unter der _Apache 2.0 Lizenz_ (kompatibel zur _GNU General Public License 3_, jedoch kein _Copyleft_) veröffentlichte Cortex-Mikrocontroller-Software Schnittstellen-Standard __(CMSIS - Cortex Microcontroller Software Interface Standard)__ umfasst bisher nur die __Cortex-M__ Familie.
 
 > The **C**ortex **M**icrocontroller Software Interface Standard (CMSIS) is a vendor-independent hardware abstraction layer for the **Cortex®-M** family.[^fnCMSISARM]
 
@@ -76,6 +76,9 @@ Mit dem **Cortex-M**<a style="color: red; font-weight: bold;">4</a> bekommt die 
 - eine **MAC** (Multiply-Accumulate) Einheit
 
 zur Verfügung gestellt. 
+
+### CMSIS - Der Cortex-Software Schnittstellen-Standard ###
+Der ARM® Cortex® Microcontroller Software Interface Standard (CMSIS) ist ein frei verfügbares Software-Paket zur Beschleunigung und Standardisierung des Softwareentwicklungsprozesses auf ARM® Cortex Prozessoren. Ausgehend vom herstellerunabhängigen Hardware-Abstraktionslayer für die Cortex-M-Prozessorserie (_CMSIS-CORE_), stellt der CMSIS eine generische Treiberschnittstelle (_CMSIS-Driver_) zur Verfügung. Die "Silicon Vendor"-spezifischen HAL (_Device-HAL_) werden vom jeweiligen Lizenznehmer in den Schnittstellen-Standard von ARM eingebettet. Somit ermöglicht der CMSIS, zusammen mit zertifizierten _Device-HALs_, konsistente und einfache Software-Schnittstellen für herstellerspezifische peripheriegeräte zu entwickeln.
 
 ### Multiply-Accumulate / Sum-Of-Products ###
 Die Rechenoperation $y \leftarrow y + \left(a \cdot b\right)$ ist in der digitalen Signalverarbeitung von zentraler Bedeutung. Sie fungiert als Schlüsselkomponente [[Borm2:2016, 1-18]][@Borm:2016] für grundlegende Impulsfilter-Algorithmen wie _FIR_ bzw. _IIR_ und wird bei der _diskreten Fourier Transformation_ sowie zur numerischen Berechnung von _Faltungsintegralen_ eingesetzt.

@@ -61,6 +61,19 @@ summary::-webkit-details-marker {
   display: none;
 }
 
+/****************************************
+ * Feture sidebar
+ ***************************************/
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+}
+
 .markdown-body h4.foldable {
 	margin:			0 0 1em 0 !important;
 	/*padding: 		0 !important;*/
@@ -164,87 +177,102 @@ meta[name][content]::after {
  * Spec sheet headers
  ***************************************/
 .markdown-body boxed {
-	display: 			block;
-	border: 			2px solid red;
-	-webkit-box-shadow: 6px 7px 5px 0px rgba(56,56,56,0.38);
-	-moz-box-shadow: 	6px 7px 5px 0px rgba(56,56,56,0.38);
-	box-shadow: 		6px 7px 5px 0px rgba(56,56,56,0.38);
-	text-align: 		center;
-	padding: 			2px .3em 2px .3em;
-	margin: 			1.5em 0 1.5em 0;
-	/*padding-top: 		10em;*/
+    display:            block;
+    border:             2px solid red;
+    -webkit-box-shadow: 6px 7px 5px 0px rgba(56,56,56,0.38);
+    -moz-box-shadow:    6px 7px 5px 0px rgba(56,56,56,0.38);
+    box-shadow:         6px 7px 5px 0px rgba(56,56,56,0.38);
+    text-align:         center;
+    padding:            2px .3em 2px .3em;
+    margin:             1.5em 0 1.5em 0;
+    /*padding-top:      10em;*/
 }
 .markdown-body mBox {
-	display: 			inline-block;
-	font-size: 			95%;
-	background-color: 	#DBDBDB;
-	font-family: monospace, monospace;
-	border: 			0px solid #C8C8C8;
-	-webkit-box-shadow: 2px 3px 2px 0px rgba(56,56,56,0.38);
-	-moz-box-shadow: 	2px 3px 2px 0px rgba(56,56,56,0.38);
-	box-shadow: 		2px 3px 2px 0px rgba(56,56,56,0.38);
-	text-align: 		center;
-	padding: 			2px 5px 2px 5px;
-	margin: 			.5em .2em .5em .2em;
-	border-radius: 		5px;
+    display:            inline-block;
+    font-size:          95%;
+    background-color:   #DBDBDB;
+    font-family: monospace, monospace;
+    border:             0px solid #C8C8C8;
+    -webkit-box-shadow: 2px 3px 2px 0px rgba(56,56,56,0.38);
+    -moz-box-shadow:    2px 3px 2px 0px rgba(56,56,56,0.38);
+    box-shadow:         2px 3px 2px 0px rgba(56,56,56,0.38);
+    text-align:         center;
+    padding:            2px 5px 2px 5px;
+    margin:             .5em .2em .5em .2em;
+    border-radius:      5px;
 }
 .markdown-body mBox.l {
-	margin-left: 2.5em;
+    margin-left: 2.5em;
+}
+.markdown-body blockquote>:last-child {
+    margin-bottom: 1em !important;
 }
 /*
  * Horizontal centered line in header texts
  */
-.markdown-body h4.sphd,
+/*.markdown-body h4.sphd,
 .markdown-body h4.sp {
-	margin:			44px 0 22px 0;
-	vertical-align: middle;
-	text-align: 	center;
+    margin:         22px 0 22px 0;
+    vertical-align: middle;
+    text-anchor:    middle;
+}*/
+.markdown-body details summary h4.sphd,
+.markdown-body details summary h4.sp {
+    margin:         0 0 .25em 0;
+    /*padding:      0 !important;*/
+    vertical-align: middle !important;
+    /*padding-bottom: 3px;*/
 }
 /*
  * Spec sheet header
  */
 .markdown-body h4.sphd {
-	background: 	#d8d8d8; 	/* For browsers that do not support gradients */
-    background:		-webkit-linear-gradient(left, white, #d8d8d8, white); 	/* For Safari 5.1 to 6.0 */
-    background:		-o-linear-gradient(left, white, #d8d8d8, white); 		/* For Opera 11.1 to 12.0 */
-    background:	 	-moz-linear-gradient(left, white, #d8d8d8, white); 		/* For Firefox 3.6 to 15 */
-    background: 	linear-gradient(left, white, #d8d8d8, white); 			/* Standard syntax */
-	line-height: 	1px;
-	font-size: 		120%;
+    background:     #d8d8d8;    /* For browsers that do not support gradients */
+    background:     -webkit-linear-gradient(left, white, #d8d8d8, white);   /* For Safari 5.1 to 6.0 */
+    background:     -o-linear-gradient(left, white, #d8d8d8, white);        /* For Opera 11.1 to 12.0 */
+    background:     -moz-linear-gradient(left, white, #d8d8d8, white);      /* For Firefox 3.6 to 15 */
+    background:     linear-gradient(left, white, #d8d8d8, white);           /* Standard syntax */
+    line-height:    1px;
+    font-size:      120%;
+    text-align:     center;
 }
 /*
  * Spec sheet subheader
  */
-.markdown-body h4.sp 	{
-	background: 	#E6E6E6; 	/* For browsers that do not support gradients */
-    background:		-webkit-linear-gradient(left, white, #E6E6E6, white); 	/* For Safari 5.1 to 6.0 */
-    background:		-o-linear-gradient(left, white, #E6E6E6, white); 		/* For Opera 11.1 to 12.0 */
-    background:	 	-moz-linear-gradient(left, white, #E6E6E6, white); 		/* For Firefox 3.6 to 15 */
-    background: 	linear-gradient(left, white, #E6E6E6, white); 			/* Standard syntax */
-	line-height: 	1px;
-	font-size: 		100%;
-	text-align: 		left;
-	/*margin-right: 	50%*/
+.markdown-body h4.sp    {
+    background:     #E6E6E6;    /* For browsers that do not support gradients */
+    background:     -webkit-linear-gradient(left, white, #E6E6E6, white);   /* For Safari 5.1 to 6.0 */
+    background:     -o-linear-gradient(left, white, #E6E6E6, white);        /* For Opera 11.1 to 12.0 */
+    background:     -moz-linear-gradient(left, white, #E6E6E6, white);      /* For Firefox 3.6 to 15 */
+    background:     linear-gradient(left, white, #E6E6E6, white);           /* Standard syntax */
+    line-height:    1px;
+    font-size:      100%;
+    text-align:     left;
+
+    /*margin-right:     50%*/
 }
 .markdown-body h4.sphd span,
 .markdown-body h4.sp span {
-    padding-right: 		10px;
+    padding-right:      10px;
 }
 .markdown-body h4.sphd span.codehd,
 .markdown-body h4.sp span.codehd {
-    box-shadow: 		8px 8px 5px #B3B3B3;
-    margin-top: 		6em !important;
+    -webkit-box-shadow: 6px 7px 5px 0px #B3B3B3;
+    -moz-box-shadow:    6px 7px 5px 0px #B3B3B3;
+    box-shadow:         6px 7px 5px 0px #B3B3B3;
+    background-color:   #fcfcfc;
+    padding-left:       10px;
+    /*margin-top:         .6em !important;*/
 }
 .markdown-body h4.sphd span {
-    background-color: 	#FCFCFC;
-	border:				1px solid #d8d8d8;
-    padding-left: 		10px;
-	/*margin-left: 		0px; */
+    background-color:   #FCFCFC;
+    border:             1px solid #d8d8d8;
+    padding-left:      10px;
 }
 .markdown-body h4.sp span {
-    background-color: 	white;
-	border:				none;
-	padding-left: 		none;
+    background-color:   white;
+    border:             none;
+    margin-left:        10px;
 }
 
 /****************************************
@@ -305,7 +333,7 @@ meta[name][content]::after {
  * Include paragraph numbering:
  * In the generated html file, append this class to body as follows:
  *
- * <article class="markdown-body">;
+ * <article class="markdown-body paragraphNum">;
  * <article class="markdown-body paragraphNum">
  *
  ***************************************/
@@ -1526,88 +1554,482 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>05_Projektziel_und_Anforderungskatalog</title></head><body><article class="markdown-body"><!-- temp toc -->
+<title>09_Modellbildungsprozess</title></head><body><article class="markdown-body paragraphNum"><!-- temp toc -->
 
 <div class="toc">
 <ul>
-<li><a href="#projektziel-und-anforderungskatalog">Projektziel und Anforderungskatalog</a></li>
+<li><a href="#modellbildungsprozess">Modellbildungsprozess</a><ul>
+<li><a href="#generisches-modell">Generisches Modell</a><ul>
+<li><a href="#mathematische-zusammenhange">Mathematische Zusammenhänge</a><ul>
+<li><a href="#translation-und-rotation">Translation und Rotation</a></li>
+<li><a href="#energiebilanz-in-allgemeiner-form">Energiebilanz in allgemeiner Form</a></li>
+<li><a href="#impulsbilanzgleichung">Impulsbilanzgleichung</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#aktoren">Aktoren</a><ul>
+<li><a href="#klassifizierung">Klassifizierung</a></li>
+<li><a href="#herstellerspezifikation">Herstellerspezifikation</a></li>
+<li><a href="#elektrische-komponenten">Elektrische Komponenten</a><ul>
+<li><a href="#elektrisches-teilsystem">Elektrisches Teilsystem</a></li>
+<li><a href="#back-emf">Back-EMF</a></li>
+<li><a href="#elektrisch-generiertes-drehmoment">Elektrisch generiertes Drehmoment</a></li>
+<li><a href="#positionssensor">Positionssensor</a></li>
+</ul>
+</li>
+<li><a href="#mechanische-komponenten">Mechanische Komponenten</a><ul>
+<li><a href="#lastmoment">Lastmoment</a></li>
+<li><a href="#mechanisches-teilsystem">Mechanisches Teilsystem</a></li>
+<li><a href="#verbindung-der-teilsysteme">Verbindung der Teilsysteme</a></li>
+</ul>
+</li>
+<li><a href="#aktor-gesamtmodell">Aktor Gesamtmodell</a></li>
+<li><a href="#testsignale">Testsignale</a><ul>
+<li><a href="#problematik-der-sattigung">Problematik der Sättigung</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#stellglied-leistungsteil">??? Stellglied / Leistungsteil</a></li>
+<li><a href="#signalkonditionierung">??? Signalkonditionierung</a></li>
+</ul>
+</li>
 <li><a href="#quellenangaben">Quellenangaben</a></li>
 </ul>
 </div>
-<h1 id="projektziel-und-anforderungskatalog"><a name="user-content-projektziel-und-anforderungskatalog" href="#projektziel-und-anforderungskatalog" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projektziel und Anforderungskatalog</h1>
-<h4 class="sphd"><span>Stand der Technik</span></h4>
-
-<p>Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, <em>quasi-kontinuierliche</em> Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.</p>
-<h4 class="sphd"><span>Systemzweck</span></h4>
-
-<p>Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die <strong>Modellbildung</strong> und <strong>Simulation</strong> des Gesamtsystems soll als <strong>Schwerpunktthema</strong> betrachtet und entsprechend ausgearbeitet werden.</p>
-<h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
-
-<p>Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als <strong>physisches System</strong> bezeichnet während im Abschnitt <strong>Simulationsumgebung</strong> das Computermopdell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.</p>
-<h4 class="sp"><span>Physisches System</span></h4>
-
-<figure class="floatr topal" style="width:185px"><img src="/media/data/whz/projectGalvoDocu/chapters/pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860"><figcaption>Cambridge Technologies Galvanometer Modell 6860</figcaption></figure>
-
-<p>Die beiden <lkey><a href="#klassifizierung">Moving-magnet Galvanometer</a></lkey> der Firma <a href="http://www.cambridgetechnology.com">Cambridge Technologies</a>, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt </p>
-<p><lmjx>$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\B_y-A_y\end{pmatrix} }{eqDirVect3} $</lmjx></p>
-<p>Um einen Vektor $\vec s$ der Länge $\left| \vec s\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec s$ entlang einer Geraden $\,g\,$ beschrieben durch:</p>
-<p>$$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$</p>
-<p>Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren. Um den Aufwand zur Erzeugung der notwendigen <a href="#quelldaten-generieren">Quelldaten</a> gering zu halten, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. </p>
-<div style="display: inline;">
-Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="/media/data/whz/projectGalvoDocu/chapters/pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="/media/data/whz/projectGalvoDocu/chapters/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (<a href="#jumptoSafety">Laserklasse 3B</a>, 532nm (Grün), <a href="#jumptoSafety">max. 50mW</a>, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
-</div>
-
-<h4 class="sp"><span>Simulationsumgebung</span></h4>
-
-<p>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter mittels Computermodell optimiert werden können. Um quantitative Aussagen bezüglich Stabilität und Robustheit nachweisen zu können, sind entsprechende Simulationen immer dann unerlässlich, wenn es sich um Systeme handelt die durch instabilie Betriebszustände beschädigt oder zerstört werden können. <br />
-Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, <strong>zeitinvariante</strong> Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. </p>
-<p><boxed>Die Forderung nach Zeitinvarianz impliziert immer auch <strong>Rückwirkungsfreiheit</strong> zwischen den Teilsystemen.</boxed> </p>
-<p>Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.</p>
-<p>Aus dem Modellzweck oder Kontext wird die notwendige <a href="#modell"><em>Modellgranularität</em></a> abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den diskret berechneten, gewichteten Impulsfolgen, nach der DAC-Wandlung wieder ein analoges Stellsignal zu erhalten, werden <em>Rekonstruktionsfilter</em> zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung, dürfen die zusätzlichen Filterpole meist nicht ignoriert werden. Somit sind die Teilsysteme &ldquo;Antialiasing-&rdquo; und &ldquo;Rekonstruktionsfilter&rdquo; in das Computermodell des Gesamtsystems zu integrieren.<br />
-Entsprechendes gilt auch für die Modellierung weiterer Teilsysteme wie z. B. Stellglied sowie Messumformer + Tiefpassfilterung. </p>
-<h4 class="sphd"><span>Design</span></h4>
-
-<h4 class="sphd"><span>Systemeinsatz</span></h4>
-
-<h4 class="sphd"><span>Systemanforderungen</span></h4>
-
-<div class="spaced">
-<ol>
-<li>Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der <em>Baugruppen-Wahl</em>  als gegeben zu betrachten (vergl. <em>Bestandsbaugruppe</em>).</li>
-<li>Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller <a href="#citeSTM32F429i" title="High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"><em>STM32F429i</em></a> implementiert werden.</li>
-<li>Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.</li>
-<li>Die Positionierung des Laserpunktes soll hinreichend &ldquo;schnell&rdquo; und &ldquo;präzise&rdquo; erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.</li>
-<li>Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.</li>
-<li>Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.</li>
-<li>Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.</li>
-</ol>
-</div>
-<h4 class="sphd"><span>Allgemeine Anforderungen</span></h4>
-
-<p><a name="jumptoSafety"> </a><br />
-<h4 class="sp"><span>Sicherheit</span></h4><br />
-Während der Entwicklungsphase ist stehts darauf zu achten dass </p>
+<h1 id="modellbildungsprozess"><a name="user-content-modellbildungsprozess" href="#modellbildungsprozess" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modellbildungsprozess</h1>
+<blockquote>
+<p>&ldquo;It&rsquo;s a bunch of shapes connected by lines.&rdquo; Dilbert <br />
+<a href="#citeMDA" title="V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;">[MDA:2006, p.73]</a></p>
+</blockquote>
+<p>Dieser Aussage entsprechend soll hier aus dem formellen <a href="#projektziel-und-anforderungskatalog">Anforderungskatalog</a> (vergl. Pflichtenheft) ein erstes abstraktes Modell abgeleitet werden. </p>
 <ul>
-<li>zu keinem Zeitpunkt die Gefahr einer willkürlichen Positionierung des Laserstrahls gegeben ist!<ul>
-<li>Description of the &ldquo;safe state guard&rdquo; system</li>
-<li>exceptions and forced bias</li>
+<li>Aktoren </li>
+<li>Sensoren</li>
+<li>Leistungselektronik</li>
+<li>Steuer- und Reglerelektronik<ul>
+<li>Mikrocontrollerplatine </li>
+<li>Signalkonditionierung<ul>
+<li>Pegelwandlung </li>
+<li>Antialiasing (ADC)</li>
+<li>Rekonstruktionsfilter (DAC)</li>
 </ul>
 </li>
-<li>Hardware-Komponenten vor Überlast geschützt sind! </li>
 </ul>
-<h4 class="sp"><span>Qualität</span></h4>
-
-<p>Um die &ldquo;Qualität&rdquo; der erzeugten Abbildungen effektiv messen zu können, soll auf eine Testmöglichkeit für das <a href="http://www.laserfx.com/Backstage.LaserFX.com/Systems/Scanning3.html">ILDA-Testpattern</a> implementiert werden. </p>
-<p></par></p>
-<p>Zu Beginn des Kapitels <a href="#modellbildungsprozess">Modellbildungsprozess</a> folgt eine erste Aufteilung des Projekts.</p>
-<!-- wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
-Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um
-
-Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
-
-$$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvektor der Geraden erhält man, je nachdem ob $a$ oder $b$ ungleich null ist, durch Wahl von
-<center>$ {\vec {p}}={\begin{pmatrix}c/a\\\0\end{pmatrix}}\;\;\; $ oder $ \;\;\;{\vec {p}}={\begin{pmatrix}0\\\c/b\end{pmatrix}} $.</center> -->
-
+</li>
+<li>Software, Tools und Simulation<ul>
+<li>Zielsystem: Eingebettete Hardware<ul>
+<li>Implementierung der Regelalgorithmen (Reglerelektronik)</li>
+<li>Sicherheitssystem (Überstromschutz, &ldquo;Error-Safe-State&rdquo;)</li>
+</ul>
+</li>
+<li>Entwicklungs-PC<ul>
+<li>MATLAB/Simlunik, Systemmodellierung/Simulation</li>
+<li>LTspice, Subsystemmodellierung/Simulation</li>
+<li>Eagle CAD, Hardwareentwurf  </li>
+</ul>
+</li>
+<li>Schnittstellenprogramm zur Echtzeitkommunikation</li>
+</ul>
+</li>
+</ul>
+<p><center><figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/chapters/pics/abstractSystemB.svg" title="Abstraktes Modell des Regelkreises" style="width: 1500px" /><figcaption>Abstraktes Modell des Regelkreises</figcaption></figure></center>  </p>
+<p><yelBg>&hellip;So what???</yelBg></p>
+<h2 id="generisches-modell"><a name="user-content-generisches-modell" href="#generisches-modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generisches Modell</h2>
+<p>In der Informatik sind <em>generische Typen</em> Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von <em>parametrischer Polymorphie</em>.<sup id="fnref:fnwikiGenericTypes"><a class="footnote-ref" href="#fn:fnwikiGenericTypes" rel="footnote">19</a></sup> Überträgt man den Begriff <em>generisch</em> auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ <em>&ldquo;Aktor&rdquo;</em> respektive <em>&ldquo;Galvanometer&rdquo;</em> die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als <em>Subsystem</em> <strong><em>Aktor</em></strong> auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. </p>
+<p>Die Analogie zu <em>generic types</em> in objektorientierten Programmiersprachen ist nur teilweise zulässig. Vergleicht man diese Methode jedoch mit der in <a href="#vorarbeit">Vorarbeit</a> aufgezeigten, nämlich einem Aktor-Computermodell, abhängig von Geometrie und Materialparametern, so finden sich doch einige Eigenschaften, die analog verwendet werden können.</p>
+<h3 id="mathematische-zusammenhange"><a name="user-content-mathematische-zusammenhange" href="#mathematische-zusammenhange" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mathematische Zusammenhänge</h3>
+<p>Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich bekanntlich durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt unter anderem, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers, unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. </p>
+<h5 id="translation-und-rotation"><a name="user-content-translation-und-rotation" href="#translation-und-rotation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Translation und Rotation</h5>
+<p>Die <em>Grundgleichungen für Translation und Rotation</em>  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. <a href="#citeIserm" title="Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;">[Iser:2008, 123]</a>) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.</p>
+<p><center></p>
+<table>
+<thead>
+<tr>
+<th align="left">Translation</th>
+<th align="center">in eine Richtung</th>
+<th align="left">Rotation</th>
+<th align="center">um eine Achse</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">$s$</td>
+<td align="center">Weg</td>
+<td align="left">$\varphi$</td>
+<td align="center">Winkel</td>
+</tr>
+<tr>
+<td align="left">$v=\dot s$</td>
+<td align="center">Geschwindigkeit</td>
+<td align="left">$\omega = \dot\varphi$</td>
+<td align="center">Winkelgeschwindigkeit</td>
+</tr>
+<tr>
+<td align="left">$a=\dot v = \ddot s$</td>
+<td align="center">Beschleunigung</td>
+<td align="left">$\dot\omega = \ddot\varphi$</td>
+<td align="center">Winkelbeschleunigung</td>
+</tr>
+<tr>
+<td align="left">$m$</td>
+<td align="center">Masse</td>
+<td align="left">$J, \theta$</td>
+<td align="center">Trägheitsmoment</td>
+</tr>
+<tr>
+<td align="left">$\vec F$</td>
+<td align="center">Kraft in Wegrichtung</td>
+<td align="left">$\vec M$</td>
+<td align="center">Moment um Drehachse</td>
+</tr>
+<tr>
+<td align="left">$\vec I = m \cdot \vec v$</td>
+<td align="center">Impuls</td>
+<td align="left">$\vec L = J \cdot \vec\omega$</td>
+<td align="center">Drehimpuls</td>
+</tr>
+<tr>
+<td align="left">$\vec F = m \cdot \vec a$</td>
+<td align="center">Kraeftesatz</td>
+<td align="left">$\vec M = J \cdot \dot\omega$</td>
+<td align="center">Momentensatz</td>
+</tr>
+<tr>
+<td align="left">$E_k = \frac 1 2\; m \cdot v^2$</td>
+<td align="center">kinetische Energie</td>
+<td align="left">$E_k = \frac 1 2\; J \cdot \omega^2$</td>
+<td align="center">kinetische Energie</td>
+</tr>
+<tr>
+<td align="left">$W = \int F ds$</td>
+<td align="center">Arbeit</td>
+<td align="left">$W = \int M d\varphi$</td>
+<td align="center">Arbeit</td>
+</tr>
+<tr>
+<td align="left">$P = F \cdot v$</td>
+<td align="center">Leistung</td>
+<td align="left">$P = M \cdot \omega$</td>
+<td align="center">Leistung</td>
+</tr>
+</tbody>
+</table>
+<p></center></p>
+<p>Das Aufstellen von <em>Bilanzgleichungen</em> ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stets, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. </p>
+<h4 id="energiebilanz-in-allgemeiner-form"><a name="user-content-energiebilanz-in-allgemeiner-form" href="#energiebilanz-in-allgemeiner-form" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Energiebilanz in allgemeiner Form</h4>
+<p><img src="/media/data/whz/projectGalvoDocu/chapters/pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, &hellip;) kein Energiestrom, so unterliegt das Gebilde dem <em>Energieerhaltungssatz</em> wobei innerhalb der Grenenzen $N$ <em>verschiedene Energiearten</em> $E_i$ vorhanden sein <em>können</em> (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische <em>Umformung der mechanischen Größen</em> $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.</p>
+<p>$$ \frac{1}{2} \cdot m \cdot v^2 = E_{kin}<br />
+\;\;\;\widehat{=}\;\;\;<br />
+E_{rot} = \frac{1}{2} \cdot J_x \cdot \omega^2 $$</p>
+<p>Aus dem Energieerhaltungssatz kann das <em>Kräftegleichgewicht</em> abgeleitet werden. Wegen den analogen Gesetzmäßigkeiten zwischen translatorischer und rotatorischer Bewegung, kann vom Kräftegleichgewicht eines bewegten Körpers auf ein Drehmomentgleichgewicht geschlossen werden.</p>
+<h4 id="impulsbilanzgleichung"><a name="user-content-impulsbilanzgleichung" href="#impulsbilanzgleichung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Impulsbilanzgleichung</h4>
+<p>Wirkt auf einen Körper der Masse $m$ und dem Impuls $\vec I = m \cdot \vec v$ eine äußere Kraft $\vec F$, so gilt bei translatorischer Bewegung und $m=const$ entsprechend dem <a href="#citeImpulserhaltung" title="Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat.">Impulserhaltungssatz</a><sup id="fnref:fnImpulserhaltung"><a class="footnote-ref" href="#fn:fnImpulserhaltung" rel="footnote">23</a></sup> folgende Bilanzgleichung: </p>
+<p>\begin{equation}<br />
+\frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t) \label{eqImpulsbil}\end{equation}</p>
+<p>Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. Analog wird die Impulsbilanz für rotiernde Körper mit der als skalar betrachteten Massenträgheit $J$ und bestehendem Drehimpuls $\vec L_s = J \cdot \vec \omega$ aufgestellt. Gleichung \eqref{eqDrehimpulsbil} wird folgerichtig als <strong>Drehimpulsbilanzgleichung</strong> bezeichnet.</p>
+<p>\begin{equation}{\frac{\partial}{\partial\,t}\,\vec L_s = J \cdot \frac{\partial}{\partial\,t}\,\vec \omega(t) = \vec M(t)} \label{eqDrehimpulsbil}\end{equation}</p>
+<h2 id="aktoren"><a name="user-content-aktoren" href="#aktoren" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Aktoren</h2>
+<p>Wie bereits in Abschnitt <a href="#industriell-gefertigte-aktoren">Industriell gefertigte Aktoren</a> erwähnt, wurden Galvoscanner als Aktor-Baugruppen eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt <a href="#vorarbeit">Vorarbeit</a> angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt <a href="#generisches-modell">generisches Modell</a> beschrieben. </p>
+<h3 id="klassifizierung"><a name="user-content-klassifizierung" href="#klassifizierung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Klassifizierung</h3>
+<p>Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $\si{N.m/s}$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. </p>
+<p>Bei der Modellierung von DC-Motoren wird der <em>Zusammenhang zwischen Motorstrom und Drehmoment</em> oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die <em>Drehmomentkonstante</em>, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann (<a href="http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&amp;section=SystemModeling" title="http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&amp;section=SystemModeling">siehe Abbildung</a>).<img src="/media/data/whz/projectGalvoDocu/chapters/pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten <em><strong>&ldquo;Moving-magnet&rdquo;</strong> Galvanometer auf einem permanent erregten Magnetfeld basiert, ist die Annahme </em>B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle <a href="#refTableMechanic"><em>Mechanical Specifications</em></a> kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt <a href="#industriell-gefertigte-aktoren">Industriell gefertigte Aktoren</a> erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle <a href="#refTableMechanic" title="Goto Table Mechanical Specifications"><em>Mechanical Specifications</em></a> ist die entsprechende Drehmomentkonstante unter <em>Torque Constant</em> angegeben.</p>
+<p>Der Vollständigkeit halber sollen an dieser Stelle einige Parallelen zur Unterklasse der <em>elektronisch kommutierten</em> Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff <em>&ldquo;Brushless <a style="color: #aaa ">DC-</a>Motor&rdquo;</em> bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.</p>
+<h3 id="herstellerspezifikation"><a name="user-content-herstellerspezifikation" href="#herstellerspezifikation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Herstellerspezifikation</h3>
+<p>Bei den hier eingesetzten, industriell gefertigten Motoren der Firma <a href="www.cambridgetechnology.com" title="www.cambridgetechnology.com"><em>Cambridge Technology</em></a> handelt es sich um optische Scannereinheiten (Serie 6860) vom Typ <em>&ldquo;Moving Magnet&rdquo;</em> mit integriertem Positionssensor, welcher auf Basis variabler Kapazitäten arbeitet. Die vom Hersteller liebevoll unter <a href="https://www.google.de/#q=cambridge%20technology%206860" title="Veteran Galvo Motors"><strong>Veteran Galvo Motors</strong></a> kategorisierten Aktoren gehören zwar nicht mehr zu den aktuellen Produkten von <em>Cambridge Technology</em>, sind jedoch hervorragend geeignet für das hier dokumentierte Projektvorhaben. </p>
+<p>Nachfolgend werden die <a href="https://www.google.de/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=10&amp;cad=rja&amp;uact=8&amp;ved=0ahUKEwjZ5bLLuLXQAhWBuRQKHfd3Bc4QIAhgMAk&amp;url=http%3A%2F%2Fwebcache.googleusercontent.com%2Fsearch%3Fq%3Dcache%3A1O6mSJqn6noJ%3Acambridgetechnology.net%2Findex.php%253Foption%253Dcom_docman%2526task%253Ddoc_download%2526gid%253D322%2B%26cd%3D10%26hl%3Dde%26ct%3Dclnk%26gl%3Dde&amp;usg=AFQjCNFCsAo8tjp7P4odi0Yv0yQupg3JAw&amp;sig2=KDaq0vZeNkkPfkigxltuPg" title="google cache, letzter Aufruf: 19.11.2016">Herstellerspezifikationen</a> der <strong>6860</strong> Serie aufgelistet.<br><br />
+<a name="refTableElectric"> </a><br />
+<center></p>
+<table>
+<thead>
+<tr>
+<th>Electrical Specifications</th>
+<th>Symbol</th>
+<th>Value</th>
+<th align="center"></th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coil Inductance</td>
+<td>$L$</td>
+<td>$\SI{160}{\micro\henry}$</td>
+<td align="center"></td>
+<td align="center">$\pm\SI{10}{\%}$</td>
+</tr>
+<tr>
+<td>Coil Resistance</td>
+<td>$R_L$</td>
+<td>$\SI{1.5}{\ohm}$</td>
+<td align="center"></td>
+<td align="center">$\pm\SI{10}{\%}$</td>
+</tr>
+<tr>
+<td>Back-EMF const.</td>
+<td>$K_{EMF}$</td>
+<td>$\SI{0.17}{mV s /\degree}$</td>
+<td align="center">$\SI{9.74}{mV s /\radian}$</td>
+<td align="center">$\pm\SI{10}{\%}$</td>
+</tr>
+<tr>
+<td>RMS Current</td>
+<td>$I_{L-RMS}$</td>
+<td>$\SI{4.6}{A}$</td>
+<td align="center">at $\ T_{case}=\SI{50}{°C}$</td>
+<td align="center">Max.</td>
+</tr>
+<tr>
+<td>Peak Current</td>
+<td>$I_{L-PEAK}$</td>
+<td>$\SI{25}{A}$</td>
+<td align="center"></td>
+<td align="center">Max.</td>
+</tr>
+<tr>
+<td>Step Response Time</td>
+<td>Small Angle</td>
+<td>$\SI{0.5}{ms}$</td>
+<td align="center">inertia matched load</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p><a name="refTableMechanic"> </a></p>
+<table>
+<thead>
+<tr>
+<th>Mechanical Specifications</th>
+<th>Symbol</th>
+<th>Value</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Angular Excursion</td>
+<td>$\Delta\varphi_{Max}$</td>
+<td>$\SI{40}{\degree}$</td>
+<td>$\SI{0.698}{\radian/s}$</td>
+<td></td>
+</tr>
+<tr>
+<td>Rotor Inertia</td>
+<td>$J_R$</td>
+<td>$\SI{0.6}{gm.cm^2}$</td>
+<td>$\SI{6e-8}{kg.m^2}$</td>
+<td>$\pm\SI{10}{\%}$</td>
+</tr>
+<tr>
+<td>Torque Constant</td>
+<td>$K_{EL}$</td>
+<td>$\SI{9.3*10^4}{dyne.cm/A}$</td>
+<td>$\SI{9.3e-3}{N.m/A}$</td>
+<td>$\pm\SI{10}{\%}$</td>
+</tr>
+<tr>
+<td>Max. Coil Temperature</td>
+<td></td>
+<td>$\SI{110}{°C}$</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Thermal Resistance<br>(Coil - Case)</td>
+<td></td>
+<td>$\SI{1.5}{°C/\watt}, Max$</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="refTablePositionDetect"> </a></p>
+<table>
+<thead>
+<tr>
+<th>Position Detector</th>
+<th>Value</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Linearity</td>
+<td>99.9%, Minimum, over 40 degrees</td>
+<td></td>
+</tr>
+<tr>
+<td>Scale Drift</td>
+<td>50PPM/°C, Maximum</td>
+<td></td>
+</tr>
+<tr>
+<td>Zero Drift</td>
+<td>15 microradians/°C, Maximum</td>
+<td></td>
+</tr>
+<tr>
+<td>Repeatability, Short Term</td>
+<td>8 microradians</td>
+<td></td>
+</tr>
+<tr>
+<td>Output Signal, Common Mode</td>
+<td>585µA @ AGC voltage=10VDC</td>
+<td>$\pm\SI{20}{\%}$</td>
+</tr>
+<tr>
+<td>Output Signal, Differential Mode</td>
+<td>14.5µA/° @ common mode current of 585µA</td>
+<td>$\pm\SI{20}{\%}$</td>
+</tr>
+</tbody>
+</table>
+<p></center><br />
+<span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$<br />
+$\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span><br />
+<br></p>
+<h3 id="elektrische-komponenten"><a name="user-content-elektrische-komponenten" href="#elektrische-komponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Elektrische Komponenten</h3>
+<p>Das fertige Modell des Galvomotors setzt sich aus elektrischen und mechanischen Teilsystemen zusammen. Beim ersten Modellansatz wurde die <strong>Eingangsspannung</strong> der Statorinduktivität als Stellgröße für die Regelstrecke bzw. für die Aktoren angenommen.</p>
+<h4 id="elektrisches-teilsystem"><a name="user-content-elektrisches-teilsystem" href="#elektrisches-teilsystem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Elektrisches Teilsystem</h4>
+<p>In differentieller Form ist die Zweipolbeziehung einer idealen Induktivität gegeben durch:<br />
+$$ u(t)=L \cdot \frac{\partial~i_L}{\partial~t} $$<br />
+Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität <br />
+$$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t) <br />
+\;\;\;\Leftrightarrow\;\;\;<br />
+\frac{u_M(t)}{L} = \frac{\partial~i_L}{\partial~t} + \frac{R_L}{L} \cdot i_L(t) $$ <br />
+Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:<br />
+$$\mathscr{L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ <br />
+Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom: <br />
+$$ \begin{equation}<br />
+G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$<br />
+Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des Nennerpolynoms von \eqref{eqGsAusg} bestimmt werden und beträgt $\; {\large\tau} = \frac{L}{R_L} = \frac{160\,\mu H}{1.5\,\Omega}\approx 107\,\mu s$. </p>
+<p>Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entstehen da Systeme mit Nullstellenüberschuss keine Bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus Kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\ \phantom{.} \\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center><img alt="realInductor" src="/media/data/whz/projectGalvoDocu/chapters/pics/simulExport/realInductor.svg" title="Motorinduktivität" /></center> </p>
+<h4 id="back-emf"><a name="user-content-back-emf" href="#back-emf" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Back-EMF</h4>
+<p>Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die <em>elektromagnetische Induktion</em> führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. &ldquo;Electromotive Force&rdquo;, EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportional mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch</p>
+<p>In den Herstellerspezifikationen (<a href="#refTableElectric">Electrical Specifications</a>) ist der EMF-Faktor mit $0.17\si{mV/degree/sec}\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus </p>
+<p>$$\begin{aligned} <br />
+\SI{0.17}{\milli V\per\degree\per\second} \\<br />
+0.17,mV/degree/sec &amp;= 9.74\times 10^{-3} V/rad/s \nonumber \\<br />
+&amp;= 9.74\times 10^{-3} Nm/A \nonumber<br />
+\end{aligned}$$</p>
+<p>was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit <br />
+\begin{equation} u_{EMF}(t) = K_{EMF} \cdot \omega(t) \label{eqVemf} \end{equation} <br />
+Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.<br />
+\begin{equation} <br />
+G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center><img alt="mechSubA" src="/media/data/whz/projectGalvoDocu/chapters/pics/simulExport/mechSubA.svg" title="Mechanisches Subsystem" /></center></p>
+<h4 id="elektrisch-generiertes-drehmoment"><a name="user-content-elektrisch-generiertes-drehmoment" href="#elektrisch-generiertes-drehmoment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Elektrisch generiertes Drehmoment</h4>
+<p>Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren <em>Gain-Block</em> im Blockschaltbild berücksichtigt wird. </p>
+<h4 id="positionssensor"><a name="user-content-positionssensor" href="#positionssensor" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Positionssensor</h4>
+<p>Die verwendeten Galvoscanner sind mit einem integrierten Positionsdetektor ausgestattet. Die Winkelposition der Rotorwelle wird anhand variabler Kapazitäten gemessen (<a href="#modellbildungsprozess">siehe Abb. in <em>Modellbildungsprozess</em></a>). Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Die vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung von $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet und besitzt die Einheit $V/rad$.<br />
+Um den eingebauten Positionssensor der <em>6860</em> Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $\omega(t)$ durch einen einfachen Integrationsblock in die Winkelposition $\varphi(t)$ überführt (siehe <a href="#mathematische-zusammenhänge">Mathematische Zusammenhänge</a>). </p>
+<h3 id="mechanische-komponenten"><a name="user-content-mechanische-komponenten" href="#mechanische-komponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mechanische Komponenten</h3>
+<p>Eine <em>bewegte</em> Masse speichert die <em>kinetische Energie</em> $E_{kin}$. Neben dem Linearfaktor <em>m</em> steigt $E_{kin}$ dabei quadratisch zur Geschwindigkeit, mit der sich die Masse bewegt. Rotiert ein Körper um eine feste Achse, so spricht man von <em>Rotationsenergie</em> $E_{rot}$. Sie steigt in Abhängigkeit des <a href="#citeInertialmoment" title="Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;">Trägheitsmoments</a><sup id="fnref:fnInertialmoment"><a class="footnote-ref" href="#fn:fnInertialmoment" rel="footnote">21</a></sup> $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.</p>
+<p>Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhaltet zusätzlich Näherungen und Annahmen die bisher getroffen wurden</p>
+<ul>
+<li>elektrisches Drehmoment $\,\bf{M_{EL}}$<ul>
+<li>Erregerfeld gilt als konstant bezüglich Intensität ($\vec{B}, \vec{H}$) und Winkelpos. (siehe <a href="#klassifizierung">Klassifizierung</a>, 2. Absatz) </li>
+<li>$M_{EL}$ ist im Bereich $\,\pm \frac{1}{2}\cdot \Delta\varphi_{Max} = \pm 20°$ proportional zum Spulenstrom $\,i_L(t)$</li>
+<li>Herstellerangaben zum Proportionalitätsfaktor $\,K_{EL}$ vorhanden </li>
+</ul>
+</li>
+<li>Trägheitsmoment $\,\bf{J_R}$ (alt. Inertialmoment) des rotierenden Körpers setzt sich zusammen aus <ul>
+<li>Rotorwelle, Rotormagnet, Sensorscheibe und Spiegel</li>
+<li>Die Drehachse wird als fest und die Rotormasse als homogen verteilt, angenommen <ul>
+<li>Trägheitstensor darf in die skalare Größe des Trägheitsmoments überführt werden</li>
+</ul>
+</li>
+<li>Herstellerangabe zum skalaren Trägheitsmoment $\,J_R$ vorhanden </li>
+</ul>
+</li>
+<li>mechanische Reibung $\,\bf{M_{FR}}$, verursacht durch Reibungsverluste in<ul>
+<li>Kugellager, Positionssensor, keine Herstellerangaben</li>
+</ul>
+</li>
+<li>äußeres Lastmoment / Rückstellmoment $\,\bf{M_{TB}}$  <ul>
+<li>siehe <a href="#lastmoment">Lastmoment</a></li>
+<li>keine Herstellerangaben</li>
+</ul>
+</li>
+</ul>
+<h4 id="lastmoment"><a name="user-content-lastmoment" href="#lastmoment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Lastmoment</h4>
+<p>Für den konkreten mechanischen Aufbau des Scannermodells <em>6860</em> konnten keine zuverlässigen Quellen gefunden werden. Die Vermutung, dass die Rotorwelle einem statischen Lastmoment ausgesetzt ist, soll im folgenden kurz begründet werden:</p>
+<ol>
+<li>selbständiges Rückstellen der Rotorwelle bis auf ±4° um die Mittelstellung wenn Spannungsfrei geschaltet<ul>
+<li>Die Rotorwelle wird automatisch in Mittelstellung zurück gedreht wenn das elektrische Moment zu 0 wird.</li>
+<li>Dieser Effekt könnte, abhängig von Aufbau und Geometrie des magnetischen Statorkreises, auch darauf zurück zu führen sein, dass sich bei Mittelstellung der geringste magnetische Widerstand einstellt. Anders formuliert: Die Rückstellbewegung könnte auch auf die <a href="https://de.wikipedia.org/wiki/Reluktanzkraft" title="https://de.wikipedia.org/wiki/Reluktanzkraft">Reluktanzkraft</a> zurückzuführen sein.  </li>
+</ul>
+</li>
+<li>Kräftegleichgewicht bei sehr geringen Statorströmen (wenige mA)<ul>
+<li>Wird ein minimaler Gleichstrom in die Motorwicklung eingeprägt, so stellt sich im Bereich $\,\Delta\varphi_{Max}$ ein Gleichgewichtszustand des Drehwinkels ein. </li>
+</ul>
+</li>
+<li>Quelle: Mechanisches Funktionsprinzip von Effektlasern auf <a href="http://www.laserfx.com/Works/Works3S.html" title="How Laser Shows Work - Scanning System"><a href="http://www.laserfx.com"><a href="http://www.laserfx.com">www.laserfx.com</a></a></a></li>
+<li>Elektrische &ldquo;Erdung&rdquo; des Rotorkörpers um elektrostatischen Effekten vorzubeugen</li>
+</ol>
+<p>In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich eines statischen Lastmoments zu finden. Da dieses jedoch experimentell nachgewiesen werden kann und sich der Einfluss nur schwer abschätzen lässt, wurde bei der Modellbildung ein entsprechendes Lastmoment in Form einer Torsionsfederkonstante (lineares Verhalten) mit einbezogen.</p>
+<h4 id="mechanisches-teilsystem"><a name="user-content-mechanisches-teilsystem" href="#mechanisches-teilsystem" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Mechanisches Teilsystem</h4>
+<p>Entsprechend des Abschnitts <a href="#mathematische-zusammenhänge">Mathematische Zusammenhänge</a> dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.<br />
+\begin{equation} <br />
+J_R\,\frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}<br />
+Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. <br />
+\begin{equation}  <br />
+J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon} \end{equation} Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen <br />
+\begin{equation}  <br />
+M_{TB} \;\propto\; \varphi \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\boldsymbol{\varphi} \label{eqLinearTorsin}  <br />
+\end{equation} Das Torsionsmoment (statisches Lastmoment) steigt an, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend &ldquo;schwer&rdquo; anlaufenden Antrieben sollte die Haftreibung (oft durch verzögerte Signum-Funktion modelliert) nicht außer Acht gelassen werden. Glücklicherweise kann hier auf diese Klasse hochgradig nicht-linearer Übertragungsfunktionen verzichtet werden. Für die Gleitreibung gillt jedoch: <br />
+$$ \begin{align}<br />
+M_{FR} \;\propto\; \omega &amp;\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\<br />
+M_{EL} \;\propto\; i_L &amp;\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}<br />
+\end{align} $$ Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits erwähnt. Nach einsetzen von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man dann eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:</p>
+<p>\begin{equation}<br />
+J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\ \phantom{.} \\<br />
+\small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\ \phantom{.} \end{equation}</p>
+<p>Es gibt nun <em>mehrere Ansätze</em> wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen. Der 1. Ansatz lautet deshalb:<br />
+\begin{equation} <br />
+\mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) \nonumber<br />
+\\ \phantom{.} \\ \Downarrow \\ \phantom{.} \\<br />
+\frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber<br />
+\end{equation}<br />
+Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. <br />
+Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$, können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.</p>
+<p>\begin{equation}<br />
+\frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber \\ \phantom{.} \\ \Updownarrow \\ \phantom{.} \\<br />
+{\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}+ \frac{K_{TB}}{J_R}} \label{equDglWI}<br />
+\end{equation}</p>
+<p><span style="background-color: yellow"> Mit dem Übergang in den Bildbereich wurden die physikalischen Zusammenhänge beim ersten Ansatz untransparent. Aufgrund der Forderung nach einer , die Laplace Transformation auf eine DGL 1. Ordnung anwenden zu können, muss einer der kinetischen Energiespeicher aus \eqref{eqLinearFriction} &ldquo;wegfallen&rdquo;. Wieder ausgehend von der Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbilBase}, wird dieses mal nach dem &ldquo;nächsten Verwandten&rdquo; von $J_R\cdot\omega$ innerhalb der Inhomogenität der DGL gesucht:</span></p>
+<p>Werden in der Ausgangsgleichung nur Terme eingesetzt, die höchstens eine Integration über $\boldsymbol{\dot\omega}$ liegen, bleibt auch die Ordnung der resultierenden DGL erhalten. In \eqref{eqDrehimpulsbilBase} wird also nur das Reibmoment $M_{FR}$ durch $K_{FR} \cdot{\dot\varphi}=K_{FR} \cdot{\omega}\,$ und das elektrische Moment $M_{EL}$ entsprechend substituiert. Anschließend folgt wieder die Laplace-Transformation wobei $\Omega(s)$ als $\mathscr{ L } \big\lbrace\,\omega(t)\big\rbrace$ zu verstehen ist.<br />
+\begin{align} <br />
+J_R\,\frac{\partial}{\partial\,t} \, \omega(t) &amp;= \boldsymbol{K_{EL}\cdot i_L(t)} - \boldsymbol{K_{FR} \cdot \omega (t)} - M_{TB}(t) \;\;&amp;&amp;\Leftrightarrow \nonumber \\<br />
+J_R\,\dot\omega + K_{FR} \cdot \omega  &amp;= K_{EL}\cdot i_L - M_{TB}  &amp;&amp;\Big|\;\mathscr{ L } \lbrace\,\dots\rbrace \nonumber \\<br />
+\Omega(s)\cdot \big(s\cdot J_R+K_{FR}\big) &amp;= K_{EL}\cdot I_L(s) - M_{TB}(s) &amp;&amp;wenn\ \omega(0)=0 \label{eqBeforeLapMech} <br />
+\end{align} <br />
+Um an die Übertragungsfunktion des elektrischen Teilsystems $G_{EL}(s)$ aus \eqref{eqGel} anknüpfen zu können, muss Gleichung \eqref{eqBeforeLapMech} in eine Form gebracht werden, in der $I_L(s)$ im Nenner auftaucht:<br />
+\begin{align} <br />
+\frac{ \Omega(s) }{K_{EL}\cdot I_L(s) - M_{TB}(s)}  &amp;= \frac 1 {s\cdot J_R+K_{FR}} \nonumber \\<br />
+&amp;= \color{red}{\frac{1}{s} \frac{1}{J_R}} \cdot \frac{1}{1 + \color{red}{\frac{1}{s} \frac{\color{blue}{K_{FR}}}{J_R}}} \nonumber<br />
+\end{align}<br />
+Diese Übertragungsfunktion lässt sich nach einer Umformung entsprechend Regel \eqref{eqForwardPath} wieder direkt in einem Blockdiagramm darstellen:<br />
+<center><img alt="mechSubInklTb" src="/media/data/whz/projectGalvoDocu/chapters/pics/simulExport/mechSubInklTb.svg" title="Mechanisches Subsystem inkl. Torsionsmoment" /></center></p>
+<h4 id="verbindung-der-teilsysteme"><a name="user-content-verbindung-der-teilsysteme" href="#verbindung-der-teilsysteme" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Verbindung der Teilsysteme</h4>
+<p>Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Der in Abschnitt <a href="#positionssensor">Positionssensor</a> erwähnte Proportionalitätsfaktor $K_{PD}$ muss erst in der Rückführung von $\varphi(t)$ auf den ADC des diskreten Reglers beachtet werden.<br />
+<center><img alt="systemSubCmpl" src="/media/data/whz/projectGalvoDocu/chapters/pics/simulExport/systemSubCmpl.svg" title="Zusammengesetztes Teilsysteme" /></center><br />
+Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$, müssen entsprechend den linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} erzeugt werden. Das resultierende, <strong>lineare</strong> Modellist in folgender Abbildung gegeben:<br />
+<center><img alt="systemLinCmpl" src="/media/data/whz/projectGalvoDocu/chapters/pics/simulExport/systemLinCmpl.svg" title="Lineares Aktor Modell" /></center></p>
+<p>$$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$</p>
+<h3 id="aktor-gesamtmodell"><a name="user-content-aktor-gesamtmodell" href="#aktor-gesamtmodell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Aktor Gesamtmodell</h3>
+<p>Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt <a href="#verbindung-der-teilsysteme">Verbindung der Teilsysteme</a>. Die Winkelposition wird im Bereich $|\,\varphi\,| &gt; 1/2\cdot\Delta\varphi_{Max}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| &gt; 25\,A$ ungültig wird. Beide Bereiche werden im Blockdiagramm durch Sättigungsblöcke modelliert. <br />
+<yelBg>Simulink Modelle</yelBg></p>
+<h3 id="testsignale"><a name="user-content-testsignale" href="#testsignale" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Testsignale</h3>
+<p><yelBg>(&hellip;)</yelBg></p>
+<h4 id="problematik-der-sattigung"><a name="user-content-problematik-der-sattigung" href="#problematik-der-sattigung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Problematik der Sättigung</h4>
+<p><yelBg>(&hellip;)</yelBg></p>
+<h2 id="stellglied-leistungsteil"><a name="user-content-stellglied-leistungsteil" href="#stellglied-leistungsteil" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>??? Stellglied / Leistungsteil</h2>
+<h2 id="signalkonditionierung"><a name="user-content-signalkonditionierung" href="#signalkonditionierung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>??? Signalkonditionierung</h2>
+<p><!-- # Angaben zur Systemdynamik # --><br />
+<!-- ## Spezifikationen des Gesamtsystems ## --></p>
 <h1 id="quellenangaben"><a name="user-content-quellenangaben" href="#quellenangaben" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Quellenangaben</h1>
 <hr />
 <p><a name="citeMDA"> </a><br />

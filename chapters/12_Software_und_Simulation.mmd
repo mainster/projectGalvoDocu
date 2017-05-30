@@ -1,33 +1,35 @@
 # Software und Simulation #
 In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich _Software und Simulation_ wird wie folgt untergliedert: 
 
-<yelBg>Place TOC here!!!</yelBg>
+## Hardwarenahe Programmierung (__C__) ##
+In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f, speziell der STM32F429i, bei diesem Projekt zum Einsatz kam. Hier soll auf das konkrete ___wie___ eingegangen werden. 
 
-## Entwicklungsumgebung ##
+### Entwicklungsumgebungen und Toolchains ###
 Wie bereits in der Einleitung zu [Plattform](#plattform) sowie im Abschnitt [Warum ARM?](#warum-arm) angesprochen, wird dem Thema _Plattformunabhängigkeit_ ein hoher Stellenwert zugesprochen. Deshalb soll an dieser Stelle nicht weiter auf die zwar weit verbreitete, hoch integrierte, jedoch für viel Geld (8260 € [_MDK-ARM Pro, Stand 02/2017_](https://elmicro.com/de/keilarm.html)) vertriebene Entwicklungsumgebung _KEIL µVision MDK_, eingegangen werden.
 
-Das von [IBM][eclipseIBM] ins leben gerufene, und mittlerweile von der _Eclipse Foundation_ getragene, quelloffene Software Projekt __Eclipse__, bildet die Grundlage für viele moderne Entwicklungsumgebungen. Ob nun Plugin-basierte Erweiterungen wie z.B. OpenOCD _(On-Chip Debugger)_, diverse Cross-Compiler _(für AVR, ARM, ...)_ inklusive Board-Support-Packages, oder aber komplette (kommerzielle) IDEs _(Vorzeigebeispiel: TI's CodeComposerStudio)_, das Eclipse-Basisframework bleibt das Gleiche - Unabhängig von der Architektur des Entwicklungsrechners. 
+Das von [IBM][eclipseIBM] ins leben gerufene, und mittlerweile von der _Eclipse Foundation_ getragene, quelloffene Software Projekt __Eclipse__, bildet die Grundlage für viele moderne Entwicklungsumgebungen. Ob nun Plugin-basierte Erweiterungen wie z.B. OpenOCD _(On-Chip Debugger)_, diverse Cross-Compiler _(für AVR, ARM, ...)_ inklusive Board-Support-Packages, oder aber komplette proprietäre IDEs _(Vorzeigebeispiel: TI's CodeComposerStudio)_: 
+
+<boxed>Das Eclipse-Basisframework und somit auch der Plugin-Adapter sind für alle Eclipse-basierten IDEs identisch... Und das, __unabhängig__ von der Plattform der Entwicklungsrechner.</boxed> 
 
 Die wohl bekanntesten _Eclipse-CDT_ Erweiterungen für ARM-Basierte Controller sind unter der Bezeichnung [_GNU ARM Eclipse_][eclipseGnuArm] bekannt. Die Plugin-Familie kann bequem über das Software-Repositorie nachgerüstet werden. 
 
-Ebenfalls auf Eclipse Basis hat ST/AC6 vor einiger Zeit die quelloffene Entwicklungsumgebung __SW4STM32__ [(_System workbench for STM32_)][stST4STM32] veröffentlicht welche ST's gesamte 32-Bit Sparte unterstützt. Vergleichbar mit dem Konzept von KEIL's MDK werden ST-Evaluierungsboards in Form von Board-Support-Packages unterstützt. 
+### SW4STM32 Toolchain/IDE ###
+Ebenfalls auf Eclipse Basis wurde von ST/AC6 die noch junge, quelloffene Entwicklungsumgebung __SW4STM32__ [(_System workbench for STM32_)][stST4STM32] veröffentlicht welche ST's gesamte 32-Bit Sparte unterstützt. Neben den Standard-Cross-Toolchains integriert SW4STM32, vergleichbar mit dem Konzept von KEIL's MDK Plattform, ein Verwaltungsmodul zur Installation von Board-Support-Packages für ST-Evaluierungsboards. Außerdem wird vom CMSIS-CORE, der CMSIS-DSP Bibliothek und der CMSIS-Driver Schnittstelle Gebrauch gemacht. 
 
-> The System Workbench toolchain, called SW4STM32, is a free multi-OS software development environment based on Eclipse, which supports the full range of STM32 microcontrollers and associated boards. 
-(...) The STM32 Open Development Environment is compatible with a number of IDEs including IAR EWARM, __Keil MDK__, mbed and GCC-based environments.[^fnStMultiOs]
+> The System Workbench toolchain, called SW4STM32, is a free multi-OS software development environment based on Eclipse, which supports the full range of STM32 microcontrollers and associated boards. (...) The STM32 Open Development Environment is compatible with a number of IDEs including IAR EWARM, __Keil MDK__, mbed and GCC-based environments.[^fnStMultiOs]
 
-## Hardwarenahe Programmierung (__C__) ##
-In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f, speziell der STM32F429i, bei diesem Projekt zum Einsatz kam. Hier soll auf das konkrete ___wie___ eingegangen werden. 
+Neben den offensichtlichen und teils schon genannten Vorteilen quelloffener Softwareprojekte, soll hier nochmals der Eclipse Plugin-Adapter als wichtigstes Argument für die Wahl der Entwicklungsumgebung genannt werden.  
     
-### Doxygen ###
+### Dokumentation ###
+Die Dokumentation zur Anwendungssoftware "GalvoScanner v1.4" wie auch für die im Projektverlauf entwickelten Bibliotheken __MD_STM32F4_Libraries__ wurde mit dem de-facto Standard Dokumentations&shy;werkzeug _Doxygen_ aufbereitet. Das quelloffene, 1997 von _Dimitri van Heesch_ in die "Public Domain" entlassene Dokumentations&shy;werkzeug zählt m. E. zu den Parade&shy;beispielen im Bereich Open Source und Platt&shy;form&shy;unab&shy;hängigkeit.
 
-<yelBg>Href to doxygen/html/index.html</yelBg>
-
-### CMSIS ###
+[Link zur index.html der Doxy-Dokumentation](./../embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/doxygen/html/index.html)
 
 ## PC-Schnittstellenprogramm (__C++ / Qt__) ##
+(...)
 ### Echtzeit-Zustandsüberwachung ###
 ### Parameter Manipulation ###
-## Schaltungssimulation / Netzwerkanalyse (__LTspice__) ##
+## Schaltungssimulation und Netzwerkanalyse (__LTspice__) ##
 
 ## System- und Reglersimulation (__Simulink__) ##
 ## Schnittstelle Spice-to-Simulink (__MATLAB__)
