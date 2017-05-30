@@ -1,0 +1,1556 @@
+Title:      Projekt: XY-Galvo Scanner  
+Author:     Del Basso, Manuel
+Date:       02-11-2016
+Location:   WHZ
+Footicon:   ./pics/whz.png
+
+Projekt: __XY-Galvo Scanner__
+============================== 
+[TOC]
+
+# Navigation #
+| Tastenkombination |                              Funktion                             |
+|-------------------|:-----------------------------------------------------------------:|
+| __Alt+Links__     | Rücksprung zur Ausgangsposition nach Aktivierung eines Hyperlinks <br><span style="background-color: yellow"> Testen ob auch in Windows 7/10: IExplorer, firefox, Chrome </span> |
+
+</center>
+# Vorwort #
+Diese Ausarbeitung ist in Anlehnung an das Anerkennungsgespräch vom 02.11.2016 entstanden und dient der Einschätzung des Wissensstands.
+
+Gesprächsnotiz:
+
+| Modul    | Bezeichnung                                 |
+| -------- | ------------------------------------------  |
+| ELT201   | Softwareentwurf                             |
+| ELT203   | Betriebssysteme                             |
+| ELT204   | Hardwarenahe Programmierung I               |
+| ELT237   | Hardwarenahe Programmierung II (ab SS17)    |
+| ELT236   | Embedded Systems                            |
+| ELT247   | ~~Werkzeuge der Informations- und Kommun.~~ |
+
+1. Doku __*C*__-Projekt
+    - Umsetzung, nicht gesamten Weg
+    - nicht Architektur 
+2. Doku __*C++*__-Projekt bzw. OO
+    - Allg. wie bei 1.
+    - "Wozu Unterklasse XY erstellt" etc.
+3. Doku __*Embedded*__-Projekt 
+    - plattformübergreifende Inhalte
+    - inkl. Modell etc.
+
+## V-Modell ##
+An einigen Stellen dieser Dokumentation wird auf Inhalte des V-Modells verwiesen bzw. auf diese Referenziert. Allgemein ist unter der Bezeichnung _V-Modell_ das aktuelle _V-Modell *XT*_[^fnV-Modell-XT] zu verstehen. 
+
+# Einleitung #
+Im Rahmen der hier vorgestellten Projektarbeit wurde über einen Zeitraum von ca. 12 Monaten ein System entworfen und aufgebaut, bei dem der Projekt-Schwerpunkt __bewusst__ nicht auf ein einzelnes Teilgebiet des Studiengangs "Nachrichtentechnik – Informationstechnik" beschränkt werden sollte. Die praxisbezogenen Kursinhalte und Laborveranstaltungen des Grundstudiums, vertiefen die erlernten theoretischen Grundlagen und zeigen teilweise auch Methoden zur (Computer-) Modellbildung und/oder Simulation im jeweiligen Teilgebiet auf. 
+
+* Analog-/Digitaltechnik 
+* Felder-Theorie (magnetische / elektrische)    
+* Wechselstromlehre
+* Mikrocontroller-Technik
+* Hardwarebeschreibung (VHDL)
+* Simulation von elektrischen Netzwerken (SPICE)
+* abstrakten Systembeschreibung (Laplace, Fourier)
+* Regelungstechnik
+* Diskretisierung von Systemen
+
+Einige konkreFür die Umsetzung eines __Systemplanung__ wie auch für die spätere Umsetzung als grundlegend und unerlässlich angesehen wird. Einige öffentliche Vorträge zum Thema "System Konzeption und Beschreibung in der Praxis" wurden am Karlsruher Institut für Technologie (KIT, Universität Karlsruhe) besucht. Dadurch konnten ergänzende Inhalte zum HsKA-Modul "Embedded Systems" erarbeitet und teils auch bei der konkreten Teilsystem-Auslegung umgesetzt werden. 
+
+# Vorarbeit #
+Es folgen einige Worte zur Frage "Wie kam es zu dem Projekt?" und "Was wurde letztendlich Umgesetzt?". Das ursprüngliche Projektvorhaben wurde nur teilweise umgesetzt, soll aber hier der Vollständigkeit halber erwähnt werden. 
+
+## Ursprüngliche Motivation ##
+Der Besuch einer mehrtägigen Schulungsveranstaltung der Firma _ANSYS_[^fnWikiAnsys] mit Schwerpunkt _ANSYS_ _Maxwell_[^fnMaxwell] sowie _ANSYS_ _Simplorer_[^fnSimplorer] im Rahmen meiner Formula-Student Mitgliedschaft, weckte das Interesse an einem Projekt im Bereich "Multiphysik und Systemsimulation". Der nachfolgende Abschnitt "Projektziel" wurde der ursprünglichen Projektanfrage entnommen. Weitere Details sowie erste Simulationsergebnisse (Maxwell FEM-Modell + Simplorer Regelkreis), können in der ursprünglichen Projektanfrage[^fnAnfrageBrunner] eingesehen werden. 
+
+><a name="refProjectDesc"/> Ziel des Projektes ist </a> der Aufbau eines funktionsfähigen XY-Galvanometer-Scanners mit selbstentworfenen Galvanometer-Motoren + Leistungstreiber und eines in C implementierten Software-Reglers (...). Als Galvanometer-Motor-Typ ist ein "Moving magnet motor" geplant. Um die Motorkonstruktion einfach zu halten, ist ein Stator Design mit nur einem Polpaar angedacht.
+<a name="refExplainFEMSol"/> </a>
+>Unter Zuhilfenahme der FEM-Simulationsumgebung "Maxwell" + "Simplorer", sollen Reglerparameter anhand eines nichtlinearen Modells des Galvanometer-Motors optimiert werden. Die Sollwert-Vorgaben für die XY-Winkelpositionen werden vorerst als einfache Lookup-Tabellen direkt auf dem Mikrocontroller erzeugt, welcher auch die diskreten Reglerfunktionen übernehmen soll. 
+
+>Sollte das geplante System soweit funktionieren, dass mit dem Scanner einfache geometrische Figuren erzeugt werden können (Kreise, Quadrate, Achter, ...), könnte eine PC-Software zur Erzeugung von Pixelkoordinaten inkl. Dunkeltastung des Lasers als Erweiterung angedacht werden.
+    
+![GalvosXY](./pics/galvanometerMaxwell.png "Anordnung der Aktoren in XY-Scanner Konfiguration")
+
+Statische sowie dynamische Eigenschaften der in ANSYS Maxwell konstruierten Aktoren werden auf Basis finiter Elemente modelliert und in einem Multi-Domain-Modell[^fnMultiDomain] abgebildet. 
+
+## Fertigungsproblematik ##
+Die Motorkonstruktion konnte nie vollständig an einem funktionsfähigen Prototypen getestet werden. Hierzu werden folgende Begründungen genannt:
+
+1. Unzureichende dynamische Eigenschaften (Rotormasse, Stabmagnet)
+2. Kostenintensive / nicht vor Ort durchführbare mechanische Fertigungsschritte
+3. Bearbeitung des Neodym Materials (Rotormagnet) nicht umsetzbar 
+4. Bearbeitung des aus Ferrit Pulver gepressten Statorkerns schwer umsetzbar 
+5. Verfügbarkeit ungenutzter, professioneller Galvanometer-Motoren
+
+Das "unzureichend" bezieht sich auf das in Abschnitt Error: Reference source not found (Zitat, letzter Abschnitt) formulierte Projektziel. Um die dynamischen Eigenschaften zu verbessern, wäre die mechanische Bearbeitung von Zukaufteilen notwendig gewesen. Nach einigen gemeinsamen Recherchen mit den Werkzeug-Spezialisten des ansässigen Instituts für Materialien und Prozesse (IMP), wurde von einer maschinellen Bearbeitung abgeraten.[^fnArnoldMagn]
+
+## Industriell gefertigte Aktoren ##
+Für die weitere Umsetzung des Projekts kamen gebrauchte Spiegel-Galvanometer der Firma "Cambridge Technology Inc." zum Einsatz. Da keine herstellerspezifischen Informationen über den mechanischen Aufbau der Cambridge Galvanometer zur Verfügung standen, konnte die in Abschnitt [Ursprünglich Motivation](#ursprungliche-motivation) sowie die in [brun1] beschriebene Multi-Domain-Softwarelösung im weiteren Projektverlauf nicht mehr eingesetzt werden.  
+Eine zerstörungsfreie Demontage der vorhanden Aktoren konnte nicht gewährleistet werden. Außerdem ließe der innere mechanische Aufbau keine Rückschlüsse auf die wichtigen Materialeigenschaften des Rotors bzw. Statorkerns zu.   
+
+Durch eine sorgfältige Strukturierung des Projektablaufs hätte u. U. Zeit gespart werden können. Die erarbeiteten Kenntnisse im Bereich "Multiphysik und Systemsimulation" sind keines falls umsonst gewesen. Hinsichtlich der produktiven Bearbeitung von Projekten, lässt der bisherige Ablauf jedoch viel Kritik zu. Fertigungsprozesse unterliegen grundsätzlich irgend welchen Einschränkungen. Bereits während der Recherche zum Thema Permanentmagnet, wäre eine Anfrage über die Bearbeitbarkeit notwendig gewesen!
+
+# Projektziel und Anforderungskatalog #
+
+<h4 class="sphd"><span>Stand der Technik</span></h4>
+Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, _quasi-kontinuierliche_ Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.
+
+<h4 class="sphd"><span>Systemzweck</span></h4>
+Als übergeordnetes Projektziel soll ein optisches Ablenksystem (2-Achsen → XY-Koordinaten) für eine Laserquelle (Laserpointer, sichtbares Spektrum) auf Basis industriell gefertigter Spiegelgalvanometer geplant, simuliert, entworfen, aufgebaut und verifiziert werden. Die __Modellbildung__ und __Simulation__ des Gesamtsystems soll als __Schwerpunktthema__ betrachtet und entsprechend ausgearbeitet werden.
+
+<h4 class="sphd"><span>Systemfunktion im Detail</span></h4>
+Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als __physisches System__ bezeichnet während im Abschnitt __Simulationsumgebung__ das Computermopdell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.
+
+<h4 class="sp"><span>Physisches System</span></h4><figure class="floatr topal" style="width:185px"><img src="./pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860"><figcaption>Cambridge Technologies Galvanometer Modell 6860</figcaption></figure> Die beiden <lkey>[Moving-magnet Galvanometer](#klassifizierung)</lkey> der Firma [Cambridge Technologies](http://www.cambridgetechnology.com), bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt 
+
+<lmjx>$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\\B_y-A_y\end{pmatrix} }{eqDirVect3} $</lmjx>
+
+Um einen Vektor $\vec s$ der Länge $\left| \vec s\right|$ anhand zweier Koordinatenpaare $P_0=(x_0\,|\,y_0)$ und $P_1=(x_1\,|\,y_1)$ an einer bestimmten Stelle zu beschreiben, bietet sich eine alternative Beschreibungsform für Geraden aus dem Teilgebiet der analytischen Geometrie an. In der Parameter- oder Punktrichtungsform wird ein Vektor $\vec s$ entlang einer Geraden $\,g\,$ beschrieben durch:
+
+$$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$
+
+Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren. Um den Aufwand zur Erzeugung der notwendigen [Quelldaten](#quelldaten-generieren) gering zu halten, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. 
+
+
+<div style="display: inline;">
+Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="./pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="./pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (<a href="#jumptoSafety">Laserklasse 3B</a>, 532nm (Grün), <a href="#jumptoSafety">max. 50mW</a>, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+</div>
+
+<h4 class="sp"><span>Simulationsumgebung</span></h4>Bereits bei niedrigen Systemordnungen ist es von Vorteil, wenn Reglerparameter mittels Computermodell optimiert werden können. Um quantitative Aussagen bezüglich Stabilität und Robustheit nachweisen zu können, sind entsprechende Simulationen immer dann unerlässlich, wenn es sich um Systeme handelt die durch instabilie Betriebszustände beschädigt oder zerstört werden können. 
+Der grundlegende Modellbildungs<u style="font-weight: bold">prozess</u> eines Gesamtsystems mit zeit-diskreter Regelung, unterscheidet sich nicht signifikant vom Modellbildungsprozess bei kontinuierlicher, sprich analoger Regelung. In der klassischen Regelungstechnik werden die Teilsysteme eines Regelkreises in lineare, __zeitinvariante__ Systeme überführt welche dann als LTI-Blöcke dargestellt werden können. 
+
+<boxed>Die Forderung nach Zeitinvarianz impliziert immer auch __Rückwirkungsfreiheit__ zwischen den Teilsystemen.</boxed> 
+
+Infolge dessen ist es gleichgültig, ob einer oder gar mehrere Blöcke in zeit-diskreter Form Formuliert werden - solange alle notwendigen LTI-Bedingungen erfüllt sind.
+
+Aus dem Modellzweck oder Kontext wird die notwendige [_Modellgranularität_](#modell) abgeleitet. Nach Nyquist ist, im Falle einer zeitdiskreten Regelung, ein Antialiasing Filter in den Signalpfad vor den ADC zu platzieren. Um aus den digital weiterverarbeiteten, gewichteten Impulsfolgen nach der DAC-Wandlung wieder ein analoges (d.h. zeit- und wertekontinuirliches) Stellsignal zu erzeugen, werden _Rekonstruktionsfilter_ zur Entzerrung des Quantisierungsfehlers eingesetzt. Bei Simulationen bezüglich Systemdynamik oder zur Stabilitätsberechnung dürfen die zusätzlichen Filterpole nicht einfach ignoriert werden. Somit sind z. B. die Teilsysteme "Antialiasing-" und "Rekonstruktionsfilter" in das Computermodell des Gesamtsystems zu integrieren.
+Entsprechendes gilt auch für die Modellierung weiterer Teilsysteme wie z. B. Stellglied sowie Messumformer + Tiefpassfilterung. 
+
+<h4 class="sphd"><span>Design</span></h4>
+
+<h4 class="sphd"><span>Systemeinsatz</span></h4>
+
+<h4 class="sphd"><span>Systemanforderungen</span></h4>
+
+<div class="spaced" markdown=1>
+0. Bei den Aktoren handelt es sich um Spiegelgalvanometer der Firma Cambridge Technologies (Modell 6860). Diese sind im Sinne der _Baugruppen-Wahl_  als gegeben zu betrachten (vergl. _Bestandsbaugruppe_).
+1. Die Positionsregelung der Spiegelachsen soll diskret realisiert und nach erfolgreicher Simulation auf einem Mikrocontroller [_STM32F429i_][@STM32F429i] implementiert werden.
+2. Die Sollwerte der Aufpunkt-Koordinaten werden als dreiwertige Tupel [X-Pos, Y-Pos, Laser-Blanking] im Speicher des Mikrocontrollers abgelegt und müssen über eine PC-Schnittstelle aktualisiert werden können.
+3. Die Positionierung des Laserpunktes soll hinreichend "schnell" und "präzise" erfolgen so dass sich zumindest einfache geometrische Figuren auf einen weißen Hintergrund projizieren lassen.
+4. Das System soll auf ein Computermodell abgebildet werden so dass unterschiedliche Regelalgorithmen evaluiert werden können. Außerdem sollen Hardware-Anpassungen der Signalkonditionierung (primär Antialiasing-/Rekonstruktionsfilter) mit minimalem Aufwand in die Simulation des Gesamtsystems einzupflegen sein.
+5. Die Prototyp-Hardware soll bereits alle notwendigen Komponenten umfassen, die zur Messung weiterer Zustandsgrößen der Regelstrecke notwendig sind. Somit kann der Aufbau als Grundlage für spätere Tests einer Zustandsraum-Regelung (state space model) genutzt werden.
+6. Die Anforderung an den Fertigungsprozess der Prototyp-Hardware sollte entsprechend den Möglichkeiten vor Ort (HsKA: PCB-Fräse, manuelle Durchkontaktierung bei doppelseitigen Layouts) angepasst werden.
+</div>
+
+<h4 class="sphd"><span>Allgemeine Anforderungen</span></h4>
+<a name="jumptoSafety"> </a>
+<h4 class="sp"><span>Sicherheit</span></h4>
+Während der Entwicklungsphase ist stehts darauf zu achten dass 
+
+- zu keinem Zeitpunkt die Gefahr einer willkürlichen Positionierung des Laserstrahls gegeben ist!
+    + Description of the "safe state guard" system
+    + exceptions and forced bias
+- Hardware-Komponenten vor Überlast geschützt sind! 
+
+<h4 class="sp"><span>Qualität</span></h4>
+Um die "Qualität" der erzeugten Abbildungen effektiv messen zu können, soll auf eine Testmöglichkeit für das [ILDA-Testpattern](http://www.laserfx.com/Backstage.LaserFX.com/Systems/Scanning3.html) implementiert werden. 
+
+
+
+</par>
+
+Zu Beginn des Kapitels [Modellbildungsprozess](#modellbildungsprozess) folgt eine erste Aufteilung des Projekts.
+
+
+<!-- wird $\vec v$ als  Richtungsvektor von $\vec{g}$.
+Zur mathematischen Beschreibung dieser (abschnittsweise definierten) Geraden, kann aus zwei aufeinander folgenden XY-Tupel eine Geradengleichung abgeleitet werden. Um 
+
+Aus der Koordinatenform einer Geradengleichung mit den Parametern  ${a}, {b}$ und ${c}$ ist ein Normalenvektor der Gerade direkt als $\vec n=(a,b)^{T}$ ablesbar und damit ein Richtungsvektor der Geraden analog zur Normalenform über   
+
+$$ {\vec {u}}={\begin{pmatrix}-b\\\a\end{pmatrix}} $$ ermitteln. Einen Stützvektor der Geraden erhält man, je nachdem ob $a$ oder $b$ ungleich null ist, durch Wahl von
+<center>$ {\vec {p}}={\begin{pmatrix}c/a\\\0\end{pmatrix}}\;\;\; $ oder $ \;\;\;{\vec {p}}={\begin{pmatrix}0\\\c/b\end{pmatrix}} $.</center> -->
+# Terminologie #
+Auf häufig wiederkehrende Begriffe wie z. B. Modell, Modellbildung oder System, soll hier kurz eingegangen werden da sie als Überbegriffe sehr universell definiert sein können. 
+
+## Galvanometer ##
+>Ein Galvanometer-Scanner ist ein hochdynamisches elektro-optisches Bauteil, bei dem <a style="color: #ddd ">ein</a> drehbare Spiegel von geringer Trägheit verwendet werden, um einen Laserstrahl mit hoher Genauigkeit und Wiederholbarkeit zu positionieren. Der Name Galvanometer bezieht sich auf den Motor-Typ.[^fnGalvoScanlab]
+
+## System ##
+Es gibt sehr abstrakte Definitionen des System-Begriffs. Auch in der soziologischen Systemtheorie werden System-Begriffe formuliert so dass z.B. durch menschliche Handlungen ein abstraktes Modell eines sozialen Systems angeregt bzw. dessen Systemantwort beschrieben werden kann. Eine sehr universelle Definition lautet z. B.:
+> "__System:__ a set of physical entities that interact and are observable, where the entities can be a specified quantity of matter or a volume in space." [^fnChRoy]
+><p style="color: #707070 "> Eine Menge von physikalischen Einheiten die interagieren und beobachtbar sind, wobei sie eine definierte Menge Materie (bzw. eine bestimmte Anzahl an Teilchen) oder ein physischer Körper im Raum sein können. </p>
+
+Systeme und Signale sind die beiden wichtigsten Konzepte der Systemtheorie. In der Praxis werden Gebilde oder Konstrukte als System bezeichnet, die bei Anregung mit einem Eingangssignal *x(t)* mit einem Ausgangssignal *y(t)* reagieren.[^fnRUnb] 
+
+Ein Gesamtsystem fügt sich aus Teilsystemen zusammen. Je nach Komplexität der übergeordneten Aufgabe (Wie "dick" sind Pflichten- und Lasten- Heft?) entstehen zahlreiche Abstraktionsebenen die es zu *dokumentieren* und meist auch zu warten gilt. Hinsichtlich eines _Software-Systems_ wird der Begriff _System_ in der [IEEE 1471][ieee1471] wie folgt definiert:
+>Ein System ist ein aus Teilen zusammengesetztes und strukturiertes Ganzes. Es hat eine Funktion, erfüllt einen Zweck und verfügt über eine Architektur. [[MDA:2006, p.57]][@MDA:2006]
+
+Im folgenden beschränkt sich der System-Begriff auf die Systemtheorie als elementare Disziplin der Ingenieurswissenschaften. Der Begriff _System_ ist hier und im Folgenden als Abkürzung für _Teilsystem_ zu verstehen.
+
+## Modell ##
+Um ein Modell beschreiben zu können, muss zuvor das System *gewählt* werden, dessen tatsächliche Eigenschaften über den *__Prozess__ der Modellbildung* abstrahiert werden soll. Auch für den Begriff *Modell* finden sich zahlreiche Definitionen in der Literatur. Einige eignen sich sehr gut zur Definition im Sinne technischer Zusammenhänge und Computersimulationen. 
+
+Die Grundlagen der Modellierung schuf Herbert Stachowiak 1973 mit der Veröffentlichung der "Allgemeinen Modelltheorie". Demnach ist ein Modell durch __Abbildung__, __Verkürzung__ und __Pragmatismus__ gekennzeichnet.[^fnStachowiak]
+
+>__*Abbildung*__
+Ein Modell ist stets ein Modell von etwas – nämlich Abbildung oder Repräsentation eines natürlichen oder eines künstlichen Originals, wobei dieses Original selbst auch wiederum ein Modell sein kann.
+
+>__*Verkürzung*__
+Ein Modell erfasst im Allgemeinen nicht alle Attribute des Originals, sondern nur diejenigen, die dem Modellschaffer bzw. Modellnutzer relevant erscheinen.
+
+>__*Pragmatismus*__
+Modelle sind ihren Originalen nicht eindeutig zugeordnet. Sie erfüllen ihre Ersetzungsfunktion für
+
+> 1.   bestimmte Subjekte (für wen?)
+> 2.   innerhalb bestimmter Zeitintervalle (wann?)
+> 3.   unter Einschränkung auf bestimmte gedankliche oder tätliche Operationen (wozu?).
+
+Eine kompaktere Definition wurde einem Lehrbuch _"Grund- und Leistungskurs Informatik"_ von _Karl-Hermann Rollke_ und _Klaus Sennholz_ entnommen: 
+
+>Ein *Modell* ist ein durch Abstraktion (__Reduzierung__ und Verallgemeinerung) gewonnenes __Abbild__ eines bestimmten Ausschnitts der Realität. Das Modell wird zu dem Zweck entworfen, den für die Lösung eines *bestimmten* Problems relevanten Teil der Wirklichkeit für den Menschen oder eine Maschine (Computer) überschaubar und *operationalisierbar* zu machen.[^fnRoSe]
+
+<a style="background-color: yellow;"> ...ist es wichtig, den Systemgrad minimal zu halten.
+Die folgende Beispielaufgabe soll diesen Zusammenhang etwas greifbarer darstellen: </a>
+
+### Beispiel ###
+Für eine analoge Filterschaltung wird ein mathematisches Modell gefordert. Die Schaltung soll zur Tiefpassfilterung in einer __Highend-HiFi__ Stereoanlage eingesetzt werden. Für den Übergang vom Durchlass- in den Sperrbereich ist eine Dämpfung von 20dB/Dekade vorgegeben. Anhand des Modells soll das Dämpfungsverhalten mittels einiger harmonischer Testsignale untersucht werden können. 
+
+__Möglichkeit 1__
+<img src="./pics/elko_ersatz_hf_reload.svg" title="Realitätsgetreues Ersatzschaltbild eines RC-Tiefpassfilters" align="top" height="190px" style="float:right; margin: .4em 0em 0em 1em;"/>Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um eine Highend-Anlage handelt, sollte ein möglichst präzises Modell formuliert werden. Unter Berücksichtigung aller tatsächlich parasitärer Größen von passiven Bauelementen[^fnElektrBauelem] wie Serien&shy;induktivität (ESL) und Serien&shy;widerstände (ESR) der Anschluss&shy;drähte/Anordnung der Elektroden, der Isolations&shy;widerstände und der dielektrischen Absorption (Nachladeeffekt, Rda, Cda), ergibt sich für einen einfachen RC-Tiefpass mit einer Dämpfungsflanke von 20dB/Dekade, das nebenstehende Schaltbild. Da die Ordnung eines Systems direkt aus der Anzahl seiner unabhängigen Energiespeicher abgeleitet werden kann, muss dem geforderten mathematischen Modell eine __Differentialgleichung 5. Ordnung__!!! zugrunde gelegt werden. 
+
+__Möglichkeit 2__
+Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um ein Audiogerät handelt, können eventuell störende Einflüsse im Frequenzbereiche jenseits von $100\si{kHz}$ als irrelevant betrachtet werden da die _auditive Wahrnehmung_ des menschlichen Gehörs für Frequenzen über $20\si{kHz}$ schlicht nicht mehr sensibel genug ist. Tatsächlich liegt die _Musikwahrnehmbarkeit_ noch deutlich unterhalb der $10\si{kHz}$ Grenze. Für das menschliche Gehör ist es also egal, ob ein TP-Filter im Bereich $900\si{kHz}\dots 1,4\si{MHz}$ eine Resonanzüberhöhung aufweist oder nicht.
+
+---
+Ein formuliertes Modell unterliegt also der Anforderung, möglichst alle __*relevanten*__ Charakteristika eines Systems abzubilden wobei der _Systemgrad_ minimal gehalten werden soll. So gelingt es, komplexe Zusammenhänge aufzuspalten und eine Problemstellung zu partitionieren.
+
+## Modellbildung ##
+<a style="background-color: yellow;"> Top-Down- und Bottom-Up-Design
+In der Informatik bezeichnet man einen Entwicklungsprozess für Software als Top-down, wenn der Entwurf mit abstrahierten Objekten beginnt, die dann konkretisiert werden; der Prozess ist Bottom-up, wenn von einzelnen Detail-Aufgaben ausgegangen wird, die zur Erledigung übergeordneter Prozesse benötigt werden. Zudem wird im Zusammenhang mit Compilerbau von Top-down- und Bottom-up-Parsern gesprochen (genauere Informationen unter Top-Down- und Bottom-Up-Design). </a>
+
+Die enormen Anforderungen, die aus Anwendersicht an Hard- und Softwarekomponenten gestellt werden, in Verbindung mit dem Aspekt der Wirtschaftlichkeit, machen sich bereits in der Projektierungsphase eines Auftrags bemerkbar. *"Reusability"* ist ein Begriff aus der Softwarearchitektur und charakterisiert Software (Quellcode, Dokumentation, Testumgebungen, ...) bezüglich ihrer *Wiederverwertbarkeit* in Folgeprojekten oder Folgeschritten des selben Projektes.[^fnReuseCode] Um einen Schritt weiter in Richtung _modellgetriebene Architektur_ (_engl. Model Driven Architecture_, __*MDA*__) zu gehen, soll an dieser Stelle ein Unterpunkt aus [[MDA:2006, p.17]][@MDA:2006], Kapitel _"Akute Probleme bei der Software-Erstellung"_, zitiert werden:
+
+>__Äußere und innere Gleichförmigkeit von Projekten__ 
+Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oftmals werden aber mehrere Projekte in der gleichen Fach- und/oder Technikdomäne durchgeführt. Genau so oft ähneln oder gleichen sich daher die (architekturellen) Konzepte der realisierten Anwendungen. Diese Gleichförmigkeit wird häufig übersehen oder schlicht ignoriert und anstatt diese domänen-spezifischen Konzepte wiederverwendbar zu machen, wird die gleiche Arbeit unnötigerweise mehrfach verrichtet.
+
+Natürlich ist der Begriff der *Wiederverwertbarkeit* nicht nur auf Komponenten einer Softwarearchitektur beschränkt. Auch im Hardwarebereich kann ein Unternehmen durch frühzeitig eingeleitete Abstraktionsprozesse, u. U. eine _Gleichförmigkeit_ zu geplanten Folgeprojekten erkennen und das Teilsystem _"von Heute"_ bereits zugunsten eines Teilsystems _"von Morgen"_ optimieren.
+# Formelzeichen und Einheiten #
+Aufgrund der hohen Anzahl an Abkürzung, vor allem aber der nicht immer intuitiv ableitbaren mechanischen und mechatronischen Kenngrößen, wurde an dieser Stelle ein eigenes Kapitel als zentrales Nachschlagewerk eingeführt.   
+
+## Zeitabhängige Größen ##
+
+| Bezeichnung           | Symbol               | Einheit            | <span style="color: #bbb">engl. Bezeichnung</span>               |
+|-----------------------|:--------------------:|:------------------:|------------------------------------------------------------------|
+| Spulenstrom           | $i_L$                | $\si A$            | <span style="color: #bbb"> Coil current              </span>     |
+| Elektr. Drehmoment    | $M_\{EL\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Electrical torque         </span>     |
+| Reibungsmoment        | $M_\{FR\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Rotor dynamic friction torque </span> |
+| Torsionsfedermoment   | $M_\{TB\}$           | $\si\{N.m\}$       | <span style="color: #bbb"> Torsion bar torque        </span>     |
+| Drehimpuls            | $L_\omega$           | $\si\{N.m.s\}$     | <span style="color: #bbb"> Angular momentum          </span>     |
+| Winkelposition        | $\varphi_\{rad\}$    | $\si\{rad\}$       | <span style="color: #bbb"> Angular position          </span>     |
+|                       | $\varphi_\{deg\}$    | $\si\{°\}$         | <span style="color: #bbb">                           </span>     |
+| Winkelgeschwindigkeit | $\omega$             | $\Si\{rad\per s\}$ | <span style="color: #bbb"> Angular velocity          </span>     |
+| Stromregler Eingang   | $U_\{ccI\}$          | $\si V$            | <span style="color: #bbb"> Current controller input  </span>     |
+| Stromregler Ausgang   | $U_\{ccO\}$          | $\si V$            | <span style="color: #bbb"> Current controller output </span>     |
+| Spannung Messshunt    | $U_\{sh\}$           | $\si V$            | <span style="color: #bbb"> Shunt voltage             </span>     |
+
+## Konstanten ##
+Alle Aktor-bezogenen Konstanten wurden in der letzten Spalte mit einem _A_ gekennzeichnet und entspringen der [Herstellerspezifikation](#refTableElectric). 
+
+| Bezeichnung              | Symbol      | Einheit                | <span style="color: #bbb">engl. Bezeichnung</span>          |   |
+|--------------------------|:-----------:|:----------------------:|-------------------------------------------------------------|---|
+| Wicklungsinduktivität    | $L$         | $\si H$                | <span style="color: #bbb">Coil inductance</span>            | A |
+| Wicklungswiderstand      | $R_L$       | $\si\{\Omega\}$        | <span style="color: #bbb">Coil resistance</span>            | A |
+| Messwiderstand           | $R_\{SH\}$  | $\si\{\Omega\}$        | <span style="color: #bbb">Current shunt resistance</span>   |   |
+| Massenträgheit d. Rotors | $J_R$       | $\si\{kg.m^2\}$        | <span style="color: #bbb">Rotor inertia</span>              | A |
+| EMF-Konstante            | $K_\{EMF\}$ | $\Si\{V.s\per rad\}$   | <span style="color: #bbb">Back EMF const.</span>            | A |
+| Torsionsfederkonstante   | $K_\{TB\}$  | $\Si\{N.m\per rad\}$   | <span style="color: #bbb">Torsion bar torque const.</span>  |   |
+| Reibungskonstante        | $K_\{FR\}$  | $\Si\{N.m.s\per rad\}$ | <span style="color: #bbb">Friction torque const.</span>     |   |
+| El. Drehmomentkonstante  | $K_\{EL\}$  | $\Si\{N.m\per A\}$     | <span style="color: #bbb">El. magnetic torque const.</span> | A |
+|                          |             |                        |                                                             |   |
+
+# Projektplan und V-Modell #
+Bei der industriellen Projektplanung im Bereich Systementwicklungen, stützt man sich, in der Regel, auf das bewährte V-Modell. Spätestens seit Einführung des wesentlich flexibleren _V-Modell XT_ (eXtreme Tailoring, Anfang 2005 [^fnV-Modell-XT-Bund]) gibt es kaum noch Gründe, von einer Projektplanung _auf Basis_ des V-Modells abzusehen. 
+(...)
+
+# Modellbildungsprozess #
+>"It's a bunch of shapes connected by lines." Dilbert 
+[[MDA:2006, p.73]][@MDA:2006]
+
+Dieser Aussage entsprechend soll hier aus dem formellen [Anforderungskatalog](#projektziel-und-anforderungskatalog) (vergl. Pflichtenheft) ein erstes abstraktes Modell abgeleitet werden. 
+
+* Aktoren 
+* Sensoren
+* Leistungselektronik
+* Steuer- und Reglerelektronik
+    - Mikrocontrollerplatine 
+    - Signalkonditionierung
+        - Pegelwandlung 
+        - Antialiasing (ADC)
+        - Rekonstruktionsfilter (DAC)
+* Software, Tools und Simulation
+    - Zielsystem: Eingebettete Hardware
+        - Implementierung der Regelalgorithmen (Reglerelektronik)
+        - Sicherheitssystem (Überstromschutz, "Error-Safe-State")
+    - Entwicklungs-PC
+        - MATLAB/Simlunik, Systemmodellierung/Simulation
+        - LTspice, Subsystemmodellierung/Simulation
+        - Eagle CAD, Hardwareentwurf  
+    - Schnittstellenprogramm zur Echtzeitkommunikation
+
+<center><figure><img class="noborder" src="./pics/abstractSystemB.svg" title="Abstraktes Modell des Regelkreises" style="width: 1500px" /><figcaption>Abstraktes Modell des Regelkreises</figcaption></figure></center>  
+
+<yelBg>...So what???</yelBg>
+
+## Generisches Modell ##
+In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Aktoren (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Aktor"_ respektive _"Galvanometer"_ die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als _Subsystem_ __*Aktor*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
+
+Die Analogie zu _generic types_ in objektorientierten Programmiersprachen ist nur teilweise zulässig. Vergleicht man diese Methode jedoch mit der in [Vorarbeit](#vorarbeit) aufgezeigten, nämlich einem Aktor-Computermodell, abhängig von Geometrie und Materialparametern, so finden sich doch einige Eigenschaften, die analog verwendet werden können.
+
+### Mathematische Zusammenhänge ###
+Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich bekanntlich durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt unter anderem, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers, unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
+
+##### Translation und Rotation #####
+Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
+
+<center>
+
+| Translation                          | in eine Richtung         | Rotation                                  | um eine Achse             |
+|:-------------------------------------|:------------------------:|:------------------------------------------|:-------------------------:|
+| $s$                                  | Weg                      | $\varphi$                                 | Winkel                    |
+| $v=\dot s$                           | Geschwindigkeit          | $\omega = \dot\varphi$                    | Winkelgeschwindigkeit     |
+| $a=\dot v = \ddot s$                 | Beschleunigung           | $\dot\omega = \ddot\varphi$               | Winkelbeschleunigung      |
+| $m$                                  | Masse                    | $J, \theta$                               | Trägheitsmoment           |
+| $\vec F$                             | Kraft in Wegrichtung     | $\vec M$                                  | Moment um Drehachse       |
+| $\vec I = m \cdot \vec v$            | Impuls                   | $\vec L = J \cdot \vec\omega$             | Drehimpuls                |
+| $\vec F = m \cdot \vec a$            | Kraeftesatz              | $\vec M = J \cdot \dot\omega$             | Momentensatz              |
+| $E_k = \frac 1 2\; m \cdot v^2$      | kinetische Energie       | $E_k = \frac 1 2\; J \cdot \omega^2$      | kinetische Energie        |
+| $W = \int F ds$                      | Arbeit                   | $W = \int M d\varphi$                     | Arbeit                    |
+| $P = F \cdot v$                      | Leistung                 | $P = M \cdot \omega$                      | Leistung                  |
+
+</center>
+
+Das Aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stets, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
+
+#### Energiebilanz in allgemeiner Form ####
+<img src="./pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, ...) kein Energiestrom, so unterliegt das Gebilde dem *Energieerhaltungssatz* wobei innerhalb der Grenenzen $N$ _verschiedene Energiearten_ $E_i$ vorhanden sein _können_ (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische _Umformung der mechanischen Größen_ $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.
+
+$$ \frac{1}{2} \cdot m \cdot v^2 = E_{kin}
+\;\;\;\widehat{=}\;\;\;
+E_{rot} = \frac{1}{2} \cdot J_x \cdot \omega^2 $$
+
+Aus dem Energieerhaltungssatz kann das *Kräftegleichgewicht* abgeleitet werden. Wegen den analogen Gesetzmäßigkeiten zwischen translatorischer und rotatorischer Bewegung, kann vom Kräftegleichgewicht eines bewegten Körpers auf ein Drehmomentgleichgewicht geschlossen werden.
+
+#### Impulsbilanzgleichung ####
+Wirkt auf einen Körper der Masse $m$ und dem Impuls $\vec I = m \cdot \vec v$ eine äußere Kraft $\vec F$, so gilt bei translatorischer Bewegung und $m=const$ entsprechend dem [Impulserhaltungssatz][@Impulserhaltung][^fnImpulserhaltung] folgende Bilanzgleichung: 
+
+\begin{equation}
+\frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t) \label{eqImpulsbil}\end{equation}
+
+Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. Analog wird die Impulsbilanz für rotiernde Körper mit der als skalar betrachteten Massenträgheit $J$ und bestehendem Drehimpuls $\vec L_s = J \cdot \vec \omega$ aufgestellt. Gleichung \eqref{eqDrehimpulsbil} wird folgerichtig als __Drehimpulsbilanzgleichung__ bezeichnet.
+
+\begin{equation}{\frac{\partial}{\partial\,t}\,\vec L_s = J \cdot \frac{\partial}{\partial\,t}\,\vec \omega(t) = \vec M(t)} \label{eqDrehimpulsbil}\end{equation}
+
+## Aktoren ##
+Wie bereits in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, wurden Galvoscanner als Aktor-Baugruppen eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt [Vorarbeit](#vorarbeit) angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt [generisches Modell](#generisches-modell) beschrieben. 
+
+### Klassifizierung ###
+Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $\si{N.m/s}$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. 
+
+Bei der Modellierung von DC-Motoren wird der _Zusammenhang zwischen Motorstrom und Drehmoment_ oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die _Drehmomentkonstante_, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann ([siehe Abbildung][motorModeling]).<img src="./pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten ___"Moving-magnet"__ Galvanometer auf einem permanent erregten Magnetfeld basiert, ist die Annahme _B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle [_Mechanical Specifications_](#refTableMechanic) kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt [Industriell gefertigte Aktoren](#industriell-gefertigte-aktoren) erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle [_Mechanical Specifications_](#refTableMechanic "Goto Table Mechanical Specifications") ist die entsprechende Drehmomentkonstante unter _Torque Constant_ angegeben.
+
+Der Vollständigkeit halber sollen an dieser Stelle einige Parallelen zur Unterklasse der _elektronisch kommutierten_ Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff _"Brushless <a style="color: #aaa ">DC-</a>Motor"_ bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.
+
+### Herstellerspezifikation ###
+Bei den hier eingesetzten, industriell gefertigten Motoren der Firma [_Cambridge Technology_][cambridgeTech] handelt es sich um optische Scannereinheiten (Serie 6860) vom Typ _"Moving Magnet"_ mit integriertem Positionssensor, welcher auf Basis variabler Kapazitäten arbeitet. Die vom Hersteller liebevoll unter [__Veteran Galvo Motors__][veteranGalvo] kategorisierten Aktoren gehören zwar nicht mehr zu den aktuellen Produkten von _Cambridge Technology_, sind jedoch hervorragend geeignet für das hier dokumentierte Projektvorhaben. 
+
+Nachfolgend werden die [Herstellerspezifikationen][typ6860spec] der __6860__ Serie aufgelistet.<br>
+<a name="refTableElectric"> </a>
+<center>
+
+| Electrical Specifications | Symbol         | Value                          |                                   |                      |
+|---------------------------|----------------|--------------------------------|:---------------------------------:|:--------------------:|
+| Coil Inductance           | $L$            | $\SI\{160\}\{\micro\henry\}$   |                                   | $\pm\SI\{10\}\{\%\}$ |
+| Coil Resistance           | $R_L$          | $\SI\{1.5\}\{\ohm\}$           |                                   | $\pm\SI\{10\}\{\%\}$ |
+| Back-EMF const.           | $K_\{EMF\}$    | $\SI\{0.17\}\{mV s /\degree\}$ | $\SI\{9.74\}\{mV s /\radian\}$    | $\pm\SI\{10\}\{\%\}$ |
+| RMS Current               | $I_\{L-RMS\}$  | $\SI\{4.6\}\{A\}$              | at $\ T_\{case\}=\SI\{50\}\{°C\}$ | Max.                 |
+| Peak Current              | $I_\{L-PEAK\}$ | $\SI\{25\}\{A\}$               |                                   | Max.                 |
+| Step Response Time        | Small Angle    | $\SI\{0.5\}\{ms\}$             | inertia matched load              |                      |
+
+<a name="refTableMechanic"> </a>
+
+| Mechanical Specifications           | Symbol                  | Value                          |                             |                      |
+| ---                                 | ---                     | ---                            | ---                         | ...                  |
+| Angular Excursion                   | $\Delta\varphi_\{Max\}$ | $\SI\{40\}\{\degree\}$         | $\SI\{0.698\}\{\radian/s\}$ |                      |
+| Rotor Inertia                       | $J_R$                   | $\SI\{0.6\}\{gm.cm^2\}$        | $\SI\{6e-8\}\{kg.m^2\}$     | $\pm\SI\{10\}\{\%\}$ |
+| Torque Constant                     | $K_\{EL\}$              | $\SI\{9.3*10^4\}\{dyne.cm/A\}$ | $\SI\{9.3e-3\}\{N.m/A\}$    | $\pm\SI\{10\}\{\%\}$ |
+| Max. Coil Temperature               |                         | $\SI\{110\}\{°C\}$             |                             |                      |
+| Thermal Resistance<br>(Coil - Case) |                         | $\SI\{1.5\}\{°C/\watt\}, Max$  |                             |                      |
+
+<a name="refTablePositionDetect"> </a>
+
+| Position Detector                | Value                                   |                      |
+| ---                              | ---                                     |                      |
+| Linearity                        | 99.9%, Minimum, over 40 degrees         |                      |
+| Scale Drift                      | 50PPM/°C, Maximum                       |                      |
+| Zero Drift                       | 15 microradians/°C, Maximum             |                      |
+| Repeatability, Short Term        | 8 microradians                          |                      |
+| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
+| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
+
+</center>
+<span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
+$\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
+<br>
+
+### Elektrische Komponenten ###
+Das fertige Modell des Galvomotors setzt sich aus elektrischen und mechanischen Teilsystemen zusammen. Beim ersten Modellansatz wurde die __Eingangsspannung__ der Statorinduktivität als Stellgröße für die Regelstrecke bzw. für die Aktoren angenommen.
+
+#### Elektrisches Teilsystem ####
+In differentieller Form ist die Zweipolbeziehung einer idealen Induktivität gegeben durch:
+$$ u(t)=L \cdot \frac{\partial~i_L}{\partial~t} $$
+Bezeichnet $u_M(t)$ die Eingangsspannung der Statorwicklung und $R_L$ den reellen Wicklungswiderstand, so gilt für eine reale Motorinduktivität 
+$$ u_M(t)=L \cdot \frac{\partial~i_L}{\partial~t} + R_L \cdot i_L(t) 
+\;\;\;\Leftrightarrow\;\;\;
+\frac{u_M(t)}{L} = \frac{\partial~i_L}{\partial~t} + \frac{R_L}{L} \cdot i_L(t) $$ 
+Wird diese Differentialgleichung Laplace-transformiert, ergibt sich im Bildbereich die Funktionsgleichung:
+$$\mathscr{L}\Bigg(\frac{u_M(t)}{L}\Bigg) = \frac{U_M(s)}{L} = s \cdot I_L(s) - i_{L0} + \frac{R_L}{L} \cdot I_L(s)$$ 
+Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfunktion (transfer function, TF) zwischen Motorspannung und Motorstrom: 
+$$ \begin{equation}
+G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$
+Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des Nennerpolynoms von \eqref{eqGsAusg} bestimmt werden und beträgt $\; {\large\tau} = \frac{L}{R_L} = \frac{160\,\mu H}{1.5\,\Omega}\approx 107\,\mu s$. 
+
+Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entstehen da Systeme mit Nullstellenüberschuss keine Bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus Kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\\\ \phantom{.} \\\\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center>![realInductor](./pics/simulExport/realInductor.svg "Motorinduktivität")</center> 
+
+#### Back-EMF ####
+Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die _elektromagnetische Induktion_ führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. "Electromotive Force", EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportional mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch
+
+In den Herstellerspezifikationen ([Electrical Specifications](#refTableElectric)) ist der EMF-Faktor mit $0.17\si{mV/degree/sec}\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus 
+
+$$\begin{aligned} 
+\SI{0.17}{\milli V\per\degree\per\second} \\\
+0.17,mV/degree/sec &= 9.74\times 10^{-3} V/rad/s \nonumber \\\
+&= 9.74\times 10^{-3} Nm/A \nonumber
+\end{aligned}$$
+
+was, bis auf die Reibungsverluste, ziemlich genau der Drehmomentkonstante entspricht. Für die elektromotorische Kraft des bewegten Magnetfeldes gilt somit 
+\begin{equation} u_{EMF}(t) = K_{EMF} \cdot \omega(t) \label{eqVemf} \end{equation} 
+Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik des Aktors korregt zu modellieren.
+\begin{equation} 
+G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center>![mechSubA](./pics/simulExport/mechSubA.svg "Mechanisches Subsystem")</center>
+
+#### Elektrisch generiertes Drehmoment ####
+Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren _Gain-Block_ im Blockschaltbild berücksichtigt wird. 
+
+#### Positionssensor ####
+Die verwendeten Galvoscanner sind mit einem integrierten Positionsdetektor ausgestattet. Die Winkelposition der Rotorwelle wird anhand variabler Kapazitäten gemessen ([siehe Abb. in _Modellbildungsprozess_](#modellbildungsprozess)). Die Größenordnung der Kapazitätsdifferenz liegt bei nur wenigen Picofarad. Um auch kleine Positionsänderungen präzise messen zu können, sind entsprechend hohe Anforderungen an die Mess- und Auswerteelektronik zu stellen. Die vom Hersteller bereitgestellte Winkelposition ist einer Trägerschwingung von $f_0 = 1.6~MHz$ aufmodulliert und steht als Differenzstromsignal zur Verfügung. Mit einer entsprechend präzise ausgelegten Operationsverstärkerschaltung wurde das Differenzstromsignal zu einer proportionalen Gleichtaktspannung demoduliert. Der Proportionalitätsfaktor wird im Folgenden als $K_{PD}$ bezeichnet und besitzt die Einheit $V/rad$.
+Um den eingebauten Positionssensor der _6860_ Galvoscanner zu modellieren, wird die Winkelgeschwindigkeit $\omega(t)$ durch einen einfachen Integrationsblock in die Winkelposition $\varphi(t)$ überführt (siehe [Mathematische Zusammenhänge](#mathematische-zusammenhänge)). 
+
+### Mechanische Komponenten ###
+Eine _bewegte_ Masse speichert die _kinetische Energie_ $E_{kin}$. Neben dem Linearfaktor _m_ steigt $E_{kin}$ dabei quadratisch zur Geschwindigkeit, mit der sich die Masse bewegt. Rotiert ein Körper um eine feste Achse, so spricht man von _Rotationsenergie_ $E_{rot}$. Sie steigt in Abhängigkeit des [Trägheitsmoments][@Jx][^fnInertialmoment] $J_R$ des Körpers und dem Quadrat seiner Winkelgeschwindigkeit $\omega(t)$.
+ 
+Das mechanische Teilsystem kann also ebenfalls durch ein entsprechend dimensioniertes PT1-Glied beschrieben werden (Ein einzelner, linear unabhängiger Energiespeicher). Um den systemtheoretischen Zusammenhang der einzelnen mechanischen Größen mathematisch abbilden zu können, wurde folgende Liste erstellt. Sie beinhaltet zusätzlich Näherungen und Annahmen die bisher getroffen wurden
+
+- elektrisches Drehmoment $\,\bf{M_{EL}}$
+    + Erregerfeld gilt als konstant bezüglich Intensität ($\vec{B}, \vec{H}$) und Winkelpos. (siehe [Klassifizierung](#klassifizierung), 2. Absatz) 
+    + $M_{EL}$ ist im Bereich $\,\pm \frac{1}{2}\cdot \Delta\varphi_{Max} = \pm 20°$ proportional zum Spulenstrom $\,i_L(t)$
+    + Herstellerangaben zum Proportionalitätsfaktor $\,K_{EL}$ vorhanden 
+- Trägheitsmoment $\,\bf{J_R}$ (alt. Inertialmoment) des rotierenden Körpers setzt sich zusammen aus 
+    + Rotorwelle, Rotormagnet, Sensorscheibe und Spiegel
+    + Die Drehachse wird als fest und die Rotormasse als homogen verteilt, angenommen 
+        * Trägheitstensor darf in die skalare Größe des Trägheitsmoments überführt werden
+    + Herstellerangabe zum skalaren Trägheitsmoment $\,J_R$ vorhanden 
+- mechanische Reibung $\,\bf{M_{FR}}$, verursacht durch Reibungsverluste in
+    + Kugellager, Positionssensor, keine Herstellerangaben
+- äußeres Lastmoment / Rückstellmoment $\,\bf{M_{TB}}$  
+    + siehe [Lastmoment](#lastmoment)
+    + keine Herstellerangaben
+
+#### Lastmoment ####
+Für den konkreten mechanischen Aufbau des Scannermodells _6860_ konnten keine zuverlässigen Quellen gefunden werden. Die Vermutung, dass die Rotorwelle einem statischen Lastmoment ausgesetzt ist, soll im folgenden kurz begründet werden:
+
+1. selbständiges Rückstellen der Rotorwelle bis auf ±4° um die Mittelstellung wenn Spannungsfrei geschaltet
+    - Die Rotorwelle wird automatisch in Mittelstellung zurück gedreht wenn das elektrische Moment zu 0 wird.
+    - Dieser Effekt könnte, abhängig von Aufbau und Geometrie des magnetischen Statorkreises, auch darauf zurück zu führen sein, dass sich bei Mittelstellung der geringste magnetische Widerstand einstellt. Anders formuliert: Die Rückstellbewegung könnte auch auf die [Reluktanzkraft](https://de.wikipedia.org/wiki/Reluktanzkraft "https://de.wikipedia.org/wiki/Reluktanzkraft") zurückzuführen sein.  
+3. Kräftegleichgewicht bei sehr geringen Statorströmen (wenige mA)
+    - Wird ein minimaler Gleichstrom in die Motorwicklung eingeprägt, so stellt sich im Bereich $\,\Delta\varphi_\{Max\}$ ein Gleichgewichtszustand des Drehwinkels ein. 
+2. Quelle: Mechanisches Funktionsprinzip von Effektlasern auf [www.laserfx.com][laserfx]
+4. Elektrische "Erdung" des Rotorkörpers um elektrostatischen Effekten vorzubeugen
+
+In der Produktspezifikation des Herstellers sind keinerlei Angaben bezüglich statischer Lastmomente zu finden. Da diese jedoch experimentell nachweisbar sind und sich der Einfluss nur schwer abschätzen lässt, wurde bei der Modellbildung ein entsprechendes Lastmoment in Form einer Torsionsfederkonstante (lineares Verhalten) mit einbezogen.
+
+#### Mechanisches Teilsystem ####
+Entsprechend des Abschnitts [Mathematische Zusammenhänge](#mathematische-zusammenhänge) dient die Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbil} als Ausgangspunkt für die konkrete Formulierung des mechanischen Teilsystems. Um das dynamische Verhalten der Aktoren weitestgehend korrekt abzubilden, müssen die zeitabhängigen Drehmomente $M_{EL},\,M_{FR},\,M_{TB}$ und das Massenträgheitsmoment $J_R$, bei der Bilanzbildung mit entsprechendem Vorzeichen berücksichtigt werden.
+\begin{equation} 
+J_R\,\frac{\partial}{\partial\,t} \, \omega(t) = M_{EL}(t) - \big[M_{FR}(t) + M_{TB}(t) \big] \label{eqDrehimpulsbilBase}\end{equation}
+Das mechanische Reibmoment $\vec M_{FR}(t)$ und das Lastmoment $\vec M_{TB}(t)$ der Torsionsfeder wirken dem elektrisch generierten Drehmoment $\vec M_{EL}(t)$ entgegen. 
+\begin{equation}    
+J_R \; \dot\omega = M_{EL} - M_{Mech} \label{eqDrehimpulsbilKon} \end{equation} Werden die i.A. gerichteten Größen auf skalare reduziert, ergeben sich folgende, einfache Beziehungen 
+\begin{equation}    
+M_{TB} \;\propto\; \varphi \;\;\;\Leftrightarrow\;\;\; M_{TB} = K_{TB}\cdot\boldsymbol{\varphi} \label{eqLinearTorsin}    
+\end{equation} Das Torsionsmoment (statisches Lastmoment) steigt an, je weiter der Rotor aus seiner Ruhelage heraus bewegt wird. Die Gleit-Reibung ist hingegen nur von der Geschwindigkeitsdifferenz zweier Körper abhängig, geht man von einem konstanten Gleitreibungskoeffizienten im Bereich $\pm 1/2\cdot\Delta\varphi_{Max}$ aus. Bei entsprechend "schwer" anlaufenden Antrieben sollte die Haftreibung (oft durch verzögerte Signum-Funktion modelliert) nicht außer Acht gelassen werden. Glücklicherweise kann hier auf diese Klasse hochgradig nicht-linearer Übertragungsfunktionen verzichtet werden. Für die Gleitreibung gillt jedoch: 
+$$ \begin{align}
+M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
+M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
+\end{align} $$ Der lineare Zusammenhang zwischen Ankerstrom und Drehmoment wurde bereits erwähnt. Nach einsetzen von \eqref{eqLinearTorsin}, \eqref{eqLinearFriction} und \eqref{eqLinearElTorque} in die Drehimpulsbilanzgleichung aus \eqref{eqDrehimpulsbilKon} erhät man dann eine lineare DGL 2. Ordnung mit konstanten Koeffizienten:
+
+\begin{equation}
+J_R~\ddot\varphi + K_{FR}~\dot\varphi + K_{TB}~\varphi = K_{EL}\cdot i_L(t) \label{eqDglSecond} \\\\ \phantom{.} \\\\
+\small{\left[kg\,s^2\right]\left[\frac{rad}{s^2}\right] + \left[\frac{Nm\,s}{rad}\right]\left[\frac{rad}{s}\right] + \left[\frac{Nm}{rad}\right]\left[rad\right] = \left[\frac{Nm}{A}\right]\left[A\right]} \\\\ \phantom{.} \end{equation}
+
+Es gibt nun _mehrere Ansätze_ wie die DGL in den Bildbereich transformiert werden kann. Mit Gleichung \eqref{eqDglSecond} als Ausgangspunkt, wäre eine direkte Transformation problemlos umsetzbar. Durch Anwendung des Differentiationstzes der Laplace-Theorie, lässt sich die Bildfunktion schnell aufstellen. Der 1. Ansatz lautet deshalb:
+\begin{equation} 
+\mathscr{ L }\bigg\lbrace\frac{\mathrm{d}^n x}{\mathrm{d} t^n}\bigg\rbrace = s^n \cdot X\left(s\right)-s^{n-1} \cdot x(0_{\small-})- \,\dots\left.\frac{\mathrm{d}^{n-1}x}{\mathrm{d}t^{n-1}} \right\bracevert\_{t=0_{\small-}} \;\;\;\;\;\;\;\;\;{\small{und\ mit}\;\;} \mathscr{L}\lbrace\varphi(t)\rbrace = {\large\Phi}(s) \nonumber
+\\\\ \phantom{.} \\\\ \Downarrow \\\\ \phantom{.} \\\\
+\frac{K_{EL}}{J_R} \cdot\mathscr{ L }\,\Big\lbrace\ i_L(t) {\Big\rbrace} = s^2 \,{\large\Phi}(s) - s\,\varphi(0)-\dot\varphi(0) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) - \frac{K_{FR}}{J_R}\, \varphi(0) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber
+\end{equation}
+Setzt man die Anfangsbedingungen in beiden Ableitungen wieder zu null, entseht zwar ein übersichtlicher Ausdruck, jedoch lässt sich von diesem nicht so ohne weiters auf die Struktur der Blockschaltung schließen. 
+Andere wichtige Systemeigenschaften wie z.B. die stationäre Verstärkung oder die Zeitkonstanten des Streckenteils $\Phi{\small(s)/}I_L{\small(s)}$, können der Übertragungsfunktion ${\mathrm G_{{\small \mathrm M_1}}}$ jedoch entnommen werden.
+
+\begin{equation}
+\frac{K_{EL}}{J_R} \cdot I_L(s) = s^2 \,{\large\Phi}(s) + \frac{K_{FR}}{J_R}\cdot s \,{\large\Phi}(s) + \frac{K_{EL}}{J_R} \cdot {\large\Phi}(s) \nonumber \\\\ \phantom{.} \\\\ \Updownarrow \\\\ \phantom{.} \\\\
+{\mathrm G_{{\small \mathrm M_1}}}(s)=\frac{{\large\Phi}(s)}{I_L(s)} = \frac{K_{EL}}{J_R} \cdot \frac{1}{s^2+s\cdot\frac{K_{FR}}{J_R}\+ \frac{K_{TB}}{J_R}\} \label{equDglWI}
+\end{equation}
+
+<span style="background-color: yellow"> Mit dem Übergang in den Bildbereich wurden die physikalischen Zusammenhänge beim ersten Ansatz untransparent. Aufgrund der Forderung nach einer , die Laplace Transformation auf eine DGL 1. Ordnung anwenden zu können, muss einer der kinetischen Energiespeicher aus \eqref{eqLinearFriction} "wegfallen". Wieder ausgehend von der Drehimpulsbilanzgleichung \eqref{eqDrehimpulsbilBase}, wird dieses mal nach dem "nächsten Verwandten" von $J_R\cdot\omega$ innerhalb der Inhomogenität der DGL gesucht:</span>
+
+Werden in der Ausgangsgleichung nur Terme eingesetzt, die höchstens eine Integration über $\boldsymbol{\dot\omega}$ liegen, bleibt auch die Ordnung der resultierenden DGL erhalten. In \eqref{eqDrehimpulsbilBase} wird also nur das Reibmoment $M_{FR}$ durch $K_{FR} \cdot{\dot\varphi}=K_{FR} \cdot{\omega}\,$ und das elektrische Moment $M_{EL}$ entsprechend substituiert. Anschließend folgt wieder die Laplace-Transformation wobei $\Omega(s)$ als $\mathscr{ L } \big\lbrace\,\omega(t)\big\rbrace$ zu verstehen ist.
+\begin{align} 
+J_R\,\frac{\partial}{\partial\,t} \, \omega(t) &= \boldsymbol{K_{EL}\cdot i_L(t)} - \boldsymbol{K_{FR} \cdot \omega (t)} - M_{TB}(t) \;\;&&\Leftrightarrow \nonumber \\\
+J_R\,\dot\omega + K_{FR} \cdot \omega  &= K_{EL}\cdot i_L - M_{TB}  &&\Big|\;\mathscr{ L } \lbrace\,\dots\rbrace \nonumber \\\
+\Omega(s)\cdot \big(s\cdot J_R+K_{FR}\big) &= K_{EL}\cdot I_L(s) - M_{TB}(s) &&wenn\ \omega(0)=0 \label{eqBeforeLapMech} 
+\end{align} 
+Um an die Übertragungsfunktion des elektrischen Teilsystems $G_{EL}(s)$ aus \eqref{eqGel} anknüpfen zu können, muss Gleichung \eqref{eqBeforeLapMech} in eine Form gebracht werden, in der $I_L(s)$ im Nenner auftaucht:
+\begin{align} 
+\frac{ \Omega(s) }{K_{EL}\cdot I_L(s) - M_{TB}(s)}  &= \frac 1 {s\cdot J_R+K_{FR}} \nonumber \\\
+&= \color{red}{\frac{1}{s} \frac{1}{J_R}} \cdot \frac{1}{1 + \color{red}{\frac{1}{s} \frac{\color{blue}{K_{FR}}}{J_R}}} \nonumber
+\end{align}
+Diese Übertragungsfunktion lässt sich nach einer Umformung entsprechend Regel \eqref{eqForwardPath} wieder direkt in einem Blockdiagramm darstellen:
+<center>![mechSubInklTb](./pics/simulExport/mechSubInklTb.svg "Mechanisches Subsystem inkl. Torsionsmoment")</center>
+
+#### Verbindung der Teilsysteme ####
+Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Der in Abschnitt [Positionssensor](#positionssensor) erwähnte Proportionalitätsfaktor $K_{PD}$ muss erst in der Rückführung von $\varphi(t)$ auf den ADC des diskreten Reglers beachtet werden.
+<center>![systemSubCmpl](./pics/simulExport/systemSubCmpl.svg "Zusammengesetztes Teilsysteme")</center>
+Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$, müssen entsprechend den linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} erzeugt werden. Das resultierende, __lineare__ Modell ist in folgender Abbildung gegeben:
+<center>![systemLinCmpl](./pics/simulExport/systemLinCmpl.svg "Lineares Aktor Modell")</center>
+
+$$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$
+
+### Aktor Gesamtmodell ###
+Das Gesamtmodell der Galvoscanner entspricht im Wesentlichen dem aus Abschnitt [Verbindung der Teilsysteme](#verbindung-der-teilsysteme). Die Winkelposition wird im Bereich $|\,\varphi\,| > 1/2\cdot\Delta\varphi_\{Max\}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| > 25\,A$ ungültig wird. Beide Bereiche werden im Simulink Modell durch entsprechend parametrierte Sättigungsblöcke modelliert.   
+<yelBg>Simulink Modelle</yelBg>
+
+### Testsignale ###
+<yelBg>(...)</yelBg>
+
+#### Problematik der Sättigung ####
+<yelBg>(...)</yelBg>
+
+
+## ??? Stellglied / Leistungsteil ##
+## ??? Signalkonditionierung ##
+<!-- # Angaben zur Systemdynamik # -->
+<!-- ## Spezifikationen des Gesamtsystems ## -->
+# Softwarearchitektur #
+>Architektur ist die Kombination von utilitas, firmitas und venustas.[^fnSwArchitekturIst]
+
+<center>
+
+<table class="noalter" style="width: 100%">
+    <tbody style="text-align: left">
+        <tr style="font-weight: bold">
+            <td colspan="2" style="width: 50%;"><center>Nach Vitruvius sinngemäß<br>(Römischer Architekt 90-20 v. Chr.)</center></td>
+            <td rowspan="1" style="width: 50%;"><center>Softwarearchitektur hat zum Ziel,<br> dass das An&shy;wen&shy;dungs&shy;system ...</center></td>
+        </tr>
+        <tr>
+            <td>utilitas</td>
+            <td>Das Gebäude erfüllt seine Funktion</td>
+            <td rowspan="3">
+                <ul>
+                    <li>den Anforderungen entspricht (<b>utilitas</b>)</li>
+                    <li>robust ist (<b>firmitas</b>) und </li>
+                    <li>eine gewisse Schönheit besitzt (<b>venustas</b>)</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>firmitas</td>
+            <td>Das Gebäude ist stabil</td>
+        </tr>
+        <tr>
+            <td>venustas</td>
+            <td>Das Gebäude ist ästhetisch gestaltet</td>
+        </tr>
+    </tbody>
+</table>
+
+</center>
+
+Mit dieser klaren Aussage vor Augen, befasst sich das nachfolgende Kapitel mit dem weitreichenden, in Abhängigkeit von Literatur und Quellen oft sehr "unscharf" definierten Begriff der <lkey>Softwarearchitektur</lkey>. Die hier verwendeten Formulierungen und Aussagen bezüglich _Architektur_, _Struktur_ sowie _Muster_ oder _Vorgehen_, sollen hauptsächlich Projektbezogen verstanden und nicht auf das Übergeordnete Wissensgebiet der Softwarearchitektur im Sinne verteilter Systeme oder Großprojekte angewandt werden. 
+
+Zudem soll an dieser Stelle nochmals auf das in Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) (Abschnitt _Systemzweck_) formulierte Schwerpunktthema "_Modellbildung und Simulation_" Bezug genommen werden.  
+
+## Was ist Softwarearchitektur? ##
+Die Softwarearchitektur beschreibt die _grundlegenden_ __Komponenten__ und deren __Zusammenspiel__ innerhalb eines Softwaresystems auf unterschiedlichen Abstraktionsebenen. Dadurch ist der Softwarearchitekt in der Laage, umfangreiche und komplexe Aufgabenstellungen frühzeitig zu partitionieren sodass ein Gesamtsystem in überschaubare Teilsysteme zerlegt werden kann. 
+
+Ein strukturierter Architekturentwurf ist in der Regel auf ganzer Linie gewinnbringend. Die Tatsache, dass ein gut durchdachter Architekturentwurf in den Anfängen eines neuen Projektes zusätzliche Arbeitsleistung = Zeit = Kosten einfordert, relativiert sich spätestens bei langfristiger Betrachtung eines Produkts. Besonders bei großen sowie langlebigen Softwaresystemen zahlt es sich aus, wenn man beispielsweise neuen Mitarbeitern neben der Softwaredokumentation (Implementierungsdetails. z. B. _Doxygen_) ein  Architekturmodell vorlegen kann. Des weiteren soll mit der in aller Regel höheren Produktqualität, mit einer einfacheren/besseren Projektplanung/Projektierung (bezüglich Zeitmanagement sowie "Man-Power"), besserer Erweiterbarkeit, Zertifizierungskriterien sowie mit dem Aspekt des Code-Reusing argumentiert werden. 
+
+In gewisser Weise besitzt jedes Softwaresystem eine Architektur, unabhängig davon, wie unstrukturiert und von _Ad-hoc-decisions_ geplagt, der Entwicklungsprozess abgelaufen ist (<lkey>Reverse engeneering</lkey>). Dennoch hartnäckigen Modell-Verfechtern und Architekturentwurfsgegnern darf dann, als letzte gut gemeinte Überzeugungshilfe, eine Umschulung zum __Softwarearchäologen__ nahegelegt werden.
+
+## Model-Driven Architecture (MDA) ##
+Nachdem in einem _Bottom-Up_-Prozess eventuell vorhandene Schnittstellen zu Altsystemen bestimmt wurden, erfolgt die eigentliche Entwicklung eines Softwaresystems in der Regel nach dem _Top-Down_-Prinzip. Wird nun die funktionale Archi&shy;tektur&shy;beschreibung dieses Softwaresystems auf Basis einer __universellen__, d.h. platt&shy;form&shy;unab&shy;hängigen (__!__) Model&shy;lierungs&shy;sprache konzipiert und realisiert, so liegt dem erarbeiteten Produkt eine modell&shy;getriebene Softwareentwicklung zu Grunde (Model-driven software development, MDSD). Die Aufgabe der MDA ist es nun, eine Infrastruktur oder eben Architektur zur Verfügung zu stellen, um Softwareentwicklung auf Modellbasis und nicht mehr auf Code-Basis zu fördern bzw. erst zu ermöglichen.      
+
+### Unified Modeling Language (UML) ###
+Beim Versuch, eine geeignete Sprache für die noch sehr junge Disziplin (erst in den 1990er Jahren als unabhängiges Teilgebiet der Softwaretechnik anerkannt) der Architekturbeschreibung bzw. der MDA zu definieren, wurden über die Jahre unterschiedliche Ansätze und Methoden erarbeitet. Die von der _Object Management Group_ __(OMG)__ entwickelte und sowohl von dieser, wie auch von der ISO/IEC 19505 standardisierte _Unified Modeling Language_ __(UML2)__, ist heute die dominierende Sprache für die Softwaresystem-Modellierung. Die UML ist eine Modellierungssprache zur Spezifikation, Konstruktion und Dokumentation von (Software-) Systemen. Sie ist überwiegend auf das Beschreiben von objektorientierten Architekturen optimiert, konzeptbedingt ist der Einsatz für nicht-objektorientierte Systeme jedoch nicht ausgeschlossen. 
+
+### UML2 - Industriestandard ###
+Aus einer Vielzahl von Eigenschaften und Argumenten, die für einen Architekturentwurf in UML sprechen, sollen an dieser Stelle einige wichtige Merkmale herausgegriffen werden.
+
+|        Merkmal        |                                                                                                                                                                                                    |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Diagrammunterstützung | Modelle können in Form von UML-&shy;Diagrammen dargestellt und auch als solche bearbeitet werden. Die graphische Notation ist in der UML-&shy;Spezi&shy;fika&shy;tion stan&shy;dar&shy;di&shy;sie&shy;rt
+| Codegenerierung       | Entsprechende UML-&shy;Werk&shy;zeuge können aus einem zuvor formu&shy;lierten Modell, einen Teil oder sogar die voll&shy;ständige Architektur&shy;-Imple&shy;mentierung in Form eines Quellcodes ableiten.                      |
+| Reverse Engineering   | Das UML-Werkzeug leitet aus einem vorhandenen Quellcode das entsprech&shy;ende Model ab und gene&shy;riert daraus Dia&shy;gramme in UML-&shy;konfor&shy;mer Notation.                                                       |
+| Modelltransformation  | Die Fähigkeit zur Modell&shy;transfor&shy;mation steckt bereits in den zuvor aufge&shy;zählten Merkmalen (Graphisch erzeugtes Modell wird in sein entsprech&shy;endes Quell&shy;code&shy;modell trans&shy;formiert oder anders herum) |
+
+### Diagramme als Sicht ###
+Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene _Sichten_ handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine _Sicht_ repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  
+
+<a href="./pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="./pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a>
+
+
+## Architekturkomponenten ##
+- reverse Engeneering
+
+@startuml
+skinparam componentStyle uml2
+package "Gesamtprojekt" {
+    package "Embedded Software" {       
+        [Actuator Safestate Guard]
+        [Diskreter PID-Regler]
+    } 
+    package "Modellbildung und Simulation" {
+        frame "Hardware" {
+            [Actuator Safestate Guard]
+        }
+        frame "PID" {
+            [Diskreter PID-Regler]
+        }
+    } 
+}
+@enduml
+@diag_align: "center"
+
+---
+
+@startuml
+skinparam componentStyle uml2
+package "Gesamtprojekt" {
+    package "Embedded Software" {       
+        frame "ASG" {
+            [Actuator Safestate Guard]
+        }
+        frame "PID" {
+            [Diskreter PID-Regler] 
+        }
+    } 
+    package "Modellbildung und Simulation" {
+        frame "Hardware" {
+            [Actuator Safestate Guard]
+        }
+        frame "PID" {
+            [Diskreter PID-Regler]
+        }
+    } 
+}
+@enduml
+@diag_align: "center"
+
+---
+
+@startuml
+package "Gesamtprojekt" {
+    [Embedded Software]
+    [Modellbildung und Simulation]
+    node "Other Groups" {
+        FTP - [Second Component]
+        [First Component] --> FTP
+    } 
+}
+@enduml
+@diag_align: "center"
+
+---
+
+@startditaa
++--------+   +-------+    +-------+
+|        +---+ ditaa +--> |       |
+|  Text  |   +-------+    |diagram|
+|Document|   |!magic!|    |       |
+|     {d}|   |       |    |       |
++---+----+   +-------+    +-------+
+    :                         ^
+    |       Lots of work      |
+    +-------------------------+
+@endditaa
+
+Komponentendigramm
+
+- zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems
+- die Darstellung umfasst meist Komponenten inklusive deren Schnittstellen oder Ports
+- Abhängigkeitsbeziehungen zwischen Komponenten untereinander können dargestellt werden
+- zeigt oft Notationselemente, die das Innere einer Komponente wiederspiegeln 
+- wird überwiegend zur Modellierung von komponentenbasierten Softwaresystemen eingesetzt
+
+
+Die formelle Beschreibung einer Softwarearchitektur 
+[Architektur und Architekturmuster](http://www.berner-mattner.com/cms/upload/1_PDF/1_Ueber_uns/Publikationen/BernerMattner_Publikationen_WhitePaper_SWArchitektur.pdf) 
+Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem eventuelle Schnittstellen zu Altsystemen bottom-up bestimmt wurden). Die dabei erfolgende allgemeine Auslegung der Software wird als Softwarearchitektur bezeichnet. Hier soll die Definition von Softwarearchitektur erweitert werden, so dass sie (angelehnt an [SE-Radio]) allgemein festgelegte Designaspekte eines Softwaresystems miteinbezieht. Die Festlegung einer groben Strukturierung der Software in Komponenten ist damit Teil der Softwarearchitektur und beeinflusst somit stark die Qualität und Performanz des zu entwickelnden Systems.
+
+
+- ist ein __Prozess__, in Form einer Folge von absichtlichen strategischen Designentscheidungen, die aus Spezifikation und Geschäftszielen das Architektur-Design ableiten.
+- ist ein __Gegenstand__, in Form eines Satzes von Ansichten, die verschiedene Interessengruppen adressieren und als Ergebnisse des Architekturprozesses entstehen. 
+
+
+[Was-heißt-hier-Softwarearchitektur? - _Dr. Michael Stahl, Siemens AG_](https://www.heise.de/developer/artikel/Was-heisst-hier-Softwarearchitektur-2808249.html)
+
+# Plattform #
+Im Kapitel [Projektziel und Anforderungskatalog](#projektziel-und-anforderungskatalog) wurde bereits kommentarlos erwähnt, dass als Mikrocontroller ein [_STM32F429i_][@STM32F429i] der Firma _STMicroelectronics_ eingesetzt wurde. Die Entscheidung, dass als Hardware-Plattform ein Controller mit ARM-Kern zum Einsatz kommen sollte, viel tatsächlich bereits im Voraus. 
+
+Zahlreiche [DIY-Projekte][diyList] steigerten kontinuierlich das Interesse in vielen Bereichen der Hard- und Softwareentwicklung. Meist wurden 8-Bit RISC Controller ATmega/ATXmega der Firma Atmel für diverse Projekte eingesetzt. Mit der Anschaffung des Evaluierungsboards STK-600 inklusive AVR JTAGICE mkII Debugger, stand zwar eine hochflexible Hardware-Plattform (nahezu alle 8-Bit AT(X)mega + AVR32 Controller) zur Verfügung, in Sachen Software-Entwicklungsumgebung war man allerdings (ist noch immer?) an Microsoft .NET und somit an Windows gebunden. Als überzeugter UNIX Anwender blieb somit nur der Betrieb einer virtuellen Windows-Maschine (inkl. aller Windows Treiber-Probleme), wenn man alle Funktionen des JTAG-Emulators nutzen wollte.
+
+Während der aktiven Teilnahme am Formula Student Projekt (HsKA, 2011-2013), konnte jede Menge "realitätsnahe" Praxis in Sachen Automotive Vernetzung auf Basis von Infineons XC87x Derivaten (8-Bit, XC800 Familie mit High-Performance 8051-Architektur, Multi-CAN, 16-Bit CORDIC Coprozessor), aber auch im Bereich _Verantwortung_ und vor allem Ausfallsicherheit, erarbeitet werden. Außerdem konnten und mussten Methoden getestet und Angewandt werden, um einen gewissen Grad an Plattformunabhängigkeit zu erlangen. Das Sponsoring der KEIL uVison4 Lizenzen musste in jeder Saison erneuert werden und konnte nie als gegeben betrachtet werden. Die vollständigen, GCC-kompatiblen HSK-Bibliotheken (M.Sc. D. Fandrey), sind auf [sourceforge.net](https://sourceforge.net/projects/hsk/files/stats/timeline?dates=2010-02-02+to+2017-02-08) veröffentlicht.      
+
+<boxed>Das oberste Gebot bei der Wahl der Hardware-Plattform, war also die Unabhängigkeit ihrer Software-Plattform.</boxed>
+
+### Warum ARM? ###
+Durch die entsprechende Routing-Karte konnte auf der vorhandenen Evaluierungshardware von Atmel auch Controller mit AVR32-Architektur betrieben werden. Das schwerwiegende Kontra-Argument, nämlich die proprietäre, Microsoft-abhängige, _.NET + Visual Studio Shell_-verseuchte Entwicklungsumgebung __Atmel-Studio__, soll hier als Grund genannt werden der zum Ausschluss von AVR32 führte.
+
+Ebenso maßgebend war die Kosten-Nutzen-Rechnung bezüglich Einarbeitungszeit und Zielarchitektur. Dass es sinnvoller ist, die Einarbeitungszeit in die _Advanced RISC Machine_ der Firma _ARM Limited_ zu investieren, lässt sich allein durch den beispiellos hohen Marktanteil ARM-basierter Chips bestätigen. Der Lizenzgeber konkretisiert die Summe aller weltweit produzierten Single-Chips mit ARM-Architektur mittlerweile auf mehr als <yelBg>__86__ Milliarden</yelBg> (im Jahr 2013 erreichte ARM® die 50 Milliarden Marke).
+
+> Today ARM® technology is in use in 95% of smart phones, 80% of digital cameras, and 35% of all electronic devices. (...) Over 1100 licenses signed with over 300 companies.[^fnBillionARM]
+
+### Warum Cortex-M4? ###
+Eine umfangreiche Liste (aller) unter ARM® Holdings lizenzierten Mikroarchitekturen kann u.A. auf [wikipedia][wikiMikroarchs] eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche _(Classic, Embedded, Application)_ sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile _(Microcontroller, Real-time, Application)_[^fnArmProfiles] aufzuzeigen: 
+
+<a href="./pics/ArmRoadMap3.svg" target="_blank"><center>![ssss](./pics/ArmRoadMap3.png "ARM - Devices Roadmap"){.scale75 .noborder}</center></a>
+
+Zahlreiche Entwicklungsboards und Plattformen für i.d.R. _Embedded Linux_ Anwendungen, erfreuen sich teils großer Beliebtheit (z.B, RaspberryPi Serie). 
+<center>
+
+|      Name      | Chip-Bezeichnung | Prozessor  | Architektur |    Profil   |  Familie   |        |
+|----------------|------------------|------------|-------------|-------------|------------|--------|
+| RaspberryPi I  | BCM2835          | ARM1176JZF | ARMv6       |             | ARM11      | 32-Bit |
+| RaspberryPi II | BCM2836          | Cortex A7  | ARMv7-A     | Application | Cortex A   | 32-Bit |
+| BeagleBoard    | OMAP3530         | Corttex A8 | ARMv7-A     | Application | Cortex A   | 32-Bit |
+| Grasshopper    | AT32AP7000       |            | AVR32 RISC  | Application | AVR32 RISC | 32-Bit |
+| (...)          |                  |            |             |             |            |        |
+
+</center>Durch entsprechend implementierte Patches für das Linux Kernel (Realtime Preemption patch, --PREEMPT_RT)[^fnLinuxRtPatch] besteht die Möglichkeit, Embedded Linux Betriebssysteme einzusetzen die den Anforderungen an _"harte Echtzeit-Fähigkeit"_ genügen. Erforderliche Anpassungen Kernel-interner Verriegelungsmechanismen sowie das Einbinden eines generischen Clock-Event-Layers (höher aufgelöstes Takt-System für den Task-Sheduler), wird vor dem compilieren des Kernels durch den entsprechenden _Realtime Preemption patch_ vorgenommen. 
+Aber auch bei absolut determiniertem Interrupt-Handling würde die absolute Reaktionszeit (Interrupt latency) für die regelungstechnischen Aufgaben vermutlich nicht ausreichen. Auf jeden Fall geht der Hardware-Bezug, im Sinne hardwarenaher Programmierung, beim Einsatz von RT-Linux-artigen Betriebssystemen weitestgehend verloren. Die Entwicklung eines eigenen Betriebssystems im Bereich _Application-Processor_ ist u.A. wegen der Speicherverwaltung zu komplex und Zeitaufwendig. Alle __Cortex-A__ werden an einer Speicherverwaltungshardware (MMU) betrieben.
+
+<center>
+
+<table class="caption">
+    <tr>
+        <td align="center">Prozessor mit MMU</td>
+        <td align="center">$\Rightarrow$</td>
+        <td align="center">Embedded OS notwendig</td>
+    </tr>
+    <tr>
+        <td align="center">Embedded OS gefordert</td>
+        <td align="center">$\Rightarrow$</td>
+        <td align="center">Prozessor mit MMU notwendig</td>
+    </tr>
+</table>
+_Zusammenhang zwischen MMU und der Notwendigkeit eines OS._ <yelBg class="scale">__NACHWEIS__ ???</yelBg>
+</center>
+
+#### Architektur-Profil M oder R ####
+Ob als Hardware-Basis das Architektur-Profile _Microcontroller (__Cortex-M__ Familie)_ oder _Real-time (__Cortex-R__ Familie)_ gewählt werden soll, schien im ersten Moment klar zu sein. Die __Cortex-R__-Familie ist mit modernen Signalprozessoren (DSP) und Fließkomma-Hardware (FPU) ausgestattet und wurde speziell (trotzdem in Milliarden-Stückzahlen produziert) für kritische Echtzeit-Anwendungen entworfen.
+
+>Fast response - optimized for high performance, hard real-time applications
+The __ARM® Cortex®-R__ real-time processors offer high-performance computing solutions for embedded systems where reliability, high availability, fault tolerance and/or deterministic real-time responses are needed. (...) The __Cortex-R__ series processors provide fast time-to-market through proven technology shipped in billions of products, supported by the vast ARM® ecosystem.[^fnCortexR]
+
+Bedenkt man jedoch, was für Aufgaben sonst noch von derartigen Controllern erledigt werden, (Nano-Positionierung in der Festplattentechnik, kritische Bereiche der Medizintechnik, autonome Quadrocopter, ...), scheint die Notwendigkeit eines __Cortex-R__ zur Realisierung des geplanten Projekts nicht mehr unbedingt gegeben zu sein.
+
+Nachfolgend werden hingegen einige wichtige __Pro-Argumente__ für den Einsatz eines __Cortex-M__ aufgezeigt:
+
+---
+__Cortex-M ist__ ein Industriestandard (siehe Zitat oder [[Borm:2016, 1-24]][@Borm:2016] resp. [ARM_Entwicklerkonferenz_2012.pdf](http://www.embedded-world.eu/fileadmin/pictures/Events_2012/ARM_2012/CfP/CfP_ARM_Entwicklerkonferenz_2012.pdf))
+
+>It is safe to say that the **Cortex-M** has become for the 32-bit world what the 8051
+is for the 8-bit – **an industry-standard core** supplied by many vendors, each of which dip the core in their own special sauce to provide differentiation in the market.[^fnWhichCortex] 
+
+Der von ARM® unter der _Apache 2.0 Lizenz_ (kompatibel zur _GNU General Public License 3_, jedoch kein _Copyleft_) veröffentlichte Cortex-Mikrocontroller-Software Schnittstellen-Standard __(CMSIS - Cortex Microcontroller Software Interface Standard)__ umfasst bisher nur die __Cortex-M__ Familie.
+
+> The **C**ortex **M**icrocontroller Software Interface Standard (CMSIS) is a vendor-independent hardware abstraction layer for the **Cortex®-M** family.[^fnCMSISARM]
+
+Mit dem **Cortex-M**<a style="color: red; font-weight: bold;">4</a> bekommt die ARMv7-M CPU (neben optionaler FPU) Unterstützung von einem DSP. Dadurch werden wichtige Zusatzfunktionen wie  
+
+- der **SIMD** (Single-Instruction-Multiple-Access) Befehlssatz (primär für Bild-/Audioverarbeitung) sowie
+- eine **MAC** (Multiply-Accumulate) Einheit
+
+zur Verfügung gestellt. 
+
+### CMSIS - Der Cortex-Software Schnittstellen-Standard ###
+Der ARM® Cortex® Microcontroller Software Interface Standard (CMSIS) ist ein frei verfügbares Software-Paket zur Beschleunigung und Standardisierung des Softwareentwicklungsprozesses auf ARM® Cortex Prozessoren. Ausgehend vom herstellerunabhängigen Hardware-Abstraktionslayer für die Cortex-M-Prozessorserie (_CMSIS-CORE_), stellt der CMSIS eine generische Treiberschnittstelle (_CMSIS-Driver_) zur Verfügung. Die "Silicon Vendor"-spezifischen HAL (_Device-HAL_) werden vom jeweiligen Lizenznehmer in den Schnittstellen-Standard von ARM eingebettet. Somit ermöglicht der CMSIS, zusammen mit zertifizierten _Device-HALs_, konsistente und einfache Software-Schnittstellen für herstellerspezifische peripheriegeräte zu entwickeln.
+
+### Multiply-Accumulate / Sum-Of-Products ###
+Die Rechenoperation $y \leftarrow y + \left(a \cdot b\right)$ ist in der digitalen Signalverarbeitung von zentraler Bedeutung. Sie fungiert als Schlüsselkomponente [[Borm2:2016, 1-18]][@Borm:2016] für grundlegende Impulsfilter-Algorithmen wie _FIR_ bzw. _IIR_ und wird bei der _diskreten Fourier Transformation_ sowie zur numerischen Berechnung von _Faltungsintegralen_ eingesetzt.
+
+|        Algorithmus        |                                       Berechnungsvorschrift                                       |
+|---------------------------|---------------------------------------------------------------------------------------------------|
+| Finite Impulse Response   | $$y[n] = \sum_\{k=0\}^M\{a_k \cdot x(n-k)\}$$                                                     |
+| Infinite Impulse Response | $$y[n] = \sum_\{k=0\}^M\{a_k \cdot x(n-k)\}+\sum_\{k=1\}^N\{b_k \cdot y(n-k)\}$$                  |
+| Diskrete Faltung          | $$y[n] = \sum_\{k=0\}^M\{x(k) \cdot h(n-k)\}$$                                                    |
+| Diskrete Fourier Transf.  | $$X[k] = \sum_\{n=0\}^\{N-1\} \{ x(n) \cdot \exp^\{-i \,\left( 2 \pi/N \right) \, n \cdot k\}\}$$ |
+
+
+### Texas Instruments C2000 und der CLA ###
+(Nachtrag 11/2016)
+
+Die C2000 Familie von TI konzentriert sich u.A. auf eine optimale Unterstützung von Regelalgorithmen und unterstützt Methoden zur effektiven Signalverarbeitung. Der _Kern_ ist in Form eines nativen Signalprozessors eingebettet (CPU = DSP). Somit handelt es sich bei der C2000 Familie nicht um moderne Mikrocontroller (___µC___) mit DSP als Coprozessor wie z.B. bei den Cortex-M4 basierten STM32F429i, sondern vielmehr um eine neue [__SoC__][@SoC]-Klasse welche zutreffend als Klasse der __digitalen Signal Controller__ (___DSC___) bezeichnet wird. Der erweiterte Befehlssatz zielt auf die Abarbeitungsgeschwindigkeit mathematischer Prozessketten und verbessert den _"Durchsatz"_ in Trigonometrie-Berechnungen sowie bei der Behandlung komplexer Zahlen. Die bereits erwähnte Optimierung hinsichtlich diskreter Regelalgorithmen fällt jedoch primär auf TI's Task-basierten Coprozessor, dem _Control Law Accelerator_ (___CLA___), zurück. Der CLA führt zuvor initialisierte (Regler-) Algorithmen unabhängig von der Host-CPU aus und unterstützt
+Die ADCs und PWMs unterstützen auch viele Timing-Optionen. Die Leistung variiert von Midrange (Piccolo) zu High-End (Dual-Core Delfino). Die großen Anwendungen sind hier Stromrichter, Netzkommunikation, Industrieantriebe und Motorsteuerung
+
+C2000's focus is on supporting control algorithms. The C28x "CPU" is really a DSP, and its instruction set has been extended to handle things like trigonometry and complex numbers. There's also a separate task-based processor called the Control Law Accelerator (CLA) that can run control algorithms independently of the CPU. The ADCs and PWMs support a lot of timing options, too. Performance varies from midrange (Piccolo) to high-end (dual-core Delfino). The big applications here are power converters, power line communication, industrial drives, and motor control
+
+<!-- http://www.emcu.it/CortexFamily/ArmRoadMap.png --> 
+
+## Software ##
+
+---
+<a name="diyList"></a> 
+DIY-Projekt Beispiele:
+
+- Telefonkarte auslesen/emulieren
+- programmierbare IR-Fernbedienung
+- (Vektor-) Grafikbibliotheken für monochrome Pixel-Displays
+- später <a style="background-color: yellow;">für SD11xx basierte</a> 8-Bit RGB TFTs
+- später SPI-DMA + Memory-Mapped GLCD-Projekte wie z.B. 
+    * bewegter Bilderrahmen mit FAT SD-Karte (SPI-DMA)
+    * aktive Namensschilder auf Nokia <a style="background-color: yellow;">xxx</a> Farb-Displays</a> 
+- diverse Projekte im Bereich der ISM-Band-Kommunikation wie z.B. 
+    * RFM12(B) @ 433MHz: 
+        - USB Funk-Chat
+        - System: "Finde Mutters Autoschlüssel"
+    * RFMega128 Wifi link-in 
+    * ZigBee
+- (...)
+
+---
+
+<!-- ## STM32F429 Spezifikationen ##
+AN4566
+Digital data update rate
+The STM32 DAC output data need to be written to the DAC Holding Register (DHR), then
+the data is move to the DAC Output Register (DOR) for the conversion.
+Generally, the DAC data is saved in a memory (RAM), and the CPU is in charge of the
+transferring the data from RAM to DAC.
+When using the DMA, the overall performance of the system is increased by freeing up the
+core. This is because data is moved from memory to DAC by DMA, without need for any
+actions by the CPU. This keeps CPU resources free for other operations.
+The trigger of the DAC conversion can be done by the software, external triggers or by the
+timers. For the high speed conversion cases, it is recommended to use the timer trigger in
+combination with the data transfer done by the DMA.
+The transfer speed from memory to the DAC is limited by several factors, among them:
+• the clock cycle of the APB (DAC clock);
+• the DMA transfer cycle from memory to the DAC (includes the AHB to APB bridge);
+• the trigger mechanism itself.
+The DAC on STM32F407x microcontrollers is running on the APB1:
+• three cycles after the trigger, DHR data is moved to the DOR register;
+• at the same time a DMA request is generated from DAC to DMA;
+• DMA transfer takes at least one APB clock cycle.
+So a total of 4APB clock cycles are needed to update the DAC DOR register data. As APB1
+maximum clock is 42 MHz (for ST32F407x), 10.5 Msps is the maximum update rate for the
+DAC output register when timer trigger and the DMA are used for the data update.
+The minimum transfer clock cycle by DMA to the DAC is not the same for all STM32
+microcontrollers, because of the different bus configuration.
+The STM32 DAC system AN4566
+8/19 DocID026799 Rev 2
+Table 2 shows the maximum sampling rate for different STM32 products.
+Note: Values reported in Table 2 have been measured on the bench, when bus is not used by any
+other system: in real applications it’s necessary to have some margin.
+1.5 Summary
+By using external high speed OpAmp, it is possible to extend the speed performance of the
+STM32 DACs more than 1 Msps.
+In Section 2 we will provide an example showing how to use this technique on STM32
+products -->
+
+# Software und Simulation #
+In diesem Abschnitt wird die Umsetzung der einzelnen Software-Komponenten dokumentiert. Außerdem soll die Spice-MATLAB Schnittstelle vorgestellt werden, welche die von LTspice erzeugten, numerischen Simulationsergebnisse der Kleinsignal-Netzwerkanalyse verwendet, um daraus ein lineares, zeitinvariantes System (LTI) zu approximieren. Der Bereich _Software und Simulation_ wird wie folgt untergliedert: 
+
+## Hardwarenahe Programmierung (__C__) ##
+In Kapitel [Plattform](#plattform) wurde erläutert, ___warum___ der Cortex-M4f, speziell der STM32F429i, bei diesem Projekt zum Einsatz kam. Hier soll auf das konkrete ___wie___ eingegangen werden. 
+
+### Entwicklungsumgebungen und Toolchains ###
+Wie bereits in der Einleitung zu [Plattform](#plattform) sowie im Abschnitt [Warum ARM?](#warum-arm) angesprochen, wird dem Thema _Plattformunabhängigkeit_ ein hoher Stellenwert zugesprochen. Deshalb soll an dieser Stelle nicht weiter auf die zwar weit verbreitete, hoch integrierte, jedoch für viel Geld (8260 € [_MDK-ARM Pro, Stand 02/2017_](https://elmicro.com/de/keilarm.html)) vertriebene Entwicklungsumgebung _KEIL µVision MDK_, eingegangen werden.
+
+Das von [IBM][eclipseIBM] ins leben gerufene, und mittlerweile von der _Eclipse Foundation_ getragene, quelloffene Software Projekt __Eclipse__, bildet die Grundlage für viele moderne Entwicklungsumgebungen. Ob nun Plugin-basierte Erweiterungen wie z.B. OpenOCD _(On-Chip Debugger)_, diverse Cross-Compiler _(für AVR, ARM, ...)_ inklusive Board-Support-Packages, oder aber komplette proprietäre IDEs _(Vorzeigebeispiel: TI's CodeComposerStudio)_: 
+
+<boxed>Das Eclipse-Basisframework und somit auch der Plugin-Adapter sind für alle Eclipse-basierten IDEs identisch... Und das, __unabhängig__ von der Plattform der Entwicklungsrechner.</boxed> 
+
+Die wohl bekanntesten _Eclipse-CDT_ Erweiterungen für ARM-Basierte Controller sind unter der Bezeichnung [_GNU ARM Eclipse_][eclipseGnuArm] bekannt. Die Plugin-Familie kann bequem über das Software-Repositorie nachgerüstet werden. 
+
+### SW4STM32 Toolchain/IDE ###
+Ebenfalls auf Eclipse Basis wurde von ST/AC6 die noch junge, quelloffene Entwicklungsumgebung __SW4STM32__ [(_System workbench for STM32_)][stST4STM32] veröffentlicht welche ST's gesamte 32-Bit Sparte unterstützt. Neben den Standard-Cross-Toolchains integriert SW4STM32, vergleichbar mit dem Konzept von KEIL's MDK Plattform, ein Verwaltungsmodul zur Installation von Board-Support-Packages für ST-Evaluierungsboards. Außerdem wird vom CMSIS-CORE, der CMSIS-DSP Bibliothek und der CMSIS-Driver Schnittstelle Gebrauch gemacht. 
+
+> The System Workbench toolchain, called SW4STM32, is a free multi-OS software development environment based on Eclipse, which supports the full range of STM32 microcontrollers and associated boards. (...) The STM32 Open Development Environment is compatible with a number of IDEs including IAR EWARM, __Keil MDK__, mbed and GCC-based environments.[^fnStMultiOs]
+
+Neben den offensichtlichen und teils schon genannten Vorteilen quelloffener Softwareprojekte, soll hier nochmals der Eclipse Plugin-Adapter als wichtigstes Argument für die Wahl der Entwicklungsumgebung genannt werden.  
+    
+### Dokumentation ###
+Die Dokumentation zur Anwendungssoftware "GalvoScanner v1.4" wie auch für die im Projektverlauf entwickelten Bibliotheken __MD_STM32F4_Libraries__ wurde mit dem de-facto Standard Dokumentations&shy;werkzeug _Doxygen_ aufbereitet. Das quelloffene, 1997 von _Dimitri van Heesch_ in die "Public Domain" entlassene Dokumentations&shy;werkzeug zählt m. E. zu den Parade&shy;beispielen im Bereich Open Source und Platt&shy;form&shy;unab&shy;hängigkeit.
+
+[Link zur index.html der Doxy-Dokumentation](./../embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/doxygen/html/index.html)
+
+## PC-Schnittstellenprogramm (__C++ / Qt__) ##
+(...)
+### Echtzeit-Zustandsüberwachung ###
+### Parameter Manipulation ###
+## Schaltungssimulation und Netzwerkanalyse (__LTspice__) ##
+
+## System- und Reglersimulation (__Simulink__) ##
+## Schnittstelle Spice-to-Simulink (__MATLAB__)
+### LTspice <-> MATLAB: Freqency response estimation  ###
+- Antialiasing- und Rekonstruktionsfiltern
+- dem unterlegten, analogen Stromregler
+- Endstufe sowie Stellglied
+- Signalkonditionierung
+
+## Debuggen in sw4stm32 ##
+<!-- # Geschlossene Simulationsumgebung # -->
+<!-- ## Umsetzung in MATLAB / Simulink ## -->
+<!-- ## "frequency response model estimation" ## -->
+<!-- ## copy ltspice conform laplace function of the estimated system  ## -->
+<!-- ## Aktoren -> Simulink Modelle  ## -->
+<!-- ## Endstufe -> LTspice -> MATLAB ## -->
+<!-- ## Levelshifter -> LTspice -> MATLAB ## -->
+<!-- ## Antialias / Rekonstruktionsfilter -> MATLAB ## -->
+# Quelldaten generieren #
+Die Koordinaten zur Positionierung sowie das Signal zur Dunkel&shy;tastung des Laserstrahls werden am PC über das SVG-Dateiformat (z. B. Inkscape) definiert und mittels XML-Parser ([_python Skript: svgCoord.py_](#xml-parser)) in eine C-Header-Datei exportiert. Der Ablauf zur Erzeugung neuer Quelldaten ist nachfolgend exemplarisch widergegeben:
+
+<table class="noalter" style="width: 100%; border-spacing: 0px; margin: 0; padding: 0px; border: 0px solid white;">
+  <tbody> <figure> <figcaption><center><b><em>GNU Kopf</b> als skalierbare Vektorgrafik</em></center></figcaption>
+    <tr>
+      <td>
+        <a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"> <figure style="width: 300px"> <img src="./pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder"/> <figcaption>Grafik im SVG Format (www.gnu.org)</figcaption> </figure> </a>
+      </td>
+      <td>
+        <a href="./pics/gnu_bezier.svg" target="_blank"> <figure style="width: 300px"> <img src="./pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /> <figcaption>Flächen und Gradienten entfernt</figcaption> </figure> </a>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2"> <center>
+        <a href="./pics/gnu_flatten_lowres.svg" target="_blank"><figure style="width: 300px"><img src="./pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert</figcaption></a>
+      </center> </td>
+    </tr>
+  </tbody> </figure>
+</table>
+
+<table class="noalter noborder" style="display: inline-block;"> 
+  <tr> 
+    <td colspan="2" style="width: 40%">
+      Durch den in Inkscape durch&shy;ge&shy;führten Schritt <em>Bezier-Kurven auf lineare Splines reduzieren</em>, werden alle selektierten Bezier-Kurven durch (mehrere) Geraden interpoliert. Waren z. B. 20 Bezier-Kurven definiert, bleiben im XML-&shy;Baum 20 Pfade mit i. A. unter&shy;schied&shy;lich vielen Pfad&shy;seg&shy;men&shy;ten erhalten.
+    </td>
+    <td style="width: 20%""> <center><img src="./pics/arrowstd_down.svg"/></center> </td>
+    <td colspan="2" style="width: 40%"">
+      Das python skript svgCoord.py ordnet alle XML-Tags <code>&#60;path ...&#62;</code> entsprechend der Information, ob die Laser&shy;quelle an oder aus sein soll. Pfade mit Farb&shy;attribut <em>Rot</em> werden später mit aktiver Laser&shy;quelle abge&shy;fahren, das Farb&shy;att&shy;ribut <em>Gelb</em> bedeutet ent&shy;sprechend "Laser&shy;quelle deaktivieren"
+    </td>
+  </tr>
+  <tr>
+    <td style="width: 20%"> </td>
+    <td colspan="3" style="width: 60%"><center><a href="./pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="./pics/gnu_flatten_lowres_mod.svg" /><figcaption>GNU Outline, visualisierte Knotenpunkte</figcaption></figure></a></center></td>
+    <td style="width: 20%"></td>    
+  </tr>
+</table>
+
+Gegenüber Rastergrafiken (Pixelgrafik, "Punkt-für-Punk") besitzen Vektorgrafiken den großen Vorteil, dass eine Transformation denkbar einfach durchgeführt werden kann. Soll zum Beispiel die letzte Abbildung _(Visualisierte Knotenpunkte)_ skaliert werden, genügt eine triviale Skalarmultiplikation der Abbildungsmatrix mit einem Skalierungsfaktor $\,\lambda\,$. Genau so einfach kann eine Transformation mittels Drehmatrix $\,M_{Rot}\,$ erzeugt werden. 
+
+$$ \eqlbl{ M_{Rot}(x)=\begin{pmatrix}cos(x) & -sin(x) \\\sin(x) & cos(x) \end{pmatrix}}{eqRotMatrix} $$
+
+Im folgenden C-Listing werden zwei Transformationen der mittels Skript erzeugten Quelldaten (`lseg_t gnu[ ]`) durchgeführt. Die Ausgangsmatrizen werden jeweils in eine Datei exportiert sodass diese in MATLAB über den `load('<pfad>', '-ASCII')`-Befehl einfach wieder importiert und Linien-Segmentweise dargestellt werden können.  
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <fcntl.h>
+#include <math.h>
+
+/**
+ * GCC compiler flag
+ */
+#pragma GCC diagnostic ignored "-Wwrite-strings"
+
+/**
+ * Typedef line segement.
+ * A line segment contains two nodes (x1,y1),(x2,y2) 
+ */
+typedef float lseg_t[4];      
+
+const lseg_t gnu[ ] = {
+  {  0.1624,  0.0612,  0.1624,  0.0612 },
+  {  0.1624,  0.0612,  0.1689,  0.0649 },
+  {  0.1689,  0.0649,  0.1718,  0.0571 },
+  {  0.1718,  0.0571,  0.1650,  0.0541 },
+  {  0.1650,  0.0541,  0.1624,  0.0612 },
+  { -0.0150,  0.0578, -0.0150,  0.0578 },
+  { -0.0150,  0.0578, -0.0083,  0.0572 },
+  { -0.0083,  0.0572, -0.0100,  0.0498 },
+  { -0.0100,  0.0498, -0.0167,  0.0511 },
+  { -0.0167,  0.0511, -0.0150,  0.0578 },
+  {  0.0642, -0.3263,  0.1553, -0.3317 },
+  {  0.1553, -0.3317,  0.2345, -0.3155 },
+  {  0.0987, -0.3861,  0.1005, -0.4032 },
+  {  0.0091, -0.3907,  0.0077, -0.4159 },
+  {  0.1986,  0.0467,  0.1795,  0.0397 },
+  {  0.1795,  0.0397,  0.1570,  0.0418 },
+  {  0.1896,  0.1019,  0.1577,  0.1116 },
+  {  0.1577,  0.1116,  0.1335,  0.1015 },
+  {  0.0184,  0.0952, -0.0232,  0.1155 },
+  { -0.0232,  0.1155, -0.0590,  0.0821 },
+  { -0.0107,  0.0698, -0.0107,  0.0698 },
+  { -0.0107,  0.0698,  0.0086,  0.0573 },
+  {  0.0086,  0.0573, -0.0084,  0.0380 },
+  { -0.0084,  0.0380, -0.0265,  0.0524 },
+  { -0.0265,  0.0524, -0.0107,  0.0698 },
+  {  0.0228,  0.0536, -0.0053,  0.0342 },
+  { -0.0053,  0.0342, -0.0542,  0.0478 },
+  {  0.0261,  0.0671,  0.0261,  0.0671 },
+  {  0.0261,  0.0671, -0.0193,  0.0690 },
+  { -0.0193,  0.0690, -0.0653,  0.0487 },
+  { -0.0653,  0.0487, -0.0358,  0.0778 },
+  { -0.0358,  0.0778,  0.0160,  0.0860 },
+  {  0.0160,  0.0860,  0.0261,  0.0671 },
+  {  0.1716,  0.0736,  0.1716,  0.0736 },
+  {  0.1716,  0.0736,  0.1844,  0.0579 },
+  {  0.1844,  0.0579,  0.1678,  0.0433 },
+  {  0.1678,  0.0433,  0.1524,  0.0620 },
+  {  0.1524,  0.0620,  0.1716,  0.0736 },
+  {  0.1408,  0.0763,  0.1408,  0.0763 },
+  {  0.1408,  0.0763,  0.1805,  0.0729 },
+  {  0.1805,  0.0729,  0.2013,  0.0574 },
+  {  0.2013,  0.0574,  0.2066,  0.0700 },
+  {  0.2066,  0.0700,  0.1742,  0.0860 },
+  {  0.1742,  0.0860,  0.1408,  0.0763 },
+  {  0.1969,  0.0942,  0.1969,  0.0797 },
+  {  0.2125, -0.0169,  0.1969,  0.0274 },
+  {  0.1921,  0.0932,  0.1960,  0.1455 },
+  {  0.1960,  0.1455,  0.1708,  0.1745 },
+  {  0.0610,  0.0826,  0.0257,  0.1532 },
+  {  0.0524, -0.4105,  0.0659, -0.4554 },
+  {  0.0659, -0.4554,  0.1005, -0.4030 },
+  {  0.1005, -0.4030,  0.1180, -0.4504 },
+  {  0.1180, -0.4504,  0.1826, -0.3773 },
+  {  0.1826, -0.3773,  0.2418, -0.3053 },
+  {  0.2418, -0.3053,  0.2493, -0.2417 },
+  { -0.0411, -0.1893, -0.0007, -0.2361 },
+  { -0.0007, -0.2361,  0.0503, -0.2507 },
+  {  0.0503, -0.2507,  0.1389, -0.2444 },
+  {  0.1389, -0.2444,  0.2211, -0.2532 },
+  {  0.2211, -0.2532,  0.2443, -0.2445 },
+  {  0.2443, -0.2445,  0.2617, -0.2164 },
+  {  0.2617, -0.2164,  0.2595, -0.1779 },
+  {  0.2595, -0.1779,  0.2763, -0.1332 },
+  {  0.2763, -0.1332,  0.2835, -0.1003 },
+  {  0.2835, -0.1003,  0.2714, -0.0652 },
+  {  0.2714, -0.0652,  0.2366, -0.0683 },
+  {  0.2366, -0.0683,  0.2008, -0.0335 },
+  {  0.2008, -0.0335,  0.1321,  0.0860 },
+  {  0.1321,  0.0860,  0.1592,  0.1532 },
+  {  0.0671, -0.0829,  0.0671, -0.0829 },
+  {  0.0671, -0.0829,  0.0671, -0.1075 },
+  {  0.0671, -0.1075,  0.0992, -0.1216 },
+  {  0.0992, -0.1216,  0.1234, -0.1336 },
+  {  0.1234, -0.1336,  0.1095, -0.0949 },
+  {  0.1095, -0.0949,  0.0671, -0.0829 },
+  {  0.0334, -0.1177,  0.0271, -0.0816 },
+  {  0.0271, -0.0816,  0.0383, -0.0586 },
+  {  0.0383, -0.0586,  0.0702, -0.0442 },
+  {  0.0702, -0.0442,  0.1244, -0.0597 },
+  {  0.1244, -0.0597,  0.1562, -0.1035 },
+  {  0.2120, -0.0539,  0.2134, -0.0325 },
+  {  0.2134, -0.0325,  0.2114,  0.0129 },
+  {  0.2114,  0.0129,  0.2488, -0.0251 },
+  {  0.2488, -0.0251,  0.3101, -0.0456 },
+  {  0.3101, -0.0456,  0.3576, -0.0410 },
+  {  0.3576, -0.0410,  0.3817, -0.0132 },
+  {  0.3817, -0.0132,  0.3552, -0.0100 },
+  {  0.3552, -0.0100,  0.3367,  0.0103 },
+  {  0.3367,  0.0103,  0.3194,  0.0516 },
+  { -0.0595,  0.1532, -0.1117,  0.1319 },
+  { -0.1117,  0.1319, -0.1383,  0.0463 },
+  { -0.1383,  0.0463, -0.1795, -0.0538 },
+  { -0.1795, -0.0538, -0.2925, -0.1128 },
+  { -0.2925, -0.1128, -0.3827, -0.1409 },
+  { -0.3827, -0.1409, -0.3381, -0.0809 },
+  { -0.3381, -0.0809, -0.3055,  0.0051 },
+  { -0.2460,  0.1262, -0.2460,  0.1262 },
+  { -0.2460,  0.1262, -0.2923,  0.0527 },
+  { -0.2923,  0.0527, -0.3052,  0.0062 },
+  { -0.3052,  0.0062, -0.3261,  0.0052 },
+  { -0.3261,  0.0052, -0.4020,  0.0332 },
+  { -0.4020,  0.0332, -0.4473,  0.0732 },
+  { -0.4473,  0.0732, -0.4753,  0.1278 },
+  { -0.4753,  0.1278, -0.4949,  0.2384 },
+  { -0.4949,  0.2384, -0.4402,  0.3583 },
+  { -0.4402,  0.3583, -0.3784,  0.4158 },
+  { -0.3784,  0.4158, -0.3014,  0.4493 },
+  { -0.3014,  0.4493, -0.1912,  0.4383 },
+  { -0.1912,  0.4383, -0.1287,  0.4095 },
+  { -0.1287,  0.4095, -0.0788,  0.4125 },
+  { -0.0788,  0.4125, -0.1214,  0.3777 },
+  { -0.1214,  0.3777, -0.2685,  0.3758 },
+  { -0.2685,  0.3758, -0.3203,  0.3546 },
+  { -0.3203,  0.3546, -0.3548,  0.3078 },
+  { -0.3548,  0.3078, -0.3788,  0.2210 },
+  { -0.3788,  0.2210, -0.3654,  0.1748 },
+  { -0.3654,  0.1748, -0.3269,  0.1495 },
+  { -0.3269,  0.1495, -0.2696,  0.1763 },
+  { -0.2696,  0.1763, -0.2114,  0.2344 },
+  { -0.2114,  0.2344, -0.1498,  0.2936 },
+  { -0.1498,  0.2936, -0.0827,  0.3235 },
+  { -0.0827,  0.3235, -0.0219,  0.3016 },
+  { -0.0219,  0.3016,  0.0306,  0.2798 },
+  {  0.0306,  0.2798,  0.0693,  0.2993 },
+  {  0.0693,  0.2993,  0.1263,  0.3177 },
+  {  0.1263,  0.3177,  0.1859,  0.2973 },
+  {  0.1859,  0.2973,  0.2308,  0.2461 },
+  {  0.2308,  0.2461,  0.2797,  0.1870 },
+  {  0.2797,  0.1870,  0.3372,  0.1610 },
+  {  0.3372,  0.1610,  0.3640,  0.1728 },
+  {  0.3640,  0.1728,  0.3895,  0.2229 },
+  {  0.3895,  0.2229,  0.3781,  0.3027 },
+  {  0.3781,  0.3027,  0.3450,  0.3564 },
+  {  0.3450,  0.3564,  0.2134,  0.3777 },
+  {  0.2134,  0.3777,  0.1904,  0.3980 },
+  {  0.1904,  0.3980,  0.1863,  0.4125 },
+  {  0.1863,  0.4125,  0.2327,  0.4087 },
+  {  0.2327,  0.4087,  0.3488,  0.4474 },
+  {  0.3488,  0.4474,  0.4250,  0.4280 },
+  {  0.4250,  0.4280,  0.4765,  0.3738 },
+  {  0.4765,  0.3738,  0.5000,  0.2964 },
+  {  0.5000,  0.2964,  0.4959,  0.1842 },
+  {  0.4959,  0.1842,  0.4512,  0.0988 },
+  {  0.4512,  0.0988,  0.3926,  0.0601 },
+  {  0.3926,  0.0601,  0.3198,  0.0507 },
+  {  0.3198,  0.0507,  0.2540,  0.1532 },
+  {  0.2540,  0.1532,  0.1880,  0.1963 },
+  {  0.1880,  0.1963,  0.1089,  0.1900 },
+  {  0.1089,  0.1900,  0.0334,  0.2074 },
+  {  0.0334,  0.2074, -0.0469,  0.1881 },
+  { -0.0469,  0.1881, -0.1138,  0.2013 },
+  { -0.1138,  0.2013, -0.2460,  0.1262 },
+  { -0.1862, -0.1825, -0.1190, -0.3383 },
+  { -0.1190, -0.3383, -0.0598, -0.4160 },
+  { -0.0598, -0.4160, -0.0129, -0.4497 },
+  { -0.0129, -0.4497,  0.0076, -0.4164 },
+  {  0.0076, -0.4164,  0.0262, -0.4490 },
+  {  0.0262, -0.4490,  0.0570, -0.3895 }
+};
+
+
+const lseg_t *pGnu = &gnu[0];
+lseg_t *pGnuTrans;
+
+/**
+ * @brief      Export matrix to MATLAB resource, M=load('gnu.mat', '-ASCII')
+ * @param      pI         Pointer to input matrix.
+ * @param[in]  nRows      Row count of input matrix.
+ * @param      filePath   The file path to MATLAB resource.
+ */
+int matrixExport(const lseg_t *pI, uint16_t nRows, char *filePath) {
+  FILE *fd = fopen(filePath, "w");
+  if (fd == NULL) {
+    printf("Error opening file!\n");
+    return -1;
+  }
+
+  for (uint16_t line = 0; line < nRows; line++) {
+    fprintf(fd, "% 6.4f\t% 6.4f\t% 6.4f\t% 6.4f\n",
+            (*pI)[0], (*pI)[1], (*pI)[2], (*pI)[3]);
+    pI++;
+  }
+
+  fclose(fd);
+  return 0;
+}
+
+
+/**
+ * @brief      Rotate a given [N][4] matrix by angle radians.
+ * @param      pI      Pointer to input matrix.
+ * @param      pO      Pointer to rotated matrix
+ * @param[in]  nRows   Row count of input matrix.
+ * @param[in]  angle   Rotation angle [rad].
+ * @param[in]  scale   Optional argument
+ */
+int matrixTransform(const lseg_t *pI, lseg_t *pO, uint16_t nRows, double angle, double scale = -1) {
+  for (uint16_t line = 0; line < nRows; line++) {
+    if (scale > 0) {
+      /* Scale start node (x_start, y_start) */
+      (*pO)[0] = (*pI)[0]*scale;
+      (*pO)[1] = (*pI)[1]*scale;
+
+      /* Scale end node (x_end, y_end) */
+      (*pO)[2] = (*pI)[2]*scale;
+      (*pO)[3] = (*pI)[3]*scale;
+
+      if (! line) printf("Scale by %f\n", scale);
+    }
+    else { 
+      /* Transform start node (x_start, y_start) */
+      (*pO)[0] = (*pI)[0]*cos(angle) + (*pI)[1]*sin(angle);
+      (*pO)[1] = (*pI)[1]*cos(angle) - (*pI)[0]*sin(angle);
+
+      /* Transform end node (x_end, y_end) */
+      (*pO)[2] = (*pI)[2]*cos(angle) + (*pI)[3]*sin(angle);
+      (*pO)[3] = (*pI)[3]*cos(angle) - (*pI)[2]*sin(angle);
+
+      if (! line) printf("Rotate by %f\n", angle);
+    }
+    pI++; 
+    pO++;
+  }
+
+  return 0;
+}
+
+/**
+ * @brief      Main function.
+ */
+int main (void) {
+  /* Calculate number of rows, i.e. number of line segments. */
+  int nRows = sizeof(gnu)/sizeof(gnu[0]);
+
+  /* maclloc clean memory portion for output matrix. */
+  pGnuTrans = (lseg_t *) calloc(nRows, sizeof(lseg_t));
+
+  /* Export unmodified matrix as MATLAB resource */
+  matrixExport(pGnu, nRows, "gnu.mat");
+
+  /* Rotate matrix by 45° and export. */
+  matrixTransform(pGnu, pGnuTrans, nRows, M_PI/4);
+  matrixExport(pGnuTrans, nRows, "gnuRot.mat");
+
+  /* Scale matrix to 75% and export. */
+  matrixTransform(pGnu, pGnuTrans, nRows, 0, .75);
+  matrixExport(pGnuTrans, nRows, "gnuScal.mat");
+
+  free(pGnuTrans);
+  return 0;
+}
+
+```
+
+<br>
+Folgende MATLAB Befehle sind notwendig um die erzeugten `*.mat`-Dateien zu importieren und mittels `line([x1, x2], [y1, y2])` grafisch darzustellen:
+
+```Matlab
+%% Import gnu*.mat files and plot all line segments
+paths={...
+    'res/gnuNorm.mat',...
+    'res/gnuScal.mat',...
+    'res/gnuRot.mat'};
+
+delete(findall(0,'type','line')); 
+
+for k=1:length(paths)
+    m = load(paths{k}, '-ASCII');
+    figure(k);
+    % Prototyp line(): 
+    %   line([x1, x2], [y1, y2],...) NOT: 
+    %   line([x1, y1], [x2, y2],...)
+    line(m(:,[1 3])',m(:, [2 4])','color','green'); 
+    
+    set(gca,'DataAspectRatio',[1 1 1],...
+        'XLim', [-1 1]*.6, 'YLim', [-1 1]*.6,...
+        'GridAlpha',.2);
+    
+    tmp = strsplit(paths{k}, '/');
+    title(tmp{end})
+end
+```
+
+<center><figure><figcaption><em>In <b>MATLAB</b> visualisierte Matritzen</em></figcaption><a href="./pics/matPlots/gnuNormw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte "GNU-Kopf"-Matrix</figcaption></figure></a>
+<a href="./pics/matPlots/gnuScalw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte "GNU-Kopf"-Matrix</figcaption></figure></a>
+<a href="./pics/matPlots/gnuRotw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um $\,\pi/4\,$ rad gedrehte "GNU-Kopf"-Matrix</figcaption></figure></a></figure></center>
+
+ToDo:
+
+- Beam blanking
+- 3D-Transformation
+
+# Simulationen und Verifizierung #
+## Step-by-Step ##
+<!-- ## Spice: Geht die Simulation nicht ... ## -->
+<!-- ###  ... geht auch der Testaufbau nicht! ### -->
+## Regelalgorithmen testen: ##
+### RC-Glied direkt an gepufferten DAC ###
+### Testsignale im uC erzeugen ###
+### Oszibilder mit MATLAB-Simulation vergl. ###
+# Regelungstechnik
+(...)
+
+## ??? Diskretisierungsverfahren ##
+(...)
+
+## Regelungsnormalform ##
+> Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. [^fnMesystoDglSys]
+
+Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die __Zustandsraumbeschreibung__ von LTIs. Jedes Zustandsraummodell kann _direkt_ auf einen als __Regeleungsnormalform__ bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der _Transformierbarkeit_ von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. 
+
+<center>![Regelungsnormalform](./pics/regelNormalform.svg "Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung")</center>
+
+
+# ??? Gesamtsystem #
+# ??? Modellparameter testen #
+# Hardware #
+# Resümee #
+
+# Quellenangaben #
+[@MDA:2006]: #citeMDA "V. Gruhn, D. Pieper, C. Röttgers; MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;"
+
+[@Probst:2011]: #citeProbst "Uwe Probst; Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;"
+
+[@Iser:2008]: #citeIserm "Rolf Isermann; Mechatronische Systeme - Grundlagen; 2008;"
+
+[@Jx]: #citeInertialmoment "Das Trägheitsmoment, auch Massenträgheitsmoment oder Inertialmoment, gibt den Widerstand eines starren Körpers gegenüber einer Änderung seiner Rotationsbewegung um eine gegebene Achse an (Drehmoment geteilt durch Winkelbeschleunigung). Damit spielt es die gleiche Rolle wie im Verhältnis von Kraft und Beschleunigung die Masse;" 
+
+[@Impulserhaltung]: #citeImpulserhaltung "Der Impulserhaltungssatz (manchmal auch kurz Impulssatz genannt) ist einer der wichtigsten Erhaltungssätze der Physik und besagt, dass der Gesamtimpuls in einem abgeschlossenen System konstant ist. „Abgeschlossenes System“ bedeutet, dass das System keine Wechselwirkungen mit seiner Umgebung hat."
+
+[@STM32F429i]: #citeSTM32F429i "High-performance advanced line, 180 MHz/225 DMIPS CPU, ARM Cortex-M4 core with DSP and FPU, 512 Kbytes Flash"
+
+[@Borm:2016]: #citeBorm "WHZ - ELT130 Digitale Signalprozessoren I - Vorlesung Version 6.0.pdf"
+
+[@Borm2:2016]: #citeBorm2 "WHZ - ELT230 Digitale Signalprozessoren II - Vorlesung Version 4.0.pdf"
+
+[@SOP]: #citeBorm2 "What are typical DSP algorithms? An equation, called “Sum of Products” (SOP) is the __key element__ in most DSP algorithms"
+
+[@SoC]: #citeSoC "Ein System-on-Chip (SoC) ist ein komplettes System auf einem Chip, das verschiedenste Schaltungsteile integriert hat. Ein System-on-Chip ist die Integration von Zentraleinheiten, weiteren Prozessoren, Controllern, Speicherbausteinen, Random Access Memories (RAM) und Read Only Memories (ROM), Power-Management und anderen Komponenten auf einem einzelnen Die-Chip. Die einzelnen Komponenten eines System-on-Chip werden über den internen Bus oder in Punkt-zu-Punkt-Verbindung miteinander verbunden, wobei Bus-Architekturen nur eine gewisse Anzahl an Kommunikationspartnern effizient miteinander verbinden können."
+
+---
+[^fnWikiAnsys]: __*ANSYS*__ ["*(Kurzform für **AN**alysis **SYS**tem) ist eine Finite-Elemente-Software der Firma Ansys Inc., ehemals SASI (Swanson Analysis Systems Inc.).*"][wikiAnsys]
+
+[^fnMaxwell]: *ANSYS* __*Maxwell*__ ["*is the premier low frequency electromagnetic field simulation software for engineers tasked with designing and analyzing 2-D and 3-D electromagnetic devices.*"][AnsMaxwell]
+
+[^fnSimplorer]: *ANSYS* __*Simplorer*__ ["*is a powerful platform for modeling, simulating and analyzing virtual system prototypes.(…) broad support for assembling system-level physical models and helping product development organizations connect conceptual design, analysis and system verification.*"][AnsSymplor]
+
+[^fnArnoldMagn]: __*Arnold Magnetics*__ [*"The magnet material is both brittle and very hard (Rockwell C 57 to 61) and requires diamond wheels for slicing and diamond or special abrasive wheels for grinding."*][MagnetManu]
+
+[^fnChRoy]: __*C. Roy, W. Oberkampf, 2010*__ [*Verification and Validation in Scientific Computing*][RoyGooglebook] 
+
+[^fnRUnb]: __*Rolf Unbehauen, 2002*__ [*Systemtheorie 1: Allg. Grundlagen, Signale und lineare Systeme im Zeit- und Frequenzbereich*][SystemUnbehauen]
+
+[^fnAnfrageBrunner]: __*Projektanfrage HsKA*__ [*Projektanfrage_Galvanometer-Scanner_Prof_Brunner.pdf*][AnfragePdf]
+
+[^fnMultiDomain]: __*Multi-Domain-Modelle*__ *oder auch* __*Multiphysik-Modelle*__ *sind Simulationsmodelle, die Systeme über mehrere physikalische Domänen hinweg, in ihren Eigenschaften beschreiben und ihre Wechselwirkungen simulieren können. Hier wurden Statik/Kinematik (Mechanik-Domäne), Magnetostatik/Magnetodynamik (allg. Elektrodynamik, Elektrik-Domäne) sowie thermodynamische Vorgänge in einem planar- oder 3-dimensionalen FEM-Modell simuliert.*
+
+[^fnWikiSys]: __*Systemtheorie*__ [*Wikipedia: Systemtheorie (Ing.)*][wikiSysth]
+
+[^fnCapSens]: __*Differential-Drehkondensator*__ [*Wikipedia: Differential-Drehkondensator*][wikiVarCap]
+
+[^fnNoBrainChip]: __*Chip without text*__ http://www.clker.com/cliparts/e/5/2/J/G/G/chip-without-text.svg/ 
+
+[^fnBrain]: __*Brain*__ http://troy-halverson.appspot.com/IsmProv/brain.svg 
+
+[^fnReuseCode]: __*Reusability*__ [*Wikipedia: Reusability*][wikiReuse]
+
+[^fnRoSe]: __*K. H. Rollke, K. Sennholz*__ *Grund und Leistungskurs Informatik; Cornelsen Verlag, Berlin, 1994*
+
+[^fnHarms09]: __*Eike Harms*__ [*Konfigurationsmanagement unter Berücksichtigung von Verwendungsinstanzen*][harms] 
+
+[^fnStachowiak]: __*Herbert Stachowiak*__ [*Allgemeine Modelltheorie*][StachowiakBooks] 1973, Kap. 2.1.1.1, S. 131 ... 133
+
+[^fnPapula2]: __*Lothar Papula*__ [*Mathematik für Ingenieure und Naturwissenschaftler Band 2*][Papula2] 2009, Kap. 1.4 S. 348
+
+[^fnElektrBauelem]: __*R. Großmann, A. Frey*__ [*Elektronische Bauelemente*][GroFrey]
+
+[^fnwikiGenericTypes]: __*Generischer Typ*__ [*Wikipedia: Generischer Typ*][wikiGenericTypes] 
+
+[^fnGalvoScanlab]: __*Galvanometer-Scanner*__ http://www.scanlab.de/service/glossary/g#Galvanometer-Scanner
+
+[^fnInertialmoment]: __*Trägheitsmoment*__ https://de.wikipedia.org/wiki/Tr%C3%A4gheitsmoment   <a name="citeInertialmoment"/> </a>
+
+[^fnAngularMomentum]: __*Drehimpuls und Drehmoment*__ https://www.lernhelfer.de/schuelerlexikon/physik-abitur/artikel/drehimpuls
+
+[^fnImpulserhaltung]: __*Impulserhaltungssatz*__ https://de.wikipedia.org/wiki/Impulserhaltungssatz   <a name="citeImpulserhaltung"/> </a>
+
+[^fnMesystoDglSys]: __*Interpretation der Übertragungsfunktion*__ http://www.eit.hs-karlsruhe.de/mesysto/teil-a-zeitkontinuierliche-signale-und-systeme/systeme-im-laplace-bereich/interpretation-der-uebertragungsfunktion.html
+
+[^fnV-Modell-XT]: __*Das deutsche Referenzmodell für Systementwicklungsprojekte Vers. 2.0*__ [*Hosted by ftp.tu-clausthal.de*][V-Modell-XT]
+
+[^fnV-Modell-XT-Bund]:  __*V-Modell XT auf*__ [www.cio.bund.de][V-Modell-XT-Bund] 
+
+[^fnBillionARM]: __*ARM Company profile*__ https://www.arm.com/about/company-profile
+
+[^fnWhichCortex]: __SILICON LABS - Which ARM Cortex Core Is the Right?__ https://www.silabs.com/Support%20Documents/TechnicalDocs/Which-ARM-Cortex-Core-Is-Right-for-Your-Application.pdf
+
+[^fnArmProfiles]: __ARM Cortex Architektur-Profile__ http://infocenter.arm.com/help/index.jsp?topic=/com.arm.doc.dui0471i/BCFDFFGA.html
+
+[^fnLinuxRtPatch]: __"Harte Echtzeit" mittels Linux Kernel Patch__ https://rt.wiki.kernel.org/index.php/RT_PREEMPT_HOWTO
+
+[^fnCortexR]: __Cortex-R Family outline__ http://www.arm.com/products/processors/cortex-r
+
+[^fnCMSISARM]: __CMSIS - Cortex Microcontroller Software Interface Standard__ https://www.arm.com/products/processors/cortex-m/cortex-microcontroller-software-interface-standard.php
+
+[^fnStMultiOs]: __STMicroelectronics - About SW4STM32__ http://www.st.com/en/development-tools/sw4stm32.html
+
+[^fnSwArchitekturIst]: __Architektur ist ...__ https://homepages.thm.de/~hg11260/mat/saa-def-bh.pdf
+
+<a name="citeMDA"> </a>
+__[MDA:2006]__ _V. Gruhn, D. Pieper, C. Röttgers;_ __*MDA® Effektives Software-Engineering mit UML 2® und Eclipse TM. Springer-Verlag Berlin Heidelberg; 2006;*__
+
+<a name="citeProbst"> </a>
+__[Probst:2011]__ _Uwe Probst;_ __*Servoantriebe in der Automatisierungstechnik - Komponenten, Aufbau und Regelverfahren; 2011;*__
+
+<a name="citeIserm"> </a>
+__[Iser:2008]__ _Rolf Isermann;_ __*Mechatronische Systeme - Grundlagen; 2008;*__
+
+<a name="citeSTM32F429i"> </a>
+__[STM32F4 Series]__ http://www.st.com/en/microcontrollers/stm32f4-series.html?querycriteria=productId=SS1577
+
+<a name="citeSoC"> </a>
+__SoC__ _System-on-Chip_ http://www.itwissen.info/definition/lexikon/System-on-Chip-SoC-system-on-chip.html
+
+[AnfragePdf]: ./Projektanfrage_Galvanometer-Scanner_Prof_Brunner.pdf "Dokument mit Projektanfrage" 
+[AnsMaxwell]: http://www.ansys.com/Products/Electronics/ANSYS-Maxwell "Products/Electronics: "Maxwell""
+[AnsSymplor]: http://www.ansys.com/it-IT/Products/Systems/ANSYS-Simplorer "Products/Systems: "Simplorer""
+[cambridgeTech]: www.cambridgetechnology.com "www.cambridgetechnology.com"
+[GroFrey]: http://www.hs-augsburg.de/~ragr/Topics/SCHT2/Common/Skript_EB_V3.3.pdf "Elektronische Bauelemente"
+[harms]: http://docplayer.org/16028346-Zur-erlangung-des-akademischen-grades-eines-doktors-der-ingenieurwissenschaften.html "Dissertation - Universität Karlsruhe"
+[ieee1471]: https://de.wikipedia.org/wiki/IEEE_1471 "IEEE Recommended Practice for Architectural Description of Software-Intensive Systems"
+[laserfx]: http://www.laserfx.com/Works/Works3S.html "How Laser Shows Work - Scanning System"
+[leifiDrehbewegung]: http://www.leifiphysik.de/mechanik/drehbewegungen "Drehbewegungen"
+[MagnetManu]: http://www.arnoldmagnetics.com/en-us/Technical-Library/Magnet-Manufacturing-Process "Magnet manufacturing process"
+[motorModeling]: http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling "http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&section=SystemModeling"
+[Papula2]: https://www.pdf-archive.com/2015/03/28/papula-mathematik-fuer-ingenieure-2/papula-mathematik-fuer-ingenieure-2.pdf "Volltext: Mathematik für Ingenieure und Naturwissenschaftler Band 2"
+[RoyGooglebook]: https://books.google.de/books/about/Verification_and_Validation_in_Scientifi.html?id=7d26zLEJ1FUC&redir_esc=y "Online book resource"
+[StachowiakBooks]: https://books.google.de/books?hl=de&id=DK-EAAAAIAAJ&focus=searchwithinvolume&q=Ein+Modell+ist+stets+ein+Modell+von+etwas "Online book resource"
+[SystemUnbehauen]: https://books.google.de/books?id=zcbnBQAAQBAJ&pg=PA1&lpg=PA1&dq=Systeme+und+Signale+sind+die+beiden+wichtigsten+Konzepte+der+Systemtheorie&source=bl&ots=je6qEA32bz&sig=UagREGj3tQWfEyX9y_OzGwfVWH0&hl=de&sa=X&ved=0ahUKEwjo_MDMjKPQAhXEPhQKHfVBBz0Q6AEIIzAC#v=onepage&q=Systeme%20und%20Signale%20sind%20die%20beiden%20wichtigsten%20Konzepte%20der%20Systemtheorie&f=false "Online book resource"
+[typ6860spec]: <https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=10&cad=rja&uact=8&ved=0ahUKEwjZ5bLLuLXQAhWBuRQKHfd3Bc4QIAhgMAk&url=http%3A%2F%2Fwebcache.googleusercontent.com%2Fsearch%3Fq%3Dcache%3A1O6mSJqn6noJ%3Acambridgetechnology.net%2Findex.php%253Foption%253Dcom_docman%2526task%253Ddoc_download%2526gid%253D322%2B%26cd%3D10%26hl%3Dde%26ct%3Dclnk%26gl%3Dde&usg=AFQjCNFCsAo8tjp7P4odi0Yv0yQupg3JAw&sig2=KDaq0vZeNkkPfkigxltuPg> "google cache, letzter Aufruf: 19.11.2016"
+[veteranGalvo]: https://www.google.de/#q=cambridge%20technology%206860 "Veteran Galvo Motors"
+[wikiAnsys]: https://de.wikipedia.org/wiki/ANSYS_(Software) "ANSYS (Software)"
+[wikiGenericTypes]: https://de.wikipedia.org/wiki/Generischer_Typ "Generischer Typ"
+[wikiReuse]: https://en.wikipedia.org/wiki/Reusability "Reusability (Computer science and software engineering)"
+[wikiSysth]: https://de.wikipedia.org/wiki/Systemtheorie_(Ingenieurwissenschaften) "Systemtheorie (Ingenieurwissenschaften)"
+[wikiVarCap]: https://de.wikipedia.org/wiki/Datei:Differential-Varko.svg "Variabler Drehkondensator (differentiell)"
+[WillertUML]: http://www.embeddedcomputingconference.ch/pdf_2011/4c1-vanderheiden.pdf "UML statt „C“ Vorurteile gegenüber der UML?"
+[V-Modell-XT]: http://ftp.tu-clausthal.de/pub/institute/informatik/v-modell-xt/Releases/2.0/Dokumentation/V-Modell-XT-HTML/index.html "V-Modell XT Bundesministerium Des Innern (BMI)"
+[V-Modell-XT-Bund]: http://www.cio.bund.de/Web/DE/Architekturen-und-Standards/V-Modell-XT/vmodell_xt_node.html "V-Modell XT auf www.cio.bund.de"
+[wikiMikroarchs]: https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures#Designed_by_ARM "Umfangreiche Liste von ARM-Mikroarchitekturen"
+[eclipseIBM]: http://www.ibm.com/developerworks/rational/library/nov05/cernosek/
+[eclipseGnuArm]: http://gnuarmeclipse.github.io/ "GCC - GNU Compiler Collection - for Eclipse"
+[stST4STM32]: http://www.st.com/en/ecosystems/stm32-open-development-environment.html "System Workbench for STM32"
+
+# Notes #
+- MathJax:
+    + Math Settings:
+        * Zoom Trigger: No Zoom
+        * Zoom Factor: 200%
+        * Math Renderer: 
+            - Common HTML
+            - Fast Preview
+        * Scale all Math: 90%
+    + Accessibillity
+
+# Trash #
+<a name="refTableElectric"> </a>
+<center>
+
+| Elektrische Spezifikationen    |                              |                |                      |
+| ---                            | ---                          | ---            | ...                  |
+| Coil Resistance                | 1.5 Ohm                      |                | $\pm\SI\{10\}\{\%\}$ |
+| Coil Inductance                | 160µH                        |                | $\pm\SI\{10\}\{\%\}$ |
+| Back EMF Voltage               | 0.17mV/degree/sec            | 9.74mV/rad/sec | $\pm\SI\{10\}\{\%\}$ |
+| RMS Current                    | 4.6A @ T_case=50°C, Max      |                |                      |
+| Peak Current                   | 25A, Max                     |                |                      |
+| Small Angle Step Response Time | 0.5ms (inertia matched load) |                |                      |
+
+</center>
+
+<a name="refTableMechanic"> </a>
+<center>
+
+| Mechanical Specifications        |                    |             |                      |
+| ---                              | ---                | ---         | ...                  |
+| Rated Angular Excursion          | 40°                |             |                      |
+| Rotor Inertia                    | 0.6 gm.cm^2        | 6e-8 kg.m^2 | $\pm\SI\{10\}\{\%\}$ |
+| Torque Constant                  | 9.3 10^4 dyne.cm/A | 9.3e-3 Nm/A | $\pm\SI\{10\}\{\%\}$ |
+| Maximum Coil Temperature         | 110°C              |             |                      |
+| Thermal Resistance (Coil - Case) | 1.5°C/Watt, Max    |             |                      |
+
+</center>
+<span style="font-size: 80%">$\;\;\;1\;dyne.cm \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} Nm$
+$\;\;\;1\;gm.cm^2 \;\;\;\Leftrightarrow\;\;\; 1\times 10^{-7} kg.m^2$</span>
+<center>
+
+| Position Detector                |                                         |                      |
+| ---                              | ---                                     |                      |
+| Linearity                        | 99.9%, Minimum, over 40 degrees         |                      |
+| Scale Drift                      | 50PPM/°C, Maximum                       |                      |
+| Zero Drift                       | 15 microradians/°C, Maximum             |                      |
+| Repeatability, Short Term        | 8 microradians                          |                      |
+| Output Signal, Common Mode       | 585µA @ AGC voltage=10VDC               | $\pm\SI\{20\}\{\%\}$ |
+| Output Signal, Differential Mode | 14.5µA/° @ common mode current of 585µA | $\pm\SI\{20\}\{\%\}$ |
+
+</center>
+<p style="margin: 0em 18em 0em 9em; background: -webkit-linear-gradient(top left, #ccc 20%, #ccc 40%, rgba(250, 250, 250, 0) 100%);"> 
+</p>
+
+kann nach Newton's 3. Axiom [_"Actio et Reactio"_](https://de.wikipedia.org/wiki/Actio_und_Reactio) $\Rightarrow \vec{F_{A\rightarrow B}} = -\vec{F_{B\rightarrow A}} $ folgende Bestimmungsgleichung aufgestellt werden: 
+
+$$ \omega(t)=L \cdot \frac{\partial~\varphi}{\partial~t} $$
+
+
+$$ \vec{L} = \vec{r} \times \vec{p} = \vec{r} \times \left( m\cdot\vec{v}\right) \label{eqRmv} $$
+
+Durch die zeitliche Ableitung $\dot{\vec{L}}$ erhält man den Drehmomentvektor $\vec{M}$. Da sowohl Ortsvektor $\vec{r}(t)$ wie auch der Geschwindigkeitsvektor $\vec{v}(t)$ des Impulses $\vec{p}(t)$ Funktionen in _t_  darstellen, muss Gleichung \eqref{eqRmv} über die Produktregel differenziert werden:  
+
+\begin{align}
+\frac{\partial}{\partial\,t} \vec{L} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) \nonumber \\\ 
+\dot{\vec{L}} &= \dot{\vec{r}} \times \left( m \cdot \vec{v} \right) + \vec{r} \times \left( m \cdot \dot{\vec{v}} \right) \nonumber
+\end{align}
+
+> Bei der Translation charakterisiert der Impuls den Bewegungszustand eines Körpers. In analoger Weise lässt sich bei der Rotation der Bewegungszustand eines rotierenden starren Körpers durch die physikalische Größe Drehimpuls kennzeichnen.[^fnAngularMomentum] 
+
+---
+__Parameterableitung eines Vektors mit konstanter Länge__ 
+Ist der Betrag eines Vektors $\vec{r}(x)$ als konstant zu betrachten, so steht dieser stehts senkrecht zu seiner Ableitung:    
+
+\begin{align}
+\vec{r} = const \;\;\;&\Rightarrow\;\;\; \left| \vec{r} \right| = const \;\;\;\Rightarrow\;\;\; \sqrt{\vec{r} \cdot \vec{r}} = const \nonumber \\\ &\Rightarrow\;\;\; \vec{r} \cdot \vec{r} = const \label{eqrr}
+\end{align}
+
+Unter Anwendung der Produktregel wird die erste Ableitung von \eqref{eqrr} nach $x$ gebildet:
+
+$$ \frac{\partial\,\vec{r}}{\partial\,x} \cdot \vec{r} \;+\; \vec{r} \cdot \frac{\partial\,\vec{r}}{\partial\,x} = 2 \cdot \left( \vec{r} \cdot \frac{\partial}{\partial\,x}\vec{r} \right) = 0 $$
+
+Hieraus folgt, dass der Vektor senkrecht zu seiner Ableitung stehen muss.
+$$ \vec{L} = J \cdot \vec{\omega} $$
+
+
+
+<img src="./pics/energiebilanzDeriv.svg" title="Energiebilanz eines beliebigen Energiespeichers" align="rigth" height="138x" style="float:right; margin: 0em 0em 0em .5em;"/>
+Die im Rahmen dieser Arbeit relevanten,  Erhaltungssätze 
+Für den Fall 
+Der Drehimpulsvektor $\vec{L}$ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. 
+
+Auch in der technischen Mechanik stützen sich viele mathematische Ansätze der Dynamik auf Bilanzgleichungen diverser physikalischer Größen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stehts, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. In diesem Fall bestimmt die _Anfangsbedingung_ das Energieniveau des Systems. 
+<p style="margin-top: 2em; background-color: yellow; padding: 1em"> Die Gesetze zur __*Erhaltung*__ der _Masse_, der _Energie_ und des _Impulses_ sind fundamental. Aus diesen Erhaltungssätzen lassen sich domänenübergreifende, aber auch vollkommen unspezifische Bilanzgleichungen formulieren, d.h. unabhängig von der "Bauform" der Prozesse. </p><p style="text-align: right; margin-top: -1em; margin-bottom: 2.5em"> vergl. [[Iser:2008, 61]][@Iser:2008]</p>
+
+M_{FR} \;\propto\; \omega &\;\;\;\Leftrightarrow\;\;\; M_{FR} = K_{FR} \cdot\boldsymbol{\dot\varphi} \label{eqLinearFriction} \\\
+M_{EL} \;\propto\; i_L &\;\;\;\Leftrightarrow\;\;\; M_{EL} = K_{EL}\cdot i_L \label{eqLinearElTorque}
+$$ \mathsf{G(s)=  \frac{\small{Y}(s)}{\small{U}(s)} = \frac{z_3\cdot s^2+z_2\cdot s+z_1}{s^3+n_3\cdot s^2+n_2\cdot s+n_1} }$$ 
+
+$\pm 20°\,s^{-1}$
+$\pm 20\si{°/s}$
+$\pm 20°\si{\per s}$
+$\pm 20\si[per-mode=symbol]{°/s}$
+$\pm 20\Si{°/s}$
+$\Si{\ang{\pm 20} \per s}$
+$\pm 20 \Si{\degree \per s}$
+$\ang{100}$
+$100°$
+
+
+60 64 63 93 82 92 42 54

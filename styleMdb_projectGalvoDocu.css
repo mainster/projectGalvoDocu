@@ -223,33 +223,9 @@ meta[name][content]::after {
     vertical-align: middle !important;
     /*padding-bottom: 3px;*/
 }
-/*
- * Spec sheet header
- */
+.markdown-body h4.sp,
 .markdown-body h4.sphd {
-    background:     #d8d8d8;    /* For browsers that do not support gradients */
-    background:     -webkit-linear-gradient(left, white, #d8d8d8, white);   /* For Safari 5.1 to 6.0 */
-    background:     -o-linear-gradient(left, white, #d8d8d8, white);        /* For Opera 11.1 to 12.0 */
-    background:     -moz-linear-gradient(left, white, #d8d8d8, white);      /* For Firefox 3.6 to 15 */
-    background:     linear-gradient(left, white, #d8d8d8, white);           /* Standard syntax */
-    line-height:    1px;
-    font-size:      120%;
-    text-align:     center;
-}
-/*
- * Spec sheet subheader
- */
-.markdown-body h4.sp    {
-    background:     #E6E6E6;    /* For browsers that do not support gradients */
-    background:     -webkit-linear-gradient(left, white, #E6E6E6, white);   /* For Safari 5.1 to 6.0 */
-    background:     -o-linear-gradient(left, white, #E6E6E6, white);        /* For Opera 11.1 to 12.0 */
-    background:     -moz-linear-gradient(left, white, #E6E6E6, white);      /* For Firefox 3.6 to 15 */
-    background:     linear-gradient(left, white, #E6E6E6, white);           /* Standard syntax */
-    line-height:    1px;
-    font-size:      100%;
-    text-align:     left;
-
-    /*margin-right:     50%*/
+    line-height:    1px !important;
 }
 .markdown-body h4.sphd span,
 .markdown-body h4.sp span {
@@ -264,6 +240,34 @@ meta[name][content]::after {
     padding-left:       10px;
     /*margin-top:         .6em !important;*/
 }
+/*
+ * Spec sheet header
+ */
+.markdown-body h4.sphd {
+    background:     #d8d8d8;    /* For browsers that do not support gradients */
+    background:     -webkit-linear-gradient(left, white, #d8d8d8, white);   /* For Safari 5.1 to 6.0 */
+    background:     -o-linear-gradient(left, white, #d8d8d8, white);        /* For Opera 11.1 to 12.0 */
+    background:     -moz-linear-gradient(left, white, #d8d8d8, white);      /* For Firefox 3.6 to 15 */
+    background:     linear-gradient(left, white, #d8d8d8, white);           /* Standard syntax */
+    font-size:      120%;
+    text-align:     center;
+    margin-top:     3em;
+    margin-bottom:  1.5em;
+}
+/*
+ * Spec sheet subheader
+ */
+.markdown-body h4.sp    {
+    background:     #E6E6E6;    /* For browsers that do not support gradients */
+    background:     -webkit-linear-gradient(left, white, #E6E6E6, white);   /* For Safari 5.1 to 6.0 */
+    background:     -o-linear-gradient(left, white, #E6E6E6, white);        /* For Opera 11.1 to 12.0 */
+    background:     -moz-linear-gradient(left, white, #E6E6E6, white);      /* For Firefox 3.6 to 15 */
+    background:     linear-gradient(left, white, #E6E6E6, white);           /* Standard syntax */
+    font-size:      100%;
+    text-align:     left;
+    margin-top:     2em;
+    margin-bottom:  1em;
+}
 .markdown-body h4.sphd span {
     background-color:   #FCFCFC;
     border:             1px solid #d8d8d8;
@@ -272,7 +276,7 @@ meta[name][content]::after {
 .markdown-body h4.sp span {
     background-color:   white;
     border:             none;
-    margin-left:        10px;
+    /*margin-left:        10px;*/
 }
 
 /****************************************
