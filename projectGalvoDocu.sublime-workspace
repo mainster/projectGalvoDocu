@@ -4,6 +4,150 @@
 		"selected_items":
 		[
 			[
+				"l",
+				"lti_object_generator.svg\tFile"
+			],
+			[
+				"vergle",
+				"vergleichbaren"
+			],
+			[
+				"gener",
+				"generisches"
+			],
+			[
+				"Hers",
+				"Herstellerangaben"
+			],
+			[
+				"Modell",
+				"Modellverifikation"
+			],
+			[
+				"Mode",
+				"Modell"
+			],
+			[
+				"Rege",
+				"Regelstrecke"
+			],
+			[
+				"Motor",
+				"Motoren"
+			],
+			[
+				"Ga",
+				"Galvanometer-Motoren"
+			],
+			[
+				"G",
+				"Galvanometer"
+			],
+			[
+				"ab",
+				"abstractSystemC.svg\tFile"
+			],
+			[
+				"spli",
+				"splitlines"
+			],
+			[
+				"toc",
+				"tocStr"
+			],
+			[
+				"split",
+				"splitlines"
+			],
+			[
+				"tocSt",
+				"tocStartIdx"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"gn",
+				"gnuTrans.c\tFile"
+			],
+			[
+				"in",
+				"index.html\tFile"
+			],
+			[
+				"ind",
+				"index"
+			],
+			[
+				"Dokum",
+				"Dokumentation"
+			],
+			[
+				"Dev",
+				"_Device-HAL_"
+			],
+			[
+				"Schnitt",
+				"Schnittstellen-Standard"
+			],
+			[
+				"verfü",
+				"Verfügung"
+			],
+			[
+				"Stand",
+				"Standardisierung"
+			],
+			[
+				"Platt",
+				"_Plattformunabhängigkeit_"
+			],
+			[
+				"Pro",
+				"Projekt"
+			],
+			[
+				"STM32",
+				"STM32F429i"
+			],
+			[
+				"Plugin",
+				"Plugin-Adapter"
+			],
+			[
+				"Tool",
+				"Toolchain"
+			],
+			[
+				"Toolch",
+				"toolchain"
+			],
+			[
+				"Mark",
+				"MarkdownBuildCommand"
+			],
+			[
+				"curr",
+				"currentChapterDepth"
+			],
+			[
+				"folded",
+				"foldedChaps"
+			],
+			[
+				"run",
+				"run_command"
+			],
+			[
+				"fin",
+				"findLastInScope"
+			],
+			[
+				"fol",
+				"foldedReg"
+			],
+			[
 				"mo",
 				"move"
 			],
@@ -122,10 +266,6 @@
 			[
 				"Arc",
 				"Architektur"
-			],
-			[
-				"Modell",
-				"Modellierungssprache"
 			],
 			[
 				"Archite",
@@ -374,158 +514,37 @@
 			[
 				"Mar",
 				"MarkdownPreview"
-			],
-			[
-				"class",
-				"classname"
-			],
-			[
-				"basi",
-				"basicConfig"
-			],
-			[
-				"floa",
-				"float\t(styleMdb.css)"
-			],
-			[
-				"diagr",
-				"diagram_files"
-			],
-			[
-				"attribute_",
-				"attribute_region"
-			],
-			[
-				"default_s",
-				"default_style_str"
-			],
-			[
-				"attrs",
-				"attrs_dict"
-			],
-			[
-				"genera",
-				"generate_inline_placement"
-			],
-			[
-				"spli",
-				"split"
-			],
-			[
-				"get",
-				"get_attr\tfunction"
-			],
-			[
-				"uml_bl",
-				"uml_blocks"
-			],
-			[
-				"uml_b",
-				"uml_blocks"
-			],
-			[
-				"set_",
-				"set_diagram"
-			],
-			[
-				"uml",
-				"uml_blocks"
-			],
-			[
-				"processor",
-				"processors\t(merged.mmd)"
-			],
-			[
-				"get_bl",
-				"get_blk_str"
-			],
-			[
-				"blk_",
-				"blk_str"
-			],
-			[
-				"ori",
-				"orig_src"
-			],
-			[
-				"typ",
-				"type\t(styleMdb.css)"
-			],
-			[
-				"file",
-				"file_name"
-			],
-			[
-				"base",
-				"basename\tfunction"
-			],
-			[
-				"loa",
-				"load_utf8"
-			],
-			[
-				"cop",
-				"copy2"
-			],
-			[
-				"pres",
-				"preserve_extension"
-			],
-			[
-				"pre",
-				"preserve_extension"
-			],
-			[
-				"src",
-				"src_file_name"
-			],
-			[
-				"new",
-				"new_view"
-			],
-			[
-				"subl",
-				"sublime\tmodule"
-			],
-			[
-				"crea",
-				"create_temporary_copy"
-			],
-			[
-				"Name",
-				"NamedTemporaryFile"
-			],
-			[
-				"diagra",
-				"diagram_sets"
-			],
-			[
-				"Plant",
-				"PlantUML"
-			],
-			[
-				"save",
-				"save_utf8"
-			],
-			[
-				"Tempo",
-				"TemporaryFile"
-			],
-			[
-				"te",
-				"temporary"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "oldMerged/NewOldmerged.mmd",
+			"file": "chapters/12_Modellverifikation.mmd",
 			"settings":
 			{
-				"buffer_size": 128863,
+				"buffer_size": 495,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "styleMdb_projectGalvoDocu.css",
+			"settings":
+			{
+				"buffer_size": 38918,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "newToc.mmd",
+			"settings":
+			{
+				"buffer_size": 2407,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "Vorwort"
 			}
 		}
 	],
@@ -592,10 +611,46 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 192.0,
-		"last_filter": "",
+		"height": 172.0,
+		"last_filter": "set synmark",
 		"selected_items":
 		[
+			[
+				"set synmark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"set syn mar",
+				"Set Syntax: MultiMarkdown"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"doxy",
+				"Build With: Doxy"
+			],
+			[
+				"bu",
+				"Build With: mkDoxy"
+			],
+			[
+				"buil",
+				"Build With: mkDoxy"
+			],
+			[
+				"set syn ma",
+				"Set Syntax: MATLAB"
+			],
+			[
+				"cle",
+				"Clear Console"
+			],
+			[
+				"lor",
+				"Add some Lorem Gibson"
+			],
 			[
 				"mark",
 				"MarkdownEditing: Unfold All Sections"
@@ -605,23 +660,11 @@
 				"Set Syntax: Python"
 			],
 			[
-				"cle",
-				"Clear Console"
-			],
-			[
 				"lore",
 				"Add some Lorem Gibson"
 			],
 			[
-				"colo",
-				"Color Picker"
-			],
-			[
 				"set mark",
-				"Set Syntax: MultiMarkdown"
-			],
-			[
-				"set syn ma",
 				"Set Syntax: MultiMarkdown"
 			],
 			[
@@ -805,10 +848,6 @@
 				"Set Syntax: Shell Script (Bash)"
 			],
 			[
-				"lor",
-				"Add some Lorem Gibson"
-			],
-			[
 				"lorem",
 				"Snippet: Lorem ipsum"
 			],
@@ -945,141 +984,141 @@
 				"Markdown HTML Preview"
 			]
 		],
-		"width": 552.0
+		"width": 629.0
 	},
 	"console":
 	{
-		"height": 326.0,
+		"height": 138.0,
 		"history":
 		[
-			"sublime.log_commands(False)",
-			"sublime.run_command(\"fold_all_md_sections\")",
-			"view.run_command(\"fold_all_md_sections\")",
-			"sublime.log_commands(True)",
-			"files",
-			"[files.append(os.path.join(os.getcwd(), cf)) for cf in list(filter(lambda x: 'pdf' in x, os.listdir(os.getcwd())))]",
-			"files=[]",
-			"os.path.join(os.getcwd(), files[2])",
-			"files",
-			"files=os.listdir(os.getcwd())",
-			"files=os.listdir.abspath(os.getcwd())",
-			"os.getcwd()",
-			"os.listdir.abspath(os.getcwd())",
-			"os.listdir(os.getcwd())",
-			"os.chdir('/media/data/ti/TMS320F28379D_docs')",
-			"os.listdir(os.getcwd())",
-			"import os",
-			"os.listdir(os.getcwd())",
-			"os.listdir(os.getcwd()))",
-			"os.listdir(os.getcwd())))",
-			"fn.replace('TMS', 'ä')",
-			"fn.replace('TMS', 'ä', fn)",
-			"re.findall('TMS', fn)",
-			"re.match('TMS', fn).group()",
-			"re.match('TMS', fn).groups()",
-			"re.match('TMS', fn)",
-			"import re",
-			"re.match('TMS', fn)",
-			"fn.index('TMS')",
-			"'TMS' in fn",
-			"fn.finds('TMS')",
-			"fn",
-			"fn.find('TMS')",
-			"fn.dind('TMS')",
-			"fn='TMS320F28379D_TMS320F28377D_TMS320F28376D_TMS320F28375D_TMS320F28374D_Dual-Core_DelfinoMicrocontrollers_Rev_G'",
-			"os.listdir(os.getcwd())",
-			"os.getcwd()",
-			"os.cwd",
-			"os.cwd()",
-			"os.pwd()",
-			"os.pwd",
-			"list(filter(lambda x: 'pdf' in x, os.listdir()))",
-			"os.listdir()",
-			"os.chdir('/media/data/ti/TMS320F28379D_docs')",
-			"os.chdir(ir'/media/data/ti/TMS320F28379D_docs')",
-			"os.cdh(ir'/media/data/ti/TMS320F28379D_docs')",
-			"os.cd('/media/data/ti/TMS320F28379D_docs')",
-			"os.listdir()",
-			"os.path.ls()",
-			"os.path.dir()",
-			"os.path()",
-			"import os",
-			"os.path()",
-			"pp(dir(argparse))",
-			"pp(dir(argparser))",
+			"'(.*<a href\\=\\\")(#[a-z0-9\\-]+\\)(\\\")(>\\{})(.*$)'.format(keySeq)",
+			"keySeq='!'",
+			"'\\n'.join(listt)",
+			"listt",
+			"listt.index('s2')",
+			"listt",
+			"re.findall('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')[0][0]",
+			"re.findall('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')[0]",
+			"re.findall('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"'{0}++{2}'.format(listt[])",
+			"'{0}++{2}'.format(listt)",
+			"'{}++{}'.format(listt[0], listt[2])",
+			"'{}++{}'.format(list[0], list[2])",
+			"listt=['s1', 's2', 's3']",
+			"del list",
+			"'{1}++{3}'.format(list)",
+			"'{1}++{3}'.forma(list)",
+			"list=['s1', 's2', 's3']",
+			"re.findall('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m.groups()",
+			"m=re.match('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.match('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.findall('(<a href\\=\\\"#[a-z0-9\\-]+)(-disabled)(\\\")(>.*)(\\!DISABLED)(.*$)', '<li><a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|( \\!DISABLED)', '__{\\1}__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|( \\!DISABLED)', '__{1}__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|( \\!DISABLED)', '__%1__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|( \\!DISABLED)', '__\\1__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m.findall('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|( \\!DISABLED)', '', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|( \\!DISABLED)', '__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(\\-disabled)|(\\!DISABLED)', '__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('disabled', '__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.sub('(-disabled)(\\!DISABLED)', '__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"pp(dir(re))",
+			"re.replace('(-disabled)(\\!DISABLED)', '__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"re.subs('(-disabled)(\\!DISABLED)', '__', '<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m.findall('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m=re.compile('<a href\\=\\\"#.*\\-disabled\">.*\\!DISABLED<\\/a>')",
+			"m.findall('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m.find_all('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m.match('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>').index()",
+			"m.match('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')[0]",
+			"m.match('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>').groups()",
+			"m.match('<a href=\"#notwendig-oder-disabled\">Notwendig oder !DISABLED</a></li>')",
+			"m=re.compile('<a href\\=\\\"#.*\">.*\\!DISABLED<\\/a>')",
+			"tocStr[1:50]",
+			"tocStr[1:5]",
+			"tocStr[1]",
+			"tocStr[1,5]",
+			"tocStr(1,5)",
+			"tocStr",
+			"tocStr.substr(1,5)",
+			"tocStr='<p>Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, <em>quasi-kontinuierliche</em> Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer anal'",
+			"tocStr='<p>Diskret implementierte Regler sind in vielen Anwendungsbereichen zu finden. Durch leistungsfähigere Mikrocontroller und Signalprozessoren ist es einfacher geworden, <em>quasi-kontinuierliche</em> Systeme zu entwerfen. Aufgrund ihrer Flexibilität und einfachen Erweiterbarkeit, werden digitale Regler zunehmend einer analogen Ausführungen vorgezogen.</p>\n<h4 class=\"sphd\"><span>Systemzweck</span></'",
+			"''.find_all('d')",
+			"''.find('d')",
+			"''.findall('d')",
+			"ff.__class__.__name__",
+			"str(ff.__class__)",
+			"ff.__class__",
+			"ff.__class__[0]",
+			"ff.__class__",
+			"ff.__class__.__str__",
+			"pp(dir(ff.__class__))",
+			"ff.__class__._name",
+			"ff.__class__.name",
+			"ff.__class__",
+			"pp(dir(ff))",
 			"from pprint import pprint as pp",
-			"import argparse",
-			"print('toc_ref \"{}\"'.format(mode))",
-			"print('toc_ref \"%s\"'.format(mode))",
-			"mode='insert'",
-			"settings.get(\"chapter_compile\")",
-			"settings.get(\"inline_diagram\")",
-			"settings.has(\"inline_diagram\")",
-			"settings = sublime.load_settings('MarkdownPreview.sublime-settings')",
-			"view.run_command('align_markdown_table')",
-			"aligns.index('lefts')",
-			"aligns.index('left')",
-			"aligns=['left', 'center', 'right']",
-			"'center' in aligns(0)",
-			"'center' in aligns",
-			"'center' in aligns.item()",
-			"aligns=enumerate(['left', 'center', 'right'])",
-			"aligns",
-			"'center' in aligns.item()",
-			"'center' in aligns.items()",
-			"'center' in aligns",
-			"'dd' in aligns",
-			"aligns",
-			"aligns=list(enumerate(['left', 'center', 'right']))",
-			"aligns.next()",
-			"aligns",
-			"aligns=enumerate(['left', 'center', 'right'])",
-			"enumerate(['left', 'center', 'right'])",
-			"view.run_command('align_markdown_table')",
-			"view.full_line(view.sel()[0])",
-			"view.full_line()",
-			"view.run_command('align_markdown_table')",
-			"view.substr(view.lines(view.sel()[0]))",
-			"view.substr(view.lines(view.sel()[0].begin()))",
-			"view.substr(view.line(view.sel()[0].begin()))",
-			"view.substr(view.full_line(view.sel()[0].begin()))",
-			"view.substr(view.full_line(view.sel()[0].start()))",
-			"view.substr(view.full_line(view.sel()[0]))",
-			"view.substr(view.full_line(view.sel().start()))",
-			"view.substr(view.full_line(view.sel()))",
-			"view.substr(view.full_lines(view.sel()))",
-			"view.substr(sublime.Region(0, view.size()))",
+			"ff._type_",
+			"ff.__type__",
+			"ff='asfasf'",
+			"view.run_command(\"fold_section\")",
 			"view.sel()[0]",
-			"view.sel()",
-			"replace(ss[len(ss)-len(str(iid)):], str(iid))",
-			"ss",
-			"ss[len(ss)-len(str(iid)):].replace(ss[len(ss)-len(str(iid)):], str(iid))",
-			"ss[len(ss)-len(str(iid)):].replace(ss[len(ss)-len(str(iid)):], str(iid)))",
-			"ss[len(ss)-len(str(iid)):].subs(str(iid))",
-			"ss[len(ss)-len(str(iid)):].replace(str(iid))",
-			"ss[len(ss)-len(str(iid)):]=str(iid)",
-			"ss[len(ss)-len(str(iid)):]",
-			"ss[len(ss)-len(str(iid)):-1]",
-			"ss[len(ss)-len(str(iid)):--1]",
-			"ss",
-			"ss[0:len(ss)-len(str(iid))]",
-			"ss[0:len(ss)-len(str(iid))]=iid",
-			"ss[0:len(ss)-len(iid)]=iid",
-			"iid=117",
-			"ss[0:len(ss)-len(iid)]=iid",
-			"ss='ddfrfd'",
-			"list(range(32, 96, 1))",
-			"list(reversed(range(5)))",
-			"reversed(range(5))",
-			"reversed(range(5)).[0]",
-			"[print(i) for i in reversed(range(5))]",
-			"reversed(range(5)).[0]",
-			"reversed(range(5))",
-			"range(5).reverse()",
-			"'dddfsdg'.reverse()",
-			"lsegs[0][1:-1]=lsegs[0][1:-1].reverse()",
-			"lsegs[0][0:-1]",
-			"lsegs[0][1:-1]"
+			"view.run_command(\"fold_section\")",
+			"view.sel()[0]",
+			"view.substr(view.sel()[0])",
+			"view.run_command(\"fold_section\")",
+			"[int(bs.contains(view.sel()[0].begin())) for bs in bysel]",
+			"[bs.contains(view.sel()[0].begin()) for bs in bysel]",
+			"bysel",
+			"bysel=view.find_by_selector('meta.block-level.markdown')",
+			"bysel",
+			"view.sel()[0]",
+			"view.line(view.line(view.sel()[0]).begin()-1)",
+			"view.line(view.sel()[0]).begin()-1",
+			"view.line(view.sel()[0]).begin()",
+			"view.line(view.sel()[0])",
+			"view.sel()[0]",
+			"view.selection.clear()",
+			"bysel=view.find_by_selector('meta.block-level.markdown')",
+			"bysel=view.find_by_selector('meta.block-level.markdown'); view.selection.clear(); view.selection.add(bysel[i]); view.substr(view.sel()[0]); i+=1;",
+			"view.selection.add(bysel[0])",
+			"view.selection.clear()",
+			"view.find_by_selector('meta.block-level.markdown')",
+			"view.find_by_selector('meta.block-level')",
+			"view.find_by_selector('meta.block-level.markdown')",
+			"view.find_by_selector('text.html.markdown.multimarkdown meta.content.multimarkdown meta.block-level.markdown')",
+			"view.substr(view.sel()[i]); i+=1;",
+			"view.selection.clear(); view.selection.add(bysel[i]); view.substr(view.sel()[0]); i+=1;",
+			"view.selection.clear(); view.selection.add(bysel[i]); ",
+			"view.selection.clear(); ",
+			"view.selection.clear(); view.selection.add(bysel[i]); view.substr(view.sel()[i]); i+=1;",
+			"bysel",
+			"view.selection.clear(); view.selection.add(bysel[i]); view.substr(view.sel()[i]); i+=1;",
+			"i=0",
+			"view.selection.clear(); view.selection.add(bysel[0]); view.substr(view.sel()[0])",
+			"view.selection.clear(); view.selection.add(bysel[0])",
+			"bysel=view.find_by_selector('text.html.markdown.multimarkdown meta.content.multimarkdown meta.block-level.markdown')",
+			"view.substr(view.sel()[0])",
+			"view.selection.clear(); view.selection.add(bysel[0])",
+			"bysel=view.find_by_selector('text.html.markdown.multimarkdown meta.content.multimarkdown meta.paragraph.markdown meta.tag.inline.any.html meta.attribute-with-value.style.html source.css')",
+			"view.find_by_selector('text.html.markdown.multimarkdown meta.content.multimarkdown meta.paragraph.markdown meta.tag.inline.any.html meta.attribute-with-value.style.html source.css')",
+			"view.find_by_selector('meta.block.html')",
+			"view.find_by_selector('meta.block.markdown')",
+			"view.find_by_selector('meta.block.js')",
+			"view.find_by_selector(\"Die\")",
+			"view.find_by_selector()",
+			"view.find_by_selector('#')",
+			"re.findall('^#+', view.substr(view.line(view.sel()[0])))[0].index()",
+			"re.findall('^#+', view.substr(view.line(view.sel()[0])))[0]",
+			"view.substr(view.sel()[2])",
+			"view.substr(view.sel()[1])",
+			"view.substr(view.sel()[0])",
+			"view.substr(view.sel())",
+			"view.sel()[1]",
+			"view.sel()[0]",
+			"view.show_at_center(30)"
 		]
 	},
 	"distraction_free":
@@ -1095,28 +1134,54 @@
 	[
 		"/media/data/whz/projectGalvoDocu",
 		"/media/data/whz/projectGalvoDocu/chapters",
-		"/media/data/whz/projectGalvoDocu/oldMerged"
+		"/media/data/whz/projectGalvoDocu/embeddedSoftware/20-STM32F4_PRJ_GALVO_v2"
 	],
 	"file_history":
 	[
-		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
-		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
-		"/home/mainster/.config/sublime-text-3/Packages/User/FoldMarkdownSections.py",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/media/data/whz/projectGalvoDocu/merged.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/15_Verifizierung_Systemtests.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/09_Modellbildung.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/10_Modellbildungsprozess.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/12_Software_und_Simulation.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.mmd",
 		"/media/data/whz/projectGalvoDocu/chapters/09_Modellbildungsprozess.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/04_Vorarbeit.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.mmd",
+		"/media/data/whz/projectGalvoDocu/toc.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/06_Terminologie.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/07_Formelzeichen_und_Einheiten.mmd",
+		"/home/mainster/scripts/split-merge-markdowns.sh",
+		"/media/data/whz/projectGalvoDocu/pics/abstractSystemC.svg",
+		"/media/data/whz/projectGalvoDocu/chapters/13_Quelldaten_generieren.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/15_Regelungstechnik.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/16_Gesamtsystem.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/17_Modellparameter_testen.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/18_Hardware.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/19_Resümee.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.html",
+		"/media/data/whz/projectGalvoDocu/chapters/14_Simulationen_und_Verifizierung.mmd",
+		"/media/data/whz/projectGalvoDocu/chapters/22_Trash.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/MarkdownPreview.sublime-settings",
+		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.py",
+		"/tmp/mozilla_mainster0/Hinweis.txt",
+		"/media/data/whz/modulunterlagen/ELT200_Grundlagen_der_Digitalen_Signalverarbeitung/2013/Praktikum/Lab5/Lab5_1.c",
+		"/media/data/whz/projectGalvoDocu/embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/Doxyfile",
+		"/media/data/whz/projectGalvoDocu/projectGalvoDocu.sublime-project",
+		"/media/data/whz/projectGalvoDocu/chapters/11_Plattform.mmd",
+		"/media/data/CODES/sw4stm32_workbench/21-STM32F4_PRJ_GALVO_lib_v1.4/README.md",
+		"/media/data/CODES/sw4stm32_workbench/20-STM32F4_PRJ_GALVO_v2/README.mmd",
+		"/media/data/CODES/matlab_workspace/RT_projects/GalvoProjekt/nacharbeitWHZ/calcGtot.m",
+		"/media/data/whz/projectGalvoDocu/oldMerged/NewOldmerged.mmd",
+		"/home/mainster/.config/sublime-text-3/Packages/User/FoldMarkdownSections.py",
 		"/tmp/PluginEventProfile",
 		"/media/data/whz/projectGalvoDocu/chapters/10_Softwarearchitektur.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/11_Plattform.mmd",
 		"/media/data/whz/projectGalvoDocu/handyshay",
-		"/media/data/whz/projectGalvoDocu/merged.mmd",
 		"/media/data/eagle_pro_lic_hsk/eagle.txt",
 		"/tmp/mnt2/ipkglist",
 		"/home/mainster/compiledStuff/resetUsb/resetusb.c",
 		"/home/mainster/scripts/amixerRemoteIface.sh",
 		"/media/data/ti/LAUNCHXL-F28379D_Development_Kit/HwDevPkg/LAUNCHXL-F28379D.brd",
 		"/media/data/ti/LAUNCHXL-F28379D_Development_Kit/HwDevPkg/Imported LAUNCHXL-F28379D/LAUNCHXL-F28379D.PrjPcb",
-		"/media/data/whz/projectGalvoDocu/chapters/20_Quellenangaben.mmd",
-		"/media/data/whz/projectGalvoDocu/chapters/05_Projektziel_und_Anforderungskatalog.mmd",
 		"/tmp/iii",
 		"/media/data/CODES/ccs7_theBeast/_B_dlib_PID_dcl/.ccsproject",
 		"/media/data/CODES/ccs7_theBeast/_B_dlib_PID_dcl/.cproject",
@@ -1200,33 +1265,7 @@
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown Extended/Syntaxes/Markdown Extended.sublime-syntax",
 		"/home/mainster/.config/sublime-text-3/Packages/Markdown/Markdown.sublime-syntax",
 		"/home/mainster/.config/sublime-text-3/Packages/SmartMarkdown/Default.sublime-keymap",
-		"/tmp/.fr-kokbVJ/Readme.txt",
-		"/home/mainster/compiledStuff/pyNsource-1.61-src/src/pyNsourceGui.py",
-		"/media/data/CODES/papyrus_uml_workspace/firstUml/the2model.uml",
-		"/media/data/CODES/papyrus_uml_workspace/firstUml/theModel.uml",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/README.md",
-		"/home/mainster/.config/sublime-text-3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/media/data/whz/gcalcli_emv_pr",
-		"/tmp/tmp7xeowg.md",
-		"/tmp/newname",
-		"/home/mainster/.config/sublime-text-3/Packages/User/testpy",
-		"/home/mainster/.config/sublime-text-3/Packages/User/debug_example.py",
-		"/home/mainster/.config/sublime-text-3/Packages/Plugin Debugger/README.rst",
-		"/media/data/whz/projectGalvoDocu/test.py",
-		"/media/data/whz/treeInfo5",
-		"/tmp/term",
-		"/media/data/CODES/googleAPI/client_id.json",
-		"/media/data/whz/trees",
-		"/tmp/sum#",
-		"/home/mainster/CODES_local/pythons/wrapperForPrint.py",
-		"/home/mainster/scripts/syncFromOther_whz",
-		"/media/data/CODES/pythons/folderSync_dispatch/dispatch.py",
-		"/home/mainster/CODES_local/pythons/moveCopyWithProgressBar.py",
-		"/tmp/frames",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/diagram/base.py",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/diagram/__init__.py",
-		"/home/mainster/.config/sublime-text-3/Packages/sublime_diagram_plugin/diagram/plantuml.py",
-		"/media/data/whz/zki-script_spawn.sh"
+		"/tmp/.fr-kokbVJ/Readme.txt"
 	],
 	"find":
 	{
@@ -1244,6 +1283,20 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"aktor",
+			"(^[^ ])",
+			"^    ",
+			"(...)",
+			"sphd",
+			" ARM ",
+			"boxed",
+			"Modellist",
+			"Drehmoment",
+			"#### ",
+			"Wicklungsinduktivität",
+			"             ",
+			"pp\\(",
+			"fold",
 			"^[\\+\\-]",
 			"\\@.*\\n",
 			"^ .*\\n",
@@ -1357,21 +1410,7 @@
 			"dprint",
 			"Debug\\(.*",
 			"sublime_diagram_plugin",
-			"(EMV I Pr V.)",
-			"10:00",
-			"gen_image_tag",
-			"extract_diagram_attr",
-			"gen_image_tag",
-			"blk_attr",
-			"extract_diagram_attr",
-			"Debug",
-			"##\\s+",
-			"InlineUmlDiagram",
-			"UmlBlock",
-			"gen_image_tag",
-			"imgTag",
-			"re.sub",
-			"strt"
+			"(EMV I Pr V.)"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1379,6 +1418,10 @@
 		"regex": true,
 		"replace_history":
 		[
+			"#\\1",
+			"",
+			"<yelBg>(...)</yelBg>",
+			" ARM® ",
 			"",
 			"//",
 			"\n-",
@@ -1502,11 +1545,7 @@
 			".botal",
 			".topal",
 			"\\1box",
-			".\\1",
-			"invEl",
-			"logfile",
-			"infile",
-			"print(\"\\1\")"
+			".\\1"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1522,11 +1561,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "oldMerged/NewOldmerged.mmd",
+					"file": "chapters/12_Modellverifikation.mmd",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 128863,
+						"buffer_size": 495,
 						"regions":
 						{
 						},
@@ -1551,8 +1590,67 @@
 			]
 		},
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 1,
+					"file": "styleMdb_projectGalvoDocu.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 38918,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17583,
+								17583
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "newToc.mmd",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								310,
+								310
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/MarkdownEditing/MultiMarkdown.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1584,7 +1682,7 @@
 		"cols":
 		[
 			0.0,
-			0.573527882837,
+			0.576499388005,
 			1.0
 		],
 		"rows":
@@ -1614,7 +1712,7 @@
 	{
 		"height": 0.0
 	},
-	"pinned_build_system": "",
+	"pinned_build_system": "Packages/DoxyDoxygen (evolution)/Doxy.sublime-build",
 	"project": "projectGalvoDocu.sublime-project",
 	"replace":
 	{
@@ -1648,7 +1746,7 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 1,
+	"selected_group": 0,
 	"settings":
 	{
 	},
@@ -1656,7 +1754,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 278.0,
+	"side_bar_width": 286.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

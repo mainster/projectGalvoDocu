@@ -381,7 +381,6 @@ meta[name][content]::after {
 	border: 		3px solid #e6e6e6;
 	box-shadow: 	0px 0px 10px #d3d3d3;
 }
-
 .markdown-body div.fig {
     text-align: 	center;
     font-style: 	italic;
@@ -391,7 +390,7 @@ meta[name][content]::after {
 .markdown-body div.fig,
 .markdown-body figure {
 	/*position: 		relative;*/
-	max-width: 		100%;
+	max-width: 		100% !important;
 	margin-bottom: 	1.5 * var(--figure-to-img-margin-top);
 	margin-top: 	var(--figure-to-img-margin-top);
 }
@@ -406,10 +405,8 @@ meta[name][content]::after {
 .markdown-body figure.oszi {
 	padding: 		var(--figure-to-img-padding-oszi) !important;
 }
-
 img.topal, div.topal, figure.topal { margin-top: 0 !important; }
 img.botal, div.botal, figure.botal { margin-bottom: 0 !important; }
-
 img.floatr, div.floatr, figure.floatr {
 	float: 			right;
 	margin: 		0.2em 0 0 var(--floatbox-text-margin);
@@ -430,13 +427,14 @@ img.floatl, div.floatl,	figure.floatl {
 	margin-bottom: 	0em;
 	margin-top: 	0em;
 }
-
+.markdown-body figure.full img {
+    width:          100% !important;
+}
 /*.markdown-body div.fig.nobox img,
 .markdown-body figure.nobox img {
 	border: 		none !important;
 	box-shadow: 	none !important;
 }*/
-
 /*
  * An image inside a figure of class="box"
  * should NOT draw any border and remove padding
@@ -448,8 +446,6 @@ img.floatl, div.floatl,	figure.floatl {
 	box-shadow: 	none !important;
 	padding: 		0em;
 }
-
-
 .markdown-body div.fig figcaption,
 .markdown-body figure figcaption {
 	/*background-color: #E7FFE7;*/
@@ -461,7 +457,6 @@ img.floatl, div.floatl,	figure.floatl {
 	margin:			3px;
 	border: 		none;
 }
-
 .markdown-body div.fig figcaption.la,
 .markdown-body figure figcaption.la {
 	/*color:				red !important; */
@@ -472,7 +467,6 @@ img.floatl, div.floatl,	figure.floatl {
 	/*color:				red !important; */
 	text-align: 		justify;
 }
-
 .markdown-body div.fig.box figcaption,
 .markdown-body figure.box figcaption {
 	border-top: 	1px solid #DEDEDE !important;

@@ -1,0 +1,78 @@
+# Modellbildung #
+>"It's a bunch of shapes connected by lines." Dilbert 
+[[MDA:2006, p.73]][@MDA:2006]
+
+Dieser Aussage entsprechend soll hier aus dem formellen [Anforderungskatalog](#projektziel-und-anforderungskatalog) (vergl. Pflichtenheft) ein erstes abstraktes Modell abgeleitet werden. 
+
+* Regelstrecke 
+* Sensor
+* Leistungselektronik, Aktor
+* Steuer- und Reglerelektronik
+    - Mikrocontrollerplatine 
+    - Signalkonditionierung
+        - Pegelwandlung 
+        - Antialiasing (ADC)
+        - Rekonstruktionsfilter (DAC)
+* Software, Tools und Simulation
+    - Zielsystem: Eingebettete Hardware
+        - Implementierung der Regleralgorithmen (Reglerelektronik)
+        - Sicherheitssystem (Überstromschutz, "Error-Safe-State")
+    - Entwicklungs-PC
+        - MATLAB/Simlunik, Systemmodellierung/Simulation
+        - LTspice, Subsystemmodellierung/Simulation
+        - Eagle CAD, Hardwareentwurf  
+    - Schnittstellenprogramm zur Echtzeitkommunikation
+
+<img class="noborder" src="./pics/abstractSystemC.svg" title="Abstraktes Modell des Regelkreises"/>
+
+<yelBg>...So what???</yelBg>
+
+## Generische Modelle ##
+In der Informatik sind _generische Typen_ Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von _parametrischer Polymorphie_.[^fnwikiGenericTypes] Überträgt man den Begriff _generisch_ auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Strecken (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ _"Drehmoment-Motoren"_ respektive _"Galvanometer"_ die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als _Subsystem_ __*Drehmoment-Motoren*__ auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. 
+
+Die Analogie zu _generic types_ in objektorientierten Programmiersprachen ist nur teilweise zulässig. Vergleicht man diese Methode jedoch mit der in [Vorarbeit](#vorarbeit) aufgezeigten, nämlich einem Motor-Computermodell, abhängig von Geometrie und Materialparametern, so finden sich doch einige Eigenschaften, die analog verwendet werden können.
+
+## Mathematische Zusammenhänge ##
+Die Grundlage eines generischen Modells ist seine Mathematik. Die Gesetze der Physik müssen bei der mathematischen Modellierung eingehalten werden. Der Verlauf der Geschwindigkeit $v(t)$ eines Körpers lässt sich bekanntlich durch Differentiation seiner Streckenfunktion $s(t)$ oder durch Integration seiner Beschleunigung $a(t)$ über der Zeit formulieren. Diese Gesetzmäßigkeiten gelten gleichermaßen für translatorische sowie rotatorische Bewegung. Daraus folgt unter anderem, dass die Integralbildung der Winkelgeschwindigkeit $\omega(t)$ eines rotierenden Körpers, unmittelbar auf seine Winkelposition $\varphi(t)$ führt. Diese grundlegenden Gesetze müssen später anhand des Modells verifiziert werden können. 
+
+### Translation und Rotation ###
+Die _Grundgleichungen für Translation und Rotation_  sollen einerseits zur einheitlichen Notation im Rahmen dieser Arbeit beitragen, zum anderen dient die Tabelle (vergl. [[Iser:2008, 123]][@Iser:2008]) der Überprüfung von <span style="background-color: yellow; color: red">physikalischen Einheiten </span>.
+
+<center>
+
+| Translation                          | in eine Richtung         | Rotation                                  | um eine Achse             |
+|:-------------------------------------|:------------------------:|:------------------------------------------|:-------------------------:|
+| $s$                                  | Weg                      | $\varphi$                                 | Winkel                    |
+| $v=\dot s$                           | Geschwindigkeit          | $\omega = \dot\varphi$                    | Winkelgeschwindigkeit     |
+| $a=\dot v = \ddot s$                 | Beschleunigung           | $\dot\omega = \ddot\varphi$               | Winkelbeschleunigung      |
+| $m$                                  | Masse                    | $J, \theta$                               | Trägheitsmoment           |
+| $\vec F$                             | Kraft in Wegrichtung     | $\vec M$                                  | Moment um Drehachse       |
+| $\vec I = m \cdot \vec v$            | Impuls                   | $\vec L = J \cdot \vec\omega$             | Drehimpuls                |
+| $\vec F = m \cdot \vec a$            | Kraeftesatz              | $\vec M = J \cdot \dot\omega$             | Momentensatz              |
+| $E_k = \frac 1 2\; m \cdot v^2$      | kinetische Energie       | $E_k = \frac 1 2\; J \cdot \omega^2$      | kinetische Energie        |
+| $W = \int F ds$                      | Arbeit                   | $W = \int M d\varphi$                     | Arbeit                    |
+| $P = F \cdot v$                      | Leistung                 | $P = M \cdot \omega$                      | Leistung                  |
+
+</center>
+
+Das Aufstellen von *Bilanzgleichungen* ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stets, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. 
+
+### Energiebilanz in allgemeiner Form ###
+<img src="./pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, ...) kein Energiestrom, so unterliegt das Gebilde dem *Energieerhaltungssatz* wobei innerhalb der Grenenzen $N$ _verschiedene Energiearten_ $E_i$ vorhanden sein _können_ (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische _Umformung der mechanischen Größen_ $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.
+
+$$ \frac{1}{2} \cdot m \cdot v^2 = E_{kin}
+\;\;\;\widehat{=}\;\;\;
+E_{rot} = \frac{1}{2} \cdot J_x \cdot \omega^2 $$
+
+Aus dem Energieerhaltungssatz kann das *Kräftegleichgewicht* abgeleitet werden. Wegen den analogen Gesetzmäßigkeiten zwischen translatorischer und rotatorischer Bewegung, kann vom Kräftegleichgewicht eines bewegten Körpers auf ein Drehmomentgleichgewicht geschlossen werden.
+
+### Impulsbilanzgleichung ###
+Wirkt auf einen Körper der Masse $m$ und dem Impuls $\vec I = m \cdot \vec v$ eine äußere Kraft $\vec F$, so gilt bei translatorischer Bewegung und $m=const$ entsprechend dem [Impulserhaltungssatz][@Impulserhaltung][^fnImpulserhaltung] folgende Bilanzgleichung: 
+
+\begin{equation}
+\frac{\partial}{\partial\,t}\,\vec I = m \cdot \frac{\partial}{\partial\,t}\,\vec v(t) = \vec F(t) \label{eqImpulsbil}\end{equation}
+
+Die Beziehung in \eqref{eqImpulsbil} wird als Impulsbilanzgleichung bezeichnet. Analog wird die Impulsbilanz für rotiernde Körper mit der als skalar betrachteten Massenträgheit $J$ und bestehendem Drehimpuls $\vec L_s = J \cdot \vec \omega$ aufgestellt. Gleichung \eqref{eqDrehimpulsbil} wird folgerichtig als __Drehimpulsbilanzgleichung__ bezeichnet.
+
+\begin{equation}{\frac{\partial}{\partial\,t}\,\vec L_s = J \cdot \frac{\partial}{\partial\,t}\,\vec \omega(t) = \vec M(t)} \label{eqDrehimpulsbil}\end{equation}
+
