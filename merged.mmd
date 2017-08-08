@@ -4,6 +4,8 @@ Date:       02-11-2016
 Location:   WHZ
 Footicon:   ./pics/whz.png
 
+<boxed>Vorläufige Ausarbeitung <img style="display: inline-block; width: 120px;" src="./pics/signature_no1_blue.png" title="Signature: M. Del Basso" align="center" class="noborder"></boxed> 
+
 Projekt: __XY-Galvo Scanner__
 ============================== 
 [TOC]
@@ -672,78 +674,19 @@ Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekom
 ## Architekturkomponenten ##
 - reverse Engeneering
 
-@startuml
-skinparam componentStyle uml2
-package "Gesamtprojekt" {
-    package "Embedded Software" {       
-        [Actuator Safestate Guard]
-        [Diskreter PID-Regler]
-    } 
-    package "Modellbildung und Simulation" {
-        frame "Hardware" {
-            [Actuator Safestate Guard]
-        }
-        frame "PID" {
-            [Diskreter PID-Regler]
-        }
-    } 
-}
-@enduml
-@diag_align: "center"
+<center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_0.png" class="" title=""  style=""/></center>
 
 ---
 
-@startuml
-skinparam componentStyle uml2
-package "Gesamtprojekt" {
-    package "Embedded Software" {       
-        frame "ASG" {
-            [Actuator Safestate Guard]
-        }
-        frame "PID" {
-            [Diskreter PID-Regler] 
-        }
-    } 
-    package "Modellbildung und Simulation" {
-        frame "Hardware" {
-            [Actuator Safestate Guard]
-        }
-        frame "PID" {
-            [Diskreter PID-Regler]
-        }
-    } 
-}
-@enduml
-@diag_align: "center"
+<center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_1.png" class="" title=""  style=""/></center>
 
 ---
 
-@startuml
-package "Gesamtprojekt" {
-    [Embedded Software]
-    [Modellbildung und Simulation]
-    node "Other Groups" {
-        FTP - [Second Component]
-        [First Component] --> FTP
-    } 
-}
-@enduml
-@diag_align: "center"
+<center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_2.png" class="" title=""  style=""/></center>
 
 ---
 
-@startditaa
-+--------+   +-------+    +-------+
-|        +---+ ditaa +--> |       |
-|  Text  |   +-------+    |diagram|
-|Document|   |!magic!|    |       |
-|     {d}|   |       |    |       |
-+---+----+   +-------+    +-------+
-    :                         ^
-    |       Lots of work      |
-    +-------------------------+
-@endditaa
-
+<img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_3.png" class="" title=""  style=""/>
 Komponentendigramm
 
 - zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems
@@ -952,7 +895,8 @@ Neben den offensichtlichen und teils schon genannten Vorteilen quelloffener Soft
 ## Dokumentation ##
 Die Dokumentation zur Anwendungssoftware "GalvoScanner v1.4" wie auch für die im Projektverlauf entwickelten Bibliotheken __MD_STM32F4_Libraries__ wurde mit dem de-facto Standard Dokumentations&shy;werkzeug _Doxygen_ aufbereitet. Das quelloffene, 1997 von _Dimitri van Heesch_ in die "Public Domain" entlassene Dokumentations&shy;werkzeug zählt m. E. zu den Parade&shy;beispielen im Bereich Open Source und Platt&shy;form&shy;unab&shy;hängigkeit.
 
-[Link zur index.html der Doxy-Dokumentation](./../embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/doxygen/html/index.html)
+<!-- [Link zur index.html der Doxy-Dokumentation](./../embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/doxygen/html/index.html) -->
+<boxed>[Link zur  Doxygen Dokumentation](doxygen/html/index.html)</boxed>
 
 ## !PC-Schnittstellenprogramm (__C++ / Qt__) ##
 <yelBg>(...)</yelBg>
@@ -1069,6 +1013,13 @@ end
 <center><figure><figcaption><em>In <b>MATLAB</b> visualisierte Matritzen</em></figcaption><a href="./pics/matPlots/gnuNormw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte "GNU-Kopf"-Matrix</figcaption></figure></a>
 <a href="./pics/matPlots/gnuScalw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte "GNU-Kopf"-Matrix</figcaption></figure></a>
 <a href="./pics/matPlots/gnuRotw.svg" target="_blank"><figure class="box"><img src="./pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um $\,\pi/4\,$ rad gedrehte "GNU-Kopf"-Matrix</figcaption></figure></a></figure></center>
+
+## Python Skript ##
+<details markdown=1>
+<summary><h4 class="sp"><span class="codehd">svgCoord.py</span></h4></summary>
+```py
+@codeimport: "./sources/svgCoord.py"
+</details>
 
 ToDo:
 

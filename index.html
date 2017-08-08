@@ -1,6 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="location" content="WHZ">
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="date" content="02-11-2016">
+<meta name="location" content="WHZ">
 <meta name="author" content="Del Basso, Manuel">
-<meta name="date" content="02-11-2016">
 <meta name="footicon" content="./pics/whz.png"><style>body {
 	border: 1px solid #ddd;
 	margin: 16px auto;
@@ -1555,8 +1555,7 @@ MathJax.Hub.Config({
   onReady(function(){convertUML('uml-sequence-diagram', Diagram, {theme: 'simple'});});
 })(window, document)
 </script>
-<title>Projekt: XY-Galvo Scanner</title></head><body><article class="markdown-body paragraphNum"><p><boxed>Vorläufige Ausarbeitung <img style="display: inline-block; width: 120px;" src="/media/data/whz/projectGalvoDocu/pics/signature_no1_blue.png" title="Signature: M. Del Basso" align="center" class="noborder"></boxed> </p>
-<h1 id="projekt-xy-galvo-scanner"><a name="user-content-projekt-xy-galvo-scanner" href="#projekt-xy-galvo-scanner" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projekt: <strong>XY-Galvo Scanner</strong></h1><div class="toc">
+<title>Projekt: XY-Galvo Scanner</title></head><body><article class="markdown-body paragraphNum"><h1 id="projekt-xy-galvo-scanner"><a name="user-content-projekt-xy-galvo-scanner" href="#projekt-xy-galvo-scanner" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Projekt: <strong>XY-Galvo Scanner</strong></h1><div class="toc">
 <ul>
 <li><a href="#projekt-xy-galvo-scanner">Projekt: XY-Galvo Scanner</a></li>
 <li><a href="#navigation">Navigation</a></li>
@@ -1690,10 +1689,7 @@ MathJax.Hub.Config({
 <li><span style="color: #959595;">Debuggen in sw4stm32</span></li>
 </ul>
 </li>
-<li><a href="#quelldaten-generieren">Quelldaten generieren</a><ul>
-<li><a href="#python-skript">Python Skript</a></li>
-</ul>
-</li>
+<li><a href="#quelldaten-generieren">Quelldaten generieren</a></li>
 <li><span style="color: #959595;">Gesamtsystem</span></li>
 <li><span style="color: #959595;">Hardware</span></li>
 <li><span style="color: #959595;">Resümee</span></li>
@@ -1798,7 +1794,7 @@ MathJax.Hub.Config({
 Unter Zuhilfenahme der FEM-Simulationsumgebung &ldquo;Maxwell&rdquo; + &ldquo;Simplorer&rdquo;, sollen Reglerparameter anhand eines nichtlinearen Modells des Galvanometer-Motors optimiert werden. Die Sollwert-Vorgaben für die XY-Winkelpositionen werden vorerst als einfache Lookup-Tabellen direkt auf dem Mikrocontroller erzeugt, welcher auch die diskreten Reglerfunktionen übernehmen soll. </p>
 <p>Sollte das geplante System soweit funktionieren, dass mit dem Scanner einfache geometrische Figuren erzeugt werden können (Kreise, Quadrate, Achter, &hellip;), könnte eine PC-Software zur Erzeugung von Pixelkoordinaten inkl. Dunkeltastung des Lasers als Erweiterung angedacht werden.</p>
 </blockquote>
-<p><img alt="GalvosXY" src="/media/data/whz/projectGalvoDocu/pics/galvanometerMaxwell.png" title="Anordnung der Galvanometer-Motoren in XY-Scanner Konfiguration" /></p>
+<p><img alt="GalvosXY" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/galvanometerMaxwell.png" title="Anordnung der Galvanometer-Motoren in XY-Scanner Konfiguration" /></p>
 <p>Statische sowie dynamische Eigenschaften der in ANSYS Maxwell konstruierten Motoren werden auf Basis finiter Elemente modelliert und in einem Multi-Domain-Modell<sup id="fnref:fnMultiDomain"><a class="footnote-ref" href="#fn:fnMultiDomain" rel="footnote">8</a></sup> abgebildet. </p>
 <h2 id="fertigungsproblematik"><a name="user-content-fertigungsproblematik" href="#fertigungsproblematik" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Fertigungsproblematik</h2>
 <p>Die Motorkonstruktion konnte nie vollständig an einem funktionsfähigen Prototypen getestet werden. Hierzu werden folgende Begründungen genannt:</p>
@@ -1826,7 +1822,7 @@ Eine zerstörungsfreie Demontage der vorhanden Galvanometer konnte nicht gewähr
 <p>Die detaillierte Beschreibung der Systemfunktionen wird untergliedert. Der Prototyp-Aufbau wird als <strong>physisches System</strong> bezeichnet während im Abschnitt <strong>Simulationsumgebung</strong> das Computermopdell des Gesamtsystems (MATLAB, Simulink, LTspice) näher beschrieben wird.</p>
 <h4 class="sp"><span>Physisches System</span></h4>
 
-<figure class="floatr topal" style="width:185px"><img src="/media/data/whz/projectGalvoDocu/pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860"><figcaption>Cambridge Technologies Galvanometer Modell 6860</figcaption></figure>
+<figure class="floatr topal" style="width:185px"><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/camb_6860_large_mirrors_sml_dim.png" title="Cambridge Technologies Galvanometer Modell 6860"><figcaption>Cambridge Technologies Galvanometer Modell 6860</figcaption></figure>
 
 <p>Die beiden <lkey><a href="#klassifizierung">Moving-magnet Galvanometer</a></lkey> der Firma <a href="http://www.cambridgetechnology.com">Cambridge Technologies</a>, bilden das Herzstück des Laserscanner-Aufbaus. Durch die zeitlich versetzte Positionierung eines Laserstrahls entsprechend zweier Koordinaten-Punkte einer Ebene, entsteht eine sichtbare Linie, wenn das Anfahren der Punkte schnell genug erfolgt. <lkey>Ortsvektoren</lkey> im $\mathbb{R}^2$ eignen sich hervorragend zur Lokalisierung von Punkten in einer Ebene. Soll anhand zweier Koordinatenpaare eine Gerade $\,g\,$ durch die Punkten $\,A\,$ und $\,B\,$ abgeleitet und in Vektornotation $\vec{v}$ dargestellt werden, so gilt </p>
 <p><lmjx>$ \eqlbl{ g:\;\;\;\vec{v}=\overrightarrow{A B} = \begin{pmatrix}B_x\\B_y\end{pmatrix} - \begin{pmatrix}A_x\\A_y\end{pmatrix} = \begin{pmatrix}B_x-A_x\\B_y-A_y\end{pmatrix} }{eqDirVect3} $</lmjx></p>
@@ -1834,7 +1830,7 @@ Eine zerstörungsfreie Demontage der vorhanden Galvanometer konnte nicht gewähr
 <p>$$ g:\;\;\;\vec{s}=\vec p + \lambda\cdot\vec v\; $$</p>
 <p>Durch die Linearkombination zweier XY-Tupel, dem Ortsvektor (resp. Stützvektor, Aufpunkt) $\;\vec p\;$ und dem Richtungsvektor $\;\vec v\;$, wird die Gerade $\,g\,$ eindeutig bezüglich eines Koordinaten&shy;ursprungs $\,0\,$ abgebildet. Aufgrund dieser Information lässt sich bereits eine Berechnungs&shy;vorschrift für die Implementierung auf dem Mikro&shy;controller formulieren. Um den Aufwand zur Erzeugung der notwendigen <a href="#quelldaten-generieren">Quelldaten</a> gering zu halten, muss das System in der Lage sein, einfache <lkey>Vektorgrafiken</lkey> zu verarbeiten. </p>
 <div style="display: inline;">
-Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="/media/data/whz/projectGalvoDocu/pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="/media/data/whz/projectGalvoDocu/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (<a href="#jumptoSafety">Laserklasse 3B</a>, 532 nm (Grün), <a href="#jumptoSafety">max. 50mW</a>, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
+Die später eingesetzte <lkey>Laserquelle</lkey> soll für Dauerbetrieb ausgelegt sein. Die Halbleiter-Diode eines batteriebetriebenen Standard-Laserpointers, eignet sich meist nur für den Impulsbetrieb.<a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/galvoMirrorsXY_1.svg" target="_blank"><figure class="floatr" style="height: 185px;"><img style="display: inline-block;" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/galvoMirrorsXY_1.svg" title="Funktionsprinzip XY-Scanner" align="bottom" class="noborder"><figcaption>Funktionsprinzip XY-Scanner</figcaption></figure></a> Thermisch bedingt geht die wahrgenommene Intensität des Laserlichts bereits nach einigen Sekunden zurück. Selbst Handlaserpointer mit geregelter Ausgangsleistung, driften aufgrund der thermisch instabilen Monitordiode, sobald die Betriebstemperatur des Laserchips über die Auslegungsgrenze hinaus, ansteigt. Durch den Betrieb eines semiprofessionellen Lasermoduls (<a href="#jumptoSafety">Laserklasse 3B</a>, 532 nm (Grün), <a href="#jumptoSafety">max. 50mW</a>, 25€) bei ca. 10% Ausgangsleistung, soll eine Laserquelle mit 100% Einschaltdauer bereit gestellt werden.
 </div>
 
 <h4 class="sp"><span>Simulationsumgebung</span></h4>
@@ -1930,7 +1926,7 @@ Die folgende Beispielaufgabe soll diesen Zusammenhang etwas greifbarer darstelle
 <h3 id="beispiel"><a name="user-content-beispiel" href="#beispiel" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Beispiel</h3>
 <p>Für eine analoge Filterschaltung wird ein mathematisches Modell gefordert. Die Schaltung soll zur Tiefpassfilterung in einer <strong>Highend-HiFi</strong> Stereoanlage eingesetzt werden. Für den Übergang vom Durchlass- in den Sperrbereich ist eine Dämpfung von 20dB/Dekade vorgegeben. Anhand des Modells soll das Dämpfungsverhalten mittels einiger harmonischer Testsignale untersucht werden können. </p>
 <p><strong>Möglichkeit 1</strong><br />
-<img src="/media/data/whz/projectGalvoDocu/pics/elko_ersatz_hf_reload.svg" title="Realitätsgetreues Ersatzschaltbild eines RC-Tiefpassfilters" align="top" height="190px" style="float:right; margin: .4em 0em 0em 1em;"/>Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um eine Highend-Anlage handelt, sollte ein möglichst präzises Modell formuliert werden. Unter Berücksichtigung aller tatsächlich parasitärer Größen von passiven Bauelementen<sup id="fnref:fnElektrBauelem"><a class="footnote-ref" href="#fn:fnElektrBauelem" rel="footnote">18</a></sup> wie Serien&shy;induktivität (ESL) und Serien&shy;widerstände (ESR) der Anschluss&shy;drähte/Anordnung der Elektroden, der Isolations&shy;widerstände und der dielektrischen Absorption (Nachladeeffekt, Rda, Cda), ergibt sich für einen einfachen RC-Tiefpass mit einer Dämpfungsflanke von 20dB/Dekade, das nebenstehende Schaltbild. Da die Ordnung eines Systems direkt aus der Anzahl seiner unabhängigen Energiespeicher abgeleitet werden kann, muss dem geforderten mathematischen Modell eine <strong>Differentialgleichung 5. Ordnung</strong>!!! zugrunde gelegt werden. </p>
+<img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/elko_ersatz_hf_reload.svg" title="Realitätsgetreues Ersatzschaltbild eines RC-Tiefpassfilters" align="top" height="190px" style="float:right; margin: .4em 0em 0em 1em;"/>Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um eine Highend-Anlage handelt, sollte ein möglichst präzises Modell formuliert werden. Unter Berücksichtigung aller tatsächlich parasitärer Größen von passiven Bauelementen<sup id="fnref:fnElektrBauelem"><a class="footnote-ref" href="#fn:fnElektrBauelem" rel="footnote">18</a></sup> wie Serien&shy;induktivität (ESL) und Serien&shy;widerstände (ESR) der Anschluss&shy;drähte/Anordnung der Elektroden, der Isolations&shy;widerstände und der dielektrischen Absorption (Nachladeeffekt, Rda, Cda), ergibt sich für einen einfachen RC-Tiefpass mit einer Dämpfungsflanke von 20dB/Dekade, das nebenstehende Schaltbild. Da die Ordnung eines Systems direkt aus der Anzahl seiner unabhängigen Energiespeicher abgeleitet werden kann, muss dem geforderten mathematischen Modell eine <strong>Differentialgleichung 5. Ordnung</strong>!!! zugrunde gelegt werden. </p>
 <p><strong>Möglichkeit 2</strong><br />
 Man leitet aus den Anforderungen ab, dass ein Standard Filter mit Tiefpasscharakter 1. Ordnung gefordert ist. Da es sich beim Endprodukt um ein Audiogerät handelt, können eventuell störende Einflüsse im Frequenzbereiche jenseits von $100\si{kHz}$ als irrelevant betrachtet werden da die <em>auditive Wahrnehmung</em> des menschlichen Gehörs für Frequenzen über $20\si{kHz}$ schlicht nicht mehr sensibel genug ist. Tatsächlich liegt die <em>Musikwahrnehmbarkeit</em> noch deutlich unterhalb der $10\si{kHz}$ Grenze. Für das menschliche Gehör ist es also egal, ob ein TP-Filter im Bereich $900\si{kHz}\dots 1,4\si{MHz}$ eine Resonanzüberhöhung aufweist oder nicht.</p>
 <p>Ein formuliertes Modell unterliegt also der Anforderung, möglichst alle <strong><em>relevanten</em></strong> Charakteristika eines Systems abzubilden wobei der <em>Systemgrad</em> minimal gehalten werden soll. So gelingt es, komplexe Zusammenhänge aufzuspalten und eine Problemstellung zu partitionieren.</p>
@@ -2114,7 +2110,7 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 <p>Systeme, die über eine lineare Differentialgleichung N-ter Ordnung beschrieben werden, sind linear und zeitinvariant. <sup id="fnref:fnMesystoDglSys"><a class="footnote-ref" href="#fn:fnMesystoDglSys" rel="footnote">24</a></sup></p>
 </blockquote>
 <p>Eine universelle Methode zur Ableitung grafischer Blockdiagramm aus mathematischen Vorschriften, führt über die <strong>Zustandsraumbeschreibung</strong> von LTIs. Jedes Zustandsraummodell kann <em>direkt</em> auf einen als <strong>Regeleungsnormalform</strong> bekannten Signalflussplan abgebildet werden! Die Regelungsnormalform stützt sich dabei auf der <em>Transformierbarkeit</em> von linearen Differentialgleichungssystemen N-ter Ordnung in N lineare Differentialgleichungen 1. Ordnung. Nachfolgende Abbildung zeigt ein Blockdiagramm der Regelungsnormalform für alle LTI DGL-Systeme der Ordnung 3. </p>
-<p><center><img alt="Regelungsnormalform" src="/media/data/whz/projectGalvoDocu/pics/regelNormalform.svg" title="Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung" /></center></p>
+<p><center><img alt="Regelungsnormalform" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/regelNormalform.svg" title="Signalflussplan der Regelungsnormalform für Systeme 3. Ordnung" /></center></p>
 <h1 id="modellbildung_1"><a name="user-content-modellbildung_1" href="#modellbildung_1" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Modellbildung</h1>
 <blockquote>
 <p>&ldquo;It&rsquo;s a bunch of shapes connected by lines.&rdquo; Dilbert <br />
@@ -2151,7 +2147,7 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 </ul>
 </li>
 </ul>
-<p><img class="noborder" src="/media/data/whz/projectGalvoDocu/pics/abstractSystemC.svg" title="Abstraktes Modell des Regelkreises"/></p>
+<p><img class="noborder" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/abstractSystemC.svg" title="Abstraktes Modell des Regelkreises"/></p>
 <p><yelBg>&hellip;So what???</yelBg></p>
 <h2 id="generische-modelle"><a name="user-content-generische-modelle" href="#generische-modelle" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Generische Modelle</h2>
 <p>In der Informatik sind <em>generische Typen</em> Datentypen mit der Möglichkeit zur Angabe von Typparametern. Man spricht auch von <em>parametrischer Polymorphie</em>.<sup id="fnref:fnwikiGenericTypes"><a class="footnote-ref" href="#fn:fnwikiGenericTypes" rel="footnote">19</a></sup> Überträgt man den Begriff <em>generisch</em> auf den hier genutzten Modelltyp, so muss ein Modell formuliert werden, das in der Lage ist, eine ganze Menge von vergleichbaren Strecken (Drehmoment-Motoren) zu beschreiben. Übergibt man dem generischen Typ <em>&ldquo;Drehmoment-Motoren&rdquo;</em> respektive <em>&ldquo;Galvanometer&rdquo;</em> die für den zu erzeugenden Modelltyp spezifischen Parameter wie Drehmomentkonstante, Wicklungsinduktivität oder das Massenträgheitsmoment der Rotorwelle, soll eine entsprechend typisierte Modellvariante erzeugt werden. Dieses Modell wird als <em>Subsystem</em> <strong><em>Drehmoment-Motoren</em></strong> auf einer höheren Abstraktionsebene in ein weiteres Modell eingebunden und anschließend simuliert. </p>
@@ -2236,7 +2232,7 @@ Zwar impliziert ein Projekt immer einen neuartigen und einmaligen Charakter, oft
 <p></center></p>
 <p>Das Aufstellen von <em>Bilanzgleichungen</em> ist ein essenzieller Bestandteil bei der Modellbildung von technischen System und Prozessen. Zum Beispiel gilt für jedes energetisch abgeschlossene System (Bsp.: idealer Feder-Masse-Schwingkreis, idealer LC-Schwingkreis) stets, dass die Momentanenergie zu jedem Zeitpunkt $t \ge 0$ identisch mit der Energie zum Zeitpunkt $t=0$ übereinstimmt. </p>
 <h3 id="energiebilanz-in-allgemeiner-form"><a name="user-content-energiebilanz-in-allgemeiner-form" href="#energiebilanz-in-allgemeiner-form" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Energiebilanz in allgemeiner Form</h3>
-<p><img src="/media/data/whz/projectGalvoDocu/pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, &hellip;) kein Energiestrom, so unterliegt das Gebilde dem <em>Energieerhaltungssatz</em> wobei innerhalb der Grenenzen $N$ <em>verschiedene Energiearten</em> $E_i$ vorhanden sein <em>können</em> (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische <em>Umformung der mechanischen Größen</em> $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.</p>
+<p><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/energiebilanzConst.svg" title="Energiebilanz eines beliebigen, abgeschlossenen Gebildes" align="left" height="154px" style="float:left; margin: .4em .8em 0em 0em;"/> Verläuft über die Grenzen eines geschlossenen Gebildes (System, Prozess, &hellip;) kein Energiestrom, so unterliegt das Gebilde dem <em>Energieerhaltungssatz</em> wobei innerhalb der Grenenzen $N$ <em>verschiedene Energiearten</em> $E_i$ vorhanden sein <em>können</em> (siehe Abbildung links). Es ist z.B. unproblematisch, Analogie-Beziehungen zwischen translatorischer und rotatorischer Bewegung anhand des Energieerhaltungssatzes nachzuweisen. Die theoretische <em>Umformung der mechanischen Größen</em> $m, \vec{v}, \vec{J}$ und $\vec{\omega}$ entspricht hier dem Gebilde im Sinne eines energetisch abgeschlossenen Prozesses.</p>
 <p>$$ \frac{1}{2} \cdot m \cdot v^2 = E_{kin}<br />
 \;\;\;\widehat{=}\;\;\;<br />
 E_{rot} = \frac{1}{2} \cdot J_x \cdot \omega^2 $$</p>
@@ -2252,7 +2248,7 @@ E_{rot} = \frac{1}{2} \cdot J_x \cdot \omega^2 $$</p>
 <p>Wie bereits in Abschnitt <a href="#industriell-gefertigte-motoren">Industriell gefertigte Motoren</a> erwähnt, wurden Galvoscanner als elektromechanische Signalwandler eingesetzt. Um die physikalischen Zusammenhänge eines Drehmoment-Motors nach dem Galvanometer-Prinzip in ein Computermodell überführen zu können, gibt es mehrere Ansätze. Die Möglichkeit, ein Multiphysik-Modell zu erstellen und einzusetzen, wurde im Abschnitt <a href="#vorarbeit">Vorarbeit</a> angesprochen. Ein anderer, hier genutzter Ansatz, wird im Abschnitt <a href="#generisches-modell">generisches Modell</a> beschrieben. </p>
 <h3 id="klassifizierung"><a name="user-content-klassifizierung" href="#klassifizierung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Klassifizierung</h3>
 <p>Galvanometer-Motoren lassen sich nicht so ohne weiteres in eine Unterklasse der Elektromotoren einordnen. Als Messinstrument in Drehspulmesswerken erzeugt das Galvanometer eine mechanische Drehbewegung proportional zum gemessenen Strom. DC-Motoren hingegen sind elektromechanische Baugruppen die eine elektrische Gleichleistung in eine mechanische Leistung umsetzen können. Im dynamischen Betrieb verhält sich ein Spiegelgalvanometer ähnlich einem DC-Motor. Das Momentanmoment, multipliziert mit der Drehzahl ergibt eine mechanische Leistung in $\si{N.m/s}$. Im Galvanometer Betrieb (Messinstrument) gleicht der Galvomotor einem elektrischen Drehmagneten welcher ein mechanisches Drehmoment erzeugt. </p>
-<p>Bei der Modellierung von DC-Motoren wird der <em>Zusammenhang zwischen Motorstrom und Drehmoment</em> oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die <em>Drehmomentkonstante</em>, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann (<a href="http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&amp;section=SystemModeling" title="http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&amp;section=SystemModeling">siehe Abbildung</a>).<img src="/media/data/whz/projectGalvoDocu/pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten <em><strong>&ldquo;Moving-magnet&rdquo;</strong> Galvanometer auf einem permanent erregten Magnetfeld basiert, ist die Annahme </em>B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle <a href="#refTableMechanic"><em>Mechanical Specifications</em></a> kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt <a href="#industriell-gefertigte-motoren">Industriell gefertigte Motoren</a> erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle <a href="#refTableMechanic" title="Goto Table Mechanical Specifications"><em>Mechanical Specifications</em></a> ist die entsprechende Drehmomentkonstante unter <em>Torque Constant</em> angegeben.</p>
+<p>Bei der Modellierung von DC-Motoren wird der <em>Zusammenhang zwischen Motorstrom und Drehmoment</em> oft soweit linearisiert, dass zur Beschreibung ein konstanter Faktor, die <em>Drehmomentkonstante</em>, ausreichend ist. Zulässig wird diese Annäherung, wenn man die magnetische Flussdichte des Erreger-Magnetfeldes als konstant betrachten kann (<a href="http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&amp;section=SystemModeling" title="http://ctms.engin.umich.edu/CTMS/index.php?example=MotorPosition&amp;section=SystemModeling">siehe Abbildung</a>).<img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/motorBconst.png" title="DC-Motor mit konstantem Erregerfeld" align="top" height="250px" style="float:right; margin: 1em 0em 0em 1em;"/> Da das elektromechanische Wirkprinzip der hier verwendeten <em><strong>&ldquo;Moving-magnet&rdquo;</strong> Galvanometer auf einem permanent erregten Magnetfeld basiert, ist die Annahme </em>B=const_ gerechtfertigt. Wenn die Intensität des Erregerfeldes für beide Betriebsarten (Motor, Drehmagnet) gleich und als konstant angenommen wird, entsteht durch die variable Position des Rotormagnetfelds gegenüber dem des Statorfeldes ein Fehler. Tabelle <a href="#refTableMechanic"><em>Mechanical Specifications</em></a> kann eine maximale Auslenkung der Rotorwelle von $\pm 20\si{°}$ entnommen werden. Das Momentanmoment ändert sich in diesem Bereich entsprechend dem Kosinus des Rotorwinkels was im schlimmsten Fall zu einem Fehlerfaktor von $cos(20° \pi/180°) \approx 0.94$ führt. Obwohl es sich bei Galvanometer-Motoren also nicht um DC-Motoren im klassischen Sinn handelt, kann eine Drehmomentkonstante zur approximation angegeben werden. Wie in Abschnitt <a href="#industriell-gefertigte-motoren">Industriell gefertigte Motoren</a> erwähnt, muss das Modell anhand von Herstellerspezifikationen konkretisiert werden können. In Tabelle <a href="#refTableMechanic" title="Goto Table Mechanical Specifications"><em>Mechanical Specifications</em></a> ist die entsprechende Drehmomentkonstante unter <em>Torque Constant</em> angegeben.</p>
 <p>Der Vollständigkeit halber sollen an dieser Stelle einige Parallelen zur Unterklasse der <em>elektronisch kommutierten</em> Elektromotoren gezogen werden. Das Rotormaterial der unter dem Begriff <em>&ldquo;Brushless <a style="color: #aaa ">DC-</a>Motor&rdquo;</em> bekannten Antriebe besteht i.d.R. ebenfalls aus permanent magnetisierten Werkstoffen. Durch eine elektronische Ansteuerung wird über mehrere Statorwicklungen ein Drehfeld erzeugt.</p>
 <h3 id="herstellerspezifikation"><a name="user-content-herstellerspezifikation" href="#herstellerspezifikation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Herstellerspezifikation</h3>
 <p>Bei den hier eingesetzten, industriell gefertigten Motoren der Firma <a href="www.cambridgetechnology.com" title="www.cambridgetechnology.com"><em>Cambridge Technology</em></a> handelt es sich um optische Scannereinheiten (Serie 6860) vom Typ <em>&ldquo;Moving Magnet&rdquo;</em> mit integriertem Positionssensor, welcher auf Basis variabler Kapazitäten arbeitet. Die vom Hersteller liebevoll unter <a href="https://www.google.de/#q=cambridge%20technology%206860" title="Veteran Galvo Motors"><strong>Veteran Galvo Motors</strong></a> kategorisierten Motoren gehören zwar nicht mehr zu den aktuellen Produkten von <em>Cambridge Technology</em>, sind jedoch hervorragend geeignet für das hier dokumentierte Projektvorhaben. </p>
@@ -2424,7 +2420,7 @@ Bei verschwindenden Anfangsbedingungen $i_{L0}=0$ gilt für die Übertragungsfun
 $$ \begin{equation}<br />
 G_{EL^*}(s) = \frac{I_L(s)}{U_M(s)} = \frac{1}{L} \cdot \frac{1}{s+\frac{R_L}{L}} \label{eqGsAusg} \end{equation} $$<br />
 Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des Nennerpolynoms von \eqref{eqGsAusg} bestimmt werden und beträgt $\; {\large\tau} = \frac{L}{R_L} = \frac{160\,\mu H}{1.5\,\Omega}\approx 107\,\mu s$. </p>
-<p>Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entstehen da Systeme mit Nullstellenüberschuss keine Bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus Kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\ \phantom{.} \\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center><img alt="realInductor" src="/media/data/whz/projectGalvoDocu/pics/simulExport/realInductor.svg" title="Motorinduktivität" /></center> </p>
+<p>Mit dem Ziel, das System als Blockschaltbild darzustellen, wird die Übertragungsfunktion nach der Regel für PT1-Glieder umgeformt. Es gilt darauf zu achten dass bei der Umformung keine freien $s$-Faktoren entstehen da Systeme mit Nullstellenüberschuss keine Bandbegrenzung besitzen. Ein ideales Differenzierglied mit $G(s)=s$ ist aus Kausalitätsgründen technisch nicht realisierbar. \begin{equation} \mathrm{Übertragungsfunktion = \frac{Vorwärtspfad}{1 + Vorwärtspfad \times Rückwärtspfad}} \label{eqForwardPath} \\ \phantom{.} \\ G_{EL}(s) = \frac{I_L(s)}{U_M(s)} \cdot \frac{1/s}{1/s} = \frac{1}{s} \frac{1}{L} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \end{equation} <center><img alt="realInductor" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/simulExport/realInductor.svg" title="Motorinduktivität" /></center> </p>
 <h4 id="back-emf"><a name="user-content-back-emf" href="#back-emf" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Back-EMF</h4>
 <p>Die Änderung der magnetischen Flussdichte innerhalb einer Leiterschleife erzeugt nach Faraday und Maxwell ein elektrisches Feld zwischen den Leiteranschlüssen. Die <em>elektromagnetische Induktion</em> führt bei Elektromotoren zu einer elektrischen Spannung, die der Quellenspannung des Motorantriebs entgegen wirkt. Aus diesem Grund wird diese elektromotorische Kraft (EMK, engl. &ldquo;Electromotive Force&rdquo;, EMF) auch als Back-EMF oder Counter-EMF bezeichnet. Die Intensität der Back-EMF steigt proportional mit der Geschwindigkeit der bewegten Leiterschleife bzw. des bewegten Magnetfeldes, was im Modell durch die Produktbildung von Winkelgeschwindigkeit und einem konstanten Faktor $K_{EMF}$ berücksichtigt werden muss. Wenn die mechanischen Reibungsverluste eines elektrischen Antriebs zu 0 gesetzt werden, sind Drehmomentkonstante $K_{EL}$ und $K_{EMF}$ identisch</p>
 <p>In den Herstellerspezifikationen (<a href="#refTableElectric">Electrical Specifications</a>) ist der EMF-Faktor mit $0.17\si{mV/degree/sec}\;\;±10\%$ angegeben. In si-Einheiten umgerechnet ergibt sich daraus </p>
@@ -2437,7 +2433,7 @@ Die Zeitkonstante des ersten Energiespeichers im System kann durch Umformung des
 \begin{equation} u_{EMF}(t) = K_{EMF} \cdot \omega(t) \label{eqVemf} \end{equation} <br />
 Die Spannung $u_{EMF}(t)$ wird mit negativem Vorzeichen in den Signalpfad vor $G_{EL^*}(s)$ Rückgekoppelt um ihren Einfluss auf die Dynamik der Regelstrecke korregt zu modellieren.<br />
 \begin{equation} <br />
-G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center><img alt="mechSubA" src="/media/data/whz/projectGalvoDocu/pics/simulExport/mechSubA.svg" title="Mechanisches Subsystem" /></center></p>
+G_{EL}(s) = \frac{I_L(s)}{U_M(s)-U_{EMF}(s)} = \frac{1}{L} \frac{1}{s} \cdot \frac{1}{1 + \frac{1}{s} \frac{R_L}{L}} \label{eqGel} \end{equation} <center><img alt="mechSubA" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/simulExport/mechSubA.svg" title="Mechanisches Subsystem" /></center></p>
 <h4 id="elektrisch-generiertes-drehmoment"><a name="user-content-elektrisch-generiertes-drehmoment" href="#elektrisch-generiertes-drehmoment" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Elektrisch generiertes Drehmoment</h4>
 <p>Das elektrische Drehmoment $M_{EL}$ zum Zeitpunkt $t=t0$ entspricht dem Produkt aus Spulenstrom $i_L(t0)$ und Drehmomentkonstante $K_{EL}$, somit gilt $M_{EL}(t) = i_L(t) \cdot K_{EL}$ was einfach durch einen weiteren <em>Gain-Block</em> im Blockschaltbild berücksichtigt wird. </p>
 <h4 id="positionssensor"><a name="user-content-positionssensor" href="#positionssensor" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Positionssensor</h4>
@@ -2530,12 +2526,12 @@ Um an die Übertragungsfunktion des elektrischen Teilsystems $G_{EL}(s)$ aus \eq
 &amp;= \color{red}{\frac{1}{s} \frac{1}{J_R}} \cdot \frac{1}{1 + \color{red}{\frac{1}{s} \frac{\color{blue}{K_{FR}}}{J_R}}} \nonumber<br />
 \end{align}<br />
 Diese Übertragungsfunktion lässt sich nach einer Umformung entsprechend Regel \eqref{eqForwardPath} wieder direkt in einem Blockdiagramm darstellen:<br />
-<center><img alt="mechSubInklTb" src="/media/data/whz/projectGalvoDocu/pics/simulExport/mechSubInklTb.svg" title="Mechanisches Subsystem inkl. Torsionsmoment" /></center></p>
+<center><img alt="mechSubInklTb" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/simulExport/mechSubInklTb.svg" title="Mechanisches Subsystem inkl. Torsionsmoment" /></center></p>
 <h4 id="verbindung-der-teilsysteme"><a name="user-content-verbindung-der-teilsysteme" href="#verbindung-der-teilsysteme" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Verbindung der Teilsysteme</h4>
 <p>Nachfolgende Abbildung zeigt das zusammengesetzte Modell. Der in Abschnitt <a href="#positionssensor">Positionssensor</a> erwähnte Proportionalitätsfaktor $K_{PD}$ muss erst in der Rückführung von $\varphi(t)$ auf den ADC des diskreten Reglers beachtet werden.<br />
-<center><img alt="systemSubCmpl" src="/media/data/whz/projectGalvoDocu/pics/simulExport/systemSubCmpl.svg" title="Zusammengesetztes Teilsysteme" /></center><br />
+<center><img alt="systemSubCmpl" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/simulExport/systemSubCmpl.svg" title="Zusammengesetztes Teilsysteme" /></center><br />
 Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ sowie $V_{EMF}$, müssen entsprechend den linearisierten Beziehungen aus \eqref{eqVemf} bzw. \eqref{eqLinearTorsin} erzeugt werden. Das resultierende, <strong>lineare</strong> Modell ist in folgender Abbildung gegeben:<br />
-<center><img alt="systemLinCmpl" src="/media/data/whz/projectGalvoDocu/pics/simulExport/systemLinCmpl.svg" title="Lineares Streckenmodell" /></center></p>
+<center><img alt="systemLinCmpl" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/simulExport/systemLinCmpl.svg" title="Lineares Streckenmodell" /></center></p>
 <p>$$ G(s)=\frac{K_{EL}} { \color{green}{J_R~L}\cdot s^3 + (\color{blue}{ K_{FR}~L+J_R~R_L+J_R~R_{sh} }) \cdot s^2 + (\color{red}{K_{EMF}~K_{EL}+K_{FR}~R_L+K_{FR}~R_{sh}}) \cdot s } $$</p>
 <h3 id="gesamtmodell-regelstrecke"><a name="user-content-gesamtmodell-regelstrecke" href="#gesamtmodell-regelstrecke" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gesamtmodell Regelstrecke</h3>
 <p>Das Gesamtmodell der Galvomotor entspricht im Wesentlichen dem aus Abschnitt <a href="#verbindung-der-teilsysteme">Verbindung der Teilsysteme</a>. Die Winkelposition wird im Bereich $|\,\varphi\,| &gt; 1/2\cdot\Delta\varphi_{Max}$ nichtlinear da der Aussteuerbereich des Rotors durch mechanische Endanschläge blockiert wird. Weiterhin wird auch der vom Hersteller angegebene Wicklungsspitzenstrom als Grenzwert für den linearen Bereich des Ankerstromkreises interpretiert sodass die Übertragungsfunktion des elektrischen Teilsystems für $|\,i_L\,| &gt; 25\,A$ ungültig wird. Beide Bereiche werden im Simulink Modell durch entsprechend parametrierte Sättigungsblöcke modelliert.   </p>
@@ -2573,7 +2569,7 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 <p><yelBg>(&hellip;)</yelBg></p>
 <h1 id="architekturbeschreibung"><a name="user-content-architekturbeschreibung" href="#architekturbeschreibung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturbeschreibung</h1>
 <h2 id="gesamtsystem-modell"><a name="user-content-gesamtsystem-modell" href="#gesamtsystem-modell" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Gesamtsystem-Modell</h2>
-<p><figure> <img src="/media/data/whz/projectGalvoDocu/pics/lti_object_generator.svg" title="Automatisierte MATLAB/Simulink LTI-Objekt-Generierung mittels Frequenzgang-Näherungsverfahren" class="noborder"><figcaption>Automatisierte MATLAB/Simulink LTI-Objekt-Generierung mittels Frequenzgang-Näherungsverfahren</figcaption> </figure></p>
+<p><figure> <img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/lti_object_generator.svg" title="Automatisierte MATLAB/Simulink LTI-Objekt-Generierung mittels Frequenzgang-Näherungsverfahren" class="noborder"><figcaption>Automatisierte MATLAB/Simulink LTI-Objekt-Generierung mittels Frequenzgang-Näherungsverfahren</figcaption> </figure></p>
 <h2 id="softwarearchitektur"><a name="user-content-softwarearchitektur" href="#softwarearchitektur" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Softwarearchitektur</h2>
 <blockquote>
 <p>Architektur ist die Kombination von utilitas, firmitas und venustas.<sup id="fnref:fnSwArchitekturIst"><a class="footnote-ref" href="#fn:fnSwArchitekturIst" rel="footnote">34</a></sup></p>
@@ -2648,18 +2644,18 @@ Die in den Teilsystem-Blockschaltbildern noch offenen Signaleingänge $M_{TB}$ s
 </table>
 <h3 id="diagramme-als-sicht"><a name="user-content-diagramme-als-sicht" href="#diagramme-als-sicht" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Diagramme als Sicht</h3>
 <p>Ein Modell ist oftmals so kompliziert, dass es nur durch die Unterteilung (Dekomposition) in verschiedene <em>Sichten</em> handhabbar wird. Die UML nutzt insgesamt 14 unterschiedliche Diagramm-Arten um verschiedene Aspekte einer Architektur grafisch darzustellen. Eine <em>Sicht</em> repräsentiert einen Aspekt des Modells und wird visuell durch i. A. mehrere Diagramm-Arten dargestellt. Nachfolgend sind alle 14 in der UML2 spezifizierten Diagramm-Typen in einer Hierarchie dargestellt.  </p>
-<p><a href="/media/data/whz/projectGalvoDocu/pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="/media/data/whz/projectGalvoDocu/pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a></p>
+<p><a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/UML-Diagrammhierarchie_Mdb.svg"><figure><img class="noborder" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/UML-Diagrammhierarchie_Mdb.png" title="UML2 Diagrammhierarchie"/><figcaption>UML2 Diagrammhierarchie</figcaption></figure></a></p>
 <h2 id="architekturkomponenten"><a name="user-content-architekturkomponenten" href="#architekturkomponenten" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Architekturkomponenten</h2>
 <ul>
 <li>reverse Engeneering</li>
 </ul>
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_0.png" class="" title=""  style=""/></center></p>
+<p><center><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/diagrams/merged-diag_0.png" class="" title=""  style=""/></center></p>
 <hr />
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_1.png" class="" title=""  style=""/></center></p>
+<p><center><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/diagrams/merged-diag_1.png" class="" title=""  style=""/></center></p>
 <hr />
-<p><center><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_2.png" class="" title=""  style=""/></center></p>
+<p><center><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/diagrams/merged-diag_2.png" class="" title=""  style=""/></center></p>
 <hr />
-<p><img src="/media/data/whz/projectGalvoDocu/pics/diagrams/merged-diag_3.png" class="" title=""  style=""/><br />
+<p><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/diagrams/merged-diag_3.png" class="" title=""  style=""/><br />
 Komponentendigramm</p>
 <ul>
 <li>zeigt eine bestimmte Sicht auf die Struktur des modellierten Systems</li>
@@ -2689,7 +2685,7 @@ Die Entwicklung eines Softwaresystems erfolgt üblicherweise top-down (nachdem e
 </blockquote>
 <h3 id="warum-cortex-m4"><a name="user-content-warum-cortex-m4" href="#warum-cortex-m4" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Warum Cortex-M4?</h3>
 <p>Eine umfangreiche Liste (aller) unter ARM® Holdings lizenzierten Mikroarchitekturen kann u.A. auf <a href="https://en.wikipedia.org/wiki/List_of_ARM_microarchitectures#Designed_by_ARM" title="Umfangreiche Liste von ARM-Mikroarchitekturen">wikipedia</a> eingesehen werden. Es folgt eine unvollständige grafische Aufbereitung um die grundlegende Unterteilung der ARM-Familien in die Makro-Bereiche <em>(Classic, Embedded, Application)</em> sowie die Klassifizierung der Cortex-Familie in die Architektur-Profile <em>(Microcontroller, Real-time, Application)</em><sup id="fnref:fnArmProfiles"><a class="footnote-ref" href="#fn:fnArmProfiles" rel="footnote">29</a></sup> aufzuzeigen: </p>
-<p><a href="/media/data/whz/projectGalvoDocu/pics/ArmRoadMap3.svg" target="_blank"><center><img alt="ssss" class="scale75 noborder" src="/media/data/whz/projectGalvoDocu/pics/ArmRoadMap3.png" title="ARM - Devices Roadmap" /></center></a></p>
+<p><a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/ArmRoadMap3.svg" target="_blank"><center><img alt="ssss" class="scale75 noborder" src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/ArmRoadMap3.png" title="ARM - Devices Roadmap" /></center></a></p>
 <p>Zahlreiche Entwicklungsboards und Plattformen für i.d.R. <em>Embedded Linux</em> Anwendungen, erfreuen sich teils großer Beliebtheit (z.B, RaspberryPi Serie). <br />
 <center></p>
 <table>
@@ -2912,9 +2908,8 @@ products -->
 <p>Neben den offensichtlichen und teils schon genannten Vorteilen quelloffener Softwareprojekte, soll hier nochmals der Eclipse Plugin-Adapter als wichtigstes Argument für die Wahl der Entwicklungsumgebung genannt werden.  </p>
 <h2 id="dokumentation"><a name="user-content-dokumentation" href="#dokumentation" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Dokumentation</h2>
 <p>Die Dokumentation zur Anwendungssoftware &ldquo;GalvoScanner v1.4&rdquo; wie auch für die im Projektverlauf entwickelten Bibliotheken <strong>MD_STM32F4_Libraries</strong> wurde mit dem de-facto Standard Dokumentations&shy;werkzeug <em>Doxygen</em> aufbereitet. Das quelloffene, 1997 von <em>Dimitri van Heesch</em> in die &ldquo;Public Domain&rdquo; entlassene Dokumentations&shy;werkzeug zählt m. E. zu den Parade&shy;beispielen im Bereich Open Source und Platt&shy;form&shy;unab&shy;hängigkeit.</p>
-<!-- [Link zur index.html der Doxy-Dokumentation](./../embeddedSoftware/20-STM32F4_PRJ_GALVO_v2/doxygen/html/index.html) -->
-
-<p><boxed><a href="doxygen/html/index.html">Link zur  Doxygen Dokumentation</a></boxed></p>
+<p><br />
+<boxed><a href="doxygen/html/index.html">Link zur  Doxygen Dokumentation</a></boxed></p>
 <h2 id="pc-schnittstellenprogramm-c-qt"><a name="user-content-pc-schnittstellenprogramm-c-qt" href="#pc-schnittstellenprogramm-c-qt" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!PC-Schnittstellenprogramm (<strong>C++ / Qt</strong>)</h2>
 <p><yelBg>(&hellip;)</yelBg></p>
 <h3 id="live-zustandsuberwachung"><a name="user-content-live-zustandsuberwachung" href="#live-zustandsuberwachung" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>!Live-Zustandsüberwachung</h3>
@@ -2958,15 +2953,15 @@ products -->
   <tbody> <figure> <figcaption><center><b><em>GNU Kopf</b> als skalierbare Vektorgrafik</em></center></figcaption>
     <tr>
       <td>
-        <a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"> <figure style="width: 300px"> <img src="/media/data/whz/projectGalvoDocu/pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder"/> <figcaption>Grafik im SVG Format (www.gnu.org)</figcaption> </figure> </a>
+        <a href="https://www.gnu.org/graphics/nu-gnu.svg" target="_blank"> <figure style="width: 300px"> <img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_orig.svg" title="&quot;GNU-Kopf&quot; im SVG Format (www.gnu.org)" class="noborder"/> <figcaption>Grafik im SVG Format (www.gnu.org)</figcaption> </figure> </a>
       </td>
       <td>
-        <a href="/media/data/whz/projectGalvoDocu/pics/gnu_bezier.svg" target="_blank"> <figure style="width: 300px"> <img src="/media/data/whz/projectGalvoDocu/pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /> <figcaption>Flächen und Gradienten entfernt</figcaption> </figure> </a>
+        <a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_bezier.svg" target="_blank"> <figure style="width: 300px"> <img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_bezier.svg" title="&quot;GNU-Kopf&quot;&#13;Flächen und Gradienten entfernt&#13;Outline besteht aus Bezier-Kurven" class="noborder" /> <figcaption>Flächen und Gradienten entfernt</figcaption> </figure> </a>
       </td>
     </tr>
     <tr>
       <td colspan="2"> <center>
-        <a href="/media/data/whz/projectGalvoDocu/pics/gnu_flatten_lowres.svg" target="_blank"><figure style="width: 300px"><img src="/media/data/whz/projectGalvoDocu/pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert</figcaption></a>
+        <a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_flatten_lowres.svg" target="_blank"><figure style="width: 300px"><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_flatten_lowres.svg" title="&quot;GNU-Kopf&quot;&#13;Bezier-Kurven auf lineare Splines reduziert&#13;Inkscape: Extensions => Modify Path => Flatten Bezier..." class="noborder" /><figcaption>Bezier-Kurven auf lineare Splines reduziert</figcaption></a>
       </center> </td>
     </tr>
   </tbody> </figure>
@@ -2977,14 +2972,14 @@ products -->
     <td colspan="2" style="width: 40%">
       Durch den in Inkscape durch&shy;ge&shy;führten Schritt <em>Bezier-Kurven auf lineare Splines reduzieren</em>, werden alle selektierten Bezier-Kurven durch (mehrere) Geraden interpoliert. Waren z. B. 20 Bezier-Kurven definiert, bleiben im XML-&shy;Baum 20 Pfade mit i. A. unter&shy;schied&shy;lich vielen Pfad&shy;seg&shy;men&shy;ten erhalten.
     </td>
-    <td style="width: 20%""> <center><img src="/media/data/whz/projectGalvoDocu/pics/arrowstd_down.svg"/></center> </td>
+    <td style="width: 20%""> <center><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/arrowstd_down.svg"/></center> </td>
     <td colspan="2" style="width: 40%"">
-      Das python skript svgCoord.py ordnet alle XML-Tags <code>&#60;path ...&#62;</code> entsprechend der Information, ob die Laser&shy;quelle an oder aus sein soll. Pfade mit Farb&shy;attribut <em>Rot</em> werden später mit aktiver Laser&shy;quelle abge&shy;fahren, das Farb&shy;att&shy;ribut <em>Gelb</em> bedeutet ent&shy;sprechend "Laser&shy;quelle deaktivieren"
+      Das <a href="#xml-parser"><em>Python Skript: svgCoord.py</em></a> ordnet alle XML-Tags <code>&#60;path ...&#62;</code> entsprechend der Information, ob die Laser&shy;quelle an oder aus sein soll. Pfade mit Farb&shy;attribut <em>Rot</em> werden später mit aktiver Laser&shy;quelle abge&shy;fahren, das Farb&shy;att&shy;ribut <em>Gelb</em> bedeutet ent&shy;sprechend "Laser&shy;quelle deaktivieren"
     </td>
   </tr>
   <tr>
     <td style="width: 20%"> </td>
-    <td colspan="3" style="width: 60%"><center><a href="/media/data/whz/projectGalvoDocu/pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="/media/data/whz/projectGalvoDocu/pics/gnu_flatten_lowres_mod.svg" /><figcaption>GNU Outline, visualisierte Knotenpunkte</figcaption></figure></a></center></td>
+    <td colspan="3" style="width: 60%"><center><a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_flatten_lowres_mod.svg" target="_blank"><figure><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/gnu_flatten_lowres_mod.svg" /><figcaption>GNU Outline, visualisierte Knotenpunkte</figcaption></figure></a></center></td>
     <td style="width: 20%"></td>    
   </tr>
 </table>
@@ -3316,542 +3311,9 @@ products -->
 </pre></div>
 
 
-<p><center><figure><figcaption><em>In <b>MATLAB</b> visualisierte Matritzen</em></figcaption><a href="/media/data/whz/projectGalvoDocu/pics/matPlots/gnuNormw.svg" target="_blank"><figure class="box"><img src="/media/data/whz/projectGalvoDocu/pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a><br />
-<a href="/media/data/whz/projectGalvoDocu/pics/matPlots/gnuScalw.svg" target="_blank"><figure class="box"><img src="/media/data/whz/projectGalvoDocu/pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a><br />
-<a href="/media/data/whz/projectGalvoDocu/pics/matPlots/gnuRotw.svg" target="_blank"><figure class="box"><img src="/media/data/whz/projectGalvoDocu/pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um $\,\pi/4\,$ rad gedrehte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a></figure></center></p>
-<h2 id="python-skript"><a name="user-content-python-skript" href="#python-skript" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Python Skript</h2>
-<p><details markdown=1><br />
-<summary><h4 class="sp"><span class="codehd">svgCoord.py</span></h4></summary><br />
-<div class="codehilite"><pre><span class="sb">``</span><span class="err">`</span><span class="n">c</span>
-<span class="c1">#!/usr/bin/python</span>
-<span class="c1">########################################</span>
-<span class="c1"># File: svgCoord.py</span>
-<span class="c1">########################################</span>
-<span class="c1">#</span>
-<span class="c1"># Author:   Manuel Del Basso (mainster)</span>
-<span class="c1"># Email:    manuel.delbasso&lt;ta&gt;gmail.com</span>
-<span class="c1"># Date: 11/2016</span>
-<span class="c1">#</span>
-<span class="c1"># This file is a part of project &quot;XY-GalvoScanner&quot; and is used to extract</span>
-<span class="c1"># node coordinates from vector graphics xml description.</span>
-<span class="c1">#</span>
-<span class="c1"># Output formats:</span>
-<span class="c1">#       (x0, y0, beam0),    # Node 0 X- Y coordinates, beam interrupter state</span>
-<span class="c1">#       (x1, y1, beam1),    # Node 1 X- Y coordinates, beam interrupter state</span>
-<span class="c1">#       ....</span>
-<span class="c1">#</span>
-<span class="c1"># PlaceNodeMarker:</span>
-<span class="c1"># ----------------</span>
-<span class="c1"># This script also provides simple node manipulation functionality.</span>
-<span class="c1"># To visualize the presents of all nodes on multiple paths, a node marker</span>
-<span class="c1"># shape (red dot or something) will be placed to coordinates of all nodes.</span>
-<span class="c1">#</span>
-<span class="c1">########################################</span>
-<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">import</span> <span class="nn">re</span>
-<span class="kn">import</span> <span class="nn">getopt</span>
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">svg.path</span> <span class="kn">import</span> <span class="n">parse_path</span>
-<span class="kn">from</span> <span class="nn">xml.dom</span> <span class="kn">import</span> <span class="n">minidom</span>
-<span class="kn">from</span> <span class="nn">lxml</span> <span class="kn">import</span> <span class="n">etree</span>
-<span class="kn">from</span> <span class="nn">mdLibs</span> <span class="kn">import</span> <span class="n">mdosd</span> <span class="k">as</span> <span class="n">osd</span>
-<span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">abstractmethod</span>
-<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
-
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;/home/mainster/CODES_local/pythons/swampy-2.1.7/swampy/&#39;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s">&#39;/home/mainster/CODES_local/pythons/swampy-2.1.5/&#39;</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">Lumpy</span> <span class="kn">import</span> <span class="n">Lumpy</span>
-<span class="n">lumpy</span> <span class="o">=</span> <span class="n">Lumpy</span><span class="p">()</span>
-<span class="n">lumpy</span><span class="o">.</span><span class="n">make_reference</span><span class="p">()</span>
-
-<span class="c1"># from shutil import copyfile</span>
-<span class="c1"># from collections import namedtuple</span>
-<span class="c1"># from numpy.lib.recfunctions import append_fields</span>
-<span class="c1"># from subprocess import call</span>
-
-
-<span class="c1"># Aliases</span>
-<span class="n">dim</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">shape</span>
-
-<span class="c1"># ---------------------------------------------------------------</span>
-<span class="c1"># Template string of circle node marker shape</span>
-<span class="c1">#</span>
-<span class="n">circleTempStr</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;&lt;circle&#39;</span><span class="p">,</span>
-<span class="s">&#39;</span><span class="se">\t</span><span class="s">style=&quot;opacity:&lt;OPACITY&gt;;fill:&lt;FILL_COLOR&gt;;fill-opacity:1;&#39;</span>
-<span class="s">&#39;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:&#39;</span>
-<span class="s">&#39;round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dasho&#39;</span>
-<span class="s">&#39;ffset:0;stroke-opacity:1&quot;&#39;</span><span class="p">,</span>
-<span class="s">&#39;</span><span class="se">\t</span><span class="s">id=&quot;nodeMarker_&lt;UID&gt;&quot;&#39;</span><span class="p">,</span>
-<span class="s">&#39;</span><span class="se">\t</span><span class="s">cx=&quot;&lt;CX&gt;&quot;&#39;</span><span class="p">,</span>
-<span class="s">&#39;</span><span class="se">\t</span><span class="s">cy=&quot;&lt;CY&gt;&quot;&#39;</span><span class="p">,</span>
-<span class="s">&#39;</span><span class="se">\t</span><span class="s">r=&quot;&lt;R&gt;&quot; /&gt;&#39;</span><span class="p">]</span>
-
-<span class="n">R</span> <span class="o">=</span> <span class="s">&#39;{http://www.w3.org/2000/svg}&#39;</span>
-<span class="n">MATLAB_PRJ</span> <span class="o">=</span> <span class="s">&#39;/home/mainster/CODES_local/matlab_workspace&#39;</span>
-
-<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">False</span>
-
-
-<span class="k">class</span> <span class="nc">dprint</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="n">opt</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="k">global</span> <span class="n">DEBUG</span>
-        <span class="k">if</span> <span class="n">DEBUG</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">__file__</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s">&#39; &#39;</span><span class="p">)</span>
-            <span class="k">if</span> <span class="n">opt</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">arg</span><span class="p">,</span> <span class="n">opt</span><span class="p">)</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">Paths</span><span class="p">:</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="p">,</span> <span class="n">offs</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)):</span>
-        <span class="sd">&#39;&#39;&#39; Provides a storage class for path object payloads. &#39;&#39;&#39;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="c1"># Check for empty path</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="p">)</span> <span class="ow">is</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">dprint</span><span class="p">(</span><span class="s">&quot;Empty path, id: </span><span class="si">%s</span><span class="s"> &quot;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">valid</span> <span class="o">=</span> <span class="bp">False</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
-                <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;(start|end)\=\((-?[0-9\.]+)([+-][0-9\.]+)j\)&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">),</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">((</span>
-                    <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">offs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">offs</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                    <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">offs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span> <span class="o">+</span> <span class="n">offs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-
-            <span class="c1"># Derive nodes from line objects</span>
-            <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">])),</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">]</span>
-
-    <span class="k">def</span> <span class="nf">getLines</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span>
-
-    <span class="k">def</span> <span class="nf">getNodes</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span>
-
-    <span class="k">def</span> <span class="nf">isValid</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">valid</span>
-
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Class for inkscape svg objects style attributes.</span>
-<span class="c1">#</span>
-<span class="k">class</span> <span class="nc">Style_t</span><span class="p">:</span>
-    <span class="c1"># -----------------------------------------------------------------------------</span>
-    <span class="c1"># @brief      Constructs the style attributes object.</span>
-    <span class="c1"># @param      self      Instance of style attributes object.</span>
-    <span class="c1"># @param      attrStr   Complete &lt;path ... style: attribute string.</span>
-    <span class="c1">#</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pathId</span><span class="p">,</span> <span class="n">attrStr</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">attrStr</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&quot;np.ndim(attrStr) &gt; 0&quot;</span><span class="p">)</span>
-            <span class="nb">exit</span><span class="p">()</span>
-
-        <span class="bp">self</span><span class="o">.</span><span class="n">pathId</span> <span class="o">=</span> <span class="n">pathId</span>
-        <span class="n">vps</span><span class="o">=</span><span class="p">[]</span>
-        <span class="c1"># Value-pair list comprehension</span>
-        <span class="p">[</span> <span class="n">vps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">vp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;:&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">vp</span> <span class="ow">in</span> <span class="n">attrStr</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">&#39;;&#39;</span><span class="p">)</span> <span class="p">]</span>
-        <span class="c1"># Instantiate style attributes dictionary</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">vps</span><span class="p">)</span>
-
-    <span class="c1"># -----------------------------------------------------------------------------</span>
-    <span class="c1"># @brief      Sets/changes attributes.</span>
-    <span class="c1"># @param      self   Instance of style attributes object.</span>
-    <span class="c1"># @param      vp     Value-pair string, e.g. &#39;stroke:#ff0000&#39;</span>
-    <span class="c1"># @param      fs     Custom field separator</span>
-    <span class="c1">#</span>
-    <span class="k">def</span> <span class="nf">setAttr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vp1</span><span class="p">,</span> <span class="n">vp2fs</span><span class="o">=</span><span class="s">&#39;:&#39;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">vp2fs</span> <span class="o">==</span> <span class="s">&#39;:&#39;</span><span class="p">:</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">vp1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">vp2fs</span><span class="p">))</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="p">[</span><span class="n">vp1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">vp2fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span> <span class="o">=</span> <span class="n">vp1</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">vp2fs</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="s">&quot;Not a valid value-pair&quot;</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="p">[</span><span class="n">vp1</span><span class="p">]</span> <span class="o">=</span> <span class="n">vp2fs</span><span class="p">;</span>
-
-
-    <span class="c1"># -----------------------------------------------------------------------------</span>
-    <span class="c1"># @brief      Gets the value for selected attribute.</span>
-    <span class="c1"># @param      self       Instance of style attributes object.</span>
-    <span class="c1"># @param      attrName   The attribute name</span>
-    <span class="c1"># @param      asVp       Set flag true for sinle string vp return is required</span>
-    <span class="c1"># @return     The attribute.</span>
-    <span class="c1">#</span>
-    <span class="k">def</span> <span class="nf">getAttr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">attrName</span><span class="p">,</span> <span class="n">asVp</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">asVp</span><span class="p">:</span>
-            <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">attrName</span> <span class="o">+</span><span class="s">&#39;:&#39;</span><span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="p">[</span><span class="n">vp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]])</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="p">[</span><span class="n">vp</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">fs</span><span class="p">)[</span><span class="mi">0</span><span class="p">]]</span>
-
-    <span class="k">def</span> <span class="nf">getAttrList</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="nf">getAttrStr</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">astr</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="p">[</span> <span class="n">astr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">:</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="n">p</span><span class="p">))</span> <span class="k">for</span> <span class="n">v</span><span class="p">,</span> <span class="n">p</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="o">.</span><span class="n">iteritems</span><span class="p">()</span> <span class="p">]</span>
-        <span class="k">return</span> <span class="s">&#39;;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">astr</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">dumpObj</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="o">.</span><span class="n">keys</span><span class="p">())):</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&quot;(</span><span class="si">%s</span><span class="s"> : </span><span class="si">%s</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="n">k</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">styAttrs</span><span class="o">.</span><span class="n">values</span><span class="p">()[</span><span class="n">k</span><span class="p">]))</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Class to provide an output generator (prettyPrint, write log, write header)</span>
-<span class="c1">#</span>
-<span class="k">class</span> <span class="nc">Output</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mPaths</span><span class="p">,</span> <span class="n">logfile</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">incfile</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">logfile</span> <span class="o">=</span> <span class="n">logfile</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">incfile</span> <span class="o">=</span> <span class="n">incfile</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">lines</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nlines</span> <span class="o">=</span> <span class="p">[]</span>
-
-        <span class="p">[(</span><span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">getLines</span><span class="p">()),</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">nlines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">getLines</span><span class="p">())))</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mPaths</span><span class="p">]</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">nlines</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nlines</span><span class="p">)</span>
-
-        <span class="c1"># Find max 2d vector element</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="p">[</span><span class="nb">max</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">]</span>
-        <span class="k">while</span> <span class="n">dim</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">max</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&#39;max: </span><span class="si">%i</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
-
-        <span class="c1"># decimal places (2) + dot separator (1) = 3</span>
-        <span class="n">formatstr</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%%%i</span><span class="s">.</span><span class="si">%i</span><span class="s">f&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">getPreceedSpace</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="p">)</span><span class="o">+</span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-
-        <span class="c1"># Format/round data buffer</span>
-        <span class="c1"># self.linesPretty = [[formatstr % node for node in line] for line in self.lines[0]]</span>
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">lines</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">pline</span> <span class="ow">in</span> <span class="n">path</span><span class="p">:</span>
-                <span class="n">line</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">formatstr</span> <span class="o">%</span> <span class="n">node</span><span class="p">)</span> <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">pline</span><span class="p">]</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-    <span class="c1"># Ceil to next decade</span>
-    <span class="k">def</span> <span class="nf">getPreceedSpace</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="c1"># print(&#39;len: %i  shape:&#39; % len(value), np.shape(value))</span>
-        <span class="n">exp</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
-        <span class="k">while</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">max</span><span class="o">/</span><span class="mi">10</span><span class="o">**</span><span class="n">exp</span><span class="p">)</span> <span class="o">!=</span> <span class="mf">1.0</span><span class="p">:</span>
-            <span class="n">exp</span> <span class="o">+=</span> <span class="mi">1</span>
-        <span class="k">return</span> <span class="n">exp</span>
-
-    <span class="nd">@abstractmethod</span>
-    <span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numberLines</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="c1"># self.numberLines = numberLines</span>
-        <span class="k">pass</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Pretty prints the node buffer.</span>
-<span class="c1">#</span>
-<span class="k">class</span> <span class="nc">PrettyPrint</span><span class="p">(</span><span class="n">Output</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">numberLines</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
-        <span class="k">if</span> <span class="n">numberLines</span><span class="p">:</span>
-            <span class="n">prefix</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%%%i</span><span class="s">i:&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">getPreceedSpace</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">))</span>
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">)):</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">prefix</span> <span class="o">%</span> <span class="p">(</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">[</span><span class="n">k</span><span class="p">])</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">:</span>
-                <span class="k">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Writes a log file to filesystem</span>
-<span class="c1">#</span>
-<span class="k">class</span> <span class="nc">CreateLog</span><span class="p">(</span><span class="n">Output</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logfile</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">:</span>
-                <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">line</span><span class="p">)</span> <span class="o">+</span> <span class="s">&#39;</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">)</span>
-
-            <span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">osd</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">logfile</span><span class="p">,</span> <span class="s">&#39;Logfile successfully written&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-        <span class="k">except</span><span class="p">:</span>
-            <span class="n">osd</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;Exception while writing logfile&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-
-<span class="k">class</span> <span class="nc">CreateInclude</span><span class="p">(</span><span class="n">Output</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">out</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">try</span><span class="p">:</span>
-            <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">incfile</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-
-            <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span>
-                <span class="sd">&quot;&quot;&quot;#include &lt;stdio.h&gt;</span>
-<span class="sd">#include &lt;stdint.h&gt;</span>
-
-<span class="sd">typedef float node_t[2];      /* A nodes X- and Y- values */</span>
-<span class="sd">typedef node_t lseg_t[2];     /* A line segment is defined by 2 nodes (x1,y1),(x2,y2) */</span>
-<span class="sd">typedef lseg_t svg_t[2];      /* An array of line segments */</span>
-
-
-<span class="sd">const lseg_t gnu[ ] = {</span>
-<span class="sd">&quot;&quot;&quot;</span><span class="p">)</span>
-
-            <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">)):</span>
-                <span class="n">line</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-                <span class="k">if</span> <span class="n">k</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linesPretty</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">{{ </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> }, { </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> }},</span><span class="se">\n</span><span class="s">&#39;</span>
-                        <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&#39;</span><span class="se">\t</span><span class="s">{{ </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> }, { </span><span class="si">%s</span><span class="s">, </span><span class="si">%s</span><span class="s"> }}</span><span class="se">\n</span><span class="s">};</span><span class="se">\n</span><span class="s">&#39;</span>
-                        <span class="o">%</span> <span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">2</span><span class="p">]),</span> <span class="nb">str</span><span class="p">(</span><span class="n">line</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
-
-            <span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-            <span class="n">osd</span><span class="o">.</span><span class="n">ok</span><span class="p">(</span><span class="s">&#39;</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="bp">self</span><span class="o">.</span><span class="n">incfile</span><span class="p">,</span> <span class="s">&#39;IncFile successfully written&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-        <span class="k">except</span> <span class="p">(</span><span class="ne">ValueError</span><span class="p">,</span> <span class="ne">TypeError</span><span class="p">)</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&#39;Exception while writing incfile:</span><span class="se">\n</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span>
-            <span class="n">osd</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;Exception while writing incfile:</span><span class="se">\n</span><span class="si">%s</span><span class="s">&#39;</span> <span class="o">%</span> <span class="n">e</span><span class="o">.</span><span class="n">message</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Returns xml tag of a template bed node marker shape.</span>
-<span class="c1"># @param      cx          The nodes x-coordinate.</span>
-<span class="c1"># @param      cy          The nodes y-coordinate.</span>
-<span class="c1"># @param      uid         An uniq node-marker-identifier, integer.</span>
-<span class="c1"># @param      r           Node marker radius.</span>
-<span class="c1"># @param      opacity     Node marker opacity.</span>
-<span class="c1"># @param      fillColor   Node marker fill color.</span>
-<span class="c1"># @return     Node marker xml tag.</span>
-<span class="c1">#</span>
-<span class="k">def</span> <span class="nf">nodeMarker</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">uid</span><span class="p">,</span> <span class="n">r</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=.</span><span class="mi">8</span><span class="p">,</span> <span class="n">fillColor</span><span class="o">=</span><span class="s">&#39;#ff0000&#39;</span><span class="p">):</span>
-    <span class="k">return</span> <span class="p">[</span> <span class="n">p</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;CX&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cx</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;CY&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">cy</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;UID&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">uid</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;R&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">r</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;OPACITY&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">opacity</span><span class="p">))</span>
-    <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&lt;FILL_COLOR&gt;&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">fillColor</span><span class="p">))</span>
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">circleTempStr</span> <span class="p">]</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Acts as parser core. Creates buffers containing XML tag payload.</span>
-<span class="c1"># @param      infile   The svg file whose nodes are to be marked.</span>
-<span class="c1"># @return     mPaths:   Holds all node coordinates of a defined svg path. offs:</span>
-<span class="c1">#             Returns transformation/translation coordinates if corresponding</span>
-<span class="c1">#             tags wherefound, else (0, 0)</span>
-<span class="c1">#</span>
-<span class="k">def</span> <span class="nf">doParse</span><span class="p">(</span><span class="n">infile</span><span class="p">):</span>
-    <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="s">&#39;r+&#39;</span><span class="p">)</span>
-    <span class="n">lbuff</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-    <span class="n">svg_dom</span> <span class="o">=</span> <span class="n">minidom</span><span class="o">.</span><span class="n">parseString</span><span class="p">(</span><span class="s">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lbuff</span><span class="p">))</span>
-
-    <span class="c1"># Request for the perhaps-attribute: &#39;offs&#39; or transform, if therei s a &lt;g&gt; tag present!</span>
-    <span class="n">offs</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">svg_dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s">&#39;g&#39;</span><span class="p">):</span>
-        <span class="k">if</span> <span class="nb">max</span><span class="p">([</span> <span class="n">g</span><span class="o">.</span><span class="n">hasAttribute</span><span class="p">(</span><span class="s">&quot;transform&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">svg_dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s">&#39;g&#39;</span><span class="p">)</span> <span class="p">]):</span>
-            <span class="n">rawTransform</span> <span class="o">=</span> <span class="p">[</span> <span class="n">g</span><span class="o">.</span><span class="n">hasAttribute</span><span class="p">(</span><span class="s">&quot;transform&quot;</span><span class="p">)</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">svg_dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s">&#39;g&#39;</span><span class="p">)</span> <span class="p">]</span>
-            <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s">&#39;translate\(([-+]?[0-9\.]+)\,([-+]?[0-9\.]+)\)&#39;</span><span class="p">,</span>
-                <span class="n">g</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s">&#39;transform&#39;</span><span class="p">),</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
-            <span class="n">offs</span> <span class="o">=</span> <span class="p">[</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;No xml-tag &lt;g&gt; found!&quot;</span><span class="p">)</span>
-
-    <span class="c1"># Get all path attributes and the paths identifier</span>
-    <span class="n">rawPathsIds</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s">&#39;d&#39;</span><span class="p">),</span>
-        <span class="n">path</span><span class="o">.</span><span class="n">getAttribute</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">svg_dom</span><span class="o">.</span><span class="n">getElementsByTagName</span><span class="p">(</span><span class="s">&#39;path&#39;</span><span class="p">)</span> <span class="p">]</span>
-    <span class="c1"># Create Path() class instance</span>
-    <span class="n">mPaths</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="p">[</span> <span class="n">mPaths</span><span class="o">.</span><span class="n">append</span><span class="p">(</span> <span class="n">Paths</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">parse_path</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">offs</span><span class="p">)</span> <span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">rawPathsIds</span> <span class="p">]</span>
-
-    <span class="n">invEl</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="c1"># Check for invalid path elements and remove them</span>
-    <span class="c1"># for k in range(len(mPaths)):</span>
-    <span class="c1">#   if not mPaths[k].isValid():</span>
-    <span class="c1">#       invEl.append(k)</span>
-
-    <span class="p">[</span> <span class="n">invEl</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">k</span><span class="p">)</span> <span class="k">if</span> <span class="ow">not</span> <span class="n">mPaths</span><span class="p">[</span><span class="n">k</span><span class="p">]</span><span class="o">.</span><span class="n">isValid</span><span class="p">()</span> <span class="k">else</span> <span class="s">&#39;&#39;</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mPaths</span><span class="p">))</span> <span class="p">]</span>
-    <span class="c1"># print(&quot;lbefore: %i  len(mPaths): %i&quot; % (lbefore, len(mPaths)))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;invEl: &quot;</span><span class="p">,</span> <span class="n">invEl</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">invEl</span><span class="p">:</span>
-        <span class="k">del</span> <span class="n">mPaths</span><span class="p">[</span><span class="n">k</span><span class="p">]</span>
-
-    <span class="k">return</span> <span class="p">(</span><span class="n">mPaths</span><span class="p">,</span> <span class="n">offs</span><span class="p">)</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Manipulate path attributes in xml source tree.</span>
-<span class="c1"># @param      infile    The svg input file.</span>
-<span class="c1"># @param      valPair   Value-pair which should be modified</span>
-<span class="c1"># @param      suffix    Optional output file suffix</span>
-<span class="c1"># @return     Outfile pathe/name.</span>
-<span class="c1">#</span>
-<span class="k">def</span> <span class="nf">styleManipulate</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">valPair</span><span class="o">=</span><span class="s">&#39;stroke-opacity:0.5&#39;</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
-    <span class="n">tree</span> <span class="o">=</span> <span class="n">etree</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>
-    <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
-    <span class="n">pStyles</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">()</span>
-    <span class="n">baseElems</span> <span class="o">=</span> <span class="p">[</span><span class="n">root</span><span class="p">]</span>
-
-    <span class="c1"># Check if &lt;g&gt; element encloses all other &lt;path&gt; elements!</span>
-    <span class="p">[</span> <span class="n">baseElems</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">g</span><span class="p">)</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="s">&#39;g&#39;</span><span class="p">)</span> <span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;be elements: &quot;</span><span class="p">,</span> <span class="p">[</span> <span class="n">g</span><span class="o">.</span><span class="n">tag</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">R</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">g</span> <span class="ow">in</span> <span class="n">baseElems</span> <span class="p">]</span> <span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">be</span> <span class="ow">in</span> <span class="n">baseElems</span><span class="p">:</span>
-        <span class="c1"># Create dict with pathID keys and style object as value</span>
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">be</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="s">&#39;path&#39;</span><span class="p">):</span>
-            <span class="c1"># Create a Style_t instance for each path tag in xml source tree.</span>
-            <span class="n">pStyles</span><span class="p">[</span> <span class="n">path</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">)</span> <span class="p">]</span> <span class="o">=</span> <span class="n">Style_t</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">),</span> <span class="n">path</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">))</span>
-            <span class="n">pStyles</span><span class="p">[</span> <span class="n">path</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">)</span> <span class="p">]</span><span class="o">.</span><span class="n">setAttr</span><span class="p">(</span> <span class="n">valPair</span> <span class="p">)</span>
-
-        <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">be</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">R</span> <span class="o">+</span> <span class="s">&#39;path&#39;</span><span class="p">):</span>
-            <span class="n">ID</span> <span class="o">=</span> <span class="n">path</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">)</span>
-            <span class="n">path</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s">&#39;style&#39;</span><span class="p">,</span> <span class="n">pStyles</span><span class="p">[</span><span class="n">ID</span><span class="p">]</span><span class="o">.</span><span class="n">getAttrStr</span><span class="p">())</span>
-
-    <span class="c1"># Write back the modified xml tree</span>
-    <span class="n">outfile</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">infile</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">suffix</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">infile</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
-
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">outfile</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fd</span><span class="p">:</span>
-        <span class="n">fd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">etree</span><span class="o">.</span><span class="n">tostring</span><span class="p">(</span><span class="n">tree</span><span class="p">,</span> <span class="n">pretty_print</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s">&#39;utf8&#39;</span><span class="p">))</span>
-    <span class="k">return</span> <span class="n">outfile</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Places a node marker on each node.</span>
-<span class="c1"># @param      infile       The svg file whose nodes are to be marked.</span>
-<span class="c1"># @param      mPaths        Paths class instance.</span>
-<span class="c1"># @param      MARKER_SIZE   Size of node markers [px].</span>
-<span class="c1"># @return     -</span>
-<span class="c1">#</span>
-<span class="k">def</span> <span class="nf">placeNodeMarker</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">mPaths</span><span class="p">,</span> <span class="n">MARKER_SIZE</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">suffix</span><span class="o">=</span><span class="s">&#39;&#39;</span><span class="p">):</span>
-    <span class="n">SVG_END_TAG</span><span class="o">=</span><span class="s">&#39;&lt;/svg&gt;</span><span class="se">\n</span><span class="s">&#39;</span>
-    <span class="c1"># Open svg, read lines to buffer, close file</span>
-    <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span><span class="s">&#39;r+&#39;</span><span class="p">)</span>
-    <span class="n">lines</span> <span class="o">=</span> <span class="n">fd</span><span class="o">.</span><span class="n">readlines</span><span class="p">()</span>
-    <span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-    <span class="c1"># Get index of svg-end tag</span>
-    <span class="n">idx</span> <span class="o">=</span> <span class="n">lines</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">SVG_END_TAG</span><span class="p">)</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">idx</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&quot;svg end tag not found!&quot;</span><span class="p">);</span> <span class="nb">exit</span><span class="p">();</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;svg end tag found at line </span><span class="si">%d</span><span class="s">&quot;</span> <span class="o">%</span> <span class="n">idx</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">mPaths</span><span class="p">:</span>
-        <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">p</span><span class="o">.</span><span class="n">getNodes</span><span class="p">():</span>
-            <span class="n">circleMark</span> <span class="o">=</span> <span class="n">nodeMarker</span><span class="p">(</span><span class="n">node</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">node</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">1000</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">MARKER_SIZE</span><span class="p">)</span>
-            <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">circleMark</span><span class="p">)):</span>
-                <span class="n">lines</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="n">l</span><span class="p">,</span> <span class="s">&quot;</span><span class="se">\t</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">circleMark</span><span class="p">[</span><span class="n">l</span><span class="p">]</span> <span class="o">+</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">)</span>
-
-    <span class="n">fd</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">infile</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span>
-        <span class="n">suffix</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">splitext</span><span class="p">(</span><span class="n">infile</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&#39;w&#39;</span><span class="p">)</span>
-    <span class="n">fd</span><span class="o">.</span><span class="n">writelines</span><span class="p">(</span><span class="n">lines</span><span class="p">)</span>
-    <span class="n">fd</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># @brief      Input argument parser.</span>
-<span class="c1"># @param      argv   List of input arguments.</span>
-<span class="c1"># @return     Input file path, doPretty flag.</span>
-<span class="c1">#</span>
-<span class="k">def</span> <span class="nf">main</span><span class="p">(</span><span class="n">argv</span><span class="p">):</span>
-    <span class="n">flags</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;logfile&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&#39;incfile&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&#39;strokes&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&#39;marker&#39;</span><span class="p">:</span> <span class="bp">False</span><span class="p">,</span> <span class="s">&#39;pretty&#39;</span><span class="p">:</span> <span class="bp">False</span> <span class="p">}</span>
-
-    <span class="n">infile</span> <span class="o">=</span> <span class="bp">None</span>
-    <span class="n">outs</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;logfile&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="s">&#39;incfile&#39;</span><span class="p">:</span><span class="s">&#39;&#39;</span><span class="p">}</span>
-
-    <span class="n">cmdUsage</span> <span class="o">=</span> <span class="s">&#39;</span><span class="si">%s</span><span class="s"> -i &lt;infile&gt; [-p]&#39;</span> <span class="o">%</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">__file__</span><span class="p">)</span>
-
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="n">onodes</span><span class="p">,</span> <span class="n">args</span> <span class="o">=</span> <span class="n">getopt</span><span class="o">.</span><span class="n">getopt</span><span class="p">(</span><span class="n">argv</span><span class="p">,</span><span class="s">&quot;hi:smpl:c:&quot;</span><span class="p">,</span>
-            <span class="p">[</span><span class="s">&quot;ifile=&quot;</span><span class="p">,</span> <span class="s">&quot;strokes&quot;</span><span class="p">,</span> <span class="s">&quot;marker&quot;</span><span class="p">,</span> <span class="s">&quot;pretty&quot;</span><span class="p">,</span> <span class="s">&quot;logfile=&quot;</span><span class="p">,</span> <span class="s">&quot;incfile=&quot;</span><span class="p">])</span>
-    <span class="k">except</span> <span class="n">getopt</span><span class="o">.</span><span class="n">GetoptError</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="n">cmdUsage</span><span class="p">,</span> <span class="n">getopt</span><span class="o">.</span><span class="n">GetoptError</span><span class="p">)</span>
-        <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">opt</span><span class="p">,</span> <span class="n">arg</span> <span class="ow">in</span> <span class="n">onodes</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">opt</span> <span class="o">==</span> <span class="s">&#39;-h&#39;</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="n">cmdUsage</span><span class="p">)</span>
-            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">()</span>
-        <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-i&quot;</span><span class="p">,</span> <span class="s">&quot;--ifile&quot;</span><span class="p">):</span>      <span class="n">infile</span> <span class="o">=</span> <span class="n">arg</span>
-        <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-l&quot;</span><span class="p">,</span> <span class="s">&quot;--logfile&quot;</span><span class="p">):</span>    <span class="n">flags</span><span class="p">[</span><span class="s">&#39;logfile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span><span class="p">;</span> <span class="n">outs</span><span class="p">[</span><span class="s">&#39;logfile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
-        <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-c&quot;</span><span class="p">,</span> <span class="s">&quot;--incfile&quot;</span><span class="p">):</span><span class="n">flags</span><span class="p">[</span><span class="s">&#39;incfile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span><span class="p">;</span> <span class="n">outs</span><span class="p">[</span><span class="s">&#39;incfile&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">arg</span>
-        <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-s&quot;</span><span class="p">,</span> <span class="s">&quot;--strokes&quot;</span><span class="p">):</span>    <span class="n">flags</span><span class="p">[</span><span class="s">&#39;strokes&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-m&quot;</span><span class="p">,</span> <span class="s">&quot;--marker&quot;</span><span class="p">):</span>     <span class="n">flags</span><span class="p">[</span><span class="s">&#39;marker&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-        <span class="k">elif</span> <span class="n">opt</span> <span class="ow">in</span> <span class="p">(</span><span class="s">&quot;-p&quot;</span><span class="p">,</span> <span class="s">&quot;--pretty&quot;</span><span class="p">):</span>     <span class="n">flags</span><span class="p">[</span><span class="s">&#39;pretty&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">True</span>
-
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">infile</span><span class="p">):</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&#39;Input file &quot;</span><span class="si">%s</span><span class="s">&quot; not valied!&#39;</span> <span class="o">%</span> <span class="n">infile</span><span class="p">)</span>
-
-    <span class="k">return</span> <span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">outs</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span>
-
-<span class="c1"># ------------------------------------------------------------------------------</span>
-<span class="c1"># Script run.</span>
-
-
-<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&quot;__main__&quot;</span><span class="p">:</span>
-    <span class="n">mPaths</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="n">dprint</span><span class="p">(</span><span class="s">&#39;sys.argv: &#39;</span><span class="p">,</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">outs</span><span class="p">,</span> <span class="n">flags</span><span class="p">)</span> <span class="o">=</span> <span class="n">main</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>      <span class="c1"># Parse input arguments</span>
-        <span class="n">logfile</span> <span class="o">=</span> <span class="n">outs</span><span class="p">[</span><span class="s">&#39;logfile&#39;</span><span class="p">]</span>
-        <span class="n">incfile</span> <span class="o">=</span> <span class="n">outs</span><span class="p">[</span><span class="s">&#39;incfile&#39;</span><span class="p">]</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&quot;Exception while getopts!&quot;</span><span class="p">)</span>
-        <span class="n">osd</span><span class="o">.</span><span class="n">crit</span><span class="p">(</span><span class="s">&quot;Exception while getopts!&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-
-    <span class="k">try</span><span class="p">:</span>
-        <span class="p">(</span><span class="n">mPaths</span><span class="p">,</span> <span class="n">offs</span><span class="p">)</span> <span class="o">=</span> <span class="n">doParse</span><span class="p">(</span><span class="n">infile</span><span class="p">)</span>            <span class="c1"># Get paths from vector graphic</span>
-    <span class="k">except</span><span class="p">:</span>
-        <span class="k">if</span> <span class="ow">not</span> <span class="n">mPaths</span><span class="p">:</span>
-            <span class="k">print</span><span class="p">(</span><span class="s">&quot;Error, no paths or bad -i argument&quot;</span><span class="p">)</span>
-        <span class="nb">exit</span><span class="p">()</span>
-
-    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">mPaths</span><span class="p">:</span>
-        <span class="n">dprint</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">getLines</span><span class="p">())</span>
-
-    <span class="k">if</span> <span class="n">offs</span><span class="p">:</span>
-        <span class="k">print</span><span class="p">(</span><span class="s">&quot;offs attr: </span><span class="si">%f</span><span class="s">, </span><span class="si">%f</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">offs</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">offs</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-
-    <span class="n">ofile</span> <span class="o">=</span> <span class="n">infile</span>
-    <span class="n">suff</span> <span class="o">=</span> <span class="s">&#39;_mod&#39;</span>
-    <span class="c1"># Manipulate path style attributes</span>
-    <span class="k">if</span> <span class="n">flags</span><span class="p">[</span><span class="s">&#39;strokes&#39;</span><span class="p">]:</span>
-        <span class="n">ofile</span> <span class="o">=</span> <span class="n">styleManipulate</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="s">&#39;stroke-opacity:0.3&#39;</span><span class="p">,</span> <span class="n">suff</span><span class="p">)</span>
-        <span class="n">suff</span> <span class="o">=</span> <span class="s">&#39;&#39;</span>
-
-    <span class="c1"># Place node markers into xml-tree of selected infile.</span>
-    <span class="k">if</span> <span class="n">flags</span><span class="p">[</span><span class="s">&#39;marker&#39;</span><span class="p">]:</span>
-        <span class="n">placeNodeMarker</span><span class="p">(</span><span class="n">ofile</span><span class="p">,</span> <span class="n">mPaths</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">suff</span><span class="p">)</span>
-
-<span class="c1"># , MATLAB_PRJ + os.path.basename(infile) + &#39;.log&#39;</span>
-    <span class="n">printPretty</span> <span class="o">=</span> <span class="n">PrettyPrint</span><span class="p">(</span><span class="n">mPaths</span><span class="p">)</span>
-    <span class="n">logCreate</span> <span class="o">=</span> <span class="n">CreateLog</span><span class="p">(</span><span class="n">mPaths</span><span class="p">,</span> <span class="n">logfile</span><span class="o">=</span><span class="n">logfile</span><span class="p">)</span>
-    <span class="n">includeCreate</span> <span class="o">=</span> <span class="n">CreateInclude</span><span class="p">(</span><span class="n">mPaths</span><span class="p">,</span> <span class="n">incfile</span><span class="o">=</span><span class="n">incfile</span><span class="p">)</span>
-
-    <span class="c1"># Pretty print(nodes to console.)</span>
-    <span class="k">if</span> <span class="n">flags</span><span class="p">[</span><span class="s">&#39;pretty&#39;</span><span class="p">]:</span>
-        <span class="n">printPretty</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="n">numberLines</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">flags</span><span class="p">[</span><span class="s">&#39;logfile&#39;</span><span class="p">]:</span>
-        <span class="n">logCreate</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
-    <span class="k">if</span> <span class="n">flags</span><span class="p">[</span><span class="s">&#39;incfile&#39;</span><span class="p">]:</span>
-        <span class="n">includeCreate</span><span class="o">.</span><span class="n">out</span><span class="p">()</span>
-
-    <span class="n">lin</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="p">[</span><span class="n">lin</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">getLines</span><span class="p">()))</span> <span class="k">for</span> <span class="n">path</span> <span class="ow">in</span> <span class="n">mPaths</span><span class="p">]</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Paths count: </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">mPaths</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Lines count: </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="nb">sum</span><span class="p">(</span><span class="n">lin</span><span class="p">))</span>
-    <span class="k">print</span><span class="p">(</span><span class="s">&quot;Nodes count: </span><span class="si">%i</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">lin</span><span class="p">)</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">mPaths</span><span class="p">)))</span>
-
-    <span class="n">osd</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;Lumpy??&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-    <span class="n">lumpy</span><span class="o">.</span><span class="n">object_diagram</span><span class="p">()</span>
-    <span class="n">lumpy</span><span class="o">.</span><span class="n">class_diagram</span><span class="p">()</span>
-    <span class="n">osd</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="s">&#39;Lumpy done &#39;</span><span class="p">)</span><span class="o">.</span><span class="n">send</span><span class="p">()</span>
-
-    <span class="c1"># print(&quot;logfile: %s&quot; % logfile)</span>
-    <span class="c1"># print(&#39;len(logData): %i&#39; % len(logData), logData)</span>
-    <span class="c1"># osd.osdwarn(MATLAB_PRJ + os.path.basename(</span>
-    <span class="c1"># infile).splitext()[0] + &#39;.log&#39;,msgTitle=&#39;log write&#39;,tSec=10)</span>
-
-<span class="c1">########################################</span>
-<span class="c1">#   Script end.</span>
-<span class="c1">########################################</span>
-</pre></div>
-</p>
-<p></details></p>
+<p><center><figure><figcaption><em>In <b>MATLAB</b> visualisierte Matritzen</em></figcaption><a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/matPlots/gnuNormw.svg" target="_blank"><figure class="box"><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/matPlots/gnuNorm.svg" title="Normierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Normierte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a><br />
+<a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/matPlots/gnuScalw.svg" target="_blank"><figure class="box"><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/matPlots/gnuScal.svg" title="Auf 75% skalierte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Auf 75% skalierte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a><br />
+<a href="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/matPlots/gnuRotw.svg" target="_blank"><figure class="box"><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/matPlots/gnuRot.svg" title="Um Pi/4 rad gedrehte &quot;GNU-Kopf&quot;-Matrix" class="noborder" /><figcaption>Um $\,\pi/4\,$ rad gedrehte &ldquo;GNU-Kopf&rdquo;-Matrix</figcaption></figure></a></figure></center></p>
 <p>ToDo:</p>
 <ul>
 <li>Beam blanking</li>
@@ -4058,7 +3520,7 @@ Ist der Betrag eines Vektors $\vec{r}(x)$ als konstant zu betrachten, so steht d
 <p>$$ \frac{\partial\,\vec{r}}{\partial\,x} \cdot \vec{r} \;+\; \vec{r} \cdot \frac{\partial\,\vec{r}}{\partial\,x} = 2 \cdot \left( \vec{r} \cdot \frac{\partial}{\partial\,x}\vec{r} \right) = 0 $$</p>
 <p>Hieraus folgt, dass der Vektor senkrecht zu seiner Ableitung stehen muss.<br />
 $$ \vec{L} = J \cdot \vec{\omega} $$</p>
-<p><img src="/media/data/whz/projectGalvoDocu/pics/energiebilanzDeriv.svg" title="Energiebilanz eines beliebigen Energiespeichers" align="rigth" height="138x" style="float:right; margin: 0em 0em 0em .5em;"/><br />
+<p><img src="http://whz-cms-10.zw.fh-zwickau.de/mad16h09/pics/energiebilanzDeriv.svg" title="Energiebilanz eines beliebigen Energiespeichers" align="rigth" height="138x" style="float:right; margin: 0em 0em 0em .5em;"/><br />
 Die im Rahmen dieser Arbeit relevanten,  Erhaltungssätze <br />
 Für den Fall <br />
 Der Drehimpulsvektor $\vec{L}$ eines starren Körpers wird definirt als Kreuzprodukt aus Ortsvektor und Impulsvektor. </p>

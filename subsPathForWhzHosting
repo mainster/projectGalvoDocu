@@ -1,0 +1,1 @@
+sed 's/\/media\/data\/whz\/projectGalvoDocu\/pics\//http\:\/\/whz\-cms\-10\.zw\.fh\-zwickau\.de\/mad16h09\/pics\//' /media/data/whz/projectGalvoDocu/merged.html > /media/whzWebspace/index.html
