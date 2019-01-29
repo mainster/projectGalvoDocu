@@ -1,0 +1,21 @@
+<map id="TM_USART_Puts" name="TM_USART_Puts">
+<area shape="rect" id="node2" href="$a00069.html#gab807a241fae0eae0d5434bae20a3569f" title="Puts character to USART port. " alt="" coords="181,536,309,563"/>
+<area shape="rect" id="node13" href="$a00069.html#gafbf9e2222953815c9f35cd46863dbc26" title="Callback function for receive interrupt on USART1 in case you have enabled custom USART handler mode..." alt="" coords="648,1109,849,1136"/>
+<area shape="rect" id="node14" href="$a00069.html#ga21823124b3d98ea2085671f4a5af6017" title="Callback function for receive interrupt on USART2 in case you have enabled custom USART handler mode..." alt="" coords="648,5,849,32"/>
+<area shape="rect" id="node15" href="$a00069.html#ga868eb8844f04487e714b63b016a93bae" title="Callback function for receive interrupt on USART3 in case you have enabled custom USART handler mode..." alt="" coords="648,107,849,133"/>
+<area shape="rect" id="node16" href="$a00069.html#gada9d723469cf9d7d0ac11930b8e14f2a" title="Callback function for receive interrupt on UART4 in case you have enabled custom USART handler mode..." alt="" coords="653,208,845,235"/>
+<area shape="rect" id="node17" href="$a00069.html#ga4338d265fa58103332ea234f63594b81" title="Callback function for receive interrupt on UART5 in case you have enabled custom USART handler mode..." alt="" coords="653,259,845,285"/>
+<area shape="rect" id="node18" href="$a00069.html#ga65c1d6a6bcc2dbd40ea0e7cbf5e924de" title="Callback function for receive interrupt on USART6 in case you have enabled custom USART handler mode..." alt="" coords="648,384,849,411"/>
+<area shape="rect" id="node19" href="$a00069.html#ga461a5123a57231d34d51330f12ea39d2" title="Callback function for receive interrupt on UART7 in case you have enabled custom USART handler mode..." alt="" coords="653,536,845,563"/>
+<area shape="rect" id="node20" href="$a00069.html#ga37fe7ffa31a540627af5ebfe93f2dcf5" title="Callback function for receive interrupt on UART8 in case you have enabled custom USART handler mode..." alt="" coords="653,805,845,832"/>
+<area shape="rect" id="node3" href="$a00069.html#ga3bbfbfe88ae6dce27876b84798cfda62" title="Sends data array to USART port. " alt="" coords="413,435,544,461"/>
+<area shape="rect" id="node4" href="$a00069.html#ga340391d061340e4635b4bbafea23602b" title="Gets character from internal USART buffer. " alt="" coords="684,881,813,908"/>
+<area shape="rect" id="node5" href="$a00069.html#gabb0a95fd20e5e2a894e658b64a29ee61" title="Gets string from USART. " alt="" coords="414,1008,543,1035"/>
+<area shape="rect" id="node6" href="$a00069.html#gabcee39f90c8c33ff3b1fb07e6496eef6" title="Checks if internal USARTx buffer is empty. " alt="" coords="661,983,836,1009"/>
+<area shape="rect" id="node7" href="$a00069.html#ga5f708a330c9fc45032143a5777d9b6fd" title="Checks if character c is available in internal buffer. " alt="" coords="657,1059,840,1085"/>
+<area shape="rect" id="node8" href="$a00069.html#ga0bf136abba24771c4a5a83ace52a76c1" title="Checks if internal USARTx buffer is full. " alt="" coords="400,587,557,613"/>
+<area shape="rect" id="node9" href="$a00069.html#ga6c8dfcc950305f511393240ea847b2ad" title="Clears internal USART buffer. " alt="" coords="395,637,562,664"/>
+<area shape="rect" id="node10" href="$a00069.html#gae2f5677e3f69e09a943fb3124c997656" title="Sets custom character for TM_USART_Gets() function to detect when string ends. " alt="" coords="378,689,579,730"/>
+<area shape="rect" id="node11" href="$a00069.html#ga5cf7d7f613f4241fb77321ef9554f46b" title="Callback for custom pins initialization for USARTx. " alt="" coords="357,333,600,360"/>
+<area shape="rect" id="node12" href="$a00091.html#gabc8eafcb23a81935b70b9046f266f5aa" title="Initialize GPIO pins for alternate port operation. " alt="" coords="669,333,829,360"/>
+</map>

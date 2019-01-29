@@ -1,0 +1,5 @@
+<map id="DMA Configurations" name="DMA Configurations">
+<area shape="rect" id="node1" href="$a00084.html" title="MD_Application" alt="" coords="5,31,120,57"/>
+<area shape="rect" id="node2" href="$a00123.html" title="Periph2dma_Macros" alt="" coords="363,5,504,32"/>
+<area shape="rect" id="node3" href="$a00124.html" title="Periph2dma_Functions" alt="" coords="356,56,511,83"/>
+</map>

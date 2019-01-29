@@ -1,0 +1,1616 @@
+<toc label="XY-GalvoScanner" topic="index.html">
+  <topic label="Project: XY-Galvo Scanner" href="index.html"/>
+  <topic label="Modules" href="modules.html">
+    <topic label="CMSIS" href="a00132.html">
+      <topic label="Documentation" href="a00133.html">
+        <topic label="MD_CMSIS_DOCU" href="a00133.html#gac41f454827f8109732c47bb2ed166533"/>
+      </topic>
+      <topic label="Stm32f4xx_system" href="a00134.html">
+        <topic label="STM32F4xx_System_Exported_Constants" href="a00137.html">
+        </topic>
+        <topic label="STM32F4xx_System_Exported_Functions" href="a00139.html">
+          <topic label="SystemCoreClockUpdate" href="a00139.html#gae0c36a9591fe6e9c45ecb21a794f0f0f"/>
+          <topic label="SystemInit" href="a00139.html#ga93f514700ccf00d08dbdcff7f1224eb2"/>
+        </topic>
+        <topic label="STM32F4xx_System_Exported_Macros" href="a00138.html">
+        </topic>
+        <topic label="STM32F4xx_System_Exported_types" href="a00136.html">
+          <topic label="SystemCoreClock" href="a00136.html#gaa3cd3e43291e81e795d642b79b6088e6"/>
+        </topic>
+        <topic label="STM32F4xx_System_Includes" href="a00135.html">
+        </topic>
+        <topic label="STM32F4xx_System_Private_Defines" href="a00145.html">
+          <topic label="VECT_TAB_OFFSET" href="a00145.html#ga40e1495541cbb4acbe3f1819bd87a9fe"/>
+        </topic>
+        <topic label="STM32F4xx_System_Private_FunctionPrototypes" href="a00148.html">
+        </topic>
+        <topic label="STM32F4xx_System_Private_Functions" href="a00149.html">
+          <topic label="SetSysClock" href="a00149.html#ga1ee14ac28e60198cc998586807b51e4c"/>
+          <topic label="SystemCoreClockUpdate" href="a00149.html#gae0c36a9591fe6e9c45ecb21a794f0f0f"/>
+          <topic label="SystemInit" href="a00149.html#ga93f514700ccf00d08dbdcff7f1224eb2"/>
+        </topic>
+        <topic label="STM32F4xx_System_Private_Includes" href="a00143.html">
+        </topic>
+        <topic label="STM32F4xx_System_Private_Macros" href="a00146.html">
+        </topic>
+        <topic label="STM32F4xx_System_Private_TypesDefinitions" href="a00144.html">
+        </topic>
+        <topic label="STM32F4xx_System_Private_Variables" href="a00147.html">
+        </topic>
+        <topic label="__SYSTEM_STM32F4XX_H" href="a00134.html#ga9af0bd3b81a1e5b862fdecd4a09950a7"/>
+      </topic>
+    </topic>
+    <topic label="Compilerflags" href="a00066.html">
+      <topic label="KEIL_IDE" href="a00066.html#ga8fabfedc7f18259ecf0f77ef97fe86c2"/>
+    </topic>
+    <topic label="MD_Application" href="a00084.html">
+      <topic label="Actuators" href="a00085.html">
+        <topic label="Actuator Safestate Guard (ASG)" href="a00065.html">
+          <topic label="ASG_INTEGRATOR_TRIPPING_DEFAULT" href="a00065.html#ga4f487187061fad0f1b3c3a5193c785d5"/>
+          <topic label="ASG_LOWER_THRESHOLD_DEFAULT" href="a00065.html#ga334094960daedf4049072ca69c3821d6"/>
+          <topic label="ASG_SAFEVALUE_DEFAULT" href="a00065.html#ga1a076f53261512c2747b9ad07ecb7e7c"/>
+          <topic label="ASG_TRIPPING_TIME_DEFAULT" href="a00065.html#ga8cf860f09e1e7a0b806e2cce2d6ce417"/>
+          <topic label="ASG_UPPER_THRESHOLD_DEFAULT" href="a00065.html#ga5dcc54ca81561573554ab5cb777499e1"/>
+        </topic>
+        <topic label="Actuators_Functions" href="a00086.html">
+          <topic label="Actuators_Guarding" href="a00087.html">
+            <topic label="beamCtrl" href="a00087.html#gab27f871618e69ee02c2d2bd756a97397"/>
+            <topic label="updateActuator_f" href="a00087.html#gad1ffe8d2675c42ec8bcd3ff6b5ccdded"/>
+          </topic>
+        </topic>
+        <topic label="Actuators_Typedefs" href="a00002.html">
+          <topic label="ActuatorSafestateGuard_t" href="a00002.html#a00150">
+            <topic label="ack" href="a00002.html#a14dbae2f3dab6a22c58072df0fc13ff6"/>
+            <topic label="integrator" href="a00002.html#a7e6545015f557e30e5143aaf390f3077"/>
+            <topic label="lowerThreshold" href="a00002.html#a3d4b6e68cedd5f993b1fb9a405ed31f4"/>
+            <topic label="safeVal" href="a00002.html#a08d9ebf0071e7e2cf204c630a94946c5"/>
+            <topic label="state" href="a00002.html#ac354ef0b24a0d6eab36e0e868360ff55"/>
+            <topic label="tripped" href="a00002.html#ae847839467e1c2d8b7f360ef2e228fb8"/>
+            <topic label="trippingLevel" href="a00002.html#aaae5beb351b516277164e3a03e4f753e"/>
+            <topic label="tripTime" href="a00002.html#a01208b1ca72ba8a347998af8f6464187"/>
+            <topic label="upperThreshold" href="a00002.html#a50d4699939607531c95ea1e910518ba6"/>
+          </topic>
+          <topic label="ASG_INT_STATE_t" href="a00002.html#gab7751dc069c3ede19520b539f11e3862">
+            <topic label="ASG_CHARGING_INTEGRATOR" href="a00002.html#ggab7751dc069c3ede19520b539f11e3862a8143f853b14c442ee38046e86659c90f"/>
+            <topic label="ASG_DISCHARGING_INTEGRATOR" href="a00002.html#ggab7751dc069c3ede19520b539f11e3862ac2ad799d807623bf78a39cd2366b1e3e"/>
+            <topic label="ASG_STATIONARY_INTEGRATOR" href="a00002.html#ggab7751dc069c3ede19520b539f11e3862a831dcb0e997e074c59f7b6fa2f1085be"/>
+          </topic>
+          <topic label="beamCtrlSource_t" href="a00002.html#ga23d4da0769733905d0982ca530550ff3">
+            <topic label="BEAM_CTRL_SOURCE_GLOBAL" href="a00002.html#gga23d4da0769733905d0982ca530550ff3a01d5a2033b68b62bb3a385fbc3c9a912"/>
+            <topic label="BEAM_CTRL_SOURCE_MANUAL" href="a00002.html#gga23d4da0769733905d0982ca530550ff3a7e0897fde3d653cd638c4ced67d8bd9e"/>
+          </topic>
+        </topic>
+      </topic>
+      <topic label="Analog" href="a00088.html">
+        <topic label="Analog_Function_Pointers" href="a00140.html">
+          <topic label="DAC_SecureSetDualChanSigned" href="a00140.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+        </topic>
+        <topic label="Analog_Functions" href="a00092.html">
+          <topic label="adc_dac_dma.c" href="a00012.html"/>
+          <topic label="DAC_SetDualChanSigned" href="a00092.html#gab6494f34679dc4d0a8c08ec624a4bcf8"/>
+          <topic label="DAC_SetDualChanSigned_Tripped" href="a00092.html#gaee2322aa05f1f3ad93c480e4ef565ad6"/>
+          <topic label="DAC_SecureSetDualChanSigned" href="a00092.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+        </topic>
+        <topic label="Analog_Macros" href="a00089.html">
+          <topic label="ADC_RNG" href="a00089.html#ga0a11289b824817265f02b83ec5abea78"/>
+          <topic label="AMPL_FLOAT_DIVISOR" href="a00089.html#gae7c68e773f4db260d02caf68c6f7020a"/>
+          <topic label="AN_BIAS_INT" href="a00089.html#ga832572d22784177b5b299eecbc9673ae"/>
+          <topic label="AREF_IN_VOLT" href="a00089.html#gacc312b66f7f5c01ce548561716ed2ceb"/>
+          <topic label="LOWER_DAC_LIMIT_SIGNED" href="a00089.html#ga9fc9d48ba45460eb9b99b364354edc75"/>
+          <topic label="UPPER_DAC_LIMIT_SIGNED" href="a00089.html#gad36987502112cef838cb6a6c6f32595b"/>
+          <topic label="VA_BIAS" href="a00089.html#gafa43307c49dcc90b66e0b68d7c9fdeb3"/>
+          <topic label="VLSB" href="a00089.html#ga7fe5e4a7648c5976acce2711c1630c5e"/>
+        </topic>
+        <topic label="Analog_Typedefs" href="a00091.html">
+          <topic label="DAC_WP_t" href="a00091.html#gab320990ed72ada0f3624149c2f55aa48">
+            <topic label="DEFAULT_WRITE_DAC" href="a00091.html#ggab320990ed72ada0f3624149c2f55aa48afc655ef68afeab8530eb19a5e8b75f29"/>
+            <topic label="TRIPPED_WRITE_DAC" href="a00091.html#ggab320990ed72ada0f3624149c2f55aa48a557c2298ec903ce14144bb888af9dc4b"/>
+          </topic>
+        </topic>
+        <topic label="Analog_Variables" href="a00090.html">
+        </topic>
+      </topic>
+      <topic label="DMA Configurations" href="a00122.html">
+        <topic label="Periph2dma_Functions" href="a00124.html">
+          <topic label="ADC_ContScanMode_w_DMA_timeTrigd" href="a00124.html#ga63bf5922e4a4d0715a99ed083d89948b"/>
+          <topic label="ADC_Scan_Group_Config" href="a00124.html#ga85f5a2827c06dbdba076d4e9125a11f8"/>
+          <topic label="DAC_SetSignedValue" href="a00124.html#ga2b97a52cc0951383db3caaf3a7430f53"/>
+          <topic label="RCC_Periph2DMA_Conf" href="a00124.html#gae5d12b8da57e95abcca6e6d9ba8a50bb"/>
+          <topic label="TIM2_DMA_Trigger_Config" href="a00124.html#gad273dc4b4b26574e92666e4020e1ef5a"/>
+        </topic>
+        <topic label="Periph2dma_Macros" href="a00123.html">
+          <topic label="ADC_CCR_ADDRESS" href="a00123.html#ga3d7742611e1e61ac33076456ea95c90d"/>
+          <topic label="ADC_Ix_CHAN" href="a00123.html#ga0fb06b49d0cad3060c8553b464b740a7"/>
+          <topic label="ADC_Iy_CHAN" href="a00123.html#ga9c2c17ec99d496e976f48bc1682f368a"/>
+          <topic label="ADC_N_REGULAR_CHANNELS" href="a00123.html#ga9b45dabac0a94dd3a6c48805f57c41d5"/>
+          <topic label="ADC_W_CHAN" href="a00123.html#gae72ef124ffd68f7c729feea897324c61"/>
+          <topic label="ADC_X_CHAN" href="a00123.html#gaa3667f173d3c058f6571849fba0bb84c"/>
+          <topic label="ADC_Y_CHAN" href="a00123.html#ga5b3d1c47b5d9e6ef09a04948acabe4d2"/>
+        </topic>
+      </topic>
+      <topic label="Exceptions Handlers" href="a00142.html">
+        <topic label="BusFault_Handler" href="a00142.html#ga850cefb17a977292ae5eb4cafa9976c3"/>
+        <topic label="DebugMon_Handler" href="a00142.html#gadbdfb05858cc36fc520974df37ec3cb0"/>
+        <topic label="HardFault_Handler" href="a00142.html#ga2bffc10d5bd4106753b7c30e86903bea"/>
+        <topic label="MemManage_Handler" href="a00142.html#ga3150f74512510287a942624aa9b44cc5"/>
+        <topic label="NMI_Handler" href="a00142.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc"/>
+        <topic label="PendSV_Handler" href="a00142.html#ga6303e1f258cbdc1f970ce579cc015623"/>
+        <topic label="SVC_Handler" href="a00142.html#ga3e5ddb3df0d62f2dc357e64a3f04a6ce"/>
+        <topic label="TimingDelay_Decrement" href="a00142.html#ga5c41ccf5ad2d5d2d3f6beb8358641ed2"/>
+        <topic label="UsageFault_Handler" href="a00142.html#ga1d98923de2ed6b7309b66f9ba2971647"/>
+      </topic>
+      <topic label="General Purpose I/O" href="a00113.html">
+        <topic label="GPIO_Functions" href="a00116.html">
+          <topic label="MDB_GPIO_BeamPin" href="a00116.html#gaa4c41497bc8308d40c005cb2ee30963b"/>
+          <topic label="MDB_GPIO_Init" href="a00116.html#gad45b8278807ffed1f22e03d86d35bf90"/>
+          <topic label="MDB_GPIO_Off" href="a00116.html#ga1de48ba66939a9726f7930fc6a1e653a"/>
+          <topic label="MDB_GPIO_On" href="a00116.html#ga9915de13874ce89948d7d860af7e28c8"/>
+          <topic label="MDB_GPIO_Switch" href="a00116.html#ga23127fb33a96a81838d3c4b368b0e915"/>
+          <topic label="MDB_GPIO_Toggle" href="a00116.html#ga96648f92af47de61ebadb96b6a543415"/>
+        </topic>
+        <topic label="GPIO_Macros" href="a00114.html">
+          <topic label="DBG_ADC_TIMING" href="a00114.html#gae8150974f561daa6dc49646481fcbac6"/>
+          <topic label="DBG_ADC_TIMING_TOG" href="a00114.html#ga42272d92fc33c089b0861882fc1b9479"/>
+          <topic label="DBG_PID_TIMING" href="a00114.html#gae54f66744c5624b17facbf05064af71b"/>
+          <topic label="DBG_PID_TIMING_TIC" href="a00114.html#gadeab57e4e9f915ebc7a42f19bb11a56d"/>
+          <topic label="DBG_PID_TIMING_TOC" href="a00114.html#ga8836e0528f36c00ad55f41b563223aee"/>
+          <topic label="DBG_PID_TIMING_TOG" href="a00114.html#gac08b2d87f4e745cca8f80fa7127d7253"/>
+          <topic label="GPIO_COUNT" href="a00114.html#gaa41e7bed2d404011da2ffee2acf7d2c6"/>
+        </topic>
+        <topic label="GPIO_Typedefs" href="a00005.html">
+          <topic label="MDB_GPIO_t" href="a00005.html#a00156">
+            <topic label="_GPIO_AHB_CLK" href="a00005.html#a13226cb2d48d2a09e9225288be2bfcf3"/>
+            <topic label="_GPIO_INIT" href="a00005.html#a14d7cc9ab9b2551767717958e6fc714d"/>
+            <topic label="_GPIO_Mode" href="a00005.html#a7dad21fed506f14ea037fc5a90017fb2"/>
+            <topic label="_GPIO_NAME" href="a00005.html#a09eaeafd05e84906600d3632fac00ef0"/>
+            <topic label="_GPIO_OType" href="a00005.html#a5e6f9d41876048ccdb747f26412bd9b4"/>
+            <topic label="_GPIO_PIN" href="a00005.html#a22cc3ab3b1b57a3aa2fffb62e0a8edad"/>
+            <topic label="_GPIO_PORT" href="a00005.html#aa06bd2c9644b3b0373395256bfaebcad"/>
+            <topic label="_GPIO_PuPd" href="a00005.html#a3cc80141571258dbf1a15de0c637a734"/>
+            <topic label="_GPIO_Speed" href="a00005.html#a0de4e88f4bcf1e60b2761ad60c61ac2f"/>
+          </topic>
+          <topic label="MD_GPIO_DRIVER_STATE_t" href="a00005.html#ga014461f4d497805581f99288e88d6e13">
+          </topic>
+          <topic label="MD_GPIO_NAME_t" href="a00005.html#gaabe410dd69c26e02e9d5f951318ef007">
+            <topic label="LED_GREEN_A" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a257a984db2ddaac996f9584171ffbb28"/>
+            <topic label="LED_RED_A" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007af513f61a40003ed67774683efe63afd8"/>
+            <topic label="BEAM_INTERRUPT" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a1f88b32a311e25d05c20a2d08ff0cb31"/>
+            <topic label="TRIGGER_SRC" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007afe0d2e52778d24a9c2e6b1284bfa56ca"/>
+            <topic label="DBG_TIMING_PE2" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a0eb4ed5c75d6da01d62a8f8a2fd62420"/>
+            <topic label="DBG_TIMING_PE4" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a3171a12722a0fe0d1f6c6d5d2825d91b"/>
+            <topic label="DBG_TIMING_PE6" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007ab8fdc9425abada9541f96ae534169fcd"/>
+            <topic label="ADC_X_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007ab08b8835ff56d8a12a823bd6757ff99c"/>
+            <topic label="ADC_Y_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a822d7d89feae633b085e363ebc5f5583"/>
+            <topic label="ADC_Ix_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007ae88cf6d954cdb783cfd76ecc3a15797e"/>
+            <topic label="ADC_W_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a3470717e0c5e0a24300d1e9d8e6e0930"/>
+          </topic>
+          <topic label="MD_GPIO_STATE_t" href="a00005.html#ga35a8e47e31f10f492be5f9d991bce6f9">
+          </topic>
+        </topic>
+        <topic label="GPIO_Variables" href="a00115.html">
+        </topic>
+      </topic>
+      <topic label="Global Declarations" href="a00093.html">
+        <topic label="Global_Macros" href="a00094.html">
+          <topic label="INDEX_Ix" href="a00094.html#gab2c21eb1c7fb6302fdafb168773e94eb"/>
+          <topic label="INDEX_Iy" href="a00094.html#ga1e3b3aca5e68a13774d27521cc3a37d0"/>
+          <topic label="INDEX_Px" href="a00094.html#ga1bf1610c3723e93b7b6bd8a542c381cf"/>
+          <topic label="INDEX_Py" href="a00094.html#ga8f528d7ef627eac504c027a1755705f7"/>
+          <topic label="INDEX_Wx" href="a00094.html#ga1ec2692e5238551a4c1a324c60b24b7f"/>
+          <topic label="INDEX_Wy" href="a00094.html#ga589d765751caf3081cc8ce174276f983"/>
+        </topic>
+        <topic label="Global_Typedefs" href="a00095.html">
+          <topic label="tribool_state_t" href="a00095.html#ga645fd524080d57bb86bbf02b3747436c">
+            <topic label="DNI" href="a00095.html#gga645fd524080d57bb86bbf02b3747436ca257bced40737f04d963d782f89d41092"/>
+          </topic>
+        </topic>
+        <topic label="Global_Variables" href="a00096.html">
+        </topic>
+      </topic>
+      <topic label="Helper" href="a00099.html">
+        <topic label="Helper_Functions" href="a00103.html">
+          <topic label="strsplit" href="a00103.html#ga70c1b2fc181b5039c6309e61a2724b97"/>
+        </topic>
+        <topic label="Helper_Macros" href="a00100.html">
+        </topic>
+        <topic label="Helper_Typedefs" href="a00101.html">
+        </topic>
+        <topic label="Helper_Variables" href="a00102.html">
+        </topic>
+      </topic>
+      <topic label="IRQ Handler" href="a00104.html">
+        <topic label="IRQ_Handler_Functions" href="a00108.html">
+          <topic label="ADC_IRQ_Handler" href="a00108.html#ga9a7d2b1783e9106040117270d0195759"/>
+          <topic label="DMA2_STREAM_0_IRQ_Handler" href="a00108.html#ga4bfbdc85c5337782d112b383c6d0efbd"/>
+          <topic label="TIM4_IRQ_Handler" href="a00108.html#ga3e965ca8f413e014ad3a4e27b6b7c0bc"/>
+        </topic>
+        <topic label="IRQ_Handler_Macros" href="a00105.html">
+        </topic>
+        <topic label="IRQ_Handler_Typedefs" href="a00106.html">
+        </topic>
+        <topic label="IRQ_Handler_Variables" href="a00107.html">
+          <topic label="ADC_fBuff" href="a00107.html#ga6bf09a26d8ce43aa9402c3b6fced78d8"/>
+          <topic label="ADC_MultiConvBuff" href="a00107.html#ga583dbfc172a6bb8f95299ec41b40c01f"/>
+          <topic label="pidDataY" href="a00107.html#ga0ab28dd366b30b0712094559e447d21f"/>
+          <topic label="PIDY" href="a00107.html#ga11d133e600336343563ed50620ddbeaf"/>
+          <topic label="triStruct" href="a00107.html#ga6d9a2bc0117788d0a3c0a38022efe266"/>
+        </topic>
+      </topic>
+      <topic label="Interrupt Controller" href="a00117.html">
+        <topic label="NVIC_Config_Functions" href="a00121.html">
+          <topic label="NVIC_Configuration" href="a00121.html#ga5c12343e267ace8587309499bea6babe"/>
+        </topic>
+        <topic label="NVIC_Config_Macros" href="a00118.html">
+        </topic>
+        <topic label="NVIC_Config_Typedefs" href="a00119.html">
+        </topic>
+        <topic label="NVIC_Config_Variables" href="a00120.html">
+          <topic label="NVIC_InitStruct_ADC" href="a00120.html#ga175e65e37d009743004ac50efe0d1301"/>
+          <topic label="NVIC_InitStruct_DMA" href="a00120.html#ga7f0d5e17e50b33a88de5021bc88fb623"/>
+          <topic label="NVIC_InitStruct_TIM" href="a00120.html#ga8e0c3f046cdbe6bf67f5668ec79af902"/>
+        </topic>
+      </topic>
+      <topic label="Main" href="a00109.html">
+        <topic label="Main_Function" href="a00141.html">
+          <topic label="fastConsoleCase" href="a00141.html#ga4af381bf92ce31395c19b6652b930b7a"/>
+        </topic>
+        <topic label="Main_Functions" href="a00112.html">
+          <topic label="init_globalStructs" href="a00112.html#gabecad8655f9e14a855864feee9fee9e8"/>
+          <topic label="main" href="a00112.html#ga840291bc02cba5474a4cb46a9b9566fe"/>
+        </topic>
+        <topic label="Main_Macros" href="a00110.html">
+          <topic label="pidErr_x" href="a00110.html#ga3a910bf77f5eb96c710a5f9bfda25540"/>
+          <topic label="pidErr_y" href="a00110.html#ga9ecb9291593db67705a37533cb96e399"/>
+          <topic label="POS_X_FLOAT" href="a00110.html#ga9d442ac581cae5a47198dd17f3ab4538"/>
+          <topic label="POS_Y_FLOAT" href="a00110.html#ga4de825aff4a57d60291667de0e2f627c"/>
+          <topic label="SETPOINT_Y_FLOAT" href="a00110.html#ga0c02531a88932d1e19ef31aaeb5f3850"/>
+          <topic label="toPlant_x" href="a00110.html#ga5ca2cdd4953398e21d3dd11320a32868"/>
+          <topic label="toPlant_y" href="a00110.html#ga77632b3b96d6bf8b1b4e8a71e8ac312a"/>
+        </topic>
+        <topic label="Main_Typedefs" href="a00003.html">
+          <topic label="Test Signals" href="a00067.html">
+            <topic label="CMD_TESTVECT_1" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fad569293966d97c41805a27cb73e1f517"/>
+            <topic label="CMD_TESTVECT_2" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2e2cd0371d61c55210e19a63f4624458"/>
+            <topic label="COS" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa493e49dc3b2f8cf43d8ae13fcdde6639"/>
+            <topic label="I_QUADRATIC" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa6eb3a5f6b5c27cfa2ce38a62defe8d74"/>
+            <topic label="QUADRATIC" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2e8d8a1445172e2e64293e1dd0558b0a"/>
+            <topic label="SAWTOOTH" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa40e63a8384df5217cf58feeb37aa7e96"/>
+            <topic label="SQUAREWAV" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2c88ba06859ba6d149c34ff06e7f5326"/>
+            <topic label="TRIANG" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa9ade06dfba781e0e8e00353c073e5a56"/>
+          </topic>
+          <topic label="items_t" href="a00003.html#a00154">
+            <topic label="id" href="a00003.html#a8487d1fa087beae632b9872bb8feaf01"/>
+            <topic label="name" href="a00003.html#a5ac083a645d964373f022d03df4849c8"/>
+          </topic>
+          <topic label="itemsw_t" href="a00003.html#a00155">
+            <topic label="idw" href="a00003.html#a99f66b87c515e0d8b6f9d277b96484b6"/>
+            <topic label="name" href="a00003.html#a5ac083a645d964373f022d03df4849c8"/>
+          </topic>
+          <topic label="MiscCmds_t" href="a00003.html#a00157">
+            <topic label="idm" href="a00003.html#a22633e5f09891e41f95c096a2733cbd3"/>
+            <topic label="name" href="a00003.html#a5ac083a645d964373f022d03df4849c8"/>
+          </topic>
+          <topic label="DacLimit_t" href="a00003.html#a00151">
+            <topic label="lowerLim" href="a00003.html#a87bd64921e90e93ec489b2f251b511f7"/>
+            <topic label="upperLim" href="a00003.html#a49119190718fc125705cce9b6e904eef"/>
+          </topic>
+          <topic label="global_t" href="a00003.html#a00153">
+            <topic label="ampl" href="a00003.html#a5356e3784ebbd53cc31a6671d1dd2a2d"/>
+            <topic label="ampl_f" href="a00003.html#a033f79030bc243d411c74f477694fd63"/>
+            <topic label="beamEnabled" href="a00003.html#a604d2198fc41a08bceb288c0b237a46b"/>
+            <topic label="dacHw" href="a00003.html#a1a657462f68e7c86b6b2e6adb74e7630"/>
+            <topic label="duty" href="a00003.html#a629bbb86e941652d883be6def7f22808"/>
+            <topic label="dutyCyc" href="a00003.html#a2760d97ab7a101c1009338f06c04521b"/>
+            <topic label="freq" href="a00003.html#ac6df37a45d9d3e29da0b38fd17a55329"/>
+            <topic label="gen" href="a00003.html#aaf99b3a578a9857cf6edca56a8749135"/>
+            <topic label="lookAt" href="a00003.html#aef44d83dbb560078931952bf1c5e5848"/>
+            <topic label="miscReq" href="a00003.html#a5832f57d6a394ac6d546927722bf4854"/>
+            <topic label="pBase" href="a00003.html#a1057b4b2bfe72e0226d917c6cce283d4"/>
+            <topic label="refresh" href="a00003.html#a8471de7534be1a104f085a2b926f43a7"/>
+            <topic label="setpointSrc" href="a00003.html#aaa0d7908d658808839e8418865d54a67"/>
+            <topic label="tctr" href="a00003.html#aca2d941a291cf48a50d6815280fcde5e"/>
+            <topic label="waveForm" href="a00003.html#ab6a64e959bafc26876b8c793b4844c9f"/>
+          </topic>
+          <topic label="CmdItem_t" href="a00003.html#ga2a2971bf429beaec0a200b0ec5a3a669">
+            <topic label="KP" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a14bad4f6cad4831682fbf36b8e414d19"/>
+            <topic label="KI" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a13095219cf7778e869100fbff2cf36c5"/>
+            <topic label="KD" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a4f6efdc2e6b5358e2223a06e223614df"/>
+            <topic label="W" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669ab722ceeb601c72cd78fbd35f3581fdf7"/>
+            <topic label="UNKNOWN" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a6ce26a62afab55d7606ad4e92428b30c"/>
+          </topic>
+          <topic label="MiscItem_t" href="a00003.html#ga52f588961dd5683d131c54d73eadfd36">
+            <topic label="misc_NN" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36afaa9a1c40b115c01bd23edf833699909"/>
+            <topic label="misc_none" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36ae43043de21c5a8c8fedbd81187df4927"/>
+            <topic label="misc_pid_init" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36aed5b07c796816ffb9895ba933e2e5a4c"/>
+            <topic label="misc_pid_Controller" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36aa062dfd6acd695cad5bc45b7db052a90"/>
+            <topic label="misc_pid_Reset_Integrator" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a15dbcb175095a7121970f22b2a5999f1"/>
+            <topic label="misc_update_pid_data" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a2d42b3904614f3597c493215a785a9d4"/>
+            <topic label="misc_asgOnOff_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a83ba9f9870d12356d75d4982710be168"/>
+            <topic label="misc_asgUpperLim_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a3bc3abf96acb9db3c95c6f4bf796608e"/>
+            <topic label="misc_asgLowerLim_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a378be33997b79aa0764f7b72929e823e"/>
+            <topic label="misc_asgTrippTime_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36aae5871ba84b1ca68c902c28fb4bdfdd8"/>
+            <topic label="misc_asgSaveVal_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a210c5aab539057df23b5093cde238dfd"/>
+            <topic label="misc_beamOn_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a428840a3edbe9130d6de7428c2f21997"/>
+            <topic label="misc_beamOff_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a8a3da90889652c8b46ac0a69bddd1574"/>
+          </topic>
+          <topic label="SetPointSrc_t" href="a00003.html#ga626985e96e87ed920dc4c6be59a21408">
+            <topic label="INTERNAL_SETPOINT" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408affee96130b101028801a515480d0a4fe"/>
+            <topic label="ANALOG_SETPOINT" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408a3d763b58c74e822630de11762235db4c"/>
+            <topic label="REMOTE_SETPOINT" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408a82b8a77ce23639dac15a25fbf66ec144"/>
+            <topic label="REMOTE_OPENLOOP" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408a6cdf7220720ada0a962fcc930a68bbd0"/>
+            <topic label="REMOTE_INTERNAL_MIXED" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408aa67b8a78eb70171892d0401328a7c2df"/>
+          </topic>
+          <topic label="WavItems_t" href="a00003.html#gaa93c8f16183d2aba3f6c4a72287e515f">
+            <topic label="NN" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa23cd01df78f1e9c938f643fec963284f"/>
+            <topic label="EN" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa08abbedba04efb41214496f901134dfb"/>
+            <topic label="DIS" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa44fc5702a289730d7290fb0716e1f42a"/>
+            <topic label="COS" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa493e49dc3b2f8cf43d8ae13fcdde6639"/>
+            <topic label="TRIANG" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa9ade06dfba781e0e8e00353c073e5a56"/>
+            <topic label="SQUAREWAV" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2c88ba06859ba6d149c34ff06e7f5326"/>
+            <topic label="SAWTOOTH" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa40e63a8384df5217cf58feeb37aa7e96"/>
+            <topic label="QUADRATIC" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2e8d8a1445172e2e64293e1dd0558b0a"/>
+            <topic label="I_QUADRATIC" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa6eb3a5f6b5c27cfa2ce38a62defe8d74"/>
+            <topic label="CMD_REMOTE_SETPOINT" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fada82d02fc110d0a1d01e6beb19263797"/>
+            <topic label="CMD_OPENLOOP_REMOTE" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fafaca666a9ab0c34c977185e03a19f926"/>
+            <topic label="CMD_ANALOG_SETPOINT" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2fb7dad9cbdb77e9668aceee4bfb52e0"/>
+            <topic label="CMD_INTERNAL_SETPOINT" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa6bd7dbce52f74a8c9c511501c8663bbc"/>
+            <topic label="CMD_TESTVECT_1" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fad569293966d97c41805a27cb73e1f517"/>
+            <topic label="CMD_TESTVECT_2" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2e2cd0371d61c55210e19a63f4624458"/>
+            <topic label="CMD_REFRESH_RATE" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa936a5f71cd1545325bc25f0bba94c17f"/>
+            <topic label="CMD_MATLAB_LINK" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa8f0adc920e86b83da8fc6cb3952b9245"/>
+          </topic>
+        </topic>
+        <topic label="Main_Variables" href="a00111.html">
+          <topic label="DAC_SecureSetDualChanSigned" href="a00111.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+        </topic>
+        <topic label="__TARGET_ARCH_ARM" href="a00109.html#ga0f25e80f7f3d9cef101764011864cccf"/>
+        <topic label="ALGO_OLD" href="a00109.html#ga5e31a587762f89eb9f198ee4fe5538c9"/>
+        <topic label="MSG_GUI_UART1_RECV_BUFF_FULL" href="a00109.html#gad67ace663b224129dd87500508beccda"/>
+        <topic label="PID_PARAM_KD" href="a00109.html#ga34a32b11558028c988ab9abdc2777317"/>
+        <topic label="PID_PARAM_KI" href="a00109.html#ga1586407e1d00106d6676cf6e36c2c8f1"/>
+        <topic label="PID_PARAM_KP" href="a00109.html#gad0e81feb2b8831e73e2f62d475f712fd"/>
+        <topic label="SLIDER_VAL_DEVIDER" href="a00109.html#gacb7d404e3eeefe13a4cd5ebe539d2926"/>
+        <topic label="TM2_USART_PinsPack_t" href="a00109.html#ga0688d8c8c02a2cea4558f9a7c6ffef01">
+          <topic label="TM2_USART_PinsPack_1" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01ade5e0c8587cbc6911635218ae1d4de36"/>
+          <topic label="TM2_USART_PinsPack_2" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01a21d249337455e777a7bb7b51d4d6c7b3"/>
+          <topic label="TM2_USART_PinsPack_3" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01ae681a9dfc43e8db7aee3d0cfad86a251"/>
+          <topic label="TM2_USART_PinsPack_Custom" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01ab49b0846e44294d82c550048956a3640"/>
+        </topic>
+        <topic label="ADC_fBuff" href="a00109.html#gada58e7e71aa6c47c82aa1401fef39c8b"/>
+        <topic label="ADC_MultiConvBuff" href="a00109.html#ga25660619766735b8221eee0af597f179"/>
+        <topic label="duty" href="a00109.html#ga70f44948d7630be99b15ecac985a502f"/>
+        <topic label="pidDataY" href="a00109.html#ga0ab28dd366b30b0712094559e447d21f"/>
+        <topic label="pidOut" href="a00109.html#ga1e88378f59ca102b737a2e1579581ebb"/>
+        <topic label="PIDX" href="a00109.html#ga61f840000893d16360195f7bfa989078"/>
+        <topic label="PIDY" href="a00109.html#ga11d133e600336343563ed50620ddbeaf"/>
+        <topic label="toPlant" href="a00109.html#ga75bf0dadad23736cf521d39a7d6c3a0c"/>
+        <topic label="toPlant_int" href="a00109.html#gafe4b69287a4af5f18fa558a746dc1eb6"/>
+      </topic>
+      <topic label="PID Compensator" href="a00097.html">
+        <topic label="Pid_Functions" href="a00126.html">
+          <topic label="fpid_Controller" href="a00126.html#gafe1d17a0a7fb7bfa803938596f7a16fb"/>
+          <topic label="fpid_Init" href="a00126.html#gad15677de1d3cf94ee4105426e3d6efb1"/>
+          <topic label="PID_Calc_Coeffs" href="a00126.html#ga63894a329acefc03c7e9bfd7e12b1508"/>
+          <topic label="pid_Controller" href="a00126.html#ga8104c7c8a3864df3a2accf63c7c2b0b7"/>
+          <topic label="pid_Init" href="a00126.html#ga676efe3312c9afb5e544fa19e9b394ec"/>
+          <topic label="pid_Init_Tp" href="a00126.html#ga44465e00bf181f7e3e7308cf7a45788b"/>
+          <topic label="pid_Reset_Integrator" href="a00126.html#ga16e4a229e4ce8ac0e8e52817935e6651"/>
+          <topic label="update_pid_data" href="a00126.html#gaf3edc28a5d22624fc7dcaeda0e51cad7"/>
+        </topic>
+        <topic label="Pid_Macros" href="a00098.html">
+          <topic label="FLOAT_PARAMETERS" href="a00098.html#ga346c60b67c1c8302fc7e197a753313fc"/>
+          <topic label="InitStruct" href="a00098.html#ga3a3ac0637c71bf3a157d03b854018aed"/>
+          <topic label="MAX_INT_16" href="a00098.html#ga302b7428269218bb1674dd2489b6a194"/>
+          <topic label="PID_BUFF_LENGTH" href="a00098.html#ga8d73bb9a67fa6d43b94aa191ba9e1c60"/>
+          <topic label="TS" href="a00098.html#gaaade3232ef08cf18b4f3a20a0a2c6fb6"/>
+          <topic label="UPPER_SAT" href="a00098.html#ga0200e4d6d2d5230b82cf6c1e9242e87e"/>
+        </topic>
+        <topic label="Pid_Typedefs" href="a00004.html">
+          <topic label="PID_DATA" href="a00004.html#a00158">
+            <topic label="b0" href="a00004.html#aae36fc890ea9532f56273eb4ff3d8fc3"/>
+            <topic label="b1" href="a00004.html#a0a909289ec9fbfaa70c0e112ec9e3b15"/>
+            <topic label="b2" href="a00004.html#a746bcb222044619e5a9b335d242a2a92"/>
+            <topic label="E" href="a00004.html#a905ce1b18d39e0a74cb71ef7f5b5c759"/>
+            <topic label="ESUM" href="a00004.html#a0f0f77b4e7061e80f8c65c52037c10fb"/>
+            <topic label="ind" href="a00004.html#aee6f337846cbb527edb2f82d37cd5443"/>
+            <topic label="Kd" href="a00004.html#a98268d71502ba080d88a9b1f50fdbe80"/>
+            <topic label="Ki" href="a00004.html#a59fac16f568541187ff485c4c47b0ec5"/>
+            <topic label="Kp" href="a00004.html#a09cfc766a233ad617270562cc4146d07"/>
+            <topic label="maxError" href="a00004.html#abc0df1fd5606b1d182ba271c813dfd8e"/>
+            <topic label="maxSumError" href="a00004.html#acaf8c217e3eed4ba02f8a21bd6d1dd26"/>
+            <topic label="P" href="a00004.html#a5d07926ccc77fd21387599f387dc12dd"/>
+            <topic label="remoteCmdActive" href="a00004.html#aab9ca9655f9fcf569e9baa455be9a0d2"/>
+            <topic label="Tf" href="a00004.html#abf1c5f9ee652b0483acff64053a26c95"/>
+            <topic label="Ts" href="a00004.html#aa154121d5d5e4166a6a892d7b3d18b42"/>
+            <topic label="W" href="a00004.html#ac81a993a9f51c76927bb3283f8ca1b74"/>
+            <topic label="W_int" href="a00004.html#a65ba9ac752effb4dff080b769db6eca1"/>
+            <topic label="W_rem" href="a00004.html#a4c747c1f392292d59d663bddc8fe10b9"/>
+            <topic label="W_remf" href="a00004.html#a405272504a8e11b07cc65703d9c717da"/>
+            <topic label="Y" href="a00004.html#a4fbf33467cccbf686e86c158e130e9ec"/>
+          </topic>
+          <topic label="PID_DATA_NEW" href="a00004.html#a00159">
+            <topic label="b0" href="a00004.html#aae36fc890ea9532f56273eb4ff3d8fc3"/>
+            <topic label="b1" href="a00004.html#a0a909289ec9fbfaa70c0e112ec9e3b15"/>
+            <topic label="b2" href="a00004.html#a746bcb222044619e5a9b335d242a2a92"/>
+            <topic label="E" href="a00004.html#a02f2e29230411cc06e437b406682cb58"/>
+            <topic label="ESUM" href="a00004.html#a05d11bf2dab0de844d15a47249bf26d9"/>
+            <topic label="ind" href="a00004.html#aee6f337846cbb527edb2f82d37cd5443"/>
+            <topic label="Kd" href="a00004.html#a98268d71502ba080d88a9b1f50fdbe80"/>
+            <topic label="Ki" href="a00004.html#a59fac16f568541187ff485c4c47b0ec5"/>
+            <topic label="Kp" href="a00004.html#a09cfc766a233ad617270562cc4146d07"/>
+            <topic label="maxError" href="a00004.html#abc0df1fd5606b1d182ba271c813dfd8e"/>
+            <topic label="maxSumError" href="a00004.html#acaf8c217e3eed4ba02f8a21bd6d1dd26"/>
+            <topic label="P" href="a00004.html#a38868a1287795533f4135882db4c4418"/>
+            <topic label="remoteCmdActive" href="a00004.html#aab9ca9655f9fcf569e9baa455be9a0d2"/>
+            <topic label="Tf" href="a00004.html#abf1c5f9ee652b0483acff64053a26c95"/>
+            <topic label="Ts" href="a00004.html#aa154121d5d5e4166a6a892d7b3d18b42"/>
+            <topic label="W" href="a00004.html#ad54eb1c62a7c2e0410a84f17ff64923a"/>
+            <topic label="W_int" href="a00004.html#a65ba9ac752effb4dff080b769db6eca1"/>
+            <topic label="W_rem" href="a00004.html#a4c747c1f392292d59d663bddc8fe10b9"/>
+            <topic label="Y" href="a00004.html#abe4637362df8e341470401813999dd17"/>
+          </topic>
+          <topic label="FPID_DATA" href="a00004.html#a00152">
+            <topic label="b0" href="a00004.html#aae36fc890ea9532f56273eb4ff3d8fc3"/>
+            <topic label="b1" href="a00004.html#a0a909289ec9fbfaa70c0e112ec9e3b15"/>
+            <topic label="b2" href="a00004.html#a746bcb222044619e5a9b335d242a2a92"/>
+            <topic label="E" href="a00004.html#a5b514bbfa4713e7bcf9c6a367cb6ebfe"/>
+            <topic label="ESUM" href="a00004.html#a72b5f19d13f4b01c3fd840ddc43c6486"/>
+            <topic label="float2raw" href="a00004.html#aa06fe06f00209309cc995a15ba0b6cd4"/>
+            <topic label="Kd" href="a00004.html#a98268d71502ba080d88a9b1f50fdbe80"/>
+            <topic label="Ki" href="a00004.html#a59fac16f568541187ff485c4c47b0ec5"/>
+            <topic label="Kp" href="a00004.html#a09cfc766a233ad617270562cc4146d07"/>
+            <topic label="MAX_Y_I_TERM" href="a00004.html#aa71055cfa8757ea6b4981a08372abba8"/>
+            <topic label="maxError" href="a00004.html#a6dd8ac4cfeff950854d9c84c0cdd2c58"/>
+            <topic label="maxSumError" href="a00004.html#a9b9ecb981df2268d9549709c3873545b"/>
+            <topic label="P" href="a00004.html#aca74a684c7823144d7962beb8397621e"/>
+            <topic label="raw2float" href="a00004.html#af6fb44bb3c9e5193ae9fb6bc0a9d223c"/>
+            <topic label="Tf" href="a00004.html#abf1c5f9ee652b0483acff64053a26c95"/>
+            <topic label="Ts" href="a00004.html#aa154121d5d5e4166a6a892d7b3d18b42"/>
+            <topic label="W" href="a00004.html#a9f617b4ebd9b59cdac29c77f13ace604"/>
+            <topic label="W_raw" href="a00004.html#aa0728aa2c8dadc2acd4da27b3e2814b2"/>
+            <topic label="Y" href="a00004.html#ac915220fb659eb2c5958a1ccd81b80d4"/>
+            <topic label="Y_raw" href="a00004.html#a4c648c5e3bf6b0e5569fbb1d8fb82eec"/>
+          </topic>
+          <topic label="pidData_t" href="a00004.html#ga9d6249c93388816b9a13c444e18574c6"/>
+          <topic label="pidData_t_NEW" href="a00004.html#ga9e33f7e4f217ba46fe6105fbdb1d0027"/>
+          <topic label="pidDatafloat_t" href="a00004.html#ga1d0d9a5352ff86730bd1ff4468da3aaa"/>
+          <topic label="PID_IntMethod_t" href="a00004.html#ga55d6b371091839c0249c5bbae101a8a6">
+            <topic label="PID_IntMethod_FwdRect" href="a00004.html#gga55d6b371091839c0249c5bbae101a8a6a8a70f3c83c6999b81584cf315e016d82"/>
+            <topic label="PID_IntMethod_RwdRect" href="a00004.html#gga55d6b371091839c0249c5bbae101a8a6a4246d5abda93c57fd99e3dc273a14b8e"/>
+            <topic label="PID_IntMethod_Trapez" href="a00004.html#gga55d6b371091839c0249c5bbae101a8a6a6982bcfcc044d6912d583e6eae365627"/>
+          </topic>
+          <topic label="PID_StructType_t" href="a00004.html#ga9042312d928a40abe76bed17f12fd403">
+          </topic>
+          <topic label="pidDataY" href="a00004.html#gaa9a86ee856cb3daa3cf150732d792ab6"/>
+        </topic>
+        <topic label="Pid_Variables" href="a00125.html">
+          <topic label="KD_INIT" href="a00125.html#gae2c6f11e01b26a1c9970c34a9fbd644c"/>
+          <topic label="KI_INIT" href="a00125.html#gae8cb2064c1b9c190073966c828b0b67f"/>
+          <topic label="KP_INIT" href="a00125.html#ga0b1411af0f57c3a718470b1ab6a27ba0"/>
+          <topic label="TF_INIT" href="a00125.html#gab1d5489cad2ed91076cba7062e773de0"/>
+          <topic label="W_now" href="a00125.html#gad7bf9103d05d1d2038cc7477a54cb569"/>
+        </topic>
+      </topic>
+      <topic label="Signal generator" href="a00127.html">
+        <topic label="Signal_Gen_Arrays" href="a00129.html">
+        </topic>
+        <topic label="Signal_Gen_Functions" href="a00131.html">
+        </topic>
+        <topic label="Signal_Gen_Macros" href="a00128.html">
+          <topic label="N_TUPEL" href="a00128.html#gac58d61da615dc15db61c6fc83ba3ceb0"/>
+        </topic>
+        <topic label="Signal_Gen_Typedefs" href="a00009.html">
+          <topic label="triangWave" href="a00009.html#a00160">
+            <topic label="bottom" href="a00009.html#a37c03c265e1d827465e655cfcc52976b"/>
+            <topic label="derivate" href="a00009.html#a365269616a93d62257f7c5085632fb80"/>
+            <topic label="top" href="a00009.html#aec3f3270b9c9a786c01326e81db15681"/>
+            <topic label="triCtr" href="a00009.html#ad3d0a6ff7fb78bf80f39d407afc343ed"/>
+          </topic>
+        </topic>
+        <topic label="Signal_Gen_Variables" href="a00130.html">
+          <topic label="__attribute__" href="a00130.html#ga3471071fc0b691d5ea05997762e9171c"/>
+          <topic label="triStruct" href="a00130.html#ga6d9a2bc0117788d0a3c0a38022efe266"/>
+        </topic>
+      </topic>
+    </topic>
+    <topic label="MD_STM32F4_Libraries" href="a00068.html">
+      <topic label="MD_DAC" href="a00069.html">
+        <topic label="MD_DAC_Functions" href="a00071.html">
+          <topic label="MD_DAC_Init" href="a00071.html#gabb02137ecc24355b4c9d3da38b59a44d"/>
+          <topic label="MD_DAC_SetValue" href="a00071.html#ga619bd25bcb153bed7510e0da9fd559b5"/>
+        </topic>
+        <topic label="MD_DAC_Typedefs" href="a00070.html">
+          <topic label="MD_DAC_Channel_t" href="a00070.html#gabf30804989c919701624ae6fe94ce7de">
+            <topic label="MD_DAC1" href="a00070.html#ggabf30804989c919701624ae6fe94ce7deabe67851a33fcec07fa268754b208725f"/>
+            <topic label="MD_DAC2" href="a00070.html#ggabf30804989c919701624ae6fe94ce7dea3bd8fa7ba5803a0d80eeed480450dc95"/>
+          </topic>
+        </topic>
+      </topic>
+      <topic label="MD_DAC_SigGen" href="a00072.html">
+        <topic label="MD_DAC_SigGen_Functions" href="a00076.html">
+          <topic label="DAC_CHx_EscalatorConfig" href="a00076.html#gaf46f7f55713090d0d01917f8b4cf12d4"/>
+          <topic label="DAC_Chx_NoiseConfig" href="a00076.html#ga2664b9023b9f3770619ec6a03c2214b2"/>
+          <topic label="DAC_DMA_SineWaveConfig" href="a00076.html#ga018e86e244319b1cb74f7c72b7d5d6c2"/>
+          <topic label="DAC_TriangleConfig" href="a00076.html#ga2b49ec7d4e38d0fed118525d8db4ff75"/>
+        </topic>
+        <topic label="MD_DAC_SigGen_Macros" href="a00073.html">
+          <topic label="General_Notes" href="a00074.html">
+            <topic label="DAC_DHR12R1_ADDRESS" href="a00074.html#gacbf063c53f62f5fc24ccdf6d99b9b61a"/>
+          </topic>
+        </topic>
+        <topic label="MD_DAC_SigGen_Variables" href="a00075.html">
+        </topic>
+      </topic>
+      <topic label="MD_DISCO" href="a00077.html">
+        <topic label="MD_DISCO_Functions" href="a00078.html">
+          <topic label="MD_DISCO_ButtonPressed" href="a00078.html#gabf6e8afa3e50a13bb6afefca84f9e856"/>
+          <topic label="MD_DISCO_LedIsOn" href="a00078.html#ga7bae7d03c87223e1a6ea8aa68d8572b2"/>
+          <topic label="MD_DISCO_LedOff" href="a00078.html#gaa21441e03694db4000ce451ac92db670"/>
+          <topic label="MD_DISCO_LedOn" href="a00078.html#ga6b5a90b17dfa80cdfc7e9415b373b7e4"/>
+          <topic label="MD_DISCO_LedToggle" href="a00078.html#ga15782ac3c6ead221dfff5234e055f9ae"/>
+          <topic label="MD_DISCO_SetLed" href="a00078.html#ga9aa2e913a3d60e598b455df93f264b42"/>
+          <topic label="MD_DISCO_ButtonInit" href="a00078.html#ga99e90c818f4042ca67ee111f9c666297"/>
+          <topic label="MD_DISCO_ButtonOnPressed" href="a00078.html#ga4bdeb65c33d29739b341feeb76aee264"/>
+          <topic label="MD_DISCO_ButtonOnReleased" href="a00078.html#gaeafb64b68c8ad9febe0821ac0693233a"/>
+          <topic label="MD_DISCO_LedInit" href="a00078.html#gaca7a1ac308a8fda1547ddc0f5872aa74"/>
+        </topic>
+      </topic>
+      <topic label="MD_GPIO" href="a00079.html">
+        <topic label="MD_GPIO_Functions" href="a00082.html">
+          <topic label="MD_GPIO_DeInit" href="a00082.html#gae4023e60105a12baf9882cd2bf89c250"/>
+          <topic label="MD_GPIO_GetFreePins" href="a00082.html#ga67b4b13e075ac0e29dedc773664cfabc"/>
+          <topic label="MD_GPIO_GetPinSource" href="a00082.html#ga91bec943baa222318edb5dc6f0ce0ff0"/>
+          <topic label="MD_GPIO_GetPortSource" href="a00082.html#gabd004a39ce32bdf009422d44da7342c2"/>
+          <topic label="MD_GPIO_GetUsedPins" href="a00082.html#gac8cc770c61fc0dcc69fbbcd1e87ddf71"/>
+          <topic label="MD_GPIO_Init" href="a00082.html#ga76a4711f406d06b13979cb89d6358cfc"/>
+          <topic label="MD_GPIO_InitAlternate" href="a00082.html#gabc8eafcb23a81935b70b9046f266f5aa"/>
+          <topic label="MD_GPIO_Lock" href="a00082.html#ga6fa2c02ad4d3aca8c3742be54e779f7f"/>
+          <topic label="MD_GPIO_SetPinAsAnalog" href="a00082.html#ga253a17c109b5a510f7579ef793da91fa"/>
+          <topic label="MD_GPIO_SetPinAsInput" href="a00082.html#ga1b348cc05c101e2aed07f12fe02f11ce"/>
+          <topic label="MD_GPIO_SetPinAsOutput" href="a00082.html#gac6573663dd1e8056feacfdbd3236c18a"/>
+        </topic>
+        <topic label="MD_GPIO_Macros" href="a00080.html">
+          <topic label="GPIO_PIN_0" href="a00080.html#ga176efbf43a259b7bb0a85a47401505be"/>
+          <topic label="GPIO_Pin_0" href="a00080.html#gab305b8d1be9f89bf2b4a05589b456049"/>
+          <topic label="MD_GPIO_GetInputPinValue" href="a00080.html#gafedf3cc3c371325eac6f84485068b774"/>
+          <topic label="MD_GPIO_GetOutputPinValue" href="a00080.html#ga534464665875d0bda9b8a8fee3b5704a"/>
+          <topic label="MD_GPIO_GetPortInputValue" href="a00080.html#ga803b6182bd18dfcf21e0a6768e6ff9de"/>
+          <topic label="MD_GPIO_GetPortOutputValue" href="a00080.html#ga5653005fa1bce30abb648a3483ac6a7e"/>
+          <topic label="MD_GPIO_SetPinHigh" href="a00080.html#ga6e325f1ab5aa5ea3d5bbea5223924559"/>
+          <topic label="MD_GPIO_SetPinLow" href="a00080.html#ga27f1ec5fae514938ba73cd86ff31971c"/>
+          <topic label="MD_GPIO_SetPinValue" href="a00080.html#ga0b6cda881d6dbab20f380de61cae22ff"/>
+          <topic label="MD_GPIO_SetPortValue" href="a00080.html#ga65429072964cb1a54f716727758cc0ec"/>
+          <topic label="MD_GPIO_TogglePinValue" href="a00080.html#ga3e8ef2b0d11370dd1a519a6ba08d5be8"/>
+        </topic>
+        <topic label="MD_GPIO_Typedefs" href="a00081.html">
+          <topic label="MD_GPIO_Mode_t" href="a00081.html#gaf7493ef81334234e5004b9d3c5282b33">
+            <topic label="MD_GPIO_Mode_IN" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33a511500a853c3a2b29f1694f0fe644c38"/>
+            <topic label="MD_GPIO_Mode_OUT" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33ab2e76758baf760c2902d7082c4cb0a64"/>
+            <topic label="MD_GPIO_Mode_AF" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33abc291c258bdf3c5a1bdb9b97722df7c9"/>
+            <topic label="MD_GPIO_Mode_AN" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33a86bd538521445d43c9de0616b8c70418"/>
+          </topic>
+          <topic label="MD_GPIO_OType_t" href="a00081.html#gaf957d16485c2d89b9585649bb492549e">
+            <topic label="MD_GPIO_OType_PP" href="a00081.html#ggaf957d16485c2d89b9585649bb492549ea312ad77aaef53576a3ef2aa8168f2218"/>
+            <topic label="MD_GPIO_OType_OD" href="a00081.html#ggaf957d16485c2d89b9585649bb492549ea2062b2922f027f3a14fd169999a233ed"/>
+          </topic>
+          <topic label="MD_GPIO_PuPd_t" href="a00081.html#ga8d78b1cf424589fd9b9824265d28d126">
+            <topic label="MD_GPIO_PuPd_NOPULL" href="a00081.html#gga8d78b1cf424589fd9b9824265d28d126a07be5025aac321bc491cd8322501a6d3"/>
+            <topic label="MD_GPIO_PuPd_Up" href="a00081.html#gga8d78b1cf424589fd9b9824265d28d126ac3af9045a8e8fe61c6adedf64f7ef91c"/>
+            <topic label="MD_GPIO_PuPd_Down" href="a00081.html#gga8d78b1cf424589fd9b9824265d28d126a569e85bcfeb13c1276ce16b805d24c3a"/>
+          </topic>
+          <topic label="MD_GPIO_Speed_t" href="a00081.html#ga3fafb763ac699cfdbab28733e40d3d42">
+            <topic label="MD_GPIO_Speed_Low" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42a8400c9fb95fe7babc51fc0637b184c82"/>
+            <topic label="MD_GPIO_Speed_Medium" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42aa4eed847159f43747529c8278bf9cef7"/>
+            <topic label="MD_GPIO_Speed_Fast" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42aed0eb9991d72fc5a5779da98420aabc2"/>
+            <topic label="MD_GPIO_Speed_High" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42ae6e1b3f024609a69b6ff8a14d313b991"/>
+          </topic>
+        </topic>
+      </topic>
+    </topic>
+    <topic label="TM_STM32F4xx_Libraries" href="a00083.html">
+      <topic label="TM_USART" href="a00061.html">
+        <topic label="TM_USART_Functions" href="a00064.html">
+          <topic label="TM_UART4_ReceiveHandler" href="a00064.html#gada9d723469cf9d7d0ac11930b8e14f2a"/>
+          <topic label="TM_UART5_ReceiveHandler" href="a00064.html#ga4338d265fa58103332ea234f63594b81"/>
+          <topic label="TM_UART7_ReceiveHandler" href="a00064.html#ga461a5123a57231d34d51330f12ea39d2"/>
+          <topic label="TM_UART8_ReceiveHandler" href="a00064.html#ga37fe7ffa31a540627af5ebfe93f2dcf5"/>
+          <topic label="TM_USART1_ReceiveHandler" href="a00064.html#gafbf9e2222953815c9f35cd46863dbc26"/>
+          <topic label="TM_USART2_ReceiveHandler" href="a00064.html#ga21823124b3d98ea2085671f4a5af6017"/>
+          <topic label="TM_USART3_ReceiveHandler" href="a00064.html#ga868eb8844f04487e714b63b016a93bae"/>
+          <topic label="TM_USART6_ReceiveHandler" href="a00064.html#ga65c1d6a6bcc2dbd40ea0e7cbf5e924de"/>
+          <topic label="TM_USART_BufferEmpty" href="a00064.html#gabcee39f90c8c33ff3b1fb07e6496eef6"/>
+          <topic label="TM_USART_BufferFull" href="a00064.html#ga0bf136abba24771c4a5a83ace52a76c1"/>
+          <topic label="TM_USART_ClearBuffer" href="a00064.html#ga6c8dfcc950305f511393240ea847b2ad"/>
+          <topic label="TM_USART_FindCharacter" href="a00064.html#ga5f708a330c9fc45032143a5777d9b6fd"/>
+          <topic label="TM_USART_Getc" href="a00064.html#ga340391d061340e4635b4bbafea23602b"/>
+          <topic label="TM_USART_Gets" href="a00064.html#gabb0a95fd20e5e2a894e658b64a29ee61"/>
+          <topic label="TM_USART_Init" href="a00064.html#ga70bed9fb6612cb572a8c10e148404344"/>
+          <topic label="TM_USART_InitCustomPinsCallback" href="a00064.html#ga5cf7d7f613f4241fb77321ef9554f46b"/>
+          <topic label="TM_USART_InitWithFlowControl" href="a00064.html#ga1d14413a4ac57d3297fa6b3cd05acedc"/>
+          <topic label="TM_USART_Putc" href="a00064.html#gab807a241fae0eae0d5434bae20a3569f"/>
+          <topic label="TM_USART_Puts" href="a00064.html#ga453aeaa886278333403ff4937c01dcf3"/>
+          <topic label="TM_USART_Send" href="a00064.html#ga3bbfbfe88ae6dce27876b84798cfda62"/>
+          <topic label="TM_USART_SetCustomStringEndCharacter" href="a00064.html#gae2f5677e3f69e09a943fb3124c997656"/>
+        </topic>
+        <topic label="TM_USART_Macros" href="a00063.html">
+          <topic label="USART_STRING_DELIMITER" href="a00063.html#gacc3ab6dabfa80d352445a976d7959904"/>
+          <topic label="USART_TXEMPTY" href="a00063.html#gaa34b49064e73b21e85be29b92027ae6d"/>
+        </topic>
+        <topic label="TM_USART_Typedefs" href="a00062.html">
+          <topic label="TM_USART_HardwareFlowControl_t" href="a00062.html#gacd066d36bf853877555c2946c6d77564">
+            <topic label="TM_USART_HardwareFlowControl_None" href="a00062.html#ggacd066d36bf853877555c2946c6d77564abc783cdf0f47402d0503b3ac95fc487d"/>
+            <topic label="TM_USART_HardwareFlowControl_RTS" href="a00062.html#ggacd066d36bf853877555c2946c6d77564a5dd27ac70b138207e1e6bb3ac05b94f0"/>
+            <topic label="TM_USART_HardwareFlowControl_CTS" href="a00062.html#ggacd066d36bf853877555c2946c6d77564aed159962160240dbc8ef0810620b60e0"/>
+            <topic label="TM_USART_HardwareFlowControl_RTS_CTS" href="a00062.html#ggacd066d36bf853877555c2946c6d77564a19f894dae02c4bce654ceb5654614108"/>
+          </topic>
+          <topic label="TM_USART_PinsPack_t" href="a00062.html#gafa8a506eb27c93db067bb06039ae210f">
+            <topic label="TM_USART_PinsPack_1" href="a00062.html#ggafa8a506eb27c93db067bb06039ae210fa94af1877da4d4b84340ff267ae13a3f4"/>
+            <topic label="TM_USART_PinsPack_2" href="a00062.html#ggafa8a506eb27c93db067bb06039ae210fa20e52aedd65d52a8285abf6ea5bda8b1"/>
+            <topic label="TM_USART_PinsPack_3" href="a00062.html#ggafa8a506eb27c93db067bb06039ae210fa9ac05e507f2948219af8594554d41bdb"/>
+            <topic label="TM_USART_PinsPack_Custom" href="a00062.html#ggafa8a506eb27c93db067bb06039ae210fa4bb4ccf03eef1dee9f00fb89cbff97b3"/>
+          </topic>
+        </topic>
+      </topic>
+    </topic>
+  </topic>
+  <topic label="Data Structures" href="annotated.html">
+    <topic label="Data Structures" href="annotated.html">
+      <topic label="ActuatorSafestateGuard_t" href="a00002.html#a00150">
+        <topic label="ack" href="a00002.html#a14dbae2f3dab6a22c58072df0fc13ff6"/>
+        <topic label="integrator" href="a00002.html#a7e6545015f557e30e5143aaf390f3077"/>
+        <topic label="lowerThreshold" href="a00002.html#a3d4b6e68cedd5f993b1fb9a405ed31f4"/>
+        <topic label="safeVal" href="a00002.html#a08d9ebf0071e7e2cf204c630a94946c5"/>
+        <topic label="state" href="a00002.html#ac354ef0b24a0d6eab36e0e868360ff55"/>
+        <topic label="tripped" href="a00002.html#ae847839467e1c2d8b7f360ef2e228fb8"/>
+        <topic label="trippingLevel" href="a00002.html#aaae5beb351b516277164e3a03e4f753e"/>
+        <topic label="tripTime" href="a00002.html#a01208b1ca72ba8a347998af8f6464187"/>
+        <topic label="upperThreshold" href="a00002.html#a50d4699939607531c95ea1e910518ba6"/>
+      </topic>
+      <topic label="DacLimit_t" href="a00003.html#a00151">
+        <topic label="lowerLim" href="a00003.html#a87bd64921e90e93ec489b2f251b511f7"/>
+        <topic label="upperLim" href="a00003.html#a49119190718fc125705cce9b6e904eef"/>
+      </topic>
+      <topic label="FPID_DATA" href="a00004.html#a00152">
+        <topic label="b0" href="a00004.html#aae36fc890ea9532f56273eb4ff3d8fc3"/>
+        <topic label="b1" href="a00004.html#a0a909289ec9fbfaa70c0e112ec9e3b15"/>
+        <topic label="b2" href="a00004.html#a746bcb222044619e5a9b335d242a2a92"/>
+        <topic label="E" href="a00004.html#a5b514bbfa4713e7bcf9c6a367cb6ebfe"/>
+        <topic label="ESUM" href="a00004.html#a72b5f19d13f4b01c3fd840ddc43c6486"/>
+        <topic label="float2raw" href="a00004.html#aa06fe06f00209309cc995a15ba0b6cd4"/>
+        <topic label="Kd" href="a00004.html#a98268d71502ba080d88a9b1f50fdbe80"/>
+        <topic label="Ki" href="a00004.html#a59fac16f568541187ff485c4c47b0ec5"/>
+        <topic label="Kp" href="a00004.html#a09cfc766a233ad617270562cc4146d07"/>
+        <topic label="MAX_Y_I_TERM" href="a00004.html#aa71055cfa8757ea6b4981a08372abba8"/>
+        <topic label="maxError" href="a00004.html#a6dd8ac4cfeff950854d9c84c0cdd2c58"/>
+        <topic label="maxSumError" href="a00004.html#a9b9ecb981df2268d9549709c3873545b"/>
+        <topic label="P" href="a00004.html#aca74a684c7823144d7962beb8397621e"/>
+        <topic label="raw2float" href="a00004.html#af6fb44bb3c9e5193ae9fb6bc0a9d223c"/>
+        <topic label="Tf" href="a00004.html#abf1c5f9ee652b0483acff64053a26c95"/>
+        <topic label="Ts" href="a00004.html#aa154121d5d5e4166a6a892d7b3d18b42"/>
+        <topic label="W" href="a00004.html#a9f617b4ebd9b59cdac29c77f13ace604"/>
+        <topic label="W_raw" href="a00004.html#aa0728aa2c8dadc2acd4da27b3e2814b2"/>
+        <topic label="Y" href="a00004.html#ac915220fb659eb2c5958a1ccd81b80d4"/>
+        <topic label="Y_raw" href="a00004.html#a4c648c5e3bf6b0e5569fbb1d8fb82eec"/>
+      </topic>
+      <topic label="global_t" href="a00003.html#a00153">
+        <topic label="ampl" href="a00003.html#a5356e3784ebbd53cc31a6671d1dd2a2d"/>
+        <topic label="ampl_f" href="a00003.html#a033f79030bc243d411c74f477694fd63"/>
+        <topic label="beamEnabled" href="a00003.html#a604d2198fc41a08bceb288c0b237a46b"/>
+        <topic label="dacHw" href="a00003.html#a1a657462f68e7c86b6b2e6adb74e7630"/>
+        <topic label="duty" href="a00003.html#a629bbb86e941652d883be6def7f22808"/>
+        <topic label="dutyCyc" href="a00003.html#a2760d97ab7a101c1009338f06c04521b"/>
+        <topic label="freq" href="a00003.html#ac6df37a45d9d3e29da0b38fd17a55329"/>
+        <topic label="gen" href="a00003.html#aaf99b3a578a9857cf6edca56a8749135"/>
+        <topic label="lookAt" href="a00003.html#aef44d83dbb560078931952bf1c5e5848"/>
+        <topic label="miscReq" href="a00003.html#a5832f57d6a394ac6d546927722bf4854"/>
+        <topic label="pBase" href="a00003.html#a1057b4b2bfe72e0226d917c6cce283d4"/>
+        <topic label="refresh" href="a00003.html#a8471de7534be1a104f085a2b926f43a7"/>
+        <topic label="setpointSrc" href="a00003.html#aaa0d7908d658808839e8418865d54a67"/>
+        <topic label="tctr" href="a00003.html#aca2d941a291cf48a50d6815280fcde5e"/>
+        <topic label="waveForm" href="a00003.html#ab6a64e959bafc26876b8c793b4844c9f"/>
+      </topic>
+      <topic label="items_t" href="a00003.html#a00154">
+        <topic label="id" href="a00003.html#a8487d1fa087beae632b9872bb8feaf01"/>
+        <topic label="name" href="a00003.html#a5ac083a645d964373f022d03df4849c8"/>
+      </topic>
+      <topic label="itemsw_t" href="a00003.html#a00155">
+        <topic label="idw" href="a00003.html#a99f66b87c515e0d8b6f9d277b96484b6"/>
+        <topic label="name" href="a00003.html#a5ac083a645d964373f022d03df4849c8"/>
+      </topic>
+      <topic label="MDB_GPIO_t" href="a00005.html#a00156">
+        <topic label="_GPIO_AHB_CLK" href="a00005.html#a13226cb2d48d2a09e9225288be2bfcf3"/>
+        <topic label="_GPIO_INIT" href="a00005.html#a14d7cc9ab9b2551767717958e6fc714d"/>
+        <topic label="_GPIO_Mode" href="a00005.html#a7dad21fed506f14ea037fc5a90017fb2"/>
+        <topic label="_GPIO_NAME" href="a00005.html#a09eaeafd05e84906600d3632fac00ef0"/>
+        <topic label="_GPIO_OType" href="a00005.html#a5e6f9d41876048ccdb747f26412bd9b4"/>
+        <topic label="_GPIO_PIN" href="a00005.html#a22cc3ab3b1b57a3aa2fffb62e0a8edad"/>
+        <topic label="_GPIO_PORT" href="a00005.html#aa06bd2c9644b3b0373395256bfaebcad"/>
+        <topic label="_GPIO_PuPd" href="a00005.html#a3cc80141571258dbf1a15de0c637a734"/>
+        <topic label="_GPIO_Speed" href="a00005.html#a0de4e88f4bcf1e60b2761ad60c61ac2f"/>
+      </topic>
+      <topic label="MiscCmds_t" href="a00003.html#a00157">
+        <topic label="idm" href="a00003.html#a22633e5f09891e41f95c096a2733cbd3"/>
+        <topic label="name" href="a00003.html#a5ac083a645d964373f022d03df4849c8"/>
+      </topic>
+      <topic label="PID_DATA" href="a00004.html#a00158">
+        <topic label="b0" href="a00004.html#aae36fc890ea9532f56273eb4ff3d8fc3"/>
+        <topic label="b1" href="a00004.html#a0a909289ec9fbfaa70c0e112ec9e3b15"/>
+        <topic label="b2" href="a00004.html#a746bcb222044619e5a9b335d242a2a92"/>
+        <topic label="E" href="a00004.html#a905ce1b18d39e0a74cb71ef7f5b5c759"/>
+        <topic label="ESUM" href="a00004.html#a0f0f77b4e7061e80f8c65c52037c10fb"/>
+        <topic label="ind" href="a00004.html#aee6f337846cbb527edb2f82d37cd5443"/>
+        <topic label="Kd" href="a00004.html#a98268d71502ba080d88a9b1f50fdbe80"/>
+        <topic label="Ki" href="a00004.html#a59fac16f568541187ff485c4c47b0ec5"/>
+        <topic label="Kp" href="a00004.html#a09cfc766a233ad617270562cc4146d07"/>
+        <topic label="maxError" href="a00004.html#abc0df1fd5606b1d182ba271c813dfd8e"/>
+        <topic label="maxSumError" href="a00004.html#acaf8c217e3eed4ba02f8a21bd6d1dd26"/>
+        <topic label="P" href="a00004.html#a5d07926ccc77fd21387599f387dc12dd"/>
+        <topic label="remoteCmdActive" href="a00004.html#aab9ca9655f9fcf569e9baa455be9a0d2"/>
+        <topic label="Tf" href="a00004.html#abf1c5f9ee652b0483acff64053a26c95"/>
+        <topic label="Ts" href="a00004.html#aa154121d5d5e4166a6a892d7b3d18b42"/>
+        <topic label="W" href="a00004.html#ac81a993a9f51c76927bb3283f8ca1b74"/>
+        <topic label="W_int" href="a00004.html#a65ba9ac752effb4dff080b769db6eca1"/>
+        <topic label="W_rem" href="a00004.html#a4c747c1f392292d59d663bddc8fe10b9"/>
+        <topic label="W_remf" href="a00004.html#a405272504a8e11b07cc65703d9c717da"/>
+        <topic label="Y" href="a00004.html#a4fbf33467cccbf686e86c158e130e9ec"/>
+      </topic>
+      <topic label="PID_DATA_NEW" href="a00004.html#a00159">
+        <topic label="b0" href="a00004.html#aae36fc890ea9532f56273eb4ff3d8fc3"/>
+        <topic label="b1" href="a00004.html#a0a909289ec9fbfaa70c0e112ec9e3b15"/>
+        <topic label="b2" href="a00004.html#a746bcb222044619e5a9b335d242a2a92"/>
+        <topic label="E" href="a00004.html#a02f2e29230411cc06e437b406682cb58"/>
+        <topic label="ESUM" href="a00004.html#a05d11bf2dab0de844d15a47249bf26d9"/>
+        <topic label="ind" href="a00004.html#aee6f337846cbb527edb2f82d37cd5443"/>
+        <topic label="Kd" href="a00004.html#a98268d71502ba080d88a9b1f50fdbe80"/>
+        <topic label="Ki" href="a00004.html#a59fac16f568541187ff485c4c47b0ec5"/>
+        <topic label="Kp" href="a00004.html#a09cfc766a233ad617270562cc4146d07"/>
+        <topic label="maxError" href="a00004.html#abc0df1fd5606b1d182ba271c813dfd8e"/>
+        <topic label="maxSumError" href="a00004.html#acaf8c217e3eed4ba02f8a21bd6d1dd26"/>
+        <topic label="P" href="a00004.html#a38868a1287795533f4135882db4c4418"/>
+        <topic label="remoteCmdActive" href="a00004.html#aab9ca9655f9fcf569e9baa455be9a0d2"/>
+        <topic label="Tf" href="a00004.html#abf1c5f9ee652b0483acff64053a26c95"/>
+        <topic label="Ts" href="a00004.html#aa154121d5d5e4166a6a892d7b3d18b42"/>
+        <topic label="W" href="a00004.html#ad54eb1c62a7c2e0410a84f17ff64923a"/>
+        <topic label="W_int" href="a00004.html#a65ba9ac752effb4dff080b769db6eca1"/>
+        <topic label="W_rem" href="a00004.html#a4c747c1f392292d59d663bddc8fe10b9"/>
+        <topic label="Y" href="a00004.html#abe4637362df8e341470401813999dd17"/>
+      </topic>
+      <topic label="TM_PWM_TIM_t" href="a00006.html">
+        <topic label="Frequency" href="a00006.html#ade3d190636488dad9a89b19446b7acf1"/>
+        <topic label="Micros" href="a00006.html#aaf0e4ad527f6f760784d14fdeb299c75"/>
+        <topic label="Period" href="a00006.html#a49500eef6a2354eeee4adc005bf9cef6"/>
+        <topic label="Prescaler" href="a00006.html#affb82025da5b8d4a06e61f1690460f4d"/>
+      </topic>
+      <topic label="TM_TIMER_PROPERTIES_t" href="a00007.html">
+        <topic label="Frequency" href="a00007.html#ade3d190636488dad9a89b19446b7acf1"/>
+        <topic label="MaxPeriod" href="a00007.html#a3a30aa7ed31c3599e989be45885671ec"/>
+        <topic label="MaxPrescaler" href="a00007.html#afc34e3e648b8a298bcd158635b7a5735"/>
+        <topic label="Period" href="a00007.html#a49500eef6a2354eeee4adc005bf9cef6"/>
+        <topic label="Prescaler" href="a00007.html#affb82025da5b8d4a06e61f1690460f4d"/>
+        <topic label="TimerFrequency" href="a00007.html#ae10d5f63ef782da7eb280dd4876a29ed"/>
+      </topic>
+      <topic label="TM_USART_t" href="a00008.html">
+        <topic label="Buffer" href="a00008.html#a095175dabcb7cd83bddf2bea50371121"/>
+        <topic label="In" href="a00008.html#ae89ed8ee3aa3edff77e794ebf35c4119"/>
+        <topic label="Initialized" href="a00008.html#a885a68e632ab9a6189c31f5f8a648f35"/>
+        <topic label="Num" href="a00008.html#aa8ad70c8644f7369fd0182770dbc5eac"/>
+        <topic label="Out" href="a00008.html#a9c564f31214fd1098e911b1a91c735b5"/>
+        <topic label="Size" href="a00008.html#a7da24467a0654ce2d1b0d8d0a09eee4b"/>
+        <topic label="StringDelimiter" href="a00008.html#a0cc091a499cbfb8731ac6597e1f769a9"/>
+      </topic>
+      <topic label="triangWave" href="a00009.html#a00160">
+        <topic label="bottom" href="a00009.html#a37c03c265e1d827465e655cfcc52976b"/>
+        <topic label="derivate" href="a00009.html#a365269616a93d62257f7c5085632fb80"/>
+        <topic label="top" href="a00009.html#aec3f3270b9c9a786c01326e81db15681"/>
+        <topic label="triCtr" href="a00009.html#ad3d0a6ff7fb78bf80f39d407afc343ed"/>
+      </topic>
+    </topic>
+    <topic label="Data Structure Index" href="classes.html"/>
+    <topic label="Data Fields" href="functions.html">
+      <topic label="All" href="functions.html"/>
+      <topic label="Variables" href="functions_vars.html"/>
+    </topic>
+  </topic>
+  <topic label="Files">
+    <topic label="File List" href="files.html">
+      <topic label="actuators.c" href="a00010.html">
+        <topic label="beamCtrl" href="a00087.html#gab27f871618e69ee02c2d2bd756a97397"/>
+        <topic label="updateActuator_f" href="a00087.html#gad1ffe8d2675c42ec8bcd3ff6b5ccdded"/>
+        <topic label="ASG" href="a00107.html#ga353608581512bd1b1a6c6bf10b1061fb"/>
+        <topic label="DAC_SecureSetDualChanSigned" href="a00140.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+      </topic>
+      <topic label="actuators.h" href="a00011.html">
+        <topic label="ASG_INTEGRATOR_TRIPPING_DEFAULT" href="a00065.html#ga4f487187061fad0f1b3c3a5193c785d5"/>
+        <topic label="ASG_LOWER_THRESHOLD_DEFAULT" href="a00065.html#ga334094960daedf4049072ca69c3821d6"/>
+        <topic label="ASG_SAFEVALUE_DEFAULT" href="a00065.html#ga1a076f53261512c2747b9ad07ecb7e7c"/>
+        <topic label="ASG_TRIPPING_TIME_DEFAULT" href="a00065.html#ga8cf860f09e1e7a0b806e2cce2d6ce417"/>
+        <topic label="ASG_UPPER_THRESHOLD_DEFAULT" href="a00065.html#ga5dcc54ca81561573554ab5cb777499e1"/>
+        <topic label="ASG_INT_STATE_t" href="a00002.html#gab7751dc069c3ede19520b539f11e3862">
+          <topic label="ASG_CHARGING_INTEGRATOR" href="a00002.html#ggab7751dc069c3ede19520b539f11e3862a8143f853b14c442ee38046e86659c90f"/>
+          <topic label="ASG_DISCHARGING_INTEGRATOR" href="a00002.html#ggab7751dc069c3ede19520b539f11e3862ac2ad799d807623bf78a39cd2366b1e3e"/>
+          <topic label="ASG_STATIONARY_INTEGRATOR" href="a00002.html#ggab7751dc069c3ede19520b539f11e3862a831dcb0e997e074c59f7b6fa2f1085be"/>
+        </topic>
+        <topic label="beamCtrlSource_t" href="a00002.html#ga23d4da0769733905d0982ca530550ff3">
+          <topic label="BEAM_CTRL_SOURCE_GLOBAL" href="a00002.html#gga23d4da0769733905d0982ca530550ff3a01d5a2033b68b62bb3a385fbc3c9a912"/>
+          <topic label="BEAM_CTRL_SOURCE_MANUAL" href="a00002.html#gga23d4da0769733905d0982ca530550ff3a7e0897fde3d653cd638c4ced67d8bd9e"/>
+        </topic>
+        <topic label="beamCtrl" href="a00087.html#gab27f871618e69ee02c2d2bd756a97397"/>
+        <topic label="updateActuator_f" href="a00087.html#gad1ffe8d2675c42ec8bcd3ff6b5ccdded"/>
+      </topic>
+      <topic label="adc_dac_dma.c" href="a00012.html">
+        <topic label="DAC_SetDualChanSigned" href="a00092.html#gab6494f34679dc4d0a8c08ec624a4bcf8"/>
+        <topic label="DAC_SetDualChanSigned_Tripped" href="a00092.html#gaee2322aa05f1f3ad93c480e4ef565ad6"/>
+        <topic label="ASG" href="a00012.html#a353608581512bd1b1a6c6bf10b1061fb"/>
+        <topic label="DAC_SecureSetDualChanSigned" href="a00140.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+      </topic>
+      <topic label="adc_dac_dma.h" href="a00013.html">
+        <topic label="DAC_WP_t" href="a00091.html#gab320990ed72ada0f3624149c2f55aa48">
+          <topic label="DEFAULT_WRITE_DAC" href="a00091.html#ggab320990ed72ada0f3624149c2f55aa48afc655ef68afeab8530eb19a5e8b75f29"/>
+          <topic label="TRIPPED_WRITE_DAC" href="a00091.html#ggab320990ed72ada0f3624149c2f55aa48a557c2298ec903ce14144bb888af9dc4b"/>
+        </topic>
+        <topic label="DAC_SetDualChanSigned" href="a00092.html#gab6494f34679dc4d0a8c08ec624a4bcf8"/>
+        <topic label="DAC_SetDualChanSigned_Tripped" href="a00092.html#gaee2322aa05f1f3ad93c480e4ef565ad6"/>
+        <topic label="DAC_SecureSetDualChanSigned" href="a00092.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+      </topic>
+      <topic label="arm_architect.h" href="a00014.html">
+        <topic label="TARGET_ARCH_ARM" href="a00014.html#a553740bfa6210e6e7e248f6d14ae383f"/>
+      </topic>
+      <topic label="attributes.h" href="a00015.html"/>
+      <topic label="console.c" href="a00016.html">
+        <topic label="MISC_CMD_LENGTH" href="a00016.html#a492e38cc9cc26c2d7dfca80cf9e3c916"/>
+        <topic label="MiscCmds_t" href="a00016.html#aed46bb42de79827f6cfff8647571790f"/>
+        <topic label="fastConsoleCase" href="a00016.html#a4af381bf92ce31395c19b6652b930b7a"/>
+        <topic label="items_list" href="a00016.html#a4a1970e0db90d50794e18448f8079046"/>
+        <topic label="itemsm_list" href="a00016.html#ad060ed809f5ef8ea268e7d91a16ca040"/>
+        <topic label="itemsw_list" href="a00016.html#a2a14a0c819366b25cf2486e921d79387"/>
+        <topic label="ticks" href="a00107.html#gab3507a48ae247ff252738ca350810b21"/>
+      </topic>
+      <topic label="console.h" href="a00017.html"/>
+      <topic label="globals.h" href="a00018.html">
+        <topic label="ADC_RNG" href="a00089.html#ga0a11289b824817265f02b83ec5abea78"/>
+        <topic label="AMPL_FLOAT_DIVISOR" href="a00089.html#gae7c68e773f4db260d02caf68c6f7020a"/>
+        <topic label="AN_BIAS_INT" href="a00089.html#ga832572d22784177b5b299eecbc9673ae"/>
+        <topic label="AREF_IN_VOLT" href="a00089.html#gacc312b66f7f5c01ce548561716ed2ceb"/>
+        <topic label="hi" href="a00094.html#ga073817140685ccd37103f69352762610"/>
+        <topic label="INDEX_Ix" href="a00094.html#gab2c21eb1c7fb6302fdafb168773e94eb"/>
+        <topic label="INDEX_Iy" href="a00094.html#ga1e3b3aca5e68a13774d27521cc3a37d0"/>
+        <topic label="INDEX_Px" href="a00094.html#ga1bf1610c3723e93b7b6bd8a542c381cf"/>
+        <topic label="INDEX_Py" href="a00094.html#ga8f528d7ef627eac504c027a1755705f7"/>
+        <topic label="INDEX_Wx" href="a00094.html#ga1ec2692e5238551a4c1a324c60b24b7f"/>
+        <topic label="INDEX_Wy" href="a00094.html#ga589d765751caf3081cc8ce174276f983"/>
+        <topic label="KEIL_IDE" href="a00066.html#ga8fabfedc7f18259ecf0f77ef97fe86c2"/>
+        <topic label="lo" href="a00094.html#ga06c5f8eeca62bb9b7d4c85d43c4f20d9"/>
+        <topic label="LOWER_DAC_LIMIT_SIGNED" href="a00089.html#ga9fc9d48ba45460eb9b99b364354edc75"/>
+        <topic label="SAMPLE_INTERVAL" href="a00098.html#ga93f97e455a4335f7c2b6cff3716e2691"/>
+        <topic label="TS" href="a00098.html#gaaade3232ef08cf18b4f3a20a0a2c6fb6"/>
+        <topic label="UPPER_DAC_LIMIT_SIGNED" href="a00089.html#gad36987502112cef838cb6a6c6f32595b"/>
+        <topic label="VA_BIAS" href="a00089.html#gafa43307c49dcc90b66e0b68d7c9fdeb3"/>
+        <topic label="VLSB" href="a00089.html#ga7fe5e4a7648c5976acce2711c1630c5e"/>
+        <topic label="tribool_state_t" href="a00095.html#ga645fd524080d57bb86bbf02b3747436c">
+          <topic label="FALSE" href="a00095.html#gga645fd524080d57bb86bbf02b3747436caa1e095cc966dbecf6a0d8aad75348d1a"/>
+          <topic label="TRUE" href="a00095.html#gga645fd524080d57bb86bbf02b3747436caa82764c3079aea4e60c80e45befbb839"/>
+          <topic label="DNI" href="a00095.html#gga645fd524080d57bb86bbf02b3747436ca257bced40737f04d963d782f89d41092"/>
+        </topic>
+      </topic>
+      <topic label="helper.c" href="a00019.html">
+        <topic label="decode_toInt" href="a00103.html#gaad23e4948ea5d08f5be379a25d6b041a"/>
+        <topic label="decode_toUint" href="a00103.html#ga1c6a4caf5ebe7e949642f154dab10afa"/>
+        <topic label="decodeDbl_toInt" href="a00103.html#gab6912357267b3e58cbebe288309c20da"/>
+        <topic label="decodeDbl_toUint" href="a00103.html#ga7b270756c15607086ce1fc49de3655c3"/>
+        <topic label="strsplit" href="a00103.html#ga70c1b2fc181b5039c6309e61a2724b97"/>
+      </topic>
+      <topic label="helper.h" href="a00020.html">
+        <topic label="decode_toInt" href="a00103.html#gaad23e4948ea5d08f5be379a25d6b041a"/>
+        <topic label="decode_toUint" href="a00103.html#ga1c6a4caf5ebe7e949642f154dab10afa"/>
+        <topic label="decodeDbl_toInt" href="a00103.html#gab6912357267b3e58cbebe288309c20da"/>
+        <topic label="decodeDbl_toUint" href="a00103.html#ga7b270756c15607086ce1fc49de3655c3"/>
+        <topic label="strsplit" href="a00103.html#ga70c1b2fc181b5039c6309e61a2724b97"/>
+      </topic>
+      <topic label="irq_callbacks.c" href="a00021.html">
+        <topic label="__attribute__" href="a00107.html#ga569f827e319be7dfac98904f92c24e89"/>
+        <topic label="ADC_IRQ_Handler" href="a00108.html#ga9a7d2b1783e9106040117270d0195759"/>
+        <topic label="DMA2_STREAM_0_IRQ_Handler" href="a00108.html#ga4bfbdc85c5337782d112b383c6d0efbd"/>
+        <topic label="TIM2_IRQ_Handler" href="a00108.html#gaa7f5812197da97d8b62c5d62396dbbc4"/>
+        <topic label="TIM4_IRQ_Handler" href="a00108.html#ga3e965ca8f413e014ad3a4e27b6b7c0bc"/>
+        <topic label="ADC_fBuff" href="a00107.html#ga6bf09a26d8ce43aa9402c3b6fced78d8"/>
+        <topic label="ADC_MultiConvBuff" href="a00107.html#ga583dbfc172a6bb8f95299ec41b40c01f"/>
+        <topic label="ASG" href="a00107.html#ga353608581512bd1b1a6c6bf10b1061fb"/>
+        <topic label="dir" href="a00107.html#ga674c5e9d29d1d5591b3a03924a972ed5"/>
+        <topic label="pidDataX" href="a00107.html#ga7f21b23850d6a104893ac37ba87afed0"/>
+        <topic label="pidDataY" href="a00107.html#ga0ab28dd366b30b0712094559e447d21f"/>
+        <topic label="PIDY" href="a00107.html#ga11d133e600336343563ed50620ddbeaf"/>
+        <topic label="setpoint_tgl" href="a00107.html#ga94743cc3e2e3edb68c00a335baed0f93"/>
+        <topic label="ticks" href="a00107.html#gab3507a48ae247ff252738ca350810b21"/>
+        <topic label="triStruct" href="a00107.html#ga6d9a2bc0117788d0a3c0a38022efe266"/>
+        <topic label="vectorCtr" href="a00107.html#ga30dfde5ae38dd1774ab23406a5fadf98"/>
+      </topic>
+      <topic label="irq_callbacks.h" href="a00022.html">
+        <topic label="ADC_IRQ_Handler" href="a00108.html#ga9a7d2b1783e9106040117270d0195759"/>
+        <topic label="DMA2_STREAM_0_IRQ_Handler" href="a00108.html#ga4bfbdc85c5337782d112b383c6d0efbd"/>
+        <topic label="TIM2_IRQ_Handler" href="a00108.html#gaa7f5812197da97d8b62c5d62396dbbc4"/>
+        <topic label="TIM4_IRQ_Handler" href="a00108.html#ga3e965ca8f413e014ad3a4e27b6b7c0bc"/>
+      </topic>
+      <topic label="main.c" href="a00023.html">
+        <topic label="__TARGET_ARCH_ARM" href="a00109.html#ga0f25e80f7f3d9cef101764011864cccf"/>
+        <topic label="ADJUSTING_SETPOINT" href="a00109.html#ga706cd9d55a1c161b26e2b2bef58aa904"/>
+        <topic label="ALGO_OLD" href="a00109.html#ga5e31a587762f89eb9f198ee4fe5538c9"/>
+        <topic label="ALGORITHM" href="a00109.html#ga349114ebae7db71b5ed6e47fcfd9a1f5"/>
+        <topic label="CMD_BUFF_SIZE" href="a00023.html#a8e3a929ca84c198906db175852672ab6"/>
+        <topic label="IDX_CMD" href="a00023.html#ae8cd7a1af10fec85cb7243bd2f94e534"/>
+        <topic label="IDX_VAL" href="a00023.html#a8a06340bbda0eb5a4acb096deb23c2eb"/>
+        <topic label="INDEX_Px" href="a00109.html#ga1bf1610c3723e93b7b6bd8a542c381cf"/>
+        <topic label="INDEX_Py" href="a00109.html#ga8f528d7ef627eac504c027a1755705f7"/>
+        <topic label="INTERNAL_SETPOINT" href="a00109.html#ga024a53083c3a1033aa85cb0b09421310"/>
+        <topic label="MISC_CMD_LENGTH" href="a00023.html#a492e38cc9cc26c2d7dfca80cf9e3c916"/>
+        <topic label="MSG_GUI_UART1_RECV_BUFF_FULL" href="a00109.html#gad67ace663b224129dd87500508beccda"/>
+        <topic label="NO1" href="a00109.html#ga78bc713d9e57e9b8741a32ed0b0a0f21"/>
+        <topic label="PID_PARAM_KD" href="a00109.html#ga34a32b11558028c988ab9abdc2777317"/>
+        <topic label="PID_PARAM_KI" href="a00109.html#ga1586407e1d00106d6676cf6e36c2c8f1"/>
+        <topic label="PID_PARAM_KP" href="a00109.html#gad0e81feb2b8831e73e2f62d475f712fd"/>
+        <topic label="PUTCHAR_PROTOTYPE" href="a00141.html#gac040eb6679fed6e591776425aa7abd9d"/>
+        <topic label="RX_FRAME_PADDING_CHAR" href="a00110.html#ga2bac96f9f43433d93174a8668c87e93a"/>
+        <topic label="SIGNW" href="a00109.html#gae96bb05ff1ec72b547a0ba9251196278"/>
+        <topic label="SLIDER_VAL_DEVIDER" href="a00109.html#gacb7d404e3eeefe13a4cd5ebe539d2926"/>
+        <topic label="SPEED_SETPOINT" href="a00109.html#gaac4d2f4a933ef35fa0604ef691c90e97"/>
+        <topic label="UART_BUFF_SIZE" href="a00023.html#adeb73671e2f831710da364c03c971aab"/>
+        <topic label="VALUE_BUFF_SIZE" href="a00023.html#acee06b9fe1d7c87c0162737e2fce1504"/>
+        <topic label="TM2_USART_PinsPack_t" href="a00109.html#ga0688d8c8c02a2cea4558f9a7c6ffef01">
+          <topic label="TM2_USART_PinsPack_1" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01ade5e0c8587cbc6911635218ae1d4de36"/>
+          <topic label="TM2_USART_PinsPack_2" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01a21d249337455e777a7bb7b51d4d6c7b3"/>
+          <topic label="TM2_USART_PinsPack_3" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01ae681a9dfc43e8db7aee3d0cfad86a251"/>
+          <topic label="TM2_USART_PinsPack_Custom" href="a00109.html#gga0688d8c8c02a2cea4558f9a7c6ffef01ab49b0846e44294d82c550048956a3640"/>
+        </topic>
+        <topic label="fastConsoleCase" href="a00141.html#ga4af381bf92ce31395c19b6652b930b7a"/>
+        <topic label="init_globalStructs" href="a00112.html#gabecad8655f9e14a855864feee9fee9e8"/>
+        <topic label="main" href="a00112.html#ga840291bc02cba5474a4cb46a9b9566fe"/>
+        <topic label="resetPID" href="a00109.html#ga7ed832c322d19c4895a1bddc4464e68a"/>
+        <topic label="while" href="a00141.html#ga276a36b4d0c286c721b613730fb155a1"/>
+        <topic label="__stdout" href="a00141.html#gac1f65ebf7d6f28fb49530ee0095306cb"/>
+        <topic label="ADC_fBuff" href="a00109.html#gada58e7e71aa6c47c82aa1401fef39c8b"/>
+        <topic label="ADC_MultiConvBuff" href="a00109.html#ga25660619766735b8221eee0af597f179"/>
+        <topic label="ASG" href="a00109.html#ga353608581512bd1b1a6c6bf10b1061fb"/>
+        <topic label="c" href="a00141.html#ga66b97d6dee15f33d7b6731ccf48092cf"/>
+        <topic label="DAC_SecureSetDualChanSigned" href="a00111.html#ga7ca5cc1a2bcb835c2c9e5b99fbbf0877"/>
+        <topic label="dir" href="a00023.html#a674c5e9d29d1d5591b3a03924a972ed5"/>
+        <topic label="duty" href="a00109.html#ga70f44948d7630be99b15ecac985a502f"/>
+        <topic label="FS" href="a00109.html#gae10afe0004738ddaa83cc87c47aa2b46"/>
+        <topic label="g" href="a00111.html#gae34d4f7d4a0b22a2cc41215808b8e4d6"/>
+        <topic label="gW" href="a00109.html#ga0b596deb624c08f195d5469c7fdb24e3"/>
+        <topic label="gY" href="a00109.html#gab052489ab363c4edc554cd5f07c701a5"/>
+        <topic label="items_list" href="a00109.html#gac48851b7ce643e77891fa1356aada950"/>
+        <topic label="itemsm_list" href="a00109.html#gad060ed809f5ef8ea268e7d91a16ca040"/>
+        <topic label="itemsw_list" href="a00109.html#ga2a14a0c819366b25cf2486e921d79387"/>
+        <topic label="lastVal" href="a00109.html#ga0f826ae96803669bf43d4f4b34dc4bbb"/>
+        <topic label="multiADC" href="a00109.html#gaa09010d520daba965d5ad8ebc31cf723"/>
+        <topic label="NC" href="a00109.html#ga0c97f5d5186914e49211ac95f5fb791b"/>
+        <topic label="NV" href="a00109.html#ga456212f1b6901ff594494e5b05dac484"/>
+        <topic label="pidDataX" href="a00109.html#ga7f21b23850d6a104893ac37ba87afed0"/>
+        <topic label="pidDataY" href="a00109.html#ga0ab28dd366b30b0712094559e447d21f"/>
+        <topic label="pidErrBuff" href="a00109.html#ga7a53a1d5feff485cfbf1734af1a63a01"/>
+        <topic label="pidOut" href="a00109.html#ga1e88378f59ca102b737a2e1579581ebb"/>
+        <topic label="PIDX" href="a00109.html#ga61f840000893d16360195f7bfa989078"/>
+        <topic label="PIDY" href="a00109.html#ga11d133e600336343563ed50620ddbeaf"/>
+        <topic label="PUTCHAR_PROTOTYPE" href="a00141.html#ga6b71e3c5cd86d6941c8f4a8beb1b354f"/>
+        <topic label="rowCount_2D_array" href="a00023.html#a5e9f6b6261d95cff1f96e6dbebcae083"/>
+        <topic label="setpoint_tgl" href="a00109.html#ga94743cc3e2e3edb68c00a335baed0f93"/>
+        <topic label="test1" href="a00109.html#ga618da15d50d1a7912205bfe77c82734e"/>
+        <topic label="test2" href="a00109.html#ga1dab4796294b4133dbeb672f02cd37d6"/>
+        <topic label="ticks" href="a00111.html#gab3507a48ae247ff252738ca350810b21"/>
+        <topic label="toPlant" href="a00109.html#ga75bf0dadad23736cf521d39a7d6c3a0c"/>
+        <topic label="toPlant_int" href="a00109.html#gafe4b69287a4af5f18fa558a746dc1eb6"/>
+        <topic label="toPlantBuff" href="a00109.html#gaf3cb84830b8d8596e0503adaa9d7e6cc"/>
+        <topic label="UNIT_MIKRO" href="a00109.html#ga82a2162d2b13a74390fa23b685e6c804"/>
+      </topic>
+      <topic label="main.h" href="a00024.html">
+        <topic label="pidErr_x" href="a00110.html#ga3a910bf77f5eb96c710a5f9bfda25540"/>
+        <topic label="pidErr_y" href="a00110.html#ga9ecb9291593db67705a37533cb96e399"/>
+        <topic label="POS_X_FLOAT" href="a00110.html#ga9d442ac581cae5a47198dd17f3ab4538"/>
+        <topic label="POS_Y_FLOAT" href="a00110.html#ga4de825aff4a57d60291667de0e2f627c"/>
+        <topic label="SETPOINT_Y_FLOAT" href="a00110.html#ga0c02531a88932d1e19ef31aaeb5f3850"/>
+        <topic label="toPlant_x" href="a00110.html#ga5ca2cdd4953398e21d3dd11320a32868"/>
+        <topic label="toPlant_y" href="a00110.html#ga77632b3b96d6bf8b1b4e8a71e8ac312a"/>
+        <topic label="CmdItem_t" href="a00003.html#ga2a2971bf429beaec0a200b0ec5a3a669">
+          <topic label="KP" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a14bad4f6cad4831682fbf36b8e414d19"/>
+          <topic label="KI" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a13095219cf7778e869100fbff2cf36c5"/>
+          <topic label="KD" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a4f6efdc2e6b5358e2223a06e223614df"/>
+          <topic label="W" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669ab722ceeb601c72cd78fbd35f3581fdf7"/>
+          <topic label="UNKNOWN" href="a00003.html#gga2a2971bf429beaec0a200b0ec5a3a669a6ce26a62afab55d7606ad4e92428b30c"/>
+        </topic>
+        <topic label="MiscItem_t" href="a00003.html#ga52f588961dd5683d131c54d73eadfd36">
+          <topic label="misc_NN" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36afaa9a1c40b115c01bd23edf833699909"/>
+          <topic label="misc_none" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36ae43043de21c5a8c8fedbd81187df4927"/>
+          <topic label="misc_pid_init" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36aed5b07c796816ffb9895ba933e2e5a4c"/>
+          <topic label="misc_pid_Controller" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36aa062dfd6acd695cad5bc45b7db052a90"/>
+          <topic label="misc_pid_Reset_Integrator" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a15dbcb175095a7121970f22b2a5999f1"/>
+          <topic label="misc_update_pid_data" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a2d42b3904614f3597c493215a785a9d4"/>
+          <topic label="misc_asgOnOff_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a83ba9f9870d12356d75d4982710be168"/>
+          <topic label="misc_asgUpperLim_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a3bc3abf96acb9db3c95c6f4bf796608e"/>
+          <topic label="misc_asgLowerLim_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a378be33997b79aa0764f7b72929e823e"/>
+          <topic label="misc_asgTrippTime_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36aae5871ba84b1ca68c902c28fb4bdfdd8"/>
+          <topic label="misc_asgSaveVal_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a210c5aab539057df23b5093cde238dfd"/>
+          <topic label="misc_beamOn_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a428840a3edbe9130d6de7428c2f21997"/>
+          <topic label="misc_beamOff_cmd" href="a00003.html#gga52f588961dd5683d131c54d73eadfd36a8a3da90889652c8b46ac0a69bddd1574"/>
+        </topic>
+        <topic label="SetPointSrc_t" href="a00003.html#ga626985e96e87ed920dc4c6be59a21408">
+          <topic label="INTERNAL_SETPOINT" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408affee96130b101028801a515480d0a4fe"/>
+          <topic label="ANALOG_SETPOINT" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408a3d763b58c74e822630de11762235db4c"/>
+          <topic label="REMOTE_SETPOINT" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408a82b8a77ce23639dac15a25fbf66ec144"/>
+          <topic label="REMOTE_OPENLOOP" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408a6cdf7220720ada0a962fcc930a68bbd0"/>
+          <topic label="REMOTE_INTERNAL_MIXED" href="a00003.html#gga626985e96e87ed920dc4c6be59a21408aa67b8a78eb70171892d0401328a7c2df"/>
+        </topic>
+        <topic label="WavItems_t" href="a00003.html#gaa93c8f16183d2aba3f6c4a72287e515f">
+          <topic label="NN" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa23cd01df78f1e9c938f643fec963284f"/>
+          <topic label="EN" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa08abbedba04efb41214496f901134dfb"/>
+          <topic label="DIS" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa44fc5702a289730d7290fb0716e1f42a"/>
+          <topic label="COS" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa493e49dc3b2f8cf43d8ae13fcdde6639"/>
+          <topic label="TRIANG" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa9ade06dfba781e0e8e00353c073e5a56"/>
+          <topic label="SQUAREWAV" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2c88ba06859ba6d149c34ff06e7f5326"/>
+          <topic label="SAWTOOTH" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa40e63a8384df5217cf58feeb37aa7e96"/>
+          <topic label="QUADRATIC" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2e8d8a1445172e2e64293e1dd0558b0a"/>
+          <topic label="I_QUADRATIC" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa6eb3a5f6b5c27cfa2ce38a62defe8d74"/>
+          <topic label="CMD_REMOTE_SETPOINT" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fada82d02fc110d0a1d01e6beb19263797"/>
+          <topic label="CMD_OPENLOOP_REMOTE" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fafaca666a9ab0c34c977185e03a19f926"/>
+          <topic label="CMD_ANALOG_SETPOINT" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2fb7dad9cbdb77e9668aceee4bfb52e0"/>
+          <topic label="CMD_INTERNAL_SETPOINT" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa6bd7dbce52f74a8c9c511501c8663bbc"/>
+          <topic label="CMD_TESTVECT_1" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fad569293966d97c41805a27cb73e1f517"/>
+          <topic label="CMD_TESTVECT_2" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa2e2cd0371d61c55210e19a63f4624458"/>
+          <topic label="CMD_REFRESH_RATE" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa936a5f71cd1545325bc25f0bba94c17f"/>
+          <topic label="CMD_MATLAB_LINK" href="a00003.html#ggaa93c8f16183d2aba3f6c4a72287e515fa8f0adc920e86b83da8fc6cb3952b9245"/>
+        </topic>
+        <topic label="init_globalStructs" href="a00112.html#gabecad8655f9e14a855864feee9fee9e8"/>
+        <topic label="g" href="a00111.html#gae34d4f7d4a0b22a2cc41215808b8e4d6"/>
+        <topic label="pidErrBuff" href="a00111.html#ga7a53a1d5feff485cfbf1734af1a63a01"/>
+        <topic label="setpoint_tgl" href="a00111.html#ga94743cc3e2e3edb68c00a335baed0f93"/>
+        <topic label="toPlantBuff" href="a00111.html#gaf3cb84830b8d8596e0503adaa9d7e6cc"/>
+        <topic label="triStruct" href="a00111.html#ga6d9a2bc0117788d0a3c0a38022efe266"/>
+      </topic>
+      <topic label="md_stm32f4_dac.c" href="a00025.html">
+        <topic label="MD_DAC_Init" href="a00071.html#gabb02137ecc24355b4c9d3da38b59a44d"/>
+        <topic label="MD_DAC_SetValue" href="a00071.html#ga619bd25bcb153bed7510e0da9fd559b5"/>
+      </topic>
+      <topic label="md_stm32f4_dac.h" href="a00026.html">
+        <topic label="MD_DAC_Channel_t" href="a00070.html#gabf30804989c919701624ae6fe94ce7de">
+          <topic label="MD_DAC1" href="a00070.html#ggabf30804989c919701624ae6fe94ce7deabe67851a33fcec07fa268754b208725f"/>
+          <topic label="MD_DAC2" href="a00070.html#ggabf30804989c919701624ae6fe94ce7dea3bd8fa7ba5803a0d80eeed480450dc95"/>
+        </topic>
+        <topic label="MD_DAC_Init" href="a00071.html#gabb02137ecc24355b4c9d3da38b59a44d"/>
+        <topic label="MD_DAC_SetValue" href="a00071.html#ga619bd25bcb153bed7510e0da9fd559b5"/>
+      </topic>
+      <topic label="md_stm32f4_dac_waveform.c" href="a00027.html">
+        <topic label="DAC_CHx_DMA_SineWaveConfig" href="a00027.html#ae79211bd04616fa90b2fa88a0220a436"/>
+        <topic label="DAC_CHx_EscalatorConfig" href="a00076.html#gaf46f7f55713090d0d01917f8b4cf12d4"/>
+        <topic label="DAC_Chx_NoiseConfig" href="a00076.html#ga2664b9023b9f3770619ec6a03c2214b2"/>
+        <topic label="DAC_Chx_TriangleConfig" href="a00027.html#ad004be7d658bf5458a856035602dd61d"/>
+      </topic>
+      <topic label="md_stm32f4_dac_waveform.h" href="a00028.html">
+        <topic label="DAC_DHR12R1_ADDRESS" href="a00074.html#gacbf063c53f62f5fc24ccdf6d99b9b61a"/>
+        <topic label="DAC_DHR12R2_ADDRESS" href="a00074.html#ga84bfc33520316f1fe9ab25de63573086"/>
+        <topic label="DAC_DHR8R1_ADDRESS" href="a00074.html#gaf31af6ecca4b1bf7a430102c060fda43"/>
+        <topic label="DAC_DHR8R2_ADDRESS" href="a00074.html#ga74c0c4348ccac20fab8c673182441df9"/>
+        <topic label="DAC_CHx_EscalatorConfig" href="a00076.html#gaf46f7f55713090d0d01917f8b4cf12d4"/>
+        <topic label="DAC_Chx_NoiseConfig" href="a00076.html#ga2664b9023b9f3770619ec6a03c2214b2"/>
+        <topic label="DAC_DMA_SineWaveConfig" href="a00076.html#ga018e86e244319b1cb74f7c72b7d5d6c2"/>
+        <topic label="DAC_TriangleConfig" href="a00076.html#ga2b49ec7d4e38d0fed118525d8db4ff75"/>
+        <topic label="DAC_InitStructure" href="a00075.html#ga9f54bfd3711229dd98a67fd037b07be1"/>
+        <topic label="DMA_InitStructure" href="a00075.html#gae0d08750e73250f6a9953cd0724658a3"/>
+      </topic>
+      <topic label="md_stm32f4_delay.c" href="a00029.html">
+        <topic label="Delay" href="a00029.html#adf6ebc82af142bc201d3eb70e107f52e"/>
+        <topic label="Delayms" href="a00029.html#ab6f9456b6ae46b75ed32de43a8456867"/>
+        <topic label="MD_DELAY_DisableSystick" href="a00029.html#a6cef18bacd54f567bcecb2b73cc42bf1"/>
+        <topic label="MD_DELAY_EnableSystick" href="a00029.html#ac52a1ec716f828e0e04b659e94c1caaa"/>
+        <topic label="MD_DELAY_Init" href="a00029.html#a6fedd7fae01484a6b99876a58703b27e"/>
+        <topic label="MD_DELAY_SetTime" href="a00029.html#af749a776c301d7fa9612aaa2cfec05bf"/>
+        <topic label="MD_DELAY_SetTime2" href="a00029.html#aef8b883a308c4d06c378aa57634d3264"/>
+        <topic label="MD_DELAY_Time" href="a00029.html#a5cc8a22e2fe41558700c610838058022"/>
+        <topic label="MD_DELAY_Time2" href="a00029.html#a034b9f2acbcc9bef69099b4954f0e5c1"/>
+        <topic label="SysTick_Handler" href="a00029.html#ab5e09814056d617c521549e542639b7e"/>
+        <topic label="MD_DELAY_Initialized" href="a00029.html#a23748c52b6b0f5aae1f2ae79c4178e0a"/>
+        <topic label="MD_Time" href="a00029.html#a9d6fb053f4505d59ce94c459640dee98"/>
+        <topic label="MD_TimingDelay" href="a00029.html#a8eab657df0839fb02fb594ff27b27fa0"/>
+      </topic>
+      <topic label="md_stm32f4_delay.h" href="a00030.html">
+        <topic label="Delay" href="a00030.html#adf6ebc82af142bc201d3eb70e107f52e"/>
+        <topic label="Delayms" href="a00030.html#ab6f9456b6ae46b75ed32de43a8456867"/>
+        <topic label="MD_DELAY_DisableSystick" href="a00030.html#a6cef18bacd54f567bcecb2b73cc42bf1"/>
+        <topic label="MD_DELAY_EnableSystick" href="a00030.html#ac52a1ec716f828e0e04b659e94c1caaa"/>
+        <topic label="MD_DELAY_Init" href="a00030.html#a6fedd7fae01484a6b99876a58703b27e"/>
+        <topic label="MD_DELAY_SetTime" href="a00030.html#af749a776c301d7fa9612aaa2cfec05bf"/>
+        <topic label="MD_DELAY_SetTime2" href="a00030.html#aef8b883a308c4d06c378aa57634d3264"/>
+        <topic label="MD_DELAY_Time" href="a00030.html#a5cc8a22e2fe41558700c610838058022"/>
+        <topic label="MD_DELAY_Time2" href="a00030.html#a034b9f2acbcc9bef69099b4954f0e5c1"/>
+        <topic label="MD_Time" href="a00030.html#a9d6fb053f4505d59ce94c459640dee98"/>
+        <topic label="MD_Time2" href="a00030.html#a69266477510d167878abca8f5244193c"/>
+      </topic>
+      <topic label="md_stm32f4_disco.c" href="a00031.html">
+        <topic label="MD_DISCO_ButtonInit" href="a00078.html#ga99e90c818f4042ca67ee111f9c666297"/>
+        <topic label="MD_DISCO_ButtonOnPressed" href="a00078.html#ga4bdeb65c33d29739b341feeb76aee264"/>
+        <topic label="MD_DISCO_ButtonOnReleased" href="a00078.html#gaeafb64b68c8ad9febe0821ac0693233a"/>
+        <topic label="MD_DISCO_LedInit" href="a00078.html#gaca7a1ac308a8fda1547ddc0f5872aa74"/>
+        <topic label="MD_INT_DISCO_ButtonPressed" href="a00031.html#ae1c7aa2c3cca101d3065af804636df9d"/>
+      </topic>
+      <topic label="md_stm32f4_disco.h" href="a00032.html">
+        <topic label="MD_DISCO_ButtonPressed" href="a00078.html#gabf6e8afa3e50a13bb6afefca84f9e856"/>
+        <topic label="MD_DISCO_LedIsOn" href="a00078.html#ga7bae7d03c87223e1a6ea8aa68d8572b2"/>
+        <topic label="MD_DISCO_LedOff" href="a00078.html#gaa21441e03694db4000ce451ac92db670"/>
+        <topic label="MD_DISCO_LedOn" href="a00078.html#ga6b5a90b17dfa80cdfc7e9415b373b7e4"/>
+        <topic label="MD_DISCO_LedToggle" href="a00078.html#ga15782ac3c6ead221dfff5234e055f9ae"/>
+        <topic label="MD_DISCO_SetLed" href="a00078.html#ga9aa2e913a3d60e598b455df93f264b42"/>
+        <topic label="MD_DISCO_ButtonInit" href="a00078.html#ga99e90c818f4042ca67ee111f9c666297"/>
+        <topic label="MD_DISCO_ButtonOnPressed" href="a00078.html#ga4bdeb65c33d29739b341feeb76aee264"/>
+        <topic label="MD_DISCO_ButtonOnReleased" href="a00078.html#gaeafb64b68c8ad9febe0821ac0693233a"/>
+        <topic label="MD_DISCO_LedInit" href="a00078.html#gaca7a1ac308a8fda1547ddc0f5872aa74"/>
+      </topic>
+      <topic label="md_stm32f4_gpio.c" href="a00033.html">
+        <topic label="MD_GPIO_DeInit" href="a00082.html#gae4023e60105a12baf9882cd2bf89c250"/>
+        <topic label="MD_GPIO_GetPinSource" href="a00082.html#ga91bec943baa222318edb5dc6f0ce0ff0"/>
+        <topic label="MD_GPIO_GetPortSource" href="a00082.html#gabd004a39ce32bdf009422d44da7342c2"/>
+        <topic label="MD_GPIO_Init" href="a00082.html#ga76a4711f406d06b13979cb89d6358cfc"/>
+        <topic label="MD_GPIO_InitAlternate" href="a00082.html#gabc8eafcb23a81935b70b9046f266f5aa"/>
+        <topic label="MD_GPIO_INT_DisableClock" href="a00033.html#a7558aee2af3c5f0fb5410ee45a2706ff"/>
+        <topic label="MD_GPIO_INT_EnableClock" href="a00033.html#a3fbbb48b4fdbb6a379ddfef5fbba6eca"/>
+        <topic label="MD_GPIO_INT_Init" href="a00033.html#a8d3cf43c60033422ed0577134042f255"/>
+        <topic label="MD_GPIO_SetPinAsAnalog" href="a00082.html#ga253a17c109b5a510f7579ef793da91fa"/>
+        <topic label="MD_GPIO_SetPinAsInput" href="a00082.html#ga1b348cc05c101e2aed07f12fe02f11ce"/>
+        <topic label="MD_GPIO_SetPinAsOutput" href="a00082.html#gac6573663dd1e8056feacfdbd3236c18a"/>
+      </topic>
+      <topic label="md_stm32f4_gpio.h" href="a00034.html">
+        <topic label="GPIO_PIN_0" href="a00080.html#ga176efbf43a259b7bb0a85a47401505be"/>
+        <topic label="GPIO_Pin_0" href="a00080.html#gab305b8d1be9f89bf2b4a05589b456049"/>
+        <topic label="GPIO_PIN_1" href="a00080.html#ga6c35af4e75c3cb57bb650feaa7a136b5"/>
+        <topic label="GPIO_Pin_1" href="a00080.html#ga29db642c26f1fa0fffc3ecadcd30f82b"/>
+        <topic label="GPIO_PIN_10" href="a00080.html#gac102c0123cb8bcadc5b590cd940b9e20"/>
+        <topic label="GPIO_Pin_10" href="a00080.html#ga726af6407ba60ac60f02057227c2d348"/>
+        <topic label="GPIO_PIN_11" href="a00080.html#ga79f6797ea82c1fb25cd6c0e14e44d312"/>
+        <topic label="GPIO_Pin_11" href="a00080.html#ga5139d5bc3d15784ae7794ed2ae1ff767"/>
+        <topic label="GPIO_PIN_12" href="a00080.html#ga95f9ce5911fa8b209defb969db93ced3"/>
+        <topic label="GPIO_Pin_12" href="a00080.html#gada91257dcaab2c86f75fbd8e4b52b98c"/>
+        <topic label="GPIO_PIN_13" href="a00080.html#ga173023dced8f9692ade0f1176558ef70"/>
+        <topic label="GPIO_Pin_13" href="a00080.html#ga4155a41c433f3657b9c79cfbd4240966"/>
+        <topic label="GPIO_PIN_14" href="a00080.html#ga315b4dc1a0c1f9021b3d3a8fe9ccc0c3"/>
+        <topic label="GPIO_Pin_14" href="a00080.html#ga21cd1d89c0c061a6f09c5a842610bee5"/>
+        <topic label="GPIO_PIN_15" href="a00080.html#ga77be5756e80bcdf18e1aa39b35d1d640"/>
+        <topic label="GPIO_Pin_15" href="a00080.html#gae686a9fc47cf3e420e5db0784210711d"/>
+        <topic label="GPIO_PIN_2" href="a00080.html#ga6eee38b797a7268f04357dfa2759efd2"/>
+        <topic label="GPIO_Pin_2" href="a00080.html#gabdf6630324b2f99360537a310687187c"/>
+        <topic label="GPIO_PIN_3" href="a00080.html#gadcaf899c018a0dde572b5af783565c62"/>
+        <topic label="GPIO_Pin_3" href="a00080.html#ga763c6544859dbe28cd3f8ad820045556"/>
+        <topic label="GPIO_PIN_4" href="a00080.html#gab3871e35868deecd260e586ad70d4b83"/>
+        <topic label="GPIO_Pin_4" href="a00080.html#gacbf04d09b954606cdcc55eb2e81780e3"/>
+        <topic label="GPIO_PIN_5" href="a00080.html#ga01cc9ed93f6fd12fd3403362779aaa18"/>
+        <topic label="GPIO_Pin_5" href="a00080.html#ga32dbe930f52ce5ab60190c65e9dc741e"/>
+        <topic label="GPIO_PIN_6" href="a00080.html#ga9089f18f20ec88ee38ce6f27389e6d7e"/>
+        <topic label="GPIO_Pin_6" href="a00080.html#gaf047899d873f27c2db9f50b342e35a58"/>
+        <topic label="GPIO_PIN_7" href="a00080.html#ga482cb86c2f036e630661a41e8986bcfe"/>
+        <topic label="GPIO_Pin_7" href="a00080.html#ga7346b6ce5507bd28a7a79e7dcc816c08"/>
+        <topic label="GPIO_PIN_8" href="a00080.html#gaf5eb6a42a4428e236bd4fd08ade71e7a"/>
+        <topic label="GPIO_Pin_8" href="a00080.html#gac891f0984dc64af3567577fbf13ab304"/>
+        <topic label="GPIO_PIN_9" href="a00080.html#ga4c503cb4a0dc0d18261080051d9c2daf"/>
+        <topic label="GPIO_Pin_9" href="a00080.html#gaad1891082d5d6bcac06c2729a9fdd2f0"/>
+        <topic label="GPIO_PIN_ALL" href="a00080.html#gada8dca690b8e25529328ecf92e8fd1a5"/>
+        <topic label="GPIO_Pin_All" href="a00080.html#gaba3e915ddca17a1211edc07b7fd97e8b"/>
+        <topic label="MD_GPIO_GetInputPinValue" href="a00080.html#gafedf3cc3c371325eac6f84485068b774"/>
+        <topic label="MD_GPIO_GetOutputPinValue" href="a00080.html#ga534464665875d0bda9b8a8fee3b5704a"/>
+        <topic label="MD_GPIO_GetPortInputValue" href="a00080.html#ga803b6182bd18dfcf21e0a6768e6ff9de"/>
+        <topic label="MD_GPIO_GetPortOutputValue" href="a00080.html#ga5653005fa1bce30abb648a3483ac6a7e"/>
+        <topic label="MD_GPIO_SetPinHigh" href="a00080.html#ga6e325f1ab5aa5ea3d5bbea5223924559"/>
+        <topic label="MD_GPIO_SetPinLow" href="a00080.html#ga27f1ec5fae514938ba73cd86ff31971c"/>
+        <topic label="MD_GPIO_SetPinValue" href="a00080.html#ga0b6cda881d6dbab20f380de61cae22ff"/>
+        <topic label="MD_GPIO_SetPortValue" href="a00080.html#ga65429072964cb1a54f716727758cc0ec"/>
+        <topic label="MD_GPIO_TogglePinValue" href="a00080.html#ga3e8ef2b0d11370dd1a519a6ba08d5be8"/>
+        <topic label="MD_GPIO_Mode_t" href="a00081.html#gaf7493ef81334234e5004b9d3c5282b33">
+          <topic label="MD_GPIO_Mode_IN" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33a511500a853c3a2b29f1694f0fe644c38"/>
+          <topic label="MD_GPIO_Mode_OUT" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33ab2e76758baf760c2902d7082c4cb0a64"/>
+          <topic label="MD_GPIO_Mode_AF" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33abc291c258bdf3c5a1bdb9b97722df7c9"/>
+          <topic label="MD_GPIO_Mode_AN" href="a00081.html#ggaf7493ef81334234e5004b9d3c5282b33a86bd538521445d43c9de0616b8c70418"/>
+        </topic>
+        <topic label="MD_GPIO_OType_t" href="a00081.html#gaf957d16485c2d89b9585649bb492549e">
+          <topic label="MD_GPIO_OType_PP" href="a00081.html#ggaf957d16485c2d89b9585649bb492549ea312ad77aaef53576a3ef2aa8168f2218"/>
+          <topic label="MD_GPIO_OType_OD" href="a00081.html#ggaf957d16485c2d89b9585649bb492549ea2062b2922f027f3a14fd169999a233ed"/>
+        </topic>
+        <topic label="MD_GPIO_PuPd_t" href="a00081.html#ga8d78b1cf424589fd9b9824265d28d126">
+          <topic label="MD_GPIO_PuPd_NOPULL" href="a00081.html#gga8d78b1cf424589fd9b9824265d28d126a07be5025aac321bc491cd8322501a6d3"/>
+          <topic label="MD_GPIO_PuPd_Up" href="a00081.html#gga8d78b1cf424589fd9b9824265d28d126ac3af9045a8e8fe61c6adedf64f7ef91c"/>
+          <topic label="MD_GPIO_PuPd_Down" href="a00081.html#gga8d78b1cf424589fd9b9824265d28d126a569e85bcfeb13c1276ce16b805d24c3a"/>
+        </topic>
+        <topic label="MD_GPIO_Speed_t" href="a00081.html#ga3fafb763ac699cfdbab28733e40d3d42">
+          <topic label="MD_GPIO_Speed_Low" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42a8400c9fb95fe7babc51fc0637b184c82"/>
+          <topic label="MD_GPIO_Speed_Medium" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42aa4eed847159f43747529c8278bf9cef7"/>
+          <topic label="MD_GPIO_Speed_Fast" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42aed0eb9991d72fc5a5779da98420aabc2"/>
+          <topic label="MD_GPIO_Speed_High" href="a00081.html#gga3fafb763ac699cfdbab28733e40d3d42ae6e1b3f024609a69b6ff8a14d313b991"/>
+        </topic>
+        <topic label="MD_GPIO_DeInit" href="a00082.html#gae4023e60105a12baf9882cd2bf89c250"/>
+        <topic label="MD_GPIO_GetFreePins" href="a00082.html#ga67b4b13e075ac0e29dedc773664cfabc"/>
+        <topic label="MD_GPIO_GetPinSource" href="a00082.html#ga91bec943baa222318edb5dc6f0ce0ff0"/>
+        <topic label="MD_GPIO_GetPortSource" href="a00082.html#gabd004a39ce32bdf009422d44da7342c2"/>
+        <topic label="MD_GPIO_GetUsedPins" href="a00082.html#gac8cc770c61fc0dcc69fbbcd1e87ddf71"/>
+        <topic label="MD_GPIO_Init" href="a00082.html#ga76a4711f406d06b13979cb89d6358cfc"/>
+        <topic label="MD_GPIO_InitAlternate" href="a00082.html#gabc8eafcb23a81935b70b9046f266f5aa"/>
+        <topic label="MD_GPIO_Lock" href="a00082.html#ga6fa2c02ad4d3aca8c3742be54e779f7f"/>
+        <topic label="MD_GPIO_SetPinAsAnalog" href="a00082.html#ga253a17c109b5a510f7579ef793da91fa"/>
+        <topic label="MD_GPIO_SetPinAsInput" href="a00082.html#ga1b348cc05c101e2aed07f12fe02f11ce"/>
+        <topic label="MD_GPIO_SetPinAsOutput" href="a00082.html#gac6573663dd1e8056feacfdbd3236c18a"/>
+      </topic>
+      <topic label="md_stm32f4_timer.c" href="a00035_source.html"/>
+      <topic label="md_stm32f4_timer.h" href="a00036_source.html"/>
+      <topic label="md_stm32f4_usart.c" href="a00037_source.html"/>
+      <topic label="mdb_gpio.c" href="a00038.html">
+        <topic label="gpio_init_mco1" href="a00116.html#gabab34135469df888af457375ce503aec"/>
+        <topic label="gpio_init_mco2" href="a00116.html#ga4228699cf7fbe1d94b8619c5e939f777"/>
+        <topic label="MDB_GPIO_BeamPin" href="a00116.html#gaa4c41497bc8308d40c005cb2ee30963b"/>
+        <topic label="MDB_GPIO_Init" href="a00116.html#gad45b8278807ffed1f22e03d86d35bf90"/>
+        <topic label="MDB_GPIO_Off" href="a00116.html#ga1de48ba66939a9726f7930fc6a1e653a"/>
+        <topic label="MDB_GPIO_On" href="a00116.html#ga9915de13874ce89948d7d860af7e28c8"/>
+        <topic label="MDB_GPIO_Switch" href="a00116.html#ga23127fb33a96a81838d3c4b368b0e915"/>
+        <topic label="MDB_GPIO_Toggle" href="a00116.html#ga96648f92af47de61ebadb96b6a543415"/>
+        <topic label="MDB_GPIO" href="a00038.html#a39363f9f315544634c61bd26aedceba5"/>
+      </topic>
+      <topic label="mdb_gpio.h" href="a00039.html">
+        <topic label="DBG_ADC_TIMING" href="a00114.html#gae8150974f561daa6dc49646481fcbac6"/>
+        <topic label="DBG_ADC_TIMING_TOG" href="a00114.html#ga42272d92fc33c089b0861882fc1b9479"/>
+        <topic label="DBG_PID_TIMING" href="a00114.html#gae54f66744c5624b17facbf05064af71b"/>
+        <topic label="DBG_PID_TIMING_TIC" href="a00114.html#gadeab57e4e9f915ebc7a42f19bb11a56d"/>
+        <topic label="DBG_PID_TIMING_TOC" href="a00114.html#ga8836e0528f36c00ad55f41b563223aee"/>
+        <topic label="DBG_PID_TIMING_TOG" href="a00114.html#gac08b2d87f4e745cca8f80fa7127d7253"/>
+        <topic label="GPIO_COUNT" href="a00114.html#gaa41e7bed2d404011da2ffee2acf7d2c6"/>
+        <topic label="MDB_GPIO_Toggle_m2" href="a00116.html#ga21d7ac31ffbe0b5bf39eb399c92b0a27"/>
+        <topic label="MD_GPIO_DRIVER_STATE_t" href="a00005.html#ga014461f4d497805581f99288e88d6e13">
+          <topic label="GPIO_DRIVER_OFF" href="a00005.html#gga014461f4d497805581f99288e88d6e13af8dfe52113520e5acae71902765c625d"/>
+          <topic label="GPIO_DRIVER_ON" href="a00005.html#gga014461f4d497805581f99288e88d6e13a3c7c39c7c0dced95dd0280153fba0218"/>
+        </topic>
+        <topic label="MD_GPIO_NAME_t" href="a00005.html#gaabe410dd69c26e02e9d5f951318ef007">
+          <topic label="LED_GREEN_A" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a257a984db2ddaac996f9584171ffbb28"/>
+          <topic label="LED_RED_A" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007af513f61a40003ed67774683efe63afd8"/>
+          <topic label="BEAM_INTERRUPT" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a1f88b32a311e25d05c20a2d08ff0cb31"/>
+          <topic label="TRIGGER_SRC" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007afe0d2e52778d24a9c2e6b1284bfa56ca"/>
+          <topic label="DBG_TIMING_PE2" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a0eb4ed5c75d6da01d62a8f8a2fd62420"/>
+          <topic label="DBG_TIMING_PE4" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a3171a12722a0fe0d1f6c6d5d2825d91b"/>
+          <topic label="DBG_TIMING_PE6" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007ab8fdc9425abada9541f96ae534169fcd"/>
+          <topic label="ADC_X_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007ab08b8835ff56d8a12a823bd6757ff99c"/>
+          <topic label="ADC_Y_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a822d7d89feae633b085e363ebc5f5583"/>
+          <topic label="ADC_Ix_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007ae88cf6d954cdb783cfd76ecc3a15797e"/>
+          <topic label="ADC_W_CHAN_IO" href="a00005.html#ggaabe410dd69c26e02e9d5f951318ef007a3470717e0c5e0a24300d1e9d8e6e0930"/>
+        </topic>
+        <topic label="MD_GPIO_STATE_t" href="a00005.html#ga35a8e47e31f10f492be5f9d991bce6f9">
+          <topic label="GPIO_OFF" href="a00005.html#gga35a8e47e31f10f492be5f9d991bce6f9ad3b35ab19185b03b1e72e7a3cdbcae25"/>
+          <topic label="GPIO_ON" href="a00005.html#gga35a8e47e31f10f492be5f9d991bce6f9a0148e34de553242b00c76b5eb89dd24c"/>
+        </topic>
+        <topic label="gpio_init_mco1" href="a00116.html#gabab34135469df888af457375ce503aec"/>
+        <topic label="gpio_init_mco2" href="a00116.html#ga4228699cf7fbe1d94b8619c5e939f777"/>
+        <topic label="MDB_GPIO_BeamPin" href="a00116.html#gaa4c41497bc8308d40c005cb2ee30963b"/>
+        <topic label="MDB_GPIO_Init" href="a00116.html#gad45b8278807ffed1f22e03d86d35bf90"/>
+        <topic label="MDB_GPIO_Off" href="a00116.html#ga1de48ba66939a9726f7930fc6a1e653a"/>
+        <topic label="MDB_GPIO_On" href="a00116.html#ga9915de13874ce89948d7d860af7e28c8"/>
+        <topic label="MDB_GPIO_Switch" href="a00116.html#ga23127fb33a96a81838d3c4b368b0e915"/>
+        <topic label="MDB_GPIO_Toggle" href="a00116.html#ga96648f92af47de61ebadb96b6a543415"/>
+      </topic>
+      <topic label="nvic_config.c" href="a00040.html">
+        <topic label="NVIC_Configuration" href="a00121.html#ga5c12343e267ace8587309499bea6babe"/>
+      </topic>
+      <topic label="nvic_config.h" href="a00041.html">
+        <topic label="NVIC_Configuration" href="a00121.html#ga5c12343e267ace8587309499bea6babe"/>
+        <topic label="NVIC_InitStruct_ADC" href="a00120.html#ga175e65e37d009743004ac50efe0d1301"/>
+        <topic label="NVIC_InitStruct_DMA" href="a00120.html#ga7f0d5e17e50b33a88de5021bc88fb623"/>
+        <topic label="NVIC_InitStruct_TIM" href="a00120.html#ga8e0c3f046cdbe6bf67f5668ec79af902"/>
+      </topic>
+      <topic label="periph2dma_conf.c" href="a00042.html">
+        <topic label="ADC_Scan_Group_Config" href="a00124.html#ga85f5a2827c06dbdba076d4e9125a11f8"/>
+        <topic label="AN_Watchdog_Config" href="a00124.html#ga45c5ce20c3e099a94ac3e7534fbf6fe5"/>
+        <topic label="DAC_SetSignedValue" href="a00124.html#ga2b97a52cc0951383db3caaf3a7430f53"/>
+        <topic label="DMA_Config" href="a00124.html#ga93f716bf34edd1dedfaa4134287d428e"/>
+        <topic label="RCC_Periph2DMA_Conf" href="a00124.html#gae5d12b8da57e95abcca6e6d9ba8a50bb"/>
+        <topic label="TIM2_DMA_Trigger_Config" href="a00124.html#gad273dc4b4b26574e92666e4020e1ef5a"/>
+      </topic>
+      <topic label="periph2dma_conf.h" href="a00043.html">
+        <topic label="ADC_CCR_ADDRESS" href="a00123.html#ga3d7742611e1e61ac33076456ea95c90d"/>
+        <topic label="ADC_Ix_CHAN" href="a00123.html#ga0fb06b49d0cad3060c8553b464b740a7"/>
+        <topic label="ADC_Iy_CHAN" href="a00123.html#ga9c2c17ec99d496e976f48bc1682f368a"/>
+        <topic label="ADC_N_REGULAR_CHANNELS" href="a00123.html#ga9b45dabac0a94dd3a6c48805f57c41d5"/>
+        <topic label="ADC_W_CHAN" href="a00123.html#gae72ef124ffd68f7c729feea897324c61"/>
+        <topic label="ADC_X_CHAN" href="a00123.html#gaa3667f173d3c058f6571849fba0bb84c"/>
+        <topic label="ADC_Y_CHAN" href="a00123.html#ga5b3d1c47b5d9e6ef09a04948acabe4d2"/>
+        <topic label="ADC_ContScanMode_w_DMA" href="a00124.html#gabd391ad07bdb690282e9e59c36401aae"/>
+        <topic label="ADC_ContScanMode_w_DMA_timeTrigd" href="a00124.html#ga63bf5922e4a4d0715a99ed083d89948b"/>
+        <topic label="ADC_DMA_DualModeConfig" href="a00124.html#gaf7203c7a206f9b514a8cef6b914ace9a"/>
+        <topic label="ADC_Scan_Group_Config" href="a00124.html#ga85f5a2827c06dbdba076d4e9125a11f8"/>
+        <topic label="AN_Watchdog_Config" href="a00124.html#ga45c5ce20c3e099a94ac3e7534fbf6fe5"/>
+        <topic label="DAC_SetSignedValue" href="a00124.html#ga2b97a52cc0951383db3caaf3a7430f53"/>
+        <topic label="DMA_Config" href="a00124.html#ga93f716bf34edd1dedfaa4134287d428e"/>
+        <topic label="RCC_Periph2DMA_Conf" href="a00124.html#gae5d12b8da57e95abcca6e6d9ba8a50bb"/>
+        <topic label="TIM2_DMA_Trigger_Config" href="a00124.html#gad273dc4b4b26574e92666e4020e1ef5a"/>
+      </topic>
+      <topic label="pid.c" href="a00044.html">
+        <topic label="INTERNAL_SETPOINT" href="a00044.html#a024a53083c3a1033aa85cb0b09421310"/>
+        <topic label="LARGE_PID" href="a00044.html#a44164376e68b7b3ab6971fd2cccaa8c5"/>
+        <topic label="PID_Calc_Coeffs" href="a00126.html#ga63894a329acefc03c7e9bfd7e12b1508"/>
+        <topic label="pid_Controller" href="a00126.html#ga8104c7c8a3864df3a2accf63c7c2b0b7"/>
+        <topic label="pid_Init" href="a00126.html#ga676efe3312c9afb5e544fa19e9b394ec"/>
+        <topic label="pid_Reset_Integrator" href="a00126.html#ga16e4a229e4ce8ac0e8e52817935e6651"/>
+        <topic label="update_pid_data" href="a00126.html#gaf3edc28a5d22624fc7dcaeda0e51cad7"/>
+        <topic label="ADC_Buff" href="a00044.html#adba9050b9c019ef08d3a523428abe1f0"/>
+        <topic label="ADC_MultiConvBuff" href="a00109.html#ga25660619766735b8221eee0af597f179"/>
+      </topic>
+      <topic label="pid.h" href="a00045.html">
+        <topic label="FLOAT_MAX" href="a00098.html#ga2124ca619b2968b0cc8429e2a7036869"/>
+        <topic label="FLOAT_PARAMETERS" href="a00098.html#ga346c60b67c1c8302fc7e197a753313fc"/>
+        <topic label="InitStruct" href="a00098.html#ga3a3ac0637c71bf3a157d03b854018aed"/>
+        <topic label="LOWER_SAT" href="a00098.html#ga918411ffba943ae44f2dd5c1d7cb7906"/>
+        <topic label="MAX_F_I_TERM" href="a00098.html#gaebb4051d14adc12a412fa5f7ef39c9ad"/>
+        <topic label="MAX_I_TERM" href="a00098.html#gac375d861606f40c7616251bb33f7c9ab"/>
+        <topic label="MAX_INT" href="a00098.html#gaaa1ac5caef84256eaeb39594e58e096f"/>
+        <topic label="MAX_INT_16" href="a00098.html#ga302b7428269218bb1674dd2489b6a194"/>
+        <topic label="MAX_LONG" href="a00098.html#ga5535b838abf57fcd6aa71dd632c51bc8"/>
+        <topic label="PID_BUFF_LENGTH" href="a00098.html#ga8d73bb9a67fa6d43b94aa191ba9e1c60"/>
+        <topic label="UPPER_SAT" href="a00098.html#ga0200e4d6d2d5230b82cf6c1e9242e87e"/>
+        <topic label="pidData_t" href="a00004.html#ga9d6249c93388816b9a13c444e18574c6"/>
+        <topic label="pidData_t_NEW" href="a00004.html#ga9e33f7e4f217ba46fe6105fbdb1d0027"/>
+        <topic label="pidDatafloat_t" href="a00004.html#ga1d0d9a5352ff86730bd1ff4468da3aaa"/>
+        <topic label="PID_IntMethod_t" href="a00004.html#ga55d6b371091839c0249c5bbae101a8a6">
+          <topic label="PID_IntMethod_FwdRect" href="a00004.html#gga55d6b371091839c0249c5bbae101a8a6a8a70f3c83c6999b81584cf315e016d82"/>
+          <topic label="PID_IntMethod_RwdRect" href="a00004.html#gga55d6b371091839c0249c5bbae101a8a6a4246d5abda93c57fd99e3dc273a14b8e"/>
+          <topic label="PID_IntMethod_Trapez" href="a00004.html#gga55d6b371091839c0249c5bbae101a8a6a6982bcfcc044d6912d583e6eae365627"/>
+        </topic>
+        <topic label="PID_StructType_t" href="a00004.html#ga9042312d928a40abe76bed17f12fd403">
+          <topic label="PID_StructType_Buffered" href="a00004.html#gga9042312d928a40abe76bed17f12fd403abd6ef78dc562a04d44f54b004980a172"/>
+          <topic label="PID_StructType_Unbuffered" href="a00004.html#gga9042312d928a40abe76bed17f12fd403a218c3996531e8fd19e01907d86d62e2e"/>
+        </topic>
+        <topic label="fpid_Controller" href="a00126.html#gafe1d17a0a7fb7bfa803938596f7a16fb"/>
+        <topic label="fpid_Init" href="a00126.html#gad15677de1d3cf94ee4105426e3d6efb1"/>
+        <topic label="PID_Calc_Coeffs" href="a00126.html#ga63894a329acefc03c7e9bfd7e12b1508"/>
+        <topic label="pid_Controller" href="a00126.html#ga8104c7c8a3864df3a2accf63c7c2b0b7"/>
+        <topic label="pid_Init" href="a00126.html#ga676efe3312c9afb5e544fa19e9b394ec"/>
+        <topic label="pid_Init_Tp" href="a00126.html#ga44465e00bf181f7e3e7308cf7a45788b"/>
+        <topic label="pid_Reset_Integrator" href="a00126.html#ga16e4a229e4ce8ac0e8e52817935e6651"/>
+        <topic label="update_pid_data" href="a00126.html#gaf3edc28a5d22624fc7dcaeda0e51cad7"/>
+        <topic label="KD_INIT" href="a00125.html#gae2c6f11e01b26a1c9970c34a9fbd644c"/>
+        <topic label="KI_INIT" href="a00125.html#gae8cb2064c1b9c190073966c828b0b67f"/>
+        <topic label="KP_INIT" href="a00125.html#ga0b1411af0f57c3a718470b1ab6a27ba0"/>
+        <topic label="P_now" href="a00125.html#gabc5485956d263b48443d71043c97ed5b"/>
+        <topic label="pidDataY" href="a00004.html#gaa9a86ee856cb3daa3cf150732d792ab6"/>
+        <topic label="TF_INIT" href="a00125.html#gab1d5489cad2ed91076cba7062e773de0"/>
+        <topic label="W_now" href="a00125.html#gad7bf9103d05d1d2038cc7477a54cb569"/>
+      </topic>
+      <topic label="README.mmd" href="a00046_source.html"/>
+      <topic label="signalGen.c" href="a00047.html">
+        <topic label="dummyDeclare" href="a00047.html#a0afa21ba6b81e603a1a6d868098492cb"/>
+        <topic label="triStruct" href="a00111.html#ga6d9a2bc0117788d0a3c0a38022efe266"/>
+      </topic>
+      <topic label="signalGen.h" href="a00048.html">
+        <topic label="N_TUPEL" href="a00128.html#gac58d61da615dc15db61c6fc83ba3ceb0"/>
+        <topic label="__attribute__" href="a00130.html#ga3471071fc0b691d5ea05997762e9171c"/>
+        <topic label="interrupterBuff" href="a00129.html#ga572904fbe76602190c5cc3984953e553"/>
+        <topic label="triStruct" href="a00130.html#ga6d9a2bc0117788d0a3c0a38022efe266"/>
+      </topic>
+      <topic label="stm32_eval_legacy.h" href="a00049.html">
+        <topic label="Black" href="a00049.html#a68eb1f80b4df2818e5a0774106748141"/>
+        <topic label="Blue" href="a00049.html#a6208a194d702872fdbe1d3c7d7a7c879"/>
+        <topic label="Blue2" href="a00049.html#ab09eb0286376d50920d7c6020162bc35"/>
+        <topic label="Button_DOWN" href="a00049.html#a482408c92ebc052825baa0068b05e15e"/>
+        <topic label="Button_KEY" href="a00049.html#ac186f71df7cfbaf8def7e86b05958869"/>
+        <topic label="Button_LEFT" href="a00049.html#a047a875486b8b5ab857993dab0f3e934"/>
+        <topic label="Button_Mode_TypeDef" href="a00049.html#ae5328c01dc534f831bc953ea0de29d2e"/>
+        <topic label="Button_RIGHT" href="a00049.html#a1e5e489d6b2ae93b9c69851a9fd80b62"/>
+        <topic label="Button_SEL" href="a00049.html#aa6a6367385c4836980ccabf438ba18bc"/>
+        <topic label="Button_TAMPER" href="a00049.html#a10c3109bc033e60e3a126e85e26e7379"/>
+        <topic label="Button_UP" href="a00049.html#a006403adb25fcd826909321cbc27d99e"/>
+        <topic label="Button_WAKEUP" href="a00049.html#a54444b3efcb9fe71e111186003b64576"/>
+        <topic label="Cyan" href="a00049.html#a82a8a689788551a1b4e4552e5ddeae40"/>
+        <topic label="Green" href="a00049.html#aa429cd977709122166b6e31fa10903d1"/>
+        <topic label="Grey" href="a00049.html#a483c7c7eeb4e05e355f3bdca40bed07e"/>
+        <topic label="Horizontal" href="a00049.html#a2a9869b8297a9a4b0db43497a83b1a71"/>
+        <topic label="JOY_CENTER" href="a00049.html#adcee13f65e0335e8730c2556c1a703bf"/>
+        <topic label="JOY_State_TypeDef" href="a00049.html#aeaa7df81bc87e5e6387f560939fb7802"/>
+        <topic label="LCD_RSNWR_GPIO_CLK" href="a00049.html#a4570ab02a27c93f57092beb2f9e49ca2"/>
+        <topic label="LCD_SPI_GPIO_CLK" href="a00049.html#a789dda5d99c96dc58b4482275790ef75"/>
+        <topic label="LCD_SPI_GPIO_PORT" href="a00049.html#a5a4715dc1c28911b866b027f118e3100"/>
+        <topic label="Line0" href="a00049.html#aad9ee70ad524fb62033d16d509daaffe"/>
+        <topic label="Line1" href="a00049.html#ac9ff55a67457209cf37b93351270e34c"/>
+        <topic label="Line2" href="a00049.html#ae30b96f75fc0eb4e7e5889e6e2bbe234"/>
+        <topic label="Line3" href="a00049.html#a7b506d8b391b267459ded3f937f6670c"/>
+        <topic label="Line4" href="a00049.html#a9c4f45843869eb0b44076952d2e30b28"/>
+        <topic label="Line5" href="a00049.html#a940fa58a8247fcec363483dd696d8089"/>
+        <topic label="Line6" href="a00049.html#a0111df6740b6d2dd69c86af727ac7f33"/>
+        <topic label="Line7" href="a00049.html#a0bc50e14fd75a6761198aafd9a73ce78"/>
+        <topic label="Line8" href="a00049.html#adcab250a7f6039fa123b620862899dc6"/>
+        <topic label="Line9" href="a00049.html#a66a623cf27e81a167add49becce0efaa"/>
+        <topic label="Magenta" href="a00049.html#a90a970475f83830549da69776a666834"/>
+        <topic label="Mode_EXTI" href="a00049.html#a107b41abf7bbf60c5f711274545fd58f"/>
+        <topic label="Mode_GPIO" href="a00049.html#a78b0af8be569a32402eaa9dffc87f737"/>
+        <topic label="R0" href="a00049.html#a30ab9da60435727bc80839d416461b8f"/>
+        <topic label="R1" href="a00049.html#a918f64eb53db8e8dc694f36a87646476"/>
+        <topic label="R10" href="a00049.html#a48106da52f76c4ac1faceeff79eb1949"/>
+        <topic label="R106" href="a00049.html#aa6af558ef076fdc8105ff530df39ab32"/>
+        <topic label="R118" href="a00049.html#a9fd9f5e8c682ab3b5e9ed93fad9f11d3"/>
+        <topic label="R12" href="a00049.html#af197c9be421831ff1c22d3fcdea6cd67"/>
+        <topic label="R128" href="a00049.html#abc69fa197ccfe642f43f5c55f82c8950"/>
+        <topic label="R129" href="a00049.html#ad121af613b750071547540f6c609f867"/>
+        <topic label="R13" href="a00049.html#aeee951cbe93cd04eaaab2042ff20ef42"/>
+        <topic label="R130" href="a00049.html#a680a1cbdcce5c1f9408930c403baba81"/>
+        <topic label="R131" href="a00049.html#a38e60e0d674e0fcc1cfbed3128992bb7"/>
+        <topic label="R132" href="a00049.html#af1457b0bd6366319959b41532ba78318"/>
+        <topic label="R133" href="a00049.html#a9dbd65ff2d009ebb4f415768886d436b"/>
+        <topic label="R134" href="a00049.html#adcac6df7d2ddfdaad3e29d754fa7b5ec"/>
+        <topic label="R135" href="a00049.html#a86791e62117e555ef86b1a32f8110c14"/>
+        <topic label="R136" href="a00049.html#abdf825361f571e4519b2ceac231a2286"/>
+        <topic label="R137" href="a00049.html#a6ee3455c3db6f4a9132f8fc0562c0698"/>
+        <topic label="R139" href="a00049.html#a2955e539c323a1bc20fb33e78fdd6720"/>
+        <topic label="R14" href="a00049.html#a2365fd20f7e979e6f13fab7581551a10"/>
+        <topic label="R140" href="a00049.html#a1446db0e8e2d510e479fa5a909b2dbfb"/>
+        <topic label="R141" href="a00049.html#aa151e1cff3e005580bf2fd850ccf577b"/>
+        <topic label="R143" href="a00049.html#aa9a63a7c5ed4e0b9f0f9f6f5b627df70"/>
+        <topic label="R144" href="a00049.html#ac10ae9c84c000e09ce30dfaa7904ca86"/>
+        <topic label="R145" href="a00049.html#a999565036a9d3341073f8068ad54cd45"/>
+        <topic label="R146" href="a00049.html#a46b4cc95c4f7218aaa1b11eb4447df27"/>
+        <topic label="R147" href="a00049.html#abb95a9936bd10085e76f220b33fdea6e"/>
+        <topic label="R148" href="a00049.html#adb04819e63bc58578ad6240f954e1798"/>
+        <topic label="R149" href="a00049.html#a043913beffeba4904e92cd758f9aeaa9"/>
+        <topic label="R15" href="a00049.html#a8c50f8275d5248904390fb7133a70511"/>
+        <topic label="R150" href="a00049.html#ae7170320666d423099bdb3bbf1cb1e57"/>
+        <topic label="R151" href="a00049.html#af7a3eded4cedd0ba328007bff5206f82"/>
+        <topic label="R152" href="a00049.html#a5bf4aad74d34a678795bef25b92dfac0"/>
+        <topic label="R153" href="a00049.html#a918f4c9038e30bd3e1c7da52b0cfe0e0"/>
+        <topic label="R154" href="a00049.html#ac76fe42c05548383e153ec21bb14b41e"/>
+        <topic label="R157" href="a00049.html#a9c89768cf1ce5d0ee154a5d49c72519b"/>
+        <topic label="R16" href="a00049.html#ad77e1dcdb22054c451184bdc6c162aca"/>
+        <topic label="R17" href="a00049.html#a50c3555dbddcde47b3bc11aee91953f0"/>
+        <topic label="R18" href="a00049.html#a9dd03edf61dfb4c2945d6e3344463605"/>
+        <topic label="R19" href="a00049.html#afdd6178f7952575afc3137685e69706a"/>
+        <topic label="R192" href="a00049.html#a638797905ed0fafff6298f53af8fa97c"/>
+        <topic label="R193" href="a00049.html#a8d4098d9373df357e327ed06ff34dfe3"/>
+        <topic label="R2" href="a00049.html#a7a255a2815b9453060f51c6eb22cfed8"/>
+        <topic label="R20" href="a00049.html#aad597234b2b9107fd4b85042ebf7d227"/>
+        <topic label="R21" href="a00049.html#a2239751d43fe021be2d088f252d76d3d"/>
+        <topic label="R22" href="a00049.html#a8fb4bbc3afd2a182fd2d774fe9556ca2"/>
+        <topic label="R227" href="a00049.html#ace3f68e0d2e82e51df0c60eb5aacd0c7"/>
+        <topic label="R229" href="a00049.html#a6034296c3f2b5b5d94616ce14d4f5081"/>
+        <topic label="R23" href="a00049.html#ad202a74507d5efb0c9ade8c9c1d3c50e"/>
+        <topic label="R231" href="a00049.html#a8deabb3e928b8589d91d06ee693134e3"/>
+        <topic label="R239" href="a00049.html#a2d693a5ec0e85bc06d4e17e98f8561f4"/>
+        <topic label="R24" href="a00049.html#ac54076fe429f2bd813dfe1a7516783ca"/>
+        <topic label="R25" href="a00049.html#aec0d18d474186d431863571aebe48bd9"/>
+        <topic label="R26" href="a00049.html#a8c53f858f6eb16da6435369e20d6357e"/>
+        <topic label="R27" href="a00049.html#afb0c1f5a42f021f1f861d64f5d7fc639"/>
+        <topic label="R28" href="a00049.html#a09ec0a9fd35ffbca96e8bf36a5a5bbad"/>
+        <topic label="R29" href="a00049.html#ad2beeed7ea0267f327ec0718bc433713"/>
+        <topic label="R3" href="a00049.html#a48c945e21828118c1d6fab15405b7fca"/>
+        <topic label="R30" href="a00049.html#aa521dea7b5f221a412d358cd18d7fa51"/>
+        <topic label="R31" href="a00049.html#a9ccd6c96c7835277efb7a281518a640e"/>
+        <topic label="R32" href="a00049.html#a75360c1ef61a0da75c61f4800f861237"/>
+        <topic label="R33" href="a00049.html#a4b99e5cf488f31fbc1bbe5068a2c2643"/>
+        <topic label="R34" href="a00049.html#a961bbbe4ad92f7186d2a95b15333b66d"/>
+        <topic label="R36" href="a00049.html#a02d5fe0d450658c1f70447aa3d3692de"/>
+        <topic label="R37" href="a00049.html#ab50191b64acf1a7dfd8ba1396ecb6298"/>
+        <topic label="R4" href="a00049.html#a742ee5285038ed5c28d838b880104bf8"/>
+        <topic label="R40" href="a00049.html#ae9c5f42d21a700c3895dd419ae126d4c"/>
+        <topic label="R41" href="a00049.html#a4fa27569b8eabef9776005d8f3cf3c9c"/>
+        <topic label="R43" href="a00049.html#adb6d1f6debbbf016f6e70f366e6eaf2a"/>
+        <topic label="R45" href="a00049.html#a22754d79880d3d93df0e4bb6678049ec"/>
+        <topic label="R48" href="a00049.html#a1705d1670b6fa72b14e5aea1e9343d5c"/>
+        <topic label="R49" href="a00049.html#afc41d90e4c9be6079b03742173610484"/>
+        <topic label="R5" href="a00049.html#a8e46faddc315fe1cd72210b0411b1a92"/>
+        <topic label="R50" href="a00049.html#a062e6a5ba6afaad82616830613866940"/>
+        <topic label="R51" href="a00049.html#ac5b1eff840f0a3aedbfaaac1b6949fa4"/>
+        <topic label="R52" href="a00049.html#a05738fe91789948b19a29f4b18e954c9"/>
+        <topic label="R53" href="a00049.html#a2bb3d3766dda05676b61ebf63aebc53f"/>
+        <topic label="R54" href="a00049.html#a1d781b78aac84acbe8449763cc4b1b81"/>
+        <topic label="R55" href="a00049.html#a42fa3669e0ce55f2efbe31c1bd825cbf"/>
+        <topic label="R56" href="a00049.html#ae63f5ef6d47be086570214d2dc6826b8"/>
+        <topic label="R57" href="a00049.html#a74ca61f255099e888b24955b9d50fe19"/>
+        <topic label="R59" href="a00049.html#abfdc16291feba42dd65e9bb072d550af"/>
+        <topic label="R6" href="a00049.html#aa92ff963f49162ae20758e49c1cb6dfa"/>
+        <topic label="R60" href="a00049.html#a3387ebf4ef77cb5520a8b3758fb6cc0b"/>
+        <topic label="R61" href="a00049.html#a9afe9df27e15e8b805dcffb64fb26cd8"/>
+        <topic label="R62" href="a00049.html#a527d65e673422cb09af0951fbe3a471f"/>
+        <topic label="R63" href="a00049.html#a9c0f64b7f70bbbfe15d18e4870bb5523"/>
+        <topic label="R64" href="a00049.html#acd2f0090f344fb815e5aa16d7c2414c6"/>
+        <topic label="R65" href="a00049.html#a90bde46011331034a4ae86d3ad6f0a06"/>
+        <topic label="R66" href="a00049.html#a6606997d1dcd74a40073bfcbfbb00d58"/>
+        <topic label="R67" href="a00049.html#a13de2d18cd4d77febda0fca5ad5217f8"/>
+        <topic label="R68" href="a00049.html#a66081597ded6d610713ddaffe217377a"/>
+        <topic label="R69" href="a00049.html#a5ec58cc94c414b129d3a4fc05303ccc1"/>
+        <topic label="R7" href="a00049.html#a413697d17dfa11837387a8185e24a6e5"/>
+        <topic label="R70" href="a00049.html#a27e742937d6fb6b74dc8d5dfb9fd56a4"/>
+        <topic label="R71" href="a00049.html#a444d941b14ba7f69e778eeed8edde25c"/>
+        <topic label="R72" href="a00049.html#a26d855d9b296322fea31438bb3eaf721"/>
+        <topic label="R73" href="a00049.html#afc159c76cf08d07919d513adb0abb990"/>
+        <topic label="R74" href="a00049.html#a06bc75d00e862dc9f9caf24c77b9b4b8"/>
+        <topic label="R75" href="a00049.html#ae1cfa934df9b864b7b4fa155aa1a76a6"/>
+        <topic label="R76" href="a00049.html#aeba23719a14b4690862536ef8fbd5c5c"/>
+        <topic label="R77" href="a00049.html#a8b92c0539f0d56421f66a900c33de279"/>
+        <topic label="R78" href="a00049.html#a62d8cdad97cb3b200a2611abf3892b28"/>
+        <topic label="R79" href="a00049.html#a5c2435c296672e5fbf71e1bf30c8293e"/>
+        <topic label="R8" href="a00049.html#a9064e002ed4acf8644db2240b9748161"/>
+        <topic label="R80" href="a00049.html#a79a6e78d3d9cf917d996d31dce876200"/>
+        <topic label="R81" href="a00049.html#a8fc8cd026a32de582a4e7a4a927b0a01"/>
+        <topic label="R82" href="a00049.html#abfb0e92ee62f1b4bc8f0bc4c0b7820f6"/>
+        <topic label="R83" href="a00049.html#a8c35f0b1ecd8bd1a686c216b3a0303f4"/>
+        <topic label="R9" href="a00049.html#afc31a131f69149baee673d2e923e17cf"/>
+        <topic label="R96" href="a00049.html#a7a5ecc48b8ba2fac35df0bcfa6984360"/>
+        <topic label="R97" href="a00049.html#a345837ec375eb713693da5500d345378"/>
+        <topic label="Red" href="a00049.html#ae8e246fd7335d7e27ab04150cbc418ba"/>
+        <topic label="STM3220F_LCD_Init" href="a00049.html#afb88951e033ed1729f04b52cc39129a7"/>
+        <topic label="Vertical" href="a00049.html#a5b3d2148378ed60804510c0ca0fbb90b"/>
+        <topic label="White" href="a00049.html#a298a3b7c7f2ea427a7cd21cdc9a4f054"/>
+        <topic label="Yellow" href="a00049.html#a239cc4651865ee2ac90ac5c1e6d2d8b5"/>
+      </topic>
+      <topic label="stm32f4xx_it.c" href="a00050.html">
+        <topic label="BusFault_Handler" href="a00142.html#ga850cefb17a977292ae5eb4cafa9976c3"/>
+        <topic label="DebugMon_Handler" href="a00142.html#gadbdfb05858cc36fc520974df37ec3cb0"/>
+        <topic label="HardFault_Handler" href="a00142.html#ga2bffc10d5bd4106753b7c30e86903bea"/>
+        <topic label="MemManage_Handler" href="a00142.html#ga3150f74512510287a942624aa9b44cc5"/>
+        <topic label="NMI_Handler" href="a00142.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc"/>
+        <topic label="PendSV_Handler" href="a00142.html#ga6303e1f258cbdc1f970ce579cc015623"/>
+        <topic label="SVC_Handler" href="a00142.html#ga3e5ddb3df0d62f2dc357e64a3f04a6ce"/>
+        <topic label="TimingDelay_Decrement" href="a00142.html#ga5c41ccf5ad2d5d2d3f6beb8358641ed2"/>
+        <topic label="UsageFault_Handler" href="a00142.html#ga1d98923de2ed6b7309b66f9ba2971647"/>
+      </topic>
+      <topic label="stm32f4xx_it.h" href="a00051.html">
+        <topic label="BusFault_Handler" href="a00142.html#ga850cefb17a977292ae5eb4cafa9976c3"/>
+        <topic label="DebugMon_Handler" href="a00142.html#gadbdfb05858cc36fc520974df37ec3cb0"/>
+        <topic label="HardFault_Handler" href="a00142.html#ga2bffc10d5bd4106753b7c30e86903bea"/>
+        <topic label="MemManage_Handler" href="a00142.html#ga3150f74512510287a942624aa9b44cc5"/>
+        <topic label="NMI_Handler" href="a00142.html#ga6ad7a5e3ee69cb6db6a6b9111ba898bc"/>
+        <topic label="PendSV_Handler" href="a00142.html#ga6303e1f258cbdc1f970ce579cc015623"/>
+        <topic label="SVC_Handler" href="a00142.html#ga3e5ddb3df0d62f2dc357e64a3f04a6ce"/>
+        <topic label="SysTick_Handler" href="a00051.html#ab5e09814056d617c521549e542639b7e"/>
+        <topic label="TimingDelay_Decrement" href="a00142.html#ga5c41ccf5ad2d5d2d3f6beb8358641ed2"/>
+        <topic label="UsageFault_Handler" href="a00142.html#ga1d98923de2ed6b7309b66f9ba2971647"/>
+      </topic>
+      <topic label="syscalls.c" href="a00052_source.html"/>
+      <topic label="system_stm32f4xx.c" href="a00053.html">
+        <topic label="PLL_M" href="a00145.html#ga0fa5a868f5cd056a04b1c42e454b9617"/>
+        <topic label="PLL_Q" href="a00145.html#gac958257ddb2537c539cffdb3a4543067"/>
+        <topic label="VECT_TAB_OFFSET" href="a00145.html#ga40e1495541cbb4acbe3f1819bd87a9fe"/>
+        <topic label="SetSysClock" href="a00149.html#ga1ee14ac28e60198cc998586807b51e4c"/>
+        <topic label="SystemCoreClockUpdate" href="a00149.html#gae0c36a9591fe6e9c45ecb21a794f0f0f"/>
+        <topic label="SystemInit" href="a00149.html#ga93f514700ccf00d08dbdcff7f1224eb2"/>
+        <topic label="AHBPrescTable" href="a00147.html#gacdc3ef54c0704c90e69a8a84fb2d970d"/>
+      </topic>
+      <topic label="system_stm32f4xx.h" href="a00054.html">
+        <topic label="__SYSTEM_STM32F4XX_H" href="a00134.html#ga9af0bd3b81a1e5b862fdecd4a09950a7"/>
+        <topic label="MD_CMSIS_DOCU" href="a00133.html#gac41f454827f8109732c47bb2ed166533"/>
+        <topic label="SystemCoreClockUpdate" href="a00139.html#gae0c36a9591fe6e9c45ecb21a794f0f0f"/>
+        <topic label="SystemInit" href="a00139.html#ga93f514700ccf00d08dbdcff7f1224eb2"/>
+        <topic label="SystemCoreClock" href="a00136.html#gaa3cd3e43291e81e795d642b79b6088e6"/>
+      </topic>
+      <topic label="tm_stm32f4_pwm.c" href="a00055_source.html"/>
+      <topic label="tm_stm32f4_pwm.h" href="a00056_source.html"/>
+      <topic label="tm_stm32f4_timer_properties.c" href="a00057_source.html"/>
+      <topic label="tm_stm32f4_timer_properties.h" href="a00058_source.html"/>
+      <topic label="tm_stm32f4_usart.c" href="a00059_source.html"/>
+      <topic label="tm_stm32f4_usart.h" href="a00060_source.html"/>
+    </topic>
+    <topic label="Globals" href="globals.html">
+      <topic label="All" href="globals.html">
+        <topic label="_" href="globals.html"/>
+        <topic label="a" href="globals_a.html"/>
+        <topic label="b" href="globals_b.html"/>
+        <topic label="c" href="globals_c.html"/>
+        <topic label="d" href="globals_d.html"/>
+        <topic label="e" href="globals_e.html"/>
+        <topic label="f" href="globals_f.html"/>
+        <topic label="g" href="globals_g.html"/>
+        <topic label="h" href="globals_h.html"/>
+        <topic label="i" href="globals_i.html"/>
+        <topic label="k" href="globals_k.html"/>
+        <topic label="l" href="globals_l.html"/>
+        <topic label="m" href="globals_m.html"/>
+        <topic label="n" href="globals_n.html"/>
+        <topic label="p" href="globals_p.html"/>
+        <topic label="q" href="globals_q.html"/>
+        <topic label="r" href="globals_r.html"/>
+        <topic label="s" href="globals_s.html"/>
+        <topic label="t" href="globals_t.html"/>
+        <topic label="u" href="globals_u.html"/>
+        <topic label="v" href="globals_v.html"/>
+        <topic label="w" href="globals_w.html"/>
+      </topic>
+      <topic label="Functions" href="globals_func.html"/>
+      <topic label="Variables" href="globals_vars.html"/>
+      <topic label="Typedefs" href="globals_type.html"/>
+      <topic label="Enumerations" href="globals_enum.html"/>
+      <topic label="Enumerator" href="globals_eval.html"/>
+      <topic label="Macros" href="globals_defs.html"/>
+    </topic>
+  </topic>
+</toc>

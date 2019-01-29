@@ -1,0 +1,5 @@
+<map id="md_stm32f4_disco.c" name="md_stm32f4_disco.c">
+<area shape="rect" id="node2" href="$a00032.html" title="Definitions to extend board support for STM32F429i&#45;DISCO and equivalent boards. " alt="" coords="46,80,189,107"/>
+<area shape="rect" id="node3" href="$a00018.html" title="Global defines include file. " alt="" coords="5,155,80,181"/>
+<area shape="rect" id="node5" href="$a00034.html" title="Provides generic methods for GPIO module initialization and manipulation. " alt="" coords="155,155,291,181"/>
+</map>

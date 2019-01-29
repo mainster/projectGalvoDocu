@@ -1,0 +1,10 @@
+<map id="irq_callbacks.h" name="irq_callbacks.h">
+<area shape="rect" id="node2" href="$a00024.html" title="Main header definition. " alt="" coords="240,80,301,107"/>
+<area shape="rect" id="node4" href="$a00011.html" title="Controlling beam and primary actuators. " alt="" coords="145,229,231,256"/>
+<area shape="rect" id="node6" href="$a00021.html" title="Callback handler implementations. " alt="" coords="267,304,376,331"/>
+<area shape="rect" id="node3" href="$a00013.html" title="Provides DMA related configuration and access functions for ADC and DAC. " alt="" coords="119,155,233,181"/>
+<area shape="rect" id="node8" href="$a00023.html" title="Main source implementation (29&#45;04&#45;2015) " alt="" coords="359,155,420,181"/>
+<area shape="rect" id="node9" href="$a00050.html" title="stm32f4xx_it.c" alt="" coords="445,155,553,181"/>
+<area shape="rect" id="node7" href="$a00012.html" title="adc_dac_dma.c" alt="" coords="5,229,120,256"/>
+<area shape="rect" id="node5" href="$a00010.html" title="Controlling beam and primary actuators. " alt="" coords="145,304,231,331"/>
+</map>

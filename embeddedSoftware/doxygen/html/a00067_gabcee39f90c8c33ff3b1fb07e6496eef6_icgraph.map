@@ -1,0 +1,8 @@
+<map id="TM_USART_BufferEmpty" name="TM_USART_BufferEmpty">
+<area shape="rect" id="node2" href="$a00067.html#gabb0a95fd20e5e2a894e658b64a29ee61" title="Gets string from USART. " alt="" coords="228,5,357,32"/>
+<area shape="rect" id="node4" href="$a00067.html#gab807a241fae0eae0d5434bae20a3569f" title="Puts character to USART port. " alt="" coords="405,56,533,83"/>
+<area shape="rect" id="node3" href="$a00017.html#a4af381bf92ce31395c19b6652b930b7a" title="Fast console command parser. " alt="" coords="408,5,531,32"/>
+<area shape="rect" id="node5" href="$a00067.html#ga70bed9fb6612cb572a8c10e148404344" title="Initializes USARTx peripheral and corresponding pins. " alt="" coords="586,5,705,32"/>
+<area shape="rect" id="node7" href="$a00067.html#ga453aeaa886278333403ff4937c01dcf3" title="Puts string to USART port. " alt="" coords="581,56,709,83"/>
+<area shape="rect" id="node6" href="$a00144.html#ga840291bc02cba5474a4cb46a9b9566fe" title="Main function entry. " alt="" coords="757,5,808,32"/>
+</map>

@@ -1,0 +1,4 @@
+<map id="SystemInit" name="SystemInit">
+<area shape="rect" id="node2" href="$a00151.html#ga1ee14ac28e60198cc998586807b51e4c" title="Configures the System clock source, PLL Multiplier and Divider factors, AHB/APBx prescalers and Flash..." alt="" coords="357,5,456,32"/>
+<area shape="rect" id="node3" href="$a00151.html#gae0c36a9591fe6e9c45ecb21a794f0f0f" title="Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable cont..." alt="" coords="139,31,309,57"/>
+</map>

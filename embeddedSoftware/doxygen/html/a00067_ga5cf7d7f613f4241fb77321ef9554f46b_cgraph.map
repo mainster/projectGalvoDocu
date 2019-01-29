@@ -1,0 +1,11 @@
+<map id="TM_USART_InitCustomPinsCallback" name="TM_USART_InitCustomPinsCallback">
+<area shape="rect" id="node2" href="$a00089.html#gabc8eafcb23a81935b70b9046f266f5aa" title="Initialize GPIO pins for alternate port operation. " alt="" coords="317,5,477,32"/>
+<area shape="rect" id="node3" href="$a00067.html#gafbf9e2222953815c9f35cd46863dbc26" title="Callback function for receive interrupt on USART1 in case you have enabled custom USART handler mode..." alt="" coords="296,56,497,83"/>
+<area shape="rect" id="node4" href="$a00067.html#ga21823124b3d98ea2085671f4a5af6017" title="Callback function for receive interrupt on USART2 in case you have enabled custom USART handler mode..." alt="" coords="296,107,497,133"/>
+<area shape="rect" id="node5" href="$a00067.html#ga868eb8844f04487e714b63b016a93bae" title="Callback function for receive interrupt on USART3 in case you have enabled custom USART handler mode..." alt="" coords="296,157,497,184"/>
+<area shape="rect" id="node6" href="$a00067.html#gada9d723469cf9d7d0ac11930b8e14f2a" title="Callback function for receive interrupt on UART4 in case you have enabled custom USART handler mode..." alt="" coords="301,208,493,235"/>
+<area shape="rect" id="node7" href="$a00067.html#ga4338d265fa58103332ea234f63594b81" title="Callback function for receive interrupt on UART5 in case you have enabled custom USART handler mode..." alt="" coords="301,259,493,285"/>
+<area shape="rect" id="node8" href="$a00067.html#ga65c1d6a6bcc2dbd40ea0e7cbf5e924de" title="Callback function for receive interrupt on USART6 in case you have enabled custom USART handler mode..." alt="" coords="296,309,497,336"/>
+<area shape="rect" id="node9" href="$a00067.html#ga461a5123a57231d34d51330f12ea39d2" title="Callback function for receive interrupt on UART7 in case you have enabled custom USART handler mode..." alt="" coords="301,360,493,387"/>
+<area shape="rect" id="node10" href="$a00067.html#ga37fe7ffa31a540627af5ebfe93f2dcf5" title="Callback function for receive interrupt on UART8 in case you have enabled custom USART handler mode..." alt="" coords="301,411,493,437"/>
+</map>

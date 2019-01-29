@@ -1,0 +1,5 @@
+<map id="TM_USART_Gets" name="TM_USART_Gets">
+<area shape="rect" id="node2" href="$a00068.html#gabcee39f90c8c33ff3b1fb07e6496eef6" title="Checks if internal USARTx buffer is empty. " alt="" coords="187,5,361,32"/>
+<area shape="rect" id="node3" href="$a00068.html#ga340391d061340e4635b4bbafea23602b" title="Gets character from internal USART buffer. " alt="" coords="209,56,339,83"/>
+<area shape="rect" id="node4" href="$a00068.html#ga5f708a330c9fc45032143a5777d9b6fd" title="Checks if character c is available in internal buffer. " alt="" coords="183,107,365,133"/>
+</map>

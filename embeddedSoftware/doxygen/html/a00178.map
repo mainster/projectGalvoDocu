@@ -1,0 +1,21 @@
+<map id="irq_callbacks.h" name="irq_callbacks.h">
+<area shape="rect" id="node2" href="$a00024.html" title="Main header definition. " alt="" coords="1006,80,1067,107"/>
+<area shape="rect" id="node8" href="$a00018.html" title="Global defines include file. " alt="" coords="1234,379,1309,405"/>
+<area shape="rect" id="node26" href="$a00013.html" title="Provides DMA related configuration and access functions for ADC and DAC. " alt="" coords="569,229,683,256"/>
+<area shape="rect" id="node7" href="$a00015.html" title="Platform/Compiler dependent definitions. " alt="" coords="2657,304,2744,331"/>
+<area shape="rect" id="node9" href="$a00030.html" title="Provides SysTick&#45;Timer driven delay functions. " alt="" coords="1588,304,1731,331"/>
+<area shape="rect" id="node12" href="$a00032.html" title="Definitions to extend board support for STM32F429i&#45;DISCO and equivalent boards. " alt="" coords="2576,229,2719,256"/>
+<area shape="rect" id="node14" href="$a00036_source.html" title="md_stm32f4_timer.h" alt="" coords="2286,304,2427,331"/>
+<area shape="rect" id="node15" href="$a00056_source.html" title="tm_stm32f4_pwm.h" alt="" coords="1652,229,1789,256"/>
+<area shape="rect" id="node18" href="$a00060_source.html" title="tm_stm32f4_usart.h" alt="" coords="2142,229,2281,256"/>
+<area shape="rect" id="node23" href="$a00045.html" title="PID compensator implementation. " alt="" coords="289,304,339,331"/>
+<area shape="rect" id="node25" href="$a00011.html" title="Controlling beam and primary actuators. " alt="" coords="583,155,669,181"/>
+<area shape="rect" id="node30" href="$a00020.html" title="Provides tools and helper functions. " alt="" coords="196,304,264,331"/>
+<area shape="rect" id="node32" href="$a00039.html" title="Project MD_APP scanner specific pin mappings. " alt="" coords="1313,229,1403,256"/>
+<area shape="rect" id="node34" href="$a00043.html" title="Provides initialization methods to configure analog subsystems and DMA controller. " alt="" coords="2821,155,2953,181"/>
+<area shape="rect" id="node36" href="$a00048.html" title="Provides DAC driven signal generator functions. " alt="" coords="793,155,883,181"/>
+<area shape="rect" id="node13" href="$a00034.html" title="Provides generic methods for GPIO module initialization and manipulation. " alt="" coords="2769,304,2905,331"/>
+<area shape="rect" id="node17" href="$a00058_source.html" title="tm_stm32f4_timer_properties.h" alt="" coords="1806,304,2009,331"/>
+<area shape="rect" id="node27" href="$a00041.html" title="Provides nested vector interrupt controller configuration methods. " alt="" coords="758,304,857,331"/>
+<area shape="rect" id="node35" href="$a00026.html" title="Project XA&#45;Galvo scanner specific digital to analog converter methods. " alt="" coords="2821,229,2954,256"/>
+</map>

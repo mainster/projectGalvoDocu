@@ -1,0 +1,7 @@
+<map id="MDB_GPIO_Off" name="MDB_GPIO_Off">
+<area shape="rect" id="node2" href="$a00123.html#gad45b8278807ffed1f22e03d86d35bf90" title="Initialize all GPIOs from MDB_GPIO. " alt="" coords="181,5,299,32"/>
+<area shape="rect" id="node4" href="$a00123.html#ga23127fb33a96a81838d3c4b368b0e915" title="Provides GPIO on/off functionality. " alt="" coords="171,56,309,83"/>
+<area shape="rect" id="node3" href="$a00144.html#ga840291bc02cba5474a4cb46a9b9566fe" title="Main function entry. " alt="" coords="369,5,420,32"/>
+<area shape="rect" id="node5" href="$a00094.html#gab27f871618e69ee02c2d2bd756a97397" title="Set beam control source and new state. " alt="" coords="357,56,432,83"/>
+<area shape="rect" id="node6" href="$a00115.html#ga7133f3f78767503641d307386e68bd28" title="{ function_description } " alt="" coords="480,56,608,83"/>
+</map>

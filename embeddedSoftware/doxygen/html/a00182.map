@@ -1,0 +1,10 @@
+<map id="main.h" name="main.h">
+<area shape="rect" id="node2" href="$a00013.html" title="Provides DMA related configuration and access functions for ADC and DAC. " alt="" coords="109,80,224,107"/>
+<area shape="rect" id="node5" href="$a00021.html" title="Callback handler implementations. " alt="" coords="281,304,391,331"/>
+<area shape="rect" id="node6" href="$a00022.html" title="Analog processing related callback handler definition. " alt="" coords="269,155,379,181"/>
+<area shape="rect" id="node8" href="$a00023.html" title="Main source implementation (29&#45;04&#45;2015) " alt="" coords="453,80,515,107"/>
+<area shape="rect" id="node9" href="$a00050.html" title="stm32f4xx_it.c" alt="" coords="539,80,647,107"/>
+<area shape="rect" id="node3" href="$a00011.html" title="Controlling beam and primary actuators. " alt="" coords="174,229,261,256"/>
+<area shape="rect" id="node7" href="$a00012.html" title="adc_dac_dma.c" alt="" coords="5,155,120,181"/>
+<area shape="rect" id="node4" href="$a00010.html" title="Controlling beam and primary actuators. " alt="" coords="170,304,257,331"/>
+</map>

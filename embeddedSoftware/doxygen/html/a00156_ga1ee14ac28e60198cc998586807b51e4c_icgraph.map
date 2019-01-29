@@ -1,0 +1,5 @@
+<map id="SetSysClock" name="SetSysClock">
+<area shape="rect" id="node2" href="$a00156.html#ga93f514700ccf00d08dbdcff7f1224eb2" title="Setup the microcontroller system Initialize the Embedded Flash Interface, the PLL and update the Syst..." alt="" coords="371,5,456,32"/>
+<area shape="rect" id="node4" href="$a00156.html#gae0c36a9591fe6e9c45ecb21a794f0f0f" title="Update SystemCoreClock variable according to Clock Register Values. The SystemCoreClock variable cont..." alt="" coords="152,31,323,57"/>
+<area shape="rect" id="node3" href="$a00149.html#ga840291bc02cba5474a4cb46a9b9566fe" title="Main function entry. " alt="" coords="504,5,555,32"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="TM_USART1_ReceiveHandler" name="TM_USART1_ReceiveHandler">
+<area shape="rect" id="node2" href="$a00069.html#ga453aeaa886278333403ff4937c01dcf3" title="Puts string to USART port. " alt="" coords="312,5,440,32"/>
+<area shape="rect" id="node3" href="$a00069.html#gab807a241fae0eae0d5434bae20a3569f" title="Puts character to USART port. " alt="" coords="545,31,673,57"/>
+<area shape="rect" id="node6" href="$a00069.html#ga5cf7d7f613f4241fb77321ef9554f46b" title="Callback for custom pins initialization for USARTx. " alt="" coords="255,131,497,157"/>
+<area shape="rect" id="node4" href="$a00069.html#ga70bed9fb6612cb572a8c10e148404344" title="Initializes USARTx peripheral and corresponding pins. " alt="" coords="721,31,840,57"/>
+<area shape="rect" id="node5" href="$a00149.html#ga840291bc02cba5474a4cb46a9b9566fe" title="Main function entry. " alt="" coords="888,31,939,57"/>
+</map>
